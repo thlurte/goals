@@ -4,9 +4,9 @@
 **End Date**: Friday, February 19, 2027  
 **Schedule**: 5 Days/Week (Mon–Fri), Weekends for Reflection, Overflow & Essay Writing  
 **Daily Cadence**:
-1. **Morning Pure Mathematics (90 min)**: Rigorous pencil-and-paper math, proofs, and theory.
-2. **Morning Systems & Architecture Reading (45 min)**: Pikus, CS:APP, Agner Fog, PMPP, CUDA Guide.
-3. **Afternoon Hands-On Implementation (2.5 hrs)**: Python models from scratch + C++20 / CUDA `secan` engine.
+1. **🌅 06:00 – 07:30 (90 min) — Morning Pure Mathematics**: Rigorous pencil-and-paper math, proofs, theorems, and problem sets (Gelfand, Strang, Blitzstein).
+2. **📖 07:30 – 08:30 (60 min) — Systems & Architecture Deep Reading**: Hardware architecture, C++ mechanics, and GPU guides (Pikus, CS:APP, Agner Fog, PMPP, CUDA Guide).
+3. **💻 20:30 – 23:00 (2.5 hrs) — Night Coding & Systems Engineering**: Hands-on implementation in flow state (clean Python models from scratch + C++20/CUDA `secan` engine).
 
 ---
 
