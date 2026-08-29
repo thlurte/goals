@@ -6,13 +6,15 @@
 
 ## 📂 Curriculum Documents
 
-1. [**24-Week Master Daily Curriculum**](vector_search_24_week_daily_plan.md)
-   * The complete day-by-day reading and coding schedule (Mon–Fri).
-   * Synchronized across **Linear Algebra (Strang)**, **C++20/CUDA Engine (`secan`)**, and **PyTorch Models (Transformers, ViT, BERT, ColBERT, ColPali)**.
-   * 24 long-form technical essay assignments.
-   * Integrates **High-D Analytics (Hubness/Measure Concentration)**, **ScaNN Anisotropic Loss**, **IR Metrics (NDCG/MRR/SLA)**, **LSM-Tree Storage Engine (Arrow/WAL)**, and **FlashAttention CUDA Kernel**.
+1. [**Week 1 Detailed Execution Plan**](week_01_execution_plan.md)
+   * Hour-by-hour operational breakdown for the upcoming week (Sep 1 – Sep 6, 2026).
+   * Exact reading chapters, pencil & paper problem sets, C++ tasks, and Saturday essay outline.
 
-2. [**Specialization Architecture & Macro Roadmap**](vector_search_specialization_roadmap.md)
+2. [**24-Week Master Daily Curriculum**](vector_search_24_week_daily_plan.md)
+   * The complete 6-month day-by-day reading and coding schedule (Mon–Fri).
+   * Synchronized across **Pure Math**, **C++20/CUDA Engine (`secan`)**, and **PyTorch Models**.
+
+3. [**Specialization Architecture & Macro Roadmap**](vector_search_specialization_roadmap.md)
    * High-level architectural phases, evaluation benchmarks, and systems design principles.
 
 ---
