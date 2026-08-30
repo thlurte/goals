@@ -32,15 +32,15 @@ Curriculum weeks: [`../curriculum/README.md`](../curriculum/README.md). Lab note
 
 ## Seven topics (Sep 2026 – Mar 2027)
 
-| Month | Topic (working title) | Publish by | Primary artifacts |
+| Month | Topic (Publication-Grade Title) | Publish by | Primary artifacts |
 |:---|:---|:---|:---|
-| **1 — Sep 2026** | *Measurement Before Optimization: A Reproducible Protocol for Vector Distance Microbenchmarks* | **Sun Sep 27** | Google Benchmark suite, `perf` tables, scalar L2/cosine on SIFT dims |
-| **2 — Oct 2026** | *Anisotropy, Hubness, and Bits: SQ / PQ / FastScan / ScaNN + OPQ / asymmetric distance* | **Sun Oct 25** | Quantization ablations, hubness $S_{N_k}$, OPQ vs PQ, vision vs **768-D text** |
-| **3 — Nov 2026** | *Late Interaction Under Writes: PLAID vs MUVERA FDE→MIPS Inside an LSM Vector Engine* | **Sun Nov 29** | Multi-vector + WAL; **BEIR or MS MARCO slice**; candidate counts PLAID vs MUVERA |
-| **4 — Dec 2026** | *One Engine, Three Paths: GPU IVF, Vamana + DiskANN `io_uring`, and Hybrid RRF/WAND* | **Sun Dec 27** | Spine closeout Pareto; tag `v1.2-vs-spine-complete` |
-| **5 — Jan 2027** | *Paging vs Quantizing Memory: PagedAttention and TurboQuant as Complementary KV Levers* | **Sun Jan 31** | Block table vs bitwidth; naive KV (Week 4) is the baseline |
-| **6 — Feb 2027** | *Predicate-Aware Graphs: Pre/Post/Range Filters, ACORN, Tombstones, Portable SIMD* | **Sun Feb 28** | Selectivity vs recall; range predicates; delete/vacuum; x86 vs ARM |
-| **7 — Mar 2027** | *IO-Aware GPU Serving: FlashAttention-2, Multi-GPU Search, and KV Paging* | **Fri Mar 12** | FA-2 Nsight tables, multi-GPU scaling, `v2.0` |
+| **1 — Sep 2026** | *Microarchitectural Limits of Vector Distance Kernels: Execution Port Contention, Cache-Line Splits, and Measurement Artifacts on Modern x86* | **Sun Sep 27** | Google Benchmark suite, `perf stat` IPC/port tables, scalar vs AVX2/AVX-512 distance benchmarks across $D \in [64, 1536]$ |
+| **2 — Oct 2026** | *Anisotropy-Aware Vector Quantization: Dissecting the Interplay Between Embedding Cones, Hubness, and Quantization Loss Functions* | **Sun Oct 25** | Quantization ablations, hubness $S_{N_k}$, ScaNN directional loss vs MSE PQ vs OPQ vs RaBitQ on **768-D text embeddings** |
+| **3 — Nov 2026** | *Streaming Late Interaction: Evaluating PLAID Centroid Inverted Lists vs MUVERA Fixed-Dimensional Encodings in Dynamic LSM Vector Storage* | **Sun Nov 29** | Multi-vector + WAL; **BEIR / MS MARCO slice**; write throughput vs compaction overhead: PLAID cascades vs MUVERA FDE-to-MIPS |
+| **4 — Dec 2026** | *Billion-Scale Retrieval Frontiers: Comparing In-VRAM GPU IVF and Asynchronous NVMe DiskANN Under Concurrent Query Pressure* | **Sun Dec 27** | Billion-scale cost-latency-recall Pareto frontiers; tag `v1.2-vs-spine-complete` |
+| **5 — Jan 2027** | *Paging vs. Quantizing LLM KV Caches: Memory Fragmentation, Dequantization Overhead, and Serving Throughput at Long Contexts* | **Sun Jan 31** | PagedAttention BlockTable vs TurboQuant 3-bit PolarQuant compression at $4\text{K} \to 128\text{K}$ context lengths |
+| **6 — Feb 2027** | *Mitigating Recall Collapse in Filtered Approximate Nearest Neighbor Graphs: An Empirical Evaluation of ACORN vs. Iterative Post-Filtering Across Selectivity Spectrums* | **Sun Feb 28** | Selectivity $P(\text{pass}) < 1\%$ vs recall curves; ACORN multi-hop predicate subgraph traversal vs post-filtering on HNSW |
+| **7 — Mar 2027** | *Unified IO-Aware GPU Architecture for Vector Retrieval and LLM Attention Serving: FlashAttention-2, Paged KV Caches, and Multi-GPU Scaling* | **Fri Mar 12** | FA-2 Nsight profiling tables, NCCL multi-GPU scaling, End-to-End Time-to-First-Token (TTFT) benchmarks, master release `v2.0` |
 
 ## Relationship to weekly essays
 

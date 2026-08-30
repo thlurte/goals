@@ -31,13 +31,13 @@
 
 | Month | Topic | Due |
 |:---|:---|:---|
-| Sep | Measurement-first distance microbenchmarks | Sep 27 |
-| Oct | Anisotropy / hubness / SQ–PQ–FastScan–ScaNN + OPQ / asymmetric | Oct 25 |
-| Nov | PLAID vs MUVERA FDE→MIPS + BEIR/MS MARCO slice | Nov 29 |
-| Dec | GPU IVF + Vamana/DiskANN + RRF/WAND | Dec 27 |
-| Jan | PagedAttention × TurboQuant (KV) | Jan 31 |
-| Feb | Pre/post/range filters + ACORN + portable SIMD | Feb 28 |
-| Mar | FA-2, multi-GPU, KV paging → `v2.0` | Mar 12 |
+| Sep | Microarchitectural Limits of SIMD Vector Distance Kernels | Sep 27 |
+| Oct | Anisotropy-Aware Quantization: Hubness, Cones & Loss Functions | Oct 25 |
+| Nov | Streaming Late Interaction: PLAID vs MUVERA FDE in Dynamic LSM Storage | Nov 29 |
+| Dec | Billion-Scale Retrieval Frontiers: In-VRAM GPU IVF vs Asynchronous NVMe DiskANN | Dec 27 |
+| Jan | Paging vs Quantizing LLM KV Caches at Long Contexts | Jan 31 |
+| Feb | Mitigating Recall Collapse in Filtered ANN Graphs: ACORN vs Post-Filtering | Feb 28 |
+| Mar | Unified IO-Aware GPU Architecture: FlashAttention-2, Paged KV & Multi-GPU | Mar 12 |
 
 Details: [`research/README.md`](research/README.md).
 

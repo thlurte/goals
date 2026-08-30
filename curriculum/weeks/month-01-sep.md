@@ -14,7 +14,7 @@
 
 # 📅 MONTH 1: Pure Trigonometry, Single-Variable Calculus, SIMD & Transformers (Sep 2026)
 
-> **🔬 Monthly research**: *Measurement Before Optimization: A Reproducible Protocol for Vector Distance Microbenchmarks* → publish **Sun Sep 27** · folder `research/2026-09-measurement-protocol/`
+> **🔬 Monthly research**: *Microarchitectural Limits of Vector Distance Kernels: Execution Port Contention, Cache-Line Splits, and Measurement Artifacts on Modern x86* → publish **Sun Sep 27** · folder `research/2026-09-measurement-protocol/`
 
 ---
 
@@ -40,7 +40,7 @@
 | **Thu Sep 4** | **CALC (Strang §2.1–2.3)**: Derivative from first principles. Power rule proof. | **AGNER Ch 3 & Ch 7.1–7.3**: Bottlenecks, FP efficiency. | **secan**: First-class **inner-product** kernel `ip()` alongside `l2_squared`. Distance enum: L2 / IP / cosine. *(DL: Sat Sep 6.)* |
 | **Fri Sep 5** | **CALC (Strang §2.4–2.5)**: Product Rule $\frac{d}{dx}(uv) = u'v + uv'$, Quotient Rule, and differentiation of trigonometric functions ($\frac{d}{dx}\sin x = \cos x$). | **PIKUS Ch 1 & CSAPP §5.14**: Measurement-driven optimization, profiling-guided workflow with `perf stat`. | **secan**: Profile baseline scan with `perf stat`. Record IPC, cache misses, branch misses. Populate first row of README benchmark table. |
 
-> **📝 Essay 1 (Sat Sep 6)**: *"The Geometry of High-Dimensional Retrieval: From Trigonometric Coordinates and NDCG to CPU Performance Counters"*  
+> **📝 Essay 1 (Sat Sep 6)**: *"The Geometry of High-Dimensional Retrieval: Trigonometric Projections, NDCG Ranking, and Hardware Performance Counters"*  
 > **🧠 DL weekend**: `uv init transformers-pytorch`; SDPA + causal mask.
 
 ---

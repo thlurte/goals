@@ -16,7 +16,7 @@ Weekdays remain **`secan`/CUDA**. DL stays **Saturday afternoon**. Cluster shard
 
 # 📅 MONTH 5: Mathematical Statistics, Limit Theorems, GPU Graphs & Multi-GPU (Jan 2027)
 
-> **🔬 Monthly research**: *Paging vs Quantizing Memory: PagedAttention and TurboQuant as Complementary KV Levers* → publish **Sun Jan 31** · folder `research/2027-01-paging-vs-quantizing-kv/`
+> **🔬 Monthly research**: *Paging vs. Quantizing LLM KV Caches: Memory Fragmentation, Dequantization Overhead, and Serving Throughput at Long Contexts* → publish **Sun Jan 31** · folder `research/2027-01-paging-vs-quantizing-kv/`
 
 ---
 
@@ -38,7 +38,7 @@ Weekdays remain **`secan`/CUDA**. DL stays **Saturday afternoon**. Cluster shard
 | **Thu Dec 25** | **PROB §10.4**: The Central Limit Theorem (CLT): Step-by-step rigorous proof using Taylor expansion of MGFs. | **PMPP Ch 9**: Parallel Prefix Sum (Scan) for compacting candidate neighbor lists on GPU. | **secan**: Implement multi-query parallel graph search: launch grid of warps. Benchmark throughput vs CPU HNSW. |
 | **Fri Dec 26** | **PROB §10.5**: Applications of CLT in statistical error estimation and confidence intervals. | Profile GPU graph search with `ncu`: measure compute-to-memory stall ratio. | **secan**: Optimize GPU graph search: add shared memory caching for frequently visited upper-layer hub nodes. |
 
-> **📝 Essay 17 (Sat Dec 27)**: *"CAGRA and GPU Graph Traversal: Overcoming Random Memory Access at Warp Scale"*  
+> **📝 Essay 17 (Sat Dec 27)**: *"Warp-Scale Graph Traversal: Overcoming Random Memory Access Bottlenecks in GPU CAGRA"*  
 > **🚀 Month 4 research PUBLISH (Sun Dec 27)**: freeze `research/2026-12-three-paths-spine/paper.md` + public post.
 
 ---
@@ -62,7 +62,7 @@ Weekdays remain **`secan`/CUDA**. DL stays **Saturday afternoon**. Cluster shard
 | **Thu Jan 1** | **PROB §11.5–11.6**: Random walks on graphs: proving that $\pi_i = \frac{d_i}{2|E|}$ is the stationary distribution on an undirected graph with degree $d_i$. | **PMPP Ch 18**: Multi-GPU concepts, CUDA IPC, peer-to-peer memory access. | **secan**: Implement **GPU IVF-PQ**: combine GPU coarse cell routing with GPU FastScan distance inside cells. |
 | **Fri Jan 2** | **PROB §12.1–12.3**: Markov Chain Monte Carlo (MCMC): Metropolis-Hastings algorithm theory and proof of detailed balance. | Review all GPU quantization kernels. | **secan**: Benchmark GPU-FP32 vs GPU-FP16 vs GPU-SQ8 vs GPU-IVF-PQ vs GPU-FastScan. Create comprehensive comparison table. |
 
-> **📝 Essay 18 (Sat Jan 3)**: *"Markov Chains, Graph Random Walks, and Warp-Shuffle GPU FastScan"*
+> **📝 Essay 18 (Sat Jan 3)**: *"Markov Chains, Graph Random Walks, and High-Throughput GPU Quantized FastScan"*
 
 ---
 
@@ -88,7 +88,7 @@ Weekdays remain **`secan`/CUDA**. DL stays **Saturday afternoon**. Cluster shard
 | **Thu Jan 8** | **STATS §2.6**: Cramér-Rao Lower Bound (CRLB): Step-by-step rigorous proof using Cauchy-Schwarz inequality on the score function. | **PMPP Ch 19**: Heterogeneous CPU+GPU workload partitioning. | **secan**: Implement **CPU↔GPU hybrid fallback**: partition oversized dataset into GPU VRAM (fast) and CPU RAM (AVX2). Merge results. |
 | **Fri Jan 9** | **STATS §3.1–3.3**: Hypothesis testing foundations: Null ($H_0$) and alternative ($H_1$) hypotheses, Type I ($\alpha$) and Type II ($\beta$) errors, p-values, Neyman-Pearson Lemma. | Profile PagedAttention vs standard KV cache memory; contrast with TurboQuant bitwidth story (paging ≠ quantizing). | **secan**: Benchmark query batch sizes ($B=1, 10, 100, 1000$). Plot the CPU vs GPU crossover curve. |
 
-> **📝 Essay 19 (Sat Jan 10)**: *"PagedAttention Meets TurboQuant: Virtual Memory for KV Blocks and Extreme Bit Compression"*
+> **📝 Essay 19 (Sat Jan 10)**: *"Virtual Memory for Attention: Paged KV Blocks and Extreme PolarQuant 3-Bit Compression"*
 
 ---
 
@@ -112,6 +112,6 @@ Weekdays remain **`secan`/CUDA**. DL stays **Saturday afternoon**. Cluster shard
 | **Thu Jan 15** | **INFO §2.4–2.6**: Mutual Information $I(X; Y)$: properties, symmetry $I(X; Y) = I(Y; X)$, connection to KL divergence between joint and product marginals. | NVLink vs PCIe inter-GPU bandwidth analysis. | **secan**: Implement dynamic load balancing: redistribute heavy IVF cells across GPUs to prevent stragglers during multi-probe search. |
 | **Fri Jan 16** | **INFO §3.1–3.3**: Cross-Entropy $H(P, Q) = -\sum P(x) \log Q(x)$. Mathematical proof that minimizing Cross-Entropy is equivalent to minimizing KL Divergence to target distribution. | Measure multi-GPU scaling efficiency across 1, 2, and 4 GPUs on synthetic billion-scale data. | **secan**: Benchmark multi-GPU search on SIFT1M and large synthetic datasets. Measure scaling efficiency and communication overhead. |
 
-> **📝 Essay 20 (Sat Jan 17)**: *"Shannon Entropy, Kullback-Leibler Divergence, and Distributed Multi-GPU Search"*
+> **📝 Essay 20 (Sat Jan 17)**: *"Information Theory and Ring Collectives: Shannon Entropy, KL-Divergence, and Multi-GPU NCCL Search"*
 
 ---

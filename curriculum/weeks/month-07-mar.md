@@ -10,7 +10,7 @@
 
 # 📅 MONTH 7: GPU Specialization Closeout (Mar 2027)
 
-> **🔬 Monthly research**: *IO-Aware GPU Serving: FlashAttention-2, Multi-GPU Search, and KV Paging* → publish **Fri Mar 12** · folder `research/2027-03-gpu-serving/`
+> **🔬 Monthly research**: *Unified IO-Aware GPU Architecture for Vector Retrieval and LLM Attention Serving: FlashAttention-2, Paged KV Caches, and Multi-GPU Scaling* → publish **Fri Mar 12** · folder `research/2027-03-gpu-serving/`
 
 ---
 
@@ -26,7 +26,7 @@
 | **Thu Feb 19** | GQA + FA: fewer KV tiles. | Integrate GQA from Week 2/4. | **Python/CUDA**: FA-2 path with `num_kv_heads`. |
 | **Fri Feb 20** | — | — | Expose FA-2 via `cpp_extension`. Document speedup table for March paper. |
 
-> **📝 Essay 25 (Sat Feb 21)**: *"FlashAttention-2: Loop Order and Warp Partition"*
+> **📝 Essay 25 (Sat Feb 21)**: *"Warp Partitioning and Register Rescaling: Implementing FlashAttention-2 with Grouped-Query Attention"*
 
 ---
 
@@ -42,7 +42,7 @@
 | **Thu Feb 26** | — | Batch size crossover. | Plot $B=1..1000$ with **paged** KV. |
 | **Fri Feb 27** | Month 6 paper remaining figures. | — | Freeze ACORN/tombstone paper if not done Feb 28. |
 
-> **📝 Essay 26 (Sat Feb 28)**: *"Naive KV vs Paged KV: The Baseline We Should Have Had First"*  
+> **📝 Essay 26 (Sat Feb 28)**: *"Memory Fragmentation Under Autoregressive Generation: A/B Profiling Naive vs Paged KV Caches"*  
 > **🚀 Month 6 PUBLISH (Sun Feb 28)** if not already.
 
 ---
@@ -59,7 +59,7 @@
 | **Thu Mar 5** | — | GPU MaxSim CUTLASS. | Text query → visual page search E2E. |
 | **Fri Mar 6** | — | — | Month 7 paper figures: GPU QPS + ColPali demo. |
 
-> **📝 Essay 27 (Sat Mar 7)**: *"Sharded IVF and Visual Late Interaction"*
+> **📝 Essay 27 (Sat Mar 7)**: *"Distributed Multi-GPU Partitioning and Visual Late Interaction: Scaling Document Page Retrieval"*
 
 ---
 
@@ -75,7 +75,7 @@
 | **Thu Mar 12** | — | README. | **Publish Month 7 paper.** Tag `v2.0-complete`. |
 | **Fri Mar 13** | Rest / interview packet. | — | Portfolio: 7 papers + `secan` Pareto plots. |
 
-> **📝 Essay 28 (Sat Mar 14)**: *"7 Months: Vector Search Spine, GPU Serving, and a Slow-Path Retriever Stack"*  
+> **📝 Essay 28 (Sat Mar 14)**: *"Seven Months from First Principles: Vector Spaces, Modern SIMD/GPU Architectures, and the `v2.0` Engine"*  
 > **🚀 Month 7 research PUBLISH (Thu Mar 12)**: `research/2027-03-gpu-serving/paper.md`
 
 ---

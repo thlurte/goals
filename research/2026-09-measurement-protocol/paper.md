@@ -1,11 +1,11 @@
-# Measurement Before Optimization: A Reproducible Protocol for Vector Distance Microbenchmarks
+# Microarchitectural Limits of Vector Distance Kernels: Execution Port Contention, Cache-Line Splits, and Measurement Artifacts on Modern x86
 
 | | |
 |:---|:---|
 | **Month** | 1 — Sep 2026 |
 | **Publish by** | Sun Sep 27, 2026 |
 | **Folder** | `research/2026-09-measurement-protocol/` |
-| **Primary artifact** | Google Benchmark + `perf stat` on scalar L2 / IP / cosine |
+| **Primary artifact** | Google Benchmark + `perf stat` on scalar and SIMD distance kernels across $D \in [64, 1536]$ |
 | **Status** | draft |
 | **Template** | [`../_template.md`](../_template.md) |
 
@@ -13,7 +13,7 @@ Fill Sundays (09:00–13:00). Lab notes stay in `notes/`; do not paste essays he
 
 ## 1. Question
 
-Can a noise-aware, dead-code-safe microbenchmark protocol for L2 / inner-product / cosine kernels be reproduced to within **5% IPC** on the same CPU by another engineer using only `secan` + this paper?
+At what embedding dimensions ($D \in [64, 1536]$) does vector distance throughput transition from execution-port latency bound (FMA pipeline dependency chains) to memory-bandwidth bound (L1/L2 cache load-port and line-split saturation), and does a noise-aware, dead-code-safe microbenchmark protocol reproduce within **5% IPC** across runs?
 
 ## 2. Method
 

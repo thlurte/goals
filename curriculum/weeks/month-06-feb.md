@@ -10,7 +10,7 @@
 
 # 📅 MONTH 6: Optimization, Spectral Graphs, Production Hardening & Master Release (Feb 2027)
 
-> **🔬 Monthly research**: *Predicate-Aware Graphs: ACORN-style Filters, Tombstones, and Portable SIMD* → publish **Sat Feb 14** (with `v2.0`) · folder `research/2027-02-predicate-aware-graphs/`
+> **🔬 Monthly research**: *Mitigating Recall Collapse in Filtered Approximate Nearest Neighbor Graphs: An Empirical Evaluation of ACORN vs. Iterative Post-Filtering Across Selectivity Spectrums* → publish **Sun Feb 28** · folder `research/2027-02-predicate-aware-graphs/`
 
 ---
 
@@ -29,7 +29,7 @@
 | **Thu Jan 22** | **CONVEX §5.1–5.4**: Duality: Lagrangian, weak/strong duality, Slater. | CAGRA / NN-Descent GPU neighbor exchange. | **secan**: GPU NN-Descent base-layer graph construction. |
 | **Fri Jan 23** | **CONVEX §5.5**: KKT conditions: necessity and sufficiency for convex problems. | Review GPU ColBERT / ColPali integration. | **secan**: Ingest ColPali visual embeddings; text query → visual page search. **Stretch**: same tokens through MUVERA FDE + IP MIPS. |
 
-> **📝 Essay 21 (Sat Jan 24)**: *"KKT and ColPali: CLIP Projector + GPU MaxSim"*  
+> **📝 Essay 21 (Sat Jan 24)**: *"Duality and Multimodal Retrieval: Karush-Kuhn-Tucker Conditions, CLIP Alignment, and ColPali MaxSim"*  
 > **🧠 DL weekend**: CLIP-style projector + ColPali head.
 
 ---
@@ -51,7 +51,7 @@
 | **Thu Jan 29** | NUMA / PCIe budget. | `libnuma`; DiskANN under NUMA. | **secan**: NUMA pin; re-bench. |
 | **Fri Jan 30** | Range predicates vs boolean bitmaps. | Production checklist. | **secan (required)**: **Range filter** (`payload < x`) on pre-filter path; smoke tests. Tag `v1.5-production`. |
 
-> **📝 Essay 22 (Sat Jan 31)**: *"Pre/Post/Range Filters vs ACORN: Selectivity and Recall Collapse"*  
+> **📝 Essay 22 (Sat Jan 31)**: *"Graph Disconnection and Selectivity Cliffs: ACORN Predicate Subgraphs vs Post-Filtering"*  
 > **🚀 Month 5 research PUBLISH (Sun Jan 31)**: freeze `research/2027-01-paging-vs-quantizing-kv/paper.md` + public post.
 
 ---
@@ -93,7 +93,7 @@
 | **Thu Feb 12** | Info-theory recap: CE = $H+D_{KL}$ (ties to InfoNCE). | `-Wall -Wextra -Wpedantic`. | **secan**: Warning cleanup; examples/ stubs. |
 | **Fri Feb 13** | — | Month 6 paper freeze checklist. | **secan/CUDA**: Occupancy/`ncu` leftover polish. *(Naive KV re-bench: Saturday DL if needed.)* |
 
-> **📝 Essay 24 (Sat Feb 14)**: *"Portable SIMD and Production Graphs — Month 6 Lab Closeout"*  
+> **📝 Essay 24 (Sat Feb 14)**: *"Portable Vector Intrinsics and Production Graph Systems: Closing Block II Systems Hardening"*  
 > **🚀 Month 6 research PUBLISH (Sun Feb 28)**: `research/2027-02-predicate-aware-graphs/paper.md` (use remaining Feb weekends).
 
 ---
