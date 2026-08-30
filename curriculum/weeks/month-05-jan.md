@@ -55,6 +55,11 @@ Weekdays remain **`secan`/CUDA**. DL stays **Saturday afternoon**. Cluster shard
   * `[ ]` **Core**: Add shared memory caching for frequently visited upper-layer hub nodes to eliminate global memory roundtrips.
   * `⭐ Optional / Stretch`: Compute graph degree centrality to identify top-64 hub nodes for permanent SRAM staging.
 
+#### ⛔ What NOT to Overspend Time On (Time Traps)
+* ❌ **Do NOT** implement dynamic-degree variable-length CSR arrays on GPU—pad neighbor lists to fixed max degree $M$ for uniform warp loads.
+* ❌ **Do NOT** maintain per-thread dynamic candidate queues in global memory—warp-cooperative bitfield visited masks eliminate queue allocation.
+* ❌ **Do NOT** write measure-theoretic probability proofs for SLLN—grasp the Chebyshev proof for WLLN and move on.
+
 > **📝 Essay 17 (Sat Dec 27)**: *"Warp-Scale Graph Traversal: Overcoming Random Memory Access Bottlenecks in GPU CAGRA"*  
 > **🚀 Month 4 research PUBLISH (Sun Dec 27)**: freeze `research/2026-12-three-paths-spine/paper.md` + public post.
 
@@ -95,6 +100,11 @@ Weekdays remain **`secan`/CUDA**. DL stays **Saturday afternoon**. Cluster shard
 * **Fri Jan 2**:
   * `[ ]` **Core**: Benchmark full suite: GPU-FP32 vs GPU-FP16 vs GPU-SQ8 vs GPU-IVF-PQ vs GPU-FastScan; produce comprehensive performance matrix.
   * `⭐ Optional / Stretch`: Compute total memory bandwidth efficiency percentage against theoretical GPU VRAM bandwidth limit.
+
+#### ⛔ What NOT to Overspend Time On (Time Traps)
+* ❌ **Do NOT** implement 8-bit FastScan—4-bit FastScan fits 16 centroids directly in 16 warp registers for zero-shared-memory execution.
+* ❌ **Do NOT** spend hours proving stationary distributions for continuous-state Markov processes—focus on finite discrete-state transition matrices.
+* ❌ **Do NOT** tune codebook centroids on GPU—train codebooks offline on CPU/NumPy and upload final centroids to device memory.
 
 > **📝 Essay 18 (Sat Jan 3)**: *"Markov Chains, Graph Random Walks, and High-Throughput GPU Quantized FastScan"*
 
@@ -139,6 +149,11 @@ Weekdays remain **`secan`/CUDA**. DL stays **Saturday afternoon**. Cluster shard
   * `[ ]` **Core**: Benchmark query batch sizes $B \in [1, 1000]$; plot CPU AVX2 vs GPU latency crossover curve.
   * `⭐ Optional / Stretch`: Compute the exact QPS break-even point where GPU throughput justifies PCIe transfer latency overhead.
 
+#### ⛔ What NOT to Overspend Time On (Time Traps)
+* ❌ **Do NOT** implement dynamic memory defragmentation compaction algorithms—block paging naturally eliminates internal and external fragmentation.
+* ❌ **Do NOT** build a full LLM serving scheduler with continuous batching—focus strictly on the `BlockTable` address resolution kernel.
+* ❌ **Do NOT** solve advanced hypothesis testing Neyman-Pearson lemma optimization problems by hand—understand Type I/II error trade-offs and move on.
+
 > **📝 Essay 19 (Sat Jan 10)**: *"Virtual Memory for Attention: Paged KV Blocks and Extreme PolarQuant 3-Bit Compression"*
 
 ---
@@ -180,6 +195,13 @@ Weekdays remain **`secan`/CUDA**. DL stays **Saturday afternoon**. Cluster shard
   * `[ ]` **Core**: Run multi-GPU scalability benchmark suite; compute parallel scaling efficiency percentage across GPUs.
   * `⭐ Optional / Stretch`: Test multi-GPU fault tolerance by simulating device dropout and dynamic shard re-routing.
 
+#### ⛔ What NOT to Overspend Time On (Time Traps)
+* ❌ **Do NOT** implement multi-node distributed TCP network clustering—NCCL multi-GPU on a single multi-GPU host is the complete specialization target.
+* ❌ **Do NOT** implement complex 2D tensor parallelism—data sharding with top-$k$ heap gathering (`ncclAllGather`) is the standard for vector search.
+* ❌ **Do NOT** worry if you only have 1 GPU locally—NCCL supports single-process multi-stream GPU shard simulation.
+
 > **📝 Essay 20 (Sat Jan 17)**: *"Information Theory and Ring Collectives: Shannon Entropy, KL-Divergence, and Multi-GPU NCCL Search"*
+
+---
 
 ---

@@ -54,6 +54,11 @@
   * `[ ]` **Core**: Implement shared memory tiled L2 distance kernel loading query and dataset chunks into SRAM; measure speedup over naive kernel.
   * `⭐ Optional / Stretch`: Benchmark shared memory bank conflicts with varying tile dimension padding strategies.
 
+#### ⛔ What NOT to Overspend Time On (Time Traps)
+* ❌ **Do NOT** optimize single-query latency on GPU—GPUs require batched queries ($B \ge 32$) to hide launch and PCIe latency.
+* ❌ **Do NOT** use CUDA dynamic parallelism (launching kernels from inside kernels)—keep control flow on host CPU.
+* ❌ **Do NOT** hand-write complex combinatorial counting proofs on paper—master permutations and combinations, then move to probability rules.
+
 > **📝 Essay 13 (Sat Nov 29)**: *"The SIMT Execution Model: Why Naive GPU Distance Kernels Lose to CPU AVX2"*  
 > **🚀 Month 3 research PUBLISH (Sun Nov 29)**: freeze `research/2026-11-late-interaction-lsm/paper.md` + public post.
 
@@ -96,6 +101,11 @@
   * `[ ]` **Core**: Implement GPU warp-cooperative top-$k$ selection using partial bitonic sort; extract top-$k$ without sorting full dataset distance array.
   * `⭐ Optional / Stretch`: Benchmark top-$k$ throughput against NVIDIA CUB `BlockRadixSort` / `DeviceSegmentedRadixSort`.
 
+#### ⛔ What NOT to Overspend Time On (Time Traps)
+* ❌ **Do NOT** sort the entire 1,000,000 distances on GPU—use partial bitonic sort or warp priority queues to maintain only the top-$k$ ($k \le 100$).
+* ❌ **Do NOT** use atomic operations in global memory for distance reductions—warp shuffles (`__shfl_down_sync`) in registers are zero-overhead.
+* ❌ **Do NOT** implement complex thread block dynamic grid sizing—stick to 128 or 256 threads per block.
+
 > **📝 Essay 14 (Sat Dec 6)**: *"Warp Shuffles and Parallel Reductions: Saturating GPU Memory Bandwidth in Batch Vector Scanning"*
 
 ---
@@ -133,6 +143,11 @@
 * **Fri Dec 12**:
   * `[ ]` **Core**: Package FlashAttention-1 kernel via `torch.utils.cpp_extension`; benchmark forward latency against `torch.nn.functional.scaled_dot_product_attention`.
   * `⭐ Optional / Stretch`: Profile kernel memory throughput in Nsight Compute (`ncu --metrics dram__bytes_read.sum,dram__bytes_write.sum`).
+
+#### ⛔ What NOT to Overspend Time On (Time Traps)
+* ❌ **Do NOT** implement backward pass for FlashAttention—this week is strictly forward attention execution.
+* ❌ **Do NOT** attempt FlashAttention-2 loop inversion this week—FA-2 is specifically scheduled for Month 7 (Week 25).
+* ❌ **Do NOT** write inline PTX for Tensor Cores (`mma.sync`)—standard FP32/FP16 shared memory arithmetic is the foundation.
 
 > **📝 Essay 15 (Sat Dec 13)**: *"IO-Aware Tiling and Online Softmax: Constructing a FlashAttention-1 CUDA Kernel from First Principles"*  
 > **🧠 DL weekend**: Online softmax reference vs `torch.softmax`.
@@ -174,6 +189,13 @@
   * `[ ]` **Core**: Implement BM25 inverted index + Block-Max WAND early termination; fuse dense ANN candidates with sparse BM25 scores via Reciprocal Rank Fusion (RRF). Tag `v1.2-vs-spine-complete`.
   * `⭐ Optional / Stretch`: Compare retrieval quality (NDCG@10) of RRF rank fusion vs linear weighted score interpolation ($\alpha \cdot S_{\text{dense}} + (1-\alpha) \cdot S_{\text{sparse}}$).
 
+#### ⛔ What NOT to Overspend Time On (Time Traps)
+* ❌ **Do NOT** implement SPLADE sparse neural models—BM25 + Block-Max WAND is the required sparse baseline.
+* ❌ **Do NOT** run multi-billion scale benchmarks—DiskANN on a 1M to 10M vector subset proves out-of-core `io_uring` execution.
+* ❌ **Do NOT** build complex C++ REST server wrappers—keep `secan` exposed via `nanobind` and CLI.
+
 > **📝 Essay 16 (Sat Dec 20)**: *"Closing the Vector Search Spine: GPU IVF Streaming, Vamana Graph Pruning, and Out-of-Core `io_uring`"*
+
+---
 
 ---

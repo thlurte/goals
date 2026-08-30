@@ -57,6 +57,11 @@
   3. **Benchmark Scaffold**: Create `benchmarks/bench_distance.cpp` measuring `l2_squared` across vector dimensions $D \in \{64, 128, 768, 1536\}$.
   4. **Validation**: Run `cmake --build build && ./build/benchmarks/bench_distance` and verify zero ASan errors.
 
+#### ⛔ What NOT to Overspend Time On (Time Traps)
+* ❌ **Do NOT** hand-write a custom benchmarking timer framework or CLI argument parser—use Google Benchmark directly.
+* ❌ **Do NOT** start writing AVX2/AVX-512 SIMD intrinsics today—keep distance kernels in clean, naive scalar C++ to establish the unoptimized baseline.
+* ❌ **Do NOT** spend hours proving exotic trigonometric identities in the morning—once the unit circle wrapping and fundamental identity $\sin^2\theta + \cos^2\theta = 1$ are clear, move on.
+
 ---
 
 ### 🔹 Tuesday, Sep 2: Periodic Symmetries, Compiler Limits & Binary Data Loaders
@@ -104,6 +109,11 @@
   3. **Unit Tests**: Create `tests/test_io.cpp` generating synthetic binary files, reading them back, asserting equality.
   4. **Dataset Acquisition**: Download SIFT1M base + ground-truth into `data/sift1m/` (full 1M OK; Wed metrics may use a subset).
 
+#### ⛔ What NOT to Overspend Time On (Time Traps)
+* ❌ **Do NOT** build complex memory-mapped (`mmap`) kernel paging logic yet—standard `std::ifstream::read` into a contiguous `std::vector<float>` is 100% fine for Week 1.
+* ❌ **Do NOT** spend time downloading multi-gigabyte text datasets—stick strictly to SIFT1M.
+* ❌ **Do NOT** get bogged down in graphing tricky trigonometric curves by hand—understand period, frequency, and phase shift, then move forward.
+
 ---
 
 ### 🔹 Wednesday, Sep 3: Limits & Continuity, Processor Pipelines & IR Analytics
@@ -137,6 +147,11 @@
      * Mean Average Precision: $\text{MAP} = \frac{1}{|Q|} \sum_{q} \text{AP}(q)$
   2. **Ground Truth Validation**: Run exact scalar `linear_scan` on a **SIFT subset** first (e.g. 100K base / 1K queries); verify Recall@10 = 1.0, NDCG@10 = 1.0, MAP sanity checks. Full SIFT1M scan = stretch / weekend.
 
+#### ⛔ What NOT to Overspend Time On (Time Traps)
+* ❌ **Do NOT** run the exact scan over all 1,000,000 vectors $\times$ 10,000 queries tonight if it takes $>60$ seconds on scalar code—validate Recall@10 = 1.0 on a 100K slice.
+* ❌ **Do NOT** spend hours struggling with pathological $\epsilon$-$\delta$ proofs for non-linear functions—prove 1 linear limit to master the definition, then move to limit algebra.
+* ❌ **Do NOT** build a custom sorting network for top-$k$ yet—standard `std::priority_queue` or `std::partial_sort` is completely sufficient.
+
 ---
 
 ### 🔹 Thursday, Sep 4: The Derivative, Port Mapping & Inner-Product Kernel
@@ -168,7 +183,10 @@
   2. Same Google Benchmark harness: $D \in \{64, 128, 768, 1536\}$.
   3. Unit tests: IP vs naive loop; cosine via IP + norms.
 
-**DL moves to Sat Sep 6 14:00–18:00**: `uv init transformers-pytorch`; SDPA + causal mask tests. Not this night.
+#### ⛔ What NOT to Overspend Time On (Time Traps)
+* ❌ **Do NOT** touch Deep Learning / PyTorch tonight—DL is strictly reserved for Saturday afternoon (14:00–18:00).
+* ❌ **Do NOT** try to implement Fast Inverse Square Root (`Q_rsqrt`) hacks—use `std::sqrt` in standard C++20 for scalar cosine baseline.
+* ❌ **Do NOT** optimize compiler flags beyond `-O3 -march=native -DNDEBUG`.
 
 ---
 
@@ -203,9 +221,14 @@
   2. **Baseline Audit**: Record IPC (typically $\approx 1.0–1.2$ for naive scalar loops), throughput (QPS), and latency ($p50, p95, p99$).
   3. **Documentation**: Update `secan/README.md` with the baseline performance table to compare against future SIMD AVX2 and IVF optimizations.
 
+#### ⛔ What NOT to Overspend Time On (Time Traps)
+* ❌ **Do NOT** attempt to analyze 50 different hardware perf events—focus strictly on `cycles`, `instructions` (IPC), and `L1-dcache-load-misses`.
+* ❌ **Do NOT** worry if your baseline IPC is low (~1.0)—that is expected and proves the dependency chain bottleneck before Week 2 SIMD unrolling.
+* ❌ **Do NOT** start writing the Saturday essay early on Friday night—get proper rest for the Saturday 09:00 writing session.
+
 ---
 
-### 🔹 Saturday, Sep 6: Long-Form Technical Essay 1
+### 🔹 Saturday, Sep 6: Long-Form Technical Essay 1 & Deep Learning from Scratch
 
 #### ✍️ 09:00 – 13:00 | Technical Essay Writing
 * **Title**: *"The Geometry of High-Dimensional Retrieval: From Trigonometric Coordinates and NDCG to CPU Performance Counters"*
@@ -217,9 +240,14 @@
   4. **Empirical Benchmarks**: `perf stat` performance counter tables on SIFT subset / SIFT1M (cycles, instructions, cache misses).
   5. **Key Takeaway**: Why measurement must always precede optimization in high-performance AI systems.
 
-#### 🧠 14:00 – 18:00 | DL weekly
+#### 🧠 14:00 – 18:00 | DL Weekend Track
 * `uv init transformers-pytorch`; `uv add torch pytest`
 * Implement `scaled_dot_product_attention` + causal mask tests (`tests/test_attention.py`)
+* Verify numerically against `torch.nn.functional.scaled_dot_product_attention`.
+
+#### ⛔ Saturday Time Traps
+* ❌ **Do NOT** spend more than 4 hours on the essay—ship it at 13:00 sharp.
+* ❌ **Do NOT** pull in Hugging Face `transformers` models yet—implement SDPA purely in raw PyTorch tensors.
 
 ---
 

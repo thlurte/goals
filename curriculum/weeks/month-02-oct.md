@@ -53,6 +53,11 @@
   * `[ ]` **Core**: Refactor buffer management to zero-copy `std::span<const uint8_t>`; verify zero dynamic allocations during query execution.
   * `⭐ Optional / Stretch`: Implement Kahan compensated summation in FP32 distance accumulator and compare error accumulation on 1536-D vectors.
 
+#### ⛔ What NOT to Overspend Time On (Time Traps)
+* ❌ **Do NOT** implement complex per-dimension dynamic range clipping—a global 0.05th/99.95th percentile clip is sufficient.
+* ❌ **Do NOT** spend time writing 2-bit or 3-bit scalar quantizers—focus strictly on SQ8 (1 byte) and SQ4 (1 nibble).
+* ❌ **Do NOT** try to implement Product Quantization (PQ) yet—PQ starts next week (Week 6).
+
 > **📝 Essay 5 (Sat Oct 4)**: *"Low-Bit Compression Under Outliers: Gradients, Percentile Clipping, and SIMD Integer Saturation"*  
 > **🧠 DL weekend**: ViT patch embed + `[CLS]`.
 
@@ -93,6 +98,11 @@
 * **Fri Oct 10**:
   * `[ ]` **Core**: Wire `IVFPQIndex` composed index (coarse IVF centroids + PQ ADC inside inverted lists); benchmark Recall@10 on SIFT subset.
   * `⭐ Optional / Stretch`: Compare memory footprint and search latency of IVFFlat vs IVFPQ (e.g. 128 bytes/vector vs 16 bytes/vector).
+
+#### ⛔ What NOT to Overspend Time On (Time Traps)
+* ❌ **Do NOT** train PQ codebooks on all 1M vectors—subsample 50,000 to 100,000 vectors for codebook training.
+* ❌ **Do NOT** implement symmetric PQ distance computation (SDC)—asymmetric ADC (FP32 query vs PQ codes) is strictly superior for query accuracy.
+* ❌ **Do NOT** build a custom multi-threading pool for PQ encoding—standard `std::jthread` or OpenMP parallel loop is sufficient.
 
 > **📝 Essay 6 (Sat Oct 11)**: *"Constrained Optimization and Subspace Codebooks: Lagrange Multipliers in Product Quantization"*  
 > **🧠 DL weekend**: BERT + InfoNCE + **in-batch negatives**; export 768-D `.fvecs`. **Also**: implement `AdamW` optimizer from scratch ($m_t, v_t$ moment estimates, bias correction, **weight decay decoupling** from L2 reg). Train BERT with your AdamW; verify loss curve matches `torch.optim.AdamW`. **Hard negative mining**: retrieve BM25 top-100 per query, sample hard negatives from rank 10–100 for InfoNCE training.
@@ -139,6 +149,11 @@
   * `[ ]` **Core**: Implement Optimized Product Quantization (OPQ) orthogonal rotation matrix before PQ; benchmark Recall@10 vs plain PQ on SIFT.
   * `⭐ Optional / Stretch`: Implement residual PQ (2-stage PQ where stage 2 quantizes stage 1 residual error vector).
 
+#### ⛔ What NOT to Overspend Time On (Time Traps)
+* ❌ **Do NOT** implement RaBitQ this week—RaBitQ requires QR orthogonal factorizations which are formally studied in Week 10.
+* ❌ **Do NOT** spend time proving 3D Stokes' or Divergence theorems in calculus—skim their intuition and focus on Matrix Calculus & Automatic Differentiation.
+* ❌ **Do NOT** write a custom matrix optimizer for OPQ—a basic alternating least squares (ALS) rotation or residual PQ is 100% fine.
+
 > **📝 Essay 7 (Sat Oct 18)**: *"Anisotropic Loss and In-Register SIMD Lookups: Directional Error Weighting and FastScan PSHUFB"*  
 > **🧠 DL weekend**: MRL nested dims on tiny corpus.
 
@@ -179,6 +194,11 @@
 * **Fri Oct 24**:
   * `[ ]` **Core**: Ingest 768-D text embeddings (`.fvecs`) into HNSW; plot Recall@10 vs QPS curve across $efSearch \in [10, 200]$. Tag `v0.3-hnsw`.
   * `⭐ Optional / Stretch`: Calculate empirical hubness skewness $S_{N_k}$ on the 768-D text dataset and identify top-10 hub nodes.
+
+#### ⛔ What NOT to Overspend Time On (Time Traps)
+* ❌ **Do NOT** attempt complex lock-free concurrent HNSW graph mutations this week—focus strictly on single-threaded algorithmic correctness first.
+* ❌ **Do NOT** premature optimize the priority queues—standard `std::priority_queue` is fine (bounded flat heaps are added in Week 12).
+* ❌ **Do NOT** implement SVD whitening transforms this week—whitening requires full Linear Algebra SVD (Week 12).
 
 > **📝 Essay 8 (Sat Oct 25)**: *"Graph Laplacians, Hubness Skewness, and Navigable Small-World Routing: Building HNSW from Scratch"*  
 > **🚀 Month 2 research PUBLISH (Sun Oct 25)**: freeze `research/2026-10-anisotropy-hubness-bits/paper.md` + public post.

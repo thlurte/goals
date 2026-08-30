@@ -43,6 +43,11 @@
   * `[ ]` **Core**: Build production PyTorch C++ extension bindings for FA-2; generate speedup curves for Month 7 publication paper.
   * `⭐ Optional / Stretch`: Implement causal masking without branching by computing diagonal tile intersections.
 
+#### ⛔ What NOT to Overspend Time On (Time Traps)
+* ❌ **Do NOT** implement backward gradient kernels for FA-2—forward inference execution is the complete target.
+* ❌ **Do NOT** hand-tune PTX for specific Hopper (SM90) wgmma instructions—standard FP16/BF16 shared-memory tiling provides massive speedup portably.
+* ❌ **Do NOT** spend days micro-optimizing head dimensions beyond $d \in \{64, 128\}$.
+
 > **📝 Essay 25 (Sat Feb 21)**: *"Warp Partitioning and Register Rescaling: Implementing FlashAttention-2 with Grouped-Query Attention"*
 
 ---
@@ -75,6 +80,11 @@
 * **Fri Feb 27**:
   * `[ ]` **Core**: Finalize Month 6 paper figures and experimental artifacts; freeze publication document.
   * `⭐ Optional / Stretch`: Prepare automated benchmark reproduction scripts with Docker / shell runner.
+
+#### ⛔ What NOT to Overspend Time On (Time Traps)
+* ❌ **Do NOT** build a distributed speculative decoding engine—focus on single-node paged KV memory savings.
+* ❌ **Do NOT** spend time writing complex web UI dashboards for LLM serving—CLI output with tokens/sec is optimal.
+* ❌ **Do NOT** implement complex prefix caching trees—simple LRU page table eviction covers all requirements.
 
 > **📝 Essay 26 (Sat Feb 28)**: *"Memory Fragmentation Under Autoregressive Generation: A/B Profiling Naive vs Paged KV Caches"*  
 > **🚀 Month 6 PUBLISH (Sun Feb 28)** if not already.
@@ -110,6 +120,11 @@
   * `[ ]` **Core**: Generate Month 7 paper benchmark plots: Multi-GPU scaling curves, FlashAttention-2 speedups, and ColPali visual retrieval metrics.
   * `⭐ Optional / Stretch`: Package reproducible Python demonstration notebook for the ColPali + `secan` engine.
 
+#### ⛔ What NOT to Overspend Time On (Time Traps)
+* ❌ **Do NOT** train full multimodal vision-language models from scratch—use pre-trained ColPali weights to generate document embeddings.
+* ❌ **Do NOT** spend days on custom PDF rendering libraries—use PyMuPDF (`fitz`) to extract page images.
+* ❌ **Do NOT** build complex multi-host network protocols—focus on single-node multi-GPU NCCL.
+
 > **📝 Essay 27 (Sat Mar 7)**: *"Distributed Multi-GPU Partitioning and Visual Late Interaction: Scaling Document Page Retrieval"*
 
 ---
@@ -142,6 +157,11 @@
 * **Fri Mar 13**:
   * `[ ]` **Core**: Compile professional engineering portfolio packet: 7 conference-grade research papers, 28 technical essays, and `secan` repository release.
   * `⭐ Optional / Stretch`: Celebrate completing the 28-week vector search engine & AI systems specialization!
+
+#### ⛔ What NOT to Overspend Time On (Time Traps)
+* ❌ **Do NOT** try to add brand new algorithmic features in Week 28—this is strictly a stabilization, benchmarking, documentation, and release week.
+* ❌ **Do NOT** over-complicate documentation styling—clean Markdown and standard Doxygen HTML are standard.
+* ❌ **Do NOT** doubt your progress—you have built a world-class, conference-grade vector search engine and AI systems foundation from first principles.
 
 > **📝 Essay 28 (Sat Mar 14)**: *"Seven Months from First Principles: Vector Spaces, Modern SIMD/GPU Architectures, and the `v2.0` Engine"*  
 > **🚀 Month 7 research PUBLISH (Thu Mar 12)**: `research/2027-03-gpu-serving/paper.md`

@@ -49,6 +49,11 @@
   * `[ ]` **Core**: Implement centroid candidate pruning: query tokens retrieve candidate documents from centroid lists; score candidates with MaxSim.
   * `⭐ Optional / Stretch`: Profile candidate reduction ratio (e.g. evaluating top-1000 candidates vs full corpus MaxSim scan).
 
+#### ⛔ What NOT to Overspend Time On (Time Traps)
+* ❌ **Do NOT** build a custom Python tokenizer or vocabulary loader in C++—run tokenization and ColBERT embedding extraction in Python/PyTorch.
+* ❌ **Do NOT** compute full exact $N \times M$ all-pairs MaxSim for the entire corpus—always prune candidates using centroid lists or MUVERA.
+* ❌ **Do NOT** get lost in infinite Gaussian elimination matrix algebra by hand—understand $A = LU$ and 4 fundamental subspaces conceptually.
+
 > **📝 Essay 9 (Sat Nov 1)**: *"Beyond Single Vectors: The Linear Algebra, Matrix Decompositions, and SIMD Architecture of ColBERT Late Interaction"*  
 > **🧠 DL weekend**: ColBERT dual encoder + MaxSim + tiny Margin MSE. **Knowledge distillation**: implement cross-encoder reranker score as teacher → distill into bi-encoder student (MSE on logits). Compare embedding quality vs Week 6 InfoNCE-only training.  
 > **🔬 Month 3 Sundays**: BEIR or MS MARCO **slice** (dense + ColBERT MaxSim + **MUVERA** FDE candidates).
@@ -95,6 +100,11 @@
   * `[ ]` **Core**: Implement TurboQuant / PolarQuant 3-bit polar coordinate transform + 1-bit QJL error correction; plot Recall@1 vs bitwidth.
   * `⭐ Optional / Stretch`: Measure inner product estimation bias of PolarQuant with and without the 1-bit QJL residual error checker.
 
+#### ⛔ What NOT to Overspend Time On (Time Traps)
+* ❌ **Do NOT** implement full PLAID centroid pruning if MUVERA FDE gives satisfactory recall—treat PLAID and MUVERA as competing candidate generators.
+* ❌ **Do NOT** implement full DiskANN or `io_uring` this week—DiskANN is formally built in Week 16.
+* ❌ **Do NOT** write a full Householder reflector library for QR—standard Gram-Schmidt is sufficient for rotation matrix generation.
+
 > **📝 Essay 10 (Sat Nov 8)**: *"Orthogonal Projections and Fixed-Dimensional Encodings: Reducing ColBERT MaxSim to MIPS via MUVERA"*
 
 ---
@@ -135,6 +145,11 @@
   * `[ ]` **Core**: Implement crash-recovery test suite: kill process during active write stream; verify WAL replay restores exact vector count and recall.
   * `⭐ Optional / Stretch`: Benchmark sustained write throughput (vectors/sec) under simultaneous 100 QPS query load.
 
+#### ⛔ What NOT to Overspend Time On (Time Traps)
+* ❌ **Do NOT** build a full distributed database Raft consensus layer—single-node WAL with segment files is the complete scope.
+* ❌ **Do NOT** implement complex multi-level B-trees—flat binary disk segment files with contiguous arrays are ideal for vector storage.
+* ❌ **Do NOT** over-engineer background compaction heuristics—a simple merge of 2 oldest segments into 1 is sufficient.
+
 > **📝 Essay 11 (Sat Nov 15)**: *"Eigenvalues, Spectral Decompositions, and LSM Storage Engines: Write-Ahead Logs and Vector Compaction"*
 
 ---
@@ -171,6 +186,11 @@
 * **Fri Nov 21**:
   * `[ ]` **Core**: Implement `HNSWSQIndex` (HNSW graph routing over SQ8/SQ4 quantized vectors); generate Pareto curve vs `hnswlib` on SIFT and 768-D text. Tag `v1.0-cpu-complete`.
   * `⭐ Optional / Stretch`: Compile full Block I benchmark table with memory footprints, indexing times, and QPS at Recall@10 $\ge 0.95$.
+
+#### ⛔ What NOT to Overspend Time On (Time Traps)
+* ❌ **Do NOT** build REST / HTTP API endpoints in C++ (e.g. Crow / Pistache)—Python interacts with `secan` directly via zero-copy `nanobind`.
+* ❌ **Do NOT** embed `onnxruntime` C++ library into `secan`—run ONNX Runtime in Python and pass raw contiguous float pointers to `secan`.
+* ❌ **Do NOT** attempt full SVD matrix solvers from scratch—use Eigen or NumPy SVD for offline whitening matrices.
 
 > **📝 Essay 12 (Sat Nov 22)**: *"Singular Value Decomposition and Composed Vector Indexes: Pareto Evaluation of IVF-PQ and HNSW-SQ vs Faiss"*  
 > **🧠 DL weekend (required)**: Export Week 6 InfoNCE bi-encoder with `torch.onnx.export` (dynamic batch). Run **ONNX Runtime** `InferenceSession`; max abs / cosine error vs PyTorch on a fixed batch. Emit 768-D query/doc `.fvecs` via ORT and re-ingest into `HNSWSQIndex` / `IVFPQIndex` — confirm Recall@10 matches the Week 8 Fri PyTorch path within tolerance. **No** onnxruntime C++ inside `secan` (nanobind + ORT Python is enough). ColBERT ONNX = stretch later.

@@ -57,6 +57,12 @@
   * `[ ]` **Core**: Profile baseline exact scan with `perf stat -e cycles,instructions,branches,branch-misses,L1-dcache-load-misses`; record baseline IPC.
   * `⭐ Optional / Stretch`: Capture a flame graph / `perf record` trace of the exact scan loop; identify instruction-cache vs data-cache bottleneck.
 
+#### ⛔ What NOT to Overspend Time On (Time Traps)
+* ❌ **Do NOT** hand-write custom timing harnesses or CLI parsers—use Google Benchmark.
+* ❌ **Do NOT** start writing AVX2/AVX-512 intrinsics—keep distance kernels in scalar C++ to establish the true unoptimized baseline.
+* ❌ **Do NOT** run exact scans on all 1,000,000 vectors $\times$ 10,000 queries if scalar latency exceeds 60s—use the 100K subset for rapid iteration.
+* ❌ **Do NOT** touch Deep Learning / PyTorch on weekdays—DL is strictly reserved for Saturday afternoon (14:00–18:00).
+
 > **📝 Essay 1 (Sat Sep 6)**: *"The Geometry of High-Dimensional Retrieval: Trigonometric Projections, NDCG Ranking, and Hardware Performance Counters"*  
 > **🧠 DL weekend**: `uv init transformers-pytorch`; SDPA + causal mask.
 
@@ -96,6 +102,11 @@
 * **Fri Sep 12**:
   * `[ ]` **Core**: Implement `#ifdef __AVX512F__` backend for 512-bit ZMM registers (`_mm512_sub_ps`, `_mm512_fmadd_ps`).
   * `⭐ Optional / Stretch`: Profile AVX-512 frequency downclocking behavior (if CPU throttles clock speed under 512-bit vector load).
+
+#### ⛔ What NOT to Overspend Time On (Time Traps)
+* ❌ **Do NOT** hand-tune assembly (`__asm__`)—intrinsic functions (`_mm256_fmadd_ps`) give the compiler full register allocator freedom and produce optimal code.
+* ❌ **Do NOT** worry if AVX-512 is unsupported on your CPU—the `#ifdef __AVX512F__` macro ensures portable fallback to AVX2.
+* ❌ **Do NOT** write a custom memory allocator for vector alignments—`alignas(64)` or `posix_memalign` is sufficient.
 
 > **📝 Essay 2 (Sat Sep 13)**: *"Breaking Dependency Chains: Multi-Register SIMD Kernels"*  
 > **🧠 DL weekend**: MHA + GQA; Pre-LN vs Post-LN.
@@ -138,6 +149,11 @@
   * `[ ]` **Core**: Add `madvise(MADV_HUGEPAGE)` and transparent hugepage allocation on dataset mmap buffer.
   * `⭐ Optional / Stretch`: Measure TLB page fault overhead via `perf stat -e dTLB-load-misses` before and after hugepages.
 
+#### ⛔ What NOT to Overspend Time On (Time Traps)
+* ❌ **Do NOT** spend hours over-tuning prefetch distances—test 4 discrete distances ($4, 8, 16, 32$) and select the best median.
+* ❌ **Do NOT** implement complex custom thread pools for tiled scans yet—single-threaded cache tiling establishes the baseline.
+* ❌ **Do NOT** solve advanced trigonometric integrals with multiple integration-by-parts iterations on paper—grasp the reduction formula concept and stop.
+
 > **📝 Essay 3 (Sat Sep 20)**: *"Integrals, Accumulation, and the Physics of CPU Caches"*  
 > **🧠 DL weekend**: **Micrograd autograd engine** (~150 lines): `Value` class with `+`, `*`, `tanh`, `exp`, `backward()` using topological sort. Verify gradient of a tiny 2-layer MLP matches PyTorch. **Then** implement Pre-LN encoder + FFN with manual `backward()` for `Linear` layer (compare `dW` vs `param.grad`).
 
@@ -175,6 +191,11 @@
 * **Fri Sep 26**:
   * `[ ]` **Core**: Validate Inner Product (IP) search path on IVF index; plot Recall@10 vs `nprobe` for L2 and IP on SIFT1M. Tag `v0.2-simd-ivf`.
   * `⭐ Optional / Stretch`: Compute exact Voronoi cell boundary distances to identify boundary query misclassification rates.
+
+#### ⛔ What NOT to Overspend Time On (Time Traps)
+* ❌ **Do NOT** run $k$-means for 100 iterations—10 to 15 Lloyd iterations are more than enough to stabilize coarse centroids.
+* ❌ **Do NOT** implement Product Quantization (PQ) inside IVF lists yet—Month 1 is strictly IVFFlat (PQ is built in Month 2).
+* ❌ **Do NOT** try to implement GPU kernels this week—GPU is scheduled for Month 4 (Weeks 13–16).
 
 > **📝 Essay 4 (Sat Sep 27)**: *"From Euler's Formula to RoPE and Voronoi Cells"*  
 > **🚀 Month 1 PUBLISH (Sun Sep 27)**. **🧠 DL**: RoPE + SwiGLU + CausalLM + CE + naive KV. **Also**: implement `SGD` optimizer from scratch (momentum $v_t = \beta v_{t-1} + \nabla\mathcal{L}$, $\theta_t = \theta_{t-1} - \alpha v_t$); train CausalLM with your SGD, verify loss matches `torch.optim.SGD`.

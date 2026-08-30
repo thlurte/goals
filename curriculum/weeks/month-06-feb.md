@@ -46,6 +46,11 @@
   * `[ ]` **Core**: Ingest ColPali multimodal embeddings (text query $\to$ multi-vector document pages); evaluate visual search Recall@10.
   * `⭐ Optional / Stretch`: Route ColPali visual multi-vectors through MUVERA FDEs for instant 1-stage MIPS candidate retrieval.
 
+#### ⛔ What NOT to Overspend Time On (Time Traps)
+* ❌ **Do NOT** write a custom vision transformer model in C++—run ColPali image embeddings generation in Python/PyTorch.
+* ❌ **Do NOT** optimize GPU NN-Descent beyond 10-15 iterations—NN-Descent achieves $>98\%$ $k$-NN graph quality quickly.
+* ❌ **Do NOT** spend hours proving convex duality theorems for non-linear constraints—focus on KKT conditions for linear/quadratic programs.
+
 > **📝 Essay 21 (Sat Jan 24)**: *"Duality and Multimodal Retrieval: Karush-Kuhn-Tucker Conditions, CLIP Alignment, and ColPali MaxSim"*  
 > **🧠 DL weekend**: CLIP-style projector + ColPali head.
 
@@ -84,6 +89,11 @@
 * **Fri Jan 30**:
   * `[ ]` **Core**: Implement numeric range filtering (`timestamp >= t0 AND price < p1`) integrated into graph traversal. Tag `v1.5-production`.
   * `⭐ Optional / Stretch`: Implement Roaring Bitmaps for high-performance set operations on high-cardinality discrete payload tags.
+
+#### ⛔ What NOT to Overspend Time On (Time Traps)
+* ❌ **Do NOT** implement full SQL query parsing—simple metadata attribute dictionaries (`key == value`, `key < threshold`) cover 100% of filtering needs.
+* ❌ **Do NOT** rebuild the entire HNSW graph on every deletion—use atomic bitset tombstones and periodic asynchronous vacuuming.
+* ❌ **Do NOT** worry if your development machine is single-socket—simulate NUMA policies with `numactl --interleave` or `numactl --cpunodebind`.
 
 > **📝 Essay 22 (Sat Jan 31)**: *"Graph Disconnection and Selectivity Cliffs: ACORN Predicate Subgraphs vs Post-Filtering"*  
 > **🚀 Month 5 research PUBLISH (Sun Jan 31)**: freeze `research/2027-01-paging-vs-quantizing-kv/paper.md` + public post.
@@ -125,8 +135,12 @@
   * `[ ]` **Core**: Configure GitHub Actions / local cross-platform CI matrix building and running test suite on x86_64 and ARM64.
   * `⭐ Optional / Stretch`: Validate bitwise floating-point score equivalence across x86 AVX2 and ARM NEON kernels.
 
-> **📝 Essay 23 (Sat Feb 7)**: *"Spectral Graph Theory, Cheeger's Inequality, and Cross-Platform ARM NEON Optimization"*  
-> **🧠 DL stretch**: Same Week 12 ONNX graph under ORT on an ARM host (parity with x86).
+#### ⛔ What NOT to Overspend Time On (Time Traps)
+* ❌ **Do NOT** write manual assembly for ARM NEON—compiler intrinsics (`arm_neon.h`) generate clean instructions.
+* ❌ **Do NOT** spend days attempting exact Cheeger constant calculations on 1M node graphs (it is NP-hard)—use Fiedler sweep-cut approximations.
+* ❌ **Do NOT** support ancient instruction sets (SSE2, MMX)—focus strictly on modern AVX2, AVX-512, and ARM NEON.
+
+> **📝 Essay 23 (Sat Feb 7)**: *"Spectral Bottlenecks and Cross-Platform SIMD: Cheeger's Inequality, Graph Conductance, and ARM NEON Portability"*
 
 ---
 
@@ -160,6 +174,11 @@
 * **Fri Feb 13**:
   * `[ ]` **Core**: Finalize Month 6 experimental benchmarks; verify all automated test suites pass with 0 errors.
   * `⭐ Optional / Stretch`: Profile end-to-end P99 latency jitter under variable query concurrency ($QPS \in [100, 10000]$).
+
+#### ⛔ What NOT to Overspend Time On (Time Traps)
+* ❌ **Do NOT** tag `v2.0` release yet—Month 7 (March) is the dedicated release and closeout phase.
+* ❌ **Do NOT** over-tune CLI flags or build fancy terminal TUI animations—a clean POSIX CLI (`getopt` or `CLI11`) is sufficient.
+* ❌ **Do NOT** spend hours eliminating benign 3rd-party library warnings—suppress external warnings with `-isystem`.
 
 > **📝 Essay 24 (Sat Feb 14)**: *"Portable Vector Intrinsics and Production Graph Systems: Closing Block II Systems Hardening"*  
 > **🚀 Month 6 research PUBLISH (Sun Feb 28)**: `research/2027-02-predicate-aware-graphs/paper.md` (use remaining Feb weekends).
