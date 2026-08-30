@@ -14,6 +14,7 @@
 | [**This month’s weeks**](curriculum/weeks/month-01-sep.md) | Day-by-day tables, actions, stretch & time traps |
 | [**Architecture roadmap**](curriculum/roadmap.md) | Macro `secan` blueprint |
 | [**Monthly research**](research/README.md) | 7 publish topics + weekend research slots |
+| [**limbed + ggmbed**](projects/embed-runtimes.md) | Inspection holes + 6-month fix timeline (30–60 min/wk) |
 
 ## Entry prerequisites (before Sep 1)
 
@@ -55,6 +56,8 @@ goals/
 │   │   └── week-01.md ...    ← 28 weekly execution playbooks
 │   └── days/
 │       └── month-0N/day-*.md ← 196 individual daily runbooks
+├── projects/
+│   └── embed-runtimes.md     ← limbed + ggmbed (not secan)
 └── research/
     ├── README.md             ← publish bar + 7 topics
     └── YYYY-MM-<slug>/       ← monthly paper folders
