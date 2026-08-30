@@ -26,6 +26,23 @@
 | **Thu Feb 19** | GQA + FA: fewer KV tiles. | Integrate GQA from Week 2/4. | **Python/CUDA**: FA-2 path with `num_kv_heads`. |
 | **Fri Feb 20** | — | — | Expose FA-2 via `cpp_extension`. Document speedup table for March paper. |
 
+#### 📋 Daily Action Items & Optional Activities (Week 25)
+* **Mon Feb 16**:
+  * `[ ]` **Core**: Implement FlashAttention-2 loop inversion (outer loop over $Q$ blocks, inner loop over $K, V$ blocks) to reduce shared memory write traffic.
+  * `⭐ Optional / Stretch`: Derive the exact register footprint comparison between FlashAttention-1 and FlashAttention-2.
+* **Tue Feb 17**:
+  * `[ ]` **Core**: Implement sequence-level warp partitioning inside thread blocks; eliminate inter-warp synchronization barriers during forward pass.
+  * `⭐ Optional / Stretch`: Verify numerical equivalence against PyTorch `scaled_dot_product_attention` across sequence lengths $L \in [512, 16384]$.
+* **Wed Feb 18**:
+  * `[ ]` **Core**: Profile FA-1 vs FA-2 vs PyTorch SDPA in Nsight Compute (`ncu`); measure achieved TFLOPS and DRAM bandwidth saturation.
+  * `⭐ Optional / Stretch`: Calculate tensor core compute efficiency percentage (% of theoretical FP16 peak).
+* **Thu Feb 19**:
+  * `[ ]` **Core**: Implement Grouped-Query Attention (GQA) support in FA-2 kernel (`num_heads_q != num_heads_kv`); broadcast $K, V$ heads to query groups in SRAM.
+  * `⭐ Optional / Stretch`: Benchmark latency speedup of GQA ($G=8$) vs MHA ($G=1$) at batch size 32.
+* **Fri Feb 20**:
+  * `[ ]` **Core**: Build production PyTorch C++ extension bindings for FA-2; generate speedup curves for Month 7 publication paper.
+  * `⭐ Optional / Stretch`: Implement causal masking without branching by computing diagonal tile intersections.
+
 > **📝 Essay 25 (Sat Feb 21)**: *"Warp Partitioning and Register Rescaling: Implementing FlashAttention-2 with Grouped-Query Attention"*
 
 ---
@@ -41,6 +58,23 @@
 | **Wed Feb 25** | — | cuVS / serving APIs. | Hybrid CPU↔GPU fallback polish. |
 | **Thu Feb 26** | — | Batch size crossover. | Plot $B=1..1000$ with **paged** KV. |
 | **Fri Feb 27** | Month 6 paper remaining figures. | — | Freeze ACORN/tombstone paper if not done Feb 28. |
+
+#### 📋 Daily Action Items & Optional Activities (Week 26)
+* **Mon Feb 23**:
+  * `[ ]` **Core**: Benchmark Paged KV cache vs naive contiguous KV buffer under continuous autoregressive token generation; measure physical VRAM savings.
+  * `⭐ Optional / Stretch`: Implement copy-on-write page table semantics for parallel beam search decoding.
+* **Tue Feb 24**:
+  * `[ ]` **Core**: Document technical architecture trade-off: memory paging (vLLM) vs extreme coordinate quantization (TurboQuant).
+  * `⭐ Optional / Stretch`: Implement 3-bit PolarQuant dequantization on-the-fly in PagedAttention SRAM staging.
+* **Wed Feb 25**:
+  * `[ ]` **Core**: Polish heterogeneous CPU↔GPU memory fallback: dynamically migrate cold KV pages to host RAM over PCIe.
+  * `⭐ Optional / Stretch`: Measure page eviction latency and throughput over PCIe 4.0/5.0 bus.
+* **Thu Feb 26**:
+  * `[ ]` **Core**: Benchmark serving throughput across concurrency levels $B \in [1, 1000]$; plot tokens/second vs concurrent sequence count.
+  * `⭐ Optional / Stretch`: Profile memory manager overhead (block allocation and free list synchronization) under high request churn.
+* **Fri Feb 27**:
+  * `[ ]` **Core**: Finalize Month 6 paper figures and experimental artifacts; freeze publication document.
+  * `⭐ Optional / Stretch`: Prepare automated benchmark reproduction scripts with Docker / shell runner.
 
 > **📝 Essay 26 (Sat Feb 28)**: *"Memory Fragmentation Under Autoregressive Generation: A/B Profiling Naive vs Paged KV Caches"*  
 > **🚀 Month 6 PUBLISH (Sun Feb 28)** if not already.
@@ -59,6 +93,23 @@
 | **Thu Mar 5** | — | GPU MaxSim CUTLASS. | Text query → visual page search E2E. |
 | **Fri Mar 6** | — | — | Month 7 paper figures: GPU QPS + ColPali demo. |
 
+#### 📋 Daily Action Items & Optional Activities (Week 27)
+* **Mon Mar 2**:
+  * `[ ]` **Core**: Polish multi-GPU IVF load balancing: implement dynamic work-stealing for query batches across GPU streams.
+  * `⭐ Optional / Stretch`: Derive theoretical communication lower bounds for AllGather vs ReduceScatter in top-$k$ merging.
+* **Tue Mar 3**:
+  * `[ ]` **Core**: Measure scaling efficiency curve across 1, 2, and 4 GPU configurations (or multi-stream partition simulation).
+  * `⭐ Optional / Stretch`: Profile GPU-to-GPU peer memory copy bandwidth vs host-mediated staging.
+* **Wed Mar 4**:
+  * `[ ]` **Core**: Ingest CLIP/SigLIP visual patch embeddings into `MultiVectorIndex`; structure multi-vector storage with token centroid routing.
+  * `⭐ Optional / Stretch`: Measure token compression ratio using visual patch pooling (e.g. 1024 patches $\to$ 256 tokens).
+* **Thu Mar 5**:
+  * `[ ]` **Core**: Run end-to-end multimodal search: natural language query $\to$ GPU CUTLASS MaxSim $\to$ retrieved PDF document pages.
+  * `⭐ Optional / Stretch`: Build an interactive terminal visualizer rendering ASCII bounding boxes or page previews for top-5 results.
+* **Fri Mar 6**:
+  * `[ ]` **Core**: Generate Month 7 paper benchmark plots: Multi-GPU scaling curves, FlashAttention-2 speedups, and ColPali visual retrieval metrics.
+  * `⭐ Optional / Stretch`: Package reproducible Python demonstration notebook for the ColPali + `secan` engine.
+
 > **📝 Essay 27 (Sat Mar 7)**: *"Distributed Multi-GPU Partitioning and Visual Late Interaction: Scaling Document Page Retrieval"*
 
 ---
@@ -75,7 +126,25 @@
 | **Thu Mar 12** | — | README. | **Publish Month 7 paper.** Tag `v2.0-complete`. |
 | **Fri Mar 13** | Rest / interview packet. | — | Portfolio: 7 papers + `secan` Pareto plots. |
 
+#### 📋 Daily Action Items & Optional Activities (Week 28)
+* **Mon Mar 9**:
+  * `[ ]` **Core**: Complete unified CLI interface (`secan`) and generate full Doxygen API reference documentation.
+  * `⭐ Optional / Stretch`: Write a comprehensive architectural design paper summarizing the 7-month engineering journey.
+* **Tue Mar 10**:
+  * `[ ]` **Core**: Execute full `ann-benchmarks` protocol across all implemented index types: Flat, IVF, SQ8, PQ, FastScan, HNSW, IVFPQ, HNSWSQ, GPU-IVF, DiskANN.
+  * `⭐ Optional / Stretch`: Plot combined CPU/GPU Pareto frontier curves (Recall@10 vs QPS) comparing `secan` directly against `Faiss` and `hnswlib`.
+* **Wed Mar 11**:
+  * `[ ]` **Core**: Build 5 standalone C++ and Python example programs (exact scan, HNSW text search, ColBERT late interaction, GPU IVF batching, hybrid BM25+ANN).
+  * `⭐ Optional / Stretch`: Add a zero-dependency quickstart script that clones, builds, downloads SIFT1M, and benchmarks in under 60 seconds.
+* **Thu Mar 12**:
+  * `[ ]` **Core**: Finalize root `README.md` with complete benchmark tables; publish Month 7 research paper; git tag `v2.0-complete`.
+  * `⭐ Optional / Stretch`: Prepare public release announcement and publish technical blog posts summarizing key architectural discoveries.
+* **Fri Mar 13**:
+  * `[ ]` **Core**: Compile professional engineering portfolio packet: 7 conference-grade research papers, 28 technical essays, and `secan` repository release.
+  * `⭐ Optional / Stretch`: Celebrate completing the 28-week vector search engine & AI systems specialization!
+
 > **📝 Essay 28 (Sat Mar 14)**: *"Seven Months from First Principles: Vector Spaces, Modern SIMD/GPU Architectures, and the `v2.0` Engine"*  
 > **🚀 Month 7 research PUBLISH (Thu Mar 12)**: `research/2027-03-gpu-serving/paper.md`
 
 ---
+

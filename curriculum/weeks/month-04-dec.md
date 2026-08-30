@@ -37,6 +37,23 @@
 | **Thu Nov 27** | **PROB §2.4–2.5**: Bayes' Rule: prior and posterior probabilities. Base rate fallacy. Medical testing false positive mathematics. | **CUDA-GUIDE Memory Hierarchy**: Global memory (HBM/GDDR), Shared memory (SRAM), Registers, Constant memory. | **secan**: Implement dataset upload: store SIFT1M in GPU global memory. Implement batch brute-force scan kernel (1 block per query). |
 | **Fri Nov 28** | **PROB §2.6–2.7**: Independence of events: pairwise vs mutual independence. Conditional independence. Simpson's Paradox. | **PMPP Ch 5**: Memory architecture, shared memory tiling, bank conflicts, memory coalescing principles. | **secan**: Implement **shared memory tiled** L2 kernel: load query and dataset tiles into shared memory. Benchmark tiled vs naive. |
 
+#### 📋 Daily Action Items & Optional Activities (Week 13)
+* **Mon Nov 24**:
+  * `[ ]` **Core**: Configure CMake for CUDA (`enable_language(CUDA)`); set up `compute-sanitizer` automated memory checker in CI.
+  * `⭐ Optional / Stretch`: Write a CMake check that validates GPU compute capability (e.g. `sm_80`, `sm_89`, `sm_90`) and enables target-specific PTX generation.
+* **Tue Nov 25**:
+  * `[ ]` **Core**: Implement RAII `GpuBuffer<T>` wrapper managing device memory (`cudaMalloc`, `cudaFree`, `cudaMemcpyAsync`).
+  * `⭐ Optional / Stretch`: Implement CUDA pinned host memory allocator (`cudaHostAlloc`) and compare host-to-device transfer bandwidth.
+* **Wed Nov 26**:
+  * `[ ]` **Core**: Implement naive GPU L2 distance kernel (1 thread per vector pair); benchmark latency against single-threaded CPU AVX2.
+  * `⭐ Optional / Stretch`: Profile kernel with Nsight Compute (`ncu`) to observe warp execution stalls due to memory latency.
+* **Thu Nov 27**:
+  * `[ ]` **Core**: Upload full SIFT1M dataset to GPU VRAM; implement batch scan kernel assigning 1 thread block per query vector.
+  * `⭐ Optional / Stretch`: Measure PCIe bus upload bandwidth as a function of batch buffer size ($1\text{MB}$ to $1\text{GB}$).
+* **Fri Nov 28**:
+  * `[ ]` **Core**: Implement shared memory tiled L2 distance kernel loading query and dataset chunks into SRAM; measure speedup over naive kernel.
+  * `⭐ Optional / Stretch`: Benchmark shared memory bank conflicts with varying tile dimension padding strategies.
+
 > **📝 Essay 13 (Sat Nov 29)**: *"The SIMT Execution Model: Why Naive GPU Distance Kernels Lose to CPU AVX2"*  
 > **🚀 Month 3 research PUBLISH (Sun Nov 29)**: freeze `research/2026-11-late-interaction-lsm/paper.md` + public post.
 
@@ -62,6 +79,23 @@
 | **Thu Dec 4** | **PROB §4.4–4.6**: Law of the Unconscious Statistician (LOTUS). Variance and Standard Deviation properties: $\text{Var}(aX + b) = a^2 \text{Var}(X)$. | **PMPP Ch 7**: Tiling patterns, halo cells, constant memory for read-only query parameters. | **secan**: Implement fused Cosine similarity GPU kernel: dot product + norms in a single pass. Add inner-product kernel. |
 | **Fri Dec 5** | **PROB §4.7–4.9**: The Poisson Distribution $\text{Pois}(\lambda)$: Poisson limit theorem (law of rare events), derivation from $\text{Bin}(n, \lambda/n)$ as $n \to \infty$. | **PMPP Ch 11–12**: Parallel merge and sorting on GPU: partial bitonic sort, warp-cooperative top-$k$ selection. | **secan**: Implement **GPU top-k selection**: warp-cooperative partial bitonic sort extracting top-$k$ without sorting all $N$ distances. |
 
+#### 📋 Daily Action Items & Optional Activities (Week 14)
+* **Mon Dec 1**:
+  * `[ ]` **Core**: Implement coalesced memory layout for database vectors in GPU global memory; achieve $>85\%$ theoretical global memory bus utilization in `ncu`.
+  * `⭐ Optional / Stretch`: Compare AOS (Array-of-Structures) vs SOA (Structure-of-Arrays) memory layouts for high-dimensional vector embeddings on GPU.
+* **Tue Dec 2**:
+  * `[ ]` **Core**: Implement warp-level horizontal tree reduction using `__shfl_down_sync(0xffffffff, sum, offset)` in registers without shared memory.
+  * `⭐ Optional / Stretch`: Benchmark latency of register warp shuffle vs shared-memory atomic reduction across varying thread block sizes.
+* **Wed Dec 3**:
+  * `[ ]` **Core**: Implement batched GPU scanner processing $B=256$ queries in parallel; utilize CUDA Cooperative Groups for grid synchronization.
+  * `⭐ Optional / Stretch`: Implement asynchronous CUDA streams interleaving kernel execution for batch chunk $i$ with data transfer for chunk $i+1$.
+* **Thu Dec 4**:
+  * `[ ]` **Core**: Implement fused GPU Cosine similarity and Inner Product kernels computing dot products and norms in a single memory pass.
+  * `⭐ Optional / Stretch`: Use fast math compiler flag (`--use_fast_math`) and measure reciprocal square root (`rsqrtf`) speedup vs precision impact.
+* **Fri Dec 5**:
+  * `[ ]` **Core**: Implement GPU warp-cooperative top-$k$ selection using partial bitonic sort; extract top-$k$ without sorting full dataset distance array.
+  * `⭐ Optional / Stretch`: Benchmark top-$k$ throughput against NVIDIA CUB `BlockRadixSort` / `DeviceSegmentedRadixSort`.
+
 > **📝 Essay 14 (Sat Dec 6)**: *"Warp Shuffles and Parallel Reductions: Saturating GPU Memory Bandwidth in Batch Vector Scanning"*
 
 ---
@@ -82,6 +116,23 @@
 | **Wed Dec 10** | **PROB §6.1–6.3**: Moments, MGFs $M_X(t) = \mathbb{E}[e^{tX}]$. Finding moments via derivatives. | CUDA Shared Memory banking: avoiding bank conflicts when loading $Q, K^T$ tiles. | **CUDA**: Block GEMM $S_{ij} = Q_i K_j^T / \sqrt{d}$ in shared memory. Check tiles vs PyTorch. |
 | **Thu Dec 11** | **PROB §6.4–6.5**: MGF of Normal; sums of independent Normals via MGF multiplication. | **CUDA-GUIDE Warp Primitives**: `__shfl_sync` for warp-level row max and row sum. | **CUDA**: Online Softmax update in registers: block max $\tilde{m}$, $m_{new}$, update $\ell$, rescale $O$. |
 | **Fri Dec 12** | **PROB §6.6**: Gamma, Beta, Cauchy (undefined moments) — skim. | Profile with `ncu` if kernel runs; else debug correctness first. | **CUDA**: Expose FA-1 via `torch.utils.cpp_extension`. Bench vs SDPA on small shapes. FA-2 → Week 25. |
+
+#### 📋 Daily Action Items & Optional Activities (Week 15)
+* **Mon Dec 8**:
+  * `[ ]` **Core**: Implement CUDA thread grid configuration for FlashAttention ($B \times H$ blocks); allocate shared memory tiles for $Q, K, V$.
+  * `⭐ Optional / Stretch`: Derive the exact IO complexity reduction of FlashAttention ($O(N^2 d^2 / M)$ HBM accesses vs standard attention $O(N d + N^2)$).
+* **Tue Dec 9**:
+  * `[ ]` **Core**: Scaffold shared memory layout for $Q_{block}, K_{block}, V_{block}, O_{block}$; implement coalesced global-to-shared memory staging loop.
+  * `⭐ Optional / Stretch`: Implement double-buffered shared memory loading (`cuda::memcpy_async` in CUDA 11+) to overlap GMEM loads with computation.
+* **Wed Dec 10**:
+  * `[ ]` **Core**: Implement block GEMM tile multiplication $S_{ij} = Q_i K_j^T / \sqrt{d}$ in shared memory; verify numerical parity against `torch.matmul`.
+  * `⭐ Optional / Stretch`: Apply shared memory swizzling (XOR indexing) to eliminate bank conflicts during matrix transpose $K^T$ lookups.
+* **Thu Dec 11**:
+  * `[ ]` **Core**: Implement register online softmax algorithm: track running row max $\tilde{m}$, running normalizer $\ell$, and dynamically rescale accumulator $O$.
+  * `⭐ Optional / Stretch`: Verify numerical overflow protection of online softmax on inputs containing extreme logits ($> 10^4$).
+* **Fri Dec 12**:
+  * `[ ]` **Core**: Package FlashAttention-1 kernel via `torch.utils.cpp_extension`; benchmark forward latency against `torch.nn.functional.scaled_dot_product_attention`.
+  * `⭐ Optional / Stretch`: Profile kernel memory throughput in Nsight Compute (`ncu --metrics dram__bytes_read.sum,dram__bytes_write.sum`).
 
 > **📝 Essay 15 (Sat Dec 13)**: *"IO-Aware Tiling and Online Softmax: Constructing a FlashAttention-1 CUDA Kernel from First Principles"*  
 > **🧠 DL weekend**: Online softmax reference vs `torch.softmax`.
@@ -105,6 +156,23 @@
 | **Wed Dec 17** | **PROB §7.5**: 2D change of variables / Jacobian; Box-Muller. | **CUDA-GUIDE Streams & Events**. | **secan**: CUDA stream pipelining for IVF batches; quick SQ8-in-cell stretch if time. Tag `v1.1-gpu-ivf`. |
 | **Thu Dec 18** | **PROB §7.6–7.7**: Covariance and Correlation; Cauchy-Schwarz bound on $\rho$. | DiskANN: **Vamana graph construction** (α-prune) + `io_uring` fetch. | **secan (required)**: Implement **Vamana prune** (build graph, not only SSD fetch); compressed vectors in RAM; FP32 via `io_uring`. Recall vs in-RAM. |
 | **Fri Dec 19** | **PROB §7.8**: Multivariate Normal $\mathcal{N}(\boldsymbol{\mu}, \boldsymbol{\Sigma})$. | Ding & Suel WAND; **RRF** (Cormack et al.). | **secan (required)**: BM25 + Block-Max WAND; fuse via **RRF** *and* linear $\alpha$. Query-time $\alpha$ / k sweep. SPLADE = stretch. Tag `v1.2-vs-spine-complete`. |
+
+#### 📋 Daily Action Items & Optional Activities (Week 16)
+* **Mon Dec 15**:
+  * `[ ]` **Core**: Implement GPU IVF memory layout: store coarse centroids and jagged inverted list arrays with prefix sum offset table in device memory.
+  * `⭐ Optional / Stretch`: Implement zero-copy unified memory (`cudaMallocManaged`) coarse centroid lookup.
+* **Tue Dec 16**:
+  * `[ ]` **Core**: Implement GPU coarse cell routing kernel finding top-`nprobe` nearest centroids followed by warp-cooperative inverted list scanning.
+  * `⭐ Optional / Stretch`: Profile warp divergence when inverted lists have non-uniform lengths; implement dynamic warp-balancing scheduler.
+* **Wed Dec 17**:
+  * `[ ]` **Core**: Implement CUDA stream pipelining overlapping query upload, cell scan, and top-$k$ download. Tag `v1.1-gpu-ivf`.
+  * `⭐ Optional / Stretch`: Implement SQ8 integer quantization inside GPU IVF lists to double effective VRAM vector capacity.
+* **Thu Dec 18**:
+  * `[ ]` **Core**: Implement Vamana graph construction ($\alpha$-pruning heuristic); implement asynchronous out-of-core SSD vector fetch via Linux `io_uring` with `O_DIRECT`.
+  * `⭐ Optional / Stretch`: Benchmark random NVMe read IOPS and latency under varying `io_uring` queue depths ($QD \in [1, 128]$).
+* **Fri Dec 19**:
+  * `[ ]` **Core**: Implement BM25 inverted index + Block-Max WAND early termination; fuse dense ANN candidates with sparse BM25 scores via Reciprocal Rank Fusion (RRF). Tag `v1.2-vs-spine-complete`.
+  * `⭐ Optional / Stretch`: Compare retrieval quality (NDCG@10) of RRF rank fusion vs linear weighted score interpolation ($\alpha \cdot S_{\text{dense}} + (1-\alpha) \cdot S_{\text{sparse}}$).
 
 > **📝 Essay 16 (Sat Dec 20)**: *"Closing the Vector Search Spine: GPU IVF Streaming, Vamana Graph Pruning, and Out-of-Core `io_uring`"*
 

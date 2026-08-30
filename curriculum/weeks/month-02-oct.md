@@ -36,6 +36,23 @@
 | **Thu Oct 2** | **🔗 LSH & FP FORMATS**: Locality-Sensitive Hashing: random hyperplane LSH ($h(x) = \text{sign}(r \cdot x)$), collision probability $P = 1 - \frac{\theta}{\pi}$. Multi-probe LSH. SimHash → MUVERA connection. **IEEE 754**: sign/exponent/mantissa bits, FP16 vs BF16 vs TF32 format differences, Kahan summation for long reduction chains. | **CSAPP §2.4 (deep)**: Floating-point representation, rounding modes (round-to-nearest-even), subnormals, FP16/BF16 range vs precision tradeoffs for quantization kernels. | **secan**: Implement 4-bit scalar quantization (`SQ4`): pack 2 dimensions per byte with nibble masking. Build 2-stage SQ8 $\to$ FP32 re-ranker. |
 | **Fri Oct 3** | **CALC §13.7**: Maximum and minimum values of multivariable functions, critical points, the Hessian matrix and discriminant $D = f_{xx} f_{yy} - (f_{xy})^2$. | **PIKUS Ch 9**: High-performance C++, move semantics, zero-copy buffer views (`std::span`). | **secan**: `std::span` views over quantized buffers; zero-copy encode path. *(DL: Sat Oct 4 ViT.)* |
 
+#### 📋 Daily Action Items & Optional Activities (Week 5)
+* **Mon Sep 29**:
+  * `[ ]` **Core**: Implement `ScalarQuantizer` with percentile clipping (0.05th/99.95th); measure dequantization MSE on SIFT1M.
+  * `⭐ Optional / Stretch`: Derive and plot the Johnson-Lindenstrauss projection dimension curve $d(\epsilon, n)$ for $\epsilon \in [0.1, 0.5]$ and $n=10^6$.
+* **Tue Sep 30**:
+  * `[ ]` **Core**: Implement `l2_squared_sq8()` using AVX2 `_mm256_maddubs_epi16` and `_mm256_madd_epi16` (32 dims per iteration).
+  * `⭐ Optional / Stretch`: Benchmark VNNI integer dot product (`_mm256_dpbusd_epi32`) if your CPU supports AVX-VNNI.
+* **Wed Oct 1**:
+  * `[ ]` **Core**: Polish SQ8 LUT table layout; benchmark scalar dequantization + L2 vs direct integer SIMD distance.
+  * `⭐ Optional / Stretch`: Profile memory bandwidth saturation during full dataset SQ8 scan vs FP32 scan.
+* **Thu Oct 2**:
+  * `[ ]` **Core**: Implement 4-bit scalar quantization (`SQ4`) with nibble packing; construct 2-stage `SQ8 -> FP32` candidate re-ranker.
+  * `⭐ Optional / Stretch`: Implement a random hyperplane LSH bitset filter as a pre-stage candidate pruner.
+* **Fri Oct 3**:
+  * `[ ]` **Core**: Refactor buffer management to zero-copy `std::span<const uint8_t>`; verify zero dynamic allocations during query execution.
+  * `⭐ Optional / Stretch`: Implement Kahan compensated summation in FP32 distance accumulator and compare error accumulation on 1536-D vectors.
+
 > **📝 Essay 5 (Sat Oct 4)**: *"Low-Bit Compression Under Outliers: Gradients, Percentile Clipping, and SIMD Integer Saturation"*  
 > **🧠 DL weekend**: ViT patch embed + `[CLS]`.
 
@@ -59,6 +76,23 @@
 | **Wed Oct 8** | **CALC §14.1–14.2**: Double integrals over rectangular and general regions. Fubini's Theorem on swapping order of integration. | **AGNER Ch 7.10 & Ch 9**: Array structures for cache-friendly table lookups, stride optimization. | **secan**: Implement Asymmetric Distance Computation (ADC): precompute query-to-centroid table `float LUT[M][256]`. Distance = sum of $M$ lookups. |
 | **Thu Oct 9** | **CALC §14.3–14.4**: Double integrals in polar coordinates: $\iint f(r\cos\theta, r\sin\theta) r \, dr \, d\theta$. Evaluating the Gaussian integral $\int_{-\infty}^\infty e^{-x^2} dx = \sqrt{\pi}$. | **PIKUS Ch 10**: Compiler optimizations, `__restrict__`, loop vectorization, Link-Time Optimization (LTO). | **secan**: **Asymmetric BQ**: FP32 query vs 1-bit db (Hamming / IP estimator). Keep query in FP32. |
 | **Fri Oct 10** | **CALC §14.7**: Change of Variables in Multiple Integrals: Jacobian $J = \det\left(\frac{\partial(x, y, z)}{\partial(u, v, w)}\right)$. | **PIKUS Ch 11**: Undefined behavior, memory aliasing. | **secan (required)**: Wire **IVF + PQ ADC** sketch (`IVFPQIndex` stub): coarse IVF then PQ inside lists. Recall vs IVFFlat on SIFT subset. **Compose, do not stop at PQ-only.** *(DL InfoNCE: Sat Oct 11.)* |
+
+#### 📋 Daily Action Items & Optional Activities (Week 6)
+* **Mon Oct 6**:
+  * `[ ]` **Core**: Implement $k$-means clustering in C++ with $k$-means++ centroid seeding for a single subspace.
+  * `⭐ Optional / Stretch`: Implement multi-threaded parallel $k$-means Lloyd iteration across CPU cores.
+* **Tue Oct 7**:
+  * `[ ]` **Core**: Implement `ProductQuantizer` ($D \to M$ subspaces, $M \times 256$ codebooks); encode $N$ vectors into $N \times M$ bytes.
+  * `⭐ Optional / Stretch`: Measure quantization distortion $\|x - \tilde{x}\|^2$ as a function of subspace count $M \in \{8, 16, 32, 64\}$.
+* **Wed Oct 8**:
+  * `[ ]` **Core**: Implement Asymmetric Distance Computation (`float LUT[M][256]`); compute query distances via $M$ byte lookups.
+  * `⭐ Optional / Stretch`: Implement 4-way unrolled ADC distance loop accumulating 4 database vectors simultaneously into registers.
+* **Thu Oct 9**:
+  * `[ ]` **Core**: Implement asymmetric 1-bit Binary Quantization (FP32 query dot product with 1-bit binary codes).
+  * `⭐ Optional / Stretch`: Derive the exact expectation of inner-product error under 1-bit quantization for isotropic Gaussian vectors.
+* **Fri Oct 10**:
+  * `[ ]` **Core**: Wire `IVFPQIndex` composed index (coarse IVF centroids + PQ ADC inside inverted lists); benchmark Recall@10 on SIFT subset.
+  * `⭐ Optional / Stretch`: Compare memory footprint and search latency of IVFFlat vs IVFPQ (e.g. 128 bytes/vector vs 16 bytes/vector).
 
 > **📝 Essay 6 (Sat Oct 11)**: *"Constrained Optimization and Subspace Codebooks: Lagrange Multipliers in Product Quantization"*  
 > **🧠 DL weekend**: BERT + InfoNCE + **in-batch negatives**; export 768-D `.fvecs`. **Also**: implement `AdamW` optimizer from scratch ($m_t, v_t$ moment estimates, bias correction, **weight decay decoupling** from L2 reg). Train BERT with your AdamW; verify loss curve matches `torch.optim.AdamW`. **Hard negative mining**: retrieve BM25 top-100 per query, sample hard negatives from rank 10–100 for InfoNCE training.
@@ -88,6 +122,23 @@
 | **Thu Oct 16** | **🔗 MATRIX CALCULUS**: Jacobian of $Y = XW$. Chain rule through multi-layer networks: $\frac{\partial \mathcal{L}}{\partial W_1} = \frac{\partial \mathcal{L}}{\partial Y} \cdot \frac{\partial Y}{\partial Z} \cdot \frac{\partial Z}{\partial W_1}$. Softmax Jacobian $J_{ij} = p_i(\delta_{ij} - p_j)$. Skim Stokes/Divergence (not implemented). | AGNER-INST: Study `VPSHUFB`, `VPADDB`, `VPUNPCKLBW` instruction latency and accumulation chains. | **secan**: Implement **FastScan kernel**: load 16 centroid distances into `__m128i` / `__m256i`. Execute table lookups **entirely in-register** via PSHUFB. |
 | **Fri Oct 17** | **🔗 AUTOMATIC DIFFERENTIATION**: Forward-mode ($\dot{x}$ tangent vectors) vs reverse-mode ($\bar{x}$ adjoint vectors). Computational graphs. Why backprop is $O(p)$ forward, $O(p)$ backward regardless of parameter count. Connection to Week 3 micrograd. | **CSAPP §5.10–5.12**: Register spilling, store-load forwarding, pipeline limiting factors. | **secan (required)**: **OPQ** (rotate then PQ) *or* **residual PQ**. Compare Recall@10 vs plain PQ on SIFT. Asymmetric ADC remains FP32 query. *(DL: Sat Oct 18 MRL.)* |
 
+#### 📋 Daily Action Items & Optional Activities (Week 7)
+* **Mon Oct 13**:
+  * `[ ]` **Core**: Implement ScaNN anisotropic loss in `ProductQuantizer` with parallel penalty weight $h=5.0$.
+  * `⭐ Optional / Stretch`: Sweep $h \in [1.0, 10.0]$ on 768-D text embeddings to find optimal MIPS Recall@10 vs $h$.
+* **Tue Oct 14**:
+  * `[ ]` **Core**: Implement plain Binary Quantization (`_mm256_movemask_ps`) with Hamming distance via `_mm_popcnt_u64`.
+  * `⭐ Optional / Stretch`: Benchmark SIMD popcount (`_mm512_popcnt_epi64` / AVX-512 VPOPCNTDQ) vs hardware instruction `popcnt`.
+* **Wed Oct 15**:
+  * `[ ]` **Core**: Implement 4-bit PQ codebook generator ($k=16$ centroids per subspace, packing 2 codes per byte).
+  * `⭐ Optional / Stretch`: Analyze code distribution uniformity across the 16 centroid buckets to detect subspace collapse.
+* **Thu Oct 16**:
+  * `[ ]` **Core**: Implement AVX2 FastScan kernel executing 16-centroid distance lookups **entirely in-register** via `_mm256_shuffle_epi8` (PSHUFB).
+  * `⭐ Optional / Stretch`: Measure L1 cache read bandwidth during FastScan to prove table lookups do not hit cache memory.
+* **Fri Oct 17**:
+  * `[ ]` **Core**: Implement Optimized Product Quantization (OPQ) orthogonal rotation matrix before PQ; benchmark Recall@10 vs plain PQ on SIFT.
+  * `⭐ Optional / Stretch`: Implement residual PQ (2-stage PQ where stage 2 quantizes stage 1 residual error vector).
+
 > **📝 Essay 7 (Sat Oct 18)**: *"Anisotropic Loss and In-Register SIMD Lookups: Directional Error Weighting and FastScan PSHUFB"*  
 > **🧠 DL weekend**: MRL nested dims on tiny corpus.
 
@@ -111,6 +162,23 @@
 | **Wed Oct 22** | **SPECTRAL INTUITION**: Fiedler vector / algebraic connectivity — geometric meaning for bottlenecks (proofs → Week 23). | **PIKUS Ch 7**: Concurrent data structures, cache-friendly priority queues, memory allocation in graphs. | **secan**: Implement HNSW `search()`: beam search with visited-set. Implement Algorithm 4 diverse neighbor selection. |
 | **Thu Oct 23** | **GRAPH EMBEDDINGS**: Shortest path distance vs Euclidean embedding distance. Small-world clustering coefficient $C$ and path length $L$. | **AGNER Ch 7.12–7.13 & Ch 7.5**: Branch prediction in graph traversal, branchless heap sift-down (**prep for Week 12 Wed**). | **secan**: Correctness harness: Recall@10 vs exact on SIFT subset. Do **not** optimize heaps yet → Week 12 Wed. |
 | **Fri Oct 24** | **PURE MATH REVIEW**: Multivariable Calculus highlights (gradient, Hessian, Lagrange). | **CSAPP §5.14**: Profiling graph traversal bottlenecks with `perf record`. | **secan (required)**: Ingest **768-D text** `.fvecs` into HNSW; plot **Recall@10 vs QPS**. SIFT remains kernel bench; this is the text product bench. Tag `v0.3-hnsw`. |
+
+#### 📋 Daily Action Items & Optional Activities (Week 8)
+* **Mon Oct 20**:
+  * `[ ]` **Core**: Implement `HNSWIndex` core memory layout with flat CSR adjacency array (`neighbors[]` and `offsets[]`).
+  * `⭐ Optional / Stretch`: Profile memory fragmentation of dynamic node vectors `std::vector<std::vector<uint32_t>>` vs flat contiguous CSR buffer.
+* **Tue Oct 21**:
+  * `[ ]` **Core**: Implement HNSW `insert()` with exponential random level generator and greedy multi-layer descent.
+  * `⭐ Optional / Stretch`: Compute degree distribution histogram across all nodes to verify graph connectivity properties.
+* **Wed Oct 22**:
+  * `[ ]` **Core**: Implement HNSW `search()` (greedy descent on upper layers, $efSearch$ beam search on layer 0); implement Algorithm 4 diverse neighbor heuristic.
+  * `⭐ Optional / Stretch`: Measure the impact of Algorithm 4 neighbor diversity heuristic on Recall@10 vs simple nearest-neighbor graph edges.
+* **Thu Oct 23**:
+  * `[ ]` **Core**: Construct correctness test harness validating Recall@10 on 10,000 queries on SIFT subset.
+  * `⭐ Optional / Stretch`: Measure the correlation between graph hop count and Euclidean distance to ground-truth neighbor.
+* **Fri Oct 24**:
+  * `[ ]` **Core**: Ingest 768-D text embeddings (`.fvecs`) into HNSW; plot Recall@10 vs QPS curve across $efSearch \in [10, 200]$. Tag `v0.3-hnsw`.
+  * `⭐ Optional / Stretch`: Calculate empirical hubness skewness $S_{N_k}$ on the 768-D text dataset and identify top-10 hub nodes.
 
 > **📝 Essay 8 (Sat Oct 25)**: *"Graph Laplacians, Hubness Skewness, and Navigable Small-World Routing: Building HNSW from Scratch"*  
 > **🚀 Month 2 research PUBLISH (Sun Oct 25)**: freeze `research/2026-10-anisotropy-hubness-bits/paper.md` + public post.

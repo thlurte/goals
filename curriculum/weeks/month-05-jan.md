@@ -38,6 +38,23 @@ Weekdays remain **`secan`/CUDA**. DL stays **Saturday afternoon**. Cluster shard
 | **Thu Dec 25** | **PROB §10.4**: The Central Limit Theorem (CLT): Step-by-step rigorous proof using Taylor expansion of MGFs. | **PMPP Ch 9**: Parallel Prefix Sum (Scan) for compacting candidate neighbor lists on GPU. | **secan**: Implement multi-query parallel graph search: launch grid of warps. Benchmark throughput vs CPU HNSW. |
 | **Fri Dec 26** | **PROB §10.5**: Applications of CLT in statistical error estimation and confidence intervals. | Profile GPU graph search with `ncu`: measure compute-to-memory stall ratio. | **secan**: Optimize GPU graph search: add shared memory caching for frequently visited upper-layer hub nodes. |
 
+#### 📋 Daily Action Items & Optional Activities (Week 17)
+* **Mon Dec 22**:
+  * `[ ]` **Core**: Design GPU graph layout: store HNSW graph adjacency in GPU memory as a fixed-degree CSR array with padding.
+  * `⭐ Optional / Stretch`: Derive Chernoff bounds on the probability of graph search getting trapped in local minima.
+* **Tue Dec 23**:
+  * `[ ]` **Core**: Implement GPU graph search kernel: 1 warp per query; 32 threads evaluate 32 candidate neighbors in parallel.
+  * `⭐ Optional / Stretch`: Profile warp divergence during neighbor list filtering with Nsight Compute (`ncu`).
+* **Wed Dec 24**:
+  * `[ ]` **Core**: Implement warp-level visited set using `__ballot_sync` bitfields; implement warp-level top-$k$ beam with shuffle min-reduction.
+  * `⭐ Optional / Stretch`: Implement hash-based visited table in shared memory for graphs with degree $M > 64$.
+* **Thu Dec 25**:
+  * `[ ]` **Core**: Launch multi-query parallel graph search grid; benchmark QPS vs CPU HNSW implementation.
+  * `⭐ Optional / Stretch`: Measure the impact of thread block occupancy on memory latency hiding during random graph pointer chasing.
+* **Fri Dec 26**:
+  * `[ ]` **Core**: Add shared memory caching for frequently visited upper-layer hub nodes to eliminate global memory roundtrips.
+  * `⭐ Optional / Stretch`: Compute graph degree centrality to identify top-64 hub nodes for permanent SRAM staging.
+
 > **📝 Essay 17 (Sat Dec 27)**: *"Warp-Scale Graph Traversal: Overcoming Random Memory Access Bottlenecks in GPU CAGRA"*  
 > **🚀 Month 4 research PUBLISH (Sun Dec 27)**: freeze `research/2026-12-three-paths-spine/paper.md` + public post.
 
@@ -61,6 +78,23 @@ Weekdays remain **`secan`/CUDA**. DL stays **Saturday afternoon**. Cluster shard
 | **Wed Dec 31** | **PROB §11.4**: Stationary distributions: solving $\boldsymbol{\pi} P = \boldsymbol{\pi}$ as a left-eigenvector problem with eigenvalue $\lambda = 1$. | Research: GPU FastScan architecture using warp-level registers. | **secan**: Implement **GPU 4-bit FastScan**: store 16 centroid distances in warp registers. Execute lookups via `__shfl_sync(mask, dist, code)`. |
 | **Thu Jan 1** | **PROB §11.5–11.6**: Random walks on graphs: proving that $\pi_i = \frac{d_i}{2|E|}$ is the stationary distribution on an undirected graph with degree $d_i$. | **PMPP Ch 18**: Multi-GPU concepts, CUDA IPC, peer-to-peer memory access. | **secan**: Implement **GPU IVF-PQ**: combine GPU coarse cell routing with GPU FastScan distance inside cells. |
 | **Fri Jan 2** | **PROB §12.1–12.3**: Markov Chain Monte Carlo (MCMC): Metropolis-Hastings algorithm theory and proof of detailed balance. | Review all GPU quantization kernels. | **secan**: Benchmark GPU-FP32 vs GPU-FP16 vs GPU-SQ8 vs GPU-IVF-PQ vs GPU-FastScan. Create comprehensive comparison table. |
+
+#### 📋 Daily Action Items & Optional Activities (Week 18)
+* **Mon Dec 29**:
+  * `[ ]` **Core**: Implement GPU PQ ADC kernel staging query centroid lookup tables ($M \times 256$ floats) in shared memory.
+  * `⭐ Optional / Stretch`: Derive the exact transition probability matrix of random walk beam search on a small $k$-regular graph.
+* **Tue Dec 30**:
+  * `[ ]` **Core**: Optimize shared-memory LUT layout with stride padding; verify 0 shared-memory bank conflicts in `ncu`.
+  * `⭐ Optional / Stretch`: Benchmark shared memory broadcast efficiency when all 32 warp threads access the identical centroid entry.
+* **Wed Dec 31**:
+  * `[ ]` **Core**: Implement GPU 4-bit FastScan storing 16 centroid distances across 16 warp registers; execute table lookups via `__shfl_sync(mask, dist, code)`.
+  * `⭐ Optional / Stretch`: Measure register pressure and warp occupancy trade-offs in GPU FastScan kernel.
+* **Thu Jan 1**:
+  * `[ ]` **Core**: Compose GPU IVF-PQ index (GPU coarse quantizer + GPU FastScan kernel inside selected cells).
+  * `⭐ Optional / Stretch`: Implement asynchronous batch cell scanning using multiple CUDA streams.
+* **Fri Jan 2**:
+  * `[ ]` **Core**: Benchmark full suite: GPU-FP32 vs GPU-FP16 vs GPU-SQ8 vs GPU-IVF-PQ vs GPU-FastScan; produce comprehensive performance matrix.
+  * `⭐ Optional / Stretch`: Compute total memory bandwidth efficiency percentage against theoretical GPU VRAM bandwidth limit.
 
 > **📝 Essay 18 (Sat Jan 3)**: *"Markov Chains, Graph Random Walks, and High-Throughput GPU Quantized FastScan"*
 
@@ -88,6 +122,23 @@ Weekdays remain **`secan`/CUDA**. DL stays **Saturday afternoon**. Cluster shard
 | **Thu Jan 8** | **STATS §2.6**: Cramér-Rao Lower Bound (CRLB): Step-by-step rigorous proof using Cauchy-Schwarz inequality on the score function. | **PMPP Ch 19**: Heterogeneous CPU+GPU workload partitioning. | **secan**: Implement **CPU↔GPU hybrid fallback**: partition oversized dataset into GPU VRAM (fast) and CPU RAM (AVX2). Merge results. |
 | **Fri Jan 9** | **STATS §3.1–3.3**: Hypothesis testing foundations: Null ($H_0$) and alternative ($H_1$) hypotheses, Type I ($\alpha$) and Type II ($\beta$) errors, p-values, Neyman-Pearson Lemma. | Profile PagedAttention vs standard KV cache memory; contrast with TurboQuant bitwidth story (paging ≠ quantizing). | **secan**: Benchmark query batch sizes ($B=1, 10, 100, 1000$). Plot the CPU vs GPU crossover curve. |
 
+#### 📋 Daily Action Items & Optional Activities (Week 19)
+* **Mon Jan 5**:
+  * `[ ]` **Core**: Implement PyTorch `BlockTable` data structure mapping logical sequence tokens to physical GPU memory pages (block size 16).
+  * `⭐ Optional / Stretch`: Simulate KV cache memory fragmentation under random sequence length arrivals (verify $>60\%$ memory savings).
+* **Tue Jan 6**:
+  * `[ ]` **Core**: Implement PagedAttention CUDA kernel resolving physical $K, V$ block pointers on-the-fly via block table during attention decoding.
+  * `⭐ Optional / Stretch`: Add support for variable sequence lengths in a single batched kernel launch.
+* **Wed Jan 7**:
+  * `[ ]` **Core**: Build unified `GpuIndex` wrapper managing device memory lifecycle, async streams, and RAII cleanup.
+  * `⭐ Optional / Stretch`: Design a PolarQuant 3-bit KV compression sketch storing quantized $K$ cache blocks inside the PagedAttention block table.
+* **Thu Jan 8**:
+  * `[ ]` **Core**: Implement heterogeneous CPU+GPU fallback pipeline: retain hot dataset in GPU VRAM and overflow in host RAM; merge top-$k$ results.
+  * `⭐ Optional / Stretch`: Measure end-to-end query latency as a function of GPU VRAM partition fraction (0% to 100%).
+* **Fri Jan 9**:
+  * `[ ]` **Core**: Benchmark query batch sizes $B \in [1, 1000]$; plot CPU AVX2 vs GPU latency crossover curve.
+  * `⭐ Optional / Stretch`: Compute the exact QPS break-even point where GPU throughput justifies PCIe transfer latency overhead.
+
 > **📝 Essay 19 (Sat Jan 10)**: *"Virtual Memory for Attention: Paged KV Blocks and Extreme PolarQuant 3-Bit Compression"*
 
 ---
@@ -111,6 +162,23 @@ Weekdays remain **`secan`/CUDA**. DL stays **Saturday afternoon**. Cluster shard
 | **Wed Jan 14** | **INFO §2.1–2.3**: Relative Entropy (KL Divergence) $D_{KL}(P \| Q)$. Rigorous proof that $D_{KL} \geq 0$ via Jensen's Inequality on convex functions. | Faiss multi-GPU implementation: replicated coarse quantizer with sharded inverted lists. | **secan**: Implement **multi-GPU IVF**: replicate coarse centroids on all GPUs; shard inverted lists across GPUs. Route queries via NCCL. |
 | **Thu Jan 15** | **INFO §2.4–2.6**: Mutual Information $I(X; Y)$: properties, symmetry $I(X; Y) = I(Y; X)$, connection to KL divergence between joint and product marginals. | NVLink vs PCIe inter-GPU bandwidth analysis. | **secan**: Implement dynamic load balancing: redistribute heavy IVF cells across GPUs to prevent stragglers during multi-probe search. |
 | **Fri Jan 16** | **INFO §3.1–3.3**: Cross-Entropy $H(P, Q) = -\sum P(x) \log Q(x)$. Mathematical proof that minimizing Cross-Entropy is equivalent to minimizing KL Divergence to target distribution. | Measure multi-GPU scaling efficiency across 1, 2, and 4 GPUs on synthetic billion-scale data. | **secan**: Benchmark multi-GPU search on SIFT1M and large synthetic datasets. Measure scaling efficiency and communication overhead. |
+
+#### 📋 Daily Action Items & Optional Activities (Week 20)
+* **Mon Jan 12**:
+  * `[ ]` **Core**: Implement dataset sharding across $G$ GPUs; build `MultiGpuIndex` managing per-device buffers with peer-to-peer access enabled.
+  * `⭐ Optional / Stretch`: Derive the maximum Shannon entropy of quantized embedding codes under uniform vs Gaussian coordinate distributions.
+* **Tue Jan 13**:
+  * `[ ]` **Core**: Implement multi-GPU parallel scan merging per-GPU top-$k$ candidate heaps using `ncclAllGather`.
+  * `⭐ Optional / Stretch`: Benchmark NCCL ring-based collective transfer latency over NVLink vs PCIe bus.
+* **Wed Jan 14**:
+  * `[ ]` **Core**: Implement multi-GPU IVF: replicate coarse centroids across all devices; distribute inverted lists across GPUs.
+  * `⭐ Optional / Stretch`: Measure multi-GPU speedup over single GPU on a 10M vector synthetic dataset.
+* **Thu Jan 15**:
+  * `[ ]` **Core**: Implement dynamic cell redistribution to eliminate GPU load imbalance under skewed query workloads.
+  * `⭐ Optional / Stretch`: Profile GPU execution timeline in Nsight Systems (`nsys`) to identify inter-GPU communication bubbles.
+* **Fri Jan 16**:
+  * `[ ]` **Core**: Run multi-GPU scalability benchmark suite; compute parallel scaling efficiency percentage across GPUs.
+  * `⭐ Optional / Stretch`: Test multi-GPU fault tolerance by simulating device dropout and dynamic shard re-routing.
 
 > **📝 Essay 20 (Sat Jan 17)**: *"Information Theory and Ring Collectives: Shannon Entropy, KL-Divergence, and Multi-GPU NCCL Search"*
 

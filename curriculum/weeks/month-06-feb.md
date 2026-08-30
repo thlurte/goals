@@ -29,6 +29,23 @@
 | **Thu Jan 22** | **CONVEX §5.1–5.4**: Duality: Lagrangian, weak/strong duality, Slater. | CAGRA / NN-Descent GPU neighbor exchange. | **secan**: GPU NN-Descent base-layer graph construction. |
 | **Fri Jan 23** | **CONVEX §5.5**: KKT conditions: necessity and sufficiency for convex problems. | Review GPU ColBERT / ColPali integration. | **secan**: Ingest ColPali visual embeddings; text query → visual page search. **Stretch**: same tokens through MUVERA FDE + IP MIPS. |
 
+#### 📋 Daily Action Items & Optional Activities (Week 21)
+* **Mon Jan 19**:
+  * `[ ]` **Core**: Implement GPU MaxSim kernel in CUTLASS computing batched GEMM followed by warp row-max and column-sum reduction.
+  * `⭐ Optional / Stretch`: Derive the dual formulation of token alignment under convex regularized transportation costs.
+* **Tue Jan 20**:
+  * `[ ]` **Core**: Fuse GPU MaxSim query scoring and candidate document filtering into a single CUDA pipeline.
+  * `⭐ Optional / Stretch`: Benchmark latency vs batch size for single-page visual tokens (1030 tokens per image page).
+* **Wed Jan 21**:
+  * `[ ]` **Core**: Implement GPU NN-Descent base-layer $k$-NN graph construction algorithm exchanging neighbor candidates across thread blocks.
+  * `⭐ Optional / Stretch`: Measure convergence speed (graph recall vs iteration count) on 100K embedding vectors.
+* **Thu Jan 22**:
+  * `[ ]` **Core**: Implement 2-opt edge pruning heuristic in GPU NN-Descent graph construction.
+  * `⭐ Optional / Stretch`: Verify Slater's condition for constrained graph sparsification optimization problems.
+* **Fri Jan 23**:
+  * `[ ]` **Core**: Ingest ColPali multimodal embeddings (text query $\to$ multi-vector document pages); evaluate visual search Recall@10.
+  * `⭐ Optional / Stretch`: Route ColPali visual multi-vectors through MUVERA FDEs for instant 1-stage MIPS candidate retrieval.
+
 > **📝 Essay 21 (Sat Jan 24)**: *"Duality and Multimodal Retrieval: Karush-Kuhn-Tucker Conditions, CLIP Alignment, and ColPali MaxSim"*  
 > **🧠 DL weekend**: CLIP-style projector + ColPali head.
 
@@ -50,6 +67,23 @@
 | **Wed Jan 28** | Tombstone amortization vs vacuum. | Lock-free bitset / graph mutation. | **secan**: Tombstones + vacuum rewires. |
 | **Thu Jan 29** | NUMA / PCIe budget. | `libnuma`; DiskANN under NUMA. | **secan**: NUMA pin; re-bench. |
 | **Fri Jan 30** | Range predicates vs boolean bitmaps. | Production checklist. | **secan (required)**: **Range filter** (`payload < x`) on pre-filter path; smoke tests. Tag `v1.5-production`. |
+
+#### 📋 Daily Action Items & Optional Activities (Week 22)
+* **Mon Jan 26**:
+  * `[ ]` **Core**: Implement metadata payload index (B-tree / sorted IDs); compare pre-filtering vs post-filtering; reproduce recall collapse at selectivity $< 1\%$.
+  * `⭐ Optional / Stretch`: Derive the exact probability of graph search disconnection under Bernoulli predicate selection $p$.
+* **Tue Jan 27**:
+  * `[ ]` **Core**: Implement ACORN $N$-hop predicate-aware graph routing traversing predicate-satisfying subgraphs.
+  * `⭐ Optional / Stretch`: Measure ACORN Recall@10 retention across low-selectivity regimes ($0.1\%$ to $5\%$) vs standard HNSW.
+* **Wed Jan 28**:
+  * `[ ]` **Core**: Implement soft vector deletion via atomic bitset tombstones; implement background graph vacuum rewiring neighbor edges.
+  * `⭐ Optional / Stretch`: Measure graph routing degradation as tombstone percentage increases from 0% to 30% before vacuuming.
+* **Thu Jan 29**:
+  * `[ ]` **Core**: Pin memory allocations and worker threads to specific NUMA nodes using `libnuma` (`numa_alloc_onnode`).
+  * `⭐ Optional / Stretch`: Measure cross-socket QPI/UPI interconnect traffic during high-concurrency multi-threaded queries.
+* **Fri Jan 30**:
+  * `[ ]` **Core**: Implement numeric range filtering (`timestamp >= t0 AND price < p1`) integrated into graph traversal. Tag `v1.5-production`.
+  * `⭐ Optional / Stretch`: Implement Roaring Bitmaps for high-performance set operations on high-cardinality discrete payload tags.
 
 > **📝 Essay 22 (Sat Jan 31)**: *"Graph Disconnection and Selectivity Cliffs: ACORN Predicate Subgraphs vs Post-Filtering"*  
 > **🚀 Month 5 research PUBLISH (Sun Jan 31)**: freeze `research/2027-01-paging-vs-quantizing-kv/paper.md` + public post.
@@ -74,6 +108,23 @@
 | **Thu Feb 5** | **SPECTRAL §2.4**: Cheeger's Inequality: Rigorous proof connecting the spectral gap $\lambda_2$ to the conductance $h(G)$ via Fiedler vector sweep cuts. | Research: runtime CPU dispatch patterns in Faiss and HNSWLib (`platform_macros.h`). | **secan**: Implement runtime CPU feature detection: `cpuid` on x86, `/proc/cpuinfo` / `sysctl` on ARM. Configure dynamic dispatch. |
 | **Fri Feb 6** | **SPECTRAL §3.1**: Expander graphs: Spectral expansion vs edge expansion. Why Ramanujan graphs have optimal small-world routing properties. | Set up cross-platform CI matrix: Ubuntu x86_64, macOS Apple Silicon (ARM64). | **secan**: Verify builds and tests on x86_64 and ARM64. |
 
+#### 📋 Daily Action Items & Optional Activities (Week 23)
+* **Mon Feb 2**:
+  * `[ ]` **Core**: Design unified SIMD abstraction namespace with compile-time and runtime dispatch architecture.
+  * `⭐ Optional / Stretch`: Compute the spectrum (all eigenvalues) of the normalized Laplacian on an HNSW graph component.
+* **Tue Feb 3**:
+  * `[ ]` **Core**: Implement ARM NEON FP32 distance kernels (`l2_squared_neon`, `cosine_distance_neon`) with 4-way unrolling.
+  * `⭐ Optional / Stretch`: Compare NEON 128-bit instruction latency and throughput on Apple Silicon M-series vs ARM Graviton.
+* **Wed Feb 4**:
+  * `[ ]` **Core**: Implement ARM NEON integer quantized kernels (`l2_squared_sq8_neon`, `cosine_distance_sq8_neon`) using `vdotq_u32` (dot product instructions).
+  * `⭐ Optional / Stretch`: Calculate graph conductance $h(G)$ of HNSW layer 0 to evaluate bottleneck severity.
+* **Thu Feb 5**:
+  * `[ ]` **Core**: Implement runtime CPU capability probe (`cpuid` on x86, `getauxval` on Linux ARM, `sysctlbyname` on macOS); configure automatic dynamic function pointers.
+  * `⭐ Optional / Stretch`: Write a microbenchmark measuring dispatch function pointer overhead vs direct inlined function call.
+* **Fri Feb 6**:
+  * `[ ]` **Core**: Configure GitHub Actions / local cross-platform CI matrix building and running test suite on x86_64 and ARM64.
+  * `⭐ Optional / Stretch`: Validate bitwise floating-point score equivalence across x86 AVX2 and ARM NEON kernels.
+
 > **📝 Essay 23 (Sat Feb 7)**: *"Spectral Graph Theory, Cheeger's Inequality, and Cross-Platform ARM NEON Optimization"*  
 > **🧠 DL stretch**: Same Week 12 ONNX graph under ORT on an ARM host (parity with x86).
 
@@ -92,6 +143,23 @@
 | **Wed Feb 11** | Fourier skim (optional): convolution as GEMM intuition. | CUB/Thrust fusion notes. | **CUDA**: Fused distance+topk kernel (was former Week 22 GPU polish). |
 | **Thu Feb 12** | Info-theory recap: CE = $H+D_{KL}$ (ties to InfoNCE). | `-Wall -Wextra -Wpedantic`. | **secan**: Warning cleanup; examples/ stubs. |
 | **Fri Feb 13** | — | Month 6 paper freeze checklist. | **secan/CUDA**: Occupancy/`ncu` leftover polish. *(Naive KV re-bench: Saturday DL if needed.)* |
+
+#### 📋 Daily Action Items & Optional Activities (Week 24)
+* **Mon Feb 9**:
+  * `[ ]` **Core**: Build unified CLI framework (`secan build`, `secan search`, `secan bench`) with argument parsing.
+  * `⭐ Optional / Stretch`: Implement JSON-formatted stdout output mode for easy benchmarking script integration.
+* **Tue Feb 10**:
+  * `[ ]` **Core**: Tune GPU thread block occupancy using `__launch_bounds__` directives across all IVF and graph search kernels.
+  * `⭐ Optional / Stretch`: Analyze register spilling to local memory in Nsight Compute and tune max registers per thread (`-maxrregcount`).
+* **Wed Feb 11**:
+  * `[ ]` **Core**: Implement fused GPU distance calculation + top-$k$ warp selection kernel eliminating intermediate global memory roundtrip.
+  * `⭐ Optional / Stretch`: Compare fused kernel throughput against separated distance + CUB DeviceRadixSort.
+* **Thu Feb 12**:
+  * `[ ]` **Core**: Enable `-Wall -Wextra -Wpedantic -Werror`; resolve all compiler warnings across CPU and GPU codebases.
+  * `⭐ Optional / Stretch`: Run `clang-tidy` static analyzer across all header and source files in `secan`.
+* **Fri Feb 13**:
+  * `[ ]` **Core**: Finalize Month 6 experimental benchmarks; verify all automated test suites pass with 0 errors.
+  * `⭐ Optional / Stretch`: Profile end-to-end P99 latency jitter under variable query concurrency ($QPS \in [100, 10000]$).
 
 > **📝 Essay 24 (Sat Feb 14)**: *"Portable Vector Intrinsics and Production Graph Systems: Closing Block II Systems Hardening"*  
 > **🚀 Month 6 research PUBLISH (Sun Feb 28)**: `research/2027-02-predicate-aware-graphs/paper.md` (use remaining Feb weekends).
