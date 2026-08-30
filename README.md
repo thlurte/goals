@@ -11,8 +11,7 @@
 |:---|:---|
 | [**Curriculum index**](curriculum/README.md) | Cadence, pillars, month map |
 | [**Hard landings**](curriculum/landings.md) | What must ship which week |
-| [**Week 1 execution**](curriculum/week-01/execution.md) | Sep 1–7 hour-by-hour |
-| [**This month’s weeks**](curriculum/weeks/month-01-sep.md) | Day tables (pick current month) |
+| [**This month’s weeks**](curriculum/weeks/month-01-sep.md) | Day-by-day tables, actions, stretch & time traps |
 | [**Architecture roadmap**](curriculum/roadmap.md) | Macro `secan` blueprint |
 | [**Monthly research**](research/README.md) | 7 publish topics + weekend research slots |
 
@@ -51,8 +50,7 @@ goals/
 │   ├── landings.md           ← VS / DL / deferred ledgers
 │   ├── roadmap.md            ← architecture blueprint
 │   ├── essays.md             ← lab-note titles
-│   ├── week-01/execution.md  ← detailed Week 1
-│   └── weeks/month-0N-*.md   ← day tables by month
+│   └── weeks/month-0N-*.md   ← day tables & actions by month
 └── research/
     ├── README.md             ← publish bar + 7 topics
     └── YYYY-MM-<slug>/       ← monthly paper folders

@@ -20,8 +20,6 @@
 
 ### Week 1 (Sep 1–5): Pure Trigonometry, Limits, Derivatives & Measurement
 
-> **Hour-by-hour**: [`week-01/execution.md`](../week-01/execution.md)
-
 **Theme**: Trigonometric ratios, unit circle wrapping, derivative foundations, and scientific C++ measurement.
 
 * **Pure Math (Gelfand Trig & Strang Calc)**:

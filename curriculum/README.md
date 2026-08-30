@@ -28,7 +28,7 @@
 | [Hard landings](landings.md) | Deferred ledger, VS composition, DL weekends |
 | [Architecture roadmap](roadmap.md) | Macro blueprint for `secan` |
 | [Essay schedule](essays.md) | 28 lab-note titles (don’t polish all) |
-| [Week 1 execution](week-01/execution.md) | Hour-by-hour for Sep 1–7 |
+| [Weeks & Daily Actions](weeks/month-01-sep.md) | Day-by-day tables, actions, stretch & time traps |
 | [Prerequisites](../README.md#entry-prerequisites-before-sep-1) | Hardware / datasets / tooling |
 
 ## Weeks by month
