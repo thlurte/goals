@@ -42,13 +42,13 @@ REST out of scope. Cluster shard/replica = stretch only.
 |:---|:---|
 | **W1 Sat Sep 6** | SDPA + causal mask (`uv init transformers-pytorch`) |
 | **W2 Sat Sep 13** | MHA + **GQA**; Pre-LN vs Post-LN |
-| **W3 Sat Sep 20** | Pre-LN encoder + FFN |
-| **W4 Sat Sep 27** | **RoPE + SwiGLU + CausalLM + CE + naive KV** (after Month 1 paper) |
+| **W3 Sat Sep 20** | **🔗 Micrograd autograd engine** (~150 lines) + Pre-LN encoder + FFN + manual `backward()` for `Linear` |
+| **W4 Sat Sep 27** | **RoPE + SwiGLU + CausalLM + CE + naive KV** + **SGD from scratch** (momentum, verify vs `torch.optim.SGD`) |
 | **W5 Sat Oct 4** | ViT patch embed + `[CLS]` |
-| **W6 Sat Oct 11** | BERT + **InfoNCE**; export 768-D `.fvecs` for Week 8 Fri |
+| **W6 Sat Oct 11** | BERT + **InfoNCE** + **in-batch negatives** + **hard negative mining** (BM25 top-100); **AdamW from scratch**; export 768-D `.fvecs` for Week 8 Fri |
 | **W7 Sat Oct 18** | MRL tiny-corpus |
 | **W8 Sat Oct 25** | *Month 2 publish* — no extra DL |
-| **W9 Sat Nov 1** | ColBERT + MaxSim + tiny Margin MSE |
+| **W9 Sat Nov 1** | ColBERT + MaxSim + tiny Margin MSE + **knowledge distillation** (cross-encoder → bi-encoder) |
 | **W12 Sat Nov 22** | **ONNX required**: InfoNCE bi-encoder → ONNX → **ORT**; PyTorch parity; emit 768-D `.fvecs` → `secan` |
 | **W15 Sat Dec 13** | Online softmax (FA-1 math) |
 | **W21 Sat Jan 24** | CLIP projector + ColPali head |
