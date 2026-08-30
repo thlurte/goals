@@ -12,15 +12,23 @@ Weekly Saturday essays are *lab notes* that feed the monthly paper — not six s
 | **Sun 09:00–13:00** | Monthly research experiments / draft in `research/YYYY-MM-<slug>/` |
 | **Last weekend of month** | **Publish**: freeze PDF/Markdown + GitHub tag + public post (blog / LinkedIn / HF) |
 
-## Publish bar (every month)
+## Paper structure (every month)
 
-1. **Question** stated in one sentence  
-2. **Method** reproducible from `secan` / companion repo  
-3. **≥1 figure** with real numbers (Recall, QPS, IPC, memory, or distortion)  
-4. **Baseline** named (`faiss`, `hnswlib`, scalar, or paper method)  
-5. **Limitations** paragraph (honest > impressive)
+One file, one format: copy [`_template.md`](_template.md) → `YYYY-MM-<slug>/paper.md`.
 
-Path: `research/YYYY-MM-<slug>/paper.md` (+ `figures/`, `notes/` for weekly essays).
+| § | Required |
+|:---|:---|
+| 1 Question | One falsifiable sentence |
+| 2 Method | Hardware, commit, flags, dataset, protocol |
+| 3 Experiments | Table of runs |
+| 4 Results | ≥1 figure in `figures/` + numbers in the paper |
+| 5 Baseline | Named (`faiss`, `hnswlib`, scalar, paper method) |
+| 6 Limitations | Honest paragraph |
+| 7 Reproduce | Commands |
+
+Do **not** put weekend checklists in `paper.md` (cadence is this README). Lab notes go in `notes/`, plots in `figures/`.
+
+Curriculum weeks: [`../curriculum/README.md`](../curriculum/README.md). Lab notes: [`../curriculum/essays.md`](../curriculum/essays.md).
 
 ## Seven topics (Sep 2026 – Mar 2027)
 

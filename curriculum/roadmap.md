@@ -139,7 +139,6 @@ A comprehensive, milestone-by-milestone technical blueprint for building a high-
 * **PLAID Engine**:
   * 2-bit / 4-bit residual quant; cascade: centroid → quantized MaxSim → FP32 MaxSim.
 * **MUVERA (NeurIPS 2024)** — required Week 10:
-  * Input tokens from **Week 9 Fri `limbed` ONNX** dump (not a second encoder).
   * Asymmetric **Fixed Dimensional Encodings**: $\langle \mathrm{FDE}(Q), \mathrm{FDE}(P) \rangle$ approximates Chamfer/MaxSim.
   * Retrieve with off-the-shelf **IP/MIPS** (IVF or HNSW from Weeks 4/8); **one** exact MaxSim re-rank.
   * Measure candidates-to-recall vs PLAID on the same slice (BEIR/MS MARCO in Month 3).
@@ -155,7 +154,12 @@ A comprehensive, milestone-by-milestone technical blueprint for building a high-
 * **Concurrent Dynamic Indexing**:
   * Fine-grained node-level reader-writer locks or lock-free edge updates allowing real-time vector insertions during live search queries.
 * **Python Bindings**:
-  * Build native zero-copy Python bindings via `nanobind` / `pybind11` supporting NumPy arrays, PyTorch tensors, and `ann-benchmarks` integration.
+  * Zero-copy `nanobind` for NumPy / PyTorch / `ann-benchmarks`. **No REST.**
+* **ONNX → ORT encode path** (required Week 12 Sat):
+  * Export dense InfoNCE bi-encoder with `torch.onnx.export`.
+  * **ONNX Runtime** Python `InferenceSession`; numerical parity vs PyTorch.
+  * Emit 768-D `.fvecs` from ORT into `secan` indexes (same path as Week 8 Fri, portable runtime).
+  * ColBERT ONNX and `onnxruntime` C++ inside `secan` = stretch.
 
 ---
 
@@ -163,7 +167,7 @@ A comprehensive, milestone-by-milestone technical blueprint for building a high-
 
 To rival commercial vector database engines (Pinecone, Turbopuffer, Qdrant, Milvus, Google SCaNN), master these 6 frontier systems.
 
-> **Curriculum schedule**: **Weeks 1–16 = 4-month vector search spine.** IVF-PQ + HNSW-SQ Pareto **Week 12**. **MUVERA FDE→MIPS** **Week 10 Mon–Tue**; PLAID 3-stage **Week 10 Wed**. TurboQuant 1@k **Week 10 Fri**. Vamana prune + `io_uring` **Week 16 Thu**. RRF + WAND **Week 16 Fri**. Pre/post/range filters + ACORN **Week 22**. FA-2 **Week 25**. FastScan Week 7. **No REST.** Cluster CPU shard = stretch. Spine tag `v1.2-vs-spine-complete`.
+> **Curriculum schedule**: **Weeks 1–16 = 4-month vector search spine.** IVF-PQ + HNSW-SQ Pareto **Week 12**. **ONNX→ORT dense encode Sat Nov 22**. **MUVERA FDE→MIPS** **Week 10 Mon–Tue**; PLAID 3-stage **Week 10 Wed**. TurboQuant 1@k **Week 10 Fri**. Vamana prune + `io_uring` **Week 16 Thu**. RRF + WAND **Week 16 Fri**. Pre/post/range filters + ACORN **Week 22**. FA-2 **Week 25**. FastScan Week 7. **No REST.** Cluster CPU shard = stretch. Spine tag `v1.2-vs-spine-complete`.
 
 ### 1. Filtered Vector Search (ACORN / Roaring Bitmaps)
 * **The Challenge**: Hard metadata filtering (e.g. `price < 100 AND user_id = 5`) disconnects HNSW graph traversals, collapsing recall to near zero.
@@ -219,6 +223,7 @@ To rival commercial vector database engines (Pinecone, Turbopuffer, Qdrant, Milv
 | **AddressSanitizer (ASan) & UB-Sanitizer** | Detect memory leaks, out-of-bounds array reads, and undefined behavior. |
 | **ThreadSanitizer (TSan)** | Catch data races and concurrency synchronization bugs in multi-threaded indexes. |
 | **`nanobind`** | Lightweight, high-performance C++/Python zero-copy bindings. |
+| **ONNX + ONNX Runtime** | Export dense bi-encoder; CPU embed path into `secan` without shipping PyTorch. |
 
 ---
 

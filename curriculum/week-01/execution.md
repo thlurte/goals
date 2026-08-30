@@ -225,5 +225,5 @@
 
 ### 🔹 Sunday, Sep 7: Reflection, Rest & Research Kickoff
 * Review notes; solve remaining calculus problems.
-* **Research**: create `research/2026-09-measurement-protocol/` and draft the one-sentence question + first benchmark table stub (see [research/README.md](research/README.md)).
-* Rest before Week 2 (Trigonometric Identities, Chain Rule & AVX2 SIMD).
+* **Research**: create `research/2026-09-measurement-protocol/` and draft the one-sentence question + first benchmark table stub (see [`research/README.md`](../../research/README.md)).
+* Rest before Week 2 — see [Month 1 weeks](../weeks/month-01-sep.md).
