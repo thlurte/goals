@@ -8,15 +8,16 @@ A comprehensive, milestone-by-milestone technical blueprint for building a high-
 
 ```
                                   [ PRODUCTION APPLICATION LAYER ]
-                                (Python nanobind / REST / C++ API)
+                                (Python nanobind / CLI — no REST)
                                                 │
                  ┌──────────────────────────────┴──────────────────────────────┐
                  ▼                                                             ▼
      [ DENSE VECTOR PIPELINE ]                                   [ MULTI-VECTOR / HYBRID ]
    ┌───────────────────────────┐                               ┌───────────────────────────┐
    │ • HNSW Graph Traversal    │                               │ • ColBERT MaxSim Kernel   │
-   │ • Filtered Search (ACORN) │                               │ • PLAID Centroid Pruning  │
-   │ • DiskANN / io_uring      │                               │ • Block-Max WAND (Sparse) │
+   │ • IVF-PQ / HNSW-SQ compose│                               │ • PLAID Centroid Pruning  │
+   │ • Filtered Search (ACORN) │                               │ • RRF + Block-Max WAND    │
+   │ • DiskANN / Vamana        │                               │ • MUVERA FDE → IP MIPS    │
    └─────────────┬─────────────┘                               └─────────────┬─────────────┘
                  │                                                             │
                  └──────────────────────────────┬──────────────────────────────┘
@@ -125,23 +126,23 @@ A comprehensive, milestone-by-milestone technical blueprint for building a high-
 
 ---
 
-### Phase 6: Multi-Vector & Late Interaction Search (ColBERT & PLAID)
-*Goal: Master token-level multi-vector search architectures for superior semantic precision.*
+### Phase 6: Multi-Vector & Late Interaction Search (ColBERT, PLAID, MUVERA)
+*Goal: Token-level multi-vector search, then the production fork: cascade vs reduce-to-MIPS.*
 
 * **Late Interaction Mathematical Kernel (MaxSim)**:
-  * Queries and documents represented as matrices of token vectors ($Q \in \mathbb{R}^{L_q \times D}$, $D_i \in \mathbb{R}^{L_d \times D}$).
-  * Compute cross-token similarity: $\text{Score}(Q, D_i) = \sum_{q \in Q} \max_{d \in D_i} (q \cdot d)$.
-  * Handcraft SIMD MaxSim kernel with horizontal max reductions.
+  * Queries and documents as token matrices ($Q \in \mathbb{R}^{L_q \times D}$, $D_i \in \mathbb{R}^{L_d \times D}$).
+  * $\text{Score}(Q, D_i) = \sum_{q \in Q} \max_{d \in D_i} (q \cdot d)$.
+  * SIMD MaxSim with horizontal max reductions.
 * **Token Centroid Inverted Index (ColBERT Engine)**:
-  * Cluster document tokens into centroids using spherical $k$-means.
-  * Build inverted lists mapping centroid IDs $\to$ (document ID, token ID).
-  * Fast query routing: Only evaluate documents sharing centroids with active query tokens.
-* **PLAID Engine (Performance-optimized Late Interaction)**:
-  * 2-bit / 4-bit scalar quantization on token embeddings.
-  * Multi-stage progressive pruning:
-    1. Centroid score accumulation.
-    2. Quantized token MaxSim on top candidates.
-    3. Exact FP32 MaxSim re-ranking on final candidates.
+  * Cluster document tokens (spherical $k$-means); inverted lists centroid $\to$ (doc, token).
+  * Query routing: only docs sharing centroids with query tokens.
+* **PLAID Engine**:
+  * 2-bit / 4-bit residual quant; cascade: centroid → quantized MaxSim → FP32 MaxSim.
+* **MUVERA (NeurIPS 2024)** — required Week 10:
+  * Input tokens from **Week 9 Fri `limbed` ONNX** dump (not a second encoder).
+  * Asymmetric **Fixed Dimensional Encodings**: $\langle \mathrm{FDE}(Q), \mathrm{FDE}(P) \rangle$ approximates Chamfer/MaxSim.
+  * Retrieve with off-the-shelf **IP/MIPS** (IVF or HNSW from Weeks 4/8); **one** exact MaxSim re-rank.
+  * Measure candidates-to-recall vs PLAID on the same slice (BEIR/MS MARCO in Month 3).
 
 ---
 
@@ -160,13 +161,17 @@ A comprehensive, milestone-by-milestone technical blueprint for building a high-
 
 ## Part 2: The Industrial Frontier Specializations (Top 0.1%)
 
-To rival commercial vector database engines (Pinecone, Turbopuffer, Qdrant, Milvus, Google SCaNN), master these 6 frontier systems:
+To rival commercial vector database engines (Pinecone, Turbopuffer, Qdrant, Milvus, Google SCaNN), master these 6 frontier systems.
+
+> **Curriculum schedule**: **Weeks 1–16 = 4-month vector search spine.** IVF-PQ + HNSW-SQ Pareto **Week 12**. **MUVERA FDE→MIPS** **Week 10 Mon–Tue**; PLAID 3-stage **Week 10 Wed**. TurboQuant 1@k **Week 10 Fri**. Vamana prune + `io_uring` **Week 16 Thu**. RRF + WAND **Week 16 Fri**. Pre/post/range filters + ACORN **Week 22**. FA-2 **Week 25**. FastScan Week 7. **No REST.** Cluster CPU shard = stretch. Spine tag `v1.2-vs-spine-complete`.
 
 ### 1. Filtered Vector Search (ACORN / Roaring Bitmaps)
 * **The Challenge**: Hard metadata filtering (e.g. `price < 100 AND user_id = 5`) disconnects HNSW graph traversals, collapsing recall to near zero.
 * **The Solution**:
-  * Fast bitset intersection using **Roaring Bitmaps** (SIMD-accelerated bitwise operations).
-  * **ACORN (2024 State-of-the-Art)**: Single-stage graph traversal allowing 2-hop / $N$-hop dynamic edge expansion over filtered nodes without losing search path connectivity.
+  * Measure **pre-filter** (payload/B-tree then ANN) vs **post-filter** (ANN then predicate) vs **ACORN**.
+  * **Range** predicates (`price < x`) and **selectivity vs recall** plots — the on-call failure mode.
+  * Fast bitset intersection using **Roaring Bitmaps**.
+  * **ACORN**: $N$-hop expansion over filtered nodes.
 
 ### 2. FastScan: In-Register SIMD Lookups (`PSHUFB` / SCaNN)
 * **The Challenge**: Standard Product Quantization does table lookups in memory (`dist += LUT[code]`), causing cache lookup stalls.
@@ -175,15 +180,20 @@ To rival commercial vector database engines (Pinecone, Turbopuffer, Qdrant, Milv
   * Fit all 16 distances into a single 128-bit SIMD register.
   * Execute lookups entirely inside CPU vector registers using the x86 `PSHUFB` (`_mm256_shuffle_epi8`) instruction without touching RAM or L1 cache, delivering a $4\times-6\times$ throughput speedup.
 
-### 3. State-of-the-Art Quantization (RaBitQ & Anisotropic Loss)
+### 3. State-of-the-Art Quantization (RaBitQ, TurboQuant / PolarQuant / QJL & Anisotropic Loss)
 * **Anisotropic Quantization (Google SCaNN)**:
   * Penalizes quantization errors *parallel* to the vector much more than *orthogonal* errors, maximizing Top-1 inner-product retrieval accuracy.
 * **RaBitQ (Randomized Binary Quantization - 2024)**:
   * Applies random orthogonal transformations followed by 1-bit quantization with an exact mathematical error correction term.
   * Reaches **$99\%+$ recall at 1-bit compression**.
+* **TurboQuant / PolarQuant / QJL** ([Google Research blog](https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/), ICLR/AISTATS 2026):
+  * **PolarQuant**: random rotate → recursive Cartesian→polar; stores radius + angles on a fixed circular grid → **eliminates per-block FP scale overhead**.
+  * **QJL**: Johnson–Lindenstrauss + 1-bit signs with an unbiased estimator pairing high-precision queries against low-precision data.
+  * **TurboQuant**: PolarQuant (bulk bits) + QJL residual (~1 bit) for bias-free scores — dual target: **vector search MIPS** and **LLM KV-cache** (~3-bit, training-free in reported results).
+  * Curriculum: **1@k curve required Week 10 Fri** (GloVe or 768-D vs RaBitQ/PQ). KV application **Week 19**.
 
 ### 4. Sparse-Dense Hybrid Search & Block-Max WAND
-* **Dense + Sparse Fusion**: Combine dense semantic vectors with sparse token representations (BM25 / SPLADE):
+* **Dense + Sparse Fusion**: Linear $\alpha$ **and RRF**. SPLADE = stretch.
   $$\text{Score} = \alpha \cdot \text{DenseScore} + (1 - \alpha) \cdot \text{SparseScore}$$
 * **Block-Max WAND (Weak AND)**:
   * Store inverted posting lists in compressed blocks (SIMD-BP128 / PForDelta).

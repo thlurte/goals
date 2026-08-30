@@ -1,12 +1,105 @@
-# Vector Search Engine & AI Systems: 24-Week Master Curriculum (Pure Mathematics & Systems Edition)
+# Vector Search Engine & AI Systems: 28-Week Master Curriculum (7 Months)
 
 **Start Date**: Monday, September 1, 2026  
-**End Date**: Friday, February 19, 2027  
-**Schedule**: 5 Days/Week (Mon–Fri), Weekends for Reflection, Overflow & Essay Writing  
-**Daily Cadence**:
-1. **🌅 06:00 – 07:30 (90 min) — Morning Pure Mathematics**: Rigorous pencil-and-paper math, proofs, theorems, and problem sets (Gelfand, Strang, Blitzstein).
-2. **📖 07:30 – 08:30 (60 min) — Systems & Architecture Deep Reading**: Hardware architecture, C++ mechanics, and GPU guides (Pikus, CS:APP, Agner Fog, PMPP, CUDA Guide).
-3. **💻 20:30 – 23:00 (2.5 hrs) — Night Coding & Systems Engineering**: Hands-on implementation in flow state (clean Python models from scratch + C++20/CUDA `secan` engine).
+**End Date**: Friday, March 12, 2027  
+**Schedule**: 5 Days/Week (Mon–Fri) **`secan` only**. Weekends: **lab notes + one DL afternoon + monthly research**.  
+
+### 🗓️ Two-Block Arc (7 calendar months)
+
+| Block | Weeks | Calendar | Primary deliverable |
+|:---|:---|:---|:---|
+| **I — Vector Search Engine** | **1–16** | **Sep–Dec 2026 (4 months)** | `secan` composed ANN + **ONNX/`limbed` encode→index**: SIMD, IVF-PQ, HNSW-SQ, ColBERT/PLAID/MUVERA, LSM, GPU IVF, Vamana+DiskANN, RRF/WAND |
+| **II — GPU specialization** | **17–28** | **Jan–Mar 2027 (3 months)** | CUDA graphs, FA-2, PagedAttention/TurboQuant, multi-GPU, ColPali, NEON, `v2.0` |
+
+**Deep learning is a slow path across all 7 months**, not a third block. **Weekdays = `secan` only.** DL is **one Saturday afternoon** (14:00–18:00), not a weekday. REST API is **out of scope**.
+
+### 🔬 Monthly Research Program (weekend build → month-end publish)
+
+Full detail: [`research/README.md`](research/README.md). Seven monthlies (not six).
+
+| Month | Research topic | Publish deadline |
+|:---|:---|:---|
+| **Sep** | Measurement-first distance microbenchmarks | **Sun Sep 27** |
+| **Oct** | Anisotropy / hubness / SQ–PQ–FastScan–ScaNN **+ OPQ / asymmetric PQ** | **Sun Oct 25** |
+| **Nov** | Late interaction: PLAID vs **MUVERA** FDE→MIPS under LSM writes | **Sun Nov 29** |
+| **Dec** | GPU IVF + DiskANN `io_uring` + hybrid WAND **+ RRF** | **Sun Dec 27** |
+| **Jan** | PagedAttention × TurboQuant — paging vs quantizing KV | **Sun Jan 31** |
+| **Feb** | ACORN **+ pre/post/range filters** + tombstones + portable SIMD | **Sun Feb 28** |
+| **Mar** | GPU specialization closeout: FA-2, multi-GPU, serving | **Fri Mar 12** (`v2.0`) |
+
+**Weekend rhythm**:
+1. **Sat 09:00–13:00** — weekly essay / lab note  
+2. **Sat 14:00–18:00** — **DL weekly** (the one Python day)  
+3. **Sun 09:00–13:00** — monthly research experiments / draft  
+4. **Last weekend** — publish monthly paper  
+
+**Daily Cadence** (Mon–Fri):
+1. **🌅 06:00 – 07:30 (90 min) — Morning Pure Mathematics**
+2. **📖 07:30 – 08:30 (60 min) — Systems & Architecture Deep Reading**
+3. **💻 20:30 – 23:00 (2.5 hrs) — Night `secan` / CUDA only** (no weekday DL)
+
+**Pacing rules**:
+* Weekday night = **`secan` only**. DL does not steal VS days.
+* Tiny-corpus training = **Saturday afternoon**.
+* **No REST API** in `secan` (nanobind + CLI only). Distributed CPU cluster = stretch, not required.
+
+### ✅ Entry Prerequisites
+See [README.md](README.md#entry-prerequisites-before-sep-1). Minimum: AVX2 CPU, CUDA GPU by Week 13, SIFT1M before Wed Sep 3, **`limbed` + `ggmbed` installable by Week 8**, **768-D / multi-vector dumps by Week 8–9 Fri**, **NVMe by Week 16**, `perf` + CMake + `uv`.
+
+### 📦 Deferred-work ledger (slimmed → hard landing)
+
+Nothing slimmed is optional. Every row is **required** on the landing week.
+
+| Slimmed from | What was cut | **Hard landing (required)** | Why there |
+|:---|:---|:---|:---|
+| **Week 8** | HNSW bounded flat heap + bitset visited | **Week 12 Wed** | Before composed-index Pareto |
+| **Week 10** | BM25 + Block-Max WAND + **RRF** | **Week 16 Fri** | Hybrid IR; not only linear $\alpha$ |
+| **Week 11** | DiskANN `io_uring` + **Vamana prune** | **Week 16 Thu** | Graph construction, not only SSD fetch |
+| **Week 15** | FlashAttention-2 | **Week 25** | GPU block |
+| **Week 7→10** | RaBitQ (after QR) | **Week 10 Thu** | Already required |
+| **Week 8→12** | Whitening / query-side PCA | **Week 12 Mon** | After SVD |
+| *(frontier)* | ACORN + tombstones + NUMA + **pre/post/range** | **Week 22** | On-call filters |
+
+### 🧩 VS composition landings (the specialty)
+
+REST out of scope. Cluster shard/replica = stretch only.
+
+| Need | Lands (required) |
+|:---|:---|
+| **IP/MIPS + spherical k-means IVF** + list-size histogram / rebalance | **Week 4 Thu–Fri** |
+| **Asymmetric PQ/BQ** (FP32 query vs quantized db) + **OPQ / residual PQ** | **Week 6 Fri + Week 7 Fri** |
+| **768-D text Recall@10 vs QPS** via **production encode** (`ggmbed` or dense ONNX → `.fvecs`), not SIFT-only | **Week 8 Fri** |
+| **Batch HNSW / graph build** | **Week 9 Mon–Tue** |
+| **ONNX ColBERT (`limbed`) → `MultiVectorIndex`** (encode→index handoff; ORT stays in limbed) | **Week 9 Fri** |
+| **MUVERA FDE** (asymmetric) → IP MIPS → MaxSim re-rank vs PLAID | **Week 10 Mon–Wed** |
+| **TurboQuant 1@k** vs RaBitQ/PQ (GloVe or 768-D) | **Week 10 Fri** |
+| **`IVFPQIndex` + `HNSWSQIndex`**; Pareto vs Faiss/hnswlib on **SIFT + 768-D** | **Week 12 Thu–Fri** |
+| **Vamana prune** + compressed RAM + `io_uring` raw | **Week 16 Thu** |
+| **RRF** + linear $\alpha$ (SPLADE stretch) | **Week 16 Fri** |
+| **Pre- vs post-filter vs ACORN**; **range**; selectivity vs recall | **Week 22 Mon + Fri** |
+| BEIR / MS MARCO **slice** (dense + ColBERT + **MUVERA**) | **Month 3 research Sunday** |
+| REST API | **Skip** |
+
+**ONNX on the VS timeline:** required Weeks **8–9** as *encode → secan ingest*. Runtime stays **`limbed` / export scripts** — `secan` never links ORT. The 30-min Intextus track only *maintains* those packages; it does not replace these Fridays. See [`intextus_30min_six_month.md`](intextus_30min_six_month.md).
+
+### 🧠 DL weekend landings (Sat 14:00–18:00 only)
+
+| Weekend after | DL work |
+|:---|:---|
+| **W1 Sat Sep 6** | SDPA + causal mask (`uv init transformers-pytorch`) |
+| **W2 Sat Sep 13** | MHA + **GQA**; Pre-LN vs Post-LN |
+| **W3 Sat Sep 20** | Pre-LN encoder + FFN |
+| **W4 Sat Sep 27** | **RoPE + SwiGLU + CausalLM + CE + naive KV** (after Month 1 paper) |
+| **W5 Sat Oct 4** | ViT patch embed + `[CLS]` |
+| **W6 Sat Oct 11** | BERT + **InfoNCE**; export 768-D `.fvecs` for Week 8 Fri |
+| **W7 Sat Oct 18** | MRL tiny-corpus |
+| **W8 Sat Oct 25** | *Month 2 publish* — no extra DL |
+| **W9 Sat Nov 1** | ColBERT + MaxSim + tiny Margin MSE |
+| **W15 Sat Dec 13** | Online softmax (FA-1 math) |
+| **W21 Sat Jan 24** | CLIP projector + ColPali head |
+| Other Saturdays | Research / overflow only |
+
+---
 
 ---
 
@@ -19,20 +112,17 @@
  │ • Month 2 (Oct): Multivariable & Vector Calculus (Gradients, Jacobians, Hessians, Integrals)     │
  │ • Month 3 (Nov): Linear Algebra from First Principles (Gilbert Strang 4th Edition)               │
  │ • Month 4 (Dec): Pure Probability Theory (Axioms, Distributions, Expectation, MGFs)              │
- │ • Month 5 (Jan): Multivariate Distributions, Statistics, Limit Theorems & Markov Chains          │
- │ • Month 6 (Feb): Numerical Optimization, Fourier Analysis & Spectral Graph Theory                │
+ │ • Month 5 (Jan): Limit Theorems, Stats, Markov Chains (GPU graphs)                               │
+ │ • Month 6 (Feb): Convex opt, Spectral graphs, production filters                                │
+ │ • Month 7 (Mar): GPU specialization synthesis (FA-2, multi-GPU, serving)                         │
  └────────────────────────┬─────────────────────────────────────────┬───────────────────────────────┘
                           │                                         │
                           ▼                                         ▼
  ┌────────────────────────────────────────┐     ┌───────────────────────────────────────────────────┐
- │   PILLAR 2: DEEP LEARNING (Py) (1 HR)  │     │  PILLAR 3: DATABASE & C++/GPU ENGINE (secan) (1.5H)│
- │ • Transformers from Scratch (`uv init`)│     │ • Storage Engine: LSM-Tree, WAL, MemTable, Segs   │
- │ • Online Softmax & FlashAttention-1/2  │────►│ • Columnar Formats: Zero-Copy Apache Arrow Layout │
- │ • Vision Transformer (ViT from scratch)│     │ • Handcrafted SIMD: AVX2, AVX-512, ARM NEON       │
- │ • BERT & Matryoshka Embeddings (MRL)   │     │ • Quantization: SQ8 (Outliers), Anisotropic PQ, BQ│
- │ • ColBERT Late Interaction & MaxSim    │     │ • Graph ANN: HNSW & DiskANN (io_uring Async SSD)  │
- │ • ColPali Multimodal Retrieval         │     │ • CUDA: FlashAttention, CUTLASS GEMM, CAGRA Graph │
- │ • PagedAttention & KV Cache Paging     │     │ • Zero-Copy nanobind Python Engine Architecture   │
+ │   PILLAR 2: DEEP LEARNING (Py)         │     │  PILLAR 3: DATABASE & C++/GPU ENGINE (secan)       │
+ │ • Pre-LN decoder-only: RoPE, GQA, KV   │────►│ • SIMD, quant, HNSW, IVF, DiskANN, LSM, WAND      │
+ │ • Dense InfoNCE retriever (DPR/E5)     │     │ • ColBERT MaxSim / PLAID; GPU IVF + CAGRA         │
+ │ • ViT, BERT, ColBERT, CLIP→ColPali     │     │ • FlashAttention, PagedAttention, nanobind        │
  └────────────────────────────────────────┘     └───────────────────────────────────────────────────┘
 ```
 
@@ -45,6 +135,9 @@
 * **CALC**: *Calculus* — Gilbert Strang (MIT OpenCourseWare free textbook) or *Calculus: Early Transcendentals* — James Stewart
 * **LINALG**: *Linear Algebra and Its Applications* (4th Edition) — Gilbert Strang (`/home/ahmed/Downloads/Linear Algebra and Its Applications, 4th Edition (Gilbert Strang) (Z-Library).pdf`)
 * **PROB**: *Introduction to Probability* — Joseph K. Blitzstein & Jessica Hwang (Harvard Stat 110) or *Introduction to Probability* — Bertsekas & Tsitsiklis (MIT)
+* **CONVEX**: *Convex Optimization* — Boyd & Vandenberghe (free PDF) — Month 6
+* **INFO**: *Elements of Information Theory* — Cover & Thomas (selected chapters) or MacKay *Information Theory* — Month 5–6
+* **SPECTRAL**: Fan Chung *Spectral Graph Theory* or Spielman lecture notes — Week 23
 
 ### 2. High-Performance C++ & Systems Literature
 * **PIKUS**: *The Art of Writing Efficient Programs* — Fedor G. Pikus
@@ -61,14 +154,19 @@
 * **SCANN**: *"Accelerating Large-Scale Inference with Anisotropic Vector Quantization"* (Guo et al. / Google Research 2020)
 * **PAGED-ATTN**: *"Efficient Memory Management for Large Language Model Serving with PagedAttention"* (Kwon et al. 2023 / vLLM)
 * **COLPALI**: *"ColPali: Efficient Document Retrieval with Vision Language Models"* (Faysse et al. 2024)
+* **ACORN**: *"ACORN: Performant and Predicate-Agnostic Search Over Vector Embeddings"* (Patel et al. 2024) — implemented Week 22
+* **RABITQ**: RaBitQ paper (2024) — implemented Week 10 (after QR), not Week 7
+* **TURBOQUANT**: [TurboQuant / PolarQuant / QJL](https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/) (Google Research, ICLR/AISTATS 2026) — Week 10 (vector search vs RaBitQ) + Week 19 (KV-cache compression with PagedAttention)
 
 ---
 
-# BLOCK 1: MATHEMATICAL FOUNDATIONS, CPU ENGINE & PYTORCH (Months 1–3)
+# BLOCK I: VECTOR SEARCH ENGINE — 4 months (Weeks 1–16 / Sep–Dec 2026)
 
 ---
 
 # 📅 MONTH 1: Pure Trigonometry, Single-Variable Calculus, SIMD & Transformers (Sep 2026)
+
+> **🔬 Monthly research**: *Measurement Before Optimization: A Reproducible Protocol for Vector Distance Microbenchmarks* → publish **Sun Sep 27** · folder `research/2026-09-measurement-protocol/`
 
 ---
 
@@ -79,20 +177,21 @@
 * **Pure Math (Gelfand Trig & Strang Calc)**:
   * **Trig (Gelfand Ch 1–3)**: Trigonometric ratios in right triangles, radian measure, the wrapping function on the unit circle $x^2 + y^2 = 1$, graphs and periodic symmetries of $\sin\theta, \cos\theta, \tan\theta$.
   * **Calculus (Strang Ch 1–2)**: Intuitive and $\epsilon$-$\delta$ definitions of limits, continuity, first-principles derivative definition $f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}$.
-* **IR Analytics**: Mathematical definitions of NDCG@K, DCG formula, Ideal DCG (IDCG), MRR, MAP.
-* **C++ & Python Track**:
-  * **secan**: Google Benchmark integration, `.fvecs` SIFT1M loader, IR metrics evaluator (`tests/test_ir_metrics.cpp`), exact scalar baseline scan with AddressSanitizer.
-  * **Python (`transformers-pytorch`)**: Scaffold project with `uv init transformers-pytorch`. Implement `scaled_dot_product_attention(Q, K, V, mask)` in `src/attention.py`.
+* **IR Analytics**: Mathematical definitions of NDCG@K, DCG formula, Ideal DCG (IDCG), MRR, **MAP** (Mean Average Precision).
+* **C++ Track**:
+  * **secan**: Google Benchmark, `.fvecs` loaders, IR metrics (NDCG, MRR, **MAP**), scalar baseline. **IP kernel Thursday.**
+  * **DL**: Sat Sep 6 (not weekday).
 
 | Day | Pure Mathematics (90 min) | Systems / C++ Reading (45 min) | Afternoon Implementation (2.5 hrs) |
 |:---|:---|:---|:---|
 | **Mon Sep 1** | **TRIG (Gelfand Ch 1–2)**: Geometric definition of sine/cosine from right triangles to unit circle coordinates. Radian measure and arc length. | **PIKUS Ch 2**: Performance measurements, high-res timers, profiler sampling, micro-benchmark noise floor. | **secan**: Integrate Google Benchmark via CMake. Add ASan/UBSan build flags. Write first benchmark for `l2_squared` with `DoNotOptimize`. |
-| **Tue Sep 2** | **TRIG (Gelfand Ch 3)**: Periodic properties: $\sin(\theta + 2\pi) = \sin\theta$, parity: $\cos(-\theta) = \cos\theta$, $\sin(-\theta) = -\sin\theta$. Graphs of trig functions. | **CSAPP §5.1–5.6**: Compiler limitations, Cycles Per Element (CPE), loop inefficiencies, memory aliasing. | **secan**: Implement binary `.fvecs` and `.bvecs` parsers in `src/io/fvecs_reader.h`. Load SIFT1M ($1\text{M} \times 128\text{D}$). |
-| **Wed Sep 3** | **CALC (Strang §1.1–1.5)**: Introduction to limits: $\lim_{x \to c} f(x) = L$, one-sided limits, continuity, the Intermediate Value Theorem. | **CSAPP §5.7**: Superscalar architecture, out-of-order execution, execution ports, latency vs throughput. | **secan**: Build IR metrics evaluator in `tests/test_ir_metrics.cpp`. Run exact scan on SIFT1M; verify Recall@10 = 1.0 and NDCG@10 = 1.0. |
-| **Thu Sep 4** | **CALC (Strang §2.1–2.3)**: Derivative from first principles: slope of secant line $\to$ tangent line. Power rule proof: $\frac{d}{dx} x^n = n x^{n-1}$. | **AGNER Ch 3 & Ch 7.1–7.3**: Finding bottlenecks, clock cycles, variable storage, floating-point efficiency. | **Python (`transformers-pytorch`)**: Scaffold project (`uv init`). Implement `scaled_dot_product_attention` in `src/attention.py` with causal masking. |
-| **Fri Sep 5** | **CALC (Strang §2.4–2.5)**: Product Rule $\frac{d}{dx}(uv) = u'v + uv'$, Quotient Rule, and differentiation of trigonometric functions ($\frac{d}{dx}\sin x = \cos x$). | **PIKUS Ch 1 & CSAPP §5.14**: Measurement-driven optimization, profiling-guided workflow with `perf stat`. | **secan**: Profile baseline SIFT1M scan with `perf stat`. Record IPC, cache misses, branch misses. Populate first row of README benchmark table. |
+| **Tue Sep 2** | **TRIG (Gelfand Ch 3)**: Periodic properties: $\sin(\theta + 2\pi) = \sin\theta$, parity: $\cos(-\theta) = \cos\theta$, $\sin(-\theta) = -\sin\theta$. Graphs of trig functions. | **CSAPP §5.1–5.6**: Compiler limitations, Cycles Per Element (CPE), loop inefficiencies, memory aliasing. | **secan**: Implement binary `.fvecs`, `.bvecs`, and `.ivecs` parsers. Download SIFT1M base + ground-truth; load into `data/sift1m/`. |
+| **Wed Sep 3** | **CALC (Strang §1.1–1.5)**: Introduction to limits: $\lim_{x \to c} f(x) = L$, one-sided limits, continuity, the Intermediate Value Theorem. | **CSAPP §5.7**: Superscalar architecture, out-of-order execution, execution ports, latency vs throughput. | **secan**: Build IR metrics in `tests/test_ir_metrics.cpp` (NDCG@K, MRR, **MAP**). Run exact scan on a **SIFT1M subset** (e.g. 100K base / 1K queries) first; verify Recall@10 = 1.0. Full 1M scan = stretch. |
+| **Thu Sep 4** | **CALC (Strang §2.1–2.3)**: Derivative from first principles. Power rule proof. | **AGNER Ch 3 & Ch 7.1–7.3**: Bottlenecks, FP efficiency. | **secan**: First-class **inner-product** kernel `ip()` alongside `l2_squared`. Distance enum: L2 / IP / cosine. *(DL: Sat Sep 6.)* |
+| **Fri Sep 5** | **CALC (Strang §2.4–2.5)**: Product Rule $\frac{d}{dx}(uv) = u'v + uv'$, Quotient Rule, and differentiation of trigonometric functions ($\frac{d}{dx}\sin x = \cos x$). | **PIKUS Ch 1 & CSAPP §5.14**: Measurement-driven optimization, profiling-guided workflow with `perf stat`. | **secan**: Profile baseline scan with `perf stat`. Record IPC, cache misses, branch misses. Populate first row of README benchmark table. |
 
-> **📝 Essay 1 (Sat Sep 6)**: *"The Geometry of High-Dimensional Retrieval: From Trigonometric Coordinates and NDCG to CPU Performance Counters"*
+> **📝 Essay 1 (Sat Sep 6)**: *"The Geometry of High-Dimensional Retrieval: From Trigonometric Coordinates and NDCG to CPU Performance Counters"*  
+> **🧠 DL weekend**: `uv init transformers-pytorch`; SDPA + causal mask.
 
 ---
 
@@ -103,19 +202,19 @@
 * **Pure Math (Gelfand Trig & Strang Calc)**:
   * **Trig (Gelfand Ch 4–5)**: Pythagorean identities ($\sin^2\theta + \cos^2\theta = 1$, $1 + \tan^2\theta = \sec^2\theta$), angle addition formulas $\cos(\alpha \pm \beta), \sin(\alpha \pm \beta)$, double-angle and half-angle formulas, product-to-sum identities.
   * **Calculus (Strang §2.6–3.2)**: The Chain Rule $\frac{d}{dx} f(g(x)) = f'(g(x)) g'(x)$, implicit differentiation, derivatives of exponential ($e^x$) and logarithmic functions ($\ln x$).
-* **C++ & Python Track**:
-  * **secan**: Enable `_MM_SET_FLUSH_ZERO_MODE` / `_MM_SET_DENORMALS_ZERO_MODE`. Handcrafted AVX2+FMA distance kernels, 4-way multi-register unrolling, 64-byte alignment (`alignas(64)`).
-  * **Python (`transformers-pytorch`)**: Multi-Head Attention (MHA) module from scratch in `src/multihead_attention.py`.
+* **C++ Track**: FTZ/DAZ, AVX2 L2/cosine/**IP**, 4-way unroll, AVX-512 `#ifdef`.
+* **DL**: Sat Sep 13 — MHA + GQA.
 
 | Day | Pure Mathematics (90 min) | Systems / C++ Reading (45 min) | Afternoon Implementation (2.5 hrs) |
 |:---|:---|:---|:---|
 | **Mon Sep 8** | **TRIG (Gelfand Ch 4)**: Geometric proof of angle addition: $\cos(\alpha - \beta) = \cos\alpha \cos\beta + \sin\alpha \sin\beta$. Derivation of all addition formulas. | **AGNER Ch 12**: SIMD instructions, 256-bit YMM registers, data types, intrinsics syntax. | **secan**: Enable FTZ/DAZ flags. Implement `l2_squared_avx2()` in `src/search/distance_avx2.cpp`. Single accumulator baseline. |
 | **Tue Sep 9** | **TRIG (Gelfand Ch 4)**: Double-angle formulas: $\sin 2\theta = 2\sin\theta\cos\theta$, $\cos 2\theta = \cos^2\theta - \sin^2\theta$. Half-angle formulas. | **CSAPP §5.8–5.9**: Loop unrolling, breaking dependency chains with multiple independent accumulator registers. | **secan**: Implement 4-way unrolled `l2_squared_avx2` with 4 parallel `__m256` accumulators. Measure speedup over 1-acc. |
 | **Wed Sep 10** | **CALC (Strang §2.6)**: The Chain Rule: step-by-step rigorous proof using limits. Differentiating nested composite functions. | **AGNER-INST & AGNER Ch 11**: VFMADD latency/throughput port mapping on modern x86 microarchitectures. | **secan**: Implement `cosine_distance_avx2()`: compute dot product, norm $A$, and norm $B$ simultaneously in 1 pass. |
-| **Thu Sep 11** | **CALC (Strang §3.1–3.2)**: Derivatives of $e^x$ and $\ln x$. Logarithmic differentiation. Derivation of $\lim_{x \to 0} (1+x)^{1/x} = e$. | **AGNER Ch 13.1–13.3**: Alignment, `alignas(64)`, cache line splits, unaligned load penalties. | **Python (`transformers-pytorch`)**: Build `MultiHeadAttention(d_model, num_heads)` class in `src/multihead_attention.py`. |
+| **Thu Sep 11** | **CALC (Strang §3.1–3.2)**: Derivatives of $e^x$ and $\ln x$. | **AGNER Ch 13.1–13.3**: Alignment, cache line splits. | **secan**: `ip_avx2()` + fused cosine (dot + norms). Same unrolling as L2. *(DL: Sat Sep 13 GQA.)* |
 | **Fri Sep 12** | **TRIG & CALC Integration**: Differentiating inverse trigonometric functions: $\frac{d}{dx}\arcsin x = \frac{1}{\sqrt{1-x^2}}$, $\frac{d}{dx}\arctan x = \frac{1}{1+x^2}$. | **PIKUS Ch 3**: Instruction-level parallelism, register pressure, compiler vectorization limits. | **secan**: Add AVX-512 backend (`_mm512_*`) behind `#ifdef __AVX512F__`. Benchmark scalar vs AVX2 vs AVX-512. |
 
-> **📝 Essay 2 (Sat Sep 13)**: *"Breaking Dependency Chains: Multi-Register SIMD Kernels and Multi-Head Attention Geometry"*
+> **📝 Essay 2 (Sat Sep 13)**: *"Breaking Dependency Chains: Multi-Register SIMD Kernels"*  
+> **🧠 DL weekend**: MHA + GQA; Pre-LN vs Post-LN.
 
 ---
 
@@ -127,47 +226,46 @@
   * **Riemann Sums & Definite Integrals**: $\int_a^b f(x) dx = \lim_{n \to \infty} \sum_{i=1}^n f(x_i^*) \Delta x$. Properties of integrals (linearity, additivity).
   * **Fundamental Theorem of Calculus (FTC Part 1 & 2)**: $\frac{d}{dx} \int_a^x f(t) dt = f(x)$ and $\int_a^b f(x) dx = F(b) - F(a)$.
   * **Integration Techniques**: Integration by substitution (u-substitution), Integration by parts $\int u dv = uv - \int v du$.
-* **C++ & Python Track**:
-  * **secan**: Memory hierarchy profiling, cache-blocking/tiling, software prefetching (`_mm_prefetch`), unit sphere pre-normalization.
-  * **Python (`transformers-pytorch`)**: `LayerNorm`, `PositionalEncoding`, `FeedForwardBlock`, assembling full `TransformerEncoder`.
+* **C++ Track**: Cache tiling, prefetch, **unit-sphere / IP path**, hugepages.
+* **DL**: Sat Sep 20 — Pre-LN encoder.
 
 | Day | Pure Mathematics (90 min) | Systems / C++ Reading (45 min) | Afternoon Implementation (2.5 hrs) |
 |:---|:---|:---|:---|
 | **Mon Sep 15** | **CALC (Strang §4.1–4.3)**: Riemann sums, partitions, upper and lower Darboux sums, definition of the Riemann integral. | **CSAPP §6.1–6.3**: SRAM vs DRAM, memory latency gap, spatial and temporal locality principles. | **secan**: Profile SIFT1M cache misses with `perf stat -e L1-dcache-load-misses,LLC-load-misses`. Calculate working set. |
 | **Tue Sep 16** | **CALC (Strang §4.4)**: The Fundamental Theorem of Calculus Part 1 and Part 2: Rigorous proof connecting differentiation and integration. | **CSAPP §6.4–6.5**: Cache line organization, set associativity, conflict misses, cache-friendly coding. | **secan**: Implement cache-blocked `linear_scan_tiled`: partition dataset into tiles fitting in L2 cache ($256\text{KB}$). |
 | **Wed Sep 17** | **CALC (Strang §5.1–5.3)**: Integration by Substitution (the reverse chain rule) and change of variables in definite integrals. | **CSAPP §6.6 & PIKUS Ch 4**: The Memory Mountain, cache hierarchy on real workloads, software prefetching. | **secan**: Add software prefetching (`_mm_prefetch`, `_MM_HINT_T0`). Tune prefetch distances ($4, 8, 16, 32$ vectors). |
-| **Thu Sep 18** | **CALC (Strang §5.4–5.5)**: Integration by Parts: deriving $\int u v' dx = uv - \int u' v dx$. Tabular integration and reduction formulas. | **AGNER Ch 9**: Optimizing memory access, cache line splits, non-temporal streaming stores. | **Python (`transformers-pytorch`)**: Implement `LayerNorm`, `PositionalEncoding`, and `FeedForwardBlock` from scratch. |
-| **Fri Sep 19** | **CALC (Strang §5.6)**: Trigonometric integrals: evaluating $\int \sin^m x \cos^n x dx$ and trigonometric substitutions ($x = a\sin\theta, x = a\tan\theta$). | **FINSY Ch 6**: Cache optimization, system warmup routines, `madvise(MADV_HUGEPAGE)`. | **Python (`transformers-pytorch`)**: Assemble `TransformerEncoder` stacking $N$ layers with residual connections. Verify forward pass. |
+| **Thu Sep 18** | **CALC (Strang §5.4–5.5)**: Integration by Parts. | **AGNER Ch 9**: Memory access, non-temporal stores. | **secan**: Unit-sphere pre-normalization path for cosine/IP. Store optional `norm` column. |
+| **Fri Sep 19** | **CALC (Strang §5.6)**: Trigonometric integrals. | **FINSY Ch 6**: `madvise(MADV_HUGEPAGE)`. | **secan**: Hugepage / `madvise` warmup on dataset mmap. *(DL: Sat Sep 20 Pre-LN encoder.)* |
 
-> **📝 Essay 3 (Sat Sep 20)**: *"The Geometry of Subspaces and the Physics of CPU Caches"*
+> **📝 Essay 3 (Sat Sep 20)**: *"Integrals, Accumulation, and the Physics of CPU Caches"*  
+> **🧠 DL weekend**: Pre-LN encoder + FFN.
 
 ---
 
-### Week 4 (Sep 22–26): Complex Numbers, Euler's Formula, Taylor Series & Full Transformer
+### Week 4 (Sep 22–26): Euler's Formula, IVF, MIPS & List Rebalance
 
-**Theme**: Complex plane geometry, Euler's formula, Taylor series, and complete Transformer encoder-decoder.
+**Theme**: Complex plane / Euler (math hook for weekend RoPE), **IP/MIPS IVF**, spherical k-means, inverted-list skew.
 
-* **Pure Math (Gelfand Trig Ch 7 & Strang Calc Ch 8)**:
-  * **Complex Numbers & Polar Form**: $z = a + bi$, modulus $|z| = \sqrt{a^2 + b^2}$, argument $\theta = \arctan(b/a)$, polar form $z = r(\cos\theta + i\sin\theta)$.
-  * **Euler's Formula & De Moivre's Theorem**: $e^{i\theta} = \cos\theta + i\sin\theta$, $[r(\cos\theta + i\sin\theta)]^n = r^n(\cos n\theta + i\sin n\theta)$, roots of unity.
-  * **Taylor & Maclaurin Series**: $f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n$. Taylor series of $e^x, \sin x, \cos x, \frac{1}{1-x}$.
-* **C++ & Python Track**:
-  * **secan**: Batch Query GEMM, `IVFIndex` with $k$-means coarse Voronoi partitioning, multi-threaded `std::jthread` scaling.
-  * **Python (`transformers-pytorch`)**: `TransformerDecoder` with cross-attention, causal masking, complete `Transformer` model.
+* **Pure Math**: Gelfand Ch 7 + Strang Ch 8 (unchanged).
+* **C++**: Batch GEMM, **MIPS IVF** (spherical k-means), list imbalance, pinned threads.
+* **DL**: Sat Sep 27 — RoPE + CausalLM + naive KV (not weekday).
 
 | Day | Pure Mathematics (90 min) | Systems / C++ Reading (45 min) | Afternoon Implementation (2.5 hrs) |
 |:---|:---|:---|:---|
-| **Mon Sep 22** | **TRIG (Gelfand Ch 7)**: The complex plane $\mathbb{C}$, complex arithmetic, conjugate $\bar{z}$, modulus, and geometric multiplication in polar form. | **PIKUS Ch 5**: Cache coherence, false sharing, atomic memory ordering basics. | **secan**: Implement `batch_linear_scan`: process $B=32/64$ queries simultaneously against tiled dataset (GEMV $\to$ GEMM). |
-| **Tue Sep 23** | **TRIG (Gelfand Ch 7)**: De Moivre's Theorem and Euler's Formula $e^{i\theta} = \cos\theta + i\sin\theta$. Solving $z^n = 1$ for the $n$-th roots of unity. | Research: Faiss IVF coarse quantizer architecture, Voronoi cell partitioning. | **secan**: Implement `IVFIndex`: train $k$-means centroids on dataset vectors; assign vectors to Voronoi cells; build inverted lists. |
-| **Wed Sep 24** | **CALC (Strang §8.1–8.3)**: Infinite sequences and series. Convergence tests (Integral test, Comparison test, Ratio test, Alternating series test). | **PIKUS Ch 6**: Concurrency, work decomposition, thread pool patterns. | **secan**: Implement multi-probe IVF search: query searches top `nprobe` cells. Sweep `nprobe` from 1 to 64; plot Recall vs speedup. |
-| **Thu Sep 25** | **CALC (Strang §8.4–8.6)**: Power series, radius of convergence, and Taylor/Maclaurin series expansions. Proof that $e^x = \sum \frac{x^n}{n!}$. | **CPPHI Concurrency & ASYNC Ch 1–2**: `std::jthread`, thread affinity, eliminating false sharing with `alignas(64)`. | **Python (`transformers-pytorch`)**: Build `TransformerDecoder` with cross-attention and causal mask. Assemble complete `Transformer` model. |
-| **Fri Sep 26** | **Pure Math Synthesis**: Proving Euler's formula $e^{i\theta} = \cos\theta + i\sin\theta$ by substituting $ix$ into the Taylor series of $e^x$. | **PIKUS Ch 12**: Design for performance, evaluating whole-system throughput. | **secan & Python**: Multi-thread IVF search across CPU cores with pinned threads. Assemble full PyTorch Transformer model. Tag `v0.2-simd-ivf`. |
+| **Mon Sep 22** | **TRIG (Gelfand Ch 7)**: Complex plane, modulus, polar multiplication. | **PIKUS Ch 5**: Cache coherence, false sharing. | **secan**: `batch_linear_scan` $B=32/64$ (GEMV $\to$ GEMM). |
+| **Tue Sep 23** | **TRIG (Gelfand Ch 7)**: Euler $e^{i\theta}$, roots of unity. | Faiss IVF coarse quantizer; **spherical k-means** for IP/MIPS. | **secan**: `IVFIndex` — L2 k-means + **spherical k-means** for IP. |
+| **Wed Sep 24** | **CALC (Strang §8.1–8.3)**: Series, convergence tests. | **PIKUS Ch 6**: Thread pools. | **secan**: Multi-probe IVF; `nprobe` sweep; pinned `std::jthread`. |
+| **Thu Sep 25** | **CALC (Strang §8.4–8.6)**: Taylor of $e^x$. | IVF inverted-list skew (Faiss `make_direct_map` / list size). | **secan (required)**: Histogram of IVF list sizes; **rebalance / split oversized lists**. |
+| **Fri Sep 26** | **LINALG PREVIEW**: Length, angles, Cauchy-Schwarz. | IP vs L2 recall on same vectors. | **secan**: IP/MIPS search path on IVF; compare Recall@10 vs L2. Tag `v0.2-simd-ivf`. |
 
-> **📝 Essay 4 (Sat Sep 27)**: *"From Euler's Formula to Voronoi Cells: The Mathematical Architecture of Scalable Search"*
+> **📝 Essay 4 (Sat Sep 27)**: *"From Euler's Formula to RoPE and Voronoi Cells"*  
+> **🚀 Month 1 PUBLISH (Sun Sep 27)**. **🧠 DL**: RoPE + SwiGLU + CausalLM + CE + naive KV.
 
 ---
 
 # 📅 MONTH 2: Multivariable Calculus, Vector Fields, Vision Transformers & HNSW (Oct 2026)
+
+> **🔬 Monthly research**: *Anisotropy, Hubness, and Bits: SQ / PQ / FastScan / ScaNN **+ OPQ / asymmetric distance*** → publish **Sun Oct 25** · folder `research/2026-10-anisotropy-hubness-bits/`
 
 ---
 
@@ -180,19 +278,19 @@
   * Partial derivatives $\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}$, Clairaut's Theorem (equality of mixed partials $\frac{\partial^2 f}{\partial x \partial y} = \frac{\partial^2 f}{\partial y \partial x}$).
   * The Gradient vector $\nabla f = \left( \frac{\partial f}{\partial x_1}, \dots, \frac{\partial f}{\partial x_n} \right)$, directional derivatives $D_{\mathbf{u}} f = \nabla f \cdot \mathbf{u}$.
   * The Hessian matrix $H[i, j] = \frac{\partial^2 f}{\partial x_i \partial x_j}$, Second Derivative Test for multivariable extrema.
-* **C++ & Python Track**:
-  * **secan**: `ScalarQuantizer` with percentile clipping (0.05th/99.95th), `l2_squared_sq8` integer AVX2 intrinsics (`_mm256_maddubs_epi16`).
-  * **Python (`vit-pytorch`)**: Scaffold project (`uv init vit-pytorch`). Write `src/patch_embed.py` from scratch (`PatchEmbedding` + `[CLS]` token).
+* **C++ Track**: `ScalarQuantizer`, SQ8/SQ4 integer AVX2, 2-stage re-ranker.
+* **DL**: Sat Oct 4 — ViT `PatchEmbedding` + `[CLS]`.
 
 | Day | Pure Mathematics (90 min) | Systems / C++ Reading (45 min) | Afternoon Implementation (2.5 hrs) |
 |:---|:---|:---|:---|
-| **Mon Sep 29** | **CALC §13.1–13.3**: Functions of several variables, limits and continuity in $\mathbb{R}^n$, partial derivatives definition and geometry. | **AGNER Ch 7.2 & CSAPP §2.2–2.3**: Integer arithmetic efficiency, two's complement, overflow, bit-width conversion. | **secan**: Implement `ScalarQuantizer` with **percentile clipping (0.05th/99.95th)** to handle outlier dimensions. Verify dequantization error. |
+| **Mon Sep 29** | **CALC §13.1–13.3** + **LINALG §1.3**: Functions of several variables; reinforce dot product / projection as $\mathrm{proj}_u v = \frac{v\cdot u}{u\cdot u}u$ (needed for quantization geometry). | **AGNER Ch 7.2 & CSAPP §2.2–2.3**: Integer arithmetic efficiency, two's complement, overflow, bit-width conversion. | **secan**: Implement `ScalarQuantizer` with **percentile clipping (0.05th/99.95th)** to handle outlier dimensions. Verify dequantization error. |
 | **Tue Sep 30** | **CALC §13.4**: Tangent planes and linear approximations: $L(x, y) = f(a, b) + f_x(a, b)(x-a) + f_y(a, b)(y-b)$. Total differentials. | **INTEL Intrinsics Guide**: Study `_mm256_maddubs_epi16`, `_mm256_madd_epi16`, `_mm256_dpbusd_epi32` (VNNI dot product). | **secan**: Implement `l2_squared_sq8()` using AVX2 integer intrinsics. Process 32 dimensions per iteration in a single `__m256i`. |
-| **Wed Oct 1** | **CALC §13.5**: The Multivariable Chain Rule for paths and surfaces. Tree diagrams for composite multivariable functions. | **AGNER Ch 12**: Integer SIMD saturation arithmetic, signed vs unsigned byte multiplication, widening instructions. | **Python (`vit-pytorch`)**: Scaffold project (`uv init vit-pytorch`). Create `src/patch_embed.py` from scratch: implement `PatchEmbedding`. |
+| **Wed Oct 1** | **CALC §13.5**: The Multivariable Chain Rule for paths and surfaces. Tree diagrams for composite multivariable functions. | **AGNER Ch 12**: Integer SIMD saturation arithmetic, signed vs unsigned byte multiplication, widening instructions. | **secan**: SQ8 LUT / packed layout polish; SIMD path vs scalar dequant error check. |
 | **Thu Oct 2** | **CALC §13.6**: Directional derivatives and the Gradient vector $\nabla f$. Proving that $\nabla f$ points in the direction of maximum rate of increase. | **CSAPP §2.4**: Floating-point representation, rounding error bounds, precision loss in quantization. | **secan**: Implement 4-bit scalar quantization (`SQ4`): pack 2 dimensions per byte with nibble masking. Build 2-stage SQ8 $\to$ FP32 re-ranker. |
-| **Fri Oct 3** | **CALC §13.7**: Maximum and minimum values of multivariable functions, critical points, the Hessian matrix and discriminant $D = f_{xx} f_{yy} - (f_{xy})^2$. | **PIKUS Ch 9**: High-performance C++, move semantics, zero-copy buffer views (`std::span`). | **Python (`vit-pytorch`)**: Add learnable `[CLS]` token and 1D positional embeddings. Stack Transformer encoder layers to complete `VisionTransformer`. |
+| **Fri Oct 3** | **CALC §13.7**: Maximum and minimum values of multivariable functions, critical points, the Hessian matrix and discriminant $D = f_{xx} f_{yy} - (f_{xy})^2$. | **PIKUS Ch 9**: High-performance C++, move semantics, zero-copy buffer views (`std::span`). | **secan**: `std::span` views over quantized buffers; zero-copy encode path. *(DL: Sat Oct 4 ViT.)* |
 
-> **📝 Essay 5 (Sat Oct 4)**: *"Multivariable Gradients, Hessians, and Low-Bit Quantization: Compressing High-Dimensional Information"*
+> **📝 Essay 5 (Sat Oct 4)**: *"Multivariable Gradients, Hessians, and Low-Bit Quantization: Compressing High-Dimensional Information"*  
+> **🧠 DL weekend**: ViT patch embed + `[CLS]`.
 
 ---
 
@@ -204,19 +302,19 @@
   * **Constrained Optimization & Lagrange Multipliers**: $\nabla f = \lambda \nabla g$. Finding extrema on constrained surfaces. Multiple constraints $\nabla f = \lambda_1 \nabla g_1 + \lambda_2 \nabla g_2$.
   * **Double & Triple Integrals**: $\iint_R f(x, y) dA$, Fubini's Theorem, changing integration order.
   * **Jacobian of Transformations**: Coordinate transformations $x = g(u, v), y = h(u, v)$, the Jacobian determinant $J = \left|\frac{\partial(x, y)}{\partial(u, v)}\right|$, polar, cylindrical, and spherical substitutions.
-* **C++ & Python Track**:
-  * **secan**: `ProductQuantizer`, $k$-means codebook training, Asymmetric Distance Computation (ADC) with precomputed Query LUT.
-  * **Python (`bert-pytorch`)**: Scaffold project (`uv init bert-pytorch`). Write `src/embeddings.py` using HF `tokenizers` and build bidirectional encoder from scratch.
+* **C++ Track**: `ProductQuantizer`, ADC LUT, **asymmetric PQ** (FP32 query vs PQ db).
+* **DL**: Sat Oct 11 — BERT + **InfoNCE**; export 768-D `.fvecs` for Week 8 Fri.
 
 | Day | Pure Mathematics (90 min) | Systems / C++ Reading (45 min) | Afternoon Implementation (2.5 hrs) |
 |:---|:---|:---|:---|
 | **Mon Oct 6** | **CALC §13.8**: Constrained optimization: Method of Lagrange Multipliers. Geometric proof of $\nabla f \parallel \nabla g$ at tangent extrema. | Research paper: *"Product Quantization for Nearest Neighbor Search"* (Jégou et al. 2011) §1–4. | **secan**: Implement $k$-means clustering in C++ for a subspace: `train_kmeans(data, k=256, dim_sub)` using $k$-means++. |
 | **Tue Oct 7** | **CALC §13.8**: Lagrange Multipliers with multiple constraints: $\nabla f = \lambda_1 \nabla g_1 + \lambda_2 \nabla g_2$. Solving constrained systems. | Faiss wiki on Product Quantizer: subspace splitting, codebook memory layouts. | **secan**: Implement `ProductQuantizer`: split $D$ dimensions into $M$ subspaces. Train $M$ codebooks. Encode vectors as $M$-byte codes. |
 | **Wed Oct 8** | **CALC §14.1–14.2**: Double integrals over rectangular and general regions. Fubini's Theorem on swapping order of integration. | **AGNER Ch 7.10 & Ch 9**: Array structures for cache-friendly table lookups, stride optimization. | **secan**: Implement Asymmetric Distance Computation (ADC): precompute query-to-centroid table `float LUT[M][256]`. Distance = sum of $M$ lookups. |
-| **Thu Oct 9** | **CALC §14.3–14.4**: Double integrals in polar coordinates: $\iint f(r\cos\theta, r\sin\theta) r \, dr \, d\theta$. Evaluating the Gaussian integral $\int_{-\infty}^\infty e^{-x^2} dx = \sqrt{\pi}$. | **PIKUS Ch 10**: Compiler optimizations, `__restrict__`, loop vectorization, Link-Time Optimization (LTO). | **Python (`bert-pytorch`)**: Scaffold clean project (`uv init bert-pytorch`). Use HF `tokenizers`. Implement `src/embeddings.py` and bidirectional encoder from scratch. |
-| **Fri Oct 10** | **CALC §14.7**: Change of Variables in Multiple Integrals: The Jacobian matrix and determinant $J = \det\left(\frac{\partial(x, y, z)}{\partial(u, v, w)}\right)$. | **PIKUS Ch 11**: Undefined behavior, memory aliasing, safe usage of low-level pointer arithmetic. | **Python (`bert-pytorch`) & secan**: Implement BERT MLM prediction head. In `secan`, benchmark IVFPQ vs IVFFlat on SIFT1M. |
+| **Thu Oct 9** | **CALC §14.3–14.4**: Double integrals in polar coordinates: $\iint f(r\cos\theta, r\sin\theta) r \, dr \, d\theta$. Evaluating the Gaussian integral $\int_{-\infty}^\infty e^{-x^2} dx = \sqrt{\pi}$. | **PIKUS Ch 10**: Compiler optimizations, `__restrict__`, loop vectorization, Link-Time Optimization (LTO). | **secan**: **Asymmetric BQ**: FP32 query vs 1-bit db (Hamming / IP estimator). Keep query in FP32. |
+| **Fri Oct 10** | **CALC §14.7**: Change of Variables in Multiple Integrals: Jacobian $J = \det\left(\frac{\partial(x, y, z)}{\partial(u, v, w)}\right)$. | **PIKUS Ch 11**: Undefined behavior, memory aliasing. | **secan (required)**: Wire **IVF + PQ ADC** sketch (`IVFPQIndex` stub): coarse IVF then PQ inside lists. Recall vs IVFFlat on SIFT subset. **Compose, do not stop at PQ-only.** *(DL InfoNCE: Sat Oct 11.)* |
 
-> **📝 Essay 6 (Sat Oct 11)**: *"Lagrange Multipliers, Jacobians, and Product Quantization: Compressing Vectors to 16 Bytes"*
+> **📝 Essay 6 (Sat Oct 11)**: *"Lagrange Multipliers, Jacobians, and Product Quantization: Compressing Vectors to 16 Bytes"*  
+> **🧠 DL weekend**: BERT + InfoNCE; export 768-D `.fvecs`.
 
 ---
 
@@ -230,47 +328,50 @@
   * Fundamental Theorem for Line Integrals: $\int_C \nabla f \cdot d\mathbf{r} = f(\mathbf{r}(b)) - f(\mathbf{r}(a))$ (path independence).
   * Green's Theorem in the plane: $\oint_C (P dx + Q dy) = \iint_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dA$.
 * **ScaNN Theory**: Directional error decomposition: parallel error $e_\parallel$ vs orthogonal error $e_\perp$; ScaNN anisotropic loss $\mathcal{L} = h \|e_\parallel\|^2 + \|e_\perp\|^2$.
-* **C++ & Python Track**:
-  * **secan**: ScaNN anisotropic loss codebook training, 1-bit RaBitQ, 4-bit FastScan with in-register `_mm256_shuffle_epi8` (PSHUFB).
-  * **Python (`bert-pytorch`)**: Train BERT with Matryoshka Representation Learning (MRL) nested dimension loss ($64\text{D} \subset 128\text{D} \subset 768\text{D}$).
+* **C++ Track**: ScaNN anisotropic PQ, BQ, FastScan, **OPQ / residual PQ**.
+* **DL**: Sat Oct 18 — MRL tiny-corpus.
 
 | Day | Pure Mathematics & ScaNN Math (90 min) | Systems / C++ Reading (45 min) | Afternoon Implementation (2.5 hrs) |
 |:---|:---|:---|:---|
 | **Mon Oct 13** | **CALC §15.1–15.2**: Vector fields in 2D/3D. Line integrals of vector fields along parameterized curves $\mathbf{r}(t)$. Work done by a force field. | ScaNN Paper §1–3: MIPS error decomposition: why orthogonal error $e_\perp$ has 0 expectation while parallel error $e_\parallel$ degrades inner products. | **secan**: Implement **ScaNN Anisotropic Loss** in `ProductQuantizer`: penalize parallel error with weight $h=5.0$. Compare codebooks. |
-| **Tue Oct 14** | **CALC §15.3**: Conservative vector fields, potential functions $f$, and path independence of line integrals. Conditions for a field to be conservative. | **INTEL Intrinsics & AGNER-INST**: Deep dive into `_mm256_shuffle_epi8` (PSHUFB) semantics and port mapping. | **secan**: Implement RaBitQ: generate random orthogonal rotation matrix via QR decomposition. Apply rotation before 1-bit quantization + error correction. |
+| **Tue Oct 14** | **CALC §15.3**: Conservative vector fields, potential functions $f$, and path independence of line integrals. Conditions for a field to be conservative. | **INTEL Intrinsics & AGNER-INST**: Deep dive into `_mm256_shuffle_epi8` (PSHUFB) semantics and port mapping. | **secan**: Implement **plain BQ** (`bit = val > 0`): Hamming via XOR+POPCNT. **Do not** implement RaBitQ yet (needs QR — Week 10). |
 | **Wed Oct 15** | **CALC §15.4**: Green's Theorem: rigorous proof connecting a line integral around a closed curve to a double integral over the enclosed region. | Faiss FastScan documentation & André et al. (2015) paper §1–3. | **secan**: Implement 4-bit PQ encoding ($k=16$ centroids per subspace, packing 2 codes per byte). |
 | **Thu Oct 16** | **CALC §15.5**: Curl and Divergence of vector fields: $\text{curl } \mathbf{F} = \nabla \times \mathbf{F}$ (circulation), $\text{div } \mathbf{F} = \nabla \cdot \mathbf{F}$ (flux density). Physical interpretations. | AGNER-INST: Study `VPSHUFB`, `VPADDB`, `VPUNPCKLBW` instruction latency and accumulation chains. | **secan**: Implement **FastScan kernel**: load 16 centroid distances into `__m128i` / `__m256i`. Execute table lookups **entirely in-register** via PSHUFB. |
-| **Fri Oct 17** | **CALC §15.6–15.8**: Surface integrals, Stokes' Theorem ($\oint_C \mathbf{F} \cdot d\mathbf{r} = \iint_S (\nabla \times \mathbf{F}) \cdot d\mathbf{S}$), Divergence Theorem ($\iint_S \mathbf{F} \cdot d\mathbf{S} = \iiint_E (\nabla \cdot \mathbf{F}) dV$). | **CSAPP §5.10–5.12**: Register spilling, store-load forwarding, pipeline limiting factors. | **Python (`bert-pytorch`)**: Train BERT with Matryoshka Representation Loss. Export multi-resolution embeddings ($64\text{D}, 128\text{D}, 768\text{D}$) to `.fvecs`. |
+| **Fri Oct 17** | **LINALG PREVIEW (Strang §2.1–2.2)**: Vector spaces, subspaces, column space $C(A)$, nullspace $N(A)$ — warm-up for Month 3. Skip Stokes/Divergence deep dive (optional weekend). | **CSAPP §5.10–5.12**: Register spilling, store-load forwarding, pipeline limiting factors. | **secan (required)**: **OPQ** (rotate then PQ) *or* **residual PQ**. Compare Recall@10 vs plain PQ on SIFT. Asymmetric ADC remains FP32 query. *(DL: Sat Oct 18 MRL.)* |
 
-> **📝 Essay 7 (Sat Oct 18)**: *"Google ScaNN Anisotropic Loss, Vector Fields, and In-Register SIMD FastScan"*
+> **📝 Essay 7 (Sat Oct 18)**: *"Google ScaNN Anisotropic Loss, Vector Fields, and In-Register SIMD FastScan"*  
+> **🧠 DL weekend**: MRL nested dims on tiny corpus.
 
 ---
 
-### Week 8 (Oct 20–24): Graph Theory, The Hubness Phenomenon & HNSW from Scratch
+### Week 8 (Oct 20–24): Graph Theory, The Hubness Phenomenon & HNSW Core
 
-**Theme**: Small-world networks, the Hubness Problem in high-dimensional embedding spaces, and HNSW graph routing.
+**Theme**: Small-world networks, hubness in high-D spaces, and a **correct** HNSW (optimize later).
 
 * **Pure Math (Graph Theory & High-D Analytics)**:
-  * Graph representations: Node-arc incidence matrices, adjacency matrices, Graph Laplacian $L = D - A$.
-  * Algebraic connectivity (Fiedler vector / second smallest eigenvalue of Laplacian).
-  * **The Hubness Phenomenon**: Skewness of $k$-occurrences ($S_{N_k}$), measure concentration in $\mathbb{R}^D$, Centering & Whitening transforms to eliminate hub congestion.
-* **C++ & Python Track**:
-  * **secan**: Full HNSW index from scratch (skip-list hierarchy, greedy beam search, heuristic neighbor selection Algorithm 4, CSR-packed adjacency, bounded flat heaps).
-  * **Python**: Text-to-vector search pipeline: Raw Text Corpus $\to$ Tokenization (HF `tokenizers`) $\to$ PyTorch BERT $\to$ Export `.fvecs` $\to$ Ingest into `secan`.
+  * Graph representations: adjacency matrices, Graph Laplacian $L = D - A$.
+  * Algebraic connectivity (Fiedler vector) — intuition only; proofs deferred to Week 23.
+  * **The Hubness Phenomenon**: Skewness of $k$-occurrences ($S_{N_k}$), measure concentration. **Whitening formula stated**; implement transform in Week 12 after SVD.
+* **C++ Track**: HNSW core. **Fri required: production text encode → HNSW** (`ggmbed` or dense ONNX `.fvecs`; InfoNCE export OK as secondary). Not SIFT-only.
+  * **Deferred (required Week 12 Wed)**: bounded flat heap + bitset visited.
+  * **ONNX ColBERT (`limbed`) → Week 9 Fri.**
 
 | Day | Pure Mathematics & Hubness Analytics (90 min) | Systems / C++ Reading (45 min) | Afternoon Implementation (2.5 hrs) |
 |:---|:---|:---|:---|
-| **Mon Oct 20** | **GRAPH THEORY**: Graphs and Networks: Incidence matrix $A$, Kirchhoff's current/voltage laws, Graph Laplacian $L = A^T A = D - W$. | Research paper: *"Efficient and Robust ANN Search Using HNSW Graphs"* (Malkov & Yashunin 2020) §1–3. | **secan**: Implement `HNSWIndex` data structures: flat CSR adjacency storage (`neighbors[]` + `offsets[]`), node struct, entry point. |
-| **Tue Oct 21** | **HUBNESS ANALYTICS**: Skewness of $k$-occurrences $S_{N_k} = \frac{\sum (N_k(x) - \mu)^3}{\sigma^3}$. Why high hubness degrades HNSW graph routing. | HNSW paper §4–5: Algorithm 4 (heuristic neighbor selection), level multiplier $m_L$, parameter tuning ($M, ef$). | **secan**: Implement HNSW `insert()`: exponential level assignment ($\ell = \lfloor -\ln(\text{unif}) \cdot m_L \rfloor$), greedy descent, multi-layer neighbor connection. |
-| **Wed Oct 22** | **SPECTRAL GRAPH THEORY**: Centering and Whitening transforms: $x_{\text{white}} = \Lambda^{-1/2} Q^T (x - \mu)$ to eliminate embedding anisotropy. | **PIKUS Ch 7**: Concurrent data structures, cache-friendly priority queues, memory allocation in graphs. | **secan**: Implement HNSW `search()`: beam search with visited-set bitfield. Implement Algorithm 4 diverse neighbor selection. |
-| **Thu Oct 23** | **GRAPH EMBEDDINGS**: Shortest path distance vs Euclidean embedding distance. Small-world clustering coefficient $C$ and path length $L$. | **AGNER Ch 7.12–7.13 & Ch 7.5**: Branch prediction in graph traversal, branchless heap sift-down. | **secan**: Optimize HNSW: replace `std::priority_queue` with custom **bounded flat heap** (fixed-size array). Replace visited hash-set with flat bitset. |
-| **Fri Oct 24** | **PURE MATH REVIEW**: Comprehensive review of Multivariable Calculus & Vector Calculus theorems (Green's, Stokes', Divergence). | **CSAPP §5.14**: Profiling graph traversal bottlenecks with `perf record`. | **End-to-End Test**: Ingest BERT text embeddings ($768\text{D}$) into `secan` HNSW. Benchmark Recall@10 vs QPS Pareto curves. Tag `v0.3-hnsw`. |
+| **Mon Oct 20** | **GRAPH THEORY**: Graphs and Networks: Incidence matrix $A$, Graph Laplacian $L = D - W$. | Research paper: *"Efficient and Robust ANN Search Using HNSW Graphs"* (Malkov & Yashunin 2020) §1–3. | **secan**: Implement `HNSWIndex` data structures: flat CSR adjacency (`neighbors[]` + `offsets[]`), node struct, entry point. |
+| **Tue Oct 21** | **HUBNESS ANALYTICS**: Skewness of $k$-occurrences $S_{N_k}$. Why high hubness degrades graph routing. Whitening $x_{\text{white}} = \Lambda^{-1/2} Q^T (x - \mu)$ as **formula only** (implement Week 12 Mon). | HNSW paper §4–5: Algorithm 4 (heuristic neighbor selection), level multiplier $m_L$, parameter tuning ($M, ef$). | **secan**: Implement HNSW `insert()`: exponential level assignment, greedy descent, multi-layer neighbor connection. |
+| **Wed Oct 22** | **SPECTRAL INTUITION**: Fiedler vector / algebraic connectivity — geometric meaning for bottlenecks (proofs → Week 23). | **PIKUS Ch 7**: Concurrent data structures, cache-friendly priority queues, memory allocation in graphs. | **secan**: Implement HNSW `search()`: beam search with visited-set. Implement Algorithm 4 diverse neighbor selection. |
+| **Thu Oct 23** | **GRAPH EMBEDDINGS**: Shortest path distance vs Euclidean embedding distance. Small-world clustering coefficient $C$ and path length $L$. | **AGNER Ch 7.12–7.13 & Ch 7.5**: Branch prediction in graph traversal, branchless heap sift-down (**prep for Week 12 Wed**). | **secan**: Correctness harness: Recall@10 vs exact on SIFT subset. Do **not** optimize heaps yet → Week 12 Wed. |
+| **Fri Oct 24** | **PURE MATH REVIEW**: Multivariable Calculus highlights (gradient, Hessian, Lagrange). | **CSAPP §5.14**: Profiling graph traversal; skim `ggmbed` / dense ONNX → `.fvecs` glue. | **secan (required)**: Encode a text slice with **`ggmbed` (or dense ONNX)** → `.fvecs` → HNSW; plot **Recall@10 vs QPS**. Tag `v0.3-hnsw`. |
 
-> **📝 Essay 8 (Sat Oct 25)**: *"Building HNSW from Scratch: Graph Laplacians, The Hubness Phenomenon, and Sub-Millisecond Search"*
+> **📝 Essay 8 (Sat Oct 25)**: *"Building HNSW from Scratch: Graph Laplacians, The Hubness Phenomenon, and Sub-Millisecond Search"*  
+> **🚀 Month 2 research PUBLISH (Sun Oct 25)**: freeze `research/2026-10-anisotropy-hubness-bits/paper.md` + public post.
 
 ---
 
 # 📅 MONTH 3: Linear Algebra from First Principles, ColBERT & LSM-Trees (Nov 2026)
+
+> **🔬 Monthly research**: *Late Interaction Under Writes: PLAID vs MUVERA FDE→MIPS Inside an LSM Vector Engine* (+ **BEIR/MS MARCO slice**) → publish **Sun Nov 29** · folder `research/2026-11-late-interaction-lsm/`
 
 ---
 
@@ -282,99 +383,98 @@
   * Linear combinations, dot products, length and angles in $\mathbb{R}^n$, matrix elimination, triangular factorizations $A = LU$.
   * Vector spaces and subspaces, the Nullspace $N(A)$, the Column space $C(A)$, linear independence, basis, dimension.
   * The Four Fundamental Subspaces and the Fundamental Theorem of Linear Algebra ($r = \text{rank}(A)$).
-* **C++ & Python Track**:
-  * **secan**: `MultiVectorIndex` class, SIMD-vectorized MaxSim kernel ($\sum_{q} \max_{d} (q \cdot d)$), token centroid inverted index.
-  * **Python (`colbert-pytorch`)**: Scaffold project (`uv init colbert-pytorch`). Write `src/model.py` and implement ColBERT dual encoder architecture from scratch.
+* **C++ Track**: **Batch HNSW build** Mon–Tue; SIMD MaxSim Wed–Thu; **Fri: `limbed` ONNX → MultiVectorIndex** (VS ONNX landing). ColBERT train = Sat Nov 1.
 
 | Day | Pure Mathematics (Strang) (90 min) | Systems / C++ Reading (45 min) | Afternoon Implementation (2.5 hrs) |
 |:---|:---|:---|:---|
-| **Mon Oct 27** | **STRANG §1.1–1.6**: Vector geometry, matrix multiplication from 4 perspectives, Gaussian elimination, $LU$ factorization. | Research paper: *"ColBERT: Efficient and Effective Passage Search via Late Interaction"* (Khattab & Zaharia 2020). | **Python (`colbert-pytorch`)**: Scaffold clean project (`uv init colbert-pytorch`). Create `src/model.py` and implement ColBERT dual encoder from scratch. |
-| **Tue Oct 28** | **STRANG §2.1–2.2**: Vector spaces, closure axioms, column space $C(A)$, solving $Ax = b$, nullspace $N(A)$, special solutions. | Research paper: *"PLAID: An Efficient Engine for Late Interaction Retrieval"* (Santhanam et al. 2022) §1–4. | **Python (`colbert-pytorch`)**: Implement PyTorch MaxSim operator: `torch.einsum('bsh,bdh->bsd', Q, D).max(dim=2).values.sum(dim=1)`. |
+| **Mon Oct 27** | **STRANG §1.1–1.6**: Vector geometry, matrix multiplication from 4 perspectives, Gaussian elimination, $LU$ factorization. | Research paper: *"ColBERT: Efficient and Effective Passage Search via Late Interaction"* (Khattab & Zaharia 2020). | **secan (required)**: **Batch HNSW build**: insert $N$ in one pass (level assignment + sequential connect). Compare build time vs one-by-one insert. |
+| **Tue Oct 28** | **STRANG §2.1–2.2**: Vector spaces, column space $C(A)$, nullspace $N(A)$. | PLAID paper §1–4; HNSW bulk-construction notes. | **secan**: Parallel batch graph construction (shard-then-merge or lock-free insert). Measure Recall@10 vs sequential insert. |
 | **Wed Oct 29** | **STRANG §2.3–2.4**: Linear independence, spanning sets, basis, dimension of vector spaces. Computing rank from echelon form. | **INTEL Intrinsics Guide**: Study `_mm256_max_ps`, `_mm256_permute2f128_ps`, cross-lane max reduction. | **secan**: Implement **SIMD-vectorized MaxSim kernel** in C++: process 8 document tokens in parallel with AVX2 FMA + horizontal max reduction. |
-| **Thu Oct 30** | **STRANG §2.5–2.6**: The Four Fundamental Subspaces ($C(A), N(A), C(A^T), N(A^T)$). The Fundamental Theorem of Linear Algebra (Part 1). | **AGNER Ch 13**: Data parallelism, cache layout for multi-vector matrices. | **secan**: Build **token centroid index**: cluster document tokens into centroids ($C=32\text{K}$). Build inverted lists `centroid_id → (doc_id, token_idx)`. |
-| **Fri Oct 31** | **STRANG §2.6**: Matrix rank and dimensions of the 4 subspaces: $\dim C(A) = \dim C(A^T) = r$, $\dim N(A) = n - r$, $\dim N(A^T) = m - r$. | Re-read PLAID paper §3 "Centroid Interaction" + §4 "Decompression and Scoring". | **secan**: Implement centroid candidate pruning: query tokens retrieve candidate documents from centroid inverted lists. Score candidates with MaxSim. |
+| **Thu Oct 30** | **STRANG §2.5–2.6**: The Four Fundamental Subspaces ($C(A), N(A), C(A^T), N(A^T)$). The Fundamental Theorem of Linear Algebra (Part 1). | **AGNER Ch 13**: Data parallelism, cache layout for multi-vector matrices. | **secan**: Build **token centroid index**: cluster document tokens into centroids ($C=32\text{K}$). Build inverted lists `centroid_id → (doc_id, token_idx)`. Centroid prune path ready for Fri’s limbed dump. |
+| **Fri Oct 31** | **STRANG §2.6**: Matrix rank and dimensions of the 4 subspaces: $\dim C(A) = \dim C(A^T) = r$, $\dim N(A) = n - r$, $\dim N(A^T) = m - r$. | `limbed` README: ONNX ColBERT layout (`model.onnx` + `tokenizer.json`). | **secan (required)**: **`limbed` ONNX encode** → token matrices → `MultiVectorIndex` + SIMD MaxSim. Centroid prune on same dump. This is the VS **ONNX** handoff (ORT stays in limbed). |
 
-> **📝 Essay 9 (Sat Nov 1)**: *"Beyond Single Vectors: The Linear Algebra and SIMD Architecture of ColBERT Late Interaction"*
+> **📝 Essay 9 (Sat Nov 1)**: *"Beyond Single Vectors: The Linear Algebra and SIMD Architecture of ColBERT Late Interaction"*  
+> **🧠 DL weekend**: ColBERT dual encoder + MaxSim + tiny Margin MSE.  
+> **🔬 Month 3 Sundays**: BEIR or MS MARCO **slice** (dense + ColBERT MaxSim + **MUVERA** FDE candidates).
 
 ---
 
-### Week 10 (Nov 3–7): Orthogonality, Projections, QR, PLAID Engine & Poisson SLAs
+### Week 10 (Nov 3–7): Orthogonality, MUVERA FDEs, PLAID, RaBitQ & TurboQuant
 
-**Theme**: Orthogonal projections, Gram-Schmidt, $A=QR$, progressive PLAID retrieval, and Poisson tail latency modeling.
+**Theme**: Projections / $A=QR$; **MUVERA** reduces MaxSim to IP MIPS; PLAID is the cascade alternative; RaBitQ + TurboQuant 1@k.
 
 * **Pure Math (Gilbert Strang Linear Algebra Ch 3)**:
   * Orthogonality of the four fundamental subspaces ($C(A^T) \perp N(A)$ and $C(A) \perp N(A^T)$).
   * Projections onto lines and subspaces, Projection Matrix $P = A(A^T A)^{-1} A^T$ ($P^2 = P, P^T = P$).
   * Least squares approximations, normal equations $A^T A \hat{x} = A^T b$.
   * Orthonormal bases, Gram-Schmidt orthogonalization process, $A = QR$ factorization.
-* **Queuing Theory**: Poisson arrival modeling ($M/M/k$ queue); evaluating $p50, p95, p99, p99.9$ tail latency percentiles under load.
-* **C++ & Python Track**:
-  * **secan**: PLAID 3-stage progressive scoring (Centroid $\to$ Quantized MaxSim $\to$ FP32 MaxSim), Sparse Inverted Index with BM25, Block-Max WAND, Poisson query load generator.
-  * **Python (`colbert-pytorch`)**: Training ColBERT with Margin MSE / in-batch negatives loss, residual token quantization.
+* **Queuing Theory (light)**: Poisson load generator = **Week 11 stretch** (deep $M/M/k$ in Month 4).
+* **MUVERA** ([NeurIPS 2024](https://arxiv.org/abs/2405.19504)): asymmetric **Fixed Dimensional Encodings** so $\langle \mathrm{FDE}(Q), \mathrm{FDE}(P) \rangle$ approximates Chamfer/MaxSim; retrieve with Week 4/8 **IP** index; re-rank with exact MaxSim. Same family as asymmetric PQ (FP32 query vs compressed db).
+* **Frontier compression**: [TurboQuant](https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/) — PolarQuant + QJL. **1@k Fri required.**
+* **C++ Track**: **MUVERA Mon–Tue**; **PLAID 3-stage Wed**; **RaBitQ Thu**; **TurboQuant Fri**.
+  * **Deferred (required Week 16 Fri)**: BM25, WAND, **RRF**.
 
 | Day | Pure Mathematics (Strang) (90 min) | Systems / C++ Reading (45 min) | Afternoon Implementation (2.5 hrs) |
 |:---|:---|:---|:---|
-| **Mon Nov 3** | **STRANG §3.1**: Orthogonal vectors, orthogonal subspaces. Proving row space is orthogonal to nullspace in $\mathbb{R}^n$. | Re-read PLAID §5 on 2-bit/4-bit residual token quantization. | **secan**: Implement 2-bit/4-bit token quantization for ColBERT residuals (`token - centroid`). Build quantized MaxSim kernel. |
-| **Tue Nov 4** | **STRANG §3.2**: Projection onto a 1D line: projection matrix $P = \frac{a a^T}{a^T a}$. Cauchy-Schwarz inequality proof from projection error. | BM25 algorithm theory: TF-IDF, document length normalization, saturation parameter $k_1$, length parameter $b$. | **secan**: Implement sparse inverted index: `term_id → PostingList{(doc_id, tf)}`. Implement BM25 scoring function. |
-| **Wed Nov 5** | **STRANG §3.3**: Projection onto an $n$-dimensional subspace. Deriving the normal equations $A^T A \hat{x} = A^T b$ and projection matrix $P = A(A^T A)^{-1} A^T$. | Research paper: *"Faster Top-k Document Retrieval Using Block-Max Indexes"* (Ding & Suel 2011) §1–3. | **secan**: Implement **Block-Max WAND**: store max score per block of 128 postings. Skip non-competitive blocks during traversal. |
-| **Thu Nov 6** | **STRANG §3.4**: Orthonormal vectors, square orthogonal matrices ($Q^T Q = I$), Gram-Schmidt process, and $A = QR$ factorization. | **CPPHI Parallel Algorithms**: `std::execution::par`, parallel divide-and-conquer search. | **secan**: Build Poisson query load generator in C++. Measure $p50, p95, p99, p99.9$ tail latencies under 500 QPS load. |
-| **Fri Nov 7** | **STRANG §3.4**: Least squares solutions via QR factorization: $\hat{x} = R^{-1} Q^T b$. Properties of upper-triangular back-substitution. | **PIKUS Ch 8**: C++20 concurrency features (`std::latch`, `std::barrier`, `std::counting_semaphore`). | **secan**: Implement PLAID 3-stage pipeline end-to-end: Centroid $\to$ Quantized MaxSim $\to$ FP32 MaxSim. Benchmark latency percentiles. |
+| **Mon Nov 3** | **STRANG §3.1**: Orthogonal vectors, orthogonal subspaces. Proving row space is orthogonal to nullspace in $\mathbb{R}^n$. | [MUVERA](https://arxiv.org/abs/2405.19504) §1–3: FDE construction, SimHash buckets, **asymmetric** query vs doc encode. | **secan (required)**: `fde_encode` on **Week 9 Fri limbed token dump**. Hash tokens into $B$ buckets, per-bucket aggregate, $R$ repetitions. Query FDE $\neq$ doc FDE. |
+| **Tue Nov 4** | **STRANG §3.2**: Projection onto a 1D line: $P = \frac{a a^T}{a^T a}$. Cauchy-Schwarz from projection error. | MUVERA §4–5: FDE MIPS + MaxSim re-rank; candidate count vs heuristics. | **secan (required)**: Index doc FDEs with **IP** HNSW or IVF (Week 4/8). Retrieve then **MaxSim re-rank**. Plot Recall vs candidates vs Week 9 centroid prune. |
+| **Wed Nov 5** | **STRANG §3.3**: Projection onto a subspace; $A^T A \hat{x} = A^T b$. | PLAID §3–5: centroid → quantized MaxSim → FP32. | **secan (required)**: **PLAID 3-stage** (2/4-bit residual MaxSim). Same slice: PLAID vs MUVERA candidate efficiency. Poisson load gen = stretch. |
+| **Thu Nov 6** | **STRANG §3.4**: Orthonormal $Q$, Gram-Schmidt, $A = QR$. | RaBitQ: random orthogonal + error correction. **PIKUS Ch 8** concurrency skim. | **secan**: QR rotation helper + **RaBitQ**. Recall vs plain BQ (Week 7). |
+| **Fri Nov 7** | **STRANG §3.4**: Least squares via QR: $\hat{x} = R^{-1} Q^T b$. | [TurboQuant](https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/): PolarQuant + QJL; 1@k vs PQ/RaBitQ. | **secan (required)**: **TurboQuant/PolarQuant or QJL 1@k** vs RaBitQ vs PQ on **GloVe-200 or 768-D**. Plot Recall@1. |
 
-> **📝 Essay 10 (Sat Nov 8)**: *"PLAID, Block-Max WAND, and Tail Latency: The Engineering of 3-Stage Cascaded Retrieval"*
+> **📝 Essay 10 (Sat Nov 8)**: *"MUVERA FDEs vs PLAID Cascades: Reducing MaxSim to MIPS"*
 
 ---
 
 ### Week 11 (Nov 10–14): Determinants, Eigenvalues, Spectral Theorem & LSM-Tree Engine
 
-**Theme**: Determinants, eigenvalues, the Spectral Theorem for symmetric matrices, and LSM-Tree storage engines.
+**Theme**: Determinants, eigenvalues, the Spectral Theorem, and LSM-Tree storage (DiskANN = stretch).
 
 * **Pure Math (Gilbert Strang Linear Algebra Ch 4–5)**:
   * Determinants: 3 fundamental properties, algebraic formulas, cofactors, Cramer's rule.
   * Eigenvalues and Eigenvectors: $\det(A - \lambda I) = 0$, trace and determinant formulas, matrix diagonalization $A = S \Lambda S^{-1}$.
   * Symmetric Matrices: Proof that eigenvalues are all real and eigenvectors are orthogonal. The Spectral Theorem $A = Q \Lambda Q^T$.
-* **Storage Engine Internals**: Log-Structured Merge-Tree (LSM-Tree) architecture for vectors: Write-Ahead Log (WAL), in-memory mutable MemTable HNSW, immutable disk segments in Apache Arrow format, background compaction.
-* **C++ Engine (`secan`)**: Implement `LSMVectorEngine`: append-only `wal.bin`, mutable MemTable, immutable Arrow segment flushing, background multi-way compaction thread, DiskANN `io_uring` SSD streaming.
+* **Storage Engine Internals**: LSM-Tree for vectors: WAL, mutable MemTable HNSW, immutable disk segments (Arrow/Lance layout), background compaction.
+* **C++ Engine (`secan`)**: `LSMVectorEngine` core this week. **DiskANN + `io_uring` = required Week 16 Thu**. **ACORN = Week 22**.
 
 | Day | Pure Mathematics (Strang) (90 min) | Systems / C++ Reading (45 min) | Afternoon Implementation (2.5 hrs) |
 |:---|:---|:---|:---|
-| **Mon Nov 10** | **STRANG §4.1–4.4**: Determinants: axiomatic definition (linearity, sign change, $\det I = 1$), cofactor expansions, formula for $A^{-1}$. | Research paper: *"ACORN: Performant and Predicate-Agnostic Search Over Vector Embeddings"* (Patel et al. 2024). | **secan**: Implement `WriteAheadLog` (`wal.bin`) and in-memory mutable `MemTable` (dynamic HNSW absorbing live writes). |
-| **Tue Nov 11** | **STRANG §5.1–5.2**: Eigenvalues and eigenvectors: characteristic polynomial $\det(A - \lambda I) = 0$. Matrix diagonalization $S^{-1} A S = \Lambda$. | Research paper: *"DiskANN: Fast Accurate Billion-point NN Search on a Single Node"* (Subramanya et al. 2019). | **secan**: Implement Segment Flusher: when MemTable reaches 100K vectors, flush to immutable disk segment in flat Arrow/Lance layout. |
-| **Wed Nov 12** | **STRANG §5.3–5.4**: Systems of differential equations $\frac{du}{dt} = Au$, matrix exponential $e^{At}$, stability of linear dynamical systems. | Linux `io_uring` tutorial: submission queue (SQ), completion queue (CQ), zero-copy Direct I/O (`O_DIRECT`). | **secan**: Implement **Background Compaction Thread**: runs asynchronously in `std::jthread` to merge small segments into large optimized graphs. |
-| **Thu Nov 13** | **STRANG §5.5**: Real symmetric matrices: proof that eigenvalues are real and eigenvectors are orthogonal. The Spectral Theorem $A = Q \Lambda Q^T$. | **ASYNC Ch 6 & Ch 9**: Boost.Asio I/O concepts, profiling asynchronous workflows. | **secan**: Implement DiskANN-style disk search: store vectors on disk with `O_DIRECT`. Fetch candidates asynchronously during beam search via `io_uring`. |
-| **Fri Nov 14** | **STRANG §5.6**: Positive definite matrices: tests via eigenvalues, pivots, determinants, and energy $x^T A x > 0$. Cholesky factorization $A = L L^T$. | **FINSY Ch 3**: High-performance system measurement, scaling modules, latency distributions. | **secan**: Benchmark live ingestion throughput (inserts/sec) during concurrent search traffic. Verify 0-data-loss crash recovery via WAL replay. |
+| **Mon Nov 10** | **STRANG §4.1–4.4**: Determinants: axiomatic definition (linearity, sign change, $\det I = 1$), cofactor expansions, formula for $A^{-1}$. | Research paper: *"DiskANN: Fast Accurate Billion-point NN Search on a Single Node"* (Subramanya et al. 2019) — architecture skim (**build Week 16 Thu**). | **secan**: Implement `WriteAheadLog` (`wal.bin`) and in-memory mutable `MemTable` (dynamic HNSW absorbing live writes). |
+| **Tue Nov 11** | **STRANG §5.1–5.2**: Eigenvalues and eigenvectors: characteristic polynomial $\det(A - \lambda I) = 0$. Matrix diagonalization $S^{-1} A S = \Lambda$. | Apache Arrow / Lance columnar layout notes for segment files. | **secan**: Implement Segment Flusher: when MemTable reaches threshold, flush to immutable disk segment (flat Arrow/Lance layout). |
+| **Wed Nov 12** | **STRANG §5.3–5.4**: Systems of differential equations $\frac{du}{dt} = Au$, matrix exponential $e^{At}$, stability of linear dynamical systems. | Linux `io_uring` tutorial: SQ/CQ basics (**implement Week 16 Thu**). | **secan**: Background compaction: merge **segments and HNSW graphs** (not only LSM files). Rebuild/compact graph edges after merge. |
+| **Thu Nov 13** | **STRANG §5.5**: Real symmetric matrices: proof that eigenvalues are real and eigenvectors are orthogonal. The Spectral Theorem $A = Q \Lambda Q^T$. | **ASYNC Ch 6 & Ch 9**: Boost.Asio I/O concepts, profiling asynchronous workflows. | **secan**: Concurrent search-while-ingest smoke test. **Stretch**: Poisson load gen ($p50/p95/p99$) moved from Week 10. Add ThreadSanitizer CI job. |
+| **Fri Nov 14** | **STRANG §5.6**: Positive definite matrices: tests via eigenvalues, pivots, determinants, and energy $x^T A x > 0$. Cholesky factorization $A = L L^T$. | **FINSY Ch 3**: High-performance system measurement, scaling modules, latency distributions. | **secan**: Crash-recovery test: kill process mid-write; verify WAL replay restores MemTable. Benchmark inserts/sec under search traffic. |
 
 > **📝 Essay 11 (Sat Nov 15)**: *"LSM-Trees for Vector Databases: Write-Ahead Logs, MemTables, and Apache Arrow Storage"*
 
 ---
 
-### Week 12 (Nov 17–21): SVD, Positive Definite Matrices, Zero-Copy nanobind & Block 1 Capstone
+### Week 12 (Nov 17–21): SVD, Whitening, Composed Indexes & Pareto vs Faiss
 
-**Theme**: Singular Value Decomposition ($A = U \Sigma V^T$), PCA, zero-copy Python bindings, and CPU engine validation.
+**Theme**: SVD / query-side PCA, HNSW heap opts, **`IVFPQIndex` + `HNSWSQIndex`**, **required** `ann-benchmarks` on **SIFT and 768-D**.
 
-* **Pure Math (Gilbert Strang Linear Algebra Ch 6)**:
-  * Singular Value Decomposition (SVD): $A = U \Sigma V^T$. Singular values $\sigma_i$, left singular vectors $U$, right singular vectors $V$.
-  * Geometric interpretation of SVD: mapping hyper-spheres to hyper-ellipsoids.
-  * Low-rank matrix approximation via truncated SVD (Eckart-Young-Mirsky Theorem).
-  * Principal Component Analysis (PCA): centering data, sample covariance matrix $C = \frac{1}{n-1} X^T X$, principal eigenvectors.
-* **C++ Engine (`secan`)**: Zero-copy Python bindings via `nanobind`, concurrent read-write HNSW with per-node reader-writer locks, memory-mapped binary index serialization, complete `ann-benchmarks` evaluation.
+* **Pure Math**: Strang Ch 6 (unchanged).
+* **C++ Engine (`secan`)**: Whitening / query PCA; Week 8 heap catch-up; **compose IVF-PQ and HNSW-SQ**; Pareto vs Faiss/hnswlib. **No REST.** nanobind + CLI.
 
 | Day | Pure Mathematics (Strang) (90 min) | Systems / Architecture Reading (45 min) | Afternoon Implementation (2.5 hrs) |
 |:---|:---|:---|:---|
-| **Mon Nov 17** | **STRANG §6.3**: Singular Value Decomposition (SVD): step-by-step proof that any $m \times n$ matrix factors into $A = U \Sigma V^T$. | `nanobind` documentation: zero-copy buffer protocol, NumPy type casters, ownership models. | **secan**: Set up `python/` directory with `nanobind`. Expose `LSMIndex`, `HNSWIndex`, `IVFPQIndex`, and `MultiVectorIndex` to Python. |
-| **Tue Nov 18** | **STRANG §6.3**: Low-rank matrix approximation via truncated SVD. Frobenius norm error $\|A - A_k\|_F = \sqrt{\sum_{i=k+1}^r \sigma_i^2}$. | **PIKUS Ch 6 & ASYNC Ch 3**: Reader-writer locks, fine-grained concurrency, thread-safe data structures. | **secan**: Implement **concurrent HNSW**: per-node `std::shared_mutex`. Multiple concurrent searches (shared lock) + live insertions (exclusive lock). |
-| **Wed Nov 19** | **STRANG §6.7**: Principal Component Analysis (PCA): variance maximization on unit sphere, connecting SVD of centered data to sample covariance. | **CPPHI Memory Management & FINSY Ch 5**: Custom memory allocators, memory-mapped files. | **secan**: Implement memory-mapped serialization: `save(path)` writes header + CSR graph + vectors. `load(path)` uses `mmap` for instant loading. |
-| **Thu Nov 20** | **STRANG §6.7**: Matrix norms: Frobenius norm $\|A\|_F$, Spectral norm $\|A\|_2 = \sigma_{\max}$, Condition number $\kappa(A) = \sigma_{\max}/\sigma_{\min}$. | `ann-benchmarks` protocol: standardized evaluation across dataset sizes, recall levels, and build times. | **secan**: Run `ann-benchmarks` suite on SIFT1M and Cohere-1M. Plot Pareto frontier of `secan` vs `hnswlib` and `faiss`. |
-| **Fri Nov 21** | **PURE LINEAR ALGEBRA SYNTHESIS**: Complete synthesis of Strang Ch 1–6 (Vector Spaces $\to$ Orthogonality $\to$ Eigenvalues $\to$ SVD). | **PIKUS Ch 12**: Design retrospective. | **Block 1 Grand Finale**: Update README with full benchmark suite. Tag `v1.0-cpu-complete`. Prepare CUDA GPU environment. |
+| **Mon Nov 17** | **STRANG §6.3**: SVD: $A = U \Sigma V^T$. | Query-side PCA / OPQ literature. | **secan**: **Whitening + query-side PCA**. Hubness $S_{N_k}$ before/after. |
+| **Tue Nov 18** | **STRANG §6.3**: Truncated SVD / Eckart–Young. | **PIKUS Ch 6**: RW locks. | **secan**: `nanobind` + CLI: expose `HNSWIndex`, **`IVFPQIndex`**, **`HNSWSQIndex`**, `LSMIndex`. |
+| **Wed Nov 19** | **STRANG §6.7**: PCA. | Branchless heap; bitset visited. | **secan (required)**: Bounded flat heap + **bitset visited**. Then concurrent HNSW locks. |
+| **Thu Nov 20** | **STRANG §6.7**: Matrix norms, $\kappa(A)$. | `ann-benchmarks` protocol (required, not stretch). | **secan (required)**: Finish **`IVFPQIndex`** (IVF + PQ ADC + optional OPQ). Recall–QPS vs **Faiss IVFPQ** on SIFT. |
+| **Fri Nov 21** | **PURE LINALG SYNTHESIS**: Strang Ch 1–6. | hnswlib SQ / Faiss HNSW+SQ notes. | **secan (required)**: **`HNSWSQIndex`** (HNSW over SQ8/SQ4). Pareto vs **hnswlib/Faiss** on **SIFT + 768-D**. Tag `v1.0-cpu-complete`. |
 
-> **📝 Essay 12 (Sat Nov 22)**: *"secan v1.0: Architectural Blueprint of a Modern C++20 Vector Engine with Python Bindings"*
+> **📝 Essay 12 (Sat Nov 22)**: *"Composed Indexes: IVF-PQ and HNSW-SQ vs Faiss/hnswlib"*
 
 ---
 
-# BLOCK 2: PROBABILITY THEORY, GPU ACCELERATION & MULTIMODAL (Months 4–6)
+# BLOCK I (cont.): GPU VECTOR SEARCH — close the 4-month spine (Weeks 13–16)
 
 ---
 
 # 📅 MONTH 4: Pure Probability Theory, FlashAttention Kernel & Tensor Cores (Dec 2026)
+
+> **🔬 Monthly research**: *One Engine, Three Paths: GPU IVF, DiskANN `io_uring`, and Hybrid Block-Max WAND* → publish **Sun Dec 27** · folder `research/2026-12-three-paths-spine/`
 
 ---
 
@@ -397,7 +497,8 @@
 | **Thu Nov 27** | **PROB §2.4–2.5**: Bayes' Rule: prior and posterior probabilities. Base rate fallacy. Medical testing false positive mathematics. | **CUDA-GUIDE Memory Hierarchy**: Global memory (HBM/GDDR), Shared memory (SRAM), Registers, Constant memory. | **secan**: Implement dataset upload: store SIFT1M in GPU global memory. Implement batch brute-force scan kernel (1 block per query). |
 | **Fri Nov 28** | **PROB §2.6–2.7**: Independence of events: pairwise vs mutual independence. Conditional independence. Simpson's Paradox. | **PMPP Ch 5**: Memory architecture, shared memory tiling, bank conflicts, memory coalescing principles. | **secan**: Implement **shared memory tiled** L2 kernel: load query and dataset tiles into shared memory. Benchmark tiled vs naive. |
 
-> **📝 Essay 13 (Sat Nov 29)**: *"GPU Architecture for Vector Search: Why Naive CUDA Kernels Lose to CPU AVX2"*
+> **📝 Essay 13 (Sat Nov 29)**: *"GPU Architecture for Vector Search: Why Naive CUDA Kernels Lose to CPU AVX2"*  
+> **🚀 Month 3 research PUBLISH (Sun Nov 29)**: freeze `research/2026-11-late-interaction-lsm/paper.md` + public post.
 
 ---
 
@@ -425,55 +526,59 @@
 
 ---
 
-### Week 15 (Dec 8–12): Continuous Distributions, PDF, Gaussians & FlashAttention Kernel
+### Week 15 (Dec 8–12): Continuous Distributions, PDF, Gaussians & FlashAttention Scaffold
 
-**Theme**: Continuous random variables, Gaussian distributions, and handcrafting the FlashAttention CUDA kernel from scratch.
+**Theme**: Continuous RVs, Gaussians, and a **correct** FlashAttention-1 **CUDA** path. Online softmax Python = **Sat Dec 13**. **FA-2 = Week 25**.
 
-* **Pure Probability (Blitzstein & Hwang Ch 5–6)**:
-  * Continuous Random Variables: Probability Density Functions (PDF) $f(x)$, Cumulative Distribution Functions $F(x) = \int_{-\infty}^x f(t) dt$, $P(a \leq X \leq b) = \int_a b f(x) dx$.
-  * Expectation and Variance for continuous variables: $\mathbb{E}[X] = \int x f(x) dx$, LOTUS for continuous distributions.
-  * Uniform distribution $\text{Unif}(a, b)$, Exponential distribution $\text{Exp}(\lambda)$ (continuous memorylessness).
-  * **The Normal / Gaussian Distribution $\mathcal{N}(\mu, \sigma^2)$**: Standard Normal $Z \sim \mathcal{N}(0, 1)$, proof that $\int e^{-z^2/2} dz = \sqrt{2\pi}$, 68-95-99.7 rule.
-* **Frontier Reading**: *"FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness"* (Dao et al. 2022) + FlashAttention-2 (Dao 2023).
-* **Implementation (`transformers-pytorch` & CUDA)**: Handcrafted **FlashAttention Forward CUDA Kernel** from scratch: load $Q$ tile into SRAM, loop over $K, V$ blocks, compute block attention, update running $m$ and $\ell$ via Online Softmax, scale and accumulate output $O$ in SRAM, write output to HBM.
+* **Implementation**:
+  * **Weekdays**: CUDA FA-1 scaffold through expose.
+  * **Sat Dec 13**: Online Softmax in Python.
+  * **Deferred (required Week 25)**: FA-2 loop order / Nsight.
 
 | Day | Pure Probability & FlashAttention Math (90 min) | GPU / CUDA Reading (45 min) | Afternoon Implementation (2.5 hrs) |
 |:---|:---|:---|:---|
-| **Mon Dec 8** | **PROB §5.1–5.3**: Continuous random variables: PDF vs probability, CDF properties ($F' = f$), Uniform and Exponential distributions. | **PMPP Ch 16 / NVIDIA Docs**: Tensor Core architecture, WMMA API, mapping block matrix multiplies to Tensor Cores. | **CUDA**: Set up FlashAttention kernel scaffolding: grid configuration ($B \times H$), shared memory allocation for $Q_{block}, K_{block}, V_{block}, O_{block}$. |
-| **Tue Dec 9** | **PROB §5.4–5.5**: The Normal / Gaussian distribution $\mathcal{N}(\mu, \sigma^2)$: PDF formula, standardization $Z = (X-\mu)/\sigma$, symmetry properties. | CUDA Shared Memory banking: avoiding bank conflicts when loading $Q, K^T$ tiles. | **CUDA**: Implement block GEMM $S_{ij} = Q_i K_j^T / \sqrt{d}$ in shared memory. Verify intermediate values against PyTorch. |
-| **Wed Dec 10** | **PROB §6.1–6.3**: Moments, Moment Generating Functions (MGF) $M_X(t) = \mathbb{E}[e^{tX}]$. Finding moments via derivatives $\mathbb{E}[X^k] = M_X^{(k)}(0)$. | **CUDA-GUIDE Warp Primitives**: `__shfl_sync` for warp-level row max and row sum reductions. | **CUDA**: Implement Online Softmax update in registers: compute block max $\tilde{m}$, new max $m_{new}$, update $\ell$, rescale accumulator $O$. |
-| **Thu Dec 11** | **PROB §6.4–6.5**: MGF of Normal distribution $M_Z(t) = e^{t^2/2}$. Sums of independent Normal random variables via MGF multiplication. | CUTLASS epilogue visitor patterns for fused matrix scaling. | **CUDA**: Optimize kernel to FlashAttention-2 loop order. Partition warps along sequence dimension to reduce inter-warp synchronization. |
-| **Fri Dec 12** | **PROB §6.6**: Gamma distribution, Beta distribution, Cauchy distribution (undefined moments). | Profile kernel with NVIDIA Nsight Compute (`ncu`): measure DRAM bandwidth reduction and achieved TFLOPS. | **Python & CUDA**: Expose custom FlashAttention kernel to PyTorch via `torch.utils.cpp_extension`. Benchmark speedup vs PyTorch standard attention. |
+| **Mon Dec 8** | **PROB §5.1–5.3**: Continuous RVs: PDF vs probability, CDF properties ($F' = f$), Uniform and Exponential. | FlashAttention paper §1–3: HBM vs SRAM cost model; why materializing $S$ is the bottleneck. | **CUDA**: FA-1 grid ($B \times H$); shared mem tiles. *(Online softmax Python: Sat Dec 13.)* |
+| **Tue Dec 9** | **PROB §5.4–5.5**: The Normal / Gaussian $\mathcal{N}(\mu, \sigma^2)$: PDF, standardization $Z = (X-\mu)/\sigma$. | **PMPP Ch 16 / NVIDIA Docs**: Tensor Core / WMMA overview (context for GEMM tiles). | **CUDA**: FlashAttention kernel scaffold: grid ($B \times H$), shared mem for $Q_{block}, K_{block}, V_{block}, O_{block}$. |
+| **Wed Dec 10** | **PROB §6.1–6.3**: Moments, MGFs $M_X(t) = \mathbb{E}[e^{tX}]$. Finding moments via derivatives. | CUDA Shared Memory banking: avoiding bank conflicts when loading $Q, K^T$ tiles. | **CUDA**: Block GEMM $S_{ij} = Q_i K_j^T / \sqrt{d}$ in shared memory. Check tiles vs PyTorch. |
+| **Thu Dec 11** | **PROB §6.4–6.5**: MGF of Normal; sums of independent Normals via MGF multiplication. | **CUDA-GUIDE Warp Primitives**: `__shfl_sync` for warp-level row max and row sum. | **CUDA**: Online Softmax update in registers: block max $\tilde{m}$, $m_{new}$, update $\ell$, rescale $O$. |
+| **Fri Dec 12** | **PROB §6.6**: Gamma, Beta, Cauchy (undefined moments) — skim. | Profile with `ncu` if kernel runs; else debug correctness first. | **CUDA**: Expose FA-1 via `torch.utils.cpp_extension`. Bench vs SDPA on small shapes. FA-2 → Week 25. |
 
-> **📝 Essay 15 (Sat Dec 13)**: *"Building FlashAttention from Scratch in CUDA: IO-Aware Tiling and Online Softmax"*
+> **📝 Essay 15 (Sat Dec 13)**: *"Building FlashAttention from Scratch in CUDA: IO-Aware Tiling and Online Softmax"*  
+> **🧠 DL weekend**: Online softmax reference vs `torch.softmax`.
 
 ---
 
-### Week 16 (Dec 15–19): Joint Distributions, Covariance & GPU-Resident IVF
+### Week 16 (Dec 15–19): VS Spine Capstone — GPU IVF + DiskANN + Hybrid WAND
 
-**Theme**: Joint probability distributions, covariance, independence vs correlation, and GPU-resident IVF Voronoi cell search.
+**Theme**: Close the **4-month vector-search spine**: GPU IVF (Mon–Wed), then **Week 11 DiskANN catch-up (Thu)** and **Week 10 WAND catch-up (Fri)**.
 
-* **Pure Probability (Blitzstein & Hwang Ch 7)**:
-  * Joint PMFs and Joint PDFs: $f_{X, Y}(x, y)$, Marginal distributions $f_X(x) = \int f_{X, Y}(x, y) dy$.
-  * Conditional distributions: $f_{Y|X}(y|x) = \frac{f_{X, Y}(x, y)}{f_X(x)}$.
-  * Independence of continuous random variables: $f_{X, Y}(x, y) = f_X(x) f_Y(y)$.
-  * 2D LOTUS: $\mathbb{E}[g(X, Y)] = \iint g(x, y) f(x, y) dx dy$.
-  * **Covariance and Correlation**: $\text{Cov}(X, Y) = \mathbb{E}[(X - \mu_X)(Y - \mu_Y)] = \mathbb{E}[XY] - \mathbb{E}[X]\mathbb{E}[Y]$. Correlation coefficient $\rho(X, Y) = \frac{\text{Cov}(X, Y)}{\sigma_X \sigma_Y} \in [-1, 1]$.
-* **C++ Engine (`secan`)**: GPU-resident IVF index (`GpuIVFIndex`), warp-cooperative cell scanning, CUDA streams for pipelined query execution.
+* **Pure Probability (Blitzstein & Hwang Ch 7)**: Joint distributions, covariance, correlation (same math load; afternoons are catch-up-heavy).
+* **C++ Engine (`secan`)** — required landings this week:
+  1. `GpuIVFIndex` + warp cell scan + stream pipeline (Mon–Wed)
+  2. **Vamana prune + DiskANN `io_uring` `O_DIRECT`** (Thu)
+  3. **BM25 + Block-Max WAND + RRF + linear $\alpha$** (Fri); SPLADE = stretch
 
-| Day | Pure Probability (90 min) | GPU / CUDA Reading (45 min) | Afternoon Implementation (2.5 hrs) |
+| Day | Pure Probability (90 min) | Systems Reading (45 min) | Afternoon Implementation (2.5 hrs) |
 |:---|:---|:---|:---|
-| **Mon Dec 15** | **PROB §7.1–7.2**: Joint, marginal, and conditional discrete distributions. Multinomial distribution. | Research paper: *"Billion-Scale Similarity Search with GPUs"* (Johnson, Douze, Jégou / Faiss GPU 2019) §1–3. | **secan**: Design GPU IVF memory layout: coarse centroids in global/constant memory; cell vectors stored as packed arrays with offset table. |
-| **Tue Dec 16** | **PROB §7.3–7.4**: Joint continuous distributions: Joint PDF, finding marginals by integration. 2D Uniform distribution over shapes. | Faiss GPU paper §4–5: GPU $k$-selection, warp-cooperative list scanning. | **secan**: Implement GPU coarse quantizer: compute query-to-centroid distances on GPU; select top-`nprobe` cells with warp selection. |
-| **Wed Dec 17** | **PROB §7.5**: 2D change of variables and the Jacobian: $f_{U, V}(u, v) = f_{X, Y}(x(u, v), y(u, v)) |J|$. Generating Normal variables via Box-Muller transform. | **CUDA-GUIDE Streams & Events**: Concurrent kernel execution, overlapping compute and data transfer. | **secan**: Implement **warp-cooperative cell scan**: within each selected cell, warps cooperatively scan vectors and update partial top-$k$. |
-| **Thu Dec 18** | **PROB §7.6–7.7**: Covariance and Correlation: step-by-step proof that $-1 \leq \rho \leq 1$ via Cauchy-Schwarz inequality. Variance of sums $\text{Var}(X+Y) = \text{Var}(X) + \text{Var}(Y) + 2\text{Cov}(X, Y)$. | **PMPP Ch 13–14**: Irregular data structures, handling load imbalance across variable-length blocks. | **secan**: Implement GPU IVF-SQ8: store cell vectors as `uint8`. Implement integer distance kernel inside cells. |
-| **Fri Dec 19** | **PROB §7.8**: Multivariate Normal Distribution $\mathcal{N}(\boldsymbol{\mu}, \boldsymbol{\Sigma})$: joint PDF formula with covariance matrix $\boldsymbol{\Sigma}$, contours of equal probability density as ellipsoids. | Review CUDA stream synchronization patterns. | **secan**: Implement **CUDA stream pipelining**: overlap query batch $N+1$ coarse search with batch $N$ cell scanning. Benchmark. |
+| **Mon Dec 15** | **PROB §7.1–7.2**: Joint, marginal, and conditional discrete distributions. Multinomial distribution. | Faiss GPU 2019 §1–3: billion-scale GPU similarity search. | **secan**: GPU IVF memory layout: coarse centroids; cell vectors + offset table. |
+| **Tue Dec 16** | **PROB §7.3–7.4**: Joint continuous distributions; marginals by integration. | Faiss GPU §4–5: GPU $k$-selection, warp-cooperative list scanning. | **secan**: GPU coarse quantizer + top-`nprobe` cell select; warp-cooperative cell scan. |
+| **Wed Dec 17** | **PROB §7.5**: 2D change of variables / Jacobian; Box-Muller. | **CUDA-GUIDE Streams & Events**. | **secan**: CUDA stream pipelining for IVF batches; quick SQ8-in-cell stretch if time. Tag `v1.1-gpu-ivf`. |
+| **Thu Dec 18** | **PROB §7.6–7.7**: Covariance and Correlation; Cauchy-Schwarz bound on $\rho$. | DiskANN: **Vamana graph construction** (α-prune) + `io_uring` fetch. | **secan (required)**: Implement **Vamana prune** (build graph, not only SSD fetch); compressed vectors in RAM; FP32 via `io_uring`. Recall vs in-RAM. |
+| **Fri Dec 19** | **PROB §7.8**: Multivariate Normal $\mathcal{N}(\boldsymbol{\mu}, \boldsymbol{\Sigma})$. | Ding & Suel WAND; **RRF** (Cormack et al.). | **secan (required)**: BM25 + Block-Max WAND; fuse via **RRF** *and* linear $\alpha$. Query-time $\alpha$ / k sweep. SPLADE = stretch. Tag `v1.2-vs-spine-complete`. |
 
-> **📝 Essay 16 (Sat Dec 20)**: *"GPU-Resident IVF: Pipelining Voronoi Cell Search with CUDA Streams at 100K QPS"*
+> **📝 Essay 16 (Sat Dec 20)**: *"Closing the Vector Search Spine: GPU IVF, Vamana/DiskANN, and Hybrid RRF/WAND"*
+
+---
+
+# BLOCK II: GPU SPECIALIZATION (Weeks 17–28 / Jan–Mar 2027)
+
+Weekdays remain **`secan`/CUDA**. DL stays **Saturday afternoon**. Cluster shard/replica beyond NCCL = stretch. **No REST.**
 
 ---
 
 # 📅 MONTH 5: Mathematical Statistics, Limit Theorems, GPU Graphs & Multi-GPU (Jan 2027)
+
+> **🔬 Monthly research**: *Paging vs Quantizing Memory: PagedAttention and TurboQuant as Complementary KV Levers* → publish **Sun Jan 31** · folder `research/2027-01-paging-vs-quantizing-kv/`
 
 ---
 
@@ -495,7 +600,8 @@
 | **Thu Dec 25** | **PROB §10.4**: The Central Limit Theorem (CLT): Step-by-step rigorous proof using Taylor expansion of MGFs. | **PMPP Ch 9**: Parallel Prefix Sum (Scan) for compacting candidate neighbor lists on GPU. | **secan**: Implement multi-query parallel graph search: launch grid of warps. Benchmark throughput vs CPU HNSW. |
 | **Fri Dec 26** | **PROB §10.5**: Applications of CLT in statistical error estimation and confidence intervals. | Profile GPU graph search with `ncu`: measure compute-to-memory stall ratio. | **secan**: Optimize GPU graph search: add shared memory caching for frequently visited upper-layer hub nodes. |
 
-> **📝 Essay 17 (Sat Dec 27)**: *"CAGRA and GPU Graph Traversal: Overcoming Random Memory Access at Warp Scale"*
+> **📝 Essay 17 (Sat Dec 27)**: *"CAGRA and GPU Graph Traversal: Overcoming Random Memory Access at Warp Scale"*  
+> **🚀 Month 4 research PUBLISH (Sun Dec 27)**: freeze `research/2026-12-three-paths-spine/paper.md` + public post.
 
 ---
 
@@ -522,29 +628,29 @@
 
 ---
 
-### Week 19 (Jan 5–9): Mathematical Statistics, MLE, PagedAttention & Async CPU↔GPU
+### Week 19 (Jan 5–9): Mathematical Statistics, MLE, PagedAttention & KV Compression
 
-**Theme**: Point estimation, Maximum Likelihood Estimation, Fisher Information, and PagedAttention (vLLM) memory architecture.
+**Theme**: Point estimation, MLE, Fisher Information, PagedAttention (vLLM), and **TurboQuant-style KV quantization** (3-bit, training-free).
 
 * **Mathematical Statistics (Statistical Theory)**:
   * Point Estimation: Estimators $\hat{\theta}(X_1, \dots, X_n)$, Bias $\text{Bias}(\hat{\theta}) = \mathbb{E}[\hat{\theta}] - \theta$, Mean Squared Error $\text{MSE}(\hat{\theta}) = \text{Var}(\hat{\theta}) + \text{Bias}^2$.
   * **Maximum Likelihood Estimation (MLE)**: Likelihood function $L(\theta; \mathbf{x}) = \prod f(x_i; \theta)$, log-likelihood $\ell(\theta)$, score function $S(\theta) = \ell'(\theta)$, solving $\ell'(\hat{\theta}) = 0$.
   * Fisher Information $I(\theta) = \mathbb{E}\left[\left(\frac{\partial}{\partial \theta} \ln f(X; \theta)\right)^2\right] = -\mathbb{E}\left[\frac{\partial^2}{\partial \theta^2} \ln f(X; \theta)\right]$.
   * Cramér-Rao Lower Bound (CRLB): $\text{Var}(\hat{\theta}) \geq \frac{1}{n I(\theta)}$ for unbiased estimators. Efficiency of estimators.
-* **Systems / Frontier Reading**: CS:APP Chapter 9 "Virtual Memory" + vLLM PagedAttention paper.
+* **Systems / Frontier Reading**: CS:APP Chapter 9 "Virtual Memory" + vLLM PagedAttention + [TurboQuant](https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/) KV path (PolarQuant stage + 1-bit QJL residual; unbiased attention-score estimator; ~6× KV memory cut, up to ~8× logits speedup on H100 in blog numbers).
 * **C++ Engine (`secan`) & Python**:
-  * **Python/CUDA**: Implement `BlockTable` data structure and **PagedAttention CUDA kernel** (non-contiguous physical block allocation).
+  * **Python/CUDA**: Implement `BlockTable` + **PagedAttention** kernel; optional **stretch**: apply PolarQuant/QJL sketch to cached $K$ (or document design only if timeboxed).
   * **secan**: Double-buffered async pinned memory pipeline (`cudaHostAlloc`) overlapping batch search compute with PCIe transfers.
 
 | Day | Mathematical Statistics (90 min) | GPU / vLLM Reading (45 min) | Afternoon Implementation (2.5 hrs) |
 |:---|:---|:---|:---|
 | **Mon Jan 5** | **STATS §1.1–1.3**: Point estimation foundations: Sample mean, sample variance ($s^2$ with $n-1$ denominator for unbiasedness), MSE decomposition. | vLLM Paper §1–3: The KV Cache fragmentation problem in LLMs ($60\%–80\%$ memory wasted on over-allocation). | **Python/CUDA**: Implement `BlockTable` data structure in PyTorch: maps logical sequence tokens to physical GPU memory blocks (block size 16). |
 | **Tue Jan 6** | **STATS §2.1–2.3**: Maximum Likelihood Estimation (MLE): Deriving MLE for Gaussian mean/variance, Poisson $\lambda$, and Bernoulli $p$. Invariance property of MLEs. | vLLM Paper §4: PagedAttention kernel design: reading $K, V$ blocks via block lookup table in CUDA. | **CUDA**: Implement **PagedAttention CUDA kernel**: during self-attention, resolve physical $K, V$ block pointers on-the-fly via block table. |
-| **Wed Jan 7** | **STATS §2.4–2.5**: Fisher Information: Definition and mathematical equivalence of variance of score vs negative expected Hessian of log-likelihood. | NVIDIA cuVS API design and architecture review. | **secan**: Build unified `GpuIndex` wrapper class: handles device memory lifecycle, async transfers, kernel launches, RAII cleanup. |
+| **Wed Jan 7** | **STATS §2.4–2.5**: Fisher Information: Definition and mathematical equivalence of variance of score vs negative expected Hessian of log-likelihood. | [TurboQuant](https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/): KV experiments (LongBench, RULER, needle-in-haystack); PolarQuant + QJL residual as bias killer for attention scores. | **secan**: Build unified `GpuIndex` wrapper class: device memory lifecycle, async transfers, kernel launches, RAII cleanup. |
 | **Thu Jan 8** | **STATS §2.6**: Cramér-Rao Lower Bound (CRLB): Step-by-step rigorous proof using Cauchy-Schwarz inequality on the score function. | **PMPP Ch 19**: Heterogeneous CPU+GPU workload partitioning. | **secan**: Implement **CPU↔GPU hybrid fallback**: partition oversized dataset into GPU VRAM (fast) and CPU RAM (AVX2). Merge results. |
-| **Fri Jan 9** | **STATS §3.1–3.3**: Hypothesis testing foundations: Null ($H_0$) and alternative ($H_1$) hypotheses, Type I ($\alpha$) and Type II ($\beta$) errors, p-values, Neyman-Pearson Lemma. | Profile PagedAttention vs standard KV cache memory utilization in PyTorch. | **secan**: Benchmark query batch sizes ($B=1, 10, 100, 1000$). Plot the CPU vs GPU crossover curve. |
+| **Fri Jan 9** | **STATS §3.1–3.3**: Hypothesis testing foundations: Null ($H_0$) and alternative ($H_1$) hypotheses, Type I ($\alpha$) and Type II ($\beta$) errors, p-values, Neyman-Pearson Lemma. | Profile PagedAttention vs standard KV cache memory; contrast with TurboQuant bitwidth story (paging ≠ quantizing). | **secan**: Benchmark query batch sizes ($B=1, 10, 100, 1000$). Plot the CPU vs GPU crossover curve. |
 
-> **📝 Essay 19 (Sat Jan 10)**: *"Maximum Likelihood Estimation, Fisher Information, and PagedAttention Architecture"*
+> **📝 Essay 19 (Sat Jan 10)**: *"PagedAttention Meets TurboQuant: Virtual Memory for KV Blocks and Extreme Bit Compression"*
 
 ---
 
@@ -572,56 +678,51 @@
 
 ---
 
-# 📅 MONTH 6: Optimization, Fourier Analysis, ColPali & Master Release (Feb 2027)
+# 📅 MONTH 6: Optimization, Spectral Graphs, Production Hardening & Master Release (Feb 2027)
+
+> **🔬 Monthly research**: *Predicate-Aware Graphs: ACORN-style Filters, Tombstones, and Portable SIMD* → publish **Sat Feb 14** (with `v2.0`) · folder `research/2027-02-predicate-aware-graphs/`
 
 ---
 
-### Week 21 (Jan 19–23): Convex Optimization, KKT Conditions & ColPali Multimodal
+### Week 21 (Jan 19–23): Convex Optimization, KKT, ColPali GPU Path
 
-**Theme**: Convex optimization, KKT optimality conditions, and ColPali visual document retrieval.
+**Theme**: Convex optimization / KKT, ColPali multimodal retrieval, and **Week 15 FA-2 catch-up (Wed)**.
 
-* **Pure Mathematics (Boyd & Vandenberghe - *Convex Optimization*)**:
-  * Convex sets (hyperplanes, halfspaces, polyhedra, positive semidefinite cone).
-  * Convex functions: Definition $f(\theta x + (1-\theta)y) \leq \theta f(x) + (1-\theta)f(y)$, first-order convexity condition $f(y) \geq f(x) + \nabla f(x)^T(y-x)$, second-order condition $\nabla^2 f(x) \succeq 0$ (positive semidefinite Hessian).
-  * Unconstrained convex optimization: Gradient descent convergence rates, condition numbers and convergence speed.
-  * Constrained optimization and Duality: The Lagrangian $L(x, \lambda, \nu)$, Lagrange dual function $g(\lambda, \nu)$, weak and strong duality (Slater's condition).
-  * **Karush-Kuhn-Tucker (KKT) Optimality Conditions**: Primal feasibility, dual feasibility, complementary slackness ($\lambda_i f_i(x^*) = 0$), gradient of Lagrangian vanishing ($\nabla L = 0$).
-* **C++ Engine (`secan`) & Python**:
-  * **Python (ColPali)**: Build `ColPaliPipeline`: pass document page images through ViT patch encoder $\to$ generate token matrices $\to$ score text queries against visual patches via MaxSim.
-  * **secan**: GPU MaxSim kernel via batched CUTLASS GEMM + warp reductions; GPU NN-Descent for fast graph construction.
+* **Pure Mathematics (Boyd & Vandenberghe - *Convex Optimization*)**: Convex sets/functions, duality, KKT.
+* **C++ Engine (`secan`)**: GPU MaxSim (CUTLASS); GPU NN-Descent. **ColPali CLIP projector = Sat Jan 24.** FA-2 = Week 25.
 
 | Day | Pure Mathematics (Boyd Convex Optimization) (90 min) | GPU / CUDA Reading (45 min) | Afternoon Implementation (2.5 hrs) |
 |:---|:---|:---|:---|
-| **Mon Jan 19** | **CONVEX §2.1–2.4**: Convex sets: affine sets, convex combinations, convex hulls, cones, hyperplanes, and Euclidean balls. | Re-read ColBERT/PLAID papers with GPU focus: mapping MaxSim to batched GEMM + reductions. | **secan**: Implement **GPU MaxSim kernel**: formulate cross-token similarity as CUTLASS GEMM followed by warp row-max + column-sum reductions. |
-| **Tue Jan 20** | **CONVEX §3.1–3.4**: Convex functions: first and second-order conditions for convexity. Epigraphs, Jensen's inequality, sublevel sets. | Research paper: *"Efficient K-NN Graph Construction for Generic Similarity Measures"* (Dong, Moses, Li / NN-Descent 2011). | **Python (ColPali)**: Build `ColPaliPipeline`: connect ViT patch projector (Month 2) to ColBERT MaxSim scoring head. |
-| **Wed Jan 21** | **CONVEX §4.1–4.4**: Convex optimization problems: linear programs (LP), quadratic programs (QP), second-order cone programs (SOCP). | CAGRA paper §3–4: GPU NN-Descent implementation, warp-level neighbor exchange. | **secan**: Implement GPU NN-Descent base layer graph construction in CUDA. |
-| **Thu Jan 22** | **CONVEX §5.1–5.4**: Duality: The Lagrangian, Lagrange dual problem, weak duality ($d^* \leq p^*$), duality gap, Slater's constraint qualification for strong duality ($d^* = p^*$). | **CUDA-GUIDE Dynamic Parallelism**: Launching child kernels from within a running kernel. | **Python (ColPali)**: Export document image patch embeddings to `secan` multi-vector index format. |
-| **Fri Jan 23** | **CONVEX §5.5**: The Karush-Kuhn-Tucker (KKT) Conditions: Full rigorous proof of necessity and sufficiency for convex problems. Complementary slackness. | Review GPU ColBERT and ColPali integration. | **secan**: Ingest ColPali visual embeddings into `secan` GPU index. Execute text query $\to$ visual page search. |
+| **Mon Jan 19** | **CONVEX §2.1–2.4**: Convex sets: affine sets, convex combinations, convex hulls, cones, hyperplanes, and Euclidean balls. | Re-read ColBERT/PLAID papers with GPU focus: mapping MaxSim to batched GEMM + reductions. | **secan**: Implement **GPU MaxSim kernel**: CUTLASS GEMM + warp row-max + column-sum. |
+| **Tue Jan 20** | **CONVEX §3.1–3.4**: Convex functions: first/second-order conditions, Jensen. | CLIP / SigLIP contrastive alignment (image encoder ↔ text encoder). | **secan**: GPU MaxSim polish / fused pipeline. *(CLIP projector: Sat Jan 24.)* |
+| **Wed Jan 21** | **CONVEX §4.1–4.4**: Convex optimization problems: LP, QP, SOCP. | NN-Descent / CAGRA neighbor exchange. | **secan**: GPU NN-Descent base-layer graph construction. **FA-2 → Week 25.** |
+| **Thu Jan 22** | **CONVEX §5.1–5.4**: Duality: Lagrangian, weak/strong duality, Slater. | CAGRA / NN-Descent GPU neighbor exchange. | **secan**: GPU NN-Descent base-layer graph construction. |
+| **Fri Jan 23** | **CONVEX §5.5**: KKT conditions: necessity and sufficiency for convex problems. | Review GPU ColBERT / ColPali integration. | **secan**: Ingest ColPali visual embeddings; text query → visual page search. **Stretch**: same tokens through MUVERA FDE + IP MIPS. |
 
-> **📝 Essay 21 (Sat Jan 24)**: *"Convex Optimization, KKT Conditions, and ColPali Vision-Language Retrieval"*
+> **📝 Essay 21 (Sat Jan 24)**: *"KKT and ColPali: CLIP Projector + GPU MaxSim"*  
+> **🧠 DL weekend**: CLIP-style projector + ColPali head.
 
 ---
 
-### Week 22 (Jan 26–30): Fourier Analysis, Convolution Theorem, Kernel Fusion & Profiling
+### Week 22 (Jan 26–30): Production Hardening — ACORN, Tombstones & NUMA
 
-**Theme**: Continuous and discrete Fourier transforms, the Convolution Theorem, GPU kernel fusion, and Nsight profiling.
+**Theme**: Filtered search as an **on-call product**: pre- vs post-filter, range predicates, ACORN, deletes, NUMA.
 
-* **Pure Mathematics (Fourier Analysis & Signal Processing)**:
-  * Fourier Series: Representing periodic functions as linear combinations of orthogonal sines and cosines $f(x) = \frac{a_0}{2} + \sum (a_n \cos nx + b_n \sin nx) = \sum c_n e^{inx}$.
-  * The Continuous Fourier Transform: $\hat{f}(\xi) = \int_{-\infty}^\infty f(x) e^{-2\pi i x \xi} dx$, Inverse Fourier Transform $f(x) = \int_{-\infty}^\infty \hat{f}(\xi) e^{2\pi i x \xi} d\xi$.
-  * **The Convolution Theorem**: $\mathcal{F}\{f * g\} = \mathcal{F}\{f\} \cdot \mathcal{F}\{g\}$ (convolution in time/spatial domain equals point-wise multiplication in frequency domain).
-  * The Discrete Fourier Transform (DFT) and Fast Fourier Transform (FFT / Cooley-Tukey $O(N \log N)$ algorithm).
-* **C++ Engine (`secan`)**: Fused distance + top-$k$ kernel, register tiling, occupancy tuning with `__launch_bounds__`, non-coherent cache loads (`__ldg()`).
+* **C++ Engine (`secan`)** — required:
+  1. Pre-filter vs post-filter vs **ACORN**; **range** (`price < x`); selectivity vs recall
+  2. Tombstone + vacuum
+  3. NUMA pin
 
-| Day | Pure Mathematics (Fourier Analysis) (90 min) | GPU / CUDA Reading (45 min) | Afternoon Implementation (2.5 hrs) |
+| Day | Systems Math (90 min) | Reading (45 min) | Afternoon Implementation (2.5 hrs) |
 |:---|:---|:---|:---|
-| **Mon Jan 26** | **FOURIER §1.1–1.4**: Fourier Series: Orthogonality of $\{e^{inx}\}_{n=-\infty}^\infty$ over $[-\pi, \pi]$, calculating Fourier coefficients $c_n = \frac{1}{2\pi}\int_{-\pi}^\pi f(x) e^{-inx} dx$, Parseval's identity. | **CUDA-GUIDE Occupancy Calculator**: Shared memory vs register limits per SM. | **secan**: Profile all GPU kernels with NVIDIA Nsight Compute (`ncu`). Identify compute-bound vs memory-bound bottlenecks. |
-| **Tue Jan 27** | **FOURIER §2.1–2.3**: The Continuous Fourier Transform $\hat{f}(\xi)$. Symmetries of Fourier transforms for real, even, and odd functions. Fourier transform of Gaussian $\mathcal{F}\{e^{-\pi x^2}\} = e^{-\pi \xi^2}$. | Research: Kernel fusion techniques in CUB and Thrust libraries. | **secan**: Implement **fused distance+topk kernel**: maintain thread-local top-$k$ heap in registers/shared memory, writing only final results to global memory. |
-| **Wed Jan 28** | **FOURIER §2.4–2.5**: Properties of Fourier Transforms: Linearity, time-shifting, frequency-shifting, differentiation in time domain $\mathcal{F}\{f'\} = 2\pi i \xi \hat{f}(\xi)$. | **PMPP Ch 5**: Register tiling strategies to eliminate shared memory round-trips. | **secan**: Implement **register-tiled distance computation**: unroll inner dimension loops into registers to maximize ILP on GPU. |
-| **Thu Jan 29** | **FOURIER §3.1–3.3**: The Convolution Theorem: Step-by-step rigorous proof that $\mathcal{F}\{f * g\} = \hat{f} \cdot \hat{g}$. Applications in linear filters. | **CUDA-GUIDE PTX ISA**: Read-only texture cache path (`__ldg()`), `__launch_bounds__` compiler directives. | **secan**: Add `__ldg()` intrinsic for dataset vector reads; tune `__launch_bounds__(threads_per_block, min_blocks_per_sm)`. |
-| **Fri Jan 30** | **FOURIER §4.1–4.3**: The Discrete Fourier Transform (DFT) and Fast Fourier Transform (FFT): Cooley-Tukey divide-and-conquer radix-2 algorithm. | Nsight Compute comparison: before vs after fusion profiling. | **secan**: Run full GPU benchmark suite. Compare initial Week 13 naive kernels vs final Week 22 fused kernels ($10\times–50\times$ speedup). |
+| **Mon Jan 26** | Filter selectivity $P(\text{pass})$; **post-filter recall collapse**. | Payload/B-tree + ANN; pre- vs post-filter. | **secan (required)**: Payload index (B-tree or sorted ids) + **pre-filter** candidate set; **post-filter** HNSW; plot recall vs selectivity. |
+| **Tue Jan 27** | ACORN $N$-hop vs connectivity under filters. | ACORN paper §1–6. | **secan**: ACORN-style filtered graph search; compare to Mon's pre/post. |
+| **Wed Jan 28** | Tombstone amortization vs vacuum. | Lock-free bitset / graph mutation. | **secan**: Tombstones + vacuum rewires. |
+| **Thu Jan 29** | NUMA / PCIe budget. | `libnuma`; DiskANN under NUMA. | **secan**: NUMA pin; re-bench. |
+| **Fri Jan 30** | Range predicates vs boolean bitmaps. | Production checklist. | **secan (required)**: **Range filter** (`payload < x`) on pre-filter path; smoke tests. Tag `v1.5-production`. |
 
-> **📝 Essay 22 (Sat Jan 31)**: *"Fourier Analysis, The Convolution Theorem, and GPU Kernel Fusion"*
+> **📝 Essay 22 (Sat Jan 31)**: *"Pre/Post/Range Filters vs ACORN: Selectivity and Recall Collapse"*  
+> **🚀 Month 5 research PUBLISH (Sun Jan 31)**: freeze `research/2027-01-paging-vs-quantizing-kv/paper.md` + public post.
 
 ---
 
@@ -641,61 +742,132 @@
 | **Tue Feb 3** | **SPECTRAL §1.4–1.6**: The Normalized Graph Laplacian $\mathcal{L} = I - D^{-1/2} A D^{-1/2}$. Bounds on eigenvalues ($0 \leq \lambda_i \leq 2$), bipartiteness and $\lambda_n = 2$. | ARM NEON programming manual: 128-bit vector types (`float32x4_t`, `uint8x16_t`), FMA instruction throughput. | **secan**: Implement `l2_squared_neon()` and `cosine_distance_neon()` using ARM NEON intrinsics with 4-way accumulator unrolling. |
 | **Wed Feb 4** | **SPECTRAL §2.1–2.3**: Graph cuts and Conductance (Cheeger constant) $h(G) = \min_{S \subset V} \frac{|\partial S|}{\min(\text{vol}(S), \text{vol}(S^c))}$. | **AGNER Ch 14**: Cross-platform optimization, compiler-specific intrinsics differences. | **secan**: Implement NEON integer kernels: `l2_squared_sq8_neon()` and `cosine_distance_sq8_neon()`. |
 | **Thu Feb 5** | **SPECTRAL §2.4**: Cheeger's Inequality: Rigorous proof connecting the spectral gap $\lambda_2$ to the conductance $h(G)$ via Fiedler vector sweep cuts. | Research: runtime CPU dispatch patterns in Faiss and HNSWLib (`platform_macros.h`). | **secan**: Implement runtime CPU feature detection: `cpuid` on x86, `/proc/cpuinfo` / `sysctl` on ARM. Configure dynamic dispatch. |
-| **Fri Feb 6** | **SPECTRAL §3.1**: Expander graphs: Spectral expansion vs edge expansion. Why Ramanujan graphs have optimal small-world routing properties. | Set up cross-platform CI matrix: Ubuntu x86_64, macOS Apple Silicon (ARM64). | **Python & secan**: Export PyTorch Transformer to ONNX. Verify `secan` builds and passes all tests on both x86_64 and ARM64. |
+| **Fri Feb 6** | **SPECTRAL §3.1**: Expander graphs: Spectral expansion vs edge expansion. Why Ramanujan graphs have optimal small-world routing properties. | Set up cross-platform CI matrix: Ubuntu x86_64, macOS Apple Silicon (ARM64). | **secan**: Verify builds and tests on x86_64 and ARM64. ONNX export → [`intextus_30min_six_month.md`](intextus_30min_six_month.md) (`limbed`), not this afternoon. |
 
 > **📝 Essay 23 (Sat Feb 7)**: *"Spectral Graph Theory, Cheeger's Inequality, and Cross-Platform ARM NEON Optimization"*
 
 ---
 
-### Week 24 (Feb 9–13): 6-Month Pure Mathematics Synthesis & Master Engine Release
+### Week 24 (Feb 9–13): Spectral Synthesis, CLI Scaffold & GPU Occupancy
 
-**Theme**: Master mathematical synthesis (Trig $\to$ Calculus $\to$ Linear Algebra $\to$ Probability $\to$ Stats $\to$ Optimization $\to$ Spectral Theory), full benchmarking, and v2.0 production release.
+**Theme**: Close Month 6 math; **do not** tag `v2.0` yet — GPU specialization still has March.
 
-* **Pure Mathematics Synthesis**: Comprehensive synthesis connecting:
-  1. Trigonometry & Complex Numbers ($e^{i\theta}$)
-  2. Multivariable Calculus & Gradient Optimization ($\nabla f, H, \text{KKT}$)
-  3. Linear Algebra & Spectral Decompositions ($A = U \Sigma V^T$)
-  4. Probability & Information Theory ($H(X), D_{KL}, \text{MLE}$)
-  5. Fourier Transforms & Spectral Graph Theory ($\mathcal{F}, \lambda_2, \text{Cheeger}$)
-* **C++ Engine (`secan`)**: Comprehensive `secan` CLI tool, full Doxygen documentation, 5 standalone runnable examples, complete `ann-benchmarks` evaluation suite, `v2.0` release.
+* **secan**: CLI scaffold + occupancy/`ncu` pass. Full release → Week 28.
 
-| Day | Pure Mathematics Master Synthesis (90 min) | Systems / Architecture Reading (45 min) | Afternoon Implementation (2.5 hrs) |
+| Day | Pure Mathematics (90 min) | Systems Reading (45 min) | Afternoon Implementation (2.5 hrs) |
 |:---|:---|:---|:---|
-| **Mon Feb 9** | **MASTER SYNTHESIS (Part 1)**: The geometric thread: from the Unit Circle in $\mathbb{R}^2$ to Euclidean Hyperspheres, Hilbert Spaces, and SVD in $\mathbb{R}^D$. | **PIKUS Ch 12**: Design for performance retrospective — lessons from building a complete engine. | **secan**: Implement comprehensive `secan` CLI: `secan build --index hnsw --gpu`, `secan search --query q.fvecs --k 10`, `secan bench`. |
-| **Tue Feb 10** | **MASTER SYNTHESIS (Part 2)**: The optimization thread: from 1D derivatives to multivariable Hessians, Lagrange Multipliers, KKT duality, and Gradient Descent. | Review `ann-benchmarks` standard evaluation protocol. | **Master Benchmark Run**: Execute full benchmark matrix across ALL index types (Brute-Force, IVF, HNSW, ColBERT) on CPU and GPU. |
-| **Wed Feb 11** | **MASTER SYNTHESIS (Part 3)**: The stochastic thread: from Kolmogorov's axioms to Central Limit Theorem, Fisher Information, and Shannon Entropy. | Doxygen documentation standards and C++ API design best practices. | **secan**: Generate full Doxygen API documentation for every public class, function, and parameter. |
-| **Thu Feb 12** | **MASTER SYNTHESIS (Part 4)**: The spectral thread: from Fourier series to Graph Laplacians, Algebraic Connectivity, and Small-World Expander graphs. | Code cleanup, compiler warning elimination (`-Wall -Wextra -Wpedantic -Werror`). | **secan**: Create `examples/` directory: (1) Basic CPU search, (2) HNSW index, (3) Quantized search, (4) ColBERT search, (5) GPU batch search. |
-| **Fri Feb 13** | — | — | **Grand Finale**: Update README with final architecture diagram, benchmark tables, and Python examples. Git tag `v2.0-complete`. |
+| **Mon Feb 9** | Spectral + production recap (Cheeger, ACORN, tombstones). | **PIKUS Ch 12** retrospective. | **secan**: CLI scaffold `secan build/search/bench` (complete Week 28). |
+| **Tue Feb 10** | Convexity recap: KKT complementary slackness. | Occupancy calculator / `__launch_bounds__`. | **CUDA**: Occupancy tune on IVF + graph kernels. |
+| **Wed Feb 11** | Fourier skim (optional): convolution as GEMM intuition. | CUB/Thrust fusion notes. | **CUDA**: Fused distance+topk kernel (was former Week 22 GPU polish). |
+| **Thu Feb 12** | Info-theory recap: CE = $H+D_{KL}$ (ties to InfoNCE). | `-Wall -Wextra -Wpedantic`. | **secan**: Warning cleanup; examples/ stubs. |
+| **Fri Feb 13** | — | Month 6 paper freeze checklist. | **secan/CUDA**: Occupancy/`ncu` leftover polish. *(Naive KV re-bench: Saturday DL if needed.)* |
 
-> **📝 Essay 24 (Sat Feb 14)**: *"6 Months from Scratch: The Complete Synthesis of Pure Mathematics, AI Systems, and GPU Engineering"*
+> **📝 Essay 24 (Sat Feb 14)**: *"Portable SIMD and Production Graphs — Month 6 Lab Closeout"*  
+> **🚀 Month 6 research PUBLISH (Sun Feb 28)**: `research/2027-02-predicate-aware-graphs/paper.md` (use remaining Feb weekends).
 
 ---
 
-## 📋 Comprehensive 24-Week Essay Publication Schedule
+# 📅 MONTH 7: GPU Specialization Closeout (Mar 2027)
+
+> **🔬 Monthly research**: *IO-Aware GPU Serving: FlashAttention-2, Multi-GPU Search, and KV Paging* → publish **Fri Mar 12** · folder `research/2027-03-gpu-serving/`
+
+---
+
+### Week 25 (Feb 16–20): FlashAttention-2 (Week 15 catch-up)
+
+**Theme**: FA-2 loop order, warp partition, Nsight vs FA-1 and SDPA.
+
+| Day | Math (90 min) | Reading (45 min) | Afternoon (2.5 hrs) |
+|:---|:---|:---|:---|
+| **Mon Feb 16** | Online softmax recap (`m`, $\ell$). | FlashAttention-2 (Dao 2023). | **CUDA**: FA-2 loop order on Week 15 kernel. |
+| **Tue Feb 17** | Work/span of tiled GEMM. | Warp partition along sequence. | **CUDA**: Reduce inter-warp sync; unit-test vs PyTorch. |
+| **Wed Feb 18** | Numerical stability of online softmax. | `ncu` metrics: DRAM, achieved TFLOPS. | **CUDA (required)**: Nsight FA-1 vs FA-2 vs SDPA. |
+| **Thu Feb 19** | GQA + FA: fewer KV tiles. | Integrate GQA from Week 2/4. | **Python/CUDA**: FA-2 path with `num_kv_heads`. |
+| **Fri Feb 20** | — | — | Expose FA-2 via `cpp_extension`. Document speedup table for March paper. |
+
+> **📝 Essay 25 (Sat Feb 21)**: *"FlashAttention-2: Loop Order and Warp Partition"*
+
+---
+
+### Week 26 (Feb 23–27): PagedAttention polish on naive KV
+
+**Theme**: Week 4 naive KV is the baseline; this week **pages** it (Week 19 may already have a first BlockTable — finish correctness + GQA).
+
+| Day | Math (90 min) | Reading (45 min) | Afternoon (2.5 hrs) |
+|:---|:---|:---|:---|
+| **Mon Feb 23** | Virtual memory recap (CS:APP Ch 9). | vLLM PagedAttention §4. | **CUDA**: BlockTable + paged K/V vs naive concat (A/B latency + memory). |
+| **Tue Feb 24** | Fragmentation vs bitwidth (TurboQuant). | TurboQuant KV blog. | Design note: paging ≠ quantizing; optional QJL sketch. |
+| **Wed Feb 25** | — | cuVS / serving APIs. | Hybrid CPU↔GPU fallback polish. |
+| **Thu Feb 26** | — | Batch size crossover. | Plot $B=1..1000$ with **paged** KV. |
+| **Fri Feb 27** | Month 6 paper remaining figures. | — | Freeze ACORN/tombstone paper if not done Feb 28. |
+
+> **📝 Essay 26 (Sat Feb 28)**: *"Naive KV vs Paged KV: The Baseline We Should Have Had First"*  
+> **🚀 Month 6 PUBLISH (Sun Feb 28)** if not already.
+
+---
+
+### Week 27 (Mar 2–6): Multi-GPU + ColPali ingest
+
+**Theme**: NCCL search scaling; finish vision–text index.
+
+| Day | Math (90 min) | Reading (45 min) | Afternoon (2.5 hrs) |
+|:---|:---|:---|:---|
+| **Mon Mar 2** | AllReduce vs AllGather cost. | NCCL ring algorithms. | **secan**: Multi-GPU IVF load-balance polish (Week 20). |
+| **Tue Mar 3** | — | NVLink vs PCIe. | Scaling efficiency 1/2/4 GPU (or 1 GPU simulated shards). |
+| **Wed Mar 4** | Contrastive InfoNCE recap. | ColPali paper. | Ingest CLIP-projected patches into `MultiVectorIndex`. |
+| **Thu Mar 5** | — | GPU MaxSim CUTLASS. | Text query → visual page search E2E. |
+| **Fri Mar 6** | — | — | Month 7 paper figures: GPU QPS + ColPali demo. |
+
+> **📝 Essay 27 (Sat Mar 7)**: *"Sharded IVF and Visual Late Interaction"*
+
+---
+
+### Week 28 (Mar 9–13): 7-Month Release
+
+**Theme**: `v2.0` — VS spine + GPU specialization + slow-path DL.
+
+| Day | Math (90 min) | Reading (45 min) | Afternoon (2.5 hrs) |
+|:---|:---|:---|:---|
+| **Mon Mar 9** | 7-month geometric thread recap. | API/docs pass. | Finish CLI + Doxygen. |
+| **Tue Mar 10** | — | `ann-benchmarks`. | Full CPU+GPU benchmark matrix. |
+| **Wed Mar 11** | — | Examples. | Five examples including dense InfoNCE search + GPU batch. |
+| **Thu Mar 12** | — | README. | **Publish Month 7 paper.** Tag `v2.0-complete`. |
+| **Fri Mar 13** | Rest / interview packet. | — | Portfolio: 7 papers + `secan` Pareto plots. |
+
+> **📝 Essay 28 (Sat Mar 14)**: *"7 Months: Vector Search Spine, GPU Serving, and a Slow-Path Retriever Stack"*  
+> **🚀 Month 7 research PUBLISH (Thu Mar 12)**: `research/2027-03-gpu-serving/paper.md`
+
+---
+
+## 📋 Comprehensive 28-Week Essay Publication Schedule
 
 | Week | Essay Date | Essay Title |
 |:---|:---|:---|
 | **1** | Sat Sep 6 | *The Geometry of High-Dimensional Retrieval: From Trigonometric Coordinates and NDCG to CPU Performance Counters* |
-| **2** | Sat Sep 13 | *Breaking Dependency Chains: Multi-Register SIMD Kernels and Multi-Head Attention Geometry* |
-| **3** | Sat Sep 20 | *The Geometry of Subspaces and the Physics of CPU Caches* |
-| **4** | Sat Sep 27 | *From Euler's Formula to Voronoi Cells: The Mathematical Architecture of Scalable Search* |
+| **2** | Sat Sep 13 | *Breaking Dependency Chains: Multi-Register SIMD Kernels* |
+| **3** | Sat Sep 20 | *Integrals, Accumulation, and the Physics of CPU Caches* |
+| **4** | Sat Sep 27 | *From Euler's Formula to RoPE and Voronoi Cells* |
 | **5** | Sat Oct 4 | *Multivariable Gradients, Hessians, and Low-Bit Quantization: Compressing High-Dimensional Information* |
 | **6** | Sat Oct 11 | *Lagrange Multipliers, Jacobians, and Product Quantization: Compressing Vectors to 16 Bytes* |
 | **7** | Sat Oct 18 | *Google ScaNN Anisotropic Loss, Vector Fields, and In-Register SIMD FastScan* |
 | **8** | Sat Oct 25 | *Building HNSW from Scratch: Graph Laplacians, The Hubness Phenomenon, and Sub-Millisecond Search* |
 | **9** | Sat Nov 1 | *Beyond Single Vectors: The Linear Algebra and SIMD Architecture of ColBERT Late Interaction* |
-| **10** | Sat Nov 8 | *PLAID, Block-Max WAND, and Tail Latency: The Engineering of 3-Stage Cascaded Retrieval* |
+| **10** | Sat Nov 8 | *MUVERA FDEs vs PLAID Cascades: Reducing MaxSim to MIPS* |
 | **11** | Sat Nov 15 | *LSM-Trees for Vector Databases: Write-Ahead Logs, MemTables, and Apache Arrow Storage* |
-| **12** | Sat Nov 22 | *secan v1.0: Architectural Blueprint of a Modern C++20 Vector Engine with Python Bindings* |
+| **12** | Sat Nov 22 | *Composed Indexes: IVF-PQ and HNSW-SQ vs Faiss/hnswlib* |
 | **13** | Sat Nov 29 | *GPU Architecture for Vector Search: Why Naive CUDA Kernels Lose to CPU AVX2* |
 | **14** | Sat Dec 6 | *Warp Shuffles and Memory Coalescing: Saturating GPU Memory Bandwidth in Vector Search* |
 | **15** | Sat Dec 13 | *Building FlashAttention from Scratch in CUDA: IO-Aware Tiling and Online Softmax* |
-| **16** | Sat Dec 20 | *GPU-Resident IVF: Pipelining Voronoi Cell Search with CUDA Streams at 100K QPS* |
+| **16** | Sat Dec 20 | *Closing the Vector Search Spine: GPU IVF, Vamana/DiskANN, and Hybrid RRF/WAND* |
 | **17** | Sat Dec 27 | *CAGRA and GPU Graph Traversal: Overcoming Random Memory Access at Warp Scale* |
 | **18** | Sat Jan 3 | *Markov Chains, Graph Random Walks, and Warp-Shuffle GPU FastScan* |
-| **19** | Sat Jan 10 | *Maximum Likelihood Estimation, Fisher Information, and PagedAttention Architecture* |
+| **19** | Sat Jan 10 | *PagedAttention Meets TurboQuant: Virtual Memory for KV Blocks and Extreme Bit Compression* |
 | **20** | Sat Jan 17 | *Shannon Entropy, Kullback-Leibler Divergence, and Distributed Multi-GPU Search* |
-| **21** | Sat Jan 24 | *Convex Optimization, KKT Conditions, and ColPali Vision-Language Retrieval* |
-| **22** | Sat Jan 31 | *Fourier Analysis, The Convolution Theorem, and GPU Kernel Fusion* |
+| **21** | Sat Jan 24 | *KKT and ColPali: CLIP Projector + GPU MaxSim* |
+| **22** | Sat Jan 31 | *Pre/Post/Range Filters vs ACORN: Selectivity and Recall Collapse* |
 | **23** | Sat Feb 7 | *Spectral Graph Theory, Cheeger's Inequality, and Cross-Platform ARM NEON Optimization* |
-| **24** | Sat Feb 14 | *6 Months from Scratch: The Complete Synthesis of Pure Mathematics, AI Systems, and GPU Engineering* |
+| **24** | Sat Feb 14 | *Portable SIMD and Production Graphs — Month 6 Lab Closeout* |
+| **25** | Sat Feb 21 | *FlashAttention-2: Loop Order and Warp Partition* |
+| **26** | Sat Feb 28 | *Naive KV vs Paged KV: The Baseline We Should Have Had First* |
+| **27** | Sat Mar 7 | *Sharded IVF and Visual Late Interaction* |
+| **28** | Sat Mar 14 | *7 Months: Vector Search Spine, GPU Serving, and a Slow-Path Retriever Stack* |

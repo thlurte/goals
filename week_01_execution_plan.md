@@ -91,10 +91,18 @@
          std::vector<float> data; // Contiguous row-major buffer
      };
      VectorDataset load_fvecs(const std::string& path);
+     VectorDataset load_bvecs(const std::string& path);
+     // Ground-truth neighbor IDs (SIFT *.ivecs)
+     struct NeighborDataset {
+         int num_queries;
+         int k;
+         std::vector<int> ids; // row-major [num_queries * k]
+     };
+     NeighborDataset load_ivecs(const std::string& path);
      ```
-  2. **Zero-Copy Parser**: Implement `src/io/fvecs_reader.cpp` parsing `.fvecs` files (4-byte dimension header + $D \times 4$ bytes float array per vector).
-  3. **Unit Tests**: Create `tests/test_io.cpp` generating synthetic `.fvecs` binary files, reading them back, and asserting floating-point equality.
-  4. **Dataset Acquisition**: Download or generate SIFT1M base vectors ($1\text{M} \times 128\text{D}$) into `data/sift1m/`.
+  2. **Zero-Copy Parser**: Implement `src/io/fvecs_reader.cpp` parsing `.fvecs` / `.bvecs` / `.ivecs`.
+  3. **Unit Tests**: Create `tests/test_io.cpp` generating synthetic binary files, reading them back, asserting equality.
+  4. **Dataset Acquisition**: Download SIFT1M base + ground-truth into `data/sift1m/` (full 1M OK; Wed metrics may use a subset).
 
 ---
 
@@ -126,11 +134,12 @@
      * Discounted Cumulative Gain: $\text{DCG}@K = \sum_{i=1}^K \frac{2^{rel_i} - 1}{\log_2(i + 1)}$
      * Ideal DCG ($\text{IDCG}@K$) and Normalized DCG ($\text{NDCG}@K = \frac{\text{DCG}@K}{\text{IDCG}@K}$)
      * Mean Reciprocal Rank: $\text{MRR} = \frac{1}{|Q|} \sum_{q} \frac{1}{\text{rank}_q}$
-  2. **Ground Truth Validation**: Run exact scalar `linear_scan` on SIFT1M query set ($10\text{K}$ queries); verify Recall@10 = 1.0 and NDCG@10 = 1.0.
+     * Mean Average Precision: $\text{MAP} = \frac{1}{|Q|} \sum_{q} \text{AP}(q)$
+  2. **Ground Truth Validation**: Run exact scalar `linear_scan` on a **SIFT subset** first (e.g. 100K base / 1K queries); verify Recall@10 = 1.0, NDCG@10 = 1.0, MAP sanity checks. Full SIFT1M scan = stretch / weekend.
 
 ---
 
-### 🔹 Thursday, Sep 4: The Derivative, Port Mapping & PyTorch Attention from Scratch
+### 🔹 Thursday, Sep 4: The Derivative, Port Mapping & Inner-Product Kernel
 
 #### 🌅 06:00 – 07:30 | Pure Mathematics (90 min)
 * **Book**: *Calculus* — Gilbert Strang
@@ -153,27 +162,13 @@
   3. Port distribution of arithmetic instructions on modern Intel/AMD architectures.
 
 #### 💻 20:30 – 23:00 | Hands-On Implementation (2.5 hrs)
-* **Target**: `/home/ahmed/personal/transformers-pytorch`
+* **Target**: `/home/ahmed/personal/secan`
 * **Tasks**:
-  1. **Scaffold Clean Project**:
-     ```bash
-     cd /home/ahmed/personal
-     uv init transformers-pytorch
-     cd transformers-pytorch
-     uv add torch pytest
-     ```
-  2. **Scaled Dot-Product Attention**: Create `src/attention.py` from scratch:
-     ```python
-     def scaled_dot_product_attention(q, k, v, mask=None):
-         # q, k, v: [batch_size, num_heads, seq_len, head_dim]
-         d_k = q.size(-1)
-         scores = torch.matmul(q, k.transpose(-2, -1)) / math.sqrt(d_k)
-         if mask is not None:
-             scores = scores.masked_fill(mask == 0, -1e9)
-         attn_weights = torch.softmax(scores, dim=-1)
-         return torch.matmul(attn_weights, v), attn_weights
-     ```
-  3. **Unit Tests**: Create `tests/test_attention.py` verifying tensor shapes, softmax probability normalization ($\sum = 1.0$), and causal mask behavior.
+  1. First-class **`ip()`** (inner product) next to `l2_squared`. Distance enum: L2 / IP / cosine.
+  2. Same Google Benchmark harness: $D \in \{64, 128, 768, 1536\}$.
+  3. Unit tests: IP vs naive loop; cosine via IP + norms.
+
+**DL moves to Sat Sep 6 14:00–18:00**: `uv init transformers-pytorch`; SDPA + causal mask tests. Not this night.
 
 ---
 
@@ -216,13 +211,19 @@
 * **Title**: *"The Geometry of High-Dimensional Retrieval: From Trigonometric Coordinates and NDCG to CPU Performance Counters"*
 * **Deliverable**: Save to `~/personal/goals/essays/essay_01_geometry_and_measurement.md`
 * **Structure (5-Part Standard)**:
-  1. **Mathematical Foundation**: Trigonometric coordinates on the unit circle, Cauchy-Schwarz inequality, and mathematical formulation of NDCG@K / MRR.
+  1. **Mathematical Foundation**: Trigonometric coordinates on the unit circle, Cauchy-Schwarz inequality, and mathematical formulation of NDCG@K / MRR / MAP.
   2. **The Naive Bottleneck**: Why naive scalar loops hit CPU instruction dependency stalls and suffer low IPC ($1.1$).
-  3. **The Engine Architecture**: Setting up Google Benchmark with `DoNotOptimize`, zero-copy `.fvecs` parsing, and AddressSanitizer safety.
-  4. **Empirical Benchmarks**: `perf stat` performance counter tables on SIFT1M (cycles, instructions, cache misses).
+  3. **The Engine Architecture**: Setting up Google Benchmark with `DoNotOptimize`, zero-copy `.fvecs`/`.ivecs` parsing, and AddressSanitizer safety.
+  4. **Empirical Benchmarks**: `perf stat` performance counter tables on SIFT subset / SIFT1M (cycles, instructions, cache misses).
   5. **Key Takeaway**: Why measurement must always precede optimization in high-performance AI systems.
+
+#### 🧠 14:00 – 18:00 | DL weekly
+* `uv init transformers-pytorch`; `uv add torch pytest`
+* Implement `scaled_dot_product_attention` + causal mask tests (`tests/test_attention.py`)
 
 ---
 
-### 🔹 Sunday, Sep 7: Reflection & Rest
-* Review notes, solve any remaining calculus problem set questions, and rest before Week 2 (Trigonometric Identities, Chain Rule & AVX2 SIMD).
+### 🔹 Sunday, Sep 7: Reflection, Rest & Research Kickoff
+* Review notes; solve remaining calculus problems.
+* **Research**: create `research/2026-09-measurement-protocol/` and draft the one-sentence question + first benchmark table stub (see [research/README.md](research/README.md)).
+* Rest before Week 2 (Trigonometric Identities, Chain Rule & AVX2 SIMD).
