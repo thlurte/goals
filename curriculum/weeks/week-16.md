@@ -1,0 +1,105 @@
+# 🚀 Week 16 Execution Playbook
+
+> **Theme**: VS Spine Capstone — GPU IVF + DiskANN + Hybrid WAND  
+> **Calendar Dates**: Mon Dec 15 – Sun Dec 21 (2026-12-15 to 2026-12-21)  
+> **Parent Month Dashboard**: [Month 4 (Dec 2026)](month-04-dec.md) · **Block**: I — Vector Search Engine
+
+| | | |
+|:---|:---|:---|
+| [← Week 15](week-15.md) | [Month 4 (Dec 2026) Dashboard](month-04-dec.md) | [Week 17 →](week-17.md) |
+
+---
+
+## ⏰ Daily Operational Rhythm
+
+```
+┌──────────────────────────────┬────────────────────────────────────────────────────────────────────────┐
+│ Time Block                   │ Focus Area                                                             │
+├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
+│ 🌅 06:00 – 07:30 (90 min)    │ Pure Mathematics (Pencil, paper, theorems, derivations & proofs)       │
+│ 📖 07:30 – 08:30 (60 min)    │ Systems & Architecture Deep Reading (Hardware mechanics & papers)      │
+│ ☀️ Daytime                   │ Subconscious Incubation Period (Diffuse thinking)                      │
+│ 💻 20:30 – 23:00 (2.5 hrs)   │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
+├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
+│ 📝 Saturday 09:00 – 13:00    │ Weekly Long-Form Technical Essay / Lab Note                            │
+│ 🧠 Saturday 14:00 – 18:00    │ Deep Learning from Scratch Track (PyTorch / uv)                        │
+│ 🔬 Sunday 09:00 – 13:00      │ Monthly Research Paper Experiments & Drafting                          │
+└──────────────────────────────┴────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 📅 Day-by-Day Master Timetable
+
+| Day | Date | Daily Runbook | Pure Mathematics (90 min) | Systems / Architecture Reading (45-60 min) | Night Hands-On C++/CUDA (2.5 hrs) |
+|:---|:---|:---|:---|:---|:---|
+| **Monday** | Mon Dec 15 | [`Day 106`](../days/month-04/day-106-2026-12-15.md) | **PROB §7.1–7.2**: Joint, marginal, and conditional discrete distributions. Multinomial distribution. | Faiss GPU 2019 §1–3: billion-scale GPU similarity search. | **secan**: GPU IVF memory layout: coarse centroids; cell vectors + offset table. |
+| **Tuesday** | Tue Dec 16 | [`Day 107`](../days/month-04/day-107-2026-12-16.md) | **PROB §7.3–7.4**: Joint continuous distributions; marginals by integration. | Faiss GPU §4–5: GPU $k$-selection, warp-cooperative list scanning. | **secan**: GPU coarse quantizer + top-`nprobe` cell select; warp-cooperative cell scan. |
+| **Wednesday** | Wed Dec 17 | [`Day 108`](../days/month-04/day-108-2026-12-17.md) | **PROB §7.5**: 2D change of variables / Jacobian; Box-Muller. | **CUDA-GUIDE Streams & Events**. | **secan**: CUDA stream pipelining for IVF batches; quick SQ8-in-cell stretch if time. Tag `v1.1-gpu-ivf`. |
+| **Thursday** | Thu Dec 18 | [`Day 109`](../days/month-04/day-109-2026-12-18.md) | **PROB §7.6–7.7**: Covariance and Correlation; Cauchy-Schwarz bound on $\rho$. | DiskANN: **Vamana graph construction** (α-prune) + `io_uring` fetch. | **secan (required)**: Implement **Vamana prune** (build graph, not only SSD fetch); compressed vectors in RAM; FP32 via `io_uring`. Recall vs in-RAM. |
+| **Friday** | Fri Dec 19 | [`Day 110`](../days/month-04/day-110-2026-12-19.md) | **PROB §7.8**: Multivariate Normal $\mathcal{N}(\boldsymbol{\mu}, \boldsymbol{\Sigma})$. | Ding & Suel WAND; **RRF** (Cormack et al.). | **secan (required)**: BM25 + Block-Max WAND; fuse via **RRF** *and* linear $\alpha$. Query-time $\alpha$ / k sweep. SPLADE = stretch. Tag `v1.2-vs-spine-complete`. |
+| **Saturday** | Sat Dec 20 | [`Day 111`](../days/month-04/day-111-2026-12-20.md) | **09:00–13:00**: Essay 16 | **14:00–18:00**: Deep Learning Track | Deep Learning from Scratch (uv/PyTorch) |
+| **Sunday** | Sun Dec 21 | [`Day 112`](../days/month-04/day-112-2026-12-21.md) | **09:00–13:00**: Monthly Research | Research Experimentation | Rest & Subconscious Incubation |
+
+---
+
+## 📋 Daily Action Items & Deliverables (Week 16)
+
+### 🔹 Monday, Mon Dec 15 ([`Day 106`](../days/month-04/day-106-2026-12-15.md))
+* `[ ]` **Core**: Implement GPU IVF memory layout: store coarse centroids and jagged inverted list arrays with prefix sum offset table in device memory.
+* `⭐ Optional / Stretch`: Implement zero-copy unified memory (`cudaMallocManaged`) coarse centroid lookup.
+
+### 🔹 Tuesday, Tue Dec 16 ([`Day 107`](../days/month-04/day-107-2026-12-16.md))
+* `[ ]` **Core**: Implement GPU coarse cell routing kernel finding top-`nprobe` nearest centroids followed by warp-cooperative inverted list scanning.
+* `⭐ Optional / Stretch`: Profile warp divergence when inverted lists have non-uniform lengths; implement dynamic warp-balancing scheduler.
+
+### 🔹 Wednesday, Wed Dec 17 ([`Day 108`](../days/month-04/day-108-2026-12-17.md))
+* `[ ]` **Core**: Implement CUDA stream pipelining overlapping query upload, cell scan, and top-$k$ download. Tag `v1.1-gpu-ivf`.
+* `⭐ Optional / Stretch`: Implement SQ8 integer quantization inside GPU IVF lists to double effective VRAM vector capacity.
+
+### 🔹 Thursday, Thu Dec 18 ([`Day 109`](../days/month-04/day-109-2026-12-18.md))
+* `[ ]` **Core**: Implement Vamana graph construction ($\alpha$-pruning heuristic); implement asynchronous out-of-core SSD vector fetch via Linux `io_uring` with `O_DIRECT`.
+* `⭐ Optional / Stretch`: Benchmark random NVMe read IOPS and latency under varying `io_uring` queue depths ($QD \in [1, 128]$).
+
+### 🔹 Friday, Fri Dec 19 ([`Day 110`](../days/month-04/day-110-2026-12-19.md))
+* `[ ]` **Core**: Implement BM25 inverted index + Block-Max WAND early termination; fuse dense ANN candidates with sparse BM25 scores via Reciprocal Rank Fusion (RRF). Tag `v1.2-vs-spine-complete`.
+* `⭐ Optional / Stretch`: Compare retrieval quality (NDCG@10) of RRF rank fusion vs linear weighted score interpolation ($\alpha \cdot S_{\text{dense}} + (1-\alpha) \cdot S_{\text{sparse}}$).
+
+### 🔹 Saturday, Sat Dec 20 ([`Day 111`](../days/month-04/day-111-2026-12-20.md))
+* `[ ]` **Core (09:00–13:00)**: Write and ship **Technical Essay 16**: *"Closing the Vector Search Spine: GPU IVF Streaming, Vamana Graph Pruning, and Out-of-Core `io_uring`"* to `goals/essays/essay_16.md`.
+* `[ ]` **Core (14:00–18:00)**: Execute Saturday Deep Learning from Scratch track ().
+* `⭐ Optional / Stretch`: Run automated test suite validating PyTorch numerical gradient and attention equivalence.
+
+### 🔹 Sunday, Sun Dec 21 ([`Day 112`](../days/month-04/day-112-2026-12-21.md))
+* `[ ]` **Core (09:00–13:00)**: Execute Monthly Research Milestone for Month 4 (`research/2026-12-three-paths-spine/`): run empirical benchmarks and record data tables.
+* `⭐ Optional / Stretch`: Draft / update section figures and experimental limitations.
+
+---
+
+## ⛔ What NOT to Overspend Time On (Week 16 Time Traps)
+
+* ❌ **Do NOT** implement SPLADE sparse neural models—BM25 + Block-Max WAND is the required sparse baseline.
+* ❌ **Do NOT** run multi-billion scale benchmarks—DiskANN on a 1M to 10M vector subset proves out-of-core `io_uring` execution.
+* ❌ **Do NOT** build complex C++ REST server wrappers—keep `secan` exposed via `nanobind` and CLI.
+
+---
+
+## 📝 Weekend Deliverables
+
+### ✍️ Technical Essay 16 (Saturday 09:00–13:00)
+* **Title**: *"Closing the Vector Search Spine: GPU IVF Streaming, Vamana Graph Pruning, and Out-of-Core `io_uring`"*
+* **Target File**: `~/personal/goals/essays/essay_16.md`
+* **5-Part Structure**:
+  1. **Mathematical Foundation**: Core theorems, derivations, and formal definitions.
+  2. **The Systems Bottleneck**: Hardware limitation (memory bandwidth, port contention, cache line splits, warp stalls).
+  3. **The Engine Architecture**: Exact data structures and SIMD/CUDA kernel design implemented in `secan`.
+  4. **Empirical Benchmarks**: Perf counter tables, latency percentiles ($p50/p95/p99$), and QPS curves.
+  5. **Key Takeaway**: Architectural rule of thumb for production AI systems.
+
+### 🧠 Deep Learning Track (Saturday 14:00–18:00)
+* **Task**: 
+
+### 🔬 Monthly Research Milestone (Sunday 09:00–13:00)
+* **Paper**: *"Billion-Scale Retrieval Frontiers: Comparing In-VRAM GPU IVF and Asynchronous NVMe DiskANN Under Concurrent Query Pressure"*
+* **Workspace**: `research/2026-12-three-paths-spine/`
+* **Publish Deadline**: **Sun Dec 27**

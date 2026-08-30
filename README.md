@@ -46,11 +46,15 @@ Details: [`research/README.md`](research/README.md).
 goals/
 ├── README.md                 ← you are here
 ├── curriculum/
-│   ├── README.md             ← cadence + month index
+│   ├── README.md             ← cadence + master index
 │   ├── landings.md           ← VS / DL / deferred ledgers
 │   ├── roadmap.md            ← architecture blueprint
 │   ├── essays.md             ← lab-note titles
-│   └── weeks/month-0N-*.md   ← day tables & actions by month
+│   ├── weeks/
+│   │   ├── month-0N-*.md     ← day tables & actions by month
+│   │   └── week-01.md ...    ← 28 weekly execution playbooks
+│   └── days/
+│       └── month-0N/day-*.md ← 196 individual daily runbooks
 └── research/
     ├── README.md             ← publish bar + 7 topics
     └── YYYY-MM-<slug>/       ← monthly paper folders
