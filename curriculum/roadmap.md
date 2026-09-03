@@ -230,6 +230,20 @@ To rival commercial vector database engines (Pinecone, Turbopuffer, Qdrant, Milv
   * Periodically mend in-degree neighbor edges in background vacuum sweeps before returning dead vector memory slots to the free pool.
 
 ---
+### 8. Dual-Use Defense & Tactical Mission Systems Specification
+To deploy vector search and generative reasoning directly into electronic warfare pods, drone swarms, and JADC2 command systems:
+* **Air-Gapped & Zero-Cloud Determinism**:
+  * Zero external network calls, zero dynamic telemetry, and strict arena-based static memory allocation complying with DO-178C military avionics safety standards.
+* **Sub-Microsecond ESM Pulse De-Interleaving**:
+  * Process $>10^6$ radar Pulse Descriptor Words (PDWs)/sec with $<500	ext{ ns}$ latency per vector match across Intel Execution Ports 0/1 and ARM NEON pipelines to trigger countermeasures before missile lock-on.
+* **Jam-Resistant Tactical Data Link Compression**:
+  * Compress 768-D target tracklet embeddings by $32	imes$ (down to 16–32 bytes) using ScaNN anisotropic loss and 1-bit BQ popcount to fit within Link-16 ($28.8	ext{ kbps}$) and TTNT radio message budgets under hostile RF jamming.
+* **JADC2 Multilevel Security (MLS) Predicate Isolation**:
+  * Enforce compartmented classification labels (`TOP_SECRET`, `NOFORN`) and spatial geofences using ACORN 2-hop predicate routing, guaranteeing $>90\%$ target discovery even when $99.9\%$ of index nodes are masked out ($P(	ext{pass}) < 0.1\%$).
+* **SWaP-Constrained Edge Swarm Autonomy**:
+  * Execute FlashAttention-2 and Paged KV caches on 15W–60W NVIDIA Jetson Orin AGX (ARM Cortex-A78AE) hardware, fitting 32K–128K context mission planning models within edge VRAM limits.
+
+---
 
 ## Part 3: Verification & Tooling Matrix (The Hardware Profiling Playbook)
 

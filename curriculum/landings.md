@@ -59,3 +59,22 @@ REST out of scope. Cluster shard/replica = stretch only.
 
 ---
 
+---
+## ⚔️ Dual-Use Military & Tactical Mission Mapping (DL Saturdays)
+
+Every Saturday Deep Learning implementation is a dual-use weapon system component:
+
+| DL Weekend | Model / Architecture | Tactical Defense & Military Edge Application |
+|:---|:---|:---|
+| **W1 Sat Sep 6** | SDPA + Causal Masking | **Phased-Array Antenna Signal Beamforming**: Multi-channel temporal attention over phased RF pulse streams. |
+| **W2 Sat Sep 13** | MHA + GQA (Grouped-Query Attention) | **SWaP-Constrained Sensor Fusion**: Low-memory multi-head attention on edge airborne processors. |
+| **W3 Sat Sep 20** | Micrograd Autograd from Scratch | **Deterministic Gradient Evaluation**: Zero-dependency backpropagation for embedded missile guidance physics. |
+| **W4 Sat Sep 27** | RoPE + SwiGLU + CausalLM | **Rotary Coordinate Tracking**: Relative spatial orientation encoding for dynamic drone swarm formations. |
+| **W5 Sat Oct 4** | Vision Transformer (ViT) from Scratch | **Autonomous Optical / FLIR Missile Seekers**: Real-time target recognition and tracking in GPS-denied environments. |
+| **W6 Sat Oct 11** | BERT + InfoNCE Contrastive Loss | **Multimodal SIGINT-to-GEOINT Cross-Referencing**: Aligning intercepted RF radar pulse signatures with optical satellite imagery. |
+| **W7 Sat Oct 18** | MRL (Matryoshka Representation Learning) | **Adaptive Bandwidth Transmission**: Transmitting coarse 64-D vectors over jammed Link-16 RF, expanding to 768-D in line-of-sight. |
+| **W9 Sat Nov 1** | ColBERT + MaxSim Late Interaction | **Real-Time Electronic Order of Battle (EOB)**: Searching millions of complex, multi-modal radar emitter signatures. |
+| **W12 Sat Nov 22** | ONNX → ORT Engine Deployment | **Air-Gapped Embedded Avionics Deployment**: Zero-Python standalone C++ inference on edge flight controllers. |
+| **W15 Sat Dec 13** | Online Softmax & FlashAttention-1 | **High-Frequency Radar Chirp & Sonar Processing**: Processing raw long-duration temporal sequences ($>32	ext{K}$) without VRAM blowup. |
+| **W21 Sat Jan 24** | ColPali / Visual Late Interaction | **Automated Aerial Reconnaissance Exploitation**: Searching wide-area synthetic aperture radar (SAR) imagery for camouflaged targets. |
+| **W25 Sat Feb 21** | FlashAttention-2 with GQA | **Onboard Tactical Swarm Autonomy (DARPA ACE / CCA)**: Onboard mission reasoning models inside the 32GB memory of a Jetson Orin AGX. |
