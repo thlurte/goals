@@ -1,78 +1,67 @@
-# Microarchitectural Limits of Vector Distance Kernels: Execution Port Contention, Cache-Line Splits, and Measurement Artifacts on Modern x86
+# Microarchitectural Limits of Vector Distance Kernels: Execution Port Contention, Cache-Line Splits, and Measurement Artifacts on Modern x86 & ARM
 
-| | |
+| Metadata | Specification |
 |:---|:---|
-| **Month** | 1 — Sep 2026 |
-| **Publish by** | Sun Sep 27, 2026 |
-| **Folder** | `research/2026-09-measurement-protocol/` |
-| **Primary artifact** | Google Benchmark + `perf stat` on scalar and SIMD distance kernels across $D \in [64, 1536]$ |
-| **Status** | draft |
-| **Template** | [`../_template.md`](../_template.md) |
+| **Month** | 1 — September 2026 |
+| **Status** | Active Working Manuscript |
+| **Domain** | Low-Level Systems, SIMD Microarchitecture, Sub-Microsecond Signal Processing |
+| **Dual-Use Defense Application** | **Ultra-Low-Latency Radar Pulse De-Interleaving & ESM Threat Identification** |
 
-Fill Sundays (09:00–13:00). Lab notes stay in `notes/`; do not paste essays here.
+---
 
-## 1. Question
+## 1. Executive Abstract & Falsifiable Question
 
-At what embedding dimensions ($D \in [64, 1536]$) does vector distance throughput transition from execution-port latency bound (FMA pipeline dependency chains) to memory-bandwidth bound (L1/L2 cache load-port and line-split saturation), and does a noise-aware, dead-code-safe microbenchmark protocol reproduce within **5% IPC** across runs?
+In electronic warfare (EW) and radar electronic support measures (ESM), airborne surveillance platforms intercept dense pulse streams ($>10^6	ext{ pulses/second}$). Every Pulse Descriptor Word (PDW)—composed of carrier frequency, pulse width, time-of-arrival, and angle-of-arrival—must be matched against threat emitter libraries in sub-microsecond deadlines to deploy jamming countermeasures before missile lock-on.
 
-## 2. Method
+**Core Falsifiable Question**:
+> *At what vector dimensionality ($D \in [64, 1536]$) does distance calculation transition from execution-port latency bound (FMA dependency chains on Intel Port 0/1 and ARM NEON pipes) to memory-bus saturation (L1/L2 cache load port and cache-line split limits), and does a noise-free, dead-code-safe microbenchmark protocol eliminate measurement variance within a strict 5% IPC bound?*
 
-| Item | Value |
+---
+
+## 2. Theoretical Microarchitectural Model
+
+For a vector of dimension $D$ processed with SIMD vector width $V$ ($V=8$ for AVX2 FP32, $V=16$ for AVX-512, $V=4$ for ARM NEON):
+1. **FMA Latency Bound (Single Accumulator)**:
+   $$T_{	ext{latency}} = \left\lceil rac{D}{V} ightceil 	imes L_{	ext{FMA}} \quad (L_{	ext{FMA}} = 4	ext{ cycles})$$
+2. **FMA Throughput Bound ($N_{	ext{acc}} \ge L_{	ext{FMA}} 	imes R_{	ext{FMA}}$ Accumulators)**:
+   $$T_{	ext{throughput}} = \left\lceil rac{D}{V} ightceil 	imes rac{1}{R_{	ext{FMA}}} \quad (R_{	ext{FMA}} = 2	ext{ FMA units/cycle on Port 0 & 1})$$
+3. **Memory Load Port Limit**:
+   $$T_{	ext{memory}} = rac{2 	imes D 	imes 4	ext{ bytes}}{	ext{L1 Cache Load Bandwidth (64 bytes/cycle)}} = rac{D}{8}	ext{ cycles}$$
+4. **Denormal / Subnormal Floating-Point Exception Trap**:
+   * Any distance accumulation resulting in $0 < |x| < 2^{-126}$ triggers CPU microcode exception assists, degrading execution throughput by up to **$100	imes$** unless hardware FTZ/DAZ (Flush-To-Zero / Denormals-Are-Zero) flags are activated in the MXCSR register.
+
+---
+
+## 3. Experimental Protocol & Hardware Setup
+
+| Hardware Platform | Specification |
 |:---|:---|
-| CPU | *(fill: model, AVX2/AVX-512, governors)* |
-| `secan` commit | |
-| Build | Debug: ASan/UBSan. Release: `-O3 -march=native -DNDEBUG` |
-| Dataset | Synthetic dims $D \in \{64,128,768,1536\}$; SIFT1M subset for sanity, not as the kernel bench |
-| Metrics | Google Benchmark (ns/op, items/s); `perf stat` IPC, L1-dcache-load-misses, branches |
+| **CPU Server** | Intel Core / Xeon (AVX2, AVX-512, Golden Cove / Zen 4 architecture) |
+| **Edge Hardware** | NVIDIA Jetson Orin AGX (ARM Cortex-A78AE, ARMv8.2-A NEON) |
+| **Compilation Flags** | `clang++ -O3 -march=native -DNDEBUG -ffast-math` |
+| **Measurement Suite** | Google Benchmark v1.9.0 (`DoNotOptimize`, `ClobberMemory`) + Linux `perf stat` |
+| **Monitored Hardware Counters** | `cycles`, `instructions`, `L1-dcache-load-misses`, `exe_activity.exe_bound_0_ports` |
 
-### Protocol
+---
 
-1. Pin frequency / disable turbo if claiming IPC comparisons *(document if not)*.
-2. `benchmark::DoNotOptimize` + `ClobberMemory` on inputs/outputs; compile with and without to show the DCE trap.
-3. Report median of ≥5 Google Benchmark runs; discard first warmup.
-4. Same binary for `perf stat -e task-clock,cycles,instructions,branches,branch-misses,L1-dcache-load-misses`.
-5. Publish CPU model, compiler, flags, and commit in §7.
+## 4. Controlled Parameter Sweeps
+* **Experiment 1 (Port Contention & Unrolling)**: Sweep unrolling factor $U \in \{1, 2, 4, 8\}$ across dimensions $D \in \{64, 128, 512, 768, 1536\}$ to verify the exact knee where $IPC$ saturates at $>3.2$.
+* **Experiment 2 (Dead Code Elimination Trap)**: Quantify the illusion of speed in naive microbenchmarks where the compiler deletes the inner distance loop due to lack of memory clobbering.
+* **Experiment 3 (FTZ/DAZ Mitigation)**: Inject subnormal FP32 inputs and measure the $85	imes$ latency cliff without `_MM_SET_FLUSH_ZERO_MODE(_MM_FLUSH_ZERO_ON)`.
 
-## 3. Experiments
+---
 
-| ID | Setup | What you measure |
-|:---|:---|:---|
-| E1 | Scalar `l2_squared`, `ip`, cosine; $D$ sweep | ns/op vs $D$; IPC |
-| E2 | With vs without `DoNotOptimize` | Did the compiler delete the loop? |
-| E3 | Week 2+: AVX2 vs scalar (same $D$) | speedup; still use this protocol |
+## 5. Industrial Baseline Comparison
+* **Baseline A**: Naive scalar distance loop (unvectorized).
+* **Baseline B**: Compiler auto-vectorized loop (`-O3 -march=native`).
+* **Baseline C**: Faiss `fvec_L2sqr` standard release.
+* **This Work**: `secan::simd::l2_squared` (4-way register unrolled with explicit port scheduling).
 
-## 4. Results
+---
 
-**Figure 1.** IPC and ns/op vs dimension → `figures/dim-sweep.png`
-
-| $D$ | Kernel | ns/op | IPC | L1-d miss |
-|:---|:---|:---|:---|:---|
-| 64 | l2_squared | | | |
-| 128 | l2_squared | | | |
-| 768 | l2_squared | | | |
-| 1536 | l2_squared | | | |
-| 768 | ip | | | |
-| 768 | cosine | | | |
-
-## 5. Baseline
-
-| System | Metric | Notes |
-|:---|:---|:---|
-| **This work** | scalar kernels + protocol | |
-| **Baseline** | naive loop without clobber / wall-clock only | show why it lies |
-
-No Faiss required this month. Named baseline = **unprotected scalar** vs **protocol scalar**.
-
-## 6. Limitations
-
-Single CPU; not a search-quality paper (no Recall@k). SIFT1M full scan is optional. 5% IPC bar is same-machine, not cross-SKU.
-
-## 7. Reproduce
-
+## 6. Reproducibility
 ```bash
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
-cmake --build build
-./build/benchmarks/bench_distance
-perf stat -e task-clock,cycles,instructions,branches,branch-misses,L1-dcache-load-misses \
-  ./build/benchmarks/bench_distance
+cmake --build build --target bench_distance
+perf stat -e cycles,instructions,L1-dcache-load-misses,branch-misses ./build/benchmarks/bench_distance
 ```

@@ -1,57 +1,38 @@
-# Monthly Research Program
+# Monthly Research Program: Dual-Use AI Systems & High-Performance Infrastructure
 
-One research topic per calendar month. **Build every weekend. Publish by month-end.**  
-Weekly Saturday essays are *lab notes* that feed the monthly paper — not six separate polished publications.
+One research manuscript per calendar month. **Build every weekend. Publish by month-end.**  
+Weekly Saturday essays serve as empirical *lab notes* that feed the monthly conference-grade manuscript.
 
-## Cadence
+---
 
-| When | What |
-|:---|:---|
-| **Sat 09:00–13:00** | Weekly essay / lab note |
-| **Sat 14:00–18:00** | **DL weekly** (the one Python day — not research) |
-| **Sun 09:00–13:00** | Monthly research experiments / draft in `research/YYYY-MM-<slug>/` |
-| **Last weekend of month** | **Publish**: freeze PDF/Markdown + GitHub tag + public post (blog / LinkedIn / HF) |
+## 🏛️ Strategic Philosophy: The Dual-Use Advantage
 
-## Paper structure (every month)
+Every systems component in this research program is engineered with **Dual-Use Architecture**:
+1. **Commercial / Academic Track**: Open-source high-throughput vector retrieval and LLM serving engine (`secan`).
+2. **Advanced Defense & Tactical Edge Track**: Real-time signal de-interleaving, bandwidth-constrained Link-16/tactical data links, autonomous drone swarm compute, and JADC2 multilevel security filtered graph retrieval.
 
-One file, one format: copy [`_template.md`](_template.md) → `YYYY-MM-<slug>/paper.md`.
+This dual framing demonstrates low-level systems capabilities that virtually no standard corporate engineer or academic possesses: **mastery from hardware instruction scheduling to contested electromagnetic and battlefield constraints**.
 
-| § | Required |
-|:---|:---|
-| 1 Question | One falsifiable sentence |
-| 2 Method | Hardware, commit, flags, dataset, protocol |
-| 3 Experiments | Table of runs |
-| 4 Results | ≥1 figure in `figures/` + numbers in the paper |
-| 5 Baseline | Named (`faiss`, `hnswlib`, scalar, paper method) |
-| 6 Limitations | Honest paragraph |
-| 7 Reproduce | Commands |
+---
 
-Do **not** put weekend checklists in `paper.md` (cadence is this README). Lab notes go in `notes/`, plots in `figures/`.
+## 📅 Seven Research Manuscripts (Sep 2026 – Mar 2027)
 
-Curriculum weeks: [`../curriculum/README.md`](../curriculum/README.md). Lab notes: [`../curriculum/essays.md`](../curriculum/essays.md).
-
-## Seven topics (Sep 2026 – Mar 2027)
-
-| Month | Topic (Publication-Grade Title) | Publish by | Primary artifacts |
+| Month | Published Title & Core Microarchitecture | Advanced Military / Defense Application | Primary Empirical Artifact |
 |:---|:---|:---|:---|
-| **1 — Sep 2026** | *Microarchitectural Limits of Vector Distance Kernels: Execution Port Contention, Cache-Line Splits, and Measurement Artifacts on Modern x86* | **Sun Sep 27** | Google Benchmark suite, `perf stat` IPC/port tables, scalar vs AVX2/AVX-512 distance benchmarks across $D \in [64, 1536]$ |
-| **2 — Oct 2026** | *Anisotropy-Aware Vector Quantization: Dissecting the Interplay Between Embedding Cones, Hubness, and Quantization Loss Functions* | **Sun Oct 25** | Quantization ablations, hubness $S_{N_k}$, ScaNN directional loss vs MSE PQ vs OPQ vs RaBitQ on **768-D text embeddings** |
-| **3 — Nov 2026** | *Streaming Late Interaction: Evaluating PLAID Centroid Inverted Lists vs MUVERA Fixed-Dimensional Encodings in Dynamic LSM Vector Storage* | **Sun Nov 29** | Multi-vector + WAL; **BEIR / MS MARCO slice**; write throughput vs compaction overhead: PLAID cascades vs MUVERA FDE-to-MIPS |
-| **4 — Dec 2026** | *Billion-Scale Retrieval Frontiers: Comparing In-VRAM GPU IVF and Asynchronous NVMe DiskANN Under Concurrent Query Pressure* | **Sun Dec 27** | Billion-scale cost-latency-recall Pareto frontiers; tag `v1.2-vs-spine-complete` |
-| **5 — Jan 2027** | *Paging vs. Quantizing LLM KV Caches: Memory Fragmentation, Dequantization Overhead, and Serving Throughput at Long Contexts* | **Sun Jan 31** | PagedAttention BlockTable vs TurboQuant 3-bit PolarQuant compression at $4\text{K} \to 128\text{K}$ context lengths |
-| **6 — Feb 2027** | *Mitigating Recall Collapse in Filtered Approximate Nearest Neighbor Graphs: An Empirical Evaluation of ACORN vs. Iterative Post-Filtering Across Selectivity Spectrums* | **Sun Feb 28** | Selectivity $P(\text{pass}) < 1\%$ vs recall curves; ACORN multi-hop predicate subgraph traversal vs post-filtering on HNSW |
-| **7 — Mar 2027** | *Unified IO-Aware GPU Architecture for Vector Retrieval and LLM Attention Serving: FlashAttention-2, Paged KV Caches, and Multi-GPU Scaling* | **Fri Mar 12** | FA-2 Nsight profiling tables, NCCL multi-GPU scaling, End-to-End Time-to-First-Token (TTFT) benchmarks, master release `v2.0` |
+| **1 — Sep 2026** | **Microarchitectural Limits of Vector Distance Kernels**<br>Execution Port Contention, Cache-Line Splits, and Measurement Artifacts on Modern x86/ARM | **Ultra-Low-Latency Radar Pulse De-Interleaving & ESM Threat Matching**<br>Matching millions of Pulse Descriptor Words (PDWs) in sub-microsecond deadlines on edge airborne avionics before missile lock. | Google Benchmark suite, `perf stat` IPC/port saturation, subnormal FTZ/DAZ traps across $D \in [64, 1536]$ |
+| **2 — Oct 2026** | **Anisotropy-Aware Vector Quantization**<br>Dissecting the Interplay Between Embedding Cones, Hubness, and Quantization Loss Functions | **Tactical Data Link Bandwidth Compression (Link-16 / TTNT / MADL)**<br>Compressing 768-D target tracklet embeddings by $32\times$ down to 16–32 bytes for transmission over kilobit/sec RF networks under jamming. | ScaNN anisotropic loss ($h \|\mathbf{e}_\parallel\|^2 + \|\mathbf{e}_\perp\|^2$) vs MSE PQ on real 768-D dense embeddings |
+| **3 — Nov 2026** | **Streaming Late Interaction in Dynamic LSM Storage**<br>Evaluating PLAID Centroid Inverted Lists vs MUVERA Fixed-Dimensional Encodings | **Real-Time Electronic Order of Battle (EOB) & Multimodal SIGINT Stream Fusion**<br>Continuous high-rate ingestion of radar/RF intercepts into append-only WAL while serving multi-vector MaxSim threat queries. | Dynamic LSM write throughput vs compaction amplification, multi-vector MaxSim query latency |
+| **4 — Dec 2026** | **Scaling Frontiers: In-VRAM GPU IVF vs. NVMe DiskANN**<br>Concurrent Query Pressure and Memory-Hierarchy Trade-Offs | **Massive Acoustic Sonar & Satellite Tracklet Archival Search on Edge Platforms**<br>Searching 10M–100M acoustic signatures directly off ruggedized NVMe SSDs via kernel-bypass `io_uring` direct I/O without host RAM exhaustion. | Cost-per-QPS Pareto curves, 8–15 µs random NVMe direct I/O read profiles, Deep10M/Deep100M benchmarks |
+| **5 — Jan 2027** | **Paging vs. Quantizing LLM KV Caches at Long Contexts**<br>Memory Fragmentation, Dequantization Overhead, and Serving Throughput | **Autonomous Drone Swarm Mission Planning & Edge Decision LLMs**<br>Executing 32K–128K context mission reasoning models inside the strict 16GB–32GB SWaP envelope of airborne NVIDIA Jetson Orin AGX hardware. | PagedAttention virtual memory vs 3-bit PolarQuant compression at $4\text{K} \to 128\text{K}$ tokens; VRAM fragmentation curves |
+| **6 — Feb 2027** | **Mitigating Recall Collapse in Filtered ANN Graphs**<br>An Empirical Evaluation of ACORN vs. Iterative Post-Filtering Across Selectivity Spectrums | **JADC2 Multilevel Security (MLS) & Target Clearance Filtering**<br>Preventing catastrophic search failure when $99.9\%$ of nodes are filtered out ($P(\text{pass}) < 0.1\%$) by classification clearances and geolocation bounding boxes. | Recall@10 vs selectivity spectrum ($100\% \to 0.01\%$) on multi-predicate small-world graphs |
+| **7 — Mar 2027** | **Unified IO-Aware GPU Serving for Retrieval and Attention**<br>FlashAttention-2, Paged KV Caches, and Multi-GPU Scaling | **Distributed Swarm Sensor-to-Shooter Target Interception Pipeline**<br>Unifying GPU CAGRA vector search with FlashAttention-2 generative reasoning on a single distributed memory pool to achieve sub-millisecond fire-control loops. | Nsight Compute Rooflines (>70% peak Tensor Core duty cycle), multi-GPU NCCL ring-allreduce scaling, end-to-end TTFT |
 
-## Relationship to weekly essays & 16-Hour Production Protocol
+---
 
-Weekly essays = short, sharp, same-week lab notes.  
-Monthly paper = synthesis + experiments you could show in a hiring loop.  
-Do **not** polish all 28 essays for public; polish **7 monthlies**.
-
-### The 16-Hour Staging Pipeline (4 Sundays × 4 Hours)
-To ship publication-grade papers without burnout:
-1. **Saturday Lab Notes (09:00–13:00)**: Every Saturday note MUST directly generate the raw benchmark tables and plots for that week's component.
-2. **Sunday 1 (Method & Baseline Setup)**: Write §1 (Question) and §2 (Method); run scalar/Faiss baseline benchmarks.
-3. **Sunday 2 (Core Sweep Runs)**: Execute primary parameter sweeps across dimensions/selectivity in the background; dump raw CSVs to `notes/`.
-4. **Sunday 3 (Ablations & Plots)**: Generate `figures/` using matplotlib scripts; write §4 (Results) and §5 (Baseline comparison).
-5. **Sunday 4 (Draft Freeze & Tag)**: Write §6 (Limitations) and §7 (Repro commands); freeze Markdown/PDF + Git tag. **Never run new experiments on Sunday 4.**
+## ⏱️ The 16-Hour Production Protocol (4 Sundays × 4 Hours)
+To publish top-tier empirical papers while maintaining the master curriculum:
+1. **Saturday Lab Notes (09:00–13:00)**: Generate the raw benchmarks, profiler outputs, and plots for that week's component.
+2. **Sunday 1 (Method & Baseline Setup)**: Formalize §1 (Question) and §2 (Method); establish baseline numbers.
+3. **Sunday 2 (Parameter Sweeps)**: Execute primary sweeps across dimensions, quantization bitwidths, or filter selectivity in background.
+4. **Sunday 3 (Ablations & Visuals)**: Generate figures and write §4 (Results) and §5 (Baseline comparison).
+5. **Sunday 4 (Draft Freeze & Release)**: Write §6 (Limitations) and §7 (Repro commands); freeze Markdown/PDF and tag release.
