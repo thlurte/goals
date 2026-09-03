@@ -1,73 +1,89 @@
-# {Working title}
+# {Published Title}: {Subtitle}
 
-| | |
+| Metadata | Specification |
 |:---|:---|
-| **Month** | {N} — {Mon YYYY} |
-| **Publish by** | {date} |
-| **Folder** | `research/{YYYY-MM-slug}/` |
-| **Primary artifact** | {secan target / figure} |
-| **Status** | draft |
+| **Month** | {N} — {Month YYYY} |
+| **Status** | Working Manuscript |
+| **Domain** | {e.g. Microarchitecture, Quantization, Out-of-Core Graph Systems, GPU Attention} |
+| **Dual-Use Defense Focus** | {e.g. Radar Pulse De-Interleaving, Link-16 Compression, Swarm Autonomy} |
+| **Primary Benchmark Target** | {Target binary / dataset / hardware suite} |
 
-Copy this file to `YYYY-MM-<slug>/paper.md`. Fill every section. Do not add extra top-level headings.
+---
 
-## 1. Question
+## 1. Executive Abstract & Falsifiable Question
+*One paragraph framing the dual-use defense and systems problem, followed by a single falsifiable sentence.*
 
-One sentence. Falsifiable.
+> **Core Falsifiable Question**:
+> *[State the precise hypothesis: "At what parameter threshold does system A beat system B by X factor while maintaining Y recall under Z hardware constraints?"]*
 
->
+---
 
-## 2. Method
+## 2. Theoretical Hardware & Mathematical Model
+*Construct the formal analytical model before reporting empirical numbers.*
+1. **Mathematical Objective**: Formal equations in LaTeX.
+2. **Silicon Hardware Bounds**:
+   * Latency bound: $T_{\text{latency}} = \lceil D/V \rceil \times L_{\text{inst}}$.
+   * Throughput bound: $T_{\text{throughput}} = \lceil D/V \rceil \times (1/R_{\text{units}})$.
+   * Memory bandwidth bound: $T_{\text{memory}} = \text{Bytes} / \text{Bandwidth}$.
+3. **Failure Boundary**: The theoretical point where the baseline breaks down (e.g. cache-line splits, branch mispredictions, graph recall collapse).
 
-Reproducible from `secan` (or a named companion repo). Hardware, commit, flags, datasets.
+---
 
-| Item | Value |
+## 3. Experimental Protocol & Silicon Hardware Matrix
+*Reproducible specification.*
+
+| Platform Component | Specification |
 |:---|:---|
-| CPU / GPU | |
-| `secan` commit | |
-| Build | e.g. `Release`, `-march=native` |
-| Dataset | |
-| Metrics | |
+| **Primary Host CPU** | {e.g. Intel Core / Xeon Golden Cove, AVX2, AVX-512} |
+| **Edge Hardware** | {e.g. NVIDIA Jetson Orin AGX, ARM Cortex-A78AE, NEON} |
+| **GPU Accelerator** | {e.g. NVIDIA H100 / A100 / RTX 4090, CUDA 12.x} |
+| **Compilation Suite** | `clang++ -O3 -march=native -DNDEBUG -ffast-math` |
+| **Measurement Tools** | Google Benchmark v1.9.0, Linux `perf stat`, `perf c2c`, `nsys`, `ncu` |
+| **Evaluated Datasets** | {e.g. SIFT1M (128-D), Deep10M (96-D), Dense Embeddings (768-D)} |
 
-### Protocol
+### Controlled Execution Protocol
+1. Pin CPU frequencies / disable TurboBoost to ensure $<1\%$ run-to-run IPC variance.
+2. Apply `benchmark::DoNotOptimize` and `benchmark::ClobberMemory` to prevent dead-code elimination.
+3. Warm up caches with 1,000 discardable runs prior to recording steady-state measurements.
 
-Steps another engineer can follow.
+---
 
-1.
-2.
+## 4. Controlled Parameter Sweeps & Empirical Results
+*Include at least one structured benchmark table and figure reference.*
 
-## 3. Experiments
+**Figure 1.** `{Caption explaining Pareto curve}` → `figures/pareto_frontier.png`
 
-What you ran (or will run). One row per experiment.
+| Parameter Sweep | Baseline Latency | This Work (secan) | Speedup Factor | Hardware Counter Profile |
+|:---|:---|:---|:---|:---|
+| Sweep 1 | | | | |
+| Sweep 2 | | | | |
+| Sweep 3 | | | | |
 
-| ID | Setup | What you measure |
-|:---|:---|:---|
-| E1 | | |
+---
 
-## 4. Results
+## 5. Industrial & Academic Baseline Comparison
+*Direct comparison against named, industry-standard systems under identical hardware constraints.*
 
-≥1 figure in `figures/`. Paste numbers here; do not leave “see notebook.”
+| Production Engine | Mechanism / Algorithm | Measured QPS | P99 Latency | Recall@10 | Cost / Watt |
+|:---|:---|:---|:---|:---|:---|
+| **Industry Baseline A** | {e.g. Faiss IndexIVFPQ} | | | | |
+| **Industry Baseline B** | {e.g. HNSWLib} | | | | |
+| **This Work (secan)** | {Hardware-optimized kernel} | | | | |
 
-**Figure 1.** `{caption}` → `figures/{name}.png`
+---
 
-| | |
-|:---|:---|
-| | |
+## 6. Honest Limitations & Operational Boundaries
+*A rigorous paragraph stating what the numbers do NOT claim.*
+* Under what conditions does this optimization offer diminishing returns? (e.g. when memory bandwidth saturates, when dataset fits entirely in L2 cache).
+* What are the trade-offs in build complexity or memory footprint?
 
-## 5. Baseline
+---
 
-Named: `faiss` / `hnswlib` / scalar / paper method. Same dataset and metric as §4.
-
-| System | Metric | Notes |
-|:---|:---|:---|
-| **This work** | | |
-| **Baseline** | | |
-
-## 6. Limitations
-
-Honest paragraph. What the numbers do *not* claim.
-
-## 7. Reproduce
-
+## 7. Open-Source Reproduction Commands
 ```bash
-# clone, build, run, plot
+# Clone, configure, compile, and execute full verification suite
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build -j$(nproc)
+./build/benchmarks/bench_{name} --benchmark_out=notes/raw_results.json
+perf stat -e cycles,instructions,L1-dcache-load-misses ./build/benchmarks/bench_{name}
 ```
