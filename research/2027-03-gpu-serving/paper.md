@@ -5,13 +5,11 @@
 | **Month** | 7 — March 2027 |
 | **Status** | Active Working Manuscript |
 | **Domain** | GPU Systems Architecture, CUDA Kernel Fusion, Distributed Collectives |
-| **Dual-Use Defense Application** | **Distributed Swarm Sensor-to-Shooter Target Interception Pipeline** |
 
 ---
 
 ## 1. Executive Abstract & Falsifiable Question
 
-In mission-critical sensor-to-shooter engagements, incoming target signatures must be matched against multi-million vector threat archives (retrieval) and synthesized by tactical generative reasoning models (decision generation) within sub-millisecond physical deadlines. In traditional systems, retrieval and LLM serving run in separate pipelines, incurring severe host-device memory copying bottlenecks.
 
 **Core Falsifiable Question**:
 > *Can a unified, IO-aware GPU memory architecture executing in-SRAM CAGRA graph search and FlashAttention-2 online softmax within the same VRAM pool eliminate PCIe transfer bubbles, sustaining $>70\%$ Tensor Core duty cycle and $>94\%$ multi-GPU strong scaling efficiency under 100,000 QPS load?*

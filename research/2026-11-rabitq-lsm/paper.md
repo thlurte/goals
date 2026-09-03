@@ -5,13 +5,11 @@
 | **Month** | 3 — November 2026 |
 | **Status** | Active Working Manuscript |
 | **Domain** | Multi-Vector Retrieval, Storage Engines, Log-Structured Merge Trees, Asynchronous I/O |
-| **Dual-Use Defense Application** | **Real-Time Electronic Order of Battle (EOB) & Multimodal SIGINT Stream Processing** |
 
 ---
 
 ## 1. Executive Abstract & Falsifiable Question
 
-In battlefield command and control (C2), sensor feeds (radar pulse streams, intercepted communications, thermal video tracks) arrive as a continuous, high-rate firehose of multi-vector embeddings. The storage engine must maintain an append-only Write-Ahead Log (WAL) and perform multi-vector MaxSim retrieval ($\sum_i \max_j \mathbf{q}_i \cdot \mathbf{d}_j$) across millions of entities without dropping frames.
 
 **Core Falsifiable Question**:
 > *How does the write-amplification and query-latency Pareto frontier of centroid-pruned inverted lists (PLAID) compare against Fixed-Dimensional Projections (MUVERA FDE) inside a dynamic Log-Structured Merge (LSM) vector store under continuous $10{,}000	ext{ writes/second}$ streaming ingestion?*

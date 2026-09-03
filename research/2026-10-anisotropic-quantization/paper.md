@@ -5,13 +5,11 @@
 | **Month** | 2 — October 2026 |
 | **Status** | Active Working Manuscript |
 | **Domain** | Information Theory, Quantization Geometry, High-Dimensional Metric Search |
-| **Dual-Use Defense Application** | **Tactical Data Link Bandwidth Compression (Link-16 / TTNT / MADL Payload Constraints)** |
 
 ---
 
 ## 1. Executive Abstract & Falsifiable Question
 
-Tactical military data links (e.g. Link-16, TTNT) operate in violently contested RF environments with strict throughput limits ($28.8	ext{–}100	ext{ kbps}$). High-dimensional target tracking vectors and acoustic/multimodal embeddings ($768	ext{-D}$ FP32, $3{,}072	ext{ bytes}$) exceed Link-16 J-series message payload sizes ($<256	ext{ bits}$). Traditional compression methods (MSE-based Product Quantization) cause critical target misidentification.
 
 **Core Falsifiable Question**:
 > *Does decomposing quantization error into parallel component $\mathbf{e}_\parallel$ and orthogonal component $\mathbf{e}_\perp$ with an anisotropic penalty weight $h \ge 5.0$ preserve $>95\%$ Top-1 Maximum Inner Product Search (MIPS) recall on anisotropic $768\text{-D}$ dense embeddings while compressing vectors by $32\times$ (down to 16–32 bytes/target)?*

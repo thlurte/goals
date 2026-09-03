@@ -5,13 +5,12 @@
 | **Month** | {N} — {Month YYYY} |
 | **Status** | Working Manuscript |
 | **Domain** | {e.g. Microarchitecture, Quantization, Out-of-Core Graph Systems, GPU Attention} |
-| **Dual-Use Defense Focus** | {e.g. Radar Pulse De-Interleaving, Link-16 Compression, Swarm Autonomy} |
 | **Primary Benchmark Target** | {Target binary / dataset / hardware suite} |
 
 ---
 
 ## 1. Executive Abstract & Falsifiable Question
-*One paragraph framing the dual-use defense and systems problem, followed by a single falsifiable sentence.*
+*One paragraph framing the computational systems problem, followed by a single falsifiable sentence.*
 
 > **Core Falsifiable Question**:
 > *[State the precise hypothesis: "At what parameter threshold does system A beat system B by X factor while maintaining Y recall under Z hardware constraints?"]*
@@ -25,7 +24,7 @@
    * Latency bound: $T_{\text{latency}} = \lceil D/V \rceil \times L_{\text{inst}}$.
    * Throughput bound: $T_{\text{throughput}} = \lceil D/V \rceil \times (1/R_{\text{units}})$.
    * Memory bandwidth bound: $T_{\text{memory}} = \text{Bytes} / \text{Bandwidth}$.
-3. **Failure Boundary**: The theoretical point where the baseline breaks down (e.g. cache-line splits, branch mispredictions, graph recall collapse).
+3. **Failure Boundary**: The theoretical point where the baseline breaks down.
 
 ---
 
@@ -74,7 +73,7 @@
 
 ## 6. Honest Limitations & Operational Boundaries
 *A rigorous paragraph stating what the numbers do NOT claim.*
-* Under what conditions does this optimization offer diminishing returns? (e.g. when memory bandwidth saturates, when dataset fits entirely in L2 cache).
+* Under what conditions does this optimization offer diminishing returns?
 * What are the trade-offs in build complexity or memory footprint?
 
 ---

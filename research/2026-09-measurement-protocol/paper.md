@@ -5,13 +5,11 @@
 | **Month** | 1 — September 2026 |
 | **Status** | Active Working Manuscript |
 | **Domain** | Low-Level Systems, SIMD Microarchitecture, Sub-Microsecond Signal Processing |
-| **Dual-Use Defense Application** | **Ultra-Low-Latency Radar Pulse De-Interleaving & ESM Threat Identification** |
 
 ---
 
 ## 1. Executive Abstract & Falsifiable Question
 
-In electronic warfare (EW) and radar electronic support measures (ESM), airborne surveillance platforms intercept dense pulse streams ($>10^6	ext{ pulses/second}$). Every Pulse Descriptor Word (PDW)—composed of carrier frequency, pulse width, time-of-arrival, and angle-of-arrival—must be matched against threat emitter libraries in sub-microsecond deadlines to deploy jamming countermeasures before missile lock-on.
 
 **Core Falsifiable Question**:
 > *At what vector dimensionality ($D \in [64, 1536]$) does distance calculation transition from execution-port latency bound (FMA dependency chains on Intel Port 0/1 and ARM NEON pipes) to memory-bus saturation (L1/L2 cache load port and cache-line split limits), and does a noise-free, dead-code-safe microbenchmark protocol eliminate measurement variance within a strict 5% IPC bound?*
@@ -22,9 +20,13 @@ In electronic warfare (EW) and radar electronic support measures (ESM), airborne
 
 For a vector of dimension $D$ processed with SIMD vector width $V$ ($V=8$ for AVX2 FP32, $V=16$ for AVX-512, $V=4$ for ARM NEON):
 1. **FMA Latency Bound (Single Accumulator)**:
-   $$T_{	ext{latency}} = \left\lceil rac{D}{V} ightceil 	imes L_{	ext{FMA}} \quad (L_{	ext{FMA}} = 4	ext{ cycles})$$
+   $$T_{	ext{latency}} = \left\lceil rac{D}{V} 
+ight
+ceil 	imes L_{	ext{FMA}} \quad (L_{	ext{FMA}} = 4	ext{ cycles})$$
 2. **FMA Throughput Bound ($N_{	ext{acc}} \ge L_{	ext{FMA}} 	imes R_{	ext{FMA}}$ Accumulators)**:
-   $$T_{	ext{throughput}} = \left\lceil rac{D}{V} ightceil 	imes rac{1}{R_{	ext{FMA}}} \quad (R_{	ext{FMA}} = 2	ext{ FMA units/cycle on Port 0 & 1})$$
+   $$T_{	ext{throughput}} = \left\lceil rac{D}{V} 
+ight
+ceil 	imes rac{1}{R_{	ext{FMA}}} \quad (R_{	ext{FMA}} = 2	ext{ FMA units/cycle on Port 0 & 1})$$
 3. **Memory Load Port Limit**:
    $$T_{	ext{memory}} = rac{2 	imes D 	imes 4	ext{ bytes}}{	ext{L1 Cache Load Bandwidth (64 bytes/cycle)}} = rac{D}{8}	ext{ cycles}$$
 4. **Denormal / Subnormal Floating-Point Exception Trap**:

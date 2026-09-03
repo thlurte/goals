@@ -1,7 +1,6 @@
 # 28-Week Curriculum (Sep 2026 – Mar 2027)
 
-**Specialty**: High-performance vector retrieval (`secan`) and low-level AI systems engineering.  
-**Dual-Use Defense Track**: Designed from first principles to meet the extreme microarchitectural, latency, and memory constraints of **electronic warfare (EW), tactical data links (Link-16/TTNT), out-of-core sonar search, and autonomous drone swarm compute**.  
+**Specialty**: vector search / ANN systems (`secan`), not REST APIs and not agent frameworks.  
 **Weekdays**: `secan` / CUDA only. **Sat 14:00–18:00**: one DL afternoon. **Sundays**: monthly research.
 
 | Block | Weeks | Calendar | Deliverable |

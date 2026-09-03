@@ -5,13 +5,11 @@
 | **Month** | 4 — December 2026 |
 | **Status** | Active Working Manuscript |
 | **Domain** | Out-of-Core Graph Algorithms, Kernel-Bypass Direct I/O, GPU Acceleration |
-| **Dual-Use Defense Application** | **Massive Acoustic Sonar & Satellite Tracklet Archival Search on Edge Platforms** |
 
 ---
 
 ## 1. Executive Abstract & Falsifiable Question
 
-Airborne surveillance aircraft and naval surface vessels collect massive acoustic hydrophone arrays and synthetic aperture radar (SAR) tracklet archives ($10	ext{M} 	o 100	ext{M}$ vectors). SWaP (Size, Weight, and Power) constraints strictly forbid multi-kilowatt GPU server clusters with hundreds of gigabytes of VRAM.
 
 **Core Falsifiable Question**:
 > *At what dataset scale ($10	ext{M} 	o 100	ext{M}$ vectors) does out-of-core NVMe DiskANN using asynchronous Linux `io_uring` kernel-bypass direct I/O surpass in-VRAM GPU IVF on a Cost-per-QPS and Watt-per-Query basis while sustaining $>95\%$ Recall@10 under concurrent multi-client query pressure?*
