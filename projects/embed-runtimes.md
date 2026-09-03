@@ -4,7 +4,7 @@ Read: C++ encode/ORT/MaxSim, Python wrappers, CMake, CI, tests, eval, convert sc
 
 Paths: `/home/ahmed/personal/intextus` · `/home/ahmed/personal/intextus-embed-ggml`
 
-**Budget:** 30–60 min/week, Sep 2026 – Feb 2027 (~26 weeks). Does **not** steal `secan` nights or Sat DL. Slot: any leftover weekday, or Sun after research.
+**Budget:** 30–60 min/week, Sep 2026 – Feb 2027 (~26 weeks). Does **not** steal `secan` nights or Sat DL. **Dedicated Slot: Sunday 13:00–14:00 (immediately after monthly research block).**
 
 Jump: [§7 Timeline](#7-timeline-sep-2026--feb-2027) · [§6 priorities](#6-add-these-priority-if-you-only-pick-a-few)
 

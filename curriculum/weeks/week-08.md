@@ -62,7 +62,7 @@
 * `⭐ Optional / Stretch`: Measure the correlation between graph hop count and Euclidean distance to ground-truth neighbor.
 
 ### 🔹 Friday, Fri Oct 24 ([`Day 054`](../days/month-02/day-054-2026-10-24.md))
-* `[ ]` **Core**: Ingest 768-D text embeddings (`.fvecs`) into HNSW; plot Recall@10 vs QPS curve across $efSearch \in [10, 200]$. Tag `v0.3-hnsw`.
+* `[ ]` **Core**: Ingest golden 768-D text embeddings (`.fvecs` pre-staged in `data/text768/`) into HNSW; plot Recall@10 vs QPS curve across $efSearch \in [10, 200]$. (Evaluate custom Week 6 DL export as a secondary comparative dataset). Tag `v0.3-hnsw`.
 * `⭐ Optional / Stretch`: Calculate empirical hubness skewness $S_{N_k}$ on the 768-D text dataset and identify top-10 hub nodes.
 
 ### 🔹 Saturday, Sat Oct 25 ([`Day 055`](../days/month-02/day-055-2026-10-25.md))

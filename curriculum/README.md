@@ -19,14 +19,15 @@
 1. **Sat 09:00–13:00** — lab note ([essays](essays.md))  
 2. **Sat 14:00–18:00** — DL ([landings](landings.md#dl-weekend-landings-sat-14001800-only))  
 3. **Sun 09:00–13:00** — monthly research ([`../research/`](../research/README.md))  
-4. **Last weekend** — publish monthly paper  
+4. **Sun 13:00–14:00** — `limbed` / `ggmbed` maintenance ([`embed-runtimes`](../projects/embed-runtimes.md)) (30–60 min only; never weekdays)  
+5. **Last weekend** — publish monthly paper  
 
 ## Map
 
 | Doc | What |
 |:---|:---|
 | [Hard landings](landings.md) | Deferred ledger, VS composition, DL weekends |
-| [Architecture roadmap](roadmap.md) | Macro blueprint for `secan` |
+| [Architecture roadmap](roadmap.md) | Master blueprint: systems architecture, profiling playbook & canonical proofs |
 | [Essay schedule](essays.md) | 28 lab-note titles (don’t polish all) |
 | [Weeks & Daily Actions](weeks/month-01-sep.md) | Day-by-day tables, actions, stretch & time traps |
 | [Prerequisites](../README.md#entry-prerequisites-before-sep-1) | Hardware / datasets / tooling |

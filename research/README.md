@@ -42,8 +42,16 @@ Curriculum weeks: [`../curriculum/README.md`](../curriculum/README.md). Lab note
 | **6 — Feb 2027** | *Mitigating Recall Collapse in Filtered Approximate Nearest Neighbor Graphs: An Empirical Evaluation of ACORN vs. Iterative Post-Filtering Across Selectivity Spectrums* | **Sun Feb 28** | Selectivity $P(\text{pass}) < 1\%$ vs recall curves; ACORN multi-hop predicate subgraph traversal vs post-filtering on HNSW |
 | **7 — Mar 2027** | *Unified IO-Aware GPU Architecture for Vector Retrieval and LLM Attention Serving: FlashAttention-2, Paged KV Caches, and Multi-GPU Scaling* | **Fri Mar 12** | FA-2 Nsight profiling tables, NCCL multi-GPU scaling, End-to-End Time-to-First-Token (TTFT) benchmarks, master release `v2.0` |
 
-## Relationship to weekly essays
+## Relationship to weekly essays & 16-Hour Production Protocol
 
-Weekly essays = short, sharp, same-week.  
+Weekly essays = short, sharp, same-week lab notes.  
 Monthly paper = synthesis + experiments you could show in a hiring loop.  
 Do **not** polish all 28 essays for public; polish **7 monthlies**.
+
+### The 16-Hour Staging Pipeline (4 Sundays × 4 Hours)
+To ship publication-grade papers without burnout:
+1. **Saturday Lab Notes (09:00–13:00)**: Every Saturday note MUST directly generate the raw benchmark tables and plots for that week's component.
+2. **Sunday 1 (Method & Baseline Setup)**: Write §1 (Question) and §2 (Method); run scalar/Faiss baseline benchmarks.
+3. **Sunday 2 (Core Sweep Runs)**: Execute primary parameter sweeps across dimensions/selectivity in the background; dump raw CSVs to `notes/`.
+4. **Sunday 3 (Ablations & Plots)**: Generate `figures/` using matplotlib scripts; write §4 (Results) and §5 (Baseline comparison).
+5. **Sunday 4 (Draft Freeze & Tag)**: Write §6 (Limitations) and §7 (Repro commands); freeze Markdown/PDF + Git tag. **Never run new experiments on Sunday 4.**

@@ -58,8 +58,8 @@
 * `⭐ Optional / Stretch`: Implement SQ8 integer quantization inside GPU IVF lists to double effective VRAM vector capacity.
 
 ### 🔹 Thursday, Thu Dec 18 ([`Day 109`](../days/month-04/day-109-2026-12-18.md))
-* `[ ]` **Core**: Implement Vamana graph construction ($\alpha$-pruning heuristic); implement asynchronous out-of-core SSD vector fetch via Linux `io_uring` with `O_DIRECT`.
-* `⭐ Optional / Stretch`: Benchmark random NVMe read IOPS and latency under varying `io_uring` queue depths ($QD \in [1, 128]$).
+* `[ ]` **Core**: Implement Vamana graph construction ($\alpha$-pruning heuristic); implement asynchronous out-of-core SSD vector fetch via Linux `io_uring` with `O_DIRECT` on **Deep10M** (~4 GB core verification dataset; full Deep1B staged for dedicated NVMe).
+* `⭐ Optional / Stretch`: Benchmark `IORING_SETUP_SQPOLL` zero-syscall kernel polling + `IORING_REGISTER_BUFFERS` vs standard `io_uring_enter()` syscall submissions on NVMe random reads.
 
 ### 🔹 Friday, Fri Dec 19 ([`Day 110`](../days/month-04/day-110-2026-12-19.md))
 * `[ ]` **Core**: Implement BM25 inverted index + Block-Max WAND early termination; fuse dense ANN candidates with sparse BM25 scores via Reciprocal Rank Fusion (RRF). Tag `v1.2-vs-spine-complete`.
@@ -79,7 +79,7 @@
 ## ⛔ What NOT to Overspend Time On (Week 16 Time Traps)
 
 * ❌ **Do NOT** implement SPLADE sparse neural models—BM25 + Block-Max WAND is the required sparse baseline.
-* ❌ **Do NOT** run multi-billion scale benchmarks—DiskANN on a 1M to 10M vector subset proves out-of-core `io_uring` execution.
+* ❌ **Do NOT** download and run full 400 GB Deep1B during weekday coding blocks—**Deep10M (~4 GB)** is the core proof of out-of-core `io_uring` execution; full Deep1B is strictly for high-capacity NVMe overnight runs.
 * ❌ **Do NOT** build complex C++ REST server wrappers—keep `secan` exposed via `nanobind` and CLI.
 
 ---

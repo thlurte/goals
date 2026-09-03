@@ -63,7 +63,7 @@
 
 ### 🔹 Friday, Fri Nov 7 ([`Day 068`](../days/month-03/day-068-2026-11-07.md))
 * `[ ]` **Core**: Implement TurboQuant / PolarQuant 3-bit polar coordinate transform + 1-bit QJL error correction; plot Recall@1 vs bitwidth.
-* `⭐ Optional / Stretch`: Measure inner product estimation bias of PolarQuant with and without the 1-bit QJL residual error checker.
+* `⭐ Optional / Stretch`: Implement SIMD Fast Walsh-Hadamard Transform (FWHT) butterfly kernel (`_mm256_add_ps` / `_mm256_sub_ps`) for $O(D \log D)$ zero-storage randomized incoherence rotation before 1-bit RaBitQ / 3-bit PolarQuant.
 
 ### 🔹 Saturday, Sat Nov 8 ([`Day 069`](../days/month-03/day-069-2026-11-08.md))
 * `[ ]` **Core (09:00–13:00)**: Write and ship **Technical Essay 10**: *"Orthogonal Projections and Fixed-Dimensional Encodings: Reducing ColBERT MaxSim to MIPS via MUVERA"* to `goals/essays/essay_10.md`.

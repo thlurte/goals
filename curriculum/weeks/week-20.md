@@ -62,7 +62,7 @@
 * `⭐ Optional / Stretch`: Profile GPU execution timeline in Nsight Systems (`nsys`) to identify inter-GPU communication bubbles.
 
 ### 🔹 Friday, Fri Jan 16 ([`Day 138`](../days/month-05/day-138-2027-01-16.md))
-* `[ ]` **Core**: Run multi-GPU scalability benchmark suite; compute parallel scaling efficiency percentage across GPUs.
+* `[ ]` **Core**: Run multi-GPU scalability benchmark suite on multi-GPU hardware (local multi-GPU or RunPod 2–4× GPU instance); compute parallel scaling efficiency percentage across GPUs.
 * `⭐ Optional / Stretch`: Test multi-GPU fault tolerance by simulating device dropout and dynamic shard re-routing.
 
 ### 🔹 Saturday, Sat Jan 17 ([`Day 139`](../days/month-05/day-139-2027-01-17.md))
@@ -80,7 +80,7 @@
 
 * ❌ **Do NOT** implement multi-node distributed TCP network clustering—NCCL multi-GPU on a single multi-GPU host is the complete specialization target.
 * ❌ **Do NOT** implement complex 2D tensor parallelism—data sharding with top-$k$ heap gathering (`ncclAllGather`) is the standard for vector search.
-* ❌ **Do NOT** worry if you only have 1 GPU locally—NCCL supports single-process multi-stream GPU shard simulation.
+* ❌ **Do NOT** struggle with local hardware limitations—prototype via single-GPU multi-stream simulation locally, then launch a short RunPod multi-GPU instance (2–4× GPUs) on Friday to collect genuine NCCL NVLink/PCIe scaling metrics.
 
 ---
 

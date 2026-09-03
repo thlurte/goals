@@ -63,7 +63,7 @@
 
 ### 🔹 Friday, Fri Feb 20 ([`Day 173`](../days/month-07/day-173-2027-02-20.md))
 * `[ ]` **Core**: Build production PyTorch C++ extension bindings for FA-2; generate speedup curves for Month 7 publication paper.
-* `⭐ Optional / Stretch`: Implement causal masking without branching by computing diagonal tile intersections.
+* `⭐ Optional / Stretch`: Profile FlashAttention-2 vs FlashAttention-3 architectural mechanisms: analyze Hopper Tensor Memory Accelerator (TMA) asynchronous copy pipelines, warp specialization, and `wgmma` GEMM instructions.
 
 ### 🔹 Saturday, Sat Feb 21 ([`Day 174`](../days/month-07/day-174-2027-02-21.md))
 * `[ ]` **Core (09:00–13:00)**: Write and ship **Technical Essay 25**: *"Warp Partitioning and Register Rescaling: Implementing FlashAttention-2 with Grouped-Query Attention"* to `goals/essays/essay_25.md`.

@@ -63,7 +63,7 @@
 
 ### 🔹 Friday, Fri Jan 30 ([`Day 152`](../days/month-06/day-152-2027-01-30.md))
 * `[ ]` **Core**: Implement numeric range filtering (`timestamp >= t0 AND price < p1`) integrated into graph traversal. Tag `v1.5-production`.
-* `⭐ Optional / Stretch`: Implement Roaring Bitmaps for high-performance set operations on high-cardinality discrete payload tags.
+* `⭐ Optional / Stretch`: Implement SIMD Roaring Bitmaps with 16-bit containerized chunks and AVX2/AVX-512 bitwise AND / POPCNT kernels for high-throughput ($>30\text{ GB/s}$) multi-predicate metadata filtering.
 
 ### 🔹 Saturday, Sat Jan 31 ([`Day 153`](../days/month-06/day-153-2027-01-31.md))
 * `[ ]` **Core (09:00–13:00)**: Write and ship **Technical Essay 22**: *"Graph Disconnection and Selectivity Cliffs: ACORN Predicate Subgraphs vs Post-Filtering"* to `goals/essays/essay_22.md`.

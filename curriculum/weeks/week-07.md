@@ -1,6 +1,6 @@
 # 🚀 Week 07 Execution Playbook
 
-> **Theme**: Vector Fields, **Matrix Calculus**, ScaNN Anisotropic Loss & FastScan  
+> **Theme**: Matrix Calculus, Backpropagation Foundations, ScaNN Anisotropic Loss & FastScan  
 > **Calendar Dates**: Mon Oct 13 – Sun Oct 19 (2026-10-13 to 2026-10-19)  
 > **Parent Month Dashboard**: [Month 2 (Oct 2026)](month-02-oct.md) · **Block**: I — Vector Search Engine
 
@@ -33,11 +33,11 @@
 
 | Day | Date | Daily Runbook | Pure Mathematics (90 min) | Systems / Architecture Reading (45-60 min) | Night Hands-On C++/CUDA (2.5 hrs) |
 |:---|:---|:---|:---|:---|:---|
-| **Monday** | Mon Oct 13 | [`Day 043`](../days/month-02/day-043-2026-10-13.md) | **CALC §15.1–15.2**: Vector fields in 2D/3D. Line integrals of vector fields along parameterized curves $\mathbf{r}(t)$. Work done by a force field. | ScaNN Paper §1–3: MIPS error decomposition: why orthogonal error $e_\perp$ has 0 expectation while parallel error $e_\parallel$ degrades inner products. | **secan**: Implement **ScaNN Anisotropic Loss** in `ProductQuantizer`: penalize parallel error with weight $h=5.0$. Compare codebooks. |
-| **Tuesday** | Tue Oct 14 | [`Day 044`](../days/month-02/day-044-2026-10-14.md) | **CALC §15.3**: Conservative vector fields, potential functions $f$, and path independence of line integrals. Conditions for a field to be conservative. | **INTEL Intrinsics & AGNER-INST**: Deep dive into `_mm256_shuffle_epi8` (PSHUFB) semantics and port mapping. | **secan**: Implement **plain BQ** (`bit = val > 0`): Hamming via XOR+POPCNT. **Do not** implement RaBitQ yet (needs QR — Week 10). |
-| **Wednesday** | Wed Oct 15 | [`Day 045`](../days/month-02/day-045-2026-10-15.md) | **CALC §15.4**: Green's Theorem: rigorous proof connecting a line integral around a closed curve to a double integral over the enclosed region. | Faiss FastScan documentation & André et al. (2015) paper §1–3. | **secan**: Implement 4-bit PQ encoding ($k=16$ centroids per subspace, packing 2 codes per byte). |
-| **Thursday** | Thu Oct 16 | [`Day 046`](../days/month-02/day-046-2026-10-16.md) | **🔗 MATRIX CALCULUS**: Jacobian of $Y = XW$. Chain rule through multi-layer networks: $\frac{\partial \mathcal{L}}{\partial W_1} = \frac{\partial \mathcal{L}}{\partial Y} \cdot \frac{\partial Y}{\partial Z} \cdot \frac{\partial Z}{\partial W_1}$. Softmax Jacobian $J_{ij} = p_i(\delta_{ij} - p_j)$. Skim Stokes/Divergence (not implemented). | AGNER-INST: Study `VPSHUFB`, `VPADDB`, `VPUNPCKLBW` instruction latency and accumulation chains. | **secan**: Implement **FastScan kernel**: load 16 centroid distances into `__m128i` / `__m256i`. Execute table lookups **entirely in-register** via PSHUFB. |
-| **Friday** | Fri Oct 17 | [`Day 047`](../days/month-02/day-047-2026-10-17.md) | **🔗 AUTOMATIC DIFFERENTIATION**: Forward-mode ($\dot{x}$ tangent vectors) vs reverse-mode ($\bar{x}$ adjoint vectors). Computational graphs. Why backprop is $O(p)$ forward, $O(p)$ backward regardless of parameter count. Connection to Week 3 micrograd. | **CSAPP §5.10–5.12**: Register spilling, store-load forwarding, pipeline limiting factors. | **secan (required)**: **OPQ** (rotate then PQ) *or* **residual PQ**. Compare Recall@10 vs plain PQ on SIFT. Asymmetric ADC remains FP32 query. *(DL: Sat Oct 18 MRL.)* |
+| **Monday** | Mon Oct 13 | [`Day 043`](../days/month-02/day-043-2026-10-13.md) | **MATRIX CALCULUS (Linear Layers)**: Matrix trace identities. Full mathematical derivation of batched GEMM backpropagation: $\frac{\partial \mathcal{L}}{\partial W} = X^T \frac{\partial \mathcal{L}}{\partial Y}$, $\frac{\partial \mathcal{L}}{\partial X} = \frac{\partial \mathcal{L}}{\partial Y} W^T$, $\frac{\partial \mathcal{L}}{\partial b} = \mathbf{1}^T \frac{\partial \mathcal{L}}{\partial Y}$. | ScaNN Paper §1–3: MIPS error decomposition: why orthogonal error $e_\perp$ has 0 expectation while parallel error $e_\parallel$ degrades inner products. | **secan**: Implement **ScaNN Anisotropic Loss** in `ProductQuantizer`: penalize parallel error with weight $h=5.0$. Compare codebooks. |
+| **Tuesday** | Tue Oct 14 | [`Day 044`](../days/month-02/day-044-2026-10-14.md) | **JACOBIANS & SOFTMAX CE**: Element-wise Jacobians (ReLU, GELU, SwiGLU). Softmax Jacobian $J_{ij} = s_i(\delta_{ij} - s_j)$. Analytical proof that $\frac{\partial \mathcal{L}_{\text{CE}}}{\partial \mathbf{z}} = \mathbf{s} - \mathbf{y}$. | **INTEL Intrinsics & AGNER-INST**: Deep dive into `_mm256_shuffle_epi8` (PSHUFB) semantics and port mapping. | **secan**: Implement **plain BQ** (`bit = val > 0`): Hamming via XOR+POPCNT. **Do not** implement RaBitQ yet (needs QR — Week 10). |
+| **Wednesday** | Wed Oct 15 | [`Day 045`](../days/month-02/day-045-2026-10-15.md) | **ATTENTION MATRIX CALCULUS**: Differentiating Scaled Dot-Product Attention $\text{Attn}(Q, K, V) = \text{softmax}(Q K^T / \sqrt{d_k}) V$. Step-by-step derivation of upstream adjoint tensors $\frac{\partial \mathcal{L}}{\partial Q}, \frac{\partial \mathcal{L}}{\partial K}, \frac{\partial \mathcal{L}}{\partial V}$. | Faiss FastScan documentation & André et al. (2015) paper §1–3. | **secan**: Implement 4-bit PQ encoding ($k=16$ centroids per subspace, packing 2 codes per byte). |
+| **Thursday** | Thu Oct 16 | [`Day 046`](../days/month-02/day-046-2026-10-16.md) | **🔗 AUTOMATIC DIFFERENTIATION**: Computational DAGs, topological sorting. Forward-mode (JVPs) vs Reverse-mode (VJPs). Mathematical proof why reverse-mode backpropagation is $O(1)$ backward passes regardless of parameter count. | AGNER-INST: Study `VPSHUFB`, `VPADDB`, `VPUNPCKLBW` instruction latency and accumulation chains. | **secan**: Implement **FastScan kernel**: load 16 centroid distances into `__m128i` / `__m256i`. Execute table lookups **entirely in-register** via PSHUFB. |
+| **Friday** | Fri Oct 17 | [`Day 047`](../days/month-02/day-047-2026-10-17.md) | **🔗 LOSS SURFACES & HESSIANS**: Hessian matrix $H = \nabla^2 \mathcal{L}$, condition number $\kappa = \lambda_{\max}/\lambda_{\min}$, gradient descent step-size bounds ($\eta < 2/\lambda_{\max}$). AdamW second moments ($v_t$) as diagonal Hessian preconditioning. | **CSAPP §5.10–5.12**: Register spilling, store-load forwarding, pipeline limiting factors. | **secan (required)**: **OPQ** (rotate then PQ) *or* **residual PQ**. Compare Recall@10 vs plain PQ on SIFT. Asymmetric ADC remains FP32 query. *(DL: Sat Oct 18 MRL.)* |
 | **Saturday** | Sat Oct 18 | [`Day 048`](../days/month-02/day-048-2026-10-18.md) | **09:00–13:00**: Essay 7 | **14:00–18:00**: Deep Learning Track | Deep Learning from Scratch (uv/PyTorch) |
 | **Sunday** | Sun Oct 19 | [`Day 049`](../days/month-02/day-049-2026-10-19.md) | **09:00–13:00**: Monthly Research | Research Experimentation | Rest & Subconscious Incubation |
 
@@ -62,7 +62,7 @@
 * `⭐ Optional / Stretch`: Measure L1 cache read bandwidth during FastScan to prove table lookups do not hit cache memory.
 
 ### 🔹 Friday, Fri Oct 17 ([`Day 047`](../days/month-02/day-047-2026-10-17.md))
-* `[ ]` **Core**: Implement Optimized Product Quantization (OPQ) orthogonal rotation matrix before PQ; benchmark Recall@10 vs plain PQ on SIFT.
+* `[ ]` **Core**: Implement Optimized Product Quantization (OPQ) orthogonal rotation matrix $R$ before PQ (compute $R$ via numerical Orthogonal Procrustes / SVD rotation matrix in offline codebook training); benchmark Recall@10 vs plain PQ on SIFT.
 * `⭐ Optional / Stretch`: Implement residual PQ (2-stage PQ where stage 2 quantizes stage 1 residual error vector).
 
 ### 🔹 Saturday, Sat Oct 18 ([`Day 048`](../days/month-02/day-048-2026-10-18.md))
@@ -78,8 +78,10 @@
 
 ## ⛔ What NOT to Overspend Time On (Week 07 Time Traps)
 
-* ❌ **Do NOT** implement RaBitQ this week—RaBitQ requires QR orthogonal factorizations which are formally studied in Week 10.
-* ❌ **Do NOT** spend time proving 3D Stokes' or Divergence theorems in calculus—skim their intuition and focus on Matrix Calculus & Automatic Differentiation.
+* ❌ **Do NOT** try to derive the analytical SVD eigensolver from first principles this week—use numerical Orthogonal Procrustes (`scipy.linalg.orthogonal_procrustes` or a minimal 2x2 Jacobi rotation) to compute the OPQ rotation matrix $R$ (first-principles SVD theory lands in Month 3).
+* ❌ **Do NOT** hand-write assembly for PSHUFB—use intrinsic `_mm256_shuffle_epi8`.
+* ❌ **Do NOT** implement RaBitQ this week—RaBitQ relies on Householder reflections and QR decomposition (scheduled for Week 10).
+* ❌ **Do NOT** spend time proving classical 3D fluid or physical vector theorems (Stokes/Divergence)—all physics vector calculus has been purged in favor of neural network matrix calculus.
 * ❌ **Do NOT** write a custom matrix optimizer for OPQ—a basic alternating least squares (ALS) rotation or residual PQ is 100% fine.
 
 ---

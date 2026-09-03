@@ -51,7 +51,7 @@
 
 ### 🔹 Tuesday, Tue Jan 20 ([`Day 142`](../days/month-06/day-142-2027-01-20.md))
 * `[ ]` **Core**: Fuse GPU MaxSim query scoring and candidate document filtering into a single CUDA pipeline.
-* `⭐ Optional / Stretch`: Benchmark latency vs batch size for single-page visual tokens (1030 tokens per image page).
+* `⭐ Optional / Stretch`: Implement fused In-SRAM MaxSim kernel accumulating row-max scores directly in GPU shared memory without materializing the intermediate $L_q \times L_d$ matrix in global VRAM (benchmark vs naive GEMM on 1030 ColPali tokens/page).
 
 ### 🔹 Wednesday, Wed Jan 21 ([`Day 143`](../days/month-06/day-143-2027-01-21.md))
 * `[ ]` **Core**: Implement GPU NN-Descent base-layer $k$-NN graph construction algorithm exchanging neighbor candidates across thread blocks.

@@ -123,6 +123,7 @@ A comprehensive, milestone-by-milestone technical blueprint for building a high-
 * **DiskANN / Vamana (Out-of-Core SSD Search)**:
   * Single-layer Vamana graph with long-range edges.
   * Store compressed vectors and graph in RAM; stream raw full-precision vectors from NVMe SSD via asynchronous **`io_uring`** direct I/O (`O_DIRECT`), bypassing OS page cache overhead.
+  * **Zero-Syscall Kernel Polling (`IORING_SETUP_SQPOLL`)**: Dedicated kernel submission thread + pre-registered memory buffers (`IORING_REGISTER_BUFFERS`), dropping NVMe random read latency to the physical hardware floor ($8\text{–}12\text{ }\mu\text{s}$) with 0 syscall context switches.
 
 ---
 
@@ -132,7 +133,7 @@ A comprehensive, milestone-by-milestone technical blueprint for building a high-
 * **Late Interaction Mathematical Kernel (MaxSim)**:
   * Queries and documents as token matrices ($Q \in \mathbb{R}^{L_q \times D}$, $D_i \in \mathbb{R}^{L_d \times D}$).
   * $\text{Score}(Q, D_i) = \sum_{q \in Q} \max_{d \in D_i} (q \cdot d)$.
-  * SIMD MaxSim with horizontal max reductions.
+  * **Fused In-SRAM MaxSim Kernel**: Eliminate intermediate $(L_q \times L_d)$ attention matrix materialization in global VRAM by accumulating horizontal max scores directly inside SRAM/registers (crucial for high-token visual retrieval like ColPali).
 * **Token Centroid Inverted Index (ColBERT Engine)**:
   * Cluster document tokens (spherical $k$-means); inverted lists centroid $\to$ (doc, token).
   * Query routing: only docs sharing centroids with query tokens.
@@ -174,7 +175,7 @@ To rival commercial vector database engines (Pinecone, Turbopuffer, Qdrant, Milv
 * **The Solution**:
   * Measure **pre-filter** (payload/B-tree then ANN) vs **post-filter** (ANN then predicate) vs **ACORN**.
   * **Range** predicates (`price < x`) and **selectivity vs recall** plots — the on-call failure mode.
-  * Fast bitset intersection using **Roaring Bitmaps**.
+  * Fast bitset intersection using **SIMD Roaring Bitmaps** (containerized 16-bit chunks with AVX2/AVX-512 bitwise AND / popcount operations executing at $>30\text{ GB/s}$).
   * **ACORN**: $N$-hop expansion over filtered nodes.
 
 ### 2. FastScan: In-Register SIMD Lookups (`PSHUFB` / SCaNN)
@@ -184,9 +185,11 @@ To rival commercial vector database engines (Pinecone, Turbopuffer, Qdrant, Milv
   * Fit all 16 distances into a single 128-bit SIMD register.
   * Execute lookups entirely inside CPU vector registers using the x86 `PSHUFB` (`_mm256_shuffle_epi8`) instruction without touching RAM or L1 cache, delivering a $4\times-6\times$ throughput speedup.
 
-### 3. State-of-the-Art Quantization (RaBitQ, TurboQuant / PolarQuant / QJL & Anisotropic Loss)
+### 3. State-of-the-Art Quantization (RaBitQ, TurboQuant / PolarQuant / QJL & Fast Walsh-Hadamard)
 * **Anisotropic Quantization (Google SCaNN)**:
   * Penalizes quantization errors *parallel* to the vector much more than *orthogonal* errors, maximizing Top-1 inner-product retrieval accuracy.
+* **Fast Walsh-Hadamard Transform (FWHT)**:
+  * Replaces $O(D^2)$ dense rotation matrices with $O(D \log D)$ zero-parameter randomized Hadamard butterfly networks ($\mathbf{H}_D \mathbf{D} \mathbf{x}$), eliminating outlier dimension spikes for near-lossless 1-bit and 2-bit quantization.
 * **RaBitQ (Randomized Binary Quantization - 2024)**:
   * Applies random orthogonal transformations followed by 1-bit quantization with an exact mathematical error correction term.
   * Reaches **$99\%+$ recall at 1-bit compression**.
@@ -207,23 +210,66 @@ To rival commercial vector database engines (Pinecone, Turbopuffer, Qdrant, Milv
 * **Tombstone Deletions**: Mark deleted vector IDs in lock-free bitsets while keeping graph nodes active to preserve traversal routes.
 * **Online Graph Re-wiring & Compaction**: Background worker threads that remove dead nodes and mend neighbor edges in real time without taking the index offline.
 
-### 6. GPU Hardware Acceleration (CUDA / Tensor Cores / cuVS)
+### 6. GPU Hardware Acceleration (CUDA / Tensor Cores / FlashAttention-3)
 * **Tensor Core GEMM**: Map batch vector queries to half-precision (`fp16` / `bf16`) matrix multiplication executing on NVIDIA Tensor Cores via CUTLASS.
 * **GPU Graph Search (CAGRA / cuVS)**: Warp-level parallel graph beam search directly inside GPU memory for $100,000+\text{ QPS}$ search throughput.
+* **FlashAttention-3 & TMA Hardware Pipelines**: Exploit Hopper/Blackwell Tensor Memory Accelerator (TMA) for asynchronous global-to-shared memory copies, Warp Specialization (Producer/Consumer warpgroups), and ping-pong GEMM schedules to reach $>800\text{ TFLOPS}$ (up to 75% of peak hardware compute).
+
+### 7. Enterprise Production Architecture (WAL, Crash Recovery & Shadow Indexing)
+* **Write-Ahead Logging (WAL) & Group Commit**:
+  * Append-only binary log with 64-byte frame header (Magic, LSN, Vector ID, CRC32).
+  * Batched background `writev()` + `fdatasync()` flush every $\tau = 5\text{ ms}$, achieving $>150{,}000\text{ inserts/sec}$ with full ACID crash-recovery durability.
+* **LSM-Tree Style Memory/Disk Index Tiering**:
+  * Ingest into lock-free active `MemTable` (capacity 50K vectors) $\to$ Flush to immutable small HNSW segments $\to$ Compact asynchronously into base NVMe DiskANN tier.
+  * Query fanned out concurrently across active segments and fused via thread-local bounded top-$K$ heaps.
+* **Zero-Downtime Rolling Graph Rebuilds (Shadow Indexing)**:
+  * Background worker threads rebuild clean, optimized graphs from live snapshots with 0 query read locks.
+  * Atomically swap the active index pointer via RCU (`std::atomic<std::shared_ptr<VectorIndex>>`) when compaction finishes.
+* **2-Phase Tombstone Vacuuming**:
+  * Soft-delete vectors via atomic bitsets ($O(1)$) to preserve graph routing connectivity.
+  * Periodically mend in-degree neighbor edges in background vacuum sweeps before returning dead vector memory slots to the free pool.
 
 ---
 
-## Part 3: Verification & Tooling Matrix
+## Part 3: Verification & Tooling Matrix (The Hardware Profiling Playbook)
 
 | Tool / Technology | Purpose in Vector Search |
 | :--- | :--- |
-| **Linux `perf` (`perf stat`, `perf record`)** | Monitor IPC, L1/LLC cache misses, instruction stalls, and branch prediction. |
+| **Linux `perf` (`perf stat`, `perf record`, `perf c2c`)** | Monitor IPC, L1/LLC cache misses, execution port stalls, and cross-socket false sharing. |
 | **`pprof` / `gperftools`** | Sample-based call-graph profiling and bottleneck function identification. |
 | **Google Benchmark** | High-precision micro-benchmarking of isolated distance and quantization kernels. |
 | **AddressSanitizer (ASan) & UB-Sanitizer** | Detect memory leaks, out-of-bounds array reads, and undefined behavior. |
 | **ThreadSanitizer (TSan)** | Catch data races and concurrency synchronization bugs in multi-threaded indexes. |
 | **`nanobind`** | Lightweight, high-performance C++/Python zero-copy bindings. |
 | **ONNX + ONNX Runtime** | Export dense bi-encoder; CPU embed path into `secan` without shipping PyTorch. |
+| **NVIDIA Nsight Systems (`nsys`)** | Profile CUDA stream concurrency, kernel overlap, and PCIe/NVLink data transfer bottlenecks. |
+| **NVIDIA Nsight Compute (`ncu`)** | Deep-dive GPU microarchitecture: Roofline model, warp stall reasons (`stall_long_scoreboard`), and shared memory bank conflicts. |
+| **`fio` (Direct I/O)** | Establish NVMe direct I/O read baseline ($8\text{–}15\text{ }\mu\text{s}$ at QD=1) for `io_uring` DiskANN. |
+
+### 🛠️ Terminal-Ready Profiling Recipes:
+* **CPU IPC & Cache Health**:
+  ```bash
+  perf stat -e cycles,instructions,branches,branch-misses,L1-dcache-load-misses,LLC-load-misses ./bin/bench_hnsw_search
+  ```
+  *(Healthy: IPC $> 2.0$, branch misses $< 1\%$, L1 miss $< 3\%$, LLC miss $< 5\%$. If LLC miss $> 20\%$, workload is memory-bandwidth bound).*
+* **NUMA False Sharing (`perf c2c`)**:
+  ```bash
+  perf c2c record -- ./bin/bench_hnsw_search --threads=32 && perf c2c report --stdio
+  ```
+  *(High HITM counts indicate cache-line bouncing across sockets; pad thread accumulators to `alignas(64)`).*
+* **Agner Fog Port 5 Shuffle Pressure**:
+  ```bash
+  perf stat -e cpu/event=0xa1,umask=0x20,name=UOPS_DISPATCHED_PORT_5/ ./bin/bench_quantization
+  ```
+* **NVIDIA Nsight Systems Stream Timeline**:
+  ```bash
+  nsys profile --trace=cuda,nvtx,osrt --cuda-memory-usage=true -o profile_multigpu ./bin/bench_multi_gpu_scaling
+  ```
+* **NVIDIA Nsight Compute Roofline & Warp Stalls**:
+  ```bash
+  ncu --set full -k "regex:cagra_search_kernel|flash_attn_v2_forward" -o profile_kernel ./bin/bench_fa2_vs_sdpa
+  ```
+  *(If `stall_long_scoreboard` dominates, unroll loads or use `cp.async`. If shared memory bank conflicts occur, pad tile strides: `__shared__ float s_tile[M][N+1]`).*
 
 ---
 
@@ -232,5 +278,46 @@ To rival commercial vector database engines (Pinecone, Turbopuffer, Qdrant, Milv
 * **SIFT1M**: $1,000,000$ vectors, $128$ dimensions (Standard L2 computer vision).
 * **GIST1M**: $1,000,000$ vectors, $960$ dimensions (High-dimensional stress test).
 * **Cohere / OpenAI-1M**: $1,000,000$ vectors, $768\text{D} / 1536\text{D}$ (Real-world text embeddings).
-* **Deep1B**: 1 Billion vectors, 96 dimensions (Massive scale out-of-core / DiskANN testing).
+* **Deep10M Core**: $10,000,000$ vectors, $96$ dimensions (~4 GB, core verification for `io_uring` DiskANN).
+* **Deep1B Dedicated**: $1,000,000,000$ vectors, $96$ dimensions (~400 GB, high-capacity NVMe overnight tier).
 * **BEIR / LoCo Benchmark**: Benchmark suite for Multi-Vector Late Interaction (ColBERT) precision evaluation.
+
+---
+
+## Part 5: Master Appendix — The 8 Canonical Proofs of Vector Search & AI Systems
+
+### 1. The Johnson-Lindenstrauss (JL) Lemma
+* **Theorem**: For any set of $n$ points $V \subset \mathbb{R}^D$ and $\epsilon \in (0, 1)$, a random projection $A = \frac{1}{\sqrt{d}} R$ ($R_{ij} \sim \mathcal{N}(0, 1)$) to target dimension $d = \mathcal{O}\left(\frac{\ln n}{\epsilon^2}\right)$ preserves all pairwise Euclidean distances within factor $(1 \pm \epsilon)$.
+* **Derivation**: Let unit vector $\mathbf{x} = \frac{\mathbf{u} - \mathbf{v}}{\|\mathbf{u} - \mathbf{v}\|_2}$. Projected coordinates $y_k = (R\mathbf{x})_k$ are i.i.d. standard Gaussians $\mathcal{N}(0, 1)$ by stability. Thus $\|R\mathbf{x}\|_2^2 = Q \sim \chi^2(d)$. Chernoff bound on MGF $\mathbb{E}[e^{\lambda Q}] = (1 - 2\lambda)^{-d/2}$ at optimal $\lambda^* = \frac{\epsilon}{2(1+\epsilon)}$ gives $\mathbb{P}(|\|A\mathbf{x}\|_2^2 - 1| \ge \epsilon) \le 2 e^{-c d \epsilon^2}$. Union bound across $\binom{n}{2} < \frac{n^2}{2}$ pairs yields failure probability $n^2 e^{-c d \epsilon^2} \le \delta \implies d \ge \frac{2 \ln n + \ln(1/\delta)}{c \epsilon^2} = \mathcal{O}\left(\frac{\ln n}{\epsilon^2}\right) \quad \blacksquare$
+
+### 2. Softmax-Cross-Entropy Combined Gradient
+* **Theorem**: For logits $\mathbf{z} \in \mathbb{R}^C$, probabilities $\mathbf{s} = \operatorname{softmax}(\mathbf{z})$, and one-hot target $\mathbf{y} \in \{0, 1\}^C$ with $\mathcal{L}_{\text{CE}} = -\sum y_k \ln s_k$, the gradient w.r.t. pre-softmax logits is $\nabla_{\mathbf{z}} \mathcal{L}_{\text{CE}} = \mathbf{s} - \mathbf{y}$.
+* **Derivation**: For $s_i = \frac{e^{z_i}}{\Sigma}$, quotient rule gives $\frac{\partial s_i}{\partial z_j} = s_i(\delta_{ij} - s_j)$. Chaining with upstream derivative $\frac{\partial \mathcal{L}}{\partial s_i} = -\frac{y_i}{s_i}$:
+  $$\frac{\partial \mathcal{L}_{\text{CE}}}{\partial z_j} = \sum_{i=1}^C \left(-\frac{y_i}{s_i}\right) s_i(\delta_{ij} - s_j) = -\sum_{i=1}^C y_i \delta_{ij} + s_j \sum_{i=1}^C y_i = -y_j + s_j(1) = s_j - y_j \quad \blacksquare$$
+
+### 3. Scaled Dot-Product Attention Backward Pass
+* **Theorem**: For $S = \frac{Q K^T}{\sqrt{d}}$, $P = \operatorname{softmax}(S)$, $O = P V$, upstream gradients are:
+  $$\frac{\partial \mathcal{L}}{\partial V} = P^T \frac{\partial \mathcal{L}}{\partial O}, \quad \frac{\partial \mathcal{L}}{\partial Q} = \frac{1}{\sqrt{d}} \frac{\partial \mathcal{L}}{\partial S} K, \quad \frac{\partial \mathcal{L}}{\partial K} = \frac{1}{\sqrt{d}} \left(\frac{\partial \mathcal{L}}{\partial S}\right)^T Q$$
+* **Derivation**: Differential trace identity $d\mathcal{L} = \operatorname{Tr}\left(\left(\frac{\partial \mathcal{L}}{\partial O}\right)^T dO\right)$. Substituting $dO = P \, dV$ gives $\operatorname{Tr}\left(P^T \frac{\partial \mathcal{L}}{\partial O} dV\right) \implies \frac{\partial \mathcal{L}}{\partial V} = P^T \frac{\partial \mathcal{L}}{\partial O}$. For logits: $\left[\frac{\partial \mathcal{L}}{\partial S}\right]_{ij} = P_{ij} \left( \left[\frac{\partial \mathcal{L}}{\partial P}\right]_{ij} - \sum_k \left[\frac{\partial \mathcal{L}}{\partial P}\right]_{ik} P_{ik} \right)$. Substituting $dS = \frac{1}{\sqrt{d}}(dQ K^T + Q dK^T)$ gives the $Q$ and $K$ adjoint projections via cyclic trace invariance. $\blacksquare$
+
+### 4. FlashAttention Online Softmax Numeric Invariant
+* **Theorem**: For partitioned blocks $\mathbf{x}^{(1)}, \mathbf{x}^{(2)}$ with statistics $(m^{(1)}, \ell^{(1)})$ and $(m^{(2)}, \ell^{(2)})$, exact global statistics update online with 0 intermediate HBM writes:
+  $$m^{\text{new}} = \max(m^{(1)}, m^{(2)}), \quad \ell^{\text{new}} = \ell^{(1)} e^{m^{(1)} - m^{\text{new}}} + \ell^{(2)} e^{m^{(2)} - m^{\text{new}}}$$
+  $$U^{\text{new}} = e^{m^{(1)} - m^{\text{new}}} U^{(1)} + e^{m^{(2)} - m^{\text{new}}} U^{(2)} \implies O = \frac{U^{\text{final}}}{\ell^{\text{final}}}$$
+* **Derivation**: By associativity of $\max$, $m^{\text{new}} = \max_j x_j$. Normalizer expansion $\sum_{j \in N_1} e^{x_j - m^{\text{new}}} = e^{m^{(1)} - m^{\text{new}}} \sum_{j \in N_1} e^{x_j - m^{(1)}} = \ell^{(1)} e^{m^{(1)} - m^{\text{new}}}$. Adding both partitions exactly reconstructs $\sum_{j=1}^N e^{x_j - m^{\text{new}}} = \ell^{\text{new}}$. Accumulator rescaling preserves identical mathematical output while reducing VRAM memory complexity from $O(N^2)$ to $O(\sqrt{\text{VRAM}})$. $\blacksquare$
+
+### 5. ScaNN Directional / Anisotropic Error Decomposition
+* **Theorem**: For database vector $\mathbf{x}$ and quantized code $\tilde{\mathbf{x}}$, error $\mathbf{e} = \mathbf{e}_\parallel + \mathbf{e}_\perp$. For high-dimensional isotropic queries, $\mathbb{E}[\langle \mathbf{q}, \mathbf{e}_\perp \rangle] = 0$ with variance $\mathcal{O}(1/D)$, whereas parallel error $\langle \mathbf{q}, \mathbf{e}_\parallel \rangle = c \frac{\langle \mathbf{q}, \mathbf{x} \rangle}{\|\mathbf{x}\|_2^2} \|\mathbf{x}\|_2^2$ creates a direct bias proportional to relevance, knocking Top-1 neighbors out of rankings.
+* **Derivation**: Query decomposes as $\mathbf{q} = \alpha \mathbf{x} + \mathbf{w}$ where $\mathbf{w} \in \mathbf{x}^\perp$ is zero-mean isotropic noise. Orthogonal error $\langle \mathbf{q}, \mathbf{e}_\perp \rangle = \alpha \langle \mathbf{x}, \mathbf{e}_\perp \rangle + \langle \mathbf{w}, \mathbf{e}_\perp \rangle = 0 + \langle \mathbf{w}, \mathbf{e}_\perp \rangle$, which has expectation 0. Parallel error $\mathbf{e}_\parallel = c \mathbf{x}$ yields $\langle \mathbf{q}, c \mathbf{x} \rangle = c \alpha \|\mathbf{x}\|_2^2$, systematically shrinking true near neighbors. ScaNN penalizes parallel error by $h \ge 5.0$: $\mathcal{L} = h \|\mathbf{e}_\parallel\|^2 + \|\mathbf{e}_\perp\|^2$. $\blacksquare$
+
+### 6. Kleinberg's Small-World Theorem & HNSW Logarithmic Routing
+* **Theorem**: On a metric space of $N$ nodes, adding long-range edges with probability $P(u \to v) \propto d(u, v)^{-r}$ yields efficient decentralized routing $\mathbb{E}[T] = \mathcal{O}(\log^2 N)$ if and only if $r = D$. In HNSW, hierarchical geometric decay $m_L = 1/\ln M$ yields $\mathbb{E}[T] = \mathcal{O}(\log N)$.
+* **Derivation**: Normalizing factor $Z = \sum_{v} d(u, v)^{-r} \approx \int_1^R d^{-r} (c d^{D-1}) dd$. If $r = D$, $Z \approx c \ln R \propto \ln N$. The probability of an edge landing in any octave distance interval $[2^j, 2^{j+1}]$ is scale-invariant: $\frac{c}{Z} \int_{2^j}^{2^{j+1}} \frac{1}{d} dd = \frac{c \ln 2}{Z} = \frac{\text{const}}{\ln N}$. Distance to target halves in expected time $\mathcal{O}(\ln N)$. Halving at most $\log_2 N$ times yields $\mathcal{O}(\log^2 N)$ steps. In HNSW, explicit skip-list layers eliminate scale search, reducing hops to $\sum_{\ell=0}^{\log_M N} \mathcal{O}(1) = \mathcal{O}(\log N)$. $\blacksquare$
+
+### 7. Vamana Graph $\alpha$-Pruning & Geometric Spanner Property
+* **Theorem**: For candidate neighbors ordered by distance $d(p, c)$, keeping $c$ iff $\alpha \cdot d(r, c) > d(p, c) \,\, \forall r \in N(p)$ yields an $\alpha$-geometric spanner: $\operatorname{Length}(P_{uv}) \le \alpha \cdot d(u, v)$.
+* **Derivation**: Induct on distance rank. Base case: mutually closest pair $(u, v)$ has no $r$ closer, so edge is kept ($\text{stretch} = 1 \le \alpha$). Inductive step: if edge $(u, v)$ was pruned by $r$, then $\alpha \cdot d(r, v) \le d(u, v) \implies d(r, v) < d(u, v)$. By inductive hypothesis, there exists path $P_{rv}$ with length $\le \alpha \cdot d(r, v)$. Total path length $\operatorname{Length}(P_{uv}) = d(u, r) + \operatorname{Length}(P_{rv}) \le d(u, r) + \alpha d(r, v) \le d(u, v) + d(u, v) = 2 d(u, v)$. Tuning $\alpha \in [1.2, 1.5]$ tightly bounds greedy search stretch. $\blacksquare$
+
+### 8. Baur-Strassen / Griewank-Walther Theorem
+* **Theorem**: Evaluating the gradient $\nabla f \in \mathbb{R}^N$ of scalar function $f: \mathbb{R}^N \to \mathbb{R}$ via Reverse-Mode AD costs work $W(\nabla f) \le 4 \cdot W(f)$, strictly independent of parameter dimension $N$.
+* **Derivation**: Let forward graph $G$ evaluate $f$ in $T$ elementary steps ($v_1, \dots, v_T$). Each step $v_j = \phi(u, w)$ requires cost $c_j = 1$. Adjoint evaluation $\bar{u} \mathrel{+}= \bar{v} \frac{\partial v}{\partial u}, \bar{w} \mathrel{+}= \bar{v} \frac{\partial v}{\partial w}$ requires at most 2 multiplications and 2 additions ($c_j^* \le 4$ operations). Total work $W(\nabla f) = W(f) + \sum_{j=1}^T c_j^* \le T + 4T = 5T$. Eliminating redundant additions during zero-initialization yields $W(\nabla f) \le 4 \cdot W(f)$. Dimension $N$ never appears in the bound. $\blacksquare$

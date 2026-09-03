@@ -109,28 +109,27 @@
 
 ---
 
-### Week 7 (Oct 13–17): Vector Fields, **Matrix Calculus**, ScaNN Anisotropic Loss & FastScan
+### Week 7 (Oct 13–17): Matrix Calculus, Backpropagation Foundations, ScaNN Anisotropic Loss & FastScan
 
-**Theme**: Vector fields (Mon–Tue), **matrix calculus for neural networks** (Thu–Fri replacing Stokes/Divergence), ScaNN directional error weighting, and in-register FastScan lookups.
+**Theme**: Deep Learning Matrix Calculus (Mon–Wed), Reverse-Mode Automatic Differentiation & Hessians (Thu–Fri), ScaNN directional error weighting, and in-register FastScan lookups.
 
-* **Pure Math (Strang Calc Ch 15 + Matrix Calculus)**:
-  * Vector fields $\mathbf{F}(x, y, z) = P\mathbf{i} + Q\mathbf{j} + R\mathbf{k}$, gradient fields, conservative vector fields.
-  * Line integrals of scalar functions and vector fields $\int_C \mathbf{F} \cdot d\mathbf{r} = \int_a^b \mathbf{F}(\mathbf{r}(t)) \cdot \mathbf{r}'(t) dt$.
-  * Fundamental Theorem for Line Integrals: $\int_C \nabla f \cdot d\mathbf{r} = f(\mathbf{r}(b)) - f(\mathbf{r}(a))$ (path independence).
-  * Green's Theorem in the plane: $\oint_C (P dx + Q dy) = \iint_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dA$.
-  * **🔗 Matrix Calculus** (Thu): Jacobian of $Y = XW$: $\frac{\partial \text{vec}(Y)}{\partial \text{vec}(W)}$. Chain rule through multi-layer networks. Softmax Jacobian $J_{ij} = p_i(\delta_{ij} - p_j)$. **Stokes'/Divergence theorems**: skim only — not implemented.
-  * **🔗 Automatic Differentiation** (Fri): Forward-mode vs reverse-mode AD. Computational graphs. Why reverse-mode AD (backpropagation) is $O(1)$ backward passes regardless of parameter count.
+* **Pure Math (Matrix Calculus & Automatic Differentiation for AI)**:
+  * **Matrix Calculus & Linear Layer Gradients** (Mon): Trace identities, Frobenius inner products, vectorized chain rule. Analytical derivation of batched linear layer backpropagation: $\frac{\partial \mathcal{L}}{\partial W} = X^T \frac{\partial \mathcal{L}}{\partial Y}$, $\frac{\partial \mathcal{L}}{\partial X} = \frac{\partial \mathcal{L}}{\partial Y} W^T$, $\frac{\partial \mathcal{L}}{\partial b} = \mathbf{1}^T \frac{\partial \mathcal{L}}{\partial Y}$.
+  * **Nonlinear Activation Jacobians & Softmax-Cross-Entropy** (Tue): Element-wise activation Jacobians (ReLU, GELU, SwiGLU). Softmax Jacobian $J_{ij} = s_i(\delta_{ij} - s_j)$. Rigorous analytical proof that $\frac{\partial \mathcal{L}_{\text{CE}}}{\partial \mathbf{z}} = \mathbf{s} - \mathbf{y}$.
+  * **Attention Mechanism Matrix Calculus** (Wed): Differentiating Scaled Dot-Product Attention $\text{Attn}(Q, K, V) = \text{softmax}(Q K^T / \sqrt{d_k}) V$; step-by-step derivation of adjoint gradients $\frac{\partial \mathcal{L}}{\partial Q}, \frac{\partial \mathcal{L}}{\partial K}, \frac{\partial \mathcal{L}}{\partial V}$.
+  * **🔗 Automatic Differentiation & Computational DAGs** (Thu): Forward-mode (JVPs) vs reverse-mode (VJPs). Memory tape management. Mathematical proof of $O(1)$ backward pass complexity for billion-parameter neural networks.
+  * **🔗 Loss Surfaces, Hessians & Optimizer Dynamics** (Fri): The Hessian matrix $H = \nabla^2 \mathcal{L}$, condition numbers $\kappa = \frac{\lambda_{\max}}{\lambda_{\min}}$, convergence bounds ($\eta < \frac{2}{\lambda_{\max}}$), and AdamW second-moment scaling as diagonal Hessian preconditioning.
 * **ScaNN Theory**: Directional error decomposition: parallel error $e_\parallel$ vs orthogonal error $e_\perp$; ScaNN anisotropic loss $\mathcal{L} = h \|e_\parallel\|^2 + \|e_\perp\|^2$.
 * **C++ Track**: ScaNN anisotropic PQ, BQ, FastScan, **OPQ / residual PQ**.
 * **DL**: Sat Oct 18 — MRL tiny-corpus.
 
 | Day | Pure Mathematics & ScaNN Math (90 min) | Systems / C++ Reading (45 min) | Afternoon Implementation (2.5 hrs) |
 |:---|:---|:---|:---|
-| **Mon Oct 13** | **CALC §15.1–15.2**: Vector fields in 2D/3D. Line integrals of vector fields along parameterized curves $\mathbf{r}(t)$. Work done by a force field. | ScaNN Paper §1–3: MIPS error decomposition: why orthogonal error $e_\perp$ has 0 expectation while parallel error $e_\parallel$ degrades inner products. | **secan**: Implement **ScaNN Anisotropic Loss** in `ProductQuantizer`: penalize parallel error with weight $h=5.0$. Compare codebooks. |
-| **Tue Oct 14** | **CALC §15.3**: Conservative vector fields, potential functions $f$, and path independence of line integrals. Conditions for a field to be conservative. | **INTEL Intrinsics & AGNER-INST**: Deep dive into `_mm256_shuffle_epi8` (PSHUFB) semantics and port mapping. | **secan**: Implement **plain BQ** (`bit = val > 0`): Hamming via XOR+POPCNT. **Do not** implement RaBitQ yet (needs QR — Week 10). |
-| **Wed Oct 15** | **CALC §15.4**: Green's Theorem: rigorous proof connecting a line integral around a closed curve to a double integral over the enclosed region. | Faiss FastScan documentation & André et al. (2015) paper §1–3. | **secan**: Implement 4-bit PQ encoding ($k=16$ centroids per subspace, packing 2 codes per byte). |
-| **Thu Oct 16** | **🔗 MATRIX CALCULUS**: Jacobian of $Y = XW$. Chain rule through multi-layer networks: $\frac{\partial \mathcal{L}}{\partial W_1} = \frac{\partial \mathcal{L}}{\partial Y} \cdot \frac{\partial Y}{\partial Z} \cdot \frac{\partial Z}{\partial W_1}$. Softmax Jacobian $J_{ij} = p_i(\delta_{ij} - p_j)$. Skim Stokes/Divergence (not implemented). | AGNER-INST: Study `VPSHUFB`, `VPADDB`, `VPUNPCKLBW` instruction latency and accumulation chains. | **secan**: Implement **FastScan kernel**: load 16 centroid distances into `__m128i` / `__m256i`. Execute table lookups **entirely in-register** via PSHUFB. |
-| **Fri Oct 17** | **🔗 AUTOMATIC DIFFERENTIATION**: Forward-mode ($\dot{x}$ tangent vectors) vs reverse-mode ($\bar{x}$ adjoint vectors). Computational graphs. Why backprop is $O(p)$ forward, $O(p)$ backward regardless of parameter count. Connection to Week 3 micrograd. | **CSAPP §5.10–5.12**: Register spilling, store-load forwarding, pipeline limiting factors. | **secan (required)**: **OPQ** (rotate then PQ) *or* **residual PQ**. Compare Recall@10 vs plain PQ on SIFT. Asymmetric ADC remains FP32 query. *(DL: Sat Oct 18 MRL.)* |
+| **Mon Oct 13** | **MATRIX CALCULUS (Linear Layers)**: Matrix trace identities. Full mathematical derivation of batched GEMM backpropagation: $\frac{\partial \mathcal{L}}{\partial W} = X^T \frac{\partial \mathcal{L}}{\partial Y}$, $\frac{\partial \mathcal{L}}{\partial X} = \frac{\partial \mathcal{L}}{\partial Y} W^T$, $\frac{\partial \mathcal{L}}{\partial b} = \mathbf{1}^T \frac{\partial \mathcal{L}}{\partial Y}$. | ScaNN Paper §1–3: MIPS error decomposition: why orthogonal error $e_\perp$ has 0 expectation while parallel error $e_\parallel$ degrades inner products. | **secan**: Implement **ScaNN Anisotropic Loss** in `ProductQuantizer`: penalize parallel error with weight $h=5.0$. Compare codebooks. |
+| **Tue Oct 14** | **JACOBIANS & SOFTMAX CE**: Element-wise Jacobians (ReLU, GELU, SwiGLU). Softmax Jacobian $J_{ij} = s_i(\delta_{ij} - s_j)$. Analytical proof that $\frac{\partial \mathcal{L}_{\text{CE}}}{\partial \mathbf{z}} = \mathbf{s} - \mathbf{y}$. | **INTEL Intrinsics & AGNER-INST**: Deep dive into `_mm256_shuffle_epi8` (PSHUFB) semantics and port mapping. | **secan**: Implement **plain BQ** (`bit = val > 0`): Hamming via XOR+POPCNT. **Do not** implement RaBitQ yet (needs QR — Week 10). |
+| **Wed Oct 15** | **ATTENTION MATRIX CALCULUS**: Differentiating Scaled Dot-Product Attention $\text{Attn}(Q, K, V) = \text{softmax}(Q K^T / \sqrt{d_k}) V$. Step-by-step derivation of upstream adjoint tensors $\frac{\partial \mathcal{L}}{\partial Q}, \frac{\partial \mathcal{L}}{\partial K}, \frac{\partial \mathcal{L}}{\partial V}$. | Faiss FastScan documentation & André et al. (2015) paper §1–3. | **secan**: Implement 4-bit PQ encoding ($k=16$ centroids per subspace, packing 2 codes per byte). |
+| **Thu Oct 16** | **🔗 AUTOMATIC DIFFERENTIATION**: Computational DAGs, topological sorting. Forward-mode (JVPs) vs Reverse-mode (VJPs). Mathematical proof why reverse-mode backpropagation is $O(1)$ backward passes regardless of parameter count. | AGNER-INST: Study `VPSHUFB`, `VPADDB`, `VPUNPCKLBW` instruction latency and accumulation chains. | **secan**: Implement **FastScan kernel**: load 16 centroid distances into `__m128i` / `__m256i`. Execute table lookups **entirely in-register** via PSHUFB. |
+| **Fri Oct 17** | **🔗 LOSS SURFACES & HESSIANS**: Hessian matrix $H = \nabla^2 \mathcal{L}$, condition number $\kappa = \lambda_{\max}/\lambda_{\min}$, gradient descent step-size bounds ($\eta < 2/\lambda_{\max}$). AdamW second moments ($v_t$) as diagonal Hessian preconditioning. | **CSAPP §5.10–5.12**: Register spilling, store-load forwarding, pipeline limiting factors. | **secan (required)**: **OPQ** (rotate then PQ) *or* **residual PQ**. Compare Recall@10 vs plain PQ on SIFT. Asymmetric ADC remains FP32 query. *(DL: Sat Oct 18 MRL.)* |
 
 #### 📋 Daily Action Items & Optional Activities (Week 7)
 * **Mon Oct 13**:
@@ -151,7 +150,7 @@
 
 #### ⛔ What NOT to Overspend Time On (Time Traps)
 * ❌ **Do NOT** implement RaBitQ this week—RaBitQ requires QR orthogonal factorizations which are formally studied in Week 10.
-* ❌ **Do NOT** spend time proving 3D Stokes' or Divergence theorems in calculus—skim their intuition and focus on Matrix Calculus & Automatic Differentiation.
+* ❌ **Do NOT** spend time proving classical 3D fluid or physical vector theorems (Stokes/Divergence)—all physics vector calculus has been purged in favor of neural network matrix calculus.
 * ❌ **Do NOT** write a custom matrix optimizer for OPQ—a basic alternating least squares (ALS) rotation or residual PQ is 100% fine.
 
 > **📝 Essay 7 (Sat Oct 18)**: *"Anisotropic Loss and In-Register SIMD Lookups: Directional Error Weighting and FastScan PSHUFB"*  

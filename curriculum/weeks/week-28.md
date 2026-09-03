@@ -33,11 +33,11 @@
 
 | Day | Date | Daily Runbook | Pure Mathematics (90 min) | Systems / Architecture Reading (45-60 min) | Night Hands-On C++/CUDA (2.5 hrs) |
 |:---|:---|:---|:---|:---|:---|
-| **Monday** | Mon Mar 9 | [`Day 190`](../days/month-07/day-190-2027-03-09.md) | 7-month geometric thread recap. | API/docs pass. | Finish CLI + Doxygen. |
-| **Tuesday** | Tue Mar 10 | [`Day 191`](../days/month-07/day-191-2027-03-10.md) | — | `ann-benchmarks`. | Full CPU+GPU benchmark matrix. |
-| **Wednesday** | Wed Mar 11 | [`Day 192`](../days/month-07/day-192-2027-03-11.md) | — | Examples. | Five examples including dense InfoNCE search + GPU batch. |
-| **Thursday** | Thu Mar 12 | [`Day 193`](../days/month-07/day-193-2027-03-12.md) | — | README. | **Publish Month 7 paper.** Tag `v2.0-complete`. |
-| **Friday** | Fri Mar 13 | [`Day 194`](../days/month-07/day-194-2027-03-13.md) | Rest / interview packet. | — | Portfolio: 7 papers + `secan` Pareto plots. |
+| **Monday** | Mon Mar 9 | [`Day 190`](../days/month-07/day-190-2027-03-09.md) | **Canonical Proofs 1 & 2**: JL Lemma & Softmax-CE ([`roadmap.md#part-5`](../roadmap.md#part-5-master-appendix--the-8-canonical-proofs-of-vector-search--ai-systems)). | API & Doxygen architecture pass. | Finish CLI + Doxygen documentation. |
+| **Tuesday** | Tue Mar 10 | [`Day 191`](../days/month-07/day-191-2027-03-10.md) | **Canonical Proofs 3 & 4**: Attention Backprop & FlashAttention Online Softmax ([`roadmap.md#part-5`](../roadmap.md#part-5-master-appendix--the-8-canonical-proofs-of-vector-search--ai-systems)). | `ann-benchmarks` methodology. | Full CPU+GPU benchmark matrix using Profiling Playbook ([`roadmap.md#part-3`](../roadmap.md#part-3-verification--tooling-matrix-the-hardware-profiling-playbook)). |
+| **Wednesday** | Wed Mar 11 | [`Day 192`](../days/month-07/day-192-2027-03-11.md) | **Canonical Proofs 5 & 6**: ScaNN Anisotropic Error & Kleinberg HNSW Routing ([`roadmap.md#part-5`](../roadmap.md#part-5-master-appendix--the-8-canonical-proofs-of-vector-search--ai-systems)). | Production DB architecture pass ([`roadmap.md#7`](../roadmap.md#7-enterprise-production-architecture-wal-crash-recovery--shadow-indexing)). | Five E2E examples including dense InfoNCE search + GPU batch. |
+| **Thursday** | Thu Mar 12 | [`Day 193`](../days/month-07/day-193-2027-03-12.md) | **Canonical Proofs 7 & 8**: Vamana Spanner Pruning & Griewank Reverse-Mode AD ([`roadmap.md#part-5`](../roadmap.md#part-5-master-appendix--the-8-canonical-proofs-of-vector-search--ai-systems)). | Production release README. | **Publish Month 7 paper.** Tag `v2.0-complete`. |
+| **Friday** | Fri Mar 13 | [`Day 194`](../days/month-07/day-194-2027-03-13.md) | **Full 8-Proof Whiteboard Mock Defense**: Complete technical interview simulation. | Portfolio review. | Portfolio: 7 papers, 28 essays, and `secan` Pareto curves. |
 | **Saturday** | Sat Mar 14 | [`Day 195`](../days/month-07/day-195-2027-03-14.md) | **09:00–13:00**: Essay 28 | **14:00–18:00**: Deep Learning Track | Deep Learning from Scratch (uv/PyTorch) |
 | **Sunday** | Sun Mar 15 | [`Day 196`](../days/month-07/day-196-2027-03-15.md) | **09:00–13:00**: Monthly Research | Research Experimentation | Rest & Subconscious Incubation |
 
@@ -46,23 +46,23 @@
 ## 📋 Daily Action Items & Deliverables (Week 28)
 
 ### 🔹 Monday, Mon Mar 9 ([`Day 190`](../days/month-07/day-190-2027-03-09.md))
-* `[ ]` **Core**: Complete unified CLI interface (`secan`) and generate full Doxygen API reference documentation.
+* `[ ]` **Core**: Derive Canonical Proofs 1 & 2 from cold memory on whiteboard; complete unified CLI interface (`secan`) and generate full Doxygen API docs.
 * `⭐ Optional / Stretch`: Write a comprehensive architectural design paper summarizing the 7-month engineering journey.
 
 ### 🔹 Tuesday, Tue Mar 10 ([`Day 191`](../days/month-07/day-191-2027-03-10.md))
-* `[ ]` **Core**: Execute full `ann-benchmarks` protocol across all implemented index types: Flat, IVF, SQ8, PQ, FastScan, HNSW, IVFPQ, HNSWSQ, GPU-IVF, DiskANN.
+* `[ ]` **Core**: Derive Canonical Proofs 3 & 4 on whiteboard; execute full `ann-benchmarks` protocol across all implemented index types using the Hardware Profiling Playbook (`perf stat`, `nsys`, `ncu`).
 * `⭐ Optional / Stretch`: Plot combined CPU/GPU Pareto frontier curves (Recall@10 vs QPS) comparing `secan` directly against `Faiss` and `hnswlib`.
 
 ### 🔹 Wednesday, Wed Mar 11 ([`Day 192`](../days/month-07/day-192-2027-03-11.md))
-* `[ ]` **Core**: Build 5 standalone C++ and Python example programs (exact scan, HNSW text search, ColBERT late interaction, GPU IVF batching, hybrid BM25+ANN).
+* `[ ]` **Core**: Derive Canonical Proofs 5 & 6 on whiteboard; build 5 standalone C++ and Python example programs showcasing the Enterprise Production DB architecture (WAL, shadow rebuilds, tombstones).
 * `⭐ Optional / Stretch`: Add a zero-dependency quickstart script that clones, builds, downloads SIFT1M, and benchmarks in under 60 seconds.
 
 ### 🔹 Thursday, Thu Mar 12 ([`Day 193`](../days/month-07/day-193-2027-03-12.md))
-* `[ ]` **Core**: Finalize root `README.md` with complete benchmark tables; publish Month 7 research paper; git tag `v2.0-complete`.
+* `[ ]` **Core**: Derive Canonical Proofs 7 & 8 on whiteboard; finalize root `README.md` with complete benchmark tables; publish Month 7 research paper; git tag `v2.0-complete`.
 * `⭐ Optional / Stretch`: Prepare public release announcement and publish technical blog posts summarizing key architectural discoveries.
 
 ### 🔹 Friday, Fri Mar 13 ([`Day 194`](../days/month-07/day-194-2027-03-13.md))
-* `[ ]` **Core**: Compile professional engineering portfolio packet: 7 conference-grade research papers, 28 technical essays, and `secan` repository release.
+* `[ ]` **Core**: Complete a simulated 3-hour Technical Whiteboard Defense across all 8 canonical proofs; compile professional engineering portfolio packet (7 research papers, 28 technical essays, and `secan` release).
 * `⭐ Optional / Stretch`: Celebrate completing the 28-week vector search engine & AI systems specialization!
 
 ### 🔹 Saturday, Sat Mar 14 ([`Day 195`](../days/month-07/day-195-2027-03-14.md))
