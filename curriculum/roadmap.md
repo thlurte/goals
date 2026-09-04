@@ -199,12 +199,16 @@ To rival commercial vector database engines (Pinecone, Turbopuffer, Qdrant, Milv
   * **TurboQuant**: PolarQuant (bulk bits) + QJL residual (~1 bit) for bias-free scores — dual target: **vector search MIPS** and **LLM KV-cache** (~3-bit, training-free in reported results).
   * Curriculum: **1@k curve required Week 10 Fri** (GloVe or 768-D vs RaBitQ/PQ). KV application **Week 19**.
 
-### 4. Sparse-Dense Hybrid Search & Block-Max WAND
-* **Dense + Sparse Fusion**: Linear $\alpha$ **and RRF**. SPLADE = stretch.
+### 4. Sparse-Dense Hybrid Search, Block-Max WAND & Diverse Retrieval (MMR)
+* **Dense + Sparse Fusion**: Linear $\alpha$ **and RRF (Reciprocal Rank Fusion)**. SPLADE = stretch.
   $$\text{Score} = \alpha \cdot \text{DenseScore} + (1 - \alpha) \cdot \text{SparseScore}$$
 * **Block-Max WAND (Weak AND)**:
   * Store inverted posting lists in compressed blocks (SIMD-BP128 / PForDelta).
   * Track maximum upper-bound score per block, skipping up to $95\%$ of document postings that cannot beat the current top-$K$ heap threshold.
+* **In-Engine Diverse Retrieval (Maximal Marginal Relevance - MMR)**:
+  * Eliminates semantic echo chambers in RAG context windows by penalizing redundancy among retrieved top candidates:
+    $$\text{MMR}(q, D) = \arg\max_{d_i \in C \setminus S} \left[ \lambda \cdot \text{Sim}(q, d_i) - (1 - \lambda) \max_{d_j \in S} \text{Sim}(d_i, d_j) \right]$$
+  * Fused C++ SIMD candidate-pool pairwise similarity matrix computation directly before emission, avoiding expensive round-trips to Python.
 
 ### 5. Dynamic Graph Mutations & Tombstone Vacuuming
 * **Tombstone Deletions**: Mark deleted vector IDs in lock-free bitsets while keeping graph nodes active to preserve traversal routes.
@@ -228,6 +232,23 @@ To rival commercial vector database engines (Pinecone, Turbopuffer, Qdrant, Milv
 * **2-Phase Tombstone Vacuuming**:
   * Soft-delete vectors via atomic bitsets ($O(1)$) to preserve graph routing connectivity.
   * Periodically mend in-degree neighbor edges in background vacuum sweeps before returning dead vector memory slots to the free pool.
+
+### 8. Matryoshka Representation Learning (MRL) & Multi-Tier Cascaded Search
+* **The Challenge**: Modern frontier embedding models (OpenAI `text-embedding-3`, Cohere v3, BGE-M3, Nomic) produce $1536\text{D}$ or $1024\text{D}$ vectors. Building full graph indexes over uncompressed 1536-D embeddings demands $>16\text{ GB}$ RAM per million vectors and throttles memory bandwidth.
+* **The Solution**:
+  * **Nested Metric Subspaces**: MRL guarantees that prefix slices ($d \in \{64, 128, 256\} \subset D$) preserve ranking fidelity.
+  * **Tier-1 Fast Index ($d=64$ or $128$)**: Index only the first 64 dimensions (exactly one 64-byte AVX-512 register / one cache line per vector) in a lightweight in-memory HNSW/IVF graph, shrinking index memory by $12\times$.
+  * **Tier-2 Exact Re-ranking ($D=1536$)**: Retrieve top-$K_1$ (e.g. 500) candidates from Tier-1, and perform exact full-dimensional distance evaluation exclusively on those 500 vectors streamed from NVMe/RAM via `io_uring`.
+  * **Benchmark Target**: Measure Recall@10 retention ($>99.2\%$) vs $5\times$ QPS throughput acceleration on Cohere-1M ($768\text{D}$) and OpenAI-1M ($1536\text{D}$).
+
+### 9. Cost-Based Filter Planning (Global-Local Selectivity & Graph Bypass)
+* **The Challenge**: Real-world enterprise search combines vector queries with structured metadata filters (`tenant_id = 42 AND created_at > 2026-01-01`). When filter selectivity is ultra-sparse ($<1\%$ matching vectors), standard graph traversal gets disconnected and wanders indefinitely, causing catastrophic latency spikes ($>100\times$).
+* **The Solution (SIGMOD 2026 VecBench Architecture)**:
+  * **Global-Local Selectivity (GLS) Estimation**: Compute filter cardinality in microseconds using SIMD Roaring Bitmaps.
+  * **Dynamic 3-Way Query Execution Planner**:
+    1. **High Selectivity ($>20\%$)**: Post-filtering or standard HNSW traversal with early termination.
+    2. **Moderate Selectivity ($1\% - 20\%$)**: ACORN-style $N$-hop graph navigation over predicate-labeled edges.
+    3. **Ultra-Sparse Selectivity ($<1\%$) — Graph Bypass**: Instantly bypass graph navigation entirely and execute a vectorized AVX-512 / AVX2 exact scan exclusively over the active bitset IDs. When only 50 out of 1,000,000 vectors match, exact scan finishes in $<1\text{ }\mu\text{s}$, completely eliminating graph stalling.
 
 ---
 
