@@ -258,6 +258,31 @@ To rival commercial vector database engines (Pinecone, Turbopuffer, Qdrant, Milv
 
 ---
 
+## Part 2.5: The Landmark Research Track (Two Tier-1 Conference Submissions)
+
+Instead of fragmenting effort across superficial monthly notes, the curriculum's morning builder research track is focused on **two genuine, top-tier conference-grade research contributions (ICLR / ICML / MLSys)** that establish original state-of-the-art breakthroughs:
+
+### 🏛️ Landmark Paper 1 (Target: ICLR / ICML 2027 — Representation & Information Theory)
+* **Title**: *Geometry-Aware Anisotropic Polar Quantization (GAPQ): Provably Unbiased MIPS on Severe Embedding Cones at 2 Bits*
+* **Core Contribution**:
+  * **The Fundamental Open Problem**: Google’s TurboQuant and PolarQuant (2026) are derived assuming isotropic Gaussian vectors on a hypersphere. Real-world neural embeddings (CLIP, LLaMA, OpenAI) are severely anisotropic, clustered inside narrow "embedding cones" (mean cosine $> 0.40$), causing severe quantization collapse and wasted bits on empty angular regions.
+  * **The Mathematical Breakthrough**: Formulate **Anisotropic Polar Quantization (GAPQ)**: align coordinate frames with the empirical Riemannian metric of the embedding cone, mapping vectors into an adaptive-density ellipsoidal polar lattice.
+  * **Closed-Form Proof**: Prove a closed-form, **unbiased anisotropic QJL inner-product estimator** ($\mathbb{E}[\langle q, \tilde{x} \rangle] = \langle q, x \rangle$) with strictly minimal variance under conical distributions.
+  * **Hardware Validation**: C++ AVX-512 / AVX2 bitwise SIMD kernels achieving $>98.5\%$ Top-1 recall at sub-2-bit compression with zero scale-codebook overhead.
+* **Curriculum Construction**: Built progressively across **Months 1–3** during the CPU SIMD, linear algebra (Strang), and quantization blocks.
+
+### ⚡ Landmark Paper 2 (Target: MLSys / ICLR 2027 — Systems & Hardware Co-Design)
+* **Title**: *FlashMaxSim: Hardware-Fused In-SRAM Late Interaction for Multimodal Vision-Language Retrieval*
+* **Core Contribution**:
+  * **The Fundamental Open Problem**: Multimodal retrieval (ColPali, ColQwen) produces 1030 vision tokens per page. Computing late-interaction MaxSim currently forces GPUs to materialize a massive $L_q \times L_d$ score matrix in global VRAM, throttling High Bandwidth Memory (HBM) bus saturation.
+  * **The Algorithmic Breakthrough**: Derive the **Online Max Reduction Invariant** for multi-vector tokens:
+    $$m_i^{(k)} = \max\left(m_i^{(k-1)}, \max_{j \in \text{Tile}_k} \langle q_i, d_j \rangle\right)$$
+  * **The Complexity Reduction**: Prove that global VRAM memory traffic collapses from $O(L_q \cdot L_d)$ to strictly an $O(L_q)$ SRAM register footprint—eliminating intermediate VRAM traffic entirely.
+  * **The Hardware Implementation**: A custom bare-metal CUTLASS kernel exploiting NVIDIA Hopper/Blackwell TMA (Tensor Memory Accelerator) and warp specialization (Producer/Consumer warpgroups) achieving $>75\%$ peak Tensor Core compute throughput ($5\times\text{–}8\times$ faster than PyTorch/vLLM).
+* **Curriculum Construction**: Built progressively across **Months 4–7** during the CUDA, GPU shared memory, CUTLASS, and multi-modal blocks.
+
+---
+
 ## Part 3: Verification & Tooling Matrix (The Hardware Profiling Playbook)
 
 | Tool / Technology | Purpose in Vector Search |
