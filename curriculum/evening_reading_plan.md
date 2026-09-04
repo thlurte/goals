@@ -8,7 +8,7 @@ A disciplined, restorative 28-week reading curriculum designed for the post-work
 
 | Pillar | Focus & Domain | Master Works |
 |:---|:---|:---|
-| **I. Soul, Morality & Craft** | Character-driven literature, craftsmanship, and human nature | *Zen and the Art of Motorcycle Maintenance* (Pirsig)<br>*The Brothers Karamazov* (Dostoevsky)<br>*The Master and Margarita* (Bulgakov) |
+| **I. Soul, Morality & Craft** | Character-driven literature, craftsmanship, and human nature | *Zen and the Art of Motorcycle Maintenance* (Pirsig)<br>*The Magic Mountain* (*Der Zauberberg*) (Thomas Mann)<br>*The Master and Margarita* (Bulgakov) |
 | **II. Mind, Self-Reference & Cybernetics** | Recursive systems, feedback loops, strange loops, and consciousness | *Gödel, Escher, Bach: An Eternal Golden Braid* (Hofstadter)<br>*Cybernetics* (Wiener)<br>*I Am a Strange Loop* (Hofstadter) |
 | **III. The Physical Cosmos & Geometry** | Visual mathematical physics, geometry, spacetime, and quantum reality | *The Road to Reality: A Complete Guide to the Laws of the Universe* (Sir Roger Penrose) |
 
@@ -109,61 +109,61 @@ A disciplined, restorative 28-week reading curriculum designed for the post-work
 
 ---
 
-### ❄️ Block II: The Soul, Gravity & Self-Reference (Nov – Dec 2026)
-*Primary Tracks*: Dostoevsky (*The Brothers Karamazov*) + Penrose (*The Road to Reality* Ch 9–16) + Hofstadter (*GEB* Part 2).
+### ❄️ Block II: The Mountain of Time, Gravity & Self-Reference (Nov – Dec 2026)
+*Primary Tracks*: Thomas Mann (*The Magic Mountain* / *Der Zauberberg*) + Penrose (*The Road to Reality* Ch 9–16) + Hofstadter (*GEB* Part 2).
 
 #### Week 09 (Oct 27 – Nov 2)
-* **Mon Oct 27**: *The Brothers Karamazov* — Book I: A Nice Little Family (Old Karamazov, Fyodor Pavlovich, three brothers).
+* **Mon Oct 27**: *The Magic Mountain* — Ch 1: Arrival (Davos-Platz, Berghof Sanatorium, Joachim Ziemssen, the chill alpine air).
 * **Tue Oct 28**: *GEB* — Air on G's String (Dialogue: God, Gödel, Escher).
-* **Wed Oct 29**: *The Brothers Karamazov* — Book II: An Inappropriate Gathering (The monastery, Elder Zosima, Dmitri’s passion).
+* **Wed Oct 29**: *The Magic Mountain* — Ch 2: Of the Christening Basin and Grandfather in his True Guise (Hans Castorp's origins).
 * **Thu Oct 30**: *GEB* — Ch 14: On Formally Undecidable Propositions of TNT (Gödel's Incompleteness Theorem).
-* **Fri Oct 31**: *The Brothers Karamazov* — Book III: The Sensualists (Confession of an ardent heart).
-* **Sat Nov 1**: *The Brothers Karamazov* — Book III cont.: The insect of lust; Smerdyakov introduced.
+* **Fri Oct 31**: *The Magic Mountain* — Ch 3: Settembrini (The Italian humanist introduced; the cure in the deck chair).
+* **Sat Nov 1**: *The Magic Mountain* — Ch 3 cont.: Analysis and Irony (Settembrini's philosophy of Enlightenment vs the passive sickness).
 * **Sun Nov 2 (Penrose Sunday)**: *The Road to Reality* — **Ch 9: Fourier Decomposition and Hyperfunctions** (Orthogonal sine/cosine bases, delta functions).
 
 #### Week 10 (Nov 3–9)
-* **Mon Nov 3**: *The Brothers Karamazov* — Book IV: Strains (Father and sons colliding; Katerina Ivanovna).
+* **Mon Nov 3**: *The Magic Mountain* — Ch 4: Retrospect (The breakfast hall, the seven meals, Dr. Krokowski's psychoanalysis).
 * **Tue Nov 4**: *GEB* — Birthday Cantatatata... (Dialogue: self-referential celebrations).
-* **Wed Nov 5**: *The Brothers Karamazov* — Book V: Pro and Contra (Ivan and Alyosha in the tavern).
+* **Wed Nov 5**: *The Magic Mountain* — Ch 4 cont.: Clavdia Chauchat (The slamming door, the Russian table, the languid grace).
 * **Thu Nov 6**: *GEB* — Ch 15: Jumping out of the System (Meta-languages and Gödelian escape).
-* **Fri Nov 7**: *The Brothers Karamazov* — Book V Ch 4: Rebellion (Ivan returns the entrance ticket to God).
-* **Sat Nov 8**: *The Brothers Karamazov* — Book V Ch 5: **THE GRAND INQUISITOR** (The greatest philosophical poem in literature).
+* **Fri Nov 7**: *The Magic Mountain* — Ch 4 cont.: The Thermometer (Fever, the 37.6°C border between health and sickness).
+* **Sat Nov 8**: *The Magic Mountain* — Ch 4 cont.: The X-Ray Laboratory (Hans Castorp gazes through his own flesh at his skeleton).
 * **Sun Nov 9 (Penrose Sunday)**: *The Road to Reality* — **Ch 10: Surfaces** (Topology, Euler characteristic $V - E + F = 2$, genus).
 
 #### Week 11 (Nov 10–16)
-* **Mon Nov 10**: *The Brothers Karamazov* — Book VI: The Russian Monk (Elder Zosima's life, active love).
+* **Mon Nov 10**: *The Magic Mountain* — Ch 5: Soup-Everlasting & Sudden Enlightenment (Time distortion in the high mountains).
 * **Tue Nov 11**: *GEB* — Edifying Thoughts of a Tobacco Smoker (Dialogue: Bach and meaning).
-* **Wed Nov 12**: *The Brothers Karamazov* — Book VI cont.: Of masters and servants; love of creation.
+* **Wed Nov 12**: *The Magic Mountain* — Ch 5 cont.: Anatomy of the Living (Hans studies biology, protoplasm, and the mystery of life).
 * **Thu Nov 13**: *GEB* — Ch 16: Self-Ref and Self-Rep (DNA, replication, programs that print themselves).
-* **Fri Nov 14**: *The Brothers Karamazov* — Book VII: Alyosha (The odor of corruption; Cana of Galilee).
-* **Sat Nov 15**: *The Brothers Karamazov* — Book VII cont.: Alyosha kisses the earth under the stars.
+* **Fri Nov 14**: *The Magic Mountain* — Ch 5 cont.: Freedom and the Spirit (Settembrini vs the seductive surrender of illness).
+* **Sat Nov 15**: *The Magic Mountain* — Ch 5 cont.: Walpurgis Night (The Mardi Gras carnival; borrowing the pencil from Clavdia Chauchat).
 * **Sun Nov 16 (Penrose Sunday)**: *The Road to Reality* — **Ch 11: Complex Dimensions** (Riemannian manifolds, coordinate patches, complex manifolds).
 
 #### Week 12 (Nov 17–23)
-* **Mon Nov 17**: *The Brothers Karamazov* — Book VIII: Mitya (Dmitri’s wild fever; hunting for money).
+* **Mon Nov 17**: *The Magic Mountain* — Ch 5 cont.: The French Confession (Hans Castorp confesses his feverish love to Clavdia).
 * **Tue Nov 18**: *GEB* — The Magnificrab, Indeed (Dialogue: Crab, Tortoise, and Turing).
-* **Wed Nov 19**: *The Brothers Karamazov* — Book VIII cont.: The feast at Mokroe; the bronze pestle.
+* **Wed Nov 19**: *The Magic Mountain* — Ch 6: Changes (Clavdia departs; Joachim's soldierly discipline).
 * **Thu Nov 20**: *GEB* — Ch 17: Church, Turing, Tarski, and Others (Halting problem, undecidability).
-* **Fri Nov 21**: *The Brothers Karamazov* — Book IX: The Preliminary Investigation (Mitya interrogated).
-* **Sat Nov 22**: *The Brothers Karamazov* — Book IX cont.: The soul's ordeal; the dream of "the wee one".
+* **Fri Nov 21**: *The Magic Mountain* — Ch 6 cont.: Leo Naphta Appears (The Jesuit radical; intellect as weapon).
+* **Sat Nov 22**: *The Magic Mountain* — Ch 6 cont.: The Great Debate (Settembrini's Humanism vs Naphta's revolutionary Nihilism).
 * **Sun Nov 23 (Penrose Sunday)**: *The Road to Reality* — **Ch 12: Manifolds of n Dimensions** (Tangent vectors, differential forms, exterior calculus).
 
 #### Week 13 (Nov 24–30)
-* **Mon Nov 24**: *The Brothers Karamazov* — Book X: The Boys (Kolya Krasotkin, the dog Perezvon).
+* **Mon Nov 24**: *The Magic Mountain* — Ch 6 cont.: The City of God vs The Terror (Naphta's dark theology of history and suffering).
 * **Tue Nov 25**: *GEB* — SHRDLU, Toy of Man's Designing (Dialogue: natural language understanding).
-* **Wed Nov 26**: *The Brothers Karamazov* — Book X cont.: Ilyusha's illness; young hearts.
+* **Wed Nov 26**: *The Magic Mountain* — Ch 6 cont.: An Attack, and Someone Forgotten (Joachim returns to the flatlands).
 * **Thu Nov 27**: *GEB* — Ch 18: Artificial Intelligence: Retrospects (Heuristic search, chess, representation).
-* **Fri Nov 28**: *The Brothers Karamazov* — Book XI: Brother Ivan Fyodorovich (Ivan visits Smerdyakov).
-* **Sat Nov 29**: *The Brothers Karamazov* — Book XI cont.: Smerdyakov confesses; Ivan and the Devil.
+* **Fri Nov 28**: *The Magic Mountain* — Ch 6 cont.: **"SNOW" (SCHNEE) — Part 1** (Hans Castorp buys skis, climbs into the white glaciers).
+* **Sat Nov 29**: *The Magic Mountain* — Ch 6 cont.: **"SNOW" (SCHNEE) — Part 2** (The blizzard, the dream of the golden temple & blood: *"For the sake of goodness and love, man shall let death have no sovereignty over his thoughts"*).
 * **Sun Nov 30 (Penrose Sunday)**: *The Road to Reality* — **Ch 13: Symmetry Groups** (Lie groups, rotations $SO(3)$, unitary groups $SU(2)$).
 
 #### Week 14 (Dec 1–7)
-* **Mon Dec 1**: *The Brothers Karamazov* — Book XII: A Judicial Error (The trial of Dmitri Karamazov).
+* **Mon Dec 1**: *The Magic Mountain* — Ch 6 cont.: A Soldier and a Brave One (Joachim returns to Davos and dies a soldier's death).
 * **Tue Dec 2**: *GEB* — Contrafactus (Dialogue: counterfactual reasoning).
-* **Wed Dec 3**: *The Brothers Karamazov* — Book XII cont.: Speeches of the prosecutor and defense lawyer Fetyukovich.
+* **Wed Dec 3**: *The Magic Mountain* — Ch 7: Mynheer Peeperkorn (The Dionysian force of personality, the waterfall monologue).
 * **Thu Dec 4**: *GEB* — Ch 19: Artificial Intelligence: Prospects (Turing test, self-consciousness).
-* **Fri Dec 5**: *The Brothers Karamazov* — Book XII cont.: The verdict.
-* **Sat Dec 6**: *The Brothers Karamazov* — Epilogue: Ilyusha's funeral; Alyosha's speech by the stone ("Hurrah for Karamazov!").
+* **Fri Dec 5**: *The Magic Mountain* — Ch 7 cont.: The Fatal Duel (Naphta and Settembrini reach ideological madness; the suicide).
+* **Sat Dec 6**: *The Magic Mountain* — Ch 7 cont.: The Thunderclap (1914 World War I erupts; Hans Castorp runs through Flanders mud singing Schubert).
 * **Sun Dec 7 (Penrose Sunday)**: *The Road to Reality* — **Ch 14: Calculus on Manifolds** (Covariant derivative, connection, parallel transport).
 
 #### Week 15 (Dec 8–14)
@@ -171,7 +171,7 @@ A disciplined, restorative 28-week reading curriculum designed for the post-work
 * **Tue Dec 9**: *GEB* — Ch 20: Strange Loops, or Tangled Hierarchies (The core thesis: self-reference makes mind).
 * **Wed Dec 10**: *GEB* — Six-Part Ricercar (Grand Finale Dialogue: Bach, Escher, Gödel united).
 * **Thu Dec 11**: *GEB* — Epilogue & Reflection: The Golden Braid complete.
-* **Fri Dec 12**: Reading Buffer / Reflection Journal on Dostoevsky and Hofstadter.
+* **Fri Dec 12**: Reading Buffer / Reflection Journal on Thomas Mann and Hofstadter.
 * **Sat Dec 13**: Reading Buffer / Key Passages Review.
 * **Sun Dec 14 (Penrose Sunday)**: *The Road to Reality* — **Ch 15: Fibre Bundles and Gauge Connections** (Visualizing bundles: base space, fibers, global twist).
 
@@ -183,8 +183,6 @@ A disciplined, restorative 28-week reading curriculum designed for the post-work
 * **Fri Dec 19**: *Cybernetics* — Ch 4: Feedback and Oscillation (Homeostasis, servomechanisms, hunting).
 * **Sat Dec 20**: *Cybernetics* — Ch 5: Computing Machines and the Nervous System (Synapses as relays).
 * **Sun Dec 21 (Penrose Sunday)**: *The Road to Reality* — **Ch 16: The Ladder of Infinity** (Cantor's infinities, Gödel, Turing computability).
-
----
 
 ### 🏔️ Block III: Cybernetics, Consciousness & The Strange Loop (Jan – Feb 2027)
 *Primary Tracks*: Hofstadter (*I Am a Strange Loop*) + Wiener (*Cybernetics* Part 2) + Penrose (*The Road to Reality* Ch 17–24).
@@ -286,7 +284,7 @@ A disciplined, restorative 28-week reading curriculum designed for the post-work
 
 #### Week 27 (Mar 2–8)
 * **Mon Mar 2**: Synthesis Review: The Idea of Quality in Pirsig vs Bulgakov's "Manuscripts Don't Burn".
-* **Tue Mar 3**: Synthesis Review: Strange Loops in Hofstadter and Dostoevsky’s Grand Inquisitor.
+* **Tue Mar 3**: Synthesis Review: Strange Loops in Hofstadter and Settembrini vs Naphta in The Magic Mountain.
 * **Wed Mar 4**: Synthesis Review: Wiener’s Homeostasis and the Limits of Mechanistic Philosophy.
 * **Thu Mar 5**: Penrose Special Reading: The Anthropic Principle & The Measurement Problem.
 * **Fri Mar 6**: Reading Journal: The 28-Week Intellectual Retrospective.
