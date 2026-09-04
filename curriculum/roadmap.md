@@ -250,6 +250,12 @@ To rival commercial vector database engines (Pinecone, Turbopuffer, Qdrant, Milv
     2. **Moderate Selectivity ($1\% - 20\%$)**: ACORN-style $N$-hop graph navigation over predicate-labeled edges.
     3. **Ultra-Sparse Selectivity ($<1\%$) — Graph Bypass**: Instantly bypass graph navigation entirely and execute a vectorized AVX-512 / AVX2 exact scan exclusively over the active bitset IDs. When only 50 out of 1,000,000 vectors match, exact scan finishes in $<1\text{ }\mu\text{s}$, completely eliminating graph stalling.
 
+### 10. Research Horizons (Similarity Joins & Architectural Trade-offs)
+* **Vector Similarity Joins ($A \bowtie_k B$)**:
+  * Implementing batch all-pairs join evaluation by reusing graph traversal search paths across adjacent query vectors (cf. SIGMOD 2025 *SimJoin*).
+* **Comparative Architectural Survey**:
+  * Documenting why commodity hardware primitives (SIMD, NVMe `io_uring`, and Tensor Cores) systematically outperform learned neural index structures and custom FPGAs in production throughput, build latency, and operational cost.
+
 ---
 
 ## Part 3: Verification & Tooling Matrix (The Hardware Profiling Playbook)
