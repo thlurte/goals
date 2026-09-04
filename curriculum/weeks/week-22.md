@@ -69,14 +69,13 @@
 * `⭐ Optional / Stretch`: Implement SIMD Roaring Bitmaps with 16-bit containerized chunks and AVX2/AVX-512 bitwise AND / POPCNT kernels for high-throughput ($>30\text{ GB/s}$) multi-predicate metadata filtering.
 
 ### 🔹 Saturday, Sat Jan 31 ([`Day 153`](../days/month-06/day-153-2027-01-31.md))
-* `[ ]` **Core (09:00–13:00)**: Write and ship **Technical Essay 22**: *"Graph Disconnection and Selectivity Cliffs: ACORN Predicate Subgraphs vs Post-Filtering"* to `goals/essays/essay_22.md`.
-* `[ ]` **Core (14:00–18:00)**: Execute Saturday Deep Learning from Scratch track ().
-* `⭐ Optional / Stretch`: Run automated test suite validating PyTorch numerical gradient and attention equivalence.
-
+* `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
+* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
+* `⭐ Optional / Stretch`: 100% Free / Rest / Recovery buffer.
 ### 🔹 Sunday, Sun Feb 1 ([`Day 154`](../days/month-06/day-154-2027-02-01.md))
-* `[ ]` **Core (09:00–13:00)**: Execute Monthly Research Milestone for Month 6 (`research/2027-02-predicate-aware-graphs/`): run empirical benchmarks and record data tables.
-* `⭐ Optional / Stretch`: Draft / update section figures and experimental limitations.
-
+* `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
+* `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
+* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
 ---
 
 ## ⛔ What NOT to Overspend Time On (Week 22 Time Traps)

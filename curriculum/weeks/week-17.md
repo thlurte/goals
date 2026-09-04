@@ -69,14 +69,13 @@
 * `⭐ Optional / Stretch`: Compute graph degree centrality to identify top-64 hub nodes for permanent SRAM staging.
 
 ### 🔹 Saturday, Sat Dec 27 ([`Day 118`](../days/month-05/day-118-2026-12-27.md))
-* `[ ]` **Core (09:00–13:00)**: Write and ship **Technical Essay 17**: *"Warp-Scale Graph Traversal: Overcoming Random Memory Access Bottlenecks in GPU CAGRA"* to `goals/essays/essay_17.md`.
-* `[ ]` **Core (14:00–18:00)**: Execute Saturday Deep Learning from Scratch track ().
-* `⭐ Optional / Stretch`: Run automated test suite validating PyTorch numerical gradient and attention equivalence.
-
+* `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
+* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
+* `⭐ Optional / Stretch`: 100% Free / Rest / Recovery buffer.
 ### 🔹 Sunday, Sun Dec 28 ([`Day 119`](../days/month-05/day-119-2026-12-28.md))
-* `[ ]` **Core (09:00–13:00)**: Execute Monthly Research Milestone for Month 5 (`research/2027-01-paging-vs-quantizing-kv/`): run empirical benchmarks and record data tables.
-* `⭐ Optional / Stretch`: Draft / update section figures and experimental limitations.
-
+* `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
+* `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
+* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
 ---
 
 ## ⛔ What NOT to Overspend Time On (Week 17 Time Traps)

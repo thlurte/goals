@@ -69,14 +69,13 @@
 * `⭐ Optional / Stretch`: Validate bitwise floating-point score equivalence across x86 AVX2 and ARM NEON kernels.
 
 ### 🔹 Saturday, Sat Feb 7 ([`Day 160`](../days/month-06/day-160-2027-02-07.md))
-* `[ ]` **Core (09:00–13:00)**: Write and ship **Technical Essay 23**: *"Spectral Graph Theory and Cross-Platform SIMD: Cheeger's Inequality, Conductance, and ARM NEON"* to `goals/essays/essay_23.md`.
-* `[ ]` **Core (14:00–18:00)**: Execute Saturday Deep Learning from Scratch track ().
-* `⭐ Optional / Stretch`: Run automated test suite validating PyTorch numerical gradient and attention equivalence.
-
+* `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
+* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
+* `⭐ Optional / Stretch`: 100% Free / Rest / Recovery buffer.
 ### 🔹 Sunday, Sun Feb 8 ([`Day 161`](../days/month-06/day-161-2027-02-08.md))
-* `[ ]` **Core (09:00–13:00)**: Execute Monthly Research Milestone for Month 6 (`research/2027-02-predicate-aware-graphs/`): run empirical benchmarks and record data tables.
-* `⭐ Optional / Stretch`: Draft / update section figures and experimental limitations.
-
+* `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
+* `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
+* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
 ---
 
 ## ⛔ What NOT to Overspend Time On (Week 23 Time Traps)

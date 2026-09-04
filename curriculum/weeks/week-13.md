@@ -69,14 +69,13 @@
 * `⭐ Optional / Stretch`: Benchmark shared memory bank conflicts with varying tile dimension padding strategies.
 
 ### 🔹 Saturday, Sat Nov 29 ([`Day 090`](../days/month-04/day-090-2026-11-29.md))
-* `[ ]` **Core (09:00–13:00)**: Write and ship **Technical Essay 13**: *"The SIMT Execution Model: Why Naive GPU Distance Kernels Lose to CPU AVX2"* to `goals/essays/essay_13.md`.
-* `[ ]` **Core (14:00–18:00)**: Execute Saturday Deep Learning from Scratch track ().
-* `⭐ Optional / Stretch`: Run automated test suite validating PyTorch numerical gradient and attention equivalence.
-
+* `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
+* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
+* `⭐ Optional / Stretch`: 100% Free / Rest / Recovery buffer.
 ### 🔹 Sunday, Sun Nov 30 ([`Day 091`](../days/month-04/day-091-2026-11-30.md))
-* `[ ]` **Core (09:00–13:00)**: Execute Monthly Research Milestone for Month 4 (`research/2026-12-three-paths-spine/`): run empirical benchmarks and record data tables.
-* `⭐ Optional / Stretch`: Draft / update section figures and experimental limitations.
-
+* `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
+* `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
+* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
 ---
 
 ## ⛔ What NOT to Overspend Time On (Week 13 Time Traps)

@@ -69,14 +69,13 @@
 * `⭐ Optional / Stretch`: Profile FlashAttention-2 vs FlashAttention-3 architectural mechanisms: analyze Hopper Tensor Memory Accelerator (TMA) asynchronous copy pipelines, warp specialization, and `wgmma` GEMM instructions.
 
 ### 🔹 Saturday, Sat Feb 21 ([`Day 174`](../days/month-07/day-174-2027-02-21.md))
-* `[ ]` **Core (09:00–13:00)**: Write and ship **Technical Essay 25**: *"Warp Partitioning and Register Rescaling: Implementing FlashAttention-2 with Grouped-Query Attention"* to `goals/essays/essay_25.md`.
-* `[ ]` **Core (14:00–18:00)**: Execute Saturday Deep Learning from Scratch track ().
-* `⭐ Optional / Stretch`: Run automated test suite validating PyTorch numerical gradient and attention equivalence.
-
+* `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
+* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
+* `⭐ Optional / Stretch`: 100% Free / Rest / Recovery buffer.
 ### 🔹 Sunday, Sun Feb 22 ([`Day 175`](../days/month-07/day-175-2027-02-22.md))
-* `[ ]` **Core (09:00–13:00)**: Execute Monthly Research Milestone for Month 7 (`research/2027-03-gpu-serving/`): run empirical benchmarks and record data tables.
-* `⭐ Optional / Stretch`: Draft / update section figures and experimental limitations.
-
+* `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
+* `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
+* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
 ---
 
 ## ⛔ What NOT to Overspend Time On (Week 25 Time Traps)
