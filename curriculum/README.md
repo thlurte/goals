@@ -18,15 +18,16 @@
    * **Wednesday**: Deep Learning Track (Implementation Part 2 & Tests)
    * **Thursday**: Monthly Research Benchmarking & Sweep Analysis
    * **Friday**: Weekly Technical Essay / Lab-Note Drafting
-3. **20:30–23:00** — **`secan` / CUDA Core Engine** (Dedicated C++20 / CUDA / SIMD night coding)
+3. **18:30–20:00** — **Evening Reading Sanctuary** ([Master Reading Plan](evening_reading_plan.md): Pirsig, GEB, Dostoevsky, Bulgakov)
+4. **20:30–22:30** — **`secan` / CUDA Core Engine** (Focused C++20 / CUDA night coding)
 
 ## Weekend Rhythm (Sat & Sun)
 
 1. **Sat 09:00–13:00** — **Pure Math Block 1** (Theory, Concepts, Derivations, Textbook Chapters)
-2. **Sat 14:00–18:00** — **100% FREE / Rest / Family / Buffer**
+2. **Sat 15:00–16:30** — **Weekend Reading Immersion** (Pirsig / GEB / Literature)
 3. **Sun 09:00–13:00** — **Pure Math Block 2** (Problem Sets, Chalkboard Proofs, Verification)
 4. **Sun 13:00–14:00** — **Runtime Maintenance** ([`embed-runtimes`](../projects/embed-runtimes.md): `limbed` / `ggmbed` 30–60 min only)
-5. **Sun 14:00–18:00** — **100% FREE / Rest / Family / Buffer**
+5. **Sun 15:00–16:45** — **Penrose Sunday: The Road to Reality** (1 chapter/week, visual geometry focus)
 6. **Last weekend of month** — Publish monthly research paper
 
 ## Map
@@ -37,6 +38,7 @@
 | [Architecture roadmap](roadmap.md) | Master blueprint: systems architecture, profiling playbook & canonical proofs |
 | [Essay schedule](essays.md) | 28 lab-note titles & schedule |
 | [Weeks & Daily Actions](weeks/month-01-sep.md) | Day-by-day tables, actions, stretch & time traps |
+| [Evening & Weekend Reading](evening_reading_plan.md) | Literature, Hofstadter, Cybernetics & Penrose master schedule |
 | [Prerequisites](../README.md#entry-prerequisites-before-sep-1) | Hardware / datasets / tooling |
 
 ## Weeks & Playbooks by Month
