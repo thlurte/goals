@@ -14,16 +14,18 @@
 
 ```
 ┌──────────────────────────────┬────────────────────────────────────────────────────────────────────────┐
-│ Time Block                   │ Focus Area                                                             │
+│ Time Slot                    │ Focus / Activity                                                       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
-│ 🌅 06:00 – 07:30 (90 min)    │ Pure Mathematics (Pencil, paper, theorems, derivations & proofs)       │
-│ 📖 07:30 – 08:30 (60 min)    │ Systems & Architecture Deep Reading (Hardware mechanics & papers)      │
-│ ☀️ Daytime                   │ Subconscious Incubation Period (Diffuse thinking)                      │
+│ 📖 05:30 – 06:30 (60 min)    │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
+│ 🛠️ 06:30 – 08:30 (120 min)   │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ ☀️ Daytime                   │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 💻 20:30 – 23:00 (2.5 hrs)   │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
-│ 📝 Saturday 09:00 – 13:00    │ Weekly Long-Form Technical Essay / Lab Note                            │
-│ 🧠 Saturday 14:00 – 18:00    │ Deep Learning from Scratch Track (PyTorch / uv)                        │
-│ 🔬 Sunday 09:00 – 13:00      │ Monthly Research Paper Experiments & Drafting                          │
+│ 📐 Saturday 09:00 – 13:00    │ Pure Mathematics Block 1 (Theory, Concepts, Derivations)               │
+│ 🧘 Saturday 14:00 – 18:00    │ 100% FREE / Rest / Personal Time / Buffer                              │
+│ 📐 Sunday 09:00 – 13:00      │ Pure Mathematics Block 2 (Problem Sets, Chalkboard Proofs)             │
+│ 🔧 Sunday 13:00 – 14:00      │ Runtime Maintenance (limbed / ggmbed check)                            │
+│ 🧘 Sunday 14:00 – 18:00      │ 100% FREE / Rest / Personal Time / Buffer                              │
 └──────────────────────────────┴────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -31,15 +33,15 @@
 
 ## 📅 Day-by-Day Master Timetable
 
-| Day | Date | Daily Runbook | Pure Mathematics (90 min) | Systems / Architecture Reading (45-60 min) | Night Hands-On C++/CUDA (2.5 hrs) |
+| Day | Date | Daily Runbook | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|:---|:---|
-| **Monday** | Mon Jan 5 | [`Day 127`](../days/month-05/day-127-2027-01-05.md) | **STATS §1.1–1.3**: Point estimation foundations: Sample mean, sample variance ($s^2$ with $n-1$ denominator for unbiasedness), MSE decomposition. | vLLM Paper §1–3: The KV Cache fragmentation problem in LLMs ($60\%–80\%$ memory wasted on over-allocation). | **Python/CUDA**: Implement `BlockTable` data structure in PyTorch: maps logical sequence tokens to physical GPU memory blocks (block size 16). |
-| **Tuesday** | Tue Jan 6 | [`Day 128`](../days/month-05/day-128-2027-01-06.md) | **STATS §2.1–2.3**: Maximum Likelihood Estimation (MLE): Deriving MLE for Gaussian mean/variance, Poisson $\lambda$, and Bernoulli $p$. Invariance property of MLEs. | vLLM Paper §4: PagedAttention kernel design: reading $K, V$ blocks via block lookup table in CUDA. | **CUDA**: Implement **PagedAttention CUDA kernel**: during self-attention, resolve physical $K, V$ block pointers on-the-fly via block table. |
-| **Wednesday** | Wed Jan 7 | [`Day 129`](../days/month-05/day-129-2027-01-07.md) | **STATS §2.4–2.5**: Fisher Information: Definition and mathematical equivalence of variance of score vs negative expected Hessian of log-likelihood. | [TurboQuant](https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/): KV experiments (LongBench, RULER, needle-in-haystack); PolarQuant + QJL residual as bias killer for attention scores. | **secan**: Build unified `GpuIndex` wrapper class: device memory lifecycle, async transfers, kernel launches, RAII cleanup. |
-| **Thursday** | Thu Jan 8 | [`Day 130`](../days/month-05/day-130-2027-01-08.md) | **STATS §2.6**: Cramér-Rao Lower Bound (CRLB): Step-by-step rigorous proof using Cauchy-Schwarz inequality on the score function. | **PMPP Ch 19**: Heterogeneous CPU+GPU workload partitioning. | **secan**: Implement **CPU↔GPU hybrid fallback**: partition oversized dataset into GPU VRAM (fast) and CPU RAM (AVX2). Merge results. |
-| **Friday** | Fri Jan 9 | [`Day 131`](../days/month-05/day-131-2027-01-09.md) | **STATS §3.1–3.3**: Hypothesis testing foundations: Null ($H_0$) and alternative ($H_1$) hypotheses, Type I ($\alpha$) and Type II ($\beta$) errors, p-values, Neyman-Pearson Lemma. | Profile PagedAttention vs standard KV cache memory; contrast with TurboQuant bitwidth story (paging ≠ quantizing). | **secan**: Benchmark query batch sizes ($B=1, 10, 100, 1000$). Plot the CPU vs GPU crossover curve. |
-| **Saturday** | Sat Jan 10 | [`Day 132`](../days/month-05/day-132-2027-01-10.md) | **09:00–13:00**: Essay 19 | **14:00–18:00**: Deep Learning Track | Deep Learning from Scratch (uv/PyTorch) |
-| **Sunday** | Sun Jan 11 | [`Day 133`](../days/month-05/day-133-2027-01-11.md) | **09:00–13:00**: Monthly Research | Research Experimentation | Rest & Subconscious Incubation |
+| **Monday** | Mon Jan 5 | [`Day 127`](../days/month-05/day-127-2027-01-05.md) | vLLM Paper §1–3: The KV Cache fragmentation problem in LLMs ($60\%–80\%$ memory wasted on over-allocation). | **Monthly Research: Planning & Literature Synthesis** | **Python/CUDA**: Implement `BlockTable` data structure in PyTorch: maps logical sequence tokens to physical GPU memory blocks (block size 16). |
+| **Tuesday** | Tue Jan 6 | [`Day 128`](../days/month-05/day-128-2027-01-06.md) | vLLM Paper §4: PagedAttention kernel design: reading $K, V$ blocks via block lookup table in CUDA. | **DL Track (Part 1): Architecture & Tensor Shapes** | **CUDA**: Implement **PagedAttention CUDA kernel**: during self-attention, resolve physical $K, V$ block pointers on-the-fly via block table. |
+| **Wednesday** | Wed Jan 7 | [`Day 129`](../days/month-05/day-129-2027-01-07.md) | [TurboQuant](https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/): KV experiments (LongBench, RULER, needle-in-haystack); PolarQuant + QJL residual as bias killer for attention scores. | **DL Track (Part 2): Training Loop & Verification** | **secan**: Build unified `GpuIndex` wrapper class: device memory lifecycle, async transfers, kernel launches, RAII cleanup. |
+| **Thursday** | Thu Jan 8 | [`Day 130`](../days/month-05/day-130-2027-01-08.md) | **PMPP Ch 19**: Heterogeneous CPU+GPU workload partitioning. | **Monthly Research: Sweeps & Data Logging** | **secan**: Implement **CPU↔GPU hybrid fallback**: partition oversized dataset into GPU VRAM (fast) and CPU RAM (AVX2). Merge results. |
+| **Friday** | Fri Jan 9 | [`Day 131`](../days/month-05/day-131-2027-01-09.md) | Profile PagedAttention vs standard KV cache memory; contrast with TurboQuant bitwidth story (paging ≠ quantizing). | **Technical Essay: Lab-Note Drafting** | **secan**: Benchmark query batch sizes ($B=1, 10, 100, 1000$). Plot the CPU vs GPU crossover curve. |
+| **Saturday** | Sat Jan 10 | [`Day 132`](../days/month-05/day-132-2027-01-10.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **14:00–18:00**: FREE / Rest / Buffer | Weekend Deep Work |
+| **Sunday** | Sun Jan 11 | [`Day 133`](../days/month-05/day-133-2027-01-11.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00–14:00**: Maintenance | Rest & Buffer |
 
 ---
 

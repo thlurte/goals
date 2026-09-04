@@ -14,16 +14,18 @@
 
 ```
 ┌──────────────────────────────┬────────────────────────────────────────────────────────────────────────┐
-│ Time Block                   │ Focus Area                                                             │
+│ Time Slot                    │ Focus / Activity                                                       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
-│ 🌅 06:00 – 07:30 (90 min)    │ Pure Mathematics (Pencil, paper, theorems, derivations & proofs)       │
-│ 📖 07:30 – 08:30 (60 min)    │ Systems & Architecture Deep Reading (Hardware mechanics & papers)      │
-│ ☀️ Daytime                   │ Subconscious Incubation Period (Diffuse thinking)                      │
+│ 📖 05:30 – 06:30 (60 min)    │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
+│ 🛠️ 06:30 – 08:30 (120 min)   │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ ☀️ Daytime                   │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 💻 20:30 – 23:00 (2.5 hrs)   │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
-│ 📝 Saturday 09:00 – 13:00    │ Weekly Long-Form Technical Essay / Lab Note                            │
-│ 🧠 Saturday 14:00 – 18:00    │ Deep Learning from Scratch Track (PyTorch / uv)                        │
-│ 🔬 Sunday 09:00 – 13:00      │ Monthly Research Paper Experiments & Drafting                          │
+│ 📐 Saturday 09:00 – 13:00    │ Pure Mathematics Block 1 (Theory, Concepts, Derivations)               │
+│ 🧘 Saturday 14:00 – 18:00    │ 100% FREE / Rest / Personal Time / Buffer                              │
+│ 📐 Sunday 09:00 – 13:00      │ Pure Mathematics Block 2 (Problem Sets, Chalkboard Proofs)             │
+│ 🔧 Sunday 13:00 – 14:00      │ Runtime Maintenance (limbed / ggmbed check)                            │
+│ 🧘 Sunday 14:00 – 18:00      │ 100% FREE / Rest / Personal Time / Buffer                              │
 └──────────────────────────────┴────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -31,15 +33,15 @@
 
 ## 📅 Day-by-Day Master Timetable
 
-| Day | Date | Daily Runbook | Pure Mathematics (90 min) | Systems / Architecture Reading (45-60 min) | Night Hands-On C++/CUDA (2.5 hrs) |
+| Day | Date | Daily Runbook | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|:---|:---|
-| **Monday** | Mon Sep 1 | [`Day 001`](../days/month-01/day-001-2026-09-01.md) | **TRIG (Gelfand Ch 1–2)**: Geometric definition of sine/cosine from right triangles to unit circle coordinates. Radian measure and arc length. | **PIKUS Ch 2**: Performance measurements, high-res timers, profiler sampling, micro-benchmark noise floor. | **secan**: Integrate Google Benchmark via CMake. Add ASan/UBSan build flags. Write first benchmark for `l2_squared` with `DoNotOptimize`. |
-| **Tuesday** | Tue Sep 2 | [`Day 002`](../days/month-01/day-002-2026-09-02.md) | **TRIG (Gelfand Ch 3)**: Periodic properties: $\sin(\theta + 2\pi) = \sin\theta$, parity: $\cos(-\theta) = \cos\theta$, $\sin(-\theta) = -\sin\theta$. Graphs of trig functions. | **CSAPP §5.1–5.6**: Compiler limitations, Cycles Per Element (CPE), loop inefficiencies, memory aliasing. | **secan**: Implement binary `.fvecs`, `.bvecs`, and `.ivecs` parsers. Download SIFT1M base + ground-truth; load into `data/sift1m/`. |
-| **Wednesday** | Wed Sep 3 | [`Day 003`](../days/month-01/day-003-2026-09-03.md) | **CALC (Strang §1.1–1.5)**: Introduction to limits: $\lim_{x \to c} f(x) = L$, one-sided limits, continuity, the Intermediate Value Theorem. | **CSAPP §5.7**: Superscalar architecture, out-of-order execution, execution ports, latency vs throughput. | **secan**: Build IR metrics in `tests/test_ir_metrics.cpp` (NDCG@K, MRR, **MAP**). Run exact scan on a **SIFT1M subset** (e.g. 100K base / 1K queries) first; verify Recall@10 = 1.0. Full 1M scan = stretch. |
-| **Thursday** | Thu Sep 4 | [`Day 004`](../days/month-01/day-004-2026-09-04.md) | **CALC (Strang §2.1–2.3)**: Derivative from first principles. Power rule proof. | **AGNER Ch 3 & Ch 7.1–7.3**: Bottlenecks, FP efficiency. | **secan**: First-class **inner-product** kernel `ip()` alongside `l2_squared`. Distance enum: L2 / IP / cosine. *(DL: Sat Sep 6.)* |
-| **Friday** | Fri Sep 5 | [`Day 005`](../days/month-01/day-005-2026-09-05.md) | **CALC (Strang §2.4–2.5)**: Product Rule $\frac{d}{dx}(uv) = u'v + uv'$, Quotient Rule, and differentiation of trigonometric functions ($\frac{d}{dx}\sin x = \cos x$). | **PIKUS Ch 1 & CSAPP §5.14**: Measurement-driven optimization, profiling-guided workflow with `perf stat`. | **secan**: Profile baseline scan with `perf stat`. Record IPC, cache misses, branch misses. Populate first row of README benchmark table. |
-| **Saturday** | Sat Sep 6 | [`Day 006`](../days/month-01/day-006-2026-09-06.md) | **09:00–13:00**: Essay 1 | **14:00–18:00**: Deep Learning Track | Deep Learning from Scratch (uv/PyTorch) |
-| **Sunday** | Sun Sep 7 | [`Day 007`](../days/month-01/day-007-2026-09-07.md) | **09:00–13:00**: Monthly Research | Research Experimentation | Rest & Subconscious Incubation |
+| **Monday** | Mon Sep 1 | [`Day 001`](../days/month-01/day-001-2026-09-01.md) | **PIKUS Ch 2**: Performance measurements, high-res timers, profiler sampling, micro-benchmark noise floor. | **Monthly Research: Planning & Literature Synthesis** | **secan**: Integrate Google Benchmark via CMake. Add ASan/UBSan build flags. Write first benchmark for `l2_squared` with `DoNotOptimize`. |
+| **Tuesday** | Tue Sep 2 | [`Day 002`](../days/month-01/day-002-2026-09-02.md) | **CSAPP §5.1–5.6**: Compiler limitations, Cycles Per Element (CPE), loop inefficiencies, memory aliasing. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: Implement binary `.fvecs`, `.bvecs`, and `.ivecs` parsers. Download SIFT1M base + ground-truth; load into `data/sift1m/`. |
+| **Wednesday** | Wed Sep 3 | [`Day 003`](../days/month-01/day-003-2026-09-03.md) | **CSAPP §5.7**: Superscalar architecture, out-of-order execution, execution ports, latency vs throughput. | **DL Track (Part 2): Training Loop & Verification** | **secan**: Build IR metrics in `tests/test_ir_metrics.cpp` (NDCG@K, MRR, **MAP**). Run exact scan on a **SIFT1M subset** (e.g. 100K base / 1K queries) first; verify Recall@10 = 1.0. Full 1M scan = stretch. |
+| **Thursday** | Thu Sep 4 | [`Day 004`](../days/month-01/day-004-2026-09-04.md) | **AGNER Ch 3 & Ch 7.1–7.3**: Bottlenecks, FP efficiency. | **Monthly Research: Sweeps & Data Logging** | **secan**: First-class **inner-product** kernel `ip()` alongside `l2_squared`. Distance enum: L2 / IP / cosine. *(DL: Sat Sep 6.)* |
+| **Friday** | Fri Sep 5 | [`Day 005`](../days/month-01/day-005-2026-09-05.md) | **PIKUS Ch 1 & CSAPP §5.14**: Measurement-driven optimization, profiling-guided workflow with `perf stat`. | **Technical Essay: Lab-Note Drafting** | **secan**: Profile baseline scan with `perf stat`. Record IPC, cache misses, branch misses. Populate first row of README benchmark table. |
+| **Saturday** | Sat Sep 6 | [`Day 006`](../days/month-01/day-006-2026-09-06.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **14:00–18:00**: FREE / Rest / Buffer | Weekend Deep Work |
+| **Sunday** | Sun Sep 7 | [`Day 007`](../days/month-01/day-007-2026-09-07.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00–14:00**: Maintenance | Rest & Buffer |
 
 ---
 
@@ -81,7 +83,7 @@
 * ❌ **Do NOT** hand-write custom timing harnesses or CLI parsers—use Google Benchmark.
 * ❌ **Do NOT** start writing AVX2/AVX-512 intrinsics—keep distance kernels in scalar C++ to establish the true unoptimized baseline.
 * ❌ **Do NOT** run exact scans on all 1,000,000 vectors $\times$ 10,000 queries if scalar latency exceeds 60s—use the 100K subset for rapid iteration.
-* ❌ **Do NOT** touch Deep Learning / PyTorch on weekdays—DL is strictly reserved for Saturday afternoon (14:00–18:00).
+* ❌ **Do NOT** do Pure Mathematics on weekday mornings—math is strictly reserved for Saturday and Sunday morning deep-work blocks (09:00–13:00). Keep weekday mornings focused on Systems Reading and Builder Track.
 
 ---
 

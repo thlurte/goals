@@ -14,16 +14,18 @@
 
 ```
 ┌──────────────────────────────┬────────────────────────────────────────────────────────────────────────┐
-│ Time Block                   │ Focus Area                                                             │
+│ Time Slot                    │ Focus / Activity                                                       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
-│ 🌅 06:00 – 07:30 (90 min)    │ Pure Mathematics (Pencil, paper, theorems, derivations & proofs)       │
-│ 📖 07:30 – 08:30 (60 min)    │ Systems & Architecture Deep Reading (Hardware mechanics & papers)      │
-│ ☀️ Daytime                   │ Subconscious Incubation Period (Diffuse thinking)                      │
+│ 📖 05:30 – 06:30 (60 min)    │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
+│ 🛠️ 06:30 – 08:30 (120 min)   │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ ☀️ Daytime                   │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 💻 20:30 – 23:00 (2.5 hrs)   │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
-│ 📝 Saturday 09:00 – 13:00    │ Weekly Long-Form Technical Essay / Lab Note                            │
-│ 🧠 Saturday 14:00 – 18:00    │ Deep Learning from Scratch Track (PyTorch / uv)                        │
-│ 🔬 Sunday 09:00 – 13:00      │ Monthly Research Paper Experiments & Drafting                          │
+│ 📐 Saturday 09:00 – 13:00    │ Pure Mathematics Block 1 (Theory, Concepts, Derivations)               │
+│ 🧘 Saturday 14:00 – 18:00    │ 100% FREE / Rest / Personal Time / Buffer                              │
+│ 📐 Sunday 09:00 – 13:00      │ Pure Mathematics Block 2 (Problem Sets, Chalkboard Proofs)             │
+│ 🔧 Sunday 13:00 – 14:00      │ Runtime Maintenance (limbed / ggmbed check)                            │
+│ 🧘 Sunday 14:00 – 18:00      │ 100% FREE / Rest / Personal Time / Buffer                              │
 └──────────────────────────────┴────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -31,15 +33,15 @@
 
 ## 📅 Day-by-Day Master Timetable
 
-| Day | Date | Daily Runbook | Pure Mathematics (90 min) | Systems / Architecture Reading (45-60 min) | Night Hands-On C++/CUDA (2.5 hrs) |
+| Day | Date | Daily Runbook | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|:---|:---|
-| **Monday** | Mon Mar 9 | [`Day 190`](../days/month-07/day-190-2027-03-09.md) | **Canonical Proofs 1 & 2**: JL Lemma & Softmax-CE ([`roadmap.md#part-5`](../roadmap.md#part-5-master-appendix--the-8-canonical-proofs-of-vector-search--ai-systems)). | API & Doxygen architecture pass. | Finish CLI + Doxygen documentation. |
-| **Tuesday** | Tue Mar 10 | [`Day 191`](../days/month-07/day-191-2027-03-10.md) | **Canonical Proofs 3 & 4**: Attention Backprop & FlashAttention Online Softmax ([`roadmap.md#part-5`](../roadmap.md#part-5-master-appendix--the-8-canonical-proofs-of-vector-search--ai-systems)). | `ann-benchmarks` methodology. | Full CPU+GPU benchmark matrix using Profiling Playbook ([`roadmap.md#part-3`](../roadmap.md#part-3-verification--tooling-matrix-the-hardware-profiling-playbook)). |
-| **Wednesday** | Wed Mar 11 | [`Day 192`](../days/month-07/day-192-2027-03-11.md) | **Canonical Proofs 5 & 6**: ScaNN Anisotropic Error & Kleinberg HNSW Routing ([`roadmap.md#part-5`](../roadmap.md#part-5-master-appendix--the-8-canonical-proofs-of-vector-search--ai-systems)). | Production DB architecture pass ([`roadmap.md#7`](../roadmap.md#7-enterprise-production-architecture-wal-crash-recovery--shadow-indexing)). | Five E2E examples including dense InfoNCE search + GPU batch. |
-| **Thursday** | Thu Mar 12 | [`Day 193`](../days/month-07/day-193-2027-03-12.md) | **Canonical Proofs 7 & 8**: Vamana Spanner Pruning & Griewank Reverse-Mode AD ([`roadmap.md#part-5`](../roadmap.md#part-5-master-appendix--the-8-canonical-proofs-of-vector-search--ai-systems)). | Production release README. | **Publish Month 7 paper.** Tag `v2.0-complete`. |
-| **Friday** | Fri Mar 13 | [`Day 194`](../days/month-07/day-194-2027-03-13.md) | **Full 8-Proof Whiteboard Mock Defense**: Complete technical interview simulation. | Portfolio review. | Portfolio: 7 papers, 28 essays, and `secan` Pareto curves. |
-| **Saturday** | Sat Mar 14 | [`Day 195`](../days/month-07/day-195-2027-03-14.md) | **09:00–13:00**: Essay 28 | **14:00–18:00**: Deep Learning Track | Deep Learning from Scratch (uv/PyTorch) |
-| **Sunday** | Sun Mar 15 | [`Day 196`](../days/month-07/day-196-2027-03-15.md) | **09:00–13:00**: Monthly Research | Research Experimentation | Rest & Subconscious Incubation |
+| **Monday** | Mon Mar 9 | [`Day 190`](../days/month-07/day-190-2027-03-09.md) | API & Doxygen architecture pass. | **Monthly Research: Planning & Literature Synthesis** | Finish CLI + Doxygen documentation. |
+| **Tuesday** | Tue Mar 10 | [`Day 191`](../days/month-07/day-191-2027-03-10.md) | `ann-benchmarks` methodology. | **DL Track (Part 1): Architecture & Tensor Shapes** | Full CPU+GPU benchmark matrix using Profiling Playbook ([`roadmap.md#part-3`](../roadmap.md#part-3-verification--tooling-matrix-the-hardware-profiling-playbook)). |
+| **Wednesday** | Wed Mar 11 | [`Day 192`](../days/month-07/day-192-2027-03-11.md) | Production DB architecture pass ([`roadmap.md#7`](../roadmap.md#7-enterprise-production-architecture-wal-crash-recovery--shadow-indexing)). | **DL Track (Part 2): Training Loop & Verification** | Five E2E examples including dense InfoNCE search + GPU batch. |
+| **Thursday** | Thu Mar 12 | [`Day 193`](../days/month-07/day-193-2027-03-12.md) | Production release README. | **Monthly Research: Sweeps & Data Logging** | **Publish Month 7 paper.** Tag `v2.0-complete`. |
+| **Friday** | Fri Mar 13 | [`Day 194`](../days/month-07/day-194-2027-03-13.md) | Portfolio review. | **Technical Essay: Lab-Note Drafting** | Portfolio: 7 papers, 28 essays, and `secan` Pareto curves. |
+| **Saturday** | Sat Mar 14 | [`Day 195`](../days/month-07/day-195-2027-03-14.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **14:00–18:00**: FREE / Rest / Buffer | Weekend Deep Work |
+| **Sunday** | Sun Mar 15 | [`Day 196`](../days/month-07/day-196-2027-03-15.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00–14:00**: Maintenance | Rest & Buffer |
 
 ---
 

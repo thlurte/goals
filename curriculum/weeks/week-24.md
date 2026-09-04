@@ -14,16 +14,18 @@
 
 ```
 ┌──────────────────────────────┬────────────────────────────────────────────────────────────────────────┐
-│ Time Block                   │ Focus Area                                                             │
+│ Time Slot                    │ Focus / Activity                                                       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
-│ 🌅 06:00 – 07:30 (90 min)    │ Pure Mathematics (Pencil, paper, theorems, derivations & proofs)       │
-│ 📖 07:30 – 08:30 (60 min)    │ Systems & Architecture Deep Reading (Hardware mechanics & papers)      │
-│ ☀️ Daytime                   │ Subconscious Incubation Period (Diffuse thinking)                      │
+│ 📖 05:30 – 06:30 (60 min)    │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
+│ 🛠️ 06:30 – 08:30 (120 min)   │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ ☀️ Daytime                   │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 💻 20:30 – 23:00 (2.5 hrs)   │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
-│ 📝 Saturday 09:00 – 13:00    │ Weekly Long-Form Technical Essay / Lab Note                            │
-│ 🧠 Saturday 14:00 – 18:00    │ Deep Learning from Scratch Track (PyTorch / uv)                        │
-│ 🔬 Sunday 09:00 – 13:00      │ Monthly Research Paper Experiments & Drafting                          │
+│ 📐 Saturday 09:00 – 13:00    │ Pure Mathematics Block 1 (Theory, Concepts, Derivations)               │
+│ 🧘 Saturday 14:00 – 18:00    │ 100% FREE / Rest / Personal Time / Buffer                              │
+│ 📐 Sunday 09:00 – 13:00      │ Pure Mathematics Block 2 (Problem Sets, Chalkboard Proofs)             │
+│ 🔧 Sunday 13:00 – 14:00      │ Runtime Maintenance (limbed / ggmbed check)                            │
+│ 🧘 Sunday 14:00 – 18:00      │ 100% FREE / Rest / Personal Time / Buffer                              │
 └──────────────────────────────┴────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -31,15 +33,15 @@
 
 ## 📅 Day-by-Day Master Timetable
 
-| Day | Date | Daily Runbook | Pure Mathematics (90 min) | Systems / Architecture Reading (45-60 min) | Night Hands-On C++/CUDA (2.5 hrs) |
+| Day | Date | Daily Runbook | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|:---|:---|
-| **Monday** | Mon Feb 9 | [`Day 162`](../days/month-06/day-162-2027-02-09.md) | Spectral + production recap (Cheeger, ACORN, tombstones). | **PIKUS Ch 12** retrospective. | **secan**: CLI scaffold `secan build/search/bench` (complete Week 28). |
-| **Tuesday** | Tue Feb 10 | [`Day 163`](../days/month-06/day-163-2027-02-10.md) | Convexity recap: KKT complementary slackness. | Occupancy calculator / `__launch_bounds__`. | **CUDA**: Occupancy tune on IVF + graph kernels. |
-| **Wednesday** | Wed Feb 11 | [`Day 164`](../days/month-06/day-164-2027-02-11.md) | Fourier skim (optional): convolution as GEMM intuition. | CUB/Thrust fusion notes. | **CUDA**: Fused distance+topk kernel (was former Week 22 GPU polish). |
-| **Thursday** | Thu Feb 12 | [`Day 165`](../days/month-06/day-165-2027-02-12.md) | Info-theory recap: CE = $H+D_{KL}$ (ties to InfoNCE). | `-Wall -Wextra -Wpedantic`. | **secan**: Warning cleanup; examples/ stubs. |
-| **Friday** | Fri Feb 13 | [`Day 166`](../days/month-06/day-166-2027-02-13.md) | — | Month 6 paper freeze checklist. | **secan/CUDA**: Occupancy/`ncu` leftover polish. *(Naive KV re-bench: Saturday DL if needed.)* |
-| **Saturday** | Sat Feb 14 | [`Day 167`](../days/month-06/day-167-2027-02-14.md) | **09:00–13:00**: Essay 24 | **14:00–18:00**: Deep Learning Track | Deep Learning from Scratch (uv/PyTorch) |
-| **Sunday** | Sun Feb 15 | [`Day 168`](../days/month-06/day-168-2027-02-15.md) | **09:00–13:00**: Monthly Research | Research Experimentation | Rest & Subconscious Incubation |
+| **Monday** | Mon Feb 9 | [`Day 162`](../days/month-06/day-162-2027-02-09.md) | **PIKUS Ch 12** retrospective. | **Monthly Research: Planning & Literature Synthesis** | **secan**: CLI scaffold `secan build/search/bench` (complete Week 28). |
+| **Tuesday** | Tue Feb 10 | [`Day 163`](../days/month-06/day-163-2027-02-10.md) | Occupancy calculator / `__launch_bounds__`. | **DL Track (Part 1): Architecture & Tensor Shapes** | **CUDA**: Occupancy tune on IVF + graph kernels. |
+| **Wednesday** | Wed Feb 11 | [`Day 164`](../days/month-06/day-164-2027-02-11.md) | CUB/Thrust fusion notes. | **DL Track (Part 2): Training Loop & Verification** | **CUDA**: Fused distance+topk kernel (was former Week 22 GPU polish). |
+| **Thursday** | Thu Feb 12 | [`Day 165`](../days/month-06/day-165-2027-02-12.md) | `-Wall -Wextra -Wpedantic`. | **Monthly Research: Sweeps & Data Logging** | **secan**: Warning cleanup; examples/ stubs. |
+| **Friday** | Fri Feb 13 | [`Day 166`](../days/month-06/day-166-2027-02-13.md) | Month 6 paper freeze checklist. | **Technical Essay: Lab-Note Drafting** | **secan/CUDA**: Occupancy/`ncu` leftover polish. *(Naive KV re-bench: Saturday DL if needed.)* |
+| **Saturday** | Sat Feb 14 | [`Day 167`](../days/month-06/day-167-2027-02-14.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **14:00–18:00**: FREE / Rest / Buffer | Weekend Deep Work |
+| **Sunday** | Sun Feb 15 | [`Day 168`](../days/month-06/day-168-2027-02-15.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00–14:00**: Maintenance | Rest & Buffer |
 
 ---
 

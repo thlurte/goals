@@ -36,9 +36,9 @@ REST out of scope. Cluster shard/replica = stretch only.
 | BEIR / MS MARCO **slice** (dense + ColBERT + **MUVERA**) | **Month 3 research Sunday** |
 | REST API | **Skip** |
 
-## DL weekend landings (Sat 14:00–18:00 only)
+## Deep Learning Landings (Tue & Wed Mornings 06:30–08:30)
 
-| Weekend after | DL work |
+| Week | DL Architecture & Implementation (Tue & Wed Mornings) |
 |:---|:---|
 | **W1 Sat Sep 6** | SDPA + causal mask (`uv init transformers-pytorch`) |
 | **W2 Sat Sep 13** | MHA + **GQA**; Pre-LN vs Post-LN |

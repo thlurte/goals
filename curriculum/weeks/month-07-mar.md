@@ -167,4 +167,3 @@
 > **🚀 Month 7 research PUBLISH (Thu Mar 12)**: `research/2027-03-gpu-serving/paper.md`
 
 ---
-

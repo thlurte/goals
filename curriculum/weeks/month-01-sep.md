@@ -30,13 +30,13 @@
   * **secan**: Google Benchmark, `.fvecs` loaders, IR metrics (NDCG, MRR, **MAP**), scalar baseline. **IP kernel Thursday.**
   * **DL**: Sat Sep 6 (not weekday).
 
-| Day | Pure Mathematics (90 min) | Systems / C++ Reading (45 min) | Afternoon Implementation (2.5 hrs) |
+| Day | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|
-| **Mon Sep 1** | **TRIG (Gelfand Ch 1–2)**: Geometric definition of sine/cosine from right triangles to unit circle coordinates. Radian measure and arc length. | **PIKUS Ch 2**: Performance measurements, high-res timers, profiler sampling, micro-benchmark noise floor. | **secan**: Integrate Google Benchmark via CMake. Add ASan/UBSan build flags. Write first benchmark for `l2_squared` with `DoNotOptimize`. |
-| **Tue Sep 2** | **TRIG (Gelfand Ch 3)**: Periodic properties: $\sin(\theta + 2\pi) = \sin\theta$, parity: $\cos(-\theta) = \cos\theta$, $\sin(-\theta) = -\sin\theta$. Graphs of trig functions. | **CSAPP §5.1–5.6**: Compiler limitations, Cycles Per Element (CPE), loop inefficiencies, memory aliasing. | **secan**: Implement binary `.fvecs`, `.bvecs`, and `.ivecs` parsers. Download SIFT1M base + ground-truth; load into `data/sift1m/`. |
-| **Wed Sep 3** | **CALC (Strang §1.1–1.5)**: Introduction to limits: $\lim_{x \to c} f(x) = L$, one-sided limits, continuity, the Intermediate Value Theorem. | **CSAPP §5.7**: Superscalar architecture, out-of-order execution, execution ports, latency vs throughput. | **secan**: Build IR metrics in `tests/test_ir_metrics.cpp` (NDCG@K, MRR, **MAP**). Run exact scan on a **SIFT1M subset** (e.g. 100K base / 1K queries) first; verify Recall@10 = 1.0. Full 1M scan = stretch. |
-| **Thu Sep 4** | **CALC (Strang §2.1–2.3)**: Derivative from first principles. Power rule proof. | **AGNER Ch 3 & Ch 7.1–7.3**: Bottlenecks, FP efficiency. | **secan**: First-class **inner-product** kernel `ip()` alongside `l2_squared`. Distance enum: L2 / IP / cosine. *(DL: Sat Sep 6.)* |
-| **Fri Sep 5** | **CALC (Strang §2.4–2.5)**: Product Rule $\frac{d}{dx}(uv) = u'v + uv'$, Quotient Rule, and differentiation of trigonometric functions ($\frac{d}{dx}\sin x = \cos x$). | **PIKUS Ch 1 & CSAPP §5.14**: Measurement-driven optimization, profiling-guided workflow with `perf stat`. | **secan**: Profile baseline scan with `perf stat`. Record IPC, cache misses, branch misses. Populate first row of README benchmark table. |
+| **Mon Sep 1** | **PIKUS Ch 2**: Performance measurements, high-res timers, profiler sampling, micro-benchmark noise floor. | **Monthly Research: Planning & Literature Synthesis** | **secan**: Integrate Google Benchmark via CMake. Add ASan/UBSan build flags. Write first benchmark for `l2_squared` with `DoNotOptimize`. |
+| **Tue Sep 2** | **CSAPP §5.1–5.6**: Compiler limitations, Cycles Per Element (CPE), loop inefficiencies, memory aliasing. | **DL Track (Part 1): Architecture & Forward Pass** | **secan**: Implement binary `.fvecs`, `.bvecs`, and `.ivecs` parsers. Download SIFT1M base + ground-truth; load into `data/sift1m/`. |
+| **Wed Sep 3** | **CSAPP §5.7**: Superscalar architecture, out-of-order execution, execution ports, latency vs throughput. | **DL Track (Part 2): Training, Loss & Verification** | **secan**: Build IR metrics in `tests/test_ir_metrics.cpp` (NDCG@K, MRR, **MAP**). Run exact scan on a **SIFT1M subset** (e.g. 100K base / 1K queries) first; verify Recall@10 = 1.0. Full 1M scan = stretch. |
+| **Thu Sep 4** | **AGNER Ch 3 & Ch 7.1–7.3**: Bottlenecks, FP efficiency. | **Monthly Research: Sweeps & Data Logging** | **secan**: First-class **inner-product** kernel `ip()` alongside `l2_squared`. Distance enum: L2 / IP / cosine. *(DL: Sat Sep 6.)* |
+| **Fri Sep 5** | **PIKUS Ch 1 & CSAPP §5.14**: Measurement-driven optimization, profiling-guided workflow with `perf stat`. | **Technical Essay: Lab-Note Drafting** | **secan**: Profile baseline scan with `perf stat`. Record IPC, cache misses, branch misses. Populate first row of README benchmark table. |
 
 #### 📋 Daily Action Items & Optional Activities (Week 1)
 * **Mon Sep 1**:
@@ -76,13 +76,13 @@
 * **C++ Track**: FTZ/DAZ, AVX2 L2/cosine/**IP**, 4-way unroll, AVX-512 `#ifdef`.
 * **DL**: Sat Sep 13 — MHA + GQA.
 
-| Day | Pure Mathematics (90 min) | Systems / C++ Reading (45 min) | Afternoon Implementation (2.5 hrs) |
+| Day | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|
-| **Mon Sep 8** | **TRIG (Gelfand Ch 4)**: Geometric proof of angle addition: $\cos(\alpha - \beta) = \cos\alpha \cos\beta + \sin\alpha \sin\beta$. Derivation of all addition formulas. | **AGNER Ch 12**: SIMD instructions, 256-bit YMM registers, data types, intrinsics syntax. | **secan**: Enable FTZ/DAZ flags. Implement `l2_squared_avx2()` in `src/search/distance_avx2.cpp`. Single accumulator baseline. |
-| **Tue Sep 9** | **TRIG (Gelfand Ch 4)**: Double-angle formulas: $\sin 2\theta = 2\sin\theta\cos\theta$, $\cos 2\theta = \cos^2\theta - \sin^2\theta$. Half-angle formulas. | **CSAPP §5.8–5.9**: Loop unrolling, breaking dependency chains with multiple independent accumulator registers. | **secan**: Implement 4-way unrolled `l2_squared_avx2` with 4 parallel `__m256` accumulators. Measure speedup over 1-acc. |
-| **Wed Sep 10** | **CALC (Strang §2.6)**: The Chain Rule: step-by-step rigorous proof using limits. Differentiating nested composite functions. | **AGNER-INST & AGNER Ch 11**: VFMADD latency/throughput port mapping on modern x86 microarchitectures. | **secan**: Implement `cosine_distance_avx2()`: compute dot product, norm $A$, and norm $B$ simultaneously in 1 pass. |
-| **Thu Sep 11** | **CALC (Strang §3.1–3.2)**: Derivatives of $e^x$ and $\ln x$. | **AGNER Ch 13.1–13.3**: Alignment, cache line splits. | **secan**: `ip_avx2()` + fused cosine (dot + norms). Same unrolling as L2. *(DL: Sat Sep 13 GQA.)* |
-| **Fri Sep 12** | **TRIG & CALC Integration**: Differentiating inverse trigonometric functions: $\frac{d}{dx}\arcsin x = \frac{1}{\sqrt{1-x^2}}$, $\frac{d}{dx}\arctan x = \frac{1}{1+x^2}$. | **PIKUS Ch 3**: Instruction-level parallelism, register pressure, compiler vectorization limits. | **secan**: Add AVX-512 backend (`_mm512_*`) behind `#ifdef __AVX512F__`. Benchmark scalar vs AVX2 vs AVX-512. |
+| **Mon Sep 8** | **AGNER Ch 12**: SIMD instructions, 256-bit YMM registers, data types, intrinsics syntax. | **Monthly Research: Planning & Literature Synthesis** | **secan**: Enable FTZ/DAZ flags. Implement `l2_squared_avx2()` in `src/search/distance_avx2.cpp`. Single accumulator baseline. |
+| **Tue Sep 9** | **CSAPP §5.8–5.9**: Loop unrolling, breaking dependency chains with multiple independent accumulator registers. | **DL Track (Part 1): Architecture & Forward Pass** | **secan**: Implement 4-way unrolled `l2_squared_avx2` with 4 parallel `__m256` accumulators. Measure speedup over 1-acc. |
+| **Wed Sep 10** | **AGNER-INST & AGNER Ch 11**: VFMADD latency/throughput port mapping on modern x86 microarchitectures. | **DL Track (Part 2): Training, Loss & Verification** | **secan**: Implement `cosine_distance_avx2()`: compute dot product, norm $A$, and norm $B$ simultaneously in 1 pass. |
+| **Thu Sep 11** | **AGNER Ch 13.1–13.3**: Alignment, cache line splits. | **Monthly Research: Sweeps & Data Logging** | **secan**: `ip_avx2()` + fused cosine (dot + norms). Same unrolling as L2. *(DL: Sat Sep 13 GQA.)* |
+| **Fri Sep 12** | **PIKUS Ch 3**: Instruction-level parallelism, register pressure, compiler vectorization limits. | **Technical Essay: Lab-Note Drafting** | **secan**: Add AVX-512 backend (`_mm512_*`) behind `#ifdef __AVX512F__`. Benchmark scalar vs AVX2 vs AVX-512. |
 
 #### 📋 Daily Action Items & Optional Activities (Week 2)
 * **Mon Sep 8**:
@@ -122,13 +122,13 @@
 * **C++ Track**: Cache tiling, prefetch, **unit-sphere / IP path**, hugepages.
 * **DL**: Sat Sep 20 — Pre-LN encoder.
 
-| Day | Pure Mathematics (90 min) | Systems / C++ Reading (45 min) | Afternoon Implementation (2.5 hrs) |
+| Day | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|
-| **Mon Sep 15** | **CALC (Strang §4.1–4.3)**: Riemann sums, partitions, upper and lower Darboux sums, definition of the Riemann integral. | **CSAPP §6.1–6.3**: SRAM vs DRAM, memory latency gap, spatial and temporal locality principles. | **secan**: Profile SIFT1M cache misses with `perf stat -e L1-dcache-load-misses,LLC-load-misses`. Calculate working set. |
-| **Tue Sep 16** | **CALC (Strang §4.4)**: The Fundamental Theorem of Calculus Part 1 and Part 2: Rigorous proof connecting differentiation and integration. | **CSAPP §6.4–6.5**: Cache line organization, set associativity, conflict misses, cache-friendly coding. | **secan**: Implement cache-blocked `linear_scan_tiled`: partition dataset into tiles fitting in L2 cache ($256\text{KB}$). |
-| **Wed Sep 17** | **CALC (Strang §5.1–5.3)**: Integration by Substitution (the reverse chain rule) and change of variables in definite integrals. | **CSAPP §6.6 & PIKUS Ch 4**: The Memory Mountain, cache hierarchy on real workloads, software prefetching. | **secan**: Add software prefetching (`_mm_prefetch`, `_MM_HINT_T0`). Tune prefetch distances ($4, 8, 16, 32$ vectors). |
-| **Thu Sep 18** | **CALC §5.4–5.5**: Integration by Parts. | **AGNER Ch 9**: Memory access, non-temporal stores. | **secan**: Unit-sphere pre-normalization path for cosine/IP. Store optional `norm` column. |
-| **Fri Sep 19** | **CALC §5.6**: Trigonometric integrals. | **FINSY Ch 6**: `madvise(MADV_HUGEPAGE)`. | **secan**: Hugepage / `madvise` warmup on dataset mmap. *(DL: Sat Sep 20 Pre-LN encoder.)* |
+| **Mon Sep 15** | **CSAPP §6.1–6.3**: SRAM vs DRAM, memory latency gap, spatial and temporal locality principles. | **Monthly Research: Planning & Literature Synthesis** | **secan**: Profile SIFT1M cache misses with `perf stat -e L1-dcache-load-misses,LLC-load-misses`. Calculate working set. |
+| **Tue Sep 16** | **CSAPP §6.4–6.5**: Cache line organization, set associativity, conflict misses, cache-friendly coding. | **DL Track (Part 1): Architecture & Forward Pass** | **secan**: Implement cache-blocked `linear_scan_tiled`: partition dataset into tiles fitting in L2 cache ($256\text{KB}$). |
+| **Wed Sep 17** | **CSAPP §6.6 & PIKUS Ch 4**: The Memory Mountain, cache hierarchy on real workloads, software prefetching. | **DL Track (Part 2): Training, Loss & Verification** | **secan**: Add software prefetching (`_mm_prefetch`, `_MM_HINT_T0`). Tune prefetch distances ($4, 8, 16, 32$ vectors). |
+| **Thu Sep 18** | **AGNER Ch 9**: Memory access, non-temporal stores. | **Monthly Research: Sweeps & Data Logging** | **secan**: Unit-sphere pre-normalization path for cosine/IP. Store optional `norm` column. |
+| **Fri Sep 19** | **FINSY Ch 6**: `madvise(MADV_HUGEPAGE)`. | **Technical Essay: Lab-Note Drafting** | **secan**: Hugepage / `madvise` warmup on dataset mmap. *(DL: Sat Sep 20 Pre-LN encoder.)* |
 
 #### 📋 Daily Action Items & Optional Activities (Week 3)
 * **Mon Sep 15**:
@@ -165,13 +165,13 @@
 * **C++**: Batch GEMM, **MIPS IVF** (spherical k-means), list imbalance, pinned threads.
 * **DL**: Sat Sep 27 — RoPE + CausalLM + naive KV (not weekday).
 
-| Day | Pure Mathematics (90 min) | Systems / C++ Reading (45 min) | Afternoon Implementation (2.5 hrs) |
+| Day | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|
-| **Mon Sep 22** | **TRIG (Gelfand Ch 7)**: Complex plane, modulus, polar multiplication. | **PIKUS Ch 5**: Cache coherence, false sharing. | **secan**: `batch_linear_scan` $B=32/64$ (GEMV $\to$ GEMM). |
-| **Tue Sep 23** | **TRIG (Gelfand Ch 7)**: Euler $e^{i\theta}$, roots of unity. | Faiss IVF coarse quantizer; **spherical k-means** for IP/MIPS. | **secan**: `IVFIndex` — L2 k-means + **spherical k-means** for IP. |
-| **Wed Sep 24** | **CALC (Strang §8.1–8.3)**: Series, convergence tests. | **PIKUS Ch 6**: Thread pools. | **secan**: Multi-probe IVF; `nprobe` sweep; pinned `std::jthread`. |
-| **Thu Sep 25** | **CALC (Strang §8.4–8.6)**: Taylor of $e^x$. | IVF inverted-list skew (Faiss `make_direct_map` / list size). | **secan (required)**: Histogram of IVF list sizes; **rebalance / split oversized lists**. |
-| **Fri Sep 26** | **LINALG PREVIEW**: Length, angles, Cauchy-Schwarz. | IP vs L2 recall on same vectors. | **secan**: IP/MIPS search path on IVF; compare Recall@10 vs L2. Tag `v0.2-simd-ivf`. |
+| **Mon Sep 22** | **PIKUS Ch 5**: Cache coherence, false sharing. | **Monthly Research: Planning & Literature Synthesis** | **secan**: `batch_linear_scan` $B=32/64$ (GEMV $\to$ GEMM). |
+| **Tue Sep 23** | Faiss IVF coarse quantizer; **spherical k-means** for IP/MIPS. | **DL Track (Part 1): Architecture & Forward Pass** | **secan**: `IVFIndex` — L2 k-means + **spherical k-means** for IP. |
+| **Wed Sep 24** | **PIKUS Ch 6**: Thread pools. | **DL Track (Part 2): Training, Loss & Verification** | **secan**: Multi-probe IVF; `nprobe` sweep; pinned `std::jthread`. |
+| **Thu Sep 25** | IVF inverted-list skew (Faiss `make_direct_map` / list size). | **Monthly Research: Sweeps & Data Logging** | **secan (required)**: Histogram of IVF list sizes; **rebalance / split oversized lists**. |
+| **Fri Sep 26** | IP vs L2 recall on same vectors. | **Technical Essay: Lab-Note Drafting** | **secan**: IP/MIPS search path on IVF; compare Recall@10 vs L2. Tag `v0.2-simd-ivf`. |
 
 #### 📋 Daily Action Items & Optional Activities (Week 4)
 * **Mon Sep 22**:

@@ -14,16 +14,18 @@
 
 ```
 ┌──────────────────────────────┬────────────────────────────────────────────────────────────────────────┐
-│ Time Block                   │ Focus Area                                                             │
+│ Time Slot                    │ Focus / Activity                                                       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
-│ 🌅 06:00 – 07:30 (90 min)    │ Pure Mathematics (Pencil, paper, theorems, derivations & proofs)       │
-│ 📖 07:30 – 08:30 (60 min)    │ Systems & Architecture Deep Reading (Hardware mechanics & papers)      │
-│ ☀️ Daytime                   │ Subconscious Incubation Period (Diffuse thinking)                      │
+│ 📖 05:30 – 06:30 (60 min)    │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
+│ 🛠️ 06:30 – 08:30 (120 min)   │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ ☀️ Daytime                   │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 💻 20:30 – 23:00 (2.5 hrs)   │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
-│ 📝 Saturday 09:00 – 13:00    │ Weekly Long-Form Technical Essay / Lab Note                            │
-│ 🧠 Saturday 14:00 – 18:00    │ Deep Learning from Scratch Track (PyTorch / uv)                        │
-│ 🔬 Sunday 09:00 – 13:00      │ Monthly Research Paper Experiments & Drafting                          │
+│ 📐 Saturday 09:00 – 13:00    │ Pure Mathematics Block 1 (Theory, Concepts, Derivations)               │
+│ 🧘 Saturday 14:00 – 18:00    │ 100% FREE / Rest / Personal Time / Buffer                              │
+│ 📐 Sunday 09:00 – 13:00      │ Pure Mathematics Block 2 (Problem Sets, Chalkboard Proofs)             │
+│ 🔧 Sunday 13:00 – 14:00      │ Runtime Maintenance (limbed / ggmbed check)                            │
+│ 🧘 Sunday 14:00 – 18:00      │ 100% FREE / Rest / Personal Time / Buffer                              │
 └──────────────────────────────┴────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -31,15 +33,15 @@
 
 ## 📅 Day-by-Day Master Timetable
 
-| Day | Date | Daily Runbook | Pure Mathematics (90 min) | Systems / Architecture Reading (45-60 min) | Night Hands-On C++/CUDA (2.5 hrs) |
+| Day | Date | Daily Runbook | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|:---|:---|
-| **Monday** | Mon Jan 26 | [`Day 148`](../days/month-06/day-148-2027-01-26.md) | Filter selectivity $P(\text{pass})$; **post-filter recall collapse**. | Payload/B-tree + ANN; pre- vs post-filter. | **secan (required)**: Payload index (B-tree or sorted ids) + **pre-filter** candidate set; **post-filter** HNSW; plot recall vs selectivity. |
-| **Tuesday** | Tue Jan 27 | [`Day 149`](../days/month-06/day-149-2027-01-27.md) | ACORN $N$-hop vs connectivity under filters. | ACORN paper §1–6. | **secan**: ACORN-style filtered graph search; compare to Mon's pre/post. |
-| **Wednesday** | Wed Jan 28 | [`Day 150`](../days/month-06/day-150-2027-01-28.md) | Tombstone amortization vs vacuum. | Lock-free bitset / graph mutation. | **secan**: Tombstones + vacuum rewires. |
-| **Thursday** | Thu Jan 29 | [`Day 151`](../days/month-06/day-151-2027-01-29.md) | NUMA / PCIe budget. | `libnuma`; DiskANN under NUMA. | **secan**: NUMA pin; re-bench. |
-| **Friday** | Fri Jan 30 | [`Day 152`](../days/month-06/day-152-2027-01-30.md) | Range predicates vs boolean bitmaps. | Production checklist. | **secan (required)**: **Range filter** (`payload < x`) on pre-filter path; smoke tests. Tag `v1.5-production`. |
-| **Saturday** | Sat Jan 31 | [`Day 153`](../days/month-06/day-153-2027-01-31.md) | **09:00–13:00**: Essay 22 | **14:00–18:00**: Deep Learning Track | Deep Learning from Scratch (uv/PyTorch) |
-| **Sunday** | Sun Feb 1 | [`Day 154`](../days/month-06/day-154-2027-02-01.md) | **09:00–13:00**: Monthly Research | Research Experimentation | Rest & Subconscious Incubation |
+| **Monday** | Mon Jan 26 | [`Day 148`](../days/month-06/day-148-2027-01-26.md) | Payload/B-tree + ANN; pre- vs post-filter. | **Monthly Research: Planning & Literature Synthesis** | **secan (required)**: Payload index (B-tree or sorted ids) + **pre-filter** candidate set; **post-filter** HNSW; plot recall vs selectivity. |
+| **Tuesday** | Tue Jan 27 | [`Day 149`](../days/month-06/day-149-2027-01-27.md) | ACORN paper §1–6. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: ACORN-style filtered graph search; compare to Mon's pre/post. |
+| **Wednesday** | Wed Jan 28 | [`Day 150`](../days/month-06/day-150-2027-01-28.md) | Lock-free bitset / graph mutation. | **DL Track (Part 2): Training Loop & Verification** | **secan**: Tombstones + vacuum rewires. |
+| **Thursday** | Thu Jan 29 | [`Day 151`](../days/month-06/day-151-2027-01-29.md) | `libnuma`; DiskANN under NUMA. | **Monthly Research: Sweeps & Data Logging** | **secan**: NUMA pin; re-bench. |
+| **Friday** | Fri Jan 30 | [`Day 152`](../days/month-06/day-152-2027-01-30.md) | Production checklist. | **Technical Essay: Lab-Note Drafting** | **secan (required)**: **Range filter** (`payload < x`) on pre-filter path; smoke tests. Tag `v1.5-production`. |
+| **Saturday** | Sat Jan 31 | [`Day 153`](../days/month-06/day-153-2027-01-31.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **14:00–18:00**: FREE / Rest / Buffer | Weekend Deep Work |
+| **Sunday** | Sun Feb 1 | [`Day 154`](../days/month-06/day-154-2027-02-01.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00–14:00**: Maintenance | Rest & Buffer |
 
 ---
 

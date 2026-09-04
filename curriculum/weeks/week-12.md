@@ -14,16 +14,18 @@
 
 ```
 ┌──────────────────────────────┬────────────────────────────────────────────────────────────────────────┐
-│ Time Block                   │ Focus Area                                                             │
+│ Time Slot                    │ Focus / Activity                                                       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
-│ 🌅 06:00 – 07:30 (90 min)    │ Pure Mathematics (Pencil, paper, theorems, derivations & proofs)       │
-│ 📖 07:30 – 08:30 (60 min)    │ Systems & Architecture Deep Reading (Hardware mechanics & papers)      │
-│ ☀️ Daytime                   │ Subconscious Incubation Period (Diffuse thinking)                      │
+│ 📖 05:30 – 06:30 (60 min)    │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
+│ 🛠️ 06:30 – 08:30 (120 min)   │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ ☀️ Daytime                   │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 💻 20:30 – 23:00 (2.5 hrs)   │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
-│ 📝 Saturday 09:00 – 13:00    │ Weekly Long-Form Technical Essay / Lab Note                            │
-│ 🧠 Saturday 14:00 – 18:00    │ Deep Learning from Scratch Track (PyTorch / uv)                        │
-│ 🔬 Sunday 09:00 – 13:00      │ Monthly Research Paper Experiments & Drafting                          │
+│ 📐 Saturday 09:00 – 13:00    │ Pure Mathematics Block 1 (Theory, Concepts, Derivations)               │
+│ 🧘 Saturday 14:00 – 18:00    │ 100% FREE / Rest / Personal Time / Buffer                              │
+│ 📐 Sunday 09:00 – 13:00      │ Pure Mathematics Block 2 (Problem Sets, Chalkboard Proofs)             │
+│ 🔧 Sunday 13:00 – 14:00      │ Runtime Maintenance (limbed / ggmbed check)                            │
+│ 🧘 Sunday 14:00 – 18:00      │ 100% FREE / Rest / Personal Time / Buffer                              │
 └──────────────────────────────┴────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -31,15 +33,15 @@
 
 ## 📅 Day-by-Day Master Timetable
 
-| Day | Date | Daily Runbook | Pure Mathematics (90 min) | Systems / Architecture Reading (45-60 min) | Night Hands-On C++/CUDA (2.5 hrs) |
+| Day | Date | Daily Runbook | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|:---|:---|
-| **Monday** | Mon Nov 17 | [`Day 078`](../days/month-03/day-078-2026-11-17.md) | **STRANG §6.3**: SVD: $A = U \Sigma V^T$. | Query-side PCA / OPQ literature. | **secan**: **Whitening + query-side PCA**. Hubness $S_{N_k}$ before/after. |
-| **Tuesday** | Tue Nov 18 | [`Day 079`](../days/month-03/day-079-2026-11-18.md) | **STRANG §6.3**: Truncated SVD / Eckart–Young. | **PIKUS Ch 6**: RW locks. | **secan**: `nanobind` + CLI: expose `HNSWIndex`, **`IVFPQIndex`**, **`HNSWSQIndex`**, `LSMIndex`. |
-| **Wednesday** | Wed Nov 19 | [`Day 080`](../days/month-03/day-080-2026-11-19.md) | **STRANG §6.7**: PCA. | Branchless heap; bitset visited. | **secan (required)**: Bounded flat heap + **bitset visited**. Then concurrent HNSW locks. |
-| **Thursday** | Thu Nov 20 | [`Day 081`](../days/month-03/day-081-2026-11-20.md) | **STRANG §6.7**: Matrix norms, $\kappa(A)$. | `ann-benchmarks` protocol (required, not stretch). | **secan (required)**: Finish **`IVFPQIndex`** (IVF + PQ ADC + optional OPQ). Recall–QPS vs **Faiss IVFPQ** on SIFT. |
-| **Friday** | Fri Nov 21 | [`Day 082`](../days/month-03/day-082-2026-11-21.md) | **PURE LINALG SYNTHESIS**: Strang Ch 1–6. | hnswlib SQ / Faiss HNSW+SQ notes. | **secan (required)**: **`HNSWSQIndex`** (HNSW over SQ8/SQ4). Pareto vs **hnswlib/Faiss** on **SIFT + 768-D**. Tag `v1.0-cpu-complete`. |
-| **Saturday** | Sat Nov 22 | [`Day 083`](../days/month-03/day-083-2026-11-22.md) | **09:00–13:00**: Essay 12 | **14:00–18:00**: Deep Learning Track | Deep Learning from Scratch (uv/PyTorch) |
-| **Sunday** | Sun Nov 23 | [`Day 084`](../days/month-03/day-084-2026-11-23.md) | **09:00–13:00**: Monthly Research | Research Experimentation | Rest & Subconscious Incubation |
+| **Monday** | Mon Nov 17 | [`Day 078`](../days/month-03/day-078-2026-11-17.md) | Query-side PCA / OPQ literature. | **Monthly Research: Planning & Literature Synthesis** | **secan**: **Whitening + query-side PCA**. Hubness $S_{N_k}$ before/after. |
+| **Tuesday** | Tue Nov 18 | [`Day 079`](../days/month-03/day-079-2026-11-18.md) | **PIKUS Ch 6**: RW locks. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: `nanobind` + CLI: expose `HNSWIndex`, **`IVFPQIndex`**, **`HNSWSQIndex`**, `LSMIndex`. |
+| **Wednesday** | Wed Nov 19 | [`Day 080`](../days/month-03/day-080-2026-11-19.md) | Branchless heap; bitset visited. | **DL Track (Part 2): Training Loop & Verification** | **secan (required)**: Bounded flat heap + **bitset visited**. Then concurrent HNSW locks. |
+| **Thursday** | Thu Nov 20 | [`Day 081`](../days/month-03/day-081-2026-11-20.md) | `ann-benchmarks` protocol (required, not stretch). | **Monthly Research: Sweeps & Data Logging** | **secan (required)**: Finish **`IVFPQIndex`** (IVF + PQ ADC + optional OPQ). Recall–QPS vs **Faiss IVFPQ** on SIFT. |
+| **Friday** | Fri Nov 21 | [`Day 082`](../days/month-03/day-082-2026-11-21.md) | hnswlib SQ / Faiss HNSW+SQ notes. | **Technical Essay: Lab-Note Drafting** | **secan (required)**: **`HNSWSQIndex`** (HNSW over SQ8/SQ4). Pareto vs **hnswlib/Faiss** on **SIFT + 768-D**. Tag `v1.0-cpu-complete`. |
+| **Saturday** | Sat Nov 22 | [`Day 083`](../days/month-03/day-083-2026-11-22.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **14:00–18:00**: FREE / Rest / Buffer | Weekend Deep Work |
+| **Sunday** | Sun Nov 23 | [`Day 084`](../days/month-03/day-084-2026-11-23.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00–14:00**: Maintenance | Rest & Buffer |
 
 ---
 

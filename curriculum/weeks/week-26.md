@@ -14,16 +14,18 @@
 
 ```
 ┌──────────────────────────────┬────────────────────────────────────────────────────────────────────────┐
-│ Time Block                   │ Focus Area                                                             │
+│ Time Slot                    │ Focus / Activity                                                       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
-│ 🌅 06:00 – 07:30 (90 min)    │ Pure Mathematics (Pencil, paper, theorems, derivations & proofs)       │
-│ 📖 07:30 – 08:30 (60 min)    │ Systems & Architecture Deep Reading (Hardware mechanics & papers)      │
-│ ☀️ Daytime                   │ Subconscious Incubation Period (Diffuse thinking)                      │
+│ 📖 05:30 – 06:30 (60 min)    │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
+│ 🛠️ 06:30 – 08:30 (120 min)   │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ ☀️ Daytime                   │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 💻 20:30 – 23:00 (2.5 hrs)   │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
-│ 📝 Saturday 09:00 – 13:00    │ Weekly Long-Form Technical Essay / Lab Note                            │
-│ 🧠 Saturday 14:00 – 18:00    │ Deep Learning from Scratch Track (PyTorch / uv)                        │
-│ 🔬 Sunday 09:00 – 13:00      │ Monthly Research Paper Experiments & Drafting                          │
+│ 📐 Saturday 09:00 – 13:00    │ Pure Mathematics Block 1 (Theory, Concepts, Derivations)               │
+│ 🧘 Saturday 14:00 – 18:00    │ 100% FREE / Rest / Personal Time / Buffer                              │
+│ 📐 Sunday 09:00 – 13:00      │ Pure Mathematics Block 2 (Problem Sets, Chalkboard Proofs)             │
+│ 🔧 Sunday 13:00 – 14:00      │ Runtime Maintenance (limbed / ggmbed check)                            │
+│ 🧘 Sunday 14:00 – 18:00      │ 100% FREE / Rest / Personal Time / Buffer                              │
 └──────────────────────────────┴────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -31,15 +33,15 @@
 
 ## 📅 Day-by-Day Master Timetable
 
-| Day | Date | Daily Runbook | Pure Mathematics (90 min) | Systems / Architecture Reading (45-60 min) | Night Hands-On C++/CUDA (2.5 hrs) |
+| Day | Date | Daily Runbook | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|:---|:---|
-| **Monday** | Mon Feb 23 | [`Day 176`](../days/month-07/day-176-2027-02-23.md) | Virtual memory recap (CS:APP Ch 9). | vLLM PagedAttention §4. | **CUDA**: BlockTable + paged K/V vs naive concat (A/B latency + memory). |
-| **Tuesday** | Tue Feb 24 | [`Day 177`](../days/month-07/day-177-2027-02-24.md) | Fragmentation vs bitwidth (TurboQuant). | TurboQuant KV blog. | Design note: paging ≠ quantizing; optional QJL sketch. |
-| **Wednesday** | Wed Feb 25 | [`Day 178`](../days/month-07/day-178-2027-02-25.md) | — | cuVS / serving APIs. | Hybrid CPU↔GPU fallback polish. |
-| **Thursday** | Thu Feb 26 | [`Day 179`](../days/month-07/day-179-2027-02-26.md) | — | Batch size crossover. | Plot $B=1..1000$ with **paged** KV. |
-| **Friday** | Fri Feb 27 | [`Day 180`](../days/month-07/day-180-2027-02-27.md) | Month 6 paper remaining figures. | — | Freeze ACORN/tombstone paper if not done Feb 28. |
-| **Saturday** | Sat Feb 28 | [`Day 181`](../days/month-07/day-181-2027-02-28.md) | **09:00–13:00**: Essay 26 | **14:00–18:00**: Deep Learning Track | Deep Learning from Scratch (uv/PyTorch) |
-| **Sunday** | Sun Mar 1 | [`Day 182`](../days/month-07/day-182-2027-03-01.md) | **09:00–13:00**: Monthly Research | Research Experimentation | Rest & Subconscious Incubation |
+| **Monday** | Mon Feb 23 | [`Day 176`](../days/month-07/day-176-2027-02-23.md) | vLLM PagedAttention §4. | **Monthly Research: Planning & Literature Synthesis** | **CUDA**: BlockTable + paged K/V vs naive concat (A/B latency + memory). |
+| **Tuesday** | Tue Feb 24 | [`Day 177`](../days/month-07/day-177-2027-02-24.md) | TurboQuant KV blog. | **DL Track (Part 1): Architecture & Tensor Shapes** | Design note: paging ≠ quantizing; optional QJL sketch. |
+| **Wednesday** | Wed Feb 25 | [`Day 178`](../days/month-07/day-178-2027-02-25.md) | cuVS / serving APIs. | **DL Track (Part 2): Training Loop & Verification** | Hybrid CPU↔GPU fallback polish. |
+| **Thursday** | Thu Feb 26 | [`Day 179`](../days/month-07/day-179-2027-02-26.md) | Batch size crossover. | **Monthly Research: Sweeps & Data Logging** | Plot $B=1..1000$ with **paged** KV. |
+| **Friday** | Fri Feb 27 | [`Day 180`](../days/month-07/day-180-2027-02-27.md) | — | **Technical Essay: Lab-Note Drafting** | Freeze ACORN/tombstone paper if not done Feb 28. |
+| **Saturday** | Sat Feb 28 | [`Day 181`](../days/month-07/day-181-2027-02-28.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **14:00–18:00**: FREE / Rest / Buffer | Weekend Deep Work |
+| **Sunday** | Sun Mar 1 | [`Day 182`](../days/month-07/day-182-2027-03-01.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00–14:00**: Maintenance | Rest & Buffer |
 
 ---
 

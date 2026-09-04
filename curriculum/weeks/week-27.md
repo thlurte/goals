@@ -14,16 +14,18 @@
 
 ```
 ┌──────────────────────────────┬────────────────────────────────────────────────────────────────────────┐
-│ Time Block                   │ Focus Area                                                             │
+│ Time Slot                    │ Focus / Activity                                                       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
-│ 🌅 06:00 – 07:30 (90 min)    │ Pure Mathematics (Pencil, paper, theorems, derivations & proofs)       │
-│ 📖 07:30 – 08:30 (60 min)    │ Systems & Architecture Deep Reading (Hardware mechanics & papers)      │
-│ ☀️ Daytime                   │ Subconscious Incubation Period (Diffuse thinking)                      │
+│ 📖 05:30 – 06:30 (60 min)    │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
+│ 🛠️ 06:30 – 08:30 (120 min)   │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ ☀️ Daytime                   │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 💻 20:30 – 23:00 (2.5 hrs)   │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
-│ 📝 Saturday 09:00 – 13:00    │ Weekly Long-Form Technical Essay / Lab Note                            │
-│ 🧠 Saturday 14:00 – 18:00    │ Deep Learning from Scratch Track (PyTorch / uv)                        │
-│ 🔬 Sunday 09:00 – 13:00      │ Monthly Research Paper Experiments & Drafting                          │
+│ 📐 Saturday 09:00 – 13:00    │ Pure Mathematics Block 1 (Theory, Concepts, Derivations)               │
+│ 🧘 Saturday 14:00 – 18:00    │ 100% FREE / Rest / Personal Time / Buffer                              │
+│ 📐 Sunday 09:00 – 13:00      │ Pure Mathematics Block 2 (Problem Sets, Chalkboard Proofs)             │
+│ 🔧 Sunday 13:00 – 14:00      │ Runtime Maintenance (limbed / ggmbed check)                            │
+│ 🧘 Sunday 14:00 – 18:00      │ 100% FREE / Rest / Personal Time / Buffer                              │
 └──────────────────────────────┴────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -31,15 +33,15 @@
 
 ## 📅 Day-by-Day Master Timetable
 
-| Day | Date | Daily Runbook | Pure Mathematics (90 min) | Systems / Architecture Reading (45-60 min) | Night Hands-On C++/CUDA (2.5 hrs) |
+| Day | Date | Daily Runbook | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|:---|:---|
-| **Monday** | Mon Mar 2 | [`Day 183`](../days/month-07/day-183-2027-03-02.md) | AllReduce vs AllGather cost. | NCCL ring algorithms. | **secan**: Multi-GPU IVF load-balance polish (Week 20). |
-| **Tuesday** | Tue Mar 3 | [`Day 184`](../days/month-07/day-184-2027-03-03.md) | — | NVLink vs PCIe. | Scaling efficiency 1/2/4 GPU (or 1 GPU simulated shards). |
-| **Wednesday** | Wed Mar 4 | [`Day 185`](../days/month-07/day-185-2027-03-04.md) | Contrastive InfoNCE recap. | ColPali paper. | Ingest CLIP-projected patches into `MultiVectorIndex`. |
-| **Thursday** | Thu Mar 5 | [`Day 186`](../days/month-07/day-186-2027-03-05.md) | — | GPU MaxSim CUTLASS. | Text query → visual page search E2E. |
-| **Friday** | Fri Mar 6 | [`Day 187`](../days/month-07/day-187-2027-03-06.md) | — | — | Month 7 paper figures: GPU QPS + ColPali demo. |
-| **Saturday** | Sat Mar 7 | [`Day 188`](../days/month-07/day-188-2027-03-07.md) | **09:00–13:00**: Essay 27 | **14:00–18:00**: Deep Learning Track | Deep Learning from Scratch (uv/PyTorch) |
-| **Sunday** | Sun Mar 8 | [`Day 189`](../days/month-07/day-189-2027-03-08.md) | **09:00–13:00**: Monthly Research | Research Experimentation | Rest & Subconscious Incubation |
+| **Monday** | Mon Mar 2 | [`Day 183`](../days/month-07/day-183-2027-03-02.md) | NCCL ring algorithms. | **Monthly Research: Planning & Literature Synthesis** | **secan**: Multi-GPU IVF load-balance polish (Week 20). |
+| **Tuesday** | Tue Mar 3 | [`Day 184`](../days/month-07/day-184-2027-03-03.md) | NVLink vs PCIe. | **DL Track (Part 1): Architecture & Tensor Shapes** | Scaling efficiency 1/2/4 GPU (or 1 GPU simulated shards). |
+| **Wednesday** | Wed Mar 4 | [`Day 185`](../days/month-07/day-185-2027-03-04.md) | ColPali paper. | **DL Track (Part 2): Training Loop & Verification** | Ingest CLIP-projected patches into `MultiVectorIndex`. |
+| **Thursday** | Thu Mar 5 | [`Day 186`](../days/month-07/day-186-2027-03-05.md) | GPU MaxSim CUTLASS. | **Monthly Research: Sweeps & Data Logging** | Text query → visual page search E2E. |
+| **Friday** | Fri Mar 6 | [`Day 187`](../days/month-07/day-187-2027-03-06.md) | — | **Technical Essay: Lab-Note Drafting** | Month 7 paper figures: GPU QPS + ColPali demo. |
+| **Saturday** | Sat Mar 7 | [`Day 188`](../days/month-07/day-188-2027-03-07.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **14:00–18:00**: FREE / Rest / Buffer | Weekend Deep Work |
+| **Sunday** | Sun Mar 8 | [`Day 189`](../days/month-07/day-189-2027-03-08.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00–14:00**: Maintenance | Rest & Buffer |
 
 ---
 

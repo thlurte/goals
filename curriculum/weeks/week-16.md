@@ -14,16 +14,18 @@
 
 ```
 ┌──────────────────────────────┬────────────────────────────────────────────────────────────────────────┐
-│ Time Block                   │ Focus Area                                                             │
+│ Time Slot                    │ Focus / Activity                                                       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
-│ 🌅 06:00 – 07:30 (90 min)    │ Pure Mathematics (Pencil, paper, theorems, derivations & proofs)       │
-│ 📖 07:30 – 08:30 (60 min)    │ Systems & Architecture Deep Reading (Hardware mechanics & papers)      │
-│ ☀️ Daytime                   │ Subconscious Incubation Period (Diffuse thinking)                      │
+│ 📖 05:30 – 06:30 (60 min)    │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
+│ 🛠️ 06:30 – 08:30 (120 min)   │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ ☀️ Daytime                   │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 💻 20:30 – 23:00 (2.5 hrs)   │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
-│ 📝 Saturday 09:00 – 13:00    │ Weekly Long-Form Technical Essay / Lab Note                            │
-│ 🧠 Saturday 14:00 – 18:00    │ Deep Learning from Scratch Track (PyTorch / uv)                        │
-│ 🔬 Sunday 09:00 – 13:00      │ Monthly Research Paper Experiments & Drafting                          │
+│ 📐 Saturday 09:00 – 13:00    │ Pure Mathematics Block 1 (Theory, Concepts, Derivations)               │
+│ 🧘 Saturday 14:00 – 18:00    │ 100% FREE / Rest / Personal Time / Buffer                              │
+│ 📐 Sunday 09:00 – 13:00      │ Pure Mathematics Block 2 (Problem Sets, Chalkboard Proofs)             │
+│ 🔧 Sunday 13:00 – 14:00      │ Runtime Maintenance (limbed / ggmbed check)                            │
+│ 🧘 Sunday 14:00 – 18:00      │ 100% FREE / Rest / Personal Time / Buffer                              │
 └──────────────────────────────┴────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -31,15 +33,15 @@
 
 ## 📅 Day-by-Day Master Timetable
 
-| Day | Date | Daily Runbook | Pure Mathematics (90 min) | Systems / Architecture Reading (45-60 min) | Night Hands-On C++/CUDA (2.5 hrs) |
+| Day | Date | Daily Runbook | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|:---|:---|
-| **Monday** | Mon Dec 15 | [`Day 106`](../days/month-04/day-106-2026-12-15.md) | **PROB §7.1–7.2**: Joint, marginal, and conditional discrete distributions. Multinomial distribution. | Faiss GPU 2019 §1–3: billion-scale GPU similarity search. | **secan**: GPU IVF memory layout: coarse centroids; cell vectors + offset table. |
-| **Tuesday** | Tue Dec 16 | [`Day 107`](../days/month-04/day-107-2026-12-16.md) | **PROB §7.3–7.4**: Joint continuous distributions; marginals by integration. | Faiss GPU §4–5: GPU $k$-selection, warp-cooperative list scanning. | **secan**: GPU coarse quantizer + top-`nprobe` cell select; warp-cooperative cell scan. |
-| **Wednesday** | Wed Dec 17 | [`Day 108`](../days/month-04/day-108-2026-12-17.md) | **PROB §7.5**: 2D change of variables / Jacobian; Box-Muller. | **CUDA-GUIDE Streams & Events**. | **secan**: CUDA stream pipelining for IVF batches; quick SQ8-in-cell stretch if time. Tag `v1.1-gpu-ivf`. |
-| **Thursday** | Thu Dec 18 | [`Day 109`](../days/month-04/day-109-2026-12-18.md) | **PROB §7.6–7.7**: Covariance and Correlation; Cauchy-Schwarz bound on $\rho$. | DiskANN: **Vamana graph construction** (α-prune) + `io_uring` fetch. | **secan (required)**: Implement **Vamana prune** (build graph, not only SSD fetch); compressed vectors in RAM; FP32 via `io_uring`. Recall vs in-RAM. |
-| **Friday** | Fri Dec 19 | [`Day 110`](../days/month-04/day-110-2026-12-19.md) | **PROB §7.8**: Multivariate Normal $\mathcal{N}(\boldsymbol{\mu}, \boldsymbol{\Sigma})$. | Ding & Suel WAND; **RRF** (Cormack et al.). | **secan (required)**: BM25 + Block-Max WAND; fuse via **RRF** *and* linear $\alpha$. Query-time $\alpha$ / k sweep. SPLADE = stretch. Tag `v1.2-vs-spine-complete`. |
-| **Saturday** | Sat Dec 20 | [`Day 111`](../days/month-04/day-111-2026-12-20.md) | **09:00–13:00**: Essay 16 | **14:00–18:00**: Deep Learning Track | Deep Learning from Scratch (uv/PyTorch) |
-| **Sunday** | Sun Dec 21 | [`Day 112`](../days/month-04/day-112-2026-12-21.md) | **09:00–13:00**: Monthly Research | Research Experimentation | Rest & Subconscious Incubation |
+| **Monday** | Mon Dec 15 | [`Day 106`](../days/month-04/day-106-2026-12-15.md) | Faiss GPU 2019 §1–3: billion-scale GPU similarity search. | **Monthly Research: Planning & Literature Synthesis** | **secan**: GPU IVF memory layout: coarse centroids; cell vectors + offset table. |
+| **Tuesday** | Tue Dec 16 | [`Day 107`](../days/month-04/day-107-2026-12-16.md) | Faiss GPU §4–5: GPU $k$-selection, warp-cooperative list scanning. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: GPU coarse quantizer + top-`nprobe` cell select; warp-cooperative cell scan. |
+| **Wednesday** | Wed Dec 17 | [`Day 108`](../days/month-04/day-108-2026-12-17.md) | **CUDA-GUIDE Streams & Events**. | **DL Track (Part 2): Training Loop & Verification** | **secan**: CUDA stream pipelining for IVF batches; quick SQ8-in-cell stretch if time. Tag `v1.1-gpu-ivf`. |
+| **Thursday** | Thu Dec 18 | [`Day 109`](../days/month-04/day-109-2026-12-18.md) | DiskANN: **Vamana graph construction** (α-prune) + `io_uring` fetch. | **Monthly Research: Sweeps & Data Logging** | **secan (required)**: Implement **Vamana prune** (build graph, not only SSD fetch); compressed vectors in RAM; FP32 via `io_uring`. Recall vs in-RAM. |
+| **Friday** | Fri Dec 19 | [`Day 110`](../days/month-04/day-110-2026-12-19.md) | Ding & Suel WAND; **RRF** (Cormack et al.). | **Technical Essay: Lab-Note Drafting** | **secan (required)**: BM25 + Block-Max WAND; fuse via **RRF** *and* linear $\alpha$. Query-time $\alpha$ / k sweep. SPLADE = stretch. Tag `v1.2-vs-spine-complete`. |
+| **Saturday** | Sat Dec 20 | [`Day 111`](../days/month-04/day-111-2026-12-20.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **14:00–18:00**: FREE / Rest / Buffer | Weekend Deep Work |
+| **Sunday** | Sun Dec 21 | [`Day 112`](../days/month-04/day-112-2026-12-21.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00–14:00**: Maintenance | Rest & Buffer |
 
 ---
 

@@ -14,16 +14,18 @@
 
 ```
 ┌──────────────────────────────┬────────────────────────────────────────────────────────────────────────┐
-│ Time Block                   │ Focus Area                                                             │
+│ Time Slot                    │ Focus / Activity                                                       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
-│ 🌅 06:00 – 07:30 (90 min)    │ Pure Mathematics (Pencil, paper, theorems, derivations & proofs)       │
-│ 📖 07:30 – 08:30 (60 min)    │ Systems & Architecture Deep Reading (Hardware mechanics & papers)      │
-│ ☀️ Daytime                   │ Subconscious Incubation Period (Diffuse thinking)                      │
+│ 📖 05:30 – 06:30 (60 min)    │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
+│ 🛠️ 06:30 – 08:30 (120 min)   │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ ☀️ Daytime                   │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 💻 20:30 – 23:00 (2.5 hrs)   │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
-│ 📝 Saturday 09:00 – 13:00    │ Weekly Long-Form Technical Essay / Lab Note                            │
-│ 🧠 Saturday 14:00 – 18:00    │ Deep Learning from Scratch Track (PyTorch / uv)                        │
-│ 🔬 Sunday 09:00 – 13:00      │ Monthly Research Paper Experiments & Drafting                          │
+│ 📐 Saturday 09:00 – 13:00    │ Pure Mathematics Block 1 (Theory, Concepts, Derivations)               │
+│ 🧘 Saturday 14:00 – 18:00    │ 100% FREE / Rest / Personal Time / Buffer                              │
+│ 📐 Sunday 09:00 – 13:00      │ Pure Mathematics Block 2 (Problem Sets, Chalkboard Proofs)             │
+│ 🔧 Sunday 13:00 – 14:00      │ Runtime Maintenance (limbed / ggmbed check)                            │
+│ 🧘 Sunday 14:00 – 18:00      │ 100% FREE / Rest / Personal Time / Buffer                              │
 └──────────────────────────────┴────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -31,15 +33,15 @@
 
 ## 📅 Day-by-Day Master Timetable
 
-| Day | Date | Daily Runbook | Pure Mathematics (90 min) | Systems / Architecture Reading (45-60 min) | Night Hands-On C++/CUDA (2.5 hrs) |
+| Day | Date | Daily Runbook | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|:---|:---|
-| **Monday** | Mon Feb 16 | [`Day 169`](../days/month-07/day-169-2027-02-16.md) | Online softmax recap (`m`, $\ell$). | FlashAttention-2 (Dao 2023). | **CUDA**: FA-2 loop order on Week 15 kernel. |
-| **Tuesday** | Tue Feb 17 | [`Day 170`](../days/month-07/day-170-2027-02-17.md) | Work/span of tiled GEMM. | Warp partition along sequence. | **CUDA**: Reduce inter-warp sync; unit-test vs PyTorch. |
-| **Wednesday** | Wed Feb 18 | [`Day 171`](../days/month-07/day-171-2027-02-18.md) | Numerical stability of online softmax. | `ncu` metrics: DRAM, achieved TFLOPS. | **CUDA (required)**: Nsight FA-1 vs FA-2 vs SDPA. |
-| **Thursday** | Thu Feb 19 | [`Day 172`](../days/month-07/day-172-2027-02-19.md) | GQA + FA: fewer KV tiles. | Integrate GQA from Week 2/4. | **Python/CUDA**: FA-2 path with `num_kv_heads`. |
-| **Friday** | Fri Feb 20 | [`Day 173`](../days/month-07/day-173-2027-02-20.md) | — | — | Expose FA-2 via `cpp_extension`. Document speedup table for March paper. |
-| **Saturday** | Sat Feb 21 | [`Day 174`](../days/month-07/day-174-2027-02-21.md) | **09:00–13:00**: Essay 25 | **14:00–18:00**: Deep Learning Track | Deep Learning from Scratch (uv/PyTorch) |
-| **Sunday** | Sun Feb 22 | [`Day 175`](../days/month-07/day-175-2027-02-22.md) | **09:00–13:00**: Monthly Research | Research Experimentation | Rest & Subconscious Incubation |
+| **Monday** | Mon Feb 16 | [`Day 169`](../days/month-07/day-169-2027-02-16.md) | FlashAttention-2 (Dao 2023). | **Monthly Research: Planning & Literature Synthesis** | **CUDA**: FA-2 loop order on Week 15 kernel. |
+| **Tuesday** | Tue Feb 17 | [`Day 170`](../days/month-07/day-170-2027-02-17.md) | Warp partition along sequence. | **DL Track (Part 1): Architecture & Tensor Shapes** | **CUDA**: Reduce inter-warp sync; unit-test vs PyTorch. |
+| **Wednesday** | Wed Feb 18 | [`Day 171`](../days/month-07/day-171-2027-02-18.md) | `ncu` metrics: DRAM, achieved TFLOPS. | **DL Track (Part 2): Training Loop & Verification** | **CUDA (required)**: Nsight FA-1 vs FA-2 vs SDPA. |
+| **Thursday** | Thu Feb 19 | [`Day 172`](../days/month-07/day-172-2027-02-19.md) | Integrate GQA from Week 2/4. | **Monthly Research: Sweeps & Data Logging** | **Python/CUDA**: FA-2 path with `num_kv_heads`. |
+| **Friday** | Fri Feb 20 | [`Day 173`](../days/month-07/day-173-2027-02-20.md) | — | **Technical Essay: Lab-Note Drafting** | Expose FA-2 via `cpp_extension`. Document speedup table for March paper. |
+| **Saturday** | Sat Feb 21 | [`Day 174`](../days/month-07/day-174-2027-02-21.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **14:00–18:00**: FREE / Rest / Buffer | Weekend Deep Work |
+| **Sunday** | Sun Feb 22 | [`Day 175`](../days/month-07/day-175-2027-02-22.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00–14:00**: Maintenance | Rest & Buffer |
 
 ---
 

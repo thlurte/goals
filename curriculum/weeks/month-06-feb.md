@@ -150,13 +150,13 @@
 
 * **secan**: CLI scaffold + occupancy/`ncu` pass. Full release → Week 28.
 
-| Day | Pure Mathematics (90 min) | Systems Reading (45 min) | Afternoon Implementation (2.5 hrs) |
+| Day | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|
-| **Mon Feb 9** | Spectral + production recap (Cheeger, ACORN, tombstones). | **PIKUS Ch 12** retrospective. | **secan**: CLI scaffold `secan build/search/bench` (complete Week 28). |
-| **Tue Feb 10** | Convexity recap: KKT complementary slackness. | Occupancy calculator / `__launch_bounds__`. | **CUDA**: Occupancy tune on IVF + graph kernels. |
-| **Wed Feb 11** | Fourier skim (optional): convolution as GEMM intuition. | CUB/Thrust fusion notes. | **CUDA**: Fused distance+topk kernel (was former Week 22 GPU polish). |
-| **Thu Feb 12** | Info-theory recap: CE = $H+D_{KL}$ (ties to InfoNCE). | `-Wall -Wextra -Wpedantic`. | **secan**: Warning cleanup; examples/ stubs. |
-| **Fri Feb 13** | — | Month 6 paper freeze checklist. | **secan/CUDA**: Occupancy/`ncu` leftover polish. *(Naive KV re-bench: Saturday DL if needed.)* |
+| **Mon Feb 9** | **PIKUS Ch 12** retrospective. | **Monthly Research: Planning & Literature Synthesis** | **secan**: CLI scaffold `secan build/search/bench` (complete Week 28). |
+| **Tue Feb 10** | Occupancy calculator / `__launch_bounds__`. | **DL Track (Part 1): Architecture & Forward Pass** | **CUDA**: Occupancy tune on IVF + graph kernels. |
+| **Wed Feb 11** | CUB/Thrust fusion notes. | **DL Track (Part 2): Training, Loss & Verification** | **CUDA**: Fused distance+topk kernel (was former Week 22 GPU polish). |
+| **Thu Feb 12** | `-Wall -Wextra -Wpedantic`. | **Monthly Research: Sweeps & Data Logging** | **secan**: Warning cleanup; examples/ stubs. |
+| **Fri Feb 13** | Month 6 paper freeze checklist. | **Monthly Research: Planning & Literature Synthesis** | **secan/CUDA**: Occupancy/`ncu` leftover polish. *(Naive KV re-bench: Saturday DL if needed.)* |
 
 #### 📋 Daily Action Items & Optional Activities (Week 24)
 * **Mon Feb 9**:

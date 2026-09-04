@@ -14,16 +14,18 @@
 
 ```
 ┌──────────────────────────────┬────────────────────────────────────────────────────────────────────────┐
-│ Time Block                   │ Focus Area                                                             │
+│ Time Slot                    │ Focus / Activity                                                       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
-│ 🌅 06:00 – 07:30 (90 min)    │ Pure Mathematics (Pencil, paper, theorems, derivations & proofs)       │
-│ 📖 07:30 – 08:30 (60 min)    │ Systems & Architecture Deep Reading (Hardware mechanics & papers)      │
-│ ☀️ Daytime                   │ Subconscious Incubation Period (Diffuse thinking)                      │
+│ 📖 05:30 – 06:30 (60 min)    │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
+│ 🛠️ 06:30 – 08:30 (120 min)   │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ ☀️ Daytime                   │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 💻 20:30 – 23:00 (2.5 hrs)   │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
-│ 📝 Saturday 09:00 – 13:00    │ Weekly Long-Form Technical Essay / Lab Note                            │
-│ 🧠 Saturday 14:00 – 18:00    │ Deep Learning from Scratch Track (PyTorch / uv)                        │
-│ 🔬 Sunday 09:00 – 13:00      │ Monthly Research Paper Experiments & Drafting                          │
+│ 📐 Saturday 09:00 – 13:00    │ Pure Mathematics Block 1 (Theory, Concepts, Derivations)               │
+│ 🧘 Saturday 14:00 – 18:00    │ 100% FREE / Rest / Personal Time / Buffer                              │
+│ 📐 Sunday 09:00 – 13:00      │ Pure Mathematics Block 2 (Problem Sets, Chalkboard Proofs)             │
+│ 🔧 Sunday 13:00 – 14:00      │ Runtime Maintenance (limbed / ggmbed check)                            │
+│ 🧘 Sunday 14:00 – 18:00      │ 100% FREE / Rest / Personal Time / Buffer                              │
 └──────────────────────────────┴────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -31,15 +33,15 @@
 
 ## 📅 Day-by-Day Master Timetable
 
-| Day | Date | Daily Runbook | Pure Mathematics (90 min) | Systems / Architecture Reading (45-60 min) | Night Hands-On C++/CUDA (2.5 hrs) |
+| Day | Date | Daily Runbook | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|:---|:---|
-| **Monday** | Mon Oct 13 | [`Day 043`](../days/month-02/day-043-2026-10-13.md) | **MATRIX CALCULUS (Linear Layers)**: Matrix trace identities. Full mathematical derivation of batched GEMM backpropagation: $\frac{\partial \mathcal{L}}{\partial W} = X^T \frac{\partial \mathcal{L}}{\partial Y}$, $\frac{\partial \mathcal{L}}{\partial X} = \frac{\partial \mathcal{L}}{\partial Y} W^T$, $\frac{\partial \mathcal{L}}{\partial b} = \mathbf{1}^T \frac{\partial \mathcal{L}}{\partial Y}$. | ScaNN Paper §1–3: MIPS error decomposition: why orthogonal error $e_\perp$ has 0 expectation while parallel error $e_\parallel$ degrades inner products. | **secan**: Implement **ScaNN Anisotropic Loss** in `ProductQuantizer`: penalize parallel error with weight $h=5.0$. Compare codebooks. |
-| **Tuesday** | Tue Oct 14 | [`Day 044`](../days/month-02/day-044-2026-10-14.md) | **JACOBIANS & SOFTMAX CE**: Element-wise Jacobians (ReLU, GELU, SwiGLU). Softmax Jacobian $J_{ij} = s_i(\delta_{ij} - s_j)$. Analytical proof that $\frac{\partial \mathcal{L}_{\text{CE}}}{\partial \mathbf{z}} = \mathbf{s} - \mathbf{y}$. | **INTEL Intrinsics & AGNER-INST**: Deep dive into `_mm256_shuffle_epi8` (PSHUFB) semantics and port mapping. | **secan**: Implement **plain BQ** (`bit = val > 0`): Hamming via XOR+POPCNT. **Do not** implement RaBitQ yet (needs QR — Week 10). |
-| **Wednesday** | Wed Oct 15 | [`Day 045`](../days/month-02/day-045-2026-10-15.md) | **ATTENTION MATRIX CALCULUS**: Differentiating Scaled Dot-Product Attention $\text{Attn}(Q, K, V) = \text{softmax}(Q K^T / \sqrt{d_k}) V$. Step-by-step derivation of upstream adjoint tensors $\frac{\partial \mathcal{L}}{\partial Q}, \frac{\partial \mathcal{L}}{\partial K}, \frac{\partial \mathcal{L}}{\partial V}$. | Faiss FastScan documentation & André et al. (2015) paper §1–3. | **secan**: Implement 4-bit PQ encoding ($k=16$ centroids per subspace, packing 2 codes per byte). |
-| **Thursday** | Thu Oct 16 | [`Day 046`](../days/month-02/day-046-2026-10-16.md) | **🔗 AUTOMATIC DIFFERENTIATION**: Computational DAGs, topological sorting. Forward-mode (JVPs) vs Reverse-mode (VJPs). Mathematical proof why reverse-mode backpropagation is $O(1)$ backward passes regardless of parameter count. | AGNER-INST: Study `VPSHUFB`, `VPADDB`, `VPUNPCKLBW` instruction latency and accumulation chains. | **secan**: Implement **FastScan kernel**: load 16 centroid distances into `__m128i` / `__m256i`. Execute table lookups **entirely in-register** via PSHUFB. |
-| **Friday** | Fri Oct 17 | [`Day 047`](../days/month-02/day-047-2026-10-17.md) | **🔗 LOSS SURFACES & HESSIANS**: Hessian matrix $H = \nabla^2 \mathcal{L}$, condition number $\kappa = \lambda_{\max}/\lambda_{\min}$, gradient descent step-size bounds ($\eta < 2/\lambda_{\max}$). AdamW second moments ($v_t$) as diagonal Hessian preconditioning. | **CSAPP §5.10–5.12**: Register spilling, store-load forwarding, pipeline limiting factors. | **secan (required)**: **OPQ** (rotate then PQ) *or* **residual PQ**. Compare Recall@10 vs plain PQ on SIFT. Asymmetric ADC remains FP32 query. *(DL: Sat Oct 18 MRL.)* |
-| **Saturday** | Sat Oct 18 | [`Day 048`](../days/month-02/day-048-2026-10-18.md) | **09:00–13:00**: Essay 7 | **14:00–18:00**: Deep Learning Track | Deep Learning from Scratch (uv/PyTorch) |
-| **Sunday** | Sun Oct 19 | [`Day 049`](../days/month-02/day-049-2026-10-19.md) | **09:00–13:00**: Monthly Research | Research Experimentation | Rest & Subconscious Incubation |
+| **Monday** | Mon Oct 13 | [`Day 043`](../days/month-02/day-043-2026-10-13.md) | ScaNN Paper §1–3: MIPS error decomposition: why orthogonal error $e_\perp$ has 0 expectation while parallel error $e_\parallel$ degrades inner products. | **Monthly Research: Planning & Literature Synthesis** | **secan**: Implement **ScaNN Anisotropic Loss** in `ProductQuantizer`: penalize parallel error with weight $h=5.0$. Compare codebooks. |
+| **Tuesday** | Tue Oct 14 | [`Day 044`](../days/month-02/day-044-2026-10-14.md) | **INTEL Intrinsics & AGNER-INST**: Deep dive into `_mm256_shuffle_epi8` (PSHUFB) semantics and port mapping. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: Implement **plain BQ** (`bit = val > 0`): Hamming via XOR+POPCNT. **Do not** implement RaBitQ yet (needs QR — Week 10). |
+| **Wednesday** | Wed Oct 15 | [`Day 045`](../days/month-02/day-045-2026-10-15.md) | Faiss FastScan documentation & André et al. (2015) paper §1–3. | **DL Track (Part 2): Training Loop & Verification** | **secan**: Implement 4-bit PQ encoding ($k=16$ centroids per subspace, packing 2 codes per byte). |
+| **Thursday** | Thu Oct 16 | [`Day 046`](../days/month-02/day-046-2026-10-16.md) | AGNER-INST: Study `VPSHUFB`, `VPADDB`, `VPUNPCKLBW` instruction latency and accumulation chains. | **Monthly Research: Sweeps & Data Logging** | **secan**: Implement **FastScan kernel**: load 16 centroid distances into `__m128i` / `__m256i`. Execute table lookups **entirely in-register** via PSHUFB. |
+| **Friday** | Fri Oct 17 | [`Day 047`](../days/month-02/day-047-2026-10-17.md) | **CSAPP §5.10–5.12**: Register spilling, store-load forwarding, pipeline limiting factors. | **Technical Essay: Lab-Note Drafting** | **secan (required)**: **OPQ** (rotate then PQ) *or* **residual PQ**. Compare Recall@10 vs plain PQ on SIFT. Asymmetric ADC remains FP32 query. *(DL: Sat Oct 18 MRL.)* |
+| **Saturday** | Sat Oct 18 | [`Day 048`](../days/month-02/day-048-2026-10-18.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **14:00–18:00**: FREE / Rest / Buffer | Weekend Deep Work |
+| **Sunday** | Sun Oct 19 | [`Day 049`](../days/month-02/day-049-2026-10-19.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00–14:00**: Maintenance | Rest & Buffer |
 
 ---
 

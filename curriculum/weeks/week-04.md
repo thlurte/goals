@@ -14,16 +14,18 @@
 
 ```
 ┌──────────────────────────────┬────────────────────────────────────────────────────────────────────────┐
-│ Time Block                   │ Focus Area                                                             │
+│ Time Slot                    │ Focus / Activity                                                       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
-│ 🌅 06:00 – 07:30 (90 min)    │ Pure Mathematics (Pencil, paper, theorems, derivations & proofs)       │
-│ 📖 07:30 – 08:30 (60 min)    │ Systems & Architecture Deep Reading (Hardware mechanics & papers)      │
-│ ☀️ Daytime                   │ Subconscious Incubation Period (Diffuse thinking)                      │
+│ 📖 05:30 – 06:30 (60 min)    │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
+│ 🛠️ 06:30 – 08:30 (120 min)   │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ ☀️ Daytime                   │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 💻 20:30 – 23:00 (2.5 hrs)   │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
-│ 📝 Saturday 09:00 – 13:00    │ Weekly Long-Form Technical Essay / Lab Note                            │
-│ 🧠 Saturday 14:00 – 18:00    │ Deep Learning from Scratch Track (PyTorch / uv)                        │
-│ 🔬 Sunday 09:00 – 13:00      │ Monthly Research Paper Experiments & Drafting                          │
+│ 📐 Saturday 09:00 – 13:00    │ Pure Mathematics Block 1 (Theory, Concepts, Derivations)               │
+│ 🧘 Saturday 14:00 – 18:00    │ 100% FREE / Rest / Personal Time / Buffer                              │
+│ 📐 Sunday 09:00 – 13:00      │ Pure Mathematics Block 2 (Problem Sets, Chalkboard Proofs)             │
+│ 🔧 Sunday 13:00 – 14:00      │ Runtime Maintenance (limbed / ggmbed check)                            │
+│ 🧘 Sunday 14:00 – 18:00      │ 100% FREE / Rest / Personal Time / Buffer                              │
 └──────────────────────────────┴────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -31,15 +33,15 @@
 
 ## 📅 Day-by-Day Master Timetable
 
-| Day | Date | Daily Runbook | Pure Mathematics (90 min) | Systems / Architecture Reading (45-60 min) | Night Hands-On C++/CUDA (2.5 hrs) |
+| Day | Date | Daily Runbook | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|:---|:---|
-| **Monday** | Mon Sep 22 | [`Day 022`](../days/month-01/day-022-2026-09-22.md) | **TRIG (Gelfand Ch 7)**: Complex plane, modulus, polar multiplication. | **PIKUS Ch 5**: Cache coherence, false sharing. | **secan**: `batch_linear_scan` $B=32/64$ (GEMV $\to$ GEMM). |
-| **Tuesday** | Tue Sep 23 | [`Day 023`](../days/month-01/day-023-2026-09-23.md) | **TRIG (Gelfand Ch 7)**: Euler $e^{i\theta}$, roots of unity. | Faiss IVF coarse quantizer; **spherical k-means** for IP/MIPS. | **secan**: `IVFIndex` — L2 k-means + **spherical k-means** for IP. |
-| **Wednesday** | Wed Sep 24 | [`Day 024`](../days/month-01/day-024-2026-09-24.md) | **CALC (Strang §8.1–8.3)**: Series, convergence tests. | **PIKUS Ch 6**: Thread pools. | **secan**: Multi-probe IVF; `nprobe` sweep; pinned `std::jthread`. |
-| **Thursday** | Thu Sep 25 | [`Day 025`](../days/month-01/day-025-2026-09-25.md) | **CALC (Strang §8.4–8.6)**: Taylor of $e^x$. | IVF inverted-list skew (Faiss `make_direct_map` / list size). | **secan (required)**: Histogram of IVF list sizes; **rebalance / split oversized lists**. |
-| **Friday** | Fri Sep 26 | [`Day 026`](../days/month-01/day-026-2026-09-26.md) | **LINALG PREVIEW**: Length, angles, Cauchy-Schwarz. | IP vs L2 recall on same vectors. | **secan**: IP/MIPS search path on IVF; compare Recall@10 vs L2. Tag `v0.2-simd-ivf`. |
-| **Saturday** | Sat Sep 27 | [`Day 027`](../days/month-01/day-027-2026-09-27.md) | **09:00–13:00**: Essay 4 | **14:00–18:00**: Deep Learning Track | Deep Learning from Scratch (uv/PyTorch) |
-| **Sunday** | Sun Sep 28 | [`Day 028`](../days/month-01/day-028-2026-09-28.md) | **09:00–13:00**: Monthly Research | Research Experimentation | Rest & Subconscious Incubation |
+| **Monday** | Mon Sep 22 | [`Day 022`](../days/month-01/day-022-2026-09-22.md) | **PIKUS Ch 5**: Cache coherence, false sharing. | **Monthly Research: Planning & Literature Synthesis** | **secan**: `batch_linear_scan` $B=32/64$ (GEMV $\to$ GEMM). |
+| **Tuesday** | Tue Sep 23 | [`Day 023`](../days/month-01/day-023-2026-09-23.md) | Faiss IVF coarse quantizer; **spherical k-means** for IP/MIPS. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: `IVFIndex` — L2 k-means + **spherical k-means** for IP. |
+| **Wednesday** | Wed Sep 24 | [`Day 024`](../days/month-01/day-024-2026-09-24.md) | **PIKUS Ch 6**: Thread pools. | **DL Track (Part 2): Training Loop & Verification** | **secan**: Multi-probe IVF; `nprobe` sweep; pinned `std::jthread`. |
+| **Thursday** | Thu Sep 25 | [`Day 025`](../days/month-01/day-025-2026-09-25.md) | IVF inverted-list skew (Faiss `make_direct_map` / list size). | **Monthly Research: Sweeps & Data Logging** | **secan (required)**: Histogram of IVF list sizes; **rebalance / split oversized lists**. |
+| **Friday** | Fri Sep 26 | [`Day 026`](../days/month-01/day-026-2026-09-26.md) | IP vs L2 recall on same vectors. | **Technical Essay: Lab-Note Drafting** | **secan**: IP/MIPS search path on IVF; compare Recall@10 vs L2. Tag `v0.2-simd-ivf`. |
+| **Saturday** | Sat Sep 27 | [`Day 027`](../days/month-01/day-027-2026-09-27.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **14:00–18:00**: FREE / Rest / Buffer | Weekend Deep Work |
+| **Sunday** | Sun Sep 28 | [`Day 028`](../days/month-01/day-028-2026-09-28.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00–14:00**: Maintenance | Rest & Buffer |
 
 ---
 

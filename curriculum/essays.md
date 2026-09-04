@@ -1,6 +1,6 @@
 # Essay / Lab-Note Schedule
 
-Weekly Sat 09:00–13:00 lab notes. Polish **7 monthlies** in [`../research/`](../research/README.md), not all 28 essays.
+Weekly Friday Morning 06:30–08:30 lab-note drafting (with weekend polish as needed). Polish **7 monthlies** in [`../research/`](../research/README.md), not all 28 essays.
 
 | Week | Essay Date | Essay / Lab-Note Title | Systems & Theoretical Focus |
 |:---:|:---|:---|:---|
