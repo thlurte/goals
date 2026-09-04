@@ -14,7 +14,7 @@
 
 # 📅 MONTH 4: Pure Probability Theory, FlashAttention Kernel & Tensor Cores (Dec 2026)
 
-> **🔬 Monthly research**: *Billion-Scale Retrieval Frontiers: Comparing In-VRAM GPU IVF and Asynchronous NVMe DiskANN Under Concurrent Query Pressure* → publish **Sun Dec 27** · folder `research/2026-12-three-paths-spine/`
+> **🔬 Monthly research (FlashMaxSim Milestone 1)**: *The Memory Wall in Multimodal Late Interaction: Baseline GPU Kernel Profiling* → publish **Sun Dec 27** · folder `research/2026-12-flashattn-vamana/`
 
 ---
 

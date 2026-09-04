@@ -10,7 +10,7 @@
 
 # 📅 MONTH 2: Multivariable Calculus, Vector Fields, Vision Transformers & HNSW (Oct 2026)
 
-> **🔬 Monthly research**: *Anisotropy-Aware Vector Quantization: Dissecting the Interplay Between Embedding Cones, Hubness, and Quantization Loss Functions* → publish **Sun Oct 25** · folder `research/2026-10-anisotropy-hubness-bits/`
+> **🔬 Monthly research (GAPQ Milestone 2)**: *Geometry-Aware Anisotropic Polar Quantization: The Adaptive Ellipsoidal Lattice & Unbiased QJL Proof* → publish **Sun Oct 25** · folder `research/2026-10-anisotropic-quantization/`
 
 ---
 

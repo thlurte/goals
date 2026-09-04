@@ -10,7 +10,7 @@
 
 # 📅 MONTH 3: Linear Algebra from First Principles, ColBERT & LSM-Trees (Nov 2026)
 
-> **🔬 Monthly research**: *Streaming Late Interaction: Evaluating PLAID Centroid Inverted Lists vs MUVERA Fixed-Dimensional Encodings in Dynamic LSM Vector Storage* (+ **BEIR/MS MARCO slice**) → publish **Sun Nov 29** · folder `research/2026-11-late-interaction-lsm/`
+> **🔬 Monthly research (GAPQ Milestone 3 — Landmark Paper 1 Freeze)**: *Sub-2-Bit In-Register SIMD Execution & Manuscript Submission Freeze* → publish **Sun Nov 29** · folder `research/2026-11-rabitq-lsm/`
 
 ---
 

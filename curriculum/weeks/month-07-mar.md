@@ -10,7 +10,7 @@
 
 # 📅 MONTH 7: GPU Specialization Closeout (Mar 2027)
 
-> **🔬 Monthly research**: *Unified IO-Aware GPU Architecture for Vector Retrieval and LLM Attention Serving: FlashAttention-2, Paged KV Caches, and Multi-GPU Scaling* → publish **Fri Mar 12** · folder `research/2027-03-gpu-serving/`
+> **🔬 Monthly research (FlashMaxSim Milestone 4 — Landmark Paper 2 Freeze)**: *Nsight Compute Roofline Validation & Master Conference Submission* → publish **Fri Mar 12** · folder `research/2027-03-gpu-serving/`
 
 ---
 

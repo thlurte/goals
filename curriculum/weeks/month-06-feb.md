@@ -10,7 +10,7 @@
 
 # 📅 MONTH 6: Optimization, Spectral Graphs, Production Hardening & Master Release (Feb 2027)
 
-> **🔬 Monthly research**: *Mitigating Recall Collapse in Filtered Approximate Nearest Neighbor Graphs: An Empirical Evaluation of ACORN vs. Iterative Post-Filtering Across Selectivity Spectrums* → publish **Sun Feb 28** · folder `research/2027-02-predicate-aware-graphs/`
+> **🔬 Monthly research (FlashMaxSim Milestone 3)**: *Bare-Metal CUTLASS Implementation with Hopper/Blackwell TMA & Warp Specialization* → publish **Sun Feb 28** · folder `research/2027-02-predicate-aware-graphs/`
 
 ---
 

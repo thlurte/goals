@@ -14,7 +14,7 @@
 
 # 📅 MONTH 1: Pure Trigonometry, Single-Variable Calculus, SIMD & Transformers (Sep 2026)
 
-> **🔬 Monthly research**: *Microarchitectural Limits of Vector Distance Kernels: Execution Port Contention, Cache-Line Splits, and Measurement Artifacts on Modern x86* → publish **Sun Sep 27** · folder `research/2026-09-measurement-protocol/`
+> **🔬 Monthly research (GAPQ Milestone 1)**: *Microarchitectural Limits of Distance Kernels & Empirical Embedding Cone Anisotropy* → publish **Sun Sep 27** · folder `research/2026-09-measurement-protocol/`
 
 ---
 

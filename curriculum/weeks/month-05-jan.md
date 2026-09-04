@@ -16,7 +16,7 @@ Weekdays remain **`secan`/CUDA**. DL stays **Saturday afternoon**. Cluster shard
 
 # 📅 MONTH 5: Mathematical Statistics, Limit Theorems, GPU Graphs & Multi-GPU (Jan 2027)
 
-> **🔬 Monthly research**: *Paging vs. Quantizing LLM KV Caches: Memory Fragmentation, Dequantization Overhead, and Serving Throughput at Long Contexts* → publish **Sun Jan 31** · folder `research/2027-01-paging-vs-quantizing-kv/`
+> **🔬 Monthly research (FlashMaxSim Milestone 2)**: *The Online Max Reduction Invariant & In-SRAM Accumulation Mechanics* → publish **Sun Jan 31** · folder `research/2027-01-cagra-warp-search/`
 
 ---
 
