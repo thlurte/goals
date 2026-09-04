@@ -98,10 +98,10 @@
   4. **Empirical Benchmarks**: Perf counter tables, latency percentiles ($p50/p95/p99$), and QPS curves.
   5. **Key Takeaway**: Architectural rule of thumb for production AI systems.
 
-### 🧠 Deep Learning Track (Saturday 14:00–18:00)
+### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
 * **Task**: 
 
-### 🔬 Monthly Research Milestone (Sunday 09:00–13:00)
-* **Paper**: *"Streaming Late Interaction: Evaluating PLAID Centroid Inverted Lists vs MUVERA Fixed-Dimensional Encodings in Dynamic LSM Vector Storage"*
-* **Workspace**: `research/2026-11-late-interaction-lsm/`
+### 🔬 Monthly Research Milestone (GAPQ Milestone 3 (Landmark Paper 1 Freeze) — Mon/Thu 06:30–08:30 Morning Builder)
+* **Paper**: *"Sub-2-Bit In-Register SIMD Execution & Manuscript Submission Freeze"*
+* **Workspace**: `research/2026-11-rabitq-lsm/`
 * **Publish Deadline**: **Sun Nov 29**

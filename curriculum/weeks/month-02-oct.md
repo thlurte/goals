@@ -201,6 +201,6 @@
 * ❌ **Do NOT** implement SVD whitening transforms this week—whitening requires full Linear Algebra SVD (Week 12).
 
 > **📝 Essay 8 (Sat Oct 25)**: *"Graph Laplacians, Hubness Skewness, and Navigable Small-World Routing: Building HNSW from Scratch"*  
-> **🚀 Month 2 research PUBLISH (Sun Oct 25)**: freeze `research/2026-10-anisotropy-hubness-bits/paper.md` + public post.
+> **🚀 Month 2 research PUBLISH (Sun Oct 25)**: freeze `research/2026-10-anisotropic-quantization/paper.md` + public post.
 
 ---

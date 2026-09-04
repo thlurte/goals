@@ -96,7 +96,7 @@
 * ❌ **Do NOT** worry if your development machine is single-socket—simulate NUMA policies with `numactl --interleave` or `numactl --cpunodebind`.
 
 > **📝 Essay 22 (Sat Jan 31)**: *"Graph Disconnection and Selectivity Cliffs: ACORN Predicate Subgraphs vs Post-Filtering"*  
-> **🚀 Month 5 research PUBLISH (Sun Jan 31)**: freeze `research/2027-01-paging-vs-quantizing-kv/paper.md` + public post.
+> **🚀 Month 5 research PUBLISH (Sun Jan 31)**: freeze `research/2027-01-cagra-warp-search/paper.md` + public post.
 
 ---
 

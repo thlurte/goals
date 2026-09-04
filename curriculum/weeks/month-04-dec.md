@@ -60,7 +60,7 @@
 * ❌ **Do NOT** hand-write complex combinatorial counting proofs on paper—master permutations and combinations, then move to probability rules.
 
 > **📝 Essay 13 (Sat Nov 29)**: *"The SIMT Execution Model: Why Naive GPU Distance Kernels Lose to CPU AVX2"*  
-> **🚀 Month 3 research PUBLISH (Sun Nov 29)**: freeze `research/2026-11-late-interaction-lsm/paper.md` + public post.
+> **🚀 Month 3 research PUBLISH (Sun Nov 29)**: freeze `research/2026-11-rabitq-lsm/paper.md` + public post.
 
 ---
 

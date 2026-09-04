@@ -98,10 +98,10 @@
   4. **Empirical Benchmarks**: Perf counter tables, latency percentiles ($p50/p95/p99$), and QPS curves.
   5. **Key Takeaway**: Architectural rule of thumb for production AI systems.
 
-### 🧠 Deep Learning Track (Saturday 14:00–18:00)
+### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
 * **Task**: **🧠 DL weekend**: BERT + InfoNCE + **in-batch negatives**; export 768-D `.fvecs`. **Also**: implement `AdamW` optimizer from scratch ($m_t, v_t$ moment estimates, bias correction, **weight decay decoupling** from L2 reg). Train BERT with your AdamW; verify loss curve matches `torch.optim.AdamW`. **Hard negative mining**: retrieve BM25 top-100 per query, sample hard negatives from rank 10–100 for InfoNCE training.
 
-### 🔬 Monthly Research Milestone (Sunday 09:00–13:00)
-* **Paper**: *"Anisotropy-Aware Vector Quantization: Dissecting the Interplay Between Embedding Cones, Hubness, and Quantization Loss Functions"*
-* **Workspace**: `research/2026-10-anisotropy-hubness-bits/`
+### 🔬 Monthly Research Milestone (GAPQ Milestone 2 — Mon/Thu 06:30–08:30 Morning Builder)
+* **Paper**: *"Geometry-Aware Anisotropic Polar Quantization: The Adaptive Ellipsoidal Lattice & Unbiased QJL Proof"*
+* **Workspace**: `research/2026-10-anisotropic-quantization/`
 * **Publish Deadline**: **Sun Oct 25**

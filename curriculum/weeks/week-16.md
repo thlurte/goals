@@ -98,10 +98,10 @@
   4. **Empirical Benchmarks**: Perf counter tables, latency percentiles ($p50/p95/p99$), and QPS curves.
   5. **Key Takeaway**: Architectural rule of thumb for production AI systems.
 
-### 🧠 Deep Learning Track (Saturday 14:00–18:00)
+### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
 * **Task**: 
 
-### 🔬 Monthly Research Milestone (Sunday 09:00–13:00)
-* **Paper**: *"Billion-Scale Retrieval Frontiers: Comparing In-VRAM GPU IVF and Asynchronous NVMe DiskANN Under Concurrent Query Pressure"*
-* **Workspace**: `research/2026-12-three-paths-spine/`
+### 🔬 Monthly Research Milestone (FlashMaxSim Milestone 1 — Mon/Thu 06:30–08:30 Morning Builder)
+* **Paper**: *"The Memory Wall in Multimodal Late Interaction: Baseline GPU Kernel Profiling"*
+* **Workspace**: `research/2026-12-flashattn-vamana/`
 * **Publish Deadline**: **Sun Dec 27**

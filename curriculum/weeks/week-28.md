@@ -98,10 +98,10 @@
   4. **Empirical Benchmarks**: Perf counter tables, latency percentiles ($p50/p95/p99$), and QPS curves.
   5. **Key Takeaway**: Architectural rule of thumb for production AI systems.
 
-### 🧠 Deep Learning Track (Saturday 14:00–18:00)
+### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
 * **Task**: 
 
-### 🔬 Monthly Research Milestone (Sunday 09:00–13:00)
-* **Paper**: *"Unified IO-Aware GPU Architecture for Vector Retrieval and LLM Attention Serving: FlashAttention-2, Paged KV Caches, and Multi-GPU Scaling"*
+### 🔬 Monthly Research Milestone (FlashMaxSim Milestone 4 (Landmark Paper 2 Freeze) — Mon/Thu 06:30–08:30 Morning Builder)
+* **Paper**: *"Nsight Compute Roofline Validation & Master Conference Submission"*
 * **Workspace**: `research/2027-03-gpu-serving/`
 * **Publish Deadline**: **Fri Mar 12**

@@ -98,10 +98,10 @@
   4. **Empirical Benchmarks**: Perf counter tables, latency percentiles ($p50/p95/p99$), and QPS curves.
   5. **Key Takeaway**: Architectural rule of thumb for production AI systems.
 
-### 🧠 Deep Learning Track (Saturday 14:00–18:00)
+### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
 * **Task**: **🧠 DL weekend**: MHA + GQA; Pre-LN vs Post-LN.
 
-### 🔬 Monthly Research Milestone (Sunday 09:00–13:00)
-* **Paper**: *"Microarchitectural Limits of SIMD Vector Distance Kernels: Execution Port Contention, Cache-Line Splits, and Measurement Artifacts on Modern x86"*
+### 🔬 Monthly Research Milestone (GAPQ Milestone 1 — Mon/Thu 06:30–08:30 Morning Builder)
+* **Paper**: *"Microarchitectural Limits of Distance Kernels & Empirical Embedding Cone Anisotropy"*
 * **Workspace**: `research/2026-09-measurement-protocol/`
 * **Publish Deadline**: **Sun Sep 27**
