@@ -40,10 +40,10 @@ A disciplined, restorative 28-week reading curriculum designed for the post-work
 *Primary Tracks*: Pirsig (*Zen and the Art of Motorcycle Maintenance*) + Penrose (*The Road to Reality* Ch 1–8) + Hofstadter (*GEB* Part 1).
 
 #### Week 01 (Sat Sep 5 – Fri Sep 11)
-* **Sat Sep 5**: *Zen* — Ch 1–2 (The journey begins: Central Plains, back roads vs highways; romantic vs classic attitude).
+* **Sat Sep 5**: [x] *Zen* — Ch 1–2 (The journey begins: Central Plains, back roads vs highways; romantic vs classic attitude). *(Completed)*
 * **Sun Sep 6 (Penrose Sunday)**: *The Road to Reality* — **Ch 1: The Roots of Science** (The Three Worlds: Platonic mathematical, physical, mental).
-* **Mon Sep 7**: *Zen* — Ch 3 (The shim made from a beer can: technology and attitude).
-* **Tue Sep 8**: *Zen* — Ch 4 (Ghost of Phaedrus: ghost of rationality).
+* **Mon Sep 7**: [x] *Zen* — Ch 3 (The shim made from a beer can: technology and attitude). *(Completed ahead of schedule!)*
+* **Tue Sep 8**: [x] *Zen* — Ch 4 (Ghost of Phaedrus: ghost of rationality). *(Completed ahead of schedule!)*
 * **Wed Sep 9**: *Zen* — Ch 5 (Scientific method and the motorcycle: deductive vs inductive troubleshooting).
 * **Thu Sep 10**: *Zen* — Ch 6 (Entering the mountains: the bifurcation of classical and romantic).
 * **Fri Sep 11**: *Zen* — Ch 7 (The bifurcation of classical and romantic understanding).
