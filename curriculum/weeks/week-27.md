@@ -18,8 +18,9 @@
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📐 Saturday 09:00 – 13:00    │ Pure Mathematics Block 1 (Theory, Concepts, Derivations)               │
 │ ☕ Saturday 15:00 – 16:30    │ Weekend Literature Sanctuary (Pirsig / GEB / Literature)               │
+│ 🍵 Saturday 16:30 – 18:00    │ Physical Break & Mental Decompression (Walk, tea, workout)             │
 │ 📚 Saturday 18:00 – 19:30    │ [NEW] Information Theory (Cover & Thomas: Rate-Distortion & AEP)       │
-│ ✏️ Saturday 19:30 – 21:00    │ [LAB] Graduate Math Problem-Set & Proof Lab (Vershynin / H&J)          │
+│ 🌙 Saturday 19:30 Onwards    │ 100% Free / Dinner & Recovery (No night math; morning block done)       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📐 Sunday 09:00 – 13:00      │ Pure Mathematics Block 2 (Problem Sets, Chalkboard Proofs)             │
 │ 🔧 Sunday 13:00 – 14:00      │ Runtime Maintenance (limbed / ggmbed check)                            │
@@ -41,7 +42,7 @@
 
 | Day | Date | Daily Runbook | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|:---|:---|
-| **Saturday** | Sat Mar 6 | [`Day 183`](../days/month-07/day-183-2027-03-06.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Info Theory (Ch 17) · **19:30–21:00**: Math Lab (GAPQ Proof Lab 3) |
+| **Saturday** | Sat Mar 6 | [`Day 183`](../days/month-07/day-183-2027-03-06.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30+**: Free / Rest |
 | **Sunday** | Sun Mar 7 | [`Day 184`](../days/month-07/day-184-2027-03-07.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (Dist-Vector Ch 3) · **19:30–21:00**: Systems Lab (FlashMaxSim Lab 6) |
 | **Monday** | Mon Mar 8 | [`Day 185`](../days/month-07/day-185-2027-03-08.md) | NCCL ring algorithms. | **Monthly Research: Planning & Literature Synthesis** | **secan**: Multi-GPU IVF load-balance polish (Week 20). |
 | **Tuesday** | Tue Mar 9 | [`Day 186`](../days/month-07/day-186-2027-03-09.md) | NVLink vs PCIe. | **DL Track (Part 1): Architecture & Tensor Shapes** | Scaling efficiency 1/2/4 GPU (or 1 GPU simulated shards). |
@@ -56,8 +57,7 @@
 ### 🔹 Saturday, Sat Mar 6 ([`Day 183`](../days/month-07/day-183-2027-03-06.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
 * `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
-* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* — **Ch 17** (Inequalities in Information Theory: Shearer's Lemma, Brunn-Minkowski & Entropy Power Inequality).
-* `[ ]` **Core (19:30–21:00)**: **Graduate Math Problem-Set & Proof Lab**: Worked exercises and chalkboard proofs in **GAPQ Proof Lab 3** (Cramér-Rao lower bounds on quantized inner product estimators).
+* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* (Reading & Notes).
 * `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Mar 7 ([`Day 184`](../days/month-07/day-184-2027-03-07.md))

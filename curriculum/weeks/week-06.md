@@ -18,8 +18,9 @@
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📐 Saturday 09:00 – 13:00    │ Pure Mathematics Block 1 (Theory, Concepts, Derivations)               │
 │ ☕ Saturday 15:00 – 16:30    │ Weekend Literature Sanctuary (Pirsig / GEB / Literature)               │
+│ 🍵 Saturday 16:30 – 18:00    │ Physical Break & Mental Decompression (Walk, tea, workout)             │
 │ 📚 Saturday 18:00 – 19:30    │ [NEW] Information Theory (Cover & Thomas: Rate-Distortion & AEP)       │
-│ ✏️ Saturday 19:30 – 21:00    │ [LAB] Graduate Math Problem-Set & Proof Lab (Vershynin / H&J)          │
+│ 🌙 Saturday 19:30 Onwards    │ 100% Free / Dinner & Recovery (No night math; morning block done)       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📐 Sunday 09:00 – 13:00      │ Pure Mathematics Block 2 (Problem Sets, Chalkboard Proofs)             │
 │ 🔧 Sunday 13:00 – 14:00      │ Runtime Maintenance (limbed / ggmbed check)                            │
@@ -41,7 +42,7 @@
 
 | Day | Date | Daily Runbook | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|:---|:---|
-| **Saturday** | Sat Oct 10 | [`Day 036`](../days/month-02/day-036-2026-10-10.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Info Theory (Ch 5.1–5.5) · **19:30–21:00**: Math Lab (Vershynin Ch 6) |
+| **Saturday** | Sat Oct 10 | [`Day 036`](../days/month-02/day-036-2026-10-10.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30+**: Free / Rest |
 | **Sunday** | Sun Oct 11 | [`Day 037`](../days/month-02/day-037-2026-10-11.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (DDIA Ch 5) · **19:30–21:00**: Systems Lab (H&P Ch 3) |
 | **Monday** | Mon Oct 12 | [`Day 038`](../days/month-02/day-038-2026-10-12.md) | Research paper: *"Product Quantization for Nearest Neighbor Search"* (Jégou et al. 2011) §1–4. | **Monthly Research: Planning & Literature Synthesis** | **secan**: Implement $k$-means clustering in C++ for a subspace: `train_kmeans(data, k=256, dim_sub)` using $k$-means++. |
 | **Tuesday** | Tue Oct 13 | [`Day 039`](../days/month-02/day-039-2026-10-13.md) | Faiss wiki on Product Quantizer: subspace splitting, codebook memory layouts. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: Implement `ProductQuantizer`: split $D$ dimensions into $M$ subspaces. Train $M$ codebooks. Encode vectors as $M$-byte codes. |
@@ -56,9 +57,9 @@
 ### 🔹 Saturday, Sat Oct 10 ([`Day 036`](../days/month-02/day-036-2026-10-10.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
 * `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
-* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* — **Ch 5.1–5.5** (Data Compression Foundations: Kraft Inequality, Optimal Codes & Prefix Codes).
-* `[ ]` **Core (19:30–21:00)**: **Graduate Math Problem-Set & Proof Lab**: Worked exercises and chalkboard proofs in **Vershynin Ch 6** (Metric entropy, covering numbers $\mathcal{N}(\mathcal{K}, \varepsilon)$ & Johnson-Lindenstrauss lemma).
-* `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
+* `[ ]` **Core (16:30–18:00)**: **Physical Break & Mental Decompression**: Walk, tea, and recovery.
+* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* — **Ch 5.5–5.8** (Huffman Codes & Optimality Proofs).
+* `⭐ Optional / Stretch`: 19:30 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Oct 11 ([`Day 037`](../days/month-02/day-037-2026-10-11.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.

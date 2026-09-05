@@ -18,8 +18,9 @@
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📐 Saturday 09:00 – 13:00    │ Pure Mathematics Block 1 (Theory, Concepts, Derivations)               │
 │ ☕ Saturday 15:00 – 16:30    │ Weekend Literature Sanctuary (Pirsig / GEB / Literature)               │
+│ 🍵 Saturday 16:30 – 18:00    │ Physical Break & Mental Decompression (Walk, tea, workout)             │
 │ 📚 Saturday 18:00 – 19:30    │ [NEW] Information Theory (Cover & Thomas: Rate-Distortion & AEP)       │
-│ ✏️ Saturday 19:30 – 21:00    │ [LAB] Graduate Math Problem-Set & Proof Lab (Vershynin / H&J)          │
+│ 🌙 Saturday 19:30 Onwards    │ 100% Free / Dinner & Recovery (No night math; morning block done)       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📐 Sunday 09:00 – 13:00      │ Pure Mathematics Block 2 (Problem Sets, Chalkboard Proofs)             │
 │ 🔧 Sunday 13:00 – 14:00      │ Runtime Maintenance (limbed / ggmbed check)                            │
@@ -41,7 +42,7 @@
 
 | Day | Date | Daily Runbook | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|:---|:---|
-| **Saturday** | Sat Dec 19 | [`Day 106`](../days/month-04/day-106-2026-12-19.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Info Theory (Ch 10.7–10.9) · **19:30–21:00**: Math Lab (Horn & Johnson Ch 8) |
+| **Saturday** | Sat Dec 19 | [`Day 106`](../days/month-04/day-106-2026-12-19.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30+**: Free / Rest |
 | **Sunday** | Sun Dec 20 | [`Day 107`](../days/month-04/day-107-2026-12-20.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (IIR Ch 5) · **19:30–21:00**: Systems Lab (Kirk & Hwu Ch 7) |
 | **Monday** | Mon Dec 21 | [`Day 108`](../days/month-04/day-108-2026-12-21.md) | Faiss GPU 2019 §1–3: billion-scale GPU similarity search. | **Monthly Research: Planning & Literature Synthesis** | **secan**: GPU IVF memory layout: coarse centroids; cell vectors + offset table. |
 | **Tuesday** | Tue Dec 22 | [`Day 109`](../days/month-04/day-109-2026-12-22.md) | Faiss GPU §4–5: GPU $k$-selection, warp-cooperative list scanning. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: GPU coarse quantizer + top-`nprobe` cell select; warp-cooperative cell scan. |
@@ -56,8 +57,7 @@
 ### 🔹 Saturday, Sat Dec 19 ([`Day 106`](../days/month-04/day-106-2026-12-19.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
 * `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
-* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* — **Ch 10.7–10.9** (Rate-Distortion Theory: Vector Quantization Bounds, Shannon Lower Bound & Blahut-Arimoto Algorithm).
-* `[ ]` **Core (19:30–21:00)**: **Graduate Math Problem-Set & Proof Lab**: Worked exercises and chalkboard proofs in **Horn & Johnson Ch 8** (Perron-Frobenius theory of non-negative matrices & spectral graph Laplacians).
+* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* (Reading & Notes).
 * `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Dec 20 ([`Day 107`](../days/month-04/day-107-2026-12-20.md))

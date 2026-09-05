@@ -18,8 +18,9 @@
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📐 Saturday 09:00 – 13:00    │ Pure Mathematics Block 1 (Theory, Concepts, Derivations)               │
 │ ☕ Saturday 15:00 – 16:30    │ Weekend Literature Sanctuary (Pirsig / GEB / Literature)               │
+│ 🍵 Saturday 16:30 – 18:00    │ Physical Break & Mental Decompression (Walk, tea, workout)             │
 │ 📚 Saturday 18:00 – 19:30    │ [NEW] Information Theory (Cover & Thomas: Rate-Distortion & AEP)       │
-│ ✏️ Saturday 19:30 – 21:00    │ [LAB] Graduate Math Problem-Set & Proof Lab (Vershynin / H&J)          │
+│ 🌙 Saturday 19:30 Onwards    │ 100% Free / Dinner & Recovery (No night math; morning block done)       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📐 Sunday 09:00 – 13:00      │ Pure Mathematics Block 2 (Problem Sets, Chalkboard Proofs)             │
 │ 🔧 Sunday 13:00 – 14:00      │ Runtime Maintenance (limbed / ggmbed check)                            │
@@ -41,7 +42,7 @@
 
 | Day | Date | Daily Runbook | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|:---|:---|
-| **Saturday** | Sat Mar 13 | [`Day 190`](../days/month-07/day-190-2027-03-13.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Info Theory (Capstone Review) · **19:30–21:00**: Math Lab (GAPQ Proof Lab 4) |
+| **Saturday** | Sat Mar 13 | [`Day 190`](../days/month-07/day-190-2027-03-13.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30+**: Free / Rest |
 | **Sunday** | Sun Mar 14 | [`Day 191`](../days/month-07/day-191-2027-03-14.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (Dist-Vector Ch 4) · **19:30–21:00**: Systems Lab (FlashMaxSim Lab 7) |
 | **Monday** | Mon Mar 15 | [`Day 192`](../days/month-07/day-192-2027-03-15.md) | API & Doxygen architecture pass. | **Monthly Research: Planning & Literature Synthesis** | Finish CLI + Doxygen documentation. |
 | **Tuesday** | Tue Mar 16 | [`Day 193`](../days/month-07/day-193-2027-03-16.md) | `ann-benchmarks` methodology. | **DL Track (Part 1): Architecture & Tensor Shapes** | Full CPU+GPU benchmark matrix using Profiling Playbook ([`roadmap.md#part-3`](../roadmap.md#part-3-verification--tooling-matrix-the-hardware-profiling-playbook)). |
@@ -56,8 +57,7 @@
 ### 🔹 Saturday, Sat Mar 13 ([`Day 190`](../days/month-07/day-190-2027-03-13.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
 * `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
-* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* — **Capstone Review** (Mathematical Synthesis: Rate-Distortion, High-Dimensional Concentration & GAPQ Bounds).
-* `[ ]` **Core (19:30–21:00)**: **Graduate Math Problem-Set & Proof Lab**: Worked exercises and chalkboard proofs in **GAPQ Proof Lab 4** (Landmark Paper 1 Theoretical Appendix & Complete Proof Defense).
+* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* (Reading & Notes).
 * `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Mar 14 ([`Day 191`](../days/month-07/day-191-2027-03-14.md))

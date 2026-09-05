@@ -25,8 +25,8 @@
 
 1. **Sat 09:00–13:00** — **Pure Math Block 1** (Theory, Concepts, Derivations, Textbook Chapters)
 2. **Sat 15:00–16:30** — **Weekend Reading Sanctuary** (Pirsig / GEB / Literature)
-3. **Sat 18:00–19:30** — **Information Theory Track** (*Elements of Information Theory* — Cover & Thomas)
-4. **Sat 19:30–21:00** — **Graduate Math Problem-Set & Proof Lab** (*Vershynin* / *Horn & Johnson* / *Casella & Berger*)
+3. **Sat 16:30–18:00** — **Physical Decompression & Recovery** (Walk, tea, workout — 100% screen-free)
+4. **Sat 18:00–19:30** — **Information Theory Track** (*Elements of Information Theory* — Cover & Thomas)
 5. **Sun 09:00–13:00** — **Pure Math Block 2** (Problem Sets, Chalkboard Proofs, Verification)
 6. **Sun 13:00–14:00** — **Runtime Maintenance** ([`embed-runtimes`](../projects/embed-runtimes.md): `limbed` / `ggmbed` 30–60 min only)
 7. **Sun 15:00–16:45** — **Penrose Sunday: The Road to Reality** (1 chapter/week, visual geometry focus)
@@ -64,8 +64,8 @@ The curriculum anchors all empirical systems and theoretical proofs to 6 authori
 
 | Domain | Master Text | Authors | Focus in Curriculum & Landmark Papers |
 |:---|:---|:---|:---|
-| **High-Dim Probability** | *High-Dimensional Probability: An Introduction with Applications in Data Science* (CUP 2018) | Roman Vershynin | **Months 1–4**: Sub-Gaussian vectors, concentration of measure on $\mathcal{S}^{d-1}$, Johnson-Lindenstrauss lemma, metric entropy, covering numbers. Directly grounds **Landmark Paper 1 (GAPQ)**. |
-| **Matrix Analysis** | *Matrix Analysis* (2nd ed, CUP 2012) | Roger A. Horn & Charles R. Johnson | **Months 2, 3, 6**: Spectral theorem, Courant-Fischer minimax, singular value decomposition (SVD), Weyl's perturbation bounds, Perron-Frobenius theory for graph Laplacians. |
+| **High-Dim Probability** | *High-Dimensional Probability: An Introduction with Applications in Data Science* (CUP 2018) | Roman Vershynin | **Months 4–5**: Sub-Gaussian vectors, concentration of measure on $\mathcal{S}^{d-1}$, Johnson-Lindenstrauss lemma, metric entropy, covering numbers. Directly grounds **Landmark Paper 1 (GAPQ)**. |
+| **Matrix Analysis** | *Matrix Analysis* (2nd ed, CUP 2012) | Roger A. Horn & Charles R. Johnson | **Months 3–4, 6**: Spectral theorem, Courant-Fischer minimax, singular value decomposition (SVD), Weyl's perturbation bounds, Perron-Frobenius theory for graph Laplacians. |
 | **Statistical Inference** | *Statistical Inference* (2nd ed, Duxbury 2001) | George Casella & Roger L. Berger | **Month 5**: Principles of data reduction, sufficiency, likelihood ratio tests, Cramér-Rao lower bounds for retrieval sensitivity under extreme quantization. |
 | **Computer Architecture** | *Computer Architecture: A Quantitative Approach* (6th ed, Morgan Kaufmann 2017) | John L. Hennessy & David A. Patterson | **Months 1–4, 7**: Memory hierarchy design, instruction-level parallelism, dynamic branch prediction, vector/SIMD/GPU microarchitectures, warehouse-scale computing. |
 | **Systems Performance** | *Systems Performance: Enterprise and the Cloud* (2nd ed, Addison-Wesley 2020) | Brendan Gregg | **Months 1, 4, 7**: CPU PMU hardware counters, instruction cache vs data cache misses, memory bus saturation, Linux disk IO, `perf stat`/`perf record`, and flame graphs. |
@@ -77,7 +77,7 @@ The curriculum anchors all empirical systems and theoretical proofs to 6 authori
  ┌──────────────────────────────────────────────────────────────────────────────────────────────────┐
  │                          PILLAR 1: PURE MATHEMATICS (8.0 HRS/WEEKEND — SAT & SUN)                │
  │ • Sat & Sun 09:00–13:00: Deep theory, derivations, problem sets, and whiteboard proofs           │
- │ • Sep: Trig + Calc · Oct: Multivariable · Nov: Linear Algebra · Dec: Probability                 │
+ │ • Sep: Trig + Calc · Oct: Multivariable · Nov: Linear Algebra · Dec: Probability + Concentration │
  │ • Jan: Limit theorems / stats · Feb: Convex + spectral · Mar: GPU synthesis                      │
  └────────────────────────┬─────────────────────────────────────────┬───────────────────────────────┘
                           │                                         │

@@ -24,8 +24,9 @@ A disciplined, restorative 28-week reading curriculum designed for the post-work
 |  THURSDAY     (18:30–20:00) : Mind & Systems Track (Hofstadter GEB / Wiener Cybernetics)         |
 |  FRIDAY       (18:30–20:00) : Literature & Craft Track (Pirsig / Dostoevsky / Bulgakov)          |
 |  SATURDAY     (15:00–16:30) : Weekend Literature Sanctuary (Relaxed, tea & marginalia)           |
+|  SATURDAY     (16:30–18:00) : Physical Decompression Buffer (Walk, tea, recovery)                |
 |  SATURDAY     (18:00–19:30) : [NEW] Information Theory (Cover & Thomas: Rate-Distortion & AEP)   |
-|  SATURDAY     (19:30–21:00) : [LAB] Graduate Math Problem-Set & Proof Lab (Vershynin / H&J)       |
+|  SATURDAY     (19:30 Onwards): 100% Free / Rest & Dinner (Zero night math after morning 4h block) |
 |  SUNDAY       (15:00–16:45) : PENROSE SUNDAY: The Road to Reality (1 chapter/week, visual focus) |
 |  SUNDAY       (18:00–19:30) : [NEW] Distributed Systems & IR Track (DDIA / Manning IIR)          |
 |  SUNDAY       (19:30–21:00) : [LAB] Graduate Systems & GPU Architecture Lab (H&P / Kirk & Hwu)    |

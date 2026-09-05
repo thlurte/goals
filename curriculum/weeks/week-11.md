@@ -18,8 +18,9 @@
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📐 Saturday 09:00 – 13:00    │ Pure Mathematics Block 1 (Theory, Concepts, Derivations)               │
 │ ☕ Saturday 15:00 – 16:30    │ Weekend Literature Sanctuary (Pirsig / GEB / Literature)               │
+│ 🍵 Saturday 16:30 – 18:00    │ Physical Break & Mental Decompression (Walk, tea, workout)             │
 │ 📚 Saturday 18:00 – 19:30    │ [NEW] Information Theory (Cover & Thomas: Rate-Distortion & AEP)       │
-│ ✏️ Saturday 19:30 – 21:00    │ [LAB] Graduate Math Problem-Set & Proof Lab (Vershynin / H&J)          │
+│ 🌙 Saturday 19:30 Onwards    │ 100% Free / Dinner & Recovery (No night math; morning block done)       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📐 Sunday 09:00 – 13:00      │ Pure Mathematics Block 2 (Problem Sets, Chalkboard Proofs)             │
 │ 🔧 Sunday 13:00 – 14:00      │ Runtime Maintenance (limbed / ggmbed check)                            │
@@ -41,7 +42,7 @@
 
 | Day | Date | Daily Runbook | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|:---|:---|
-| **Saturday** | Sat Nov 14 | [`Day 071`](../days/month-03/day-071-2026-11-14.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Info Theory (Ch 8.1–8.5) · **19:30–21:00**: Math Lab (Horn & Johnson Ch 3) |
+| **Saturday** | Sat Nov 14 | [`Day 071`](../days/month-03/day-071-2026-11-14.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30+**: Free / Rest |
 | **Sunday** | Sun Nov 15 | [`Day 072`](../days/month-03/day-072-2026-11-15.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (DDIA Ch 10) · **19:30–21:00**: Systems Lab (Gregg Ch 9) |
 | **Monday** | Mon Nov 16 | [`Day 073`](../days/month-03/day-073-2026-11-16.md) | Research paper: *"DiskANN: Fast Accurate Billion-point NN Search on a Single Node"* (Subramanya et al. 2019) — architecture skim (**build Week 16 Thu**). | **Monthly Research: Planning & Literature Synthesis** | **secan**: Implement `WriteAheadLog` (`wal.bin`) and in-memory mutable `MemTable` (dynamic HNSW absorbing live writes). |
 | **Tuesday** | Tue Nov 17 | [`Day 074`](../days/month-03/day-074-2026-11-17.md) | Apache Arrow / Lance columnar layout notes for segment files. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: Implement Segment Flusher: when MemTable reaches threshold, flush to immutable disk segment (flat Arrow/Lance layout). |
@@ -56,9 +57,9 @@
 ### 🔹 Saturday, Sat Nov 14 ([`Day 071`](../days/month-03/day-071-2026-11-14.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
 * `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
-* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* — **Ch 8.1–8.5** (Differential Entropy: Properties, Maximum Entropy of Multivariate Gaussian Distribution).
-* `[ ]` **Core (19:30–21:00)**: **Graduate Math Problem-Set & Proof Lab**: Worked exercises and chalkboard proofs in **Horn & Johnson Ch 3** (Jordan canonical form, minimal polynomials & spectral decomposition).
-* `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
+* `[ ]` **Core (16:30–18:00)**: **Physical Break & Mental Decompression**: Walk, tea, and recovery.
+* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* — **Ch 10.1–10.3** (Rate-Distortion Theory: Continuous Distortion Measures & Rate-Distortion Function $R(D)$).
+* `⭐ Optional / Stretch`: 19:30 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Nov 15 ([`Day 072`](../days/month-03/day-072-2026-11-15.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.

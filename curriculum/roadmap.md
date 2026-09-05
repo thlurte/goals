@@ -304,7 +304,7 @@ To guarantee mathematical rigor and microarchitectural precision across both Lan
 
 ### 1. High-Dimensional Probability: An Introduction with Applications in Data Science
 * **Author**: Roman Vershynin (Cambridge University Press, 2018)
-* **Curriculum Placement**: Months 1–4 (Pure Math Blocks 1 & 2)
+* **Curriculum Placement**: Months 4–5 (Pure Math Blocks 1 & 2) — after Calculus & Linear Algebra foundations
 * **Direct Application to Landmark Paper 1 (GAPQ)**:
   * **Sub-Gaussian Random Vectors & Hyperspherical Geometry (Ch 1–3)**: Closed-form concentration of measure on $\mathcal{S}^{d-1}$ ($\|x\|_2 \approx \sqrt{d} \pm \mathcal{O}(1)$), bounding angular dispersion within anisotropic embedding cones.
   * **Random Matrices & Non-Asymptotic SVD (Ch 4–5)**: Matrix Bernstein inequalities and covariance estimation for anisotropic coordinate frames.
@@ -312,7 +312,7 @@ To guarantee mathematical rigor and microarchitectural precision across both Lan
 
 ### 2. Matrix Analysis (2nd Edition)
 * **Authors**: Roger A. Horn & Charles R. Johnson (Cambridge University Press, 2012)
-* **Curriculum Placement**: Months 2, 3, 6 (Pure Math Blocks 1 & 2)
+* **Curriculum Placement**: Months 3–4, 6 (Pure Math Blocks 1 & 2) — aligned with Linear Algebra month
 * **Direct Application to Landmark Papers 1 & 2**:
   * **Eigenvalues & Minimax Principles (Ch 1–4)**: Courant-Fischer minimax theorem $\lambda_k(A) = \max_{\dim(S)=k} \min_{x \in S, \|x\|=1} x^* A x$ and Rayleigh quotients for finding principal cone axes.
   * **Matrix Perturbation & Singular Values (Ch 5–7)**: Weyl's monotonicity theorem and Hoffman-Wielandt perturbation bounds $\sum_{i=1}^n |\sigma_i(A) - \sigma_i(B)|^2 \le \|A - B\|_F^2$ for MUVERA fixed-dimensional encodings.
