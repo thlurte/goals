@@ -42,7 +42,7 @@
 
 | Day | Date | Daily Runbook | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|:---|:---|
-| **Saturday** | Sat Nov 7 | [`Day 064`](../days/month-03/day-064-2026-11-07.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30+**: Free / Rest |
+| **Saturday** | Sat Nov 7 | [`Day 064`](../days/month-03/day-064-2026-11-07.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30–21:00**: Thought Leadership (Claude E. Shannon) · **21:00+**: Free / Rest|
 | **Sunday** | Sun Nov 8 | [`Day 065`](../days/month-03/day-065-2026-11-08.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (DDIA Ch 9) · **19:30–21:00**: Systems Lab (H&P Ch 5) |
 | **Monday** | Mon Nov 9 | [`Day 066`](../days/month-03/day-066-2026-11-09.md) | [MUVERA](https://arxiv.org/abs/2405.19504) §1–3: FDE construction, SimHash buckets, **asymmetric** query vs doc encode. | **Monthly Research: Planning & Literature Synthesis** | **secan (required)**: `fde_encode` — hash tokens into $B$ buckets, per-bucket aggregate, $R$ repetitions. Query FDE $\neq$ doc FDE. |
 | **Tuesday** | Tue Nov 10 | [`Day 067`](../days/month-03/day-067-2026-11-10.md) | MUVERA §4–5: FDE MIPS + MaxSim re-rank; candidate count vs heuristics. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan (required)**: Index doc FDEs with **IP** HNSW or IVF (Week 4/8). Retrieve then **MaxSim re-rank**. Plot Recall vs candidates vs Week 9 centroid prune. |
@@ -59,7 +59,8 @@
 * `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
 * `[ ]` **Core (16:30–18:00)**: **Physical Break & Mental Decompression**: Walk, tea, and recovery.
 * `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* — **Ch 9.1–9.4** (Gaussian Channel & Water-Filling Power Allocation).
-* `⭐ Optional / Stretch`: 19:30 onwards 100% Free / Rest.
+* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: Claude E. Shannon, *The Mathematical Theory of Communication* — **Part II & III: Discrete Channels with Noise** (Channel Capacity C = max I(X;Y), Channel Coding Theorem, Equivocation, Error Correction Limits).
+* `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Nov 8 ([`Day 065`](../days/month-03/day-065-2026-11-08.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.

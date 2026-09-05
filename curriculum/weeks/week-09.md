@@ -42,7 +42,7 @@
 
 | Day | Date | Daily Runbook | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|:---|:---|
-| **Saturday** | Sat Oct 31 | [`Day 057`](../days/month-03/day-057-2026-10-31.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30+**: Free / Rest |
+| **Saturday** | Sat Oct 31 | [`Day 057`](../days/month-03/day-057-2026-10-31.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30–21:00**: Thought Leadership (Claude E. Shannon) · **21:00+**: Free / Rest|
 | **Sunday** | Sun Nov 1 | [`Day 058`](../days/month-03/day-058-2026-11-01.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (DDIA Ch 8) · **19:30–21:00**: Systems Lab (H&P Ch 4) |
 | **Monday** | Mon Nov 2 | [`Day 059`](../days/month-03/day-059-2026-11-02.md) | Research paper: *"ColBERT: Efficient and Effective Passage Search via Late Interaction"* (Khattab & Zaharia 2020). | **Monthly Research: Planning & Literature Synthesis** | **secan (required)**: **Batch HNSW build**: insert $N$ in one pass (level assignment + sequential connect). Compare build time vs one-by-one insert. |
 | **Tuesday** | Tue Nov 3 | [`Day 060`](../days/month-03/day-060-2026-11-03.md) | PLAID paper §1–4; HNSW bulk-construction notes. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: Parallel batch graph construction (shard-then-merge or lock-free insert). Measure Recall@10 vs sequential insert. |
@@ -59,7 +59,8 @@
 * `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
 * `[ ]` **Core (16:30–18:00)**: **Physical Break & Mental Decompression**: Walk, tea, and recovery.
 * `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* — **Ch 8.1–8.6** (Differential Entropy & Gaussian Distributions).
-* `⭐ Optional / Stretch`: 19:30 onwards 100% Free / Rest.
+* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: Claude E. Shannon, *The Mathematical Theory of Communication (Univ. of Illinois Press 1949)* — **Part I: Discrete Noiseless Systems** (Foundational Entropy H = -sum p_i log p_i, Markov Information Sources, Kraft Inequality & Redundancy).
+* `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Nov 1 ([`Day 058`](../days/month-03/day-058-2026-11-01.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.

@@ -42,7 +42,7 @@
 
 | Day | Date | Daily Runbook | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|:---|:---|
-| **Saturday** | Sat Jan 16 | [`Day 134`](../days/month-05/day-134-2027-01-16.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30+**: Free / Rest |
+| **Saturday** | Sat Jan 16 | [`Day 134`](../days/month-05/day-134-2027-01-16.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30–21:00**: Thought Leadership (Edwin T. Jaynes) · **21:00+**: Free / Rest|
 | **Sunday** | Sun Jan 17 | [`Day 135`](../days/month-05/day-135-2027-01-17.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (IIR Ch 9) · **19:30–21:00**: Systems Lab (Kirk & Hwu Ch 16) |
 | **Monday** | Mon Jan 18 | [`Day 136`](../days/month-05/day-136-2027-01-18.md) | **CUDA-GUIDE Multi-GPU**: `cudaSetDevice`, peer-to-peer memory access (`cudaDeviceEnablePeerAccess`). | **Monthly Research: Planning & Literature Synthesis** | **secan**: Implement dataset sharding: split $N$ vectors into $G$ shards. Upload shard $i$ to GPU $i$. Build `MultiGpuIndex` class. |
 | **Tuesday** | Tue Jan 19 | [`Day 137`](../days/month-05/day-137-2027-01-19.md) | X)$, and the Chain Rule for Entropy: $H(X_1, \dots, X_n) = \sum H(X_i | **DL Track (Part 1): Architecture & Tensor Shapes** | X_{i-1}, \dots, X_1)$. |
@@ -58,6 +58,7 @@
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
 * `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
 * `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* (Reading & Notes).
+* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: Edwin T. Jaynes, *Probability Theory: The Logic of Science* — **Ch 12: Ignorance Priors and Transformation Groups** (Continuous Invariance Groups, Jeffreys Priors, Location-Scale Parameters & Manifold Geometry).
 * `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Jan 17 ([`Day 135`](../days/month-05/day-135-2027-01-17.md))

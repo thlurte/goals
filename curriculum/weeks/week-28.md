@@ -42,7 +42,7 @@
 
 | Day | Date | Daily Runbook | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|:---|:---|
-| **Saturday** | Sat Mar 13 | [`Day 190`](../days/month-07/day-190-2027-03-13.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30+**: Free / Rest |
+| **Saturday** | Sat Mar 13 | [`Day 190`](../days/month-07/day-190-2027-03-13.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30–21:00**: Thought Leadership (Master Retrospective) · **21:00+**: Free / Rest|
 | **Sunday** | Sun Mar 14 | [`Day 191`](../days/month-07/day-191-2027-03-14.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (Dist-Vector Ch 4) · **19:30–21:00**: Systems Lab (FlashMaxSim Lab 7) |
 | **Monday** | Mon Mar 15 | [`Day 192`](../days/month-07/day-192-2027-03-15.md) | API & Doxygen architecture pass. | **Monthly Research: Planning & Literature Synthesis** | Finish CLI + Doxygen documentation. |
 | **Tuesday** | Tue Mar 16 | [`Day 193`](../days/month-07/day-193-2027-03-16.md) | `ann-benchmarks` methodology. | **DL Track (Part 1): Architecture & Tensor Shapes** | Full CPU+GPU benchmark matrix using Profiling Playbook ([`roadmap.md#part-3`](../roadmap.md#part-3-verification--tooling-matrix-the-hardware-profiling-playbook)). |
@@ -58,6 +58,7 @@
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
 * `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
 * `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* (Reading & Notes).
+* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: Master Retrospective, *The Grand Unity of Mathematics, Systems & Craft* — **Capstone Graduation Reflection** (The Synthesis of Pure Math Rigor, Systems Mechanical Sympathy, and Enduring Human Quality).
 * `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Mar 14 ([`Day 191`](../days/month-07/day-191-2027-03-14.md))

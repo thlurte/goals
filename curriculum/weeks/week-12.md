@@ -42,7 +42,7 @@
 
 | Day | Date | Daily Runbook | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|:---|:---|
-| **Saturday** | Sat Nov 21 | [`Day 078`](../days/month-03/day-078-2026-11-21.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30+**: Free / Rest |
+| **Saturday** | Sat Nov 21 | [`Day 078`](../days/month-03/day-078-2026-11-21.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30–21:00**: Thought Leadership (Butler W. Lampson) · **21:00+**: Free / Rest|
 | **Sunday** | Sun Nov 22 | [`Day 079`](../days/month-03/day-079-2026-11-22.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (DDIA Ch 11–12) · **19:30–21:00**: Systems Lab (Pikus Ch 10–12) |
 | **Monday** | Mon Nov 23 | [`Day 080`](../days/month-03/day-080-2026-11-23.md) | Query-side PCA / OPQ literature. | **Monthly Research: Planning & Literature Synthesis** | **secan**: **Whitening + query-side PCA**. Hubness $S_{N_k}$ before/after. |
 | **Tuesday** | Tue Nov 24 | [`Day 081`](../days/month-03/day-081-2026-11-24.md) | **PIKUS Ch 6**: RW locks. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: `nanobind` + CLI: expose `HNSWIndex`, **`IVFPQIndex`**, **`HNSWSQIndex`**, `LSMIndex`. |
@@ -59,7 +59,8 @@
 * `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
 * `[ ]` **Core (16:30–18:00)**: **Physical Break & Mental Decompression**: Walk, tea, and recovery.
 * `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* — **Ch 10.4–10.6** (Rate-Distortion for Gaussian Sources & Polar Quantization Bounds).
-* `⭐ Optional / Stretch`: 19:30 onwards 100% Free / Rest.
+* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: Butler W. Lampson, *Hints for Computer System Design (ACM TOCS 1983)* — **Full Landmark Monograph** (Interface Principles, Keep Secrets Fast, Use Hints Not Truths, End-to-End Fallback, Fast-Path Tuning).
+* `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Nov 22 ([`Day 079`](../days/month-03/day-079-2026-11-22.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.

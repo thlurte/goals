@@ -42,7 +42,7 @@
 
 | Day | Date | Daily Runbook | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|:---|:---|
-| **Saturday** | Sat Sep 5 | [`Day 001`](../days/month-01/day-001-2026-09-05.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30+**: Free / Rest |
+| **Saturday** | Sat Sep 5 | [`Day 001`](../days/month-01/day-001-2026-09-05.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30–21:00**: Thought Leadership (George Pólya) · **21:00+**: Free / Rest|
 | **Sunday** | Sun Sep 6 | [`Day 002`](../days/month-01/day-002-2026-09-06.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (DDIA Ch 1) · **19:30–21:00**: Systems Lab (H&P Ch 1) |
 | **Monday** | Mon Sep 7 | [`Day 003`](../days/month-01/day-003-2026-09-07.md) | **PIKUS Ch 2** & **H&P §1.1–1.5**: Performance measurements, high-res timers, profiler sampling, micro-benchmark noise floor, quantitative computer architecture. | **Monthly Research: Planning & Literature Synthesis** | **secan**: Integrate Google Benchmark via CMake. Add ASan/UBSan build flags. Write first benchmark for `l2_squared` with `DoNotOptimize`. |
 | **Tuesday** | Tue Sep 8 | [`Day 004`](../days/month-01/day-004-2026-09-08.md) | **CSAPP §5.1–5.6** & **H&P §2.1**: Compiler limitations, Cycles Per Element (CPE), loop inefficiencies, memory aliasing & cache hierarchy. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: Implement binary `.fvecs`, `.bvecs`, and `.ivecs` parsers. Download SIFT1M base + ground-truth; load into `data/sift1m/`. |
@@ -59,7 +59,8 @@
 * `[x]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Robert M. Pirsig, *Zen and the Art of Motorcycle Maintenance* Ch 1–2 (Central Plains journey; classic vs romantic understanding). *(Completed through Chapter 4 ahead of schedule!)*
 * `[ ]` **Core (16:30–18:00)**: **Physical Break & Mental Decompression**: Walk, tea, and recovery.
 * `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* — **Ch 1 & Ch 2.1–2.3** (Entropy, Joint Entropy, Conditional Entropy & Mutual Information).
-* `⭐ Optional / Stretch`: 19:30 onwards 100% Free / Rest.
+* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: George Pólya, *How to Solve It (Princeton Science Library)* — **Part I: In the Classroom** (The Four Stages: Understanding the Problem, Devising a Plan, Carrying Out the Plan, Looking Back).
+* `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Sep 6 ([`Day 002`](../days/month-01/day-002-2026-09-06.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense (Strang Calculus §2.1–2.5: derivatives from first principles, linearity, power rule proof, product and quotient rules, algebraic derivatives).

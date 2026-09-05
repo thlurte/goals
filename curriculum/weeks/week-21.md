@@ -42,7 +42,7 @@
 
 | Day | Date | Daily Runbook | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|:---|:---|
-| **Saturday** | Sat Jan 23 | [`Day 141`](../days/month-06/day-141-2027-01-23.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30+**: Free / Rest |
+| **Saturday** | Sat Jan 23 | [`Day 141`](../days/month-06/day-141-2027-01-23.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30–21:00**: Thought Leadership (John von Neumann) · **21:00+**: Free / Rest|
 | **Sunday** | Sun Jan 24 | [`Day 142`](../days/month-06/day-142-2027-01-24.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (IIR Ch 11) · **19:30–21:00**: Systems Lab (Kirk & Hwu Ch 17) |
 | **Monday** | Mon Jan 25 | [`Day 143`](../days/month-06/day-143-2027-01-25.md) | Re-read ColBERT/PLAID papers with GPU focus: mapping MaxSim to batched GEMM + reductions. | **Monthly Research: Planning & Literature Synthesis** | **secan**: Implement **GPU MaxSim kernel**: CUTLASS GEMM + warp row-max + column-sum. |
 | **Tuesday** | Tue Jan 26 | [`Day 144`](../days/month-06/day-144-2027-01-26.md) | CLIP / SigLIP contrastive alignment (image encoder ↔ text encoder). | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: GPU MaxSim polish / fused pipeline. *(CLIP projector: Sat Jan 24.)* |
@@ -58,6 +58,7 @@
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
 * `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
 * `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* (Reading & Notes).
+* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: John von Neumann, *Probabilistic Logics & Synthesis of Reliable Organisms (1956)* — **Full Landmark Paper** (Multiplexing, Error Masking, Majority Gates, Organismic Reliability from Flawed Physical Devices).
 * `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Jan 24 ([`Day 142`](../days/month-06/day-142-2027-01-24.md))

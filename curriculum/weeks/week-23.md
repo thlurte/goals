@@ -42,7 +42,7 @@
 
 | Day | Date | Daily Runbook | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|:---|:---|
-| **Saturday** | Sat Feb 6 | [`Day 155`](../days/month-06/day-155-2027-02-06.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30+**: Free / Rest |
+| **Saturday** | Sat Feb 6 | [`Day 155`](../days/month-06/day-155-2027-02-06.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30–21:00**: Thought Leadership (Andrei N. Kolmogorov) · **21:00+**: Free / Rest|
 | **Sunday** | Sun Feb 7 | [`Day 156`](../days/month-06/day-156-2027-02-07.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (IIR Ch 14) · **19:30–21:00**: Systems Lab (FlashMaxSim Lab 2) |
 | **Monday** | Mon Feb 8 | [`Day 157`](../days/month-06/day-157-2027-02-08.md) | ARM NEON Intrinsics Guide: `vld1q_f32`, `vfmaq_f32`, `vaddvq_f32`, `vmaxvq_f32`. | **Monthly Research: Planning & Literature Synthesis** | **secan**: Design unified SIMD abstraction layer: `namespace simd { float l2_squared(const float*, const float*, int); }` with dispatch. |
 | **Tuesday** | Tue Feb 9 | [`Day 158`](../days/month-06/day-158-2027-02-09.md) | ARM NEON programming manual: 128-bit vector types (`float32x4_t`, `float16x8_t`), FMA instruction throughput. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: Implement `l2_squared_neon()` and `cosine_distance_neon()` using ARM NEON intrinsics with 4-way accumulator unrolling. |
@@ -58,6 +58,7 @@
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
 * `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
 * `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* (Reading & Notes).
+* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: Andrei N. Kolmogorov, *Three Approaches to the Quantitative Definition of Information (1965)* — **Seminal Paper** (Combinatorial, Probabilistic, and Algorithmic (Program-Length) Information Formulations).
 * `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Feb 7 ([`Day 156`](../days/month-06/day-156-2027-02-07.md))

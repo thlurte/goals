@@ -42,7 +42,7 @@
 
 | Day | Date | Daily Runbook | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|:---|:---|
-| **Saturday** | Sat Feb 20 | [`Day 169`](../days/month-07/day-169-2027-02-20.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30+**: Free / Rest |
+| **Saturday** | Sat Feb 20 | [`Day 169`](../days/month-07/day-169-2027-02-20.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30–21:00**: Thought Leadership (Systems Architecture Synthesis) · **21:00+**: Free / Rest|
 | **Sunday** | Sun Feb 21 | [`Day 170`](../days/month-07/day-170-2027-02-21.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (Dist-Vector Ch 1) · **19:30–21:00**: Systems Lab (FlashMaxSim Lab 4) |
 | **Monday** | Mon Feb 22 | [`Day 171`](../days/month-07/day-171-2027-02-22.md) | FlashAttention-2 (Dao 2023). | **Monthly Research: Planning & Literature Synthesis** | **CUDA**: FA-2 loop order on Week 15 kernel. |
 | **Tuesday** | Tue Feb 23 | [`Day 172`](../days/month-07/day-172-2027-02-23.md) | Warp partition along sequence. | **DL Track (Part 1): Architecture & Tensor Shapes** | **CUDA**: Reduce inter-warp sync; unit-test vs PyTorch. |
@@ -58,6 +58,7 @@
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
 * `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
 * `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* (Reading & Notes).
+* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: Systems Architecture Synthesis, *Vector Retrieval Milestones: FAISS, DiskANN & ScaNN* — **Core Systems Monograph Review** (Comparative Architecture: Inverted File Quantization, Compressed Graph Proximity & Anisotropic Loss).
 * `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Feb 21 ([`Day 170`](../days/month-07/day-170-2027-02-21.md))

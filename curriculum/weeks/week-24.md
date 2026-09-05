@@ -42,7 +42,7 @@
 
 | Day | Date | Daily Runbook | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|:---|:---|
-| **Saturday** | Sat Feb 13 | [`Day 162`](../days/month-06/day-162-2027-02-13.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30+**: Free / Rest |
+| **Saturday** | Sat Feb 13 | [`Day 162`](../days/month-06/day-162-2027-02-13.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30–21:00**: Thought Leadership (Leslie Lamport) · **21:00+**: Free / Rest|
 | **Sunday** | Sun Feb 14 | [`Day 163`](../days/month-06/day-163-2027-02-14.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (IIR Ch 18) · **19:30–21:00**: Systems Lab (FlashMaxSim Lab 3) |
 | **Monday** | Mon Feb 15 | [`Day 164`](../days/month-06/day-164-2027-02-15.md) | **PIKUS Ch 12** retrospective. | **Monthly Research: Planning & Literature Synthesis** | **secan**: CLI scaffold `secan build/search/bench` (complete Week 28). |
 | **Tuesday** | Tue Feb 16 | [`Day 165`](../days/month-06/day-165-2027-02-16.md) | Occupancy calculator / `__launch_bounds__`. | **DL Track (Part 1): Architecture & Tensor Shapes** | **CUDA**: Occupancy tune on IVF + graph kernels. |
@@ -58,6 +58,7 @@
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
 * `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
 * `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* (Reading & Notes).
+* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: Leslie Lamport, *Time, Clocks, and the Ordering of Events in a Distributed System (1978)* — **Landmark Paper** (Logical Clocks, Partial Orders, Total Ordering, Distributed State Machines & Causality).
 * `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Feb 14 ([`Day 163`](../days/month-06/day-163-2027-02-14.md))
