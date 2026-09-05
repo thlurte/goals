@@ -31,7 +31,7 @@
 **Theme**: Trigonometric ratios, unit circle wrapping, derivative foundations, and scientific C++ measurement.
 
 * **Pure Math (Gelfand Trig & Strang Calc)**:
-  * **Trig (Gelfand Ch 1–3)**: Trigonometric ratios in right triangles, radian measure, the wrapping function on the unit circle $x^2 + y^2 = 1$, graphs and periodic symmetries of $\sin\theta, \cos\theta, \tan\theta$.
+  * **Trig (Gelfand Ch 0–3)**: Right triangle ratios, fundamental relations ($\sin^2\alpha + \cos^2\alpha = 1$, $1+\tan^2\alpha=\sec^2\alpha$), and Relationships in a Triangle (The Law of Cosines & Law of Sines).
   * **Calculus (Strang Ch 1–2)**: Intuitive and $\epsilon$-$\delta$ definitions of limits, continuity, first-principles derivative definition $f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}$.
 * **IR Analytics**: Mathematical definitions of NDCG@K, DCG formula, Ideal DCG (IDCG), MRR, **MAP** (Mean Average Precision).
 * **C++ Track**:
@@ -43,8 +43,8 @@
 | **Mon Sep 1** | **PIKUS Ch 2**: Performance measurements, high-res timers, profiler sampling, micro-benchmark noise floor. | **Monthly Research: Planning & Literature Synthesis** | **secan**: Integrate Google Benchmark via CMake. Add ASan/UBSan build flags. Write first benchmark for `l2_squared` with `DoNotOptimize`. |
 | **Tue Sep 2** | **CSAPP §5.1–5.6**: Compiler limitations, Cycles Per Element (CPE), loop inefficiencies, memory aliasing. | **DL Track (Part 1): Architecture & Forward Pass** | **secan**: Implement binary `.fvecs`, `.bvecs`, and `.ivecs` parsers. Download SIFT1M base + ground-truth; load into `data/sift1m/`. |
 | **Wed Sep 3** | **CSAPP §5.7**: Superscalar architecture, out-of-order execution, execution ports, latency vs throughput. | **DL Track (Part 2): Training, Loss & Verification** | **secan**: Build IR metrics in `tests/test_ir_metrics.cpp` (NDCG@K, MRR, **MAP**). Run exact scan on a **SIFT1M subset** (e.g. 100K base / 1K queries) first; verify Recall@10 = 1.0. Full 1M scan = stretch. |
-| **Thu Sep 4** | **AGNER Ch 3 & Ch 7.1–7.3**: Bottlenecks, FP efficiency. | **Monthly Research: Sweeps & Data Logging** | **secan**: First-class **inner-product** kernel `ip()` alongside `l2_squared`. Distance enum: L2 / IP / cosine. *(DL: Sat Sep 6.)* |
-| **Fri Sep 5** | **PIKUS Ch 1 & CSAPP §5.14**: Measurement-driven optimization, profiling-guided workflow with `perf stat`. | **Technical Essay: Lab-Note Drafting** | **secan**: Profile baseline scan with `perf stat`. Record IPC, cache misses, branch misses. Populate first row of README benchmark table. |
+| **Thu Sep 4** | **CSAPP §5.11–5.12**: Branch prediction, misprediction penalties, conditional moves (`cmov`). | **Monthly Research: Sweeps & Data Logging** | **secan**: Implement `ip()` (Inner Product / dot product) as a first-class metric in `src/search/distance.cpp`. Test L2 vs IP numerical stability. |
+| **Fri Sep 5** | **CSAPP §5.13** & **AGNER Ch 7**: Memory access overhead, store forwarding, cache hierarchies. | **Technical Essay: Lab-Note Drafting** | **secan**: Run exact scan with scalar `ip()` and `cosine()`. Profile with `perf stat`. Verify zero branch mispredictions in inner loop. |
 
 #### 📋 Daily Action Items & Optional Activities (Week 1)
 * **Mon Sep 1**:
@@ -79,7 +79,7 @@
 **Theme**: Pure trigonometric identities, differentiation techniques, and instruction-level SIMD parallelism.
 
 * **Pure Math (Gelfand Trig & Strang Calc)**:
-  * **Trig (Gelfand Ch 4–5)**: Pythagorean identities ($\sin^2\theta + \cos^2\theta = 1$, $1 + \tan^2\theta = \sec^2\theta$), angle addition formulas $\cos(\alpha \pm \beta), \sin(\alpha \pm \beta)$, double-angle and half-angle formulas, product-to-sum identities.
+  * **Trig (Gelfand Ch 4–6)**: Angles and Rotations (unit circle coordinates, reflection symmetries, negative angles), Radian Measure (wrapping function), and The Addition Formulas ($\cos(\alpha \pm \beta), \sin(\alpha \pm \beta)$, double-angle and half-angle formulas).
   * **Calculus (Strang §2.6–3.2)**: The Chain Rule $\frac{d}{dx} f(g(x)) = f'(g(x)) g'(x)$, implicit differentiation, derivatives of exponential ($e^x$) and logarithmic functions ($\ln x$).
 * **C++ Track**: FTZ/DAZ, AVX2 L2/cosine/**IP**, 4-way unroll, AVX-512 `#ifdef`.
 * **DL**: Sat Sep 13 — MHA + GQA.

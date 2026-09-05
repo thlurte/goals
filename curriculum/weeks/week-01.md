@@ -54,7 +54,7 @@
 ## 📋 Daily Action Items & Deliverables (Week 01)
 
 ### 🔹 Saturday, Sat Sep 5 ([`Day 001`](../days/month-01/day-001-2026-09-05.md))
-* `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (Gelfand Trig Ch 1–3: right triangle ratios, unit circle wrapping, periodic functions; Strang Calculus §1.1–1.5: $\epsilonhBc\delta limit definition, continuity, IVT; Vershynin Ch 1 intro to random vectors on $\mathcal{S}^{d-1}$).
+* `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (Gelfand Trig Ch 0–3: right triangle ratios, fundamental relations, Law of Cosines & Sines; Strang Calculus §1.1–1.5: $\epsilon$-$\delta$ limit definition, continuity, IVT; Vershynin Ch 1 intro to random vectors on $\mathcal{S}^{d-1}$).
 * `[x]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Robert M. Pirsig, *Zen and the Art of Motorcycle Maintenance* Ch 1–2 (Central Plains journey; classic vs romantic understanding). *(Completed through Chapter 4 ahead of schedule!)*
 * `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* — **Ch 1 & Ch 2.1–2.3** (Entropy, Joint Entropy, Information Preview & Mathematical Foundations).
 * `[ ]` **Core (19:30–21:00)**: **Graduate Math Problem-Set & Proof Lab**: Worked exercises and chalkboard proofs in **Vershynin Ch 1–2** (Sub-Gaussian norms, spherical distributions on $\mathcal{S}^{d-1}$, rotational invariance proofs).
