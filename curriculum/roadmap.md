@@ -348,6 +348,32 @@ To guarantee mathematical rigor and microarchitectural precision across both Lan
   * **Performance Considerations (Ch 5–7)**: Memory coalescing rules, shared memory bank conflict elimination (32 banks), warp divergence minimization, and parallel reductions.
   * **Advanced Primitives & Kernel Fusion (Ch 8–11 & Ch 16–17)**: Warp shuffle intrinsics (`__shfl_down_sync`), Tensor Cores (WMMA / MMA PTX), and custom fused FlashAttention/MaxSim kernel pipelines.
 
+
+
+### 7. Elements of Information Theory (2nd Edition)
+* **Authors**: Thomas M. Cover & Joy A. Thomas (Wiley-Interscience, 2006)
+* **Curriculum Placement**: Months 1–7 (Saturday Evenings 18:00–19:30)
+* **Direct Application to Landmark Paper 1 (GAPQ)**:
+  * **Entropy & Mutual Information (Ch 2 & Ch 8)**: Quantifying information loss in anisotropic high-dimensional projections.
+  * **Asymptotic Equipartition Property (AEP) & Typical Sets (Ch 3)**: Formal proof of hyperspherical typicality in high dimensions.
+  * **Rate-Distortion Theory (Ch 10)**: The continuous rate-distortion function $R(D)$ bounding the minimum bit-rate achievable for a given mean squared error distortion $\mathbb{E}[\|x - \hat{x}\|^2]$ under polar coordinate quantization.
+
+### 8. Designing Data-Intensive Applications
+* **Author**: Martin Kleppmann (O'Reilly Media, 2017)
+* **Curriculum Placement**: Months 1–3 (Sunday Evenings 18:00–19:30)
+* **Direct Application**:
+  * **Storage Engines (Ch 3)**: Log-Structured Merge (LSM) trees, SSTables, Bloom filters, and compaction strategies for `secan` disk indexing.
+  * **Encoding & Evolution (Ch 4)**: Zero-copy binary serialization formats (FlatBuffers) and memory-mapped disk layouts.
+  * **Partitioning & Replication (Ch 5–6)**: Sharding high-dimensional vector datasets across multi-node retrieval clusters.
+
+### 9. Introduction to Information Retrieval
+* **Authors**: Christopher D. Manning, Prabhakar Raghavan, Hinrich Schütze (Cambridge University Press, 2008)
+* **Curriculum Placement**: Months 4–6 (Sunday Evenings 18:00–19:30)
+* **Direct Application**:
+  * **Index Construction & Compression (Ch 4–5)**: Inverted postings compression ($\gamma$-codes, variable byte) and SPIMI algorithms.
+  * **Scoring & Evaluation (Ch 6–8)**: Formal IR evaluation theory (NDCG@K, Mean Average Precision, Mean Reciprocal Rank).
+  * **Matrix Decompositions (Ch 18)**: Latent Semantic Indexing (LSI) and low-rank singular value approximations.
+
 ---
 
 ## Part 3: Verification & Tooling Matrix (The Hardware Profiling Playbook)

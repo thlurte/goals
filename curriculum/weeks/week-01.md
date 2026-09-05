@@ -17,10 +17,15 @@
 │ Time Slot                    │ Focus / Activity                                                       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📐 Saturday 09:00 – 13:00    │ Pure Mathematics Block 1 (Theory, Concepts, Derivations)               │
-│ ☕ Saturday 15:00 – 16:30    │ Weekend Reading Immersion (Pirsig / GEB / Literature)                  │
+│ ☕ Saturday 15:00 – 16:30    │ Weekend Literature Sanctuary (Pirsig / GEB / Literature)               │
+│ 📚 Saturday 18:00 – 19:30    │ [NEW] Information Theory (Cover & Thomas: Rate-Distortion & AEP)       │
+│ ✏️ Saturday 19:30 – 21:00    │ [LAB] Graduate Math Problem-Set & Proof Lab (Vershynin / H&J)          │
+├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📐 Sunday 09:00 – 13:00      │ Pure Mathematics Block 2 (Problem Sets, Chalkboard Proofs)             │
 │ 🔧 Sunday 13:00 – 14:00      │ Runtime Maintenance (limbed / ggmbed check)                            │
 │ 🌌 Sunday 15:00 – 16:45      │ Penrose Sunday: The Road to Reality (1 chapter/week, visual geometry)  │
+│ 🗄️ Sunday 18:00 – 19:30      │ [NEW] Distributed Systems & IR Track (DDIA / Manning IIR)              │
+│ ⚙️ Sunday 19:30 – 21:00      │ [LAB] Graduate Systems & GPU Architecture Lab (H&P / Kirk & Hwu)       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📖 Mon–Fri 05:30 – 06:30     │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
 │ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
@@ -36,8 +41,8 @@
 
 | Day | Date | Daily Runbook | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|:---|:---|
-| **Saturday** | Sat Sep 5 | [`Day 001`](../days/month-01/day-001-2026-09-05.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Weekend Reading Immersion | 100% Free / Recovery Buffer |
-| **Sunday** | Sun Sep 6 | [`Day 002`](../days/month-01/day-002-2026-09-06.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00–14:00**: Maintenance | 15:00–16:45: Penrose Sunday |
+| **Saturday** | Sat Sep 5 | [`Day 001`](../days/month-01/day-001-2026-09-05.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Info Theory (Ch 1 & Ch 2.1–2.3) · **19:30–21:00**: Math Lab (Vershynin Ch 1–2) |
+| **Sunday** | Sun Sep 6 | [`Day 002`](../days/month-01/day-002-2026-09-06.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (DDIA Ch 1) · **19:30–21:00**: Systems Lab (H&P Ch 1) |
 | **Monday** | Mon Sep 7 | [`Day 003`](../days/month-01/day-003-2026-09-07.md) | **PIKUS Ch 2** & **H&P §1.1–1.5**: Performance measurements, high-res timers, profiler sampling, micro-benchmark noise floor, quantitative computer architecture. | **Monthly Research: Planning & Literature Synthesis** | **secan**: Integrate Google Benchmark via CMake. Add ASan/UBSan build flags. Write first benchmark for `l2_squared` with `DoNotOptimize`. |
 | **Tuesday** | Tue Sep 8 | [`Day 004`](../days/month-01/day-004-2026-09-08.md) | **CSAPP §5.1–5.6** & **H&P §2.1**: Compiler limitations, Cycles Per Element (CPE), loop inefficiencies, memory aliasing & cache hierarchy. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: Implement binary `.fvecs`, `.bvecs`, and `.ivecs` parsers. Download SIFT1M base + ground-truth; load into `data/sift1m/`. |
 | **Wednesday** | Wed Sep 9 | [`Day 005`](../days/month-01/day-005-2026-09-09.md) | **CSAPP §5.7** & **GREGG Ch 2**: Superscalar architecture, out-of-order execution, execution ports, latency vs throughput, systems performance methodologies. | **DL Track (Part 2): Training Loop & Verification** | **secan**: Build IR metrics in `tests/test_ir_metrics.cpp` (NDCG@K, MRR, **MAP**). Run exact scan on a **SIFT1M subset** (100K base / 1K queries) first; verify Recall@10 = 1.0. Full 1M scan = stretch. |
@@ -51,12 +56,17 @@
 ### 🔹 Saturday, Sat Sep 5 ([`Day 001`](../days/month-01/day-001-2026-09-05.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (Gelfand Trig Ch 1–3: right triangle ratios, unit circle wrapping, periodic functions; Strang Calculus §1.1–1.5: $\epsilonhBc\delta limit definition, continuity, IVT; Vershynin Ch 1 intro to random vectors on $\mathcal{S}^{d-1}$).
 * `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Robert M. Pirsig, *Zen and the Art of Motorcycle Maintenance* Ch 1–2 (Central Plains journey; classic vs romantic understanding).
-* `⭐ Optional / Stretch`: 100% Free / Rest / Recovery buffer.
+* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* — **Ch 1 & Ch 2.1–2.3** (Entropy, Joint Entropy, Information Preview & Mathematical Foundations).
+* `[ ]` **Core (19:30–21:00)**: **Graduate Math Problem-Set & Proof Lab**: Worked exercises and chalkboard proofs in **Vershynin Ch 1–2** (Sub-Gaussian norms, spherical distributions on $\mathcal{S}^{d-1}$, rotational invariance proofs).
+* `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Sep 6 ([`Day 002`](../days/month-01/day-002-2026-09-06.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense (Strang Calculus §2.1–2.5: derivatives from first principles, linearity, power rule proof, product and quotient rules, trigonometric derivatives).
 * `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
 * `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* — **Ch 1: The Roots of Science** (The Three Worlds: Platonic mathematical, physical, mental).
+* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: **DDIA Ch 1** (Reliable, Scalable, and Maintainable Applications: Faults, Load & $p99$ Latency).
+* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: Microarchitecture analysis and CUDA exercises in **H&P Ch 1** (Amdahl's law derivations, energy-delay products, CPI/IPC bottleneck calculations).
+* `⭐ Optional / Stretch`: 21:00 onwards Weekly review & recovery.
 
 ### 🔹 Monday, Mon Sep 7 ([`Day 003`](../days/month-01/day-003-2026-09-07.md))
 * `[ ]` **Core**: CMake setup for Google Benchmark via `FetchContent`; implement `benchmarks/bench_distance.cpp` with `benchmark::DoNotOptimize`.

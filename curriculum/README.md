@@ -24,11 +24,15 @@
 ## Weekend Rhythm (Sat & Sun)
 
 1. **Sat 09:00–13:00** — **Pure Math Block 1** (Theory, Concepts, Derivations, Textbook Chapters)
-2. **Sat 15:00–16:30** — **Weekend Reading Immersion** (Pirsig / GEB / Literature)
-3. **Sun 09:00–13:00** — **Pure Math Block 2** (Problem Sets, Chalkboard Proofs, Verification)
-4. **Sun 13:00–14:00** — **Runtime Maintenance** ([`embed-runtimes`](../projects/embed-runtimes.md): `limbed` / `ggmbed` 30–60 min only)
-5. **Sun 15:00–16:45** — **Penrose Sunday: The Road to Reality** (1 chapter/week, visual geometry focus)
-6. **Last weekend of month** — Publish monthly research paper
+2. **Sat 15:00–16:30** — **Weekend Reading Sanctuary** (Pirsig / GEB / Literature)
+3. **Sat 18:00–19:30** — **Information Theory Track** (*Elements of Information Theory* — Cover & Thomas)
+4. **Sat 19:30–21:00** — **Graduate Math Problem-Set & Proof Lab** (*Vershynin* / *Horn & Johnson* / *Casella & Berger*)
+5. **Sun 09:00–13:00** — **Pure Math Block 2** (Problem Sets, Chalkboard Proofs, Verification)
+6. **Sun 13:00–14:00** — **Runtime Maintenance** ([`embed-runtimes`](../projects/embed-runtimes.md): `limbed` / `ggmbed` 30–60 min only)
+7. **Sun 15:00–16:45** — **Penrose Sunday: The Road to Reality** (1 chapter/week, visual geometry focus)
+8. **Sun 18:00–19:30** — **Distributed Systems & IR Track** (*DDIA* — Kleppmann / *IIR* — Manning et al.)
+9. **Sun 19:30–21:00** — **Graduate Systems & GPU Architecture Lab** (*Hennessy & Patterson* / *Kirk & Hwu*)
+10. **Last weekend of month** — Publish monthly research paper
 
 ## Map
 
