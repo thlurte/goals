@@ -379,6 +379,17 @@ To guarantee mathematical rigor and microarchitectural precision across both Lan
 
 ---
 
+
+### 10. The Thought Leadership & First-Principles Masterclass Library
+* **Focus & Domain**: Scientific taste, mathematical heuristics, physical limits of computing, and probability as logic.
+* **Master Works**:
+  1. **Richard W. Hamming**: *The Art of Doing Science and Engineering: Learning to Learn* (Month 2: Research taste, error-correcting codes, "You and Your Research").
+  2. **Claude E. Shannon**: *The Mathematical Theory of Communication* (Month 3: The founding monograph on entropy and channel capacity).
+  3. **Butler W. Lampson**: *Hints for Computer System Design* (Month 3: The golden architectural doctrine for low-latency systems).
+  4. **George Pólya**: *How to Solve It* & *Mathematics and Plausible Reasoning* (Month 3: Mathematical heuristics, conjectures, and discovery).
+  5. **Richard P. Feynman**: *Feynman Lectures on Computation* (Month 4: Physical limits of clock speed, thermodynamics of information, reversible computing).
+  6. **Edwin T. Jaynes**: *Probability Theory: The Logic of Science* (Month 5: Probability as the unique extension of Boolean logic).
+
 ## Part 3: Verification & Tooling Matrix (The Hardware Profiling Playbook)
 
 | Tool / Technology | Purpose in Vector Search |

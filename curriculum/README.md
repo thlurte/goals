@@ -18,7 +18,7 @@
    * **Wednesday**: Deep Learning Track (Implementation Part 2 & Tests)
    * **Thursday**: Monthly Research Benchmarking & Sweep Analysis
    * **Friday**: Weekly Technical Essay / Lab-Note Drafting
-3. **18:30–20:00** — **Evening Reading Sanctuary** ([Master Reading Plan](evening_reading_plan.md): Pirsig, Richard Hamming, GEB, Dostoevsky, Bulgakov)
+3. **18:30–20:00** — **Evening Reading Sanctuary** ([Master Reading Plan](evening_reading_plan.md): Pirsig, Hamming, Shannon, Lampson, Pólya, Feynman, Jaynes, GEB, Bulgakov)
 4. **20:30–22:30** — **`secan` / CUDA Core Engine** (Focused C++20 / CUDA night coding)
 
 ## Weekend Rhythm (Sat & Sun)
