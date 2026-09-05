@@ -45,13 +45,27 @@
 
 | Month | Month Dashboard | Weekly Execution Playbooks | Daily Runbooks |
 |:---|:---|:---|:---|
-| **Sep 2026** (Month 1) | [month-01-sep.md](weeks/month-01-sep.md) | [Week 01](weeks/week-01.md) · [Week 02](weeks/week-02.md) · [Week 03](weeks/week-03.md) · [Week 04](weeks/week-04.md) | [Days 001–028](days/month-01/) |
-| **Oct 2026** (Month 2) | [month-02-oct.md](weeks/month-02-oct.md) | [Week 05](weeks/week-05.md) · [Week 06](weeks/week-06.md) · [Week 07](weeks/week-07.md) · [Week 08](weeks/week-08.md) | [Days 029–056](days/month-02/) |
-| **Nov 2026** (Month 3) | [month-03-nov.md](weeks/month-03-nov.md) | [Week 09](weeks/week-09.md) · [Week 10](weeks/week-10.md) · [Week 11](weeks/week-11.md) · [Week 12](weeks/week-12.md) | [Days 057–084](days/month-03/) |
-| **Dec 2026** (Month 4) | [month-04-dec.md](weeks/month-04-dec.md) | [Week 13](weeks/week-13.md) · [Week 14](weeks/week-14.md) · [Week 15](weeks/week-15.md) | [Days 085–112](days/month-04/) |
-| **Jan 2027** (Month 5) | [month-05-jan.md](weeks/month-05-jan.md) | [Week 17](weeks/week-17.md) · [Week 18](weeks/week-18.md) · [Week 19](weeks/week-19.md) · [Week 20](weeks/week-20.md) | [Days 113–140](days/month-05/) |
-| **Feb 2027** (Month 6) | [month-06-feb.md](weeks/month-06-feb.md) | [Week 21](weeks/week-21.md) · [Week 22](weeks/week-22.md) · [Week 23](weeks/week-23.md) · [Week 24](weeks/week-24.md) | [Days 141–168](days/month-06/) |
-| **Mar 2027** (Month 7) | [month-07-mar.md](weeks/month-07-mar.md) | [Week 25](weeks/week-25.md) · [Week 26](weeks/week-26.md) · [Week 27](weeks/week-27.md) · [Week 28](weeks/week-28.md) | [Days 169–196](days/month-07/) |
+| **Sep 2026** (Month 1: Sep 5 – Oct 2) | [month-01-sep.md](weeks/month-01-sep.md) | [Week 01](weeks/week-01.md) · [Week 02](weeks/week-02.md) · [Week 03](weeks/week-03.md) · [Week 04](weeks/week-04.md) | [Days 001–028](days/month-01/) |
+| **Oct 2026** (Month 2: Oct 3 – Oct 30) | [month-02-oct.md](weeks/month-02-oct.md) | [Week 05](weeks/week-05.md) · [Week 06](weeks/week-06.md) · [Week 07](weeks/week-07.md) | [Days 029–056](days/month-02/) |
+| **Nov 2026** (Month 3: Oct 31 – Nov 27) | [month-03-nov.md](weeks/month-03-nov.md) | [Week 09](weeks/week-09.md) · [Week 10](weeks/week-10.md) · [Week 11](weeks/week-11.md) · [Week 12](weeks/week-12.md) | [Days 057–084](days/month-03/) |
+| **Dec 2026** (Month 4: Nov 28 – Dec 25) | [month-04-dec.md](weeks/month-04-dec.md) | [Week 13](weeks/week-13.md) · [Week 14](weeks/week-14.md) · [Week 15](weeks/week-15.md) · [Week 16](weeks/week-16.md) | [Days 085–112](days/month-04/) |
+| **Jan 2027** (Month 5: Dec 26 – Jan 22) | [month-05-jan.md](weeks/month-05-jan.md) | [Week 17](weeks/week-17.md) · [Week 18](weeks/week-18.md) · [Week 19](weeks/week-19.md) · [Week 20](weeks/week-20.md) | [Days 113–140](days/month-05/) |
+| **Feb 2027** (Month 6: Jan 23 – Feb 19) | [month-06-feb.md](weeks/month-06-feb.md) | [Week 21](weeks/week-21.md) · [Week 22](weeks/week-22.md) · [Week 23](weeks/week-23.md) · [Week 24](weeks/week-24.md) | [Days 141–168](days/month-06/) |
+| **Mar 2027** (Month 7: Feb 20 – Mar 19) | [month-07-mar.md](weeks/month-07-mar.md) | [Week 25](weeks/week-25.md) · [Week 26](weeks/week-26.md) · [Week 27](weeks/week-27.md) · [Week 28](weeks/week-28.md) | [Days 169–196](days/month-07/) |
+
+
+## 📚 Authoritative Graduate Reference Textbooks
+
+The curriculum anchors all empirical systems and theoretical proofs to 6 authoritative graduate-level texts:
+
+| Domain | Master Text | Authors | Focus in Curriculum & Landmark Papers |
+|:---|:---|:---|:---|
+| **High-Dim Probability** | *High-Dimensional Probability: An Introduction with Applications in Data Science* (CUP 2018) | Roman Vershynin | **Months 1–4**: Sub-Gaussian vectors, concentration of measure on $\mathcal{S}^{d-1}$, Johnson-Lindenstrauss lemma, metric entropy, covering numbers. Directly grounds **Landmark Paper 1 (GAPQ)**. |
+| **Matrix Analysis** | *Matrix Analysis* (2nd ed, CUP 2012) | Roger A. Horn & Charles R. Johnson | **Months 2, 3, 6**: Spectral theorem, Courant-Fischer minimax, singular value decomposition (SVD), Weyl's perturbation bounds, Perron-Frobenius theory for graph Laplacians. |
+| **Statistical Inference** | *Statistical Inference* (2nd ed, Duxbury 2001) | George Casella & Roger L. Berger | **Month 5**: Principles of data reduction, sufficiency, likelihood ratio tests, Cramér-Rao lower bounds for retrieval sensitivity under extreme quantization. |
+| **Computer Architecture** | *Computer Architecture: A Quantitative Approach* (6th ed, Morgan Kaufmann 2017) | John L. Hennessy & David A. Patterson | **Months 1–4, 7**: Memory hierarchy design, instruction-level parallelism, dynamic branch prediction, vector/SIMD/GPU microarchitectures, warehouse-scale computing. |
+| **Systems Performance** | *Systems Performance: Enterprise and the Cloud* (2nd ed, Addison-Wesley 2020) | Brendan Gregg | **Months 1, 4, 7**: CPU PMU hardware counters, instruction cache vs data cache misses, memory bus saturation, Linux disk IO, `perf stat`/`perf record`, and flame graphs. |
+| **GPU Architecture** | *Programming Massively Parallel Processors: A Hands-on Approach* (4th ed, 2022) | David B. Kirk, Wen-mei W. Hwu, Izzat El Hajj | **Months 4–7**: CUDA thread/warp hierarchy, shared memory tiling, bank conflicts, warp divergence, in-register shuffles, and FlashAttention kernel mechanics for **Landmark Paper 2 (FlashMaxSim)**. |
 
 ## Pillars
 

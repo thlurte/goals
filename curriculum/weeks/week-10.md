@@ -1,7 +1,7 @@
 # 🚀 Week 10 Execution Playbook
 
 > **Theme**: Orthogonality, MUVERA FDEs, PLAID, RaBitQ & TurboQuant  
-> **Calendar Dates**: Mon Nov 3 – Sun Nov 9 (2026-11-03 to 2026-11-09)  
+> **Calendar Dates**: Sat Nov 7 – Fri Nov 13 (2026-11-07 to 2026-11-13)
 > **Parent Month Dashboard**: [Month 3 (Nov 2026)](month-03-nov.md) · **Block**: I — Vector Search Engine
 
 | | | |
@@ -16,17 +16,17 @@
 ┌──────────────────────────────┬────────────────────────────────────────────────────────────────────────┐
 │ Time Slot                    │ Focus / Activity                                                       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
-│ 📖 05:30 – 06:30 (60 min)    │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
-│ 🛠️ 06:30 – 08:30 (120 min)   │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
-│ ☀️ Daytime                   │ Professional Workday (Full focus, zero math fatigue)                   │
-│ 📚 18:30 – 20:00 (90 min)    │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
-│ 💻 20:30 – 22:30 (2.0 hrs)   │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
-├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📐 Saturday 09:00 – 13:00    │ Pure Mathematics Block 1 (Theory, Concepts, Derivations)               │
 │ ☕ Saturday 15:00 – 16:30    │ Weekend Reading Immersion (Pirsig / GEB / Literature)                  │
 │ 📐 Sunday 09:00 – 13:00      │ Pure Mathematics Block 2 (Problem Sets, Chalkboard Proofs)             │
 │ 🔧 Sunday 13:00 – 14:00      │ Runtime Maintenance (limbed / ggmbed check)                            │
 │ 🌌 Sunday 15:00 – 16:45      │ Penrose Sunday: The Road to Reality (1 chapter/week, visual geometry)  │
+├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
+│ 📖 Mon–Fri 05:30 – 06:30     │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
+│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
+│ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
+│ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
 └──────────────────────────────┴────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -36,46 +36,53 @@
 
 | Day | Date | Daily Runbook | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|:---|:---|
-| **Monday** | Mon Nov 3 | [`Day 064`](../days/month-03/day-064-2026-11-03.md) | [MUVERA](https://arxiv.org/abs/2405.19504) §1–3: FDE construction, SimHash buckets, **asymmetric** query vs doc encode. | **Monthly Research: Planning & Literature Synthesis** | **secan (required)**: `fde_encode` — hash tokens into $B$ buckets, per-bucket aggregate, $R$ repetitions. Query FDE $\neq$ doc FDE. |
-| **Tuesday** | Tue Nov 4 | [`Day 065`](../days/month-03/day-065-2026-11-04.md) | MUVERA §4–5: FDE MIPS + MaxSim re-rank; candidate count vs heuristics. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan (required)**: Index doc FDEs with **IP** HNSW or IVF (Week 4/8). Retrieve then **MaxSim re-rank**. Plot Recall vs candidates vs Week 9 centroid prune. |
-| **Wednesday** | Wed Nov 5 | [`Day 066`](../days/month-03/day-066-2026-11-05.md) | PLAID §3–5: centroid → quantized MaxSim → FP32. | **DL Track (Part 2): Training Loop & Verification** | **secan (required)**: **PLAID 3-stage** (2/4-bit residual MaxSim). Same slice: PLAID vs MUVERA candidate efficiency. Poisson load gen = stretch. |
-| **Thursday** | Thu Nov 6 | [`Day 067`](../days/month-03/day-067-2026-11-06.md) | RaBitQ: random orthogonal + error correction. **PIKUS Ch 8** concurrency skim. | **Monthly Research: Sweeps & Data Logging** | **secan**: QR rotation helper + **RaBitQ**. Recall vs plain BQ (Week 7). |
-| **Friday** | Fri Nov 7 | [`Day 068`](../days/month-03/day-068-2026-11-07.md) | [TurboQuant](https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/): PolarQuant + QJL; 1@k vs PQ/RaBitQ. | **Technical Essay: Lab-Note Drafting** | **secan (required)**: **TurboQuant/PolarQuant or QJL 1@k** vs RaBitQ vs PQ on **GloVe-200 or 768-D**. Plot Recall@1. |
-| **Saturday** | Sat Nov 8 | [`Day 069`](../days/month-03/day-069-2026-11-08.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **14:00–18:00**: FREE / Rest / Buffer | Weekend Deep Work |
-| **Sunday** | Sun Nov 9 | [`Day 070`](../days/month-03/day-070-2026-11-09.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00–14:00**: Maintenance | Rest & Buffer |
+| **Saturday** | Sat Nov 7 | [`Day 064`](../days/month-03/day-064-2026-11-07.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **14:00–18:00**: FREE / Rest / Buffer | Weekend Deep Work |
+| **Sunday** | Sun Nov 8 | [`Day 065`](../days/month-03/day-065-2026-11-08.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00–14:00**: Maintenance | Rest & Buffer |
+| **Monday** | Mon Nov 9 | [`Day 066`](../days/month-03/day-066-2026-11-09.md) | [MUVERA](https://arxiv.org/abs/2405.19504) §1–3: FDE construction, SimHash buckets, **asymmetric** query vs doc encode. | **Monthly Research: Planning & Literature Synthesis** | **secan (required)**: `fde_encode` — hash tokens into $B$ buckets, per-bucket aggregate, $R$ repetitions. Query FDE $\neq$ doc FDE. |
+| **Tuesday** | Tue Nov 10 | [`Day 067`](../days/month-03/day-067-2026-11-10.md) | MUVERA §4–5: FDE MIPS + MaxSim re-rank; candidate count vs heuristics. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan (required)**: Index doc FDEs with **IP** HNSW or IVF (Week 4/8). Retrieve then **MaxSim re-rank**. Plot Recall vs candidates vs Week 9 centroid prune. |
+| **Wednesday** | Wed Nov 11 | [`Day 068`](../days/month-03/day-068-2026-11-11.md) | PLAID §3–5: centroid → quantized MaxSim → FP32. | **DL Track (Part 2): Training Loop & Verification** | **secan (required)**: **PLAID 3-stage** (2/4-bit residual MaxSim). Same slice: PLAID vs MUVERA candidate efficiency. Poisson load gen = stretch. |
+| **Thursday** | Thu Nov 12 | [`Day 069`](../days/month-03/day-069-2026-11-12.md) | RaBitQ: random orthogonal + error correction. **PIKUS Ch 8** concurrency skim. | **Monthly Research: Sweeps & Data Logging** | **secan**: QR rotation helper + **RaBitQ**. Recall vs plain BQ (Week 7). |
+| **Friday** | Fri Nov 13 | [`Day 070`](../days/month-03/day-070-2026-11-13.md) | [TurboQuant](https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/): PolarQuant + QJL; 1@k vs PQ/RaBitQ. | **Technical Essay: Lab-Note Drafting** | **secan (required)**: **TurboQuant/PolarQuant or QJL 1@k** vs RaBitQ vs PQ on **GloVe-200 or 768-D**. Plot Recall@1. |
 
 ---
 
 ## 📋 Daily Action Items & Deliverables (Week 10)
 
-### 🔹 Monday, Mon Nov 3 ([`Day 064`](../days/month-03/day-064-2026-11-03.md))
-* `[ ]` **Core**: Implement MUVERA `fde_encode` hashing token sets into $B$ SimHash buckets with $R$ random repetitions.
-* `⭐ Optional / Stretch`: Derive the theoretical upper bound on Chamfer distance error as a function of repetition count $R$.
-
-### 🔹 Tuesday, Tue Nov 4 ([`Day 065`](../days/month-03/day-065-2026-11-04.md))
-* `[ ]` **Core**: Index document FDEs in IP HNSW index; execute MIPS query retrieval followed by exact MaxSim re-ranking.
-* `⭐ Optional / Stretch`: Compare candidate set size needed for 95% Recall@10: MUVERA FDE vs PLAID centroid candidate lists.
-
-### 🔹 Wednesday, Wed Nov 5 ([`Day 066`](../days/month-03/day-066-2026-11-05.md))
-* `[ ]` **Core**: Implement PLAID 3-stage pipeline (centroid score $\to$ 2/4-bit quantized MaxSim filter $\to$ FP32 MaxSim re-rank).
-* `⭐ Optional / Stretch`: Profile memory footprint of PLAID quantized token storage vs MUVERA single-vector FDE storage.
-
-### 🔹 Thursday, Thu Nov 6 ([`Day 067`](../days/month-03/day-067-2026-11-06.md))
-* `[ ]` **Core**: Implement Gram-Schmidt QR rotation helper in C++; implement RaBitQ 1-bit quantization with error correction.
-* `⭐ Optional / Stretch`: Benchmark RaBitQ distance calculation throughput using AVX2 integer instructions vs plain Hamming distance.
-
-### 🔹 Friday, Fri Nov 7 ([`Day 068`](../days/month-03/day-068-2026-11-07.md))
-* `[ ]` **Core**: Implement TurboQuant / PolarQuant 3-bit polar coordinate transform + 1-bit QJL error correction; plot Recall@1 vs bitwidth.
-* `⭐ Optional / Stretch`: Implement SIMD Fast Walsh-Hadamard Transform (FWHT) butterfly kernel (`_mm256_add_ps` / `_mm256_sub_ps`) for $O(D \log D)$ zero-storage randomized incoherence rotation before 1-bit RaBitQ / 3-bit PolarQuant.
-
-### 🔹 Saturday, Sat Nov 8 ([`Day 069`](../days/month-03/day-069-2026-11-08.md))
+### 🔹 Saturday, Sat Nov 7 ([`Day 064`](../days/month-03/day-064-2026-11-07.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
 * `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
 * `⭐ Optional / Stretch`: 100% Free / Rest / Recovery buffer.
-### 🔹 Sunday, Sun Nov 9 ([`Day 070`](../days/month-03/day-070-2026-11-09.md))
+
+### 🔹 Sunday, Sun Nov 8 ([`Day 065`](../days/month-03/day-065-2026-11-08.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
 * `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
 * `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
+
+### 🔹 Monday, Mon Nov 9 ([`Day 066`](../days/month-03/day-066-2026-11-09.md))
+* `[ ]` **Core**: Implement MUVERA `fde_encode` hashing token sets into $B$ SimHash buckets with $R$ random repetitions.
+* `⭐ Optional / Stretch`: Derive the theoretical upper bound on Chamfer distance error as a function of repetition count $R$.
+
+
+### 🔹 Tuesday, Tue Nov 10 ([`Day 067`](../days/month-03/day-067-2026-11-10.md))
+* `[ ]` **Core**: Index document FDEs in IP HNSW index; execute MIPS query retrieval followed by exact MaxSim re-ranking.
+* `⭐ Optional / Stretch`: Compare candidate set size needed for 95% Recall@10: MUVERA FDE vs PLAID centroid candidate lists.
+
+
+### 🔹 Wednesday, Wed Nov 11 ([`Day 068`](../days/month-03/day-068-2026-11-11.md))
+* `[ ]` **Core**: Implement PLAID 3-stage pipeline (centroid score $\to$ 2/4-bit quantized MaxSim filter $\to$ FP32 MaxSim re-rank).
+* `⭐ Optional / Stretch`: Profile memory footprint of PLAID quantized token storage vs MUVERA single-vector FDE storage.
+
+
+### 🔹 Thursday, Thu Nov 12 ([`Day 069`](../days/month-03/day-069-2026-11-12.md))
+* `[ ]` **Core**: Implement Gram-Schmidt QR rotation helper in C++; implement RaBitQ 1-bit quantization with error correction.
+* `⭐ Optional / Stretch`: Benchmark RaBitQ distance calculation throughput using AVX2 integer instructions vs plain Hamming distance.
+
+
+### 🔹 Friday, Fri Nov 13 ([`Day 070`](../days/month-03/day-070-2026-11-13.md))
+* `[ ]` **Core**: Implement TurboQuant / PolarQuant 3-bit polar coordinate transform + 1-bit QJL error correction; plot Recall@1 vs bitwidth.
+* `⭐ Optional / Stretch`: Implement SIMD Fast Walsh-Hadamard Transform (FWHT) butterfly kernel (`_mm256_add_ps` / `_mm256_sub_ps`) for $O(D \log D)$ zero-storage randomized incoherence rotation before 1-bit RaBitQ / 3-bit PolarQuant.
+
+
 ---
 
 ## ⛔ What NOT to Overspend Time On (Week 10 Time Traps)

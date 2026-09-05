@@ -1,7 +1,7 @@
 # 🚀 Week 28 Execution Playbook
 
 > **Theme**: 7-Month Release  
-> **Calendar Dates**: Mon Mar 9 – Sun Mar 15 (2027-03-09 to 2027-03-15)  
+> **Calendar Dates**: Sat Mar 13 – Fri Mar 19 (2027-03-13 to 2027-03-19)
 > **Parent Month Dashboard**: [Month 7 (Mar 2027)](month-07-mar.md) · **Block**: II — GPU Specialization
 
 | | | |
@@ -16,17 +16,17 @@
 ┌──────────────────────────────┬────────────────────────────────────────────────────────────────────────┐
 │ Time Slot                    │ Focus / Activity                                                       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
-│ 📖 05:30 – 06:30 (60 min)    │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
-│ 🛠️ 06:30 – 08:30 (120 min)   │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
-│ ☀️ Daytime                   │ Professional Workday (Full focus, zero math fatigue)                   │
-│ 📚 18:30 – 20:00 (90 min)    │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
-│ 💻 20:30 – 22:30 (2.0 hrs)   │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
-├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📐 Saturday 09:00 – 13:00    │ Pure Mathematics Block 1 (Theory, Concepts, Derivations)               │
 │ ☕ Saturday 15:00 – 16:30    │ Weekend Reading Immersion (Pirsig / GEB / Literature)                  │
 │ 📐 Sunday 09:00 – 13:00      │ Pure Mathematics Block 2 (Problem Sets, Chalkboard Proofs)             │
 │ 🔧 Sunday 13:00 – 14:00      │ Runtime Maintenance (limbed / ggmbed check)                            │
 │ 🌌 Sunday 15:00 – 16:45      │ Penrose Sunday: The Road to Reality (1 chapter/week, visual geometry)  │
+├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
+│ 📖 Mon–Fri 05:30 – 06:30     │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
+│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
+│ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
+│ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
 └──────────────────────────────┴────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -36,46 +36,53 @@
 
 | Day | Date | Daily Runbook | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|:---|:---|
-| **Monday** | Mon Mar 9 | [`Day 190`](../days/month-07/day-190-2027-03-09.md) | API & Doxygen architecture pass. | **Monthly Research: Planning & Literature Synthesis** | Finish CLI + Doxygen documentation. |
-| **Tuesday** | Tue Mar 10 | [`Day 191`](../days/month-07/day-191-2027-03-10.md) | `ann-benchmarks` methodology. | **DL Track (Part 1): Architecture & Tensor Shapes** | Full CPU+GPU benchmark matrix using Profiling Playbook ([`roadmap.md#part-3`](../roadmap.md#part-3-verification--tooling-matrix-the-hardware-profiling-playbook)). |
-| **Wednesday** | Wed Mar 11 | [`Day 192`](../days/month-07/day-192-2027-03-11.md) | Production DB architecture pass ([`roadmap.md#7`](../roadmap.md#7-enterprise-production-architecture-wal-crash-recovery--shadow-indexing)). | **DL Track (Part 2): Training Loop & Verification** | Five E2E examples including dense InfoNCE search + GPU batch. |
-| **Thursday** | Thu Mar 12 | [`Day 193`](../days/month-07/day-193-2027-03-12.md) | Production release README. | **Monthly Research: Sweeps & Data Logging** | **Publish Month 7 paper.** Tag `v2.0-complete`. |
-| **Friday** | Fri Mar 13 | [`Day 194`](../days/month-07/day-194-2027-03-13.md) | Portfolio review. | **Technical Essay: Lab-Note Drafting** | Portfolio: 7 papers, 28 essays, and `secan` Pareto curves. |
-| **Saturday** | Sat Mar 14 | [`Day 195`](../days/month-07/day-195-2027-03-14.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **14:00–18:00**: FREE / Rest / Buffer | Weekend Deep Work |
-| **Sunday** | Sun Mar 15 | [`Day 196`](../days/month-07/day-196-2027-03-15.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00–14:00**: Maintenance | Rest & Buffer |
+| **Saturday** | Sat Mar 13 | [`Day 190`](../days/month-07/day-190-2027-03-13.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **14:00–18:00**: FREE / Rest / Buffer | Weekend Deep Work |
+| **Sunday** | Sun Mar 14 | [`Day 191`](../days/month-07/day-191-2027-03-14.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00–14:00**: Maintenance | Rest & Buffer |
+| **Monday** | Mon Mar 15 | [`Day 192`](../days/month-07/day-192-2027-03-15.md) | API & Doxygen architecture pass. | **Monthly Research: Planning & Literature Synthesis** | Finish CLI + Doxygen documentation. |
+| **Tuesday** | Tue Mar 16 | [`Day 193`](../days/month-07/day-193-2027-03-16.md) | `ann-benchmarks` methodology. | **DL Track (Part 1): Architecture & Tensor Shapes** | Full CPU+GPU benchmark matrix using Profiling Playbook ([`roadmap.md#part-3`](../roadmap.md#part-3-verification--tooling-matrix-the-hardware-profiling-playbook)). |
+| **Wednesday** | Wed Mar 17 | [`Day 194`](../days/month-07/day-194-2027-03-17.md) | Production DB architecture pass ([`roadmap.md#7`](../roadmap.md#7-enterprise-production-architecture-wal-crash-recovery--shadow-indexing)). | **DL Track (Part 2): Training Loop & Verification** | Five E2E examples including dense InfoNCE search + GPU batch. |
+| **Thursday** | Thu Mar 18 | [`Day 195`](../days/month-07/day-195-2027-03-18.md) | Production release README. | **Monthly Research: Sweeps & Data Logging** | **Publish Month 7 paper.** Tag `v2.0-complete`. |
+| **Friday** | Fri Mar 19 | [`Day 196`](../days/month-07/day-196-2027-03-19.md) | Portfolio review. | **Technical Essay: Lab-Note Drafting** | Portfolio: 7 papers, 28 essays, and `secan` Pareto curves. |
 
 ---
 
 ## 📋 Daily Action Items & Deliverables (Week 28)
 
-### 🔹 Monday, Mon Mar 9 ([`Day 190`](../days/month-07/day-190-2027-03-09.md))
-* `[ ]` **Core**: Derive Canonical Proofs 1 & 2 from cold memory on whiteboard; complete unified CLI interface (`secan`) and generate full Doxygen API docs.
-* `⭐ Optional / Stretch`: Write a comprehensive architectural design paper summarizing the 7-month engineering journey.
-
-### 🔹 Tuesday, Tue Mar 10 ([`Day 191`](../days/month-07/day-191-2027-03-10.md))
-* `[ ]` **Core**: Derive Canonical Proofs 3 & 4 on whiteboard; execute full `ann-benchmarks` protocol across all implemented index types using the Hardware Profiling Playbook (`perf stat`, `nsys`, `ncu`).
-* `⭐ Optional / Stretch`: Plot combined CPU/GPU Pareto frontier curves (Recall@10 vs QPS) comparing `secan` directly against `Faiss` and `hnswlib`.
-
-### 🔹 Wednesday, Wed Mar 11 ([`Day 192`](../days/month-07/day-192-2027-03-11.md))
-* `[ ]` **Core**: Derive Canonical Proofs 5 & 6 on whiteboard; build 5 standalone C++ and Python example programs showcasing the Enterprise Production DB architecture (WAL, shadow rebuilds, tombstones).
-* `⭐ Optional / Stretch`: Add a zero-dependency quickstart script that clones, builds, downloads SIFT1M, and benchmarks in under 60 seconds.
-
-### 🔹 Thursday, Thu Mar 12 ([`Day 193`](../days/month-07/day-193-2027-03-12.md))
-* `[ ]` **Core**: Derive Canonical Proofs 7 & 8 on whiteboard; finalize root `README.md` with complete benchmark tables; publish Month 7 research paper; git tag `v2.0-complete`.
-* `⭐ Optional / Stretch`: Prepare public release announcement and publish technical blog posts summarizing key architectural discoveries.
-
-### 🔹 Friday, Fri Mar 13 ([`Day 194`](../days/month-07/day-194-2027-03-13.md))
-* `[ ]` **Core**: Complete a simulated 3-hour Technical Whiteboard Defense across all 8 canonical proofs; compile professional engineering portfolio packet (7 research papers, 28 technical essays, and `secan` release).
-* `⭐ Optional / Stretch`: Celebrate completing the 28-week vector search engine & AI systems specialization!
-
-### 🔹 Saturday, Sat Mar 14 ([`Day 195`](../days/month-07/day-195-2027-03-14.md))
+### 🔹 Saturday, Sat Mar 13 ([`Day 190`](../days/month-07/day-190-2027-03-13.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
 * `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
 * `⭐ Optional / Stretch`: 100% Free / Rest / Recovery buffer.
-### 🔹 Sunday, Sun Mar 15 ([`Day 196`](../days/month-07/day-196-2027-03-15.md))
+
+### 🔹 Sunday, Sun Mar 14 ([`Day 191`](../days/month-07/day-191-2027-03-14.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
 * `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
 * `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
+
+### 🔹 Monday, Mon Mar 15 ([`Day 192`](../days/month-07/day-192-2027-03-15.md))
+* `[ ]` **Core**: Derive Canonical Proofs 1 & 2 from cold memory on whiteboard; complete unified CLI interface (`secan`) and generate full Doxygen API docs.
+* `⭐ Optional / Stretch`: Write a comprehensive architectural design paper summarizing the 7-month engineering journey.
+
+
+### 🔹 Tuesday, Tue Mar 16 ([`Day 193`](../days/month-07/day-193-2027-03-16.md))
+* `[ ]` **Core**: Derive Canonical Proofs 3 & 4 on whiteboard; execute full `ann-benchmarks` protocol across all implemented index types using the Hardware Profiling Playbook (`perf stat`, `nsys`, `ncu`).
+* `⭐ Optional / Stretch`: Plot combined CPU/GPU Pareto frontier curves (Recall@10 vs QPS) comparing `secan` directly against `Faiss` and `hnswlib`.
+
+
+### 🔹 Wednesday, Wed Mar 17 ([`Day 194`](../days/month-07/day-194-2027-03-17.md))
+* `[ ]` **Core**: Derive Canonical Proofs 5 & 6 on whiteboard; build 5 standalone C++ and Python example programs showcasing the Enterprise Production DB architecture (WAL, shadow rebuilds, tombstones).
+* `⭐ Optional / Stretch`: Add a zero-dependency quickstart script that clones, builds, downloads SIFT1M, and benchmarks in under 60 seconds.
+
+
+### 🔹 Thursday, Thu Mar 18 ([`Day 195`](../days/month-07/day-195-2027-03-18.md))
+* `[ ]` **Core**: Derive Canonical Proofs 7 & 8 on whiteboard; finalize root `README.md` with complete benchmark tables; publish Month 7 research paper; git tag `v2.0-complete`.
+* `⭐ Optional / Stretch`: Prepare public release announcement and publish technical blog posts summarizing key architectural discoveries.
+
+
+### 🔹 Friday, Fri Mar 19 ([`Day 196`](../days/month-07/day-196-2027-03-19.md))
+* `[ ]` **Core**: Complete a simulated 3-hour Technical Whiteboard Defense across all 8 canonical proofs; compile professional engineering portfolio packet (7 research papers, 28 technical essays, and `secan` release).
+* `⭐ Optional / Stretch`: Celebrate completing the 28-week vector search engine & AI systems specialization!
+
+
 ---
 
 ## ⛔ What NOT to Overspend Time On (Week 28 Time Traps)

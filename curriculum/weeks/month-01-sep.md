@@ -18,7 +18,15 @@
 
 ---
 
-### Week 1 (Sep 1–5): Pure Trigonometry, Limits, Derivatives & Measurement
+
+### 📚 Master Reference Textbooks (Month 1)
+* **High-Dimensional Probability**: Roman Vershynin, *High-Dimensional Probability: An Introduction with Applications in Data Science* (CUP 2018) — Ch 1–3 (Random vectors in $\mathbb{R}^d$, spherical distributions on $\mathcal{S}^{d-1}$, sub-Gaussian variables, concentration of measure). *Foundational for GAPQ Landmark Paper 1.*
+* **Computer Architecture**: John L. Hennessy & David A. Patterson, *Computer Architecture: A Quantitative Approach* (6th ed, Morgan Kaufmann 2017) — Ch 1 (Quantitative Principles, Amdahl's Law) & Ch 2 (Memory Hierarchy Design, Cache Optimizations).
+* **Systems Performance**: Brendan Gregg, *Systems Performance: Enterprise and the Cloud* (2nd ed, Addison-Wesley 2020) — Ch 2 (Methodologies) & Ch 6 (CPUs, PMU Hardware Counters, `perf stat` / `perf record`).
+
+---
+
+### Week 1 (Sat Sep 5 – Fri Sep 11): Pure Trigonometry, Limits, Derivatives & Measurement
 
 **Theme**: Trigonometric ratios, unit circle wrapping, derivative foundations, and scientific C++ measurement.
 
@@ -66,7 +74,7 @@
 
 ---
 
-### Week 2 (Sep 8–12): Trigonometric Identities, Chain Rule, SIMD AVX2 & Multi-Head Attention
+### Week 2 (Sat Sep 12 – Fri Sep 18): Trigonometric Identities, Chain Rule, SIMD AVX2 & Multi-Head Attention
 
 **Theme**: Pure trigonometric identities, differentiation techniques, and instruction-level SIMD parallelism.
 
@@ -111,7 +119,7 @@
 
 ---
 
-### Week 3 (Sep 15–19): Integration, Fundamental Theorem, Cache Hierarchy & Transformer Encoder
+### Week 3 (Sat Sep 19 – Fri Sep 25): Integration, Fundamental Theorem, Cache Hierarchy & Transformer Encoder
 
 **Theme**: Definite integrals, accumulation, Fundamental Theorem of Calculus, and CPU cache hierarchy.
 
@@ -157,7 +165,7 @@
 
 ---
 
-### Week 4 (Sep 22–26): Euler's Formula, IVF, MIPS & List Rebalance
+### Week 4 (Sat Sep 26 – Fri Oct 2): Euler's Formula, IVF, MIPS & List Rebalance
 
 **Theme**: Complex plane / Euler (math hook for weekend RoPE), **IP/MIPS IVF**, spherical k-means, inverted-list skew.
 

@@ -14,7 +14,14 @@
 
 ---
 
-### Week 21 (Jan 19–23): Convex Optimization, KKT, ColPali GPU Path
+
+### 📚 Master Reference Textbooks (Month 6)
+* **Matrix Analysis & Spectral Graphs**: Roger A. Horn & Charles R. Johnson, *Matrix Analysis* (2nd ed, CUP 2012) — Ch 8 (Perron-Frobenius Theory, Non-negative Matrices) & Spectral Graph Laplacians / Cheeger Inequalities.
+* **GPU Architecture & Programming**: David B. Kirk & Wen-mei W. Hwu, *Programming Massively Parallel Processors* (4th ed) — Ch 8–11 (Constant Memory, In-Register Warp Shuffles `__shfl_down_sync`).
+
+---
+
+### Week 21 (Sat Jan 23 – Fri Jan 29): Convex Optimization, KKT, ColPali GPU Path
 
 **Theme**: Convex optimization / KKT, ColPali multimodal retrieval, and **Week 15 FA-2 catch-up (Wed)**.
 
@@ -56,7 +63,7 @@
 
 ---
 
-### Week 22 (Jan 26–30): Production Hardening — ACORN, Tombstones & NUMA
+### Week 22 (Sat Jan 30 – Fri Feb 5): Production Hardening — ACORN, Tombstones & NUMA
 
 **Theme**: Filtered search as an **on-call product**: pre- vs post-filter, range predicates, ACORN, deletes, NUMA.
 
@@ -100,7 +107,7 @@
 
 ---
 
-### Week 23 (Feb 2–6): Spectral Graph Theory, Cheeger's Inequality & ARM NEON
+### Week 23 (Sat Feb 6 – Fri Feb 12): Spectral Graph Theory, Cheeger's Inequality & ARM NEON
 
 **Theme**: Spectral graph theory, Cheeger's inequality, ARM NEON SIMD, and cross-platform portability.
 
@@ -144,7 +151,7 @@
 
 ---
 
-### Week 24 (Feb 9–13): Spectral Synthesis, CLI Scaffold & GPU Occupancy
+### Week 24 (Sat Feb 13 – Fri Feb 19): Spectral Synthesis, CLI Scaffold & GPU Occupancy
 
 **Theme**: Close Month 6 math; **do not** tag `v2.0` yet — GPU specialization still has March.
 

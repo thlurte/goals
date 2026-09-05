@@ -1,7 +1,7 @@
 # 🚀 Week 12 Execution Playbook
 
 > **Theme**: SVD, Whitening, Composed Indexes & Pareto vs Faiss  
-> **Calendar Dates**: Mon Nov 17 – Sun Nov 23 (2026-11-17 to 2026-11-23)  
+> **Calendar Dates**: Sat Nov 21 – Fri Nov 27 (2026-11-21 to 2026-11-27)
 > **Parent Month Dashboard**: [Month 3 (Nov 2026)](month-03-nov.md) · **Block**: I — Vector Search Engine
 
 | | | |
@@ -16,17 +16,17 @@
 ┌──────────────────────────────┬────────────────────────────────────────────────────────────────────────┐
 │ Time Slot                    │ Focus / Activity                                                       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
-│ 📖 05:30 – 06:30 (60 min)    │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
-│ 🛠️ 06:30 – 08:30 (120 min)   │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
-│ ☀️ Daytime                   │ Professional Workday (Full focus, zero math fatigue)                   │
-│ 📚 18:30 – 20:00 (90 min)    │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
-│ 💻 20:30 – 22:30 (2.0 hrs)   │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
-├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📐 Saturday 09:00 – 13:00    │ Pure Mathematics Block 1 (Theory, Concepts, Derivations)               │
 │ ☕ Saturday 15:00 – 16:30    │ Weekend Reading Immersion (Pirsig / GEB / Literature)                  │
 │ 📐 Sunday 09:00 – 13:00      │ Pure Mathematics Block 2 (Problem Sets, Chalkboard Proofs)             │
 │ 🔧 Sunday 13:00 – 14:00      │ Runtime Maintenance (limbed / ggmbed check)                            │
 │ 🌌 Sunday 15:00 – 16:45      │ Penrose Sunday: The Road to Reality (1 chapter/week, visual geometry)  │
+├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
+│ 📖 Mon–Fri 05:30 – 06:30     │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
+│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
+│ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
+│ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
 └──────────────────────────────┴────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -36,46 +36,53 @@
 
 | Day | Date | Daily Runbook | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|:---|:---|
-| **Monday** | Mon Nov 17 | [`Day 078`](../days/month-03/day-078-2026-11-17.md) | Query-side PCA / OPQ literature. | **Monthly Research: Planning & Literature Synthesis** | **secan**: **Whitening + query-side PCA**. Hubness $S_{N_k}$ before/after. |
-| **Tuesday** | Tue Nov 18 | [`Day 079`](../days/month-03/day-079-2026-11-18.md) | **PIKUS Ch 6**: RW locks. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: `nanobind` + CLI: expose `HNSWIndex`, **`IVFPQIndex`**, **`HNSWSQIndex`**, `LSMIndex`. |
-| **Wednesday** | Wed Nov 19 | [`Day 080`](../days/month-03/day-080-2026-11-19.md) | Branchless heap; bitset visited. | **DL Track (Part 2): Training Loop & Verification** | **secan (required)**: Bounded flat heap + **bitset visited**. Then concurrent HNSW locks. |
-| **Thursday** | Thu Nov 20 | [`Day 081`](../days/month-03/day-081-2026-11-20.md) | `ann-benchmarks` protocol (required, not stretch). | **Monthly Research: Sweeps & Data Logging** | **secan (required)**: Finish **`IVFPQIndex`** (IVF + PQ ADC + optional OPQ). Recall–QPS vs **Faiss IVFPQ** on SIFT. |
-| **Friday** | Fri Nov 21 | [`Day 082`](../days/month-03/day-082-2026-11-21.md) | hnswlib SQ / Faiss HNSW+SQ notes. | **Technical Essay: Lab-Note Drafting** | **secan (required)**: **`HNSWSQIndex`** (HNSW over SQ8/SQ4). Pareto vs **hnswlib/Faiss** on **SIFT + 768-D**. Tag `v1.0-cpu-complete`. |
-| **Saturday** | Sat Nov 22 | [`Day 083`](../days/month-03/day-083-2026-11-22.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **14:00–18:00**: FREE / Rest / Buffer | Weekend Deep Work |
-| **Sunday** | Sun Nov 23 | [`Day 084`](../days/month-03/day-084-2026-11-23.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00–14:00**: Maintenance | Rest & Buffer |
+| **Saturday** | Sat Nov 21 | [`Day 078`](../days/month-03/day-078-2026-11-21.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **14:00–18:00**: FREE / Rest / Buffer | Weekend Deep Work |
+| **Sunday** | Sun Nov 22 | [`Day 079`](../days/month-03/day-079-2026-11-22.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00–14:00**: Maintenance | Rest & Buffer |
+| **Monday** | Mon Nov 23 | [`Day 080`](../days/month-03/day-080-2026-11-23.md) | Query-side PCA / OPQ literature. | **Monthly Research: Planning & Literature Synthesis** | **secan**: **Whitening + query-side PCA**. Hubness $S_{N_k}$ before/after. |
+| **Tuesday** | Tue Nov 24 | [`Day 081`](../days/month-03/day-081-2026-11-24.md) | **PIKUS Ch 6**: RW locks. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: `nanobind` + CLI: expose `HNSWIndex`, **`IVFPQIndex`**, **`HNSWSQIndex`**, `LSMIndex`. |
+| **Wednesday** | Wed Nov 25 | [`Day 082`](../days/month-03/day-082-2026-11-25.md) | Branchless heap; bitset visited. | **DL Track (Part 2): Training Loop & Verification** | **secan (required)**: Bounded flat heap + **bitset visited**. Then concurrent HNSW locks. |
+| **Thursday** | Thu Nov 26 | [`Day 083`](../days/month-03/day-083-2026-11-26.md) | `ann-benchmarks` protocol (required, not stretch). | **Monthly Research: Sweeps & Data Logging** | **secan (required)**: Finish **`IVFPQIndex`** (IVF + PQ ADC + optional OPQ). Recall–QPS vs **Faiss IVFPQ** on SIFT. |
+| **Friday** | Fri Nov 27 | [`Day 084`](../days/month-03/day-084-2026-11-27.md) | hnswlib SQ / Faiss HNSW+SQ notes. | **Technical Essay: Lab-Note Drafting** | **secan (required)**: **`HNSWSQIndex`** (HNSW over SQ8/SQ4). Pareto vs **hnswlib/Faiss** on **SIFT + 768-D**. Tag `v1.0-cpu-complete`. |
 
 ---
 
 ## 📋 Daily Action Items & Deliverables (Week 12)
 
-### 🔹 Monday, Mon Nov 17 ([`Day 078`](../days/month-03/day-078-2026-11-17.md))
-* `[ ]` **Core**: Implement SVD-based vector whitening transform $x_{\text{white}} = \Lambda^{-1/2} Q^T (x - \mu)$; compute hubness skewness $S_{N_k}$ before/after.
-* `⭐ Optional / Stretch`: Test dimension reduction via truncated SVD ($768\text{D} \to 256\text{D}$) and measure recall retention.
-
-### 🔹 Tuesday, Tue Nov 18 ([`Day 079`](../days/month-03/day-079-2026-11-18.md))
-* `[ ]` **Core**: Build `nanobind` Python bindings exposing `HNSWIndex`, `IVFPQIndex`, `HNSWSQIndex`, and `LSMIndex` directly to Python without REST overhead.
-* `⭐ Optional / Stretch`: Implement zero-copy NumPy buffer protocol in `nanobind` avoiding vector copies across the Python/C++ boundary.
-
-### 🔹 Wednesday, Wed Nov 19 ([`Day 080`](../days/month-03/day-080-2026-11-19.md))
-* `[ ]` **Core**: Optimize HNSW graph traversal using bounded flat heap and 64-bit word-aligned bitset visited table.
-* `⭐ Optional / Stretch`: Benchmark branchless heap sift-down vs `std::priority_queue` in HNSW beam search.
-
-### 🔹 Thursday, Thu Nov 20 ([`Day 081`](../days/month-03/day-081-2026-11-20.md))
-* `[ ]` **Core**: Finalize `IVFPQIndex` with asymmetric ADC lookups; generate Pareto Recall@10 vs QPS curve against `faiss.IndexIVFPQ` on SIFT1M.
-* `⭐ Optional / Stretch`: Measure index memory footprint comparison (secan IVFPQ vs Faiss IVFPQ).
-
-### 🔹 Friday, Fri Nov 21 ([`Day 082`](../days/month-03/day-082-2026-11-21.md))
-* `[ ]` **Core**: Implement `HNSWSQIndex` (HNSW graph routing over SQ8/SQ4 quantized vectors); generate Pareto curve vs `hnswlib` on SIFT and 768-D text. Tag `v1.0-cpu-complete`.
-* `⭐ Optional / Stretch`: Compile full Block I benchmark table with memory footprints, indexing times, and QPS at Recall@10 $\ge 0.95$.
-
-### 🔹 Saturday, Sat Nov 22 ([`Day 083`](../days/month-03/day-083-2026-11-22.md))
+### 🔹 Saturday, Sat Nov 21 ([`Day 078`](../days/month-03/day-078-2026-11-21.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
 * `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
 * `⭐ Optional / Stretch`: 100% Free / Rest / Recovery buffer.
-### 🔹 Sunday, Sun Nov 23 ([`Day 084`](../days/month-03/day-084-2026-11-23.md))
+
+### 🔹 Sunday, Sun Nov 22 ([`Day 079`](../days/month-03/day-079-2026-11-22.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
 * `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
 * `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
+
+### 🔹 Monday, Mon Nov 23 ([`Day 080`](../days/month-03/day-080-2026-11-23.md))
+* `[ ]` **Core**: Implement SVD-based vector whitening transform $x_{\text{white}} = \Lambda^{-1/2} Q^T (x - \mu)$; compute hubness skewness $S_{N_k}$ before/after.
+* `⭐ Optional / Stretch`: Test dimension reduction via truncated SVD ($768\text{D} \to 256\text{D}$) and measure recall retention.
+
+
+### 🔹 Tuesday, Tue Nov 24 ([`Day 081`](../days/month-03/day-081-2026-11-24.md))
+* `[ ]` **Core**: Build `nanobind` Python bindings exposing `HNSWIndex`, `IVFPQIndex`, `HNSWSQIndex`, and `LSMIndex` directly to Python without REST overhead.
+* `⭐ Optional / Stretch`: Implement zero-copy NumPy buffer protocol in `nanobind` avoiding vector copies across the Python/C++ boundary.
+
+
+### 🔹 Wednesday, Wed Nov 25 ([`Day 082`](../days/month-03/day-082-2026-11-25.md))
+* `[ ]` **Core**: Optimize HNSW graph traversal using bounded flat heap and 64-bit word-aligned bitset visited table.
+* `⭐ Optional / Stretch`: Benchmark branchless heap sift-down vs `std::priority_queue` in HNSW beam search.
+
+
+### 🔹 Thursday, Thu Nov 26 ([`Day 083`](../days/month-03/day-083-2026-11-26.md))
+* `[ ]` **Core**: Finalize `IVFPQIndex` with asymmetric ADC lookups; generate Pareto Recall@10 vs QPS curve against `faiss.IndexIVFPQ` on SIFT1M.
+* `⭐ Optional / Stretch`: Measure index memory footprint comparison (secan IVFPQ vs Faiss IVFPQ).
+
+
+### 🔹 Friday, Fri Nov 27 ([`Day 084`](../days/month-03/day-084-2026-11-27.md))
+* `[ ]` **Core**: Implement `HNSWSQIndex` (HNSW graph routing over SQ8/SQ4 quantized vectors); generate Pareto curve vs `hnswlib` on SIFT and 768-D text. Tag `v1.0-cpu-complete`.
+* `⭐ Optional / Stretch`: Compile full Block I benchmark table with memory footprints, indexing times, and QPS at Recall@10 $\ge 0.95$.
+
+
 ---
 
 ## ⛔ What NOT to Overspend Time On (Week 12 Time Traps)

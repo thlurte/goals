@@ -14,7 +14,14 @@
 
 ---
 
-### Week 9 (Oct 27–31): Vector Spaces, Four Fundamental Subspaces, ColBERT & SIMD MaxSim
+
+### 📚 Master Reference Textbooks (Month 3)
+* **Matrix Analysis**: Roger A. Horn & Charles R. Johnson, *Matrix Analysis* (2nd ed, CUP 2012) — Ch 5–7 (Norms for Vectors and Matrices, Singular Value Decomposition, Weyl's Monotonicity Theorem, Hoffman-Wielandt Perturbation Bounds). *Grounding for MUVERA Late Interaction Projections.*
+* **Computer Architecture**: John L. Hennessy & David A. Patterson, *Computer Architecture: A Quantitative Approach* (6th ed) — Ch 4 (Vector, SIMD, and GPU Architectures, Roofline Model).
+
+---
+
+### Week 9 (Sat Oct 31 – Fri Nov 6): Vector Spaces, Four Fundamental Subspaces, ColBERT & SIMD MaxSim
 
 **Theme**: Rigorous linear algebra (Strang Ch 1–2), ColBERT dual-encoder architecture, and SIMD MaxSim.
 
@@ -60,7 +67,7 @@
 
 ---
 
-### Week 10 (Nov 3–7): Orthogonality, MUVERA FDEs, PLAID, RaBitQ & TurboQuant
+### Week 10 (Sat Nov 7 – Fri Nov 13): Orthogonality, MUVERA FDEs, PLAID, RaBitQ & TurboQuant
 
 **Theme**: Projections / $A=QR$; **MUVERA** reduces MaxSim to IP MIPS; PLAID is the cascade alternative; RaBitQ + TurboQuant 1@k.
 
@@ -109,7 +116,7 @@
 
 ---
 
-### Week 11 (Nov 10–14): Determinants, Eigenvalues, Spectral Theorem & LSM-Tree Engine
+### Week 11 (Sat Nov 14 – Fri Nov 20): Determinants, Eigenvalues, Spectral Theorem & LSM-Tree Engine
 
 **Theme**: Determinants, eigenvalues, the Spectral Theorem, and LSM-Tree storage (DiskANN = stretch).
 
@@ -154,7 +161,7 @@
 
 ---
 
-### Week 12 (Nov 17–21): SVD, Whitening, Composed Indexes & Pareto vs Faiss
+### Week 12 (Sat Nov 21 – Fri Nov 27): SVD, Whitening, Composed Indexes & Pareto vs Faiss
 
 **Theme**: SVD / query-side PCA, HNSW heap opts, **`IVFPQIndex` + `HNSWSQIndex`**, Pareto vs Faiss. **Sat: ONNX→ORT dense encode path.**
 

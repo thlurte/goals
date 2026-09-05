@@ -1,7 +1,7 @@
 # 🚀 Week 08 Execution Playbook
 
 > **Theme**: Graph Theory, The Hubness Phenomenon & HNSW Core  
-> **Calendar Dates**: Mon Oct 20 – Sun Oct 26 (2026-10-20 to 2026-10-26)  
+> **Calendar Dates**: Sat Oct 24 – Fri Oct 30 (2026-10-24 to 2026-10-30)
 > **Parent Month Dashboard**: [Month 2 (Oct 2026)](month-02-oct.md) · **Block**: I — Vector Search Engine
 
 | | | |
@@ -16,17 +16,17 @@
 ┌──────────────────────────────┬────────────────────────────────────────────────────────────────────────┐
 │ Time Slot                    │ Focus / Activity                                                       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
-│ 📖 05:30 – 06:30 (60 min)    │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
-│ 🛠️ 06:30 – 08:30 (120 min)   │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
-│ ☀️ Daytime                   │ Professional Workday (Full focus, zero math fatigue)                   │
-│ 📚 18:30 – 20:00 (90 min)    │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
-│ 💻 20:30 – 22:30 (2.0 hrs)   │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
-├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📐 Saturday 09:00 – 13:00    │ Pure Mathematics Block 1 (Theory, Concepts, Derivations)               │
 │ ☕ Saturday 15:00 – 16:30    │ Weekend Reading Immersion (Pirsig / GEB / Literature)                  │
 │ 📐 Sunday 09:00 – 13:00      │ Pure Mathematics Block 2 (Problem Sets, Chalkboard Proofs)             │
 │ 🔧 Sunday 13:00 – 14:00      │ Runtime Maintenance (limbed / ggmbed check)                            │
 │ 🌌 Sunday 15:00 – 16:45      │ Penrose Sunday: The Road to Reality (1 chapter/week, visual geometry)  │
+├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
+│ 📖 Mon–Fri 05:30 – 06:30     │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
+│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
+│ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
+│ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
 └──────────────────────────────┴────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -36,46 +36,53 @@
 
 | Day | Date | Daily Runbook | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|:---|:---|
-| **Monday** | Mon Oct 20 | [`Day 050`](../days/month-02/day-050-2026-10-20.md) | Research paper: *"Efficient and Robust ANN Search Using HNSW Graphs"* (Malkov & Yashunin 2020) §1–3. | **Monthly Research: Planning & Literature Synthesis** | **secan**: Implement `HNSWIndex` data structures: flat CSR adjacency (`neighbors[]` + `offsets[]`), node struct, entry point. |
-| **Tuesday** | Tue Oct 21 | [`Day 051`](../days/month-02/day-051-2026-10-21.md) | HNSW paper §4–5: Algorithm 4 (heuristic neighbor selection), level multiplier $m_L$, parameter tuning ($M, ef$). | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: Implement HNSW `insert()`: exponential level assignment, greedy descent, multi-layer neighbor connection. |
-| **Wednesday** | Wed Oct 22 | [`Day 052`](../days/month-02/day-052-2026-10-22.md) | **PIKUS Ch 7**: Concurrent data structures, cache-friendly priority queues, memory allocation in graphs. | **DL Track (Part 2): Training Loop & Verification** | **secan**: Implement HNSW `search()`: beam search with visited-set. Implement Algorithm 4 diverse neighbor selection. |
-| **Thursday** | Thu Oct 23 | [`Day 053`](../days/month-02/day-053-2026-10-23.md) | **AGNER Ch 7.12–7.13 & Ch 7.5**: Branch prediction in graph traversal, branchless heap sift-down (**prep for Week 12 Wed**). | **Monthly Research: Sweeps & Data Logging** | **secan**: Correctness harness: Recall@10 vs exact on SIFT subset. Do **not** optimize heaps yet → Week 12 Wed. |
-| **Friday** | Fri Oct 24 | [`Day 054`](../days/month-02/day-054-2026-10-24.md) | **CSAPP §5.14**: Profiling graph traversal bottlenecks with `perf record`. | **Technical Essay: Lab-Note Drafting** | **secan (required)**: Ingest **768-D text** `.fvecs` into HNSW; plot **Recall@10 vs QPS**. SIFT remains kernel bench; this is the text product bench. Tag `v0.3-hnsw`. |
-| **Saturday** | Sat Oct 25 | [`Day 055`](../days/month-02/day-055-2026-10-25.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **14:00–18:00**: FREE / Rest / Buffer | Weekend Deep Work |
-| **Sunday** | Sun Oct 26 | [`Day 056`](../days/month-02/day-056-2026-10-26.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00–14:00**: Maintenance | Rest & Buffer |
+| **Saturday** | Sat Oct 24 | [`Day 050`](../days/month-02/day-050-2026-10-24.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **14:00–18:00**: FREE / Rest / Buffer | Weekend Deep Work |
+| **Sunday** | Sun Oct 25 | [`Day 051`](../days/month-02/day-051-2026-10-25.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00–14:00**: Maintenance | Rest & Buffer |
+| **Monday** | Mon Oct 26 | [`Day 052`](../days/month-02/day-052-2026-10-26.md) | Research paper: *"Efficient and Robust ANN Search Using HNSW Graphs"* (Malkov & Yashunin 2020) §1–3. | **Monthly Research: Planning & Literature Synthesis** | **secan**: Implement `HNSWIndex` data structures: flat CSR adjacency (`neighbors[]` + `offsets[]`), node struct, entry point. |
+| **Tuesday** | Tue Oct 27 | [`Day 053`](../days/month-02/day-053-2026-10-27.md) | HNSW paper §4–5: Algorithm 4 (heuristic neighbor selection), level multiplier $m_L$, parameter tuning ($M, ef$). | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: Implement HNSW `insert()`: exponential level assignment, greedy descent, multi-layer neighbor connection. |
+| **Wednesday** | Wed Oct 28 | [`Day 054`](../days/month-02/day-054-2026-10-28.md) | **PIKUS Ch 7**: Concurrent data structures, cache-friendly priority queues, memory allocation in graphs. | **DL Track (Part 2): Training Loop & Verification** | **secan**: Implement HNSW `search()`: beam search with visited-set. Implement Algorithm 4 diverse neighbor selection. |
+| **Thursday** | Thu Oct 29 | [`Day 055`](../days/month-02/day-055-2026-10-29.md) | **AGNER Ch 7.12–7.13 & Ch 7.5**: Branch prediction in graph traversal, branchless heap sift-down (**prep for Week 12 Wed**). | **Monthly Research: Sweeps & Data Logging** | **secan**: Correctness harness: Recall@10 vs exact on SIFT subset. Do **not** optimize heaps yet → Week 12 Wed. |
+| **Friday** | Fri Oct 30 | [`Day 056`](../days/month-02/day-056-2026-10-30.md) | **CSAPP §5.14**: Profiling graph traversal bottlenecks with `perf record`. | **Technical Essay: Lab-Note Drafting** | **secan (required)**: Ingest **768-D text** `.fvecs` into HNSW; plot **Recall@10 vs QPS**. SIFT remains kernel bench; this is the text product bench. Tag `v0.3-hnsw`. |
 
 ---
 
 ## 📋 Daily Action Items & Deliverables (Week 08)
 
-### 🔹 Monday, Mon Oct 20 ([`Day 050`](../days/month-02/day-050-2026-10-20.md))
-* `[ ]` **Core**: Implement `HNSWIndex` core memory layout with flat CSR adjacency array (`neighbors[]` and `offsets[]`).
-* `⭐ Optional / Stretch`: Profile memory fragmentation of dynamic node vectors `std::vector<std::vector<uint32_t>>` vs flat contiguous CSR buffer.
-
-### 🔹 Tuesday, Tue Oct 21 ([`Day 051`](../days/month-02/day-051-2026-10-21.md))
-* `[ ]` **Core**: Implement HNSW `insert()` with exponential random level generator and greedy multi-layer descent.
-* `⭐ Optional / Stretch`: Compute degree distribution histogram across all nodes to verify graph connectivity properties.
-
-### 🔹 Wednesday, Wed Oct 22 ([`Day 052`](../days/month-02/day-052-2026-10-22.md))
-* `[ ]` **Core**: Implement HNSW `search()` (greedy descent on upper layers, $efSearch$ beam search on layer 0); implement Algorithm 4 diverse neighbor heuristic.
-* `⭐ Optional / Stretch`: Measure the impact of Algorithm 4 neighbor diversity heuristic on Recall@10 vs simple nearest-neighbor graph edges.
-
-### 🔹 Thursday, Thu Oct 23 ([`Day 053`](../days/month-02/day-053-2026-10-23.md))
-* `[ ]` **Core**: Construct correctness test harness validating Recall@10 on 10,000 queries on SIFT subset.
-* `⭐ Optional / Stretch`: Measure the correlation between graph hop count and Euclidean distance to ground-truth neighbor.
-
-### 🔹 Friday, Fri Oct 24 ([`Day 054`](../days/month-02/day-054-2026-10-24.md))
-* `[ ]` **Core**: Ingest golden 768-D text embeddings (`.fvecs` pre-staged in `data/text768/`) into HNSW; plot Recall@10 vs QPS curve across $efSearch \in [10, 200]$. (Evaluate custom Week 6 DL export as a secondary comparative dataset). Tag `v0.3-hnsw`.
-* `⭐ Optional / Stretch`: Calculate empirical hubness skewness $S_{N_k}$ on the 768-D text dataset and identify top-10 hub nodes.
-
-### 🔹 Saturday, Sat Oct 25 ([`Day 055`](../days/month-02/day-055-2026-10-25.md))
+### 🔹 Saturday, Sat Oct 24 ([`Day 050`](../days/month-02/day-050-2026-10-24.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
 * `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
 * `⭐ Optional / Stretch`: 100% Free / Rest / Recovery buffer.
-### 🔹 Sunday, Sun Oct 26 ([`Day 056`](../days/month-02/day-056-2026-10-26.md))
+
+### 🔹 Sunday, Sun Oct 25 ([`Day 051`](../days/month-02/day-051-2026-10-25.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
 * `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
 * `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
+
+### 🔹 Monday, Mon Oct 26 ([`Day 052`](../days/month-02/day-052-2026-10-26.md))
+* `[ ]` **Core**: Implement `HNSWIndex` core memory layout with flat CSR adjacency array (`neighbors[]` and `offsets[]`).
+* `⭐ Optional / Stretch`: Profile memory fragmentation of dynamic node vectors `std::vector<std::vector<uint32_t>>` vs flat contiguous CSR buffer.
+
+
+### 🔹 Tuesday, Tue Oct 27 ([`Day 053`](../days/month-02/day-053-2026-10-27.md))
+* `[ ]` **Core**: Implement HNSW `insert()` with exponential random level generator and greedy multi-layer descent.
+* `⭐ Optional / Stretch`: Compute degree distribution histogram across all nodes to verify graph connectivity properties.
+
+
+### 🔹 Wednesday, Wed Oct 28 ([`Day 054`](../days/month-02/day-054-2026-10-28.md))
+* `[ ]` **Core**: Implement HNSW `search()` (greedy descent on upper layers, $efSearch$ beam search on layer 0); implement Algorithm 4 diverse neighbor heuristic.
+* `⭐ Optional / Stretch`: Measure the impact of Algorithm 4 neighbor diversity heuristic on Recall@10 vs simple nearest-neighbor graph edges.
+
+
+### 🔹 Thursday, Thu Oct 29 ([`Day 055`](../days/month-02/day-055-2026-10-29.md))
+* `[ ]` **Core**: Construct correctness test harness validating Recall@10 on 10,000 queries on SIFT subset.
+* `⭐ Optional / Stretch`: Measure the correlation between graph hop count and Euclidean distance to ground-truth neighbor.
+
+
+### 🔹 Friday, Fri Oct 30 ([`Day 056`](../days/month-02/day-056-2026-10-30.md))
+* `[ ]` **Core**: Ingest golden 768-D text embeddings (`.fvecs` pre-staged in `data/text768/`) into HNSW; plot Recall@10 vs QPS curve across $efSearch \in [10, 200]$. (Evaluate custom Week 6 DL export as a secondary comparative dataset). Tag `v0.3-hnsw`.
+* `⭐ Optional / Stretch`: Calculate empirical hubness skewness $S_{N_k}$ on the 768-D text dataset and identify top-10 hub nodes.
+
+
 ---
 
 ## ⛔ What NOT to Overspend Time On (Week 08 Time Traps)

@@ -14,7 +14,15 @@
 
 ---
 
-### Week 5 (Sep 29 – Oct 3): Partial Derivatives, Gradients, Hessians, **Probability Primer** & Vision Transformer (ViT)
+
+### 📚 Master Reference Textbooks (Month 2)
+* **Matrix Analysis**: Roger A. Horn & Charles R. Johnson, *Matrix Analysis* (2nd ed, CUP 2012) — Ch 1–4 (Eigenvalues, Schur Triangularization, Spectral Theorem, Rayleigh Quotient, Courant-Fischer Minimax Theorem, Positive Semidefinite Matrices).
+* **High-Dimensional Probability**: Roman Vershynin, *High-Dimensional Probability* (CUP 2018) — Ch 4–5 (Concentration of Random Matrices, Covariance Estimation, Anisotropic Loss).
+* **Computer Architecture**: John L. Hennessy & David A. Patterson, *Computer Architecture: A Quantitative Approach* (6th ed) — Ch 3 (Instruction-Level Parallelism, Dynamic Scheduling, Hardware Speculation).
+
+---
+
+### Week 5 (Sat Oct 3 – Fri Oct 9): Partial Derivatives, Gradients, Hessians, **Probability Primer** & Vision Transformer (ViT)
 
 **Theme**: Multivariable functions, gradient vectors, Hessian matrices, **probability bridge** for Weeks 7–8, and Vision Transformers from scratch.
 
@@ -63,7 +71,7 @@
 
 ---
 
-### Week 6 (Oct 6–10): Lagrange Multipliers, Multiple Integrals, Jacobians & BERT from Scratch
+### Week 6 (Sat Oct 10 – Fri Oct 16): Lagrange Multipliers, Multiple Integrals, Jacobians & BERT from Scratch
 
 **Theme**: Constrained optimization, multiple integrals, coordinate Jacobians, and BERT bidirectional modeling.
 
@@ -109,7 +117,7 @@
 
 ---
 
-### Week 7 (Oct 13–17): Matrix Calculus, Backpropagation Foundations, ScaNN Anisotropic Loss & FastScan
+### Week 7 (Sat Oct 17 – Fri Oct 23): Matrix Calculus, Backpropagation Foundations, ScaNN Anisotropic Loss & FastScan
 
 **Theme**: Deep Learning Matrix Calculus (Mon–Wed), Reverse-Mode Automatic Differentiation & Hessians (Thu–Fri), ScaNN directional error weighting, and in-register FastScan lookups.
 
@@ -159,7 +167,7 @@
 
 ---
 
-### Week 8 (Oct 20–24): Graph Theory, The Hubness Phenomenon & HNSW Core
+### Week 8 (Sat Oct 24 – Fri Oct 30): Graph Theory, The Hubness Phenomenon & HNSW Core
 
 **Theme**: Small-world networks, hubness in high-D spaces, and a **correct** HNSW (optimize later).
 

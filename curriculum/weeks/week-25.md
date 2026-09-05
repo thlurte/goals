@@ -1,7 +1,7 @@
 # 🚀 Week 25 Execution Playbook
 
 > **Theme**: FlashAttention-2 (Week 15 catch-up)  
-> **Calendar Dates**: Mon Feb 16 – Sun Feb 22 (2027-02-16 to 2027-02-22)  
+> **Calendar Dates**: Sat Feb 20 – Fri Feb 26 (2027-02-20 to 2027-02-26)
 > **Parent Month Dashboard**: [Month 7 (Mar 2027)](month-07-mar.md) · **Block**: II — GPU Specialization
 
 | | | |
@@ -16,17 +16,17 @@
 ┌──────────────────────────────┬────────────────────────────────────────────────────────────────────────┐
 │ Time Slot                    │ Focus / Activity                                                       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
-│ 📖 05:30 – 06:30 (60 min)    │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
-│ 🛠️ 06:30 – 08:30 (120 min)   │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
-│ ☀️ Daytime                   │ Professional Workday (Full focus, zero math fatigue)                   │
-│ 📚 18:30 – 20:00 (90 min)    │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
-│ 💻 20:30 – 22:30 (2.0 hrs)   │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
-├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📐 Saturday 09:00 – 13:00    │ Pure Mathematics Block 1 (Theory, Concepts, Derivations)               │
 │ ☕ Saturday 15:00 – 16:30    │ Weekend Reading Immersion (Pirsig / GEB / Literature)                  │
 │ 📐 Sunday 09:00 – 13:00      │ Pure Mathematics Block 2 (Problem Sets, Chalkboard Proofs)             │
 │ 🔧 Sunday 13:00 – 14:00      │ Runtime Maintenance (limbed / ggmbed check)                            │
 │ 🌌 Sunday 15:00 – 16:45      │ Penrose Sunday: The Road to Reality (1 chapter/week, visual geometry)  │
+├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
+│ 📖 Mon–Fri 05:30 – 06:30     │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
+│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
+│ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
+│ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
 └──────────────────────────────┴────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -36,46 +36,53 @@
 
 | Day | Date | Daily Runbook | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|:---|:---|
-| **Monday** | Mon Feb 16 | [`Day 169`](../days/month-07/day-169-2027-02-16.md) | FlashAttention-2 (Dao 2023). | **Monthly Research: Planning & Literature Synthesis** | **CUDA**: FA-2 loop order on Week 15 kernel. |
-| **Tuesday** | Tue Feb 17 | [`Day 170`](../days/month-07/day-170-2027-02-17.md) | Warp partition along sequence. | **DL Track (Part 1): Architecture & Tensor Shapes** | **CUDA**: Reduce inter-warp sync; unit-test vs PyTorch. |
-| **Wednesday** | Wed Feb 18 | [`Day 171`](../days/month-07/day-171-2027-02-18.md) | `ncu` metrics: DRAM, achieved TFLOPS. | **DL Track (Part 2): Training Loop & Verification** | **CUDA (required)**: Nsight FA-1 vs FA-2 vs SDPA. |
-| **Thursday** | Thu Feb 19 | [`Day 172`](../days/month-07/day-172-2027-02-19.md) | Integrate GQA from Week 2/4. | **Monthly Research: Sweeps & Data Logging** | **Python/CUDA**: FA-2 path with `num_kv_heads`. |
-| **Friday** | Fri Feb 20 | [`Day 173`](../days/month-07/day-173-2027-02-20.md) | — | **Technical Essay: Lab-Note Drafting** | Expose FA-2 via `cpp_extension`. Document speedup table for March paper. |
-| **Saturday** | Sat Feb 21 | [`Day 174`](../days/month-07/day-174-2027-02-21.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **14:00–18:00**: FREE / Rest / Buffer | Weekend Deep Work |
-| **Sunday** | Sun Feb 22 | [`Day 175`](../days/month-07/day-175-2027-02-22.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00–14:00**: Maintenance | Rest & Buffer |
+| **Saturday** | Sat Feb 20 | [`Day 169`](../days/month-07/day-169-2027-02-20.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **14:00–18:00**: FREE / Rest / Buffer | Weekend Deep Work |
+| **Sunday** | Sun Feb 21 | [`Day 170`](../days/month-07/day-170-2027-02-21.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00–14:00**: Maintenance | Rest & Buffer |
+| **Monday** | Mon Feb 22 | [`Day 171`](../days/month-07/day-171-2027-02-22.md) | FlashAttention-2 (Dao 2023). | **Monthly Research: Planning & Literature Synthesis** | **CUDA**: FA-2 loop order on Week 15 kernel. |
+| **Tuesday** | Tue Feb 23 | [`Day 172`](../days/month-07/day-172-2027-02-23.md) | Warp partition along sequence. | **DL Track (Part 1): Architecture & Tensor Shapes** | **CUDA**: Reduce inter-warp sync; unit-test vs PyTorch. |
+| **Wednesday** | Wed Feb 24 | [`Day 173`](../days/month-07/day-173-2027-02-24.md) | `ncu` metrics: DRAM, achieved TFLOPS. | **DL Track (Part 2): Training Loop & Verification** | **CUDA (required)**: Nsight FA-1 vs FA-2 vs SDPA. |
+| **Thursday** | Thu Feb 25 | [`Day 174`](../days/month-07/day-174-2027-02-25.md) | Integrate GQA from Week 2/4. | **Monthly Research: Sweeps & Data Logging** | **Python/CUDA**: FA-2 path with `num_kv_heads`. |
+| **Friday** | Fri Feb 26 | [`Day 175`](../days/month-07/day-175-2027-02-26.md) | — | **Technical Essay: Lab-Note Drafting** | Expose FA-2 via `cpp_extension`. Document speedup table for March paper. |
 
 ---
 
 ## 📋 Daily Action Items & Deliverables (Week 25)
 
-### 🔹 Monday, Mon Feb 16 ([`Day 169`](../days/month-07/day-169-2027-02-16.md))
-* `[ ]` **Core**: Implement FlashAttention-2 loop inversion (outer loop over $Q$ blocks, inner loop over $K, V$ blocks) to reduce shared memory write traffic.
-* `⭐ Optional / Stretch`: Derive the exact register footprint comparison between FlashAttention-1 and FlashAttention-2.
-
-### 🔹 Tuesday, Tue Feb 17 ([`Day 170`](../days/month-07/day-170-2027-02-17.md))
-* `[ ]` **Core**: Implement sequence-level warp partitioning inside thread blocks; eliminate inter-warp synchronization barriers during forward pass.
-* `⭐ Optional / Stretch`: Verify numerical equivalence against PyTorch `scaled_dot_product_attention` across sequence lengths $L \in [512, 16384]$.
-
-### 🔹 Wednesday, Wed Feb 18 ([`Day 171`](../days/month-07/day-171-2027-02-18.md))
-* `[ ]` **Core**: Profile FA-1 vs FA-2 vs PyTorch SDPA in Nsight Compute (`ncu`); measure achieved TFLOPS and DRAM bandwidth saturation.
-* `⭐ Optional / Stretch`: Calculate tensor core compute efficiency percentage (% of theoretical FP16 peak).
-
-### 🔹 Thursday, Thu Feb 19 ([`Day 172`](../days/month-07/day-172-2027-02-19.md))
-* `[ ]` **Core**: Implement Grouped-Query Attention (GQA) support in FA-2 kernel (`num_heads_q != num_heads_kv`); broadcast $K, V$ heads to query groups in SRAM.
-* `⭐ Optional / Stretch`: Benchmark latency speedup of GQA ($G=8$) vs MHA ($G=1$) at batch size 32.
-
-### 🔹 Friday, Fri Feb 20 ([`Day 173`](../days/month-07/day-173-2027-02-20.md))
-* `[ ]` **Core**: Build production PyTorch C++ extension bindings for FA-2; generate speedup curves for Month 7 publication paper.
-* `⭐ Optional / Stretch`: Profile FlashAttention-2 vs FlashAttention-3 architectural mechanisms: analyze Hopper Tensor Memory Accelerator (TMA) asynchronous copy pipelines, warp specialization, and `wgmma` GEMM instructions.
-
-### 🔹 Saturday, Sat Feb 21 ([`Day 174`](../days/month-07/day-174-2027-02-21.md))
+### 🔹 Saturday, Sat Feb 20 ([`Day 169`](../days/month-07/day-169-2027-02-20.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
 * `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
 * `⭐ Optional / Stretch`: 100% Free / Rest / Recovery buffer.
-### 🔹 Sunday, Sun Feb 22 ([`Day 175`](../days/month-07/day-175-2027-02-22.md))
+
+### 🔹 Sunday, Sun Feb 21 ([`Day 170`](../days/month-07/day-170-2027-02-21.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
 * `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
 * `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
+
+### 🔹 Monday, Mon Feb 22 ([`Day 171`](../days/month-07/day-171-2027-02-22.md))
+* `[ ]` **Core**: Implement FlashAttention-2 loop inversion (outer loop over $Q$ blocks, inner loop over $K, V$ blocks) to reduce shared memory write traffic.
+* `⭐ Optional / Stretch`: Derive the exact register footprint comparison between FlashAttention-1 and FlashAttention-2.
+
+
+### 🔹 Tuesday, Tue Feb 23 ([`Day 172`](../days/month-07/day-172-2027-02-23.md))
+* `[ ]` **Core**: Implement sequence-level warp partitioning inside thread blocks; eliminate inter-warp synchronization barriers during forward pass.
+* `⭐ Optional / Stretch`: Verify numerical equivalence against PyTorch `scaled_dot_product_attention` across sequence lengths $L \in [512, 16384]$.
+
+
+### 🔹 Wednesday, Wed Feb 24 ([`Day 173`](../days/month-07/day-173-2027-02-24.md))
+* `[ ]` **Core**: Profile FA-1 vs FA-2 vs PyTorch SDPA in Nsight Compute (`ncu`); measure achieved TFLOPS and DRAM bandwidth saturation.
+* `⭐ Optional / Stretch`: Calculate tensor core compute efficiency percentage (% of theoretical FP16 peak).
+
+
+### 🔹 Thursday, Thu Feb 25 ([`Day 174`](../days/month-07/day-174-2027-02-25.md))
+* `[ ]` **Core**: Implement Grouped-Query Attention (GQA) support in FA-2 kernel (`num_heads_q != num_heads_kv`); broadcast $K, V$ heads to query groups in SRAM.
+* `⭐ Optional / Stretch`: Benchmark latency speedup of GQA ($G=8$) vs MHA ($G=1$) at batch size 32.
+
+
+### 🔹 Friday, Fri Feb 26 ([`Day 175`](../days/month-07/day-175-2027-02-26.md))
+* `[ ]` **Core**: Build production PyTorch C++ extension bindings for FA-2; generate speedup curves for Month 7 publication paper.
+* `⭐ Optional / Stretch`: Profile FlashAttention-2 vs FlashAttention-3 architectural mechanisms: analyze Hopper Tensor Memory Accelerator (TMA) asynchronous copy pipelines, warp specialization, and `wgmma` GEMM instructions.
+
+
 ---
 
 ## ⛔ What NOT to Overspend Time On (Week 25 Time Traps)

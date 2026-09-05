@@ -14,7 +14,15 @@
 
 ---
 
-### Week 25 (Feb 16–20): FlashAttention-2 (Week 15 catch-up)
+
+### 📚 Master Reference Textbooks (Month 7)
+* **GPU Kernel Fusion & Deep Learning**: David B. Kirk & Wen-mei W. Hwu, *Programming Massively Parallel Processors* (4th ed) — Ch 16–17 (Deep Learning Operators, Matrix Multiplication Kernels, Tensor Cores, FlashAttention Kernel Mechanics).
+* **Computer Architecture**: John L. Hennessy & David A. Patterson, *Computer Architecture: A Quantitative Approach* (6th ed) — Ch 6 (Warehouse-Scale Computing) & Appendix B (Memory Hierarchy Review).
+* **Systems Profiling**: Brendan Gregg, *Systems Performance* (2nd ed) — Ch 12 (Benchmarking & Profiling Strategy, Flame Graphs, eBPF).
+
+---
+
+### Week 25 (Sat Feb 20 – Fri Feb 26): FlashAttention-2 (Week 15 catch-up)
 
 **Theme**: FA-2 loop order, warp partition, Nsight vs FA-1 and SDPA.
 
@@ -52,7 +60,7 @@
 
 ---
 
-### Week 26 (Feb 23–27): PagedAttention polish on naive KV
+### Week 26 (Sat Feb 27 – Fri Mar 5): PagedAttention polish on naive KV
 
 **Theme**: Week 4 naive KV is the baseline; this week **pages** it (Week 19 may already have a first BlockTable — finish correctness + GQA).
 
@@ -91,7 +99,7 @@
 
 ---
 
-### Week 27 (Mar 2–6): Multi-GPU + ColPali ingest
+### Week 27 (Sat Mar 6 – Fri Mar 12): Multi-GPU + ColPali ingest
 
 **Theme**: NCCL search scaling; finish vision–text index.
 
@@ -129,7 +137,7 @@
 
 ---
 
-### Week 28 (Mar 9–13): 7-Month Release
+### Week 28 (Sat Mar 13 – Fri Mar 19): 7-Month Release
 
 **Theme**: `v2.0` — VS spine + GPU specialization + slow-path DL.
 

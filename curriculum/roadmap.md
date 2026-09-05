@@ -283,6 +283,73 @@ Instead of fragmenting effort across superficial monthly notes, the curriculum's
 
 ---
 
+
+## Part 2.6: The Six Authoritative Graduate Reference Textbooks
+
+To guarantee mathematical rigor and microarchitectural precision across both Landmark Papers, the curriculum is anchored in six authoritative graduate-level texts:
+
+```
+┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                 THE MATHEMATICAL & SYSTEMS CORE                                        │
+├───────────────────────────────────────────┬────────────────────────────────────────────────────────────┤
+│ 📐 MATHEMATICAL FOUNDATIONS               │ ⚙️ SYSTEMS ARCHITECTURE & PROFILING                        │
+│ • Vershynin: High-Dimensional Probability │ • Hennessy & Patterson: Computer Architecture (6th ed)     │
+│ • Horn & Johnson: Matrix Analysis (2nd ed)│ • Brendan Gregg: Systems Performance (2nd ed)              │
+│ • Casella & Berger: Statistical Inference │ • Kirk & Hwu: Massively Parallel Processors (4th ed)       │
+└───────────────────────────────────────────┴────────────────────────────────────────────────────────────┘
+```
+
+### 1. High-Dimensional Probability: An Introduction with Applications in Data Science
+* **Author**: Roman Vershynin (Cambridge University Press, 2018)
+* **Curriculum Placement**: Months 1–4 (Pure Math Blocks 1 & 2)
+* **Direct Application to Landmark Paper 1 (GAPQ)**:
+  * **Sub-Gaussian Random Vectors & Hyperspherical Geometry (Ch 1–3)**: Closed-form concentration of measure on $\mathcal{S}^{d-1}$ ($\|x\|_2 \approx \sqrt{d} \pm \mathcal{O}(1)$), bounding angular dispersion within anisotropic embedding cones.
+  * **Random Matrices & Non-Asymptotic SVD (Ch 4–5)**: Matrix Bernstein inequalities and covariance estimation for anisotropic coordinate frames.
+  * **Metric Entropy & Chaining (Ch 6–8)**: Dudley's inequality and covering numbers $\mathcal{N}(\mathcal{K}, \|\cdot\|_2, \varepsilon)$ establishing theoretical minimum bit-rates for lossless polar quantization.
+
+### 2. Matrix Analysis (2nd Edition)
+* **Authors**: Roger A. Horn & Charles R. Johnson (Cambridge University Press, 2012)
+* **Curriculum Placement**: Months 2, 3, 6 (Pure Math Blocks 1 & 2)
+* **Direct Application to Landmark Papers 1 & 2**:
+  * **Eigenvalues & Minimax Principles (Ch 1–4)**: Courant-Fischer minimax theorem $\lambda_k(A) = \max_{\dim(S)=k} \min_{x \in S, \|x\|=1} x^* A x$ and Rayleigh quotients for finding principal cone axes.
+  * **Matrix Perturbation & Singular Values (Ch 5–7)**: Weyl's monotonicity theorem and Hoffman-Wielandt perturbation bounds $\sum_{i=1}^n |\sigma_i(A) - \sigma_i(B)|^2 \le \|A - B\|_F^2$ for MUVERA fixed-dimensional encodings.
+  * **Perron-Frobenius & Non-Negative Matrices (Ch 8)**: Spectral graph theory, Cheeger's inequality, and conductance bounds for HNSW/ACORN small-world routing.
+
+### 3. Statistical Inference (2nd Edition)
+* **Authors**: George Casella & Roger L. Berger (Duxbury / Cengage, 2001)
+* **Curriculum Placement**: Month 5 (Pure Math Blocks 1 & 2)
+* **Direct Application**:
+  * **Principles of Data Reduction (Ch 6)**: Sufficiency, minimal sufficiency, and the Rao-Blackwell theorem applied to low-bit vector quantization.
+  * **Point Estimation & Asymptotics (Ch 7 & Ch 10)**: Cramér-Rao Lower Bound (CRLB) $\text{Var}(\hat{\theta}) \ge \frac{1}{I(\theta)}$ for inner-product estimators on quantized representations.
+  * **Hypothesis Testing (Ch 8)**: Likelihood Ratio Tests (LRT) and Uniformly Most Powerful (UMP) tests for detecting retrieval recall degradation and KV cache distortion.
+
+### 4. Computer Architecture: A Quantitative Approach (6th Edition)
+* **Authors**: John L. Hennessy & David A. Patterson (Morgan Kaufmann, 2017)
+* **Curriculum Placement**: Months 1–4, 7 (Weekday Mornings 05:30–06:30)
+* **Direct Application**:
+  * **Quantitative Principles of Computer Design (Ch 1)**: Amdahl's Law, CPU clock scaling, energy-performance trade-offs.
+  * **Memory Hierarchy Design (Ch 2 & App B)**: Cache-line miss penalties, non-blocking caches, hardware/software prefetching, and multi-banked memory latency hiding.
+  * **Instruction-Level Parallelism & Dynamic Scheduling (Ch 3)**: Tomasulo's algorithm, reorder buffers (ROB), branch prediction, superscalar port saturation.
+  * **Vector, SIMD & GPU Architectures (Ch 4 & Ch 5)**: Vector lane execution, roofline model, cache coherence, directory-based NUMA protocols.
+
+### 5. Systems Performance: Enterprise and the Cloud (2nd Edition)
+* **Author**: Brendan Gregg (Addison-Wesley, 2020)
+* **Curriculum Placement**: Months 1, 4, 7 (Weekday Mornings 05:30–06:30)
+* **Direct Application**:
+  * **Methodologies & Analysis (Ch 2 & Ch 6)**: Utilization Saturation and Errors (USE) method, instruction-to-cycle ratios (IPC), stall-cycle decomposition via CPU PMUs.
+  * **Memory & Storage Performance (Ch 7 & Ch 9)**: Memory bus saturation, translation lookaside buffer (TLB) misses, huge pages (`madvise`), Linux NVMe Direct I/O (`io_uring`).
+  * **Profiling & Tracing (Ch 12)**: Statistical CPU sampling with `perf record`, off-CPU analysis, eBPF kernel tracing, and SVG flame graph generation.
+
+### 6. Programming Massively Parallel Processors: A Hands-on Approach (4th Edition)
+* **Authors**: David B. Kirk, Wen-mei W. Hwu, Izzat El Hajj (Morgan Kaufmann, 2022)
+* **Curriculum Placement**: Months 4–7 (Weekday Mornings 05:30–06:30)
+* **Direct Application to Landmark Paper 2 (FlashMaxSim)**:
+  * **CUDA Hardware Execution Model (Ch 1–4)**: Grid-block-thread hierarchies, warp schedulers, register pressure, and shared memory circular buffering.
+  * **Performance Considerations (Ch 5–7)**: Memory coalescing rules, shared memory bank conflict elimination (32 banks), warp divergence minimization, and parallel reductions.
+  * **Advanced Primitives & Kernel Fusion (Ch 8–11 & Ch 16–17)**: Warp shuffle intrinsics (`__shfl_down_sync`), Tensor Cores (WMMA / MMA PTX), and custom fused FlashAttention/MaxSim kernel pipelines.
+
+---
+
 ## Part 3: Verification & Tooling Matrix (The Hardware Profiling Playbook)
 
 | Tool / Technology | Purpose in Vector Search |

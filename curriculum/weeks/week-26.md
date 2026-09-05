@@ -1,7 +1,7 @@
 # 🚀 Week 26 Execution Playbook
 
 > **Theme**: PagedAttention polish on naive KV  
-> **Calendar Dates**: Mon Feb 23 – Sun Mar 1 (2027-02-23 to 2027-03-01)  
+> **Calendar Dates**: Sat Feb 27 – Fri Mar 5 (2027-02-27 to 2027-03-05)
 > **Parent Month Dashboard**: [Month 7 (Mar 2027)](month-07-mar.md) · **Block**: II — GPU Specialization
 
 | | | |
@@ -16,17 +16,17 @@
 ┌──────────────────────────────┬────────────────────────────────────────────────────────────────────────┐
 │ Time Slot                    │ Focus / Activity                                                       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
-│ 📖 05:30 – 06:30 (60 min)    │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
-│ 🛠️ 06:30 – 08:30 (120 min)   │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
-│ ☀️ Daytime                   │ Professional Workday (Full focus, zero math fatigue)                   │
-│ 📚 18:30 – 20:00 (90 min)    │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
-│ 💻 20:30 – 22:30 (2.0 hrs)   │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
-├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📐 Saturday 09:00 – 13:00    │ Pure Mathematics Block 1 (Theory, Concepts, Derivations)               │
 │ ☕ Saturday 15:00 – 16:30    │ Weekend Reading Immersion (Pirsig / GEB / Literature)                  │
 │ 📐 Sunday 09:00 – 13:00      │ Pure Mathematics Block 2 (Problem Sets, Chalkboard Proofs)             │
 │ 🔧 Sunday 13:00 – 14:00      │ Runtime Maintenance (limbed / ggmbed check)                            │
 │ 🌌 Sunday 15:00 – 16:45      │ Penrose Sunday: The Road to Reality (1 chapter/week, visual geometry)  │
+├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
+│ 📖 Mon–Fri 05:30 – 06:30     │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
+│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
+│ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
+│ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
 └──────────────────────────────┴────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -36,46 +36,53 @@
 
 | Day | Date | Daily Runbook | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|:---|:---|
-| **Monday** | Mon Feb 23 | [`Day 176`](../days/month-07/day-176-2027-02-23.md) | vLLM PagedAttention §4. | **Monthly Research: Planning & Literature Synthesis** | **CUDA**: BlockTable + paged K/V vs naive concat (A/B latency + memory). |
-| **Tuesday** | Tue Feb 24 | [`Day 177`](../days/month-07/day-177-2027-02-24.md) | TurboQuant KV blog. | **DL Track (Part 1): Architecture & Tensor Shapes** | Design note: paging ≠ quantizing; optional QJL sketch. |
-| **Wednesday** | Wed Feb 25 | [`Day 178`](../days/month-07/day-178-2027-02-25.md) | cuVS / serving APIs. | **DL Track (Part 2): Training Loop & Verification** | Hybrid CPU↔GPU fallback polish. |
-| **Thursday** | Thu Feb 26 | [`Day 179`](../days/month-07/day-179-2027-02-26.md) | Batch size crossover. | **Monthly Research: Sweeps & Data Logging** | Plot $B=1..1000$ with **paged** KV. |
-| **Friday** | Fri Feb 27 | [`Day 180`](../days/month-07/day-180-2027-02-27.md) | — | **Technical Essay: Lab-Note Drafting** | Freeze ACORN/tombstone paper if not done Feb 28. |
-| **Saturday** | Sat Feb 28 | [`Day 181`](../days/month-07/day-181-2027-02-28.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **14:00–18:00**: FREE / Rest / Buffer | Weekend Deep Work |
-| **Sunday** | Sun Mar 1 | [`Day 182`](../days/month-07/day-182-2027-03-01.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00–14:00**: Maintenance | Rest & Buffer |
+| **Saturday** | Sat Feb 27 | [`Day 176`](../days/month-07/day-176-2027-02-27.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **14:00–18:00**: FREE / Rest / Buffer | Weekend Deep Work |
+| **Sunday** | Sun Feb 28 | [`Day 177`](../days/month-07/day-177-2027-02-28.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00–14:00**: Maintenance | Rest & Buffer |
+| **Monday** | Mon Mar 1 | [`Day 178`](../days/month-07/day-178-2027-03-01.md) | vLLM PagedAttention §4. | **Monthly Research: Planning & Literature Synthesis** | **CUDA**: BlockTable + paged K/V vs naive concat (A/B latency + memory). |
+| **Tuesday** | Tue Mar 2 | [`Day 179`](../days/month-07/day-179-2027-03-02.md) | TurboQuant KV blog. | **DL Track (Part 1): Architecture & Tensor Shapes** | Design note: paging ≠ quantizing; optional QJL sketch. |
+| **Wednesday** | Wed Mar 3 | [`Day 180`](../days/month-07/day-180-2027-03-03.md) | cuVS / serving APIs. | **DL Track (Part 2): Training Loop & Verification** | Hybrid CPU↔GPU fallback polish. |
+| **Thursday** | Thu Mar 4 | [`Day 181`](../days/month-07/day-181-2027-03-04.md) | Batch size crossover. | **Monthly Research: Sweeps & Data Logging** | Plot $B=1..1000$ with **paged** KV. |
+| **Friday** | Fri Mar 5 | [`Day 182`](../days/month-07/day-182-2027-03-05.md) | — | **Technical Essay: Lab-Note Drafting** | Freeze ACORN/tombstone paper if not done Feb 28. |
 
 ---
 
 ## 📋 Daily Action Items & Deliverables (Week 26)
 
-### 🔹 Monday, Mon Feb 23 ([`Day 176`](../days/month-07/day-176-2027-02-23.md))
-* `[ ]` **Core**: Benchmark Paged KV cache vs naive contiguous KV buffer under continuous autoregressive token generation; measure physical VRAM savings.
-* `⭐ Optional / Stretch`: Implement copy-on-write page table semantics for parallel beam search decoding.
-
-### 🔹 Tuesday, Tue Feb 24 ([`Day 177`](../days/month-07/day-177-2027-02-24.md))
-* `[ ]` **Core**: Document technical architecture trade-off: memory paging (vLLM) vs extreme coordinate quantization (TurboQuant).
-* `⭐ Optional / Stretch`: Implement 3-bit PolarQuant dequantization on-the-fly in PagedAttention SRAM staging.
-
-### 🔹 Wednesday, Wed Feb 25 ([`Day 178`](../days/month-07/day-178-2027-02-25.md))
-* `[ ]` **Core**: Polish heterogeneous CPU↔GPU memory fallback: dynamically migrate cold KV pages to host RAM over PCIe.
-* `⭐ Optional / Stretch`: Measure page eviction latency and throughput over PCIe 4.0/5.0 bus.
-
-### 🔹 Thursday, Thu Feb 26 ([`Day 179`](../days/month-07/day-179-2027-02-26.md))
-* `[ ]` **Core**: Benchmark serving throughput across concurrency levels $B \in [1, 1000]$; plot tokens/second vs concurrent sequence count.
-* `⭐ Optional / Stretch`: Profile memory manager overhead (block allocation and free list synchronization) under high request churn.
-
-### 🔹 Friday, Fri Feb 27 ([`Day 180`](../days/month-07/day-180-2027-02-27.md))
-* `[ ]` **Core**: Finalize Month 6 paper figures and experimental artifacts; freeze publication document.
-* `⭐ Optional / Stretch`: Prepare automated benchmark reproduction scripts with Docker / shell runner.
-
-### 🔹 Saturday, Sat Feb 28 ([`Day 181`](../days/month-07/day-181-2027-02-28.md))
+### 🔹 Saturday, Sat Feb 27 ([`Day 176`](../days/month-07/day-176-2027-02-27.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
 * `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
 * `⭐ Optional / Stretch`: 100% Free / Rest / Recovery buffer.
-### 🔹 Sunday, Sun Mar 1 ([`Day 182`](../days/month-07/day-182-2027-03-01.md))
+
+### 🔹 Sunday, Sun Feb 28 ([`Day 177`](../days/month-07/day-177-2027-02-28.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
 * `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
 * `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
+
+### 🔹 Monday, Mon Mar 1 ([`Day 178`](../days/month-07/day-178-2027-03-01.md))
+* `[ ]` **Core**: Benchmark Paged KV cache vs naive contiguous KV buffer under continuous autoregressive token generation; measure physical VRAM savings.
+* `⭐ Optional / Stretch`: Implement copy-on-write page table semantics for parallel beam search decoding.
+
+
+### 🔹 Tuesday, Tue Mar 2 ([`Day 179`](../days/month-07/day-179-2027-03-02.md))
+* `[ ]` **Core**: Document technical architecture trade-off: memory paging (vLLM) vs extreme coordinate quantization (TurboQuant).
+* `⭐ Optional / Stretch`: Implement 3-bit PolarQuant dequantization on-the-fly in PagedAttention SRAM staging.
+
+
+### 🔹 Wednesday, Wed Mar 3 ([`Day 180`](../days/month-07/day-180-2027-03-03.md))
+* `[ ]` **Core**: Polish heterogeneous CPU↔GPU memory fallback: dynamically migrate cold KV pages to host RAM over PCIe.
+* `⭐ Optional / Stretch`: Measure page eviction latency and throughput over PCIe 4.0/5.0 bus.
+
+
+### 🔹 Thursday, Thu Mar 4 ([`Day 181`](../days/month-07/day-181-2027-03-04.md))
+* `[ ]` **Core**: Benchmark serving throughput across concurrency levels $B \in [1, 1000]$; plot tokens/second vs concurrent sequence count.
+* `⭐ Optional / Stretch`: Profile memory manager overhead (block allocation and free list synchronization) under high request churn.
+
+
+### 🔹 Friday, Fri Mar 5 ([`Day 182`](../days/month-07/day-182-2027-03-05.md))
+* `[ ]` **Core**: Finalize Month 6 paper figures and experimental artifacts; freeze publication document.
+* `⭐ Optional / Stretch`: Prepare automated benchmark reproduction scripts with Docker / shell runner.
+
+
 ---
 
 ## ⛔ What NOT to Overspend Time On (Week 26 Time Traps)

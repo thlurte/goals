@@ -1,7 +1,7 @@
 # 🚀 Week 05 Execution Playbook
 
 > **Theme**: Partial Derivatives, Gradients, Hessians, **Probability Primer** & Vision Transformer (ViT)  
-> **Calendar Dates**: Mon Sep 29 – Sun Oct 5 (2026-09-29 to 2026-10-05)  
+> **Calendar Dates**: Sat Oct 3 – Fri Oct 9 (2026-10-03 to 2026-10-09)
 > **Parent Month Dashboard**: [Month 2 (Oct 2026)](month-02-oct.md) · **Block**: I — Vector Search Engine
 
 | | | |
@@ -16,17 +16,17 @@
 ┌──────────────────────────────┬────────────────────────────────────────────────────────────────────────┐
 │ Time Slot                    │ Focus / Activity                                                       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
-│ 📖 05:30 – 06:30 (60 min)    │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
-│ 🛠️ 06:30 – 08:30 (120 min)   │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
-│ ☀️ Daytime                   │ Professional Workday (Full focus, zero math fatigue)                   │
-│ 📚 18:30 – 20:00 (90 min)    │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
-│ 💻 20:30 – 22:30 (2.0 hrs)   │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
-├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📐 Saturday 09:00 – 13:00    │ Pure Mathematics Block 1 (Theory, Concepts, Derivations)               │
 │ ☕ Saturday 15:00 – 16:30    │ Weekend Reading Immersion (Pirsig / GEB / Literature)                  │
 │ 📐 Sunday 09:00 – 13:00      │ Pure Mathematics Block 2 (Problem Sets, Chalkboard Proofs)             │
 │ 🔧 Sunday 13:00 – 14:00      │ Runtime Maintenance (limbed / ggmbed check)                            │
 │ 🌌 Sunday 15:00 – 16:45      │ Penrose Sunday: The Road to Reality (1 chapter/week, visual geometry)  │
+├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
+│ 📖 Mon–Fri 05:30 – 06:30     │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
+│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
+│ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
+│ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
 └──────────────────────────────┴────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -36,46 +36,53 @@
 
 | Day | Date | Daily Runbook | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|:---|:---|
-| **Monday** | Mon Sep 29 | [`Day 029`](../days/month-02/day-029-2026-09-29.md) | **AGNER Ch 7.2 & CSAPP §2.2–2.3**: Integer arithmetic efficiency, two's complement, overflow, bit-width conversion. | **Monthly Research: Planning & Literature Synthesis** | **secan**: Implement `ScalarQuantizer` with **percentile clipping (0.05th/99.95th)** to handle outlier dimensions. Verify dequantization error. |
-| **Tuesday** | Tue Sep 30 | [`Day 030`](../days/month-02/day-030-2026-09-30.md) | **INTEL Intrinsics Guide**: Study `_mm256_maddubs_epi16`, `_mm256_madd_epi16`, `_mm256_dpbusd_epi32` (VNNI dot product). | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: Implement `l2_squared_sq8()` using AVX2 integer intrinsics. Process 32 dimensions per iteration in a single `__m256i`. |
-| **Wednesday** | Wed Oct 1 | [`Day 031`](../days/month-02/day-031-2026-10-01.md) | **AGNER Ch 12**: Integer SIMD saturation arithmetic, signed vs unsigned byte multiplication, widening instructions. | **DL Track (Part 2): Training Loop & Verification** | **secan**: SQ8 LUT / packed layout polish; SIMD path vs scalar dequant error check. |
-| **Thursday** | Thu Oct 2 | [`Day 032`](../days/month-02/day-032-2026-10-02.md) | **CSAPP §2.4 (deep)**: Floating-point representation, rounding modes (round-to-nearest-even), subnormals, FP16/BF16 range vs precision tradeoffs for quantization kernels. | **Monthly Research: Sweeps & Data Logging** | **secan**: Implement 4-bit scalar quantization (`SQ4`): pack 2 dimensions per byte with nibble masking. Build 2-stage SQ8 $\to$ FP32 re-ranker. |
-| **Friday** | Fri Oct 3 | [`Day 033`](../days/month-02/day-033-2026-10-03.md) | **PIKUS Ch 9**: High-performance C++, move semantics, zero-copy buffer views (`std::span`). | **Technical Essay: Lab-Note Drafting** | **secan**: `std::span` views over quantized buffers; zero-copy encode path. *(DL: Sat Oct 4 ViT.)* |
-| **Saturday** | Sat Oct 4 | [`Day 034`](../days/month-02/day-034-2026-10-04.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **14:00–18:00**: FREE / Rest / Buffer | Weekend Deep Work |
-| **Sunday** | Sun Oct 5 | [`Day 035`](../days/month-02/day-035-2026-10-05.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00–14:00**: Maintenance | Rest & Buffer |
+| **Saturday** | Sat Oct 3 | [`Day 029`](../days/month-02/day-029-2026-10-03.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **14:00–18:00**: FREE / Rest / Buffer | Weekend Deep Work |
+| **Sunday** | Sun Oct 4 | [`Day 030`](../days/month-02/day-030-2026-10-04.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00–14:00**: Maintenance | Rest & Buffer |
+| **Monday** | Mon Oct 5 | [`Day 031`](../days/month-02/day-031-2026-10-05.md) | **AGNER Ch 7.2 & CSAPP §2.2–2.3**: Integer arithmetic efficiency, two's complement, overflow, bit-width conversion. | **Monthly Research: Planning & Literature Synthesis** | **secan**: Implement `ScalarQuantizer` with **percentile clipping (0.05th/99.95th)** to handle outlier dimensions. Verify dequantization error. |
+| **Tuesday** | Tue Oct 6 | [`Day 032`](../days/month-02/day-032-2026-10-06.md) | **INTEL Intrinsics Guide**: Study `_mm256_maddubs_epi16`, `_mm256_madd_epi16`, `_mm256_dpbusd_epi32` (VNNI dot product). | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: Implement `l2_squared_sq8()` using AVX2 integer intrinsics. Process 32 dimensions per iteration in a single `__m256i`. |
+| **Wednesday** | Wed Oct 7 | [`Day 033`](../days/month-02/day-033-2026-10-07.md) | **AGNER Ch 12**: Integer SIMD saturation arithmetic, signed vs unsigned byte multiplication, widening instructions. | **DL Track (Part 2): Training Loop & Verification** | **secan**: SQ8 LUT / packed layout polish; SIMD path vs scalar dequant error check. |
+| **Thursday** | Thu Oct 8 | [`Day 034`](../days/month-02/day-034-2026-10-08.md) | **CSAPP §2.4 (deep)**: Floating-point representation, rounding modes (round-to-nearest-even), subnormals, FP16/BF16 range vs precision tradeoffs for quantization kernels. | **Monthly Research: Sweeps & Data Logging** | **secan**: Implement 4-bit scalar quantization (`SQ4`): pack 2 dimensions per byte with nibble masking. Build 2-stage SQ8 $\to$ FP32 re-ranker. |
+| **Friday** | Fri Oct 9 | [`Day 035`](../days/month-02/day-035-2026-10-09.md) | **PIKUS Ch 9**: High-performance C++, move semantics, zero-copy buffer views (`std::span`). | **Technical Essay: Lab-Note Drafting** | **secan**: `std::span` views over quantized buffers; zero-copy encode path. *(DL: Sat Oct 4 ViT.)* |
 
 ---
 
 ## 📋 Daily Action Items & Deliverables (Week 05)
 
-### 🔹 Monday, Mon Sep 29 ([`Day 029`](../days/month-02/day-029-2026-09-29.md))
-* `[ ]` **Core**: Implement `ScalarQuantizer` with percentile clipping (0.05th/99.95th); measure dequantization MSE on SIFT1M.
-* `⭐ Optional / Stretch`: Derive and plot the Johnson-Lindenstrauss projection dimension curve $d(\epsilon, n)$ for $\epsilon \in [0.1, 0.5]$ and $n=10^6$.
-
-### 🔹 Tuesday, Tue Sep 30 ([`Day 030`](../days/month-02/day-030-2026-09-30.md))
-* `[ ]` **Core**: Implement `l2_squared_sq8()` using AVX2 `_mm256_maddubs_epi16` and `_mm256_madd_epi16` (32 dims per iteration).
-* `⭐ Optional / Stretch`: Benchmark VNNI integer dot product (`_mm256_dpbusd_epi32`) if your CPU supports AVX-VNNI.
-
-### 🔹 Wednesday, Wed Oct 1 ([`Day 031`](../days/month-02/day-031-2026-10-01.md))
-* `[ ]` **Core**: Polish SQ8 LUT table layout; benchmark scalar dequantization + L2 vs direct integer SIMD distance.
-* `⭐ Optional / Stretch`: Profile memory bandwidth saturation during full dataset SQ8 scan vs FP32 scan.
-
-### 🔹 Thursday, Thu Oct 2 ([`Day 032`](../days/month-02/day-032-2026-10-02.md))
-* `[ ]` **Core**: Implement 4-bit scalar quantization (`SQ4`) with nibble packing; construct 2-stage `SQ8 -> FP32` candidate re-ranker.
-* `⭐ Optional / Stretch`: Implement a random hyperplane LSH bitset filter as a pre-stage candidate pruner.
-
-### 🔹 Friday, Fri Oct 3 ([`Day 033`](../days/month-02/day-033-2026-10-03.md))
-* `[ ]` **Core**: Refactor buffer management to zero-copy `std::span<const uint8_t>`; verify zero dynamic allocations during query execution.
-* `⭐ Optional / Stretch`: Implement Kahan compensated summation in FP32 distance accumulator and compare error accumulation on 1536-D vectors.
-
-### 🔹 Saturday, Sat Oct 4 ([`Day 034`](../days/month-02/day-034-2026-10-04.md))
+### 🔹 Saturday, Sat Oct 3 ([`Day 029`](../days/month-02/day-029-2026-10-03.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
 * `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
 * `⭐ Optional / Stretch`: 100% Free / Rest / Recovery buffer.
-### 🔹 Sunday, Sun Oct 5 ([`Day 035`](../days/month-02/day-035-2026-10-05.md))
+
+### 🔹 Sunday, Sun Oct 4 ([`Day 030`](../days/month-02/day-030-2026-10-04.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
 * `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
 * `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
+
+### 🔹 Monday, Mon Oct 5 ([`Day 031`](../days/month-02/day-031-2026-10-05.md))
+* `[ ]` **Core**: Implement `ScalarQuantizer` with percentile clipping (0.05th/99.95th); measure dequantization MSE on SIFT1M.
+* `⭐ Optional / Stretch`: Derive and plot the Johnson-Lindenstrauss projection dimension curve $d(\epsilon, n)$ for $\epsilon \in [0.1, 0.5]$ and $n=10^6$.
+
+
+### 🔹 Tuesday, Tue Oct 6 ([`Day 032`](../days/month-02/day-032-2026-10-06.md))
+* `[ ]` **Core**: Implement `l2_squared_sq8()` using AVX2 `_mm256_maddubs_epi16` and `_mm256_madd_epi16` (32 dims per iteration).
+* `⭐ Optional / Stretch`: Benchmark VNNI integer dot product (`_mm256_dpbusd_epi32`) if your CPU supports AVX-VNNI.
+
+
+### 🔹 Wednesday, Wed Oct 7 ([`Day 033`](../days/month-02/day-033-2026-10-07.md))
+* `[ ]` **Core**: Polish SQ8 LUT table layout; benchmark scalar dequantization + L2 vs direct integer SIMD distance.
+* `⭐ Optional / Stretch`: Profile memory bandwidth saturation during full dataset SQ8 scan vs FP32 scan.
+
+
+### 🔹 Thursday, Thu Oct 8 ([`Day 034`](../days/month-02/day-034-2026-10-08.md))
+* `[ ]` **Core**: Implement 4-bit scalar quantization (`SQ4`) with nibble packing; construct 2-stage `SQ8 -> FP32` candidate re-ranker.
+* `⭐ Optional / Stretch`: Implement a random hyperplane LSH bitset filter as a pre-stage candidate pruner.
+
+
+### 🔹 Friday, Fri Oct 9 ([`Day 035`](../days/month-02/day-035-2026-10-09.md))
+* `[ ]` **Core**: Refactor buffer management to zero-copy `std::span<const uint8_t>`; verify zero dynamic allocations during query execution.
+* `⭐ Optional / Stretch`: Implement Kahan compensated summation in FP32 distance accumulator and compare error accumulation on 1536-D vectors.
+
+
 ---
 
 ## ⛔ What NOT to Overspend Time On (Week 05 Time Traps)

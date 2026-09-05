@@ -18,7 +18,15 @@
 
 ---
 
-### Week 13 (Nov 24–28): Axiomatic Probability, Combinatorics, CUDA Model & Naive Kernels
+
+### 📚 Master Reference Textbooks (Month 4)
+* **GPU Architecture & Programming**: David B. Kirk & Wen-mei W. Hwu, *Programming Massively Parallel Processors: A Hands-on Approach* (4th ed, Morgan Kaufmann 2022) — Ch 1–4 (CUDA Hardware Execution Model, Warps, Block Scheduling, Shared Memory Tiling).
+* **High-Dimensional Probability**: Roman Vershynin, *High-Dimensional Probability* (CUP 2018) — Ch 6–8 (Non-asymptotic Random Matrix Theory, Covering Numbers, Metric Entropy, Dudley's Chaining).
+* **Computer Architecture & IO**: John L. Hennessy & David A. Patterson, *Computer Architecture* (6th ed) — Ch 5 (Thread-Level Parallelism) & Brendan Gregg, *Systems Performance* (2nd ed) — Ch 7 (Memory) & Ch 9 (Disks & NVMe `io_uring`).
+
+---
+
+### Week 13 (Sat Nov 28 – Fri Dec 4): Axiomatic Probability, Combinatorics, CUDA Model & Naive Kernels
 
 **Theme**: Sample spaces, probability axioms, combinatorics, and the massively parallel GPU SIMT execution model.
 
@@ -64,7 +72,7 @@
 
 ---
 
-### Week 14 (Dec 1–5): Discrete Random Variables, PMF, Expectation, Variance & Warp Shuffles
+### Week 14 (Sat Dec 5 – Fri Dec 11): Discrete Random Variables, PMF, Expectation, Variance & Warp Shuffles
 
 **Theme**: Discrete random variables, expectation, variance, discrete distributions, and CUDA warp-level reductions.
 
@@ -110,7 +118,7 @@
 
 ---
 
-### Week 15 (Dec 8–12): Continuous Distributions, PDF, Gaussians & FlashAttention Scaffold
+### Week 15 (Sat Dec 12 – Fri Dec 18): Continuous Distributions, PDF, Gaussians & FlashAttention Scaffold
 
 **Theme**: Continuous RVs, Gaussians, and a **correct** FlashAttention-1 **CUDA** path. Online softmax Python = **Sat Dec 13**. **FA-2 = Week 25**.
 
@@ -154,7 +162,7 @@
 
 ---
 
-### Week 16 (Dec 15–19): VS Spine Capstone — GPU IVF + DiskANN + Hybrid WAND
+### Week 16 (Sat Dec 19 – Fri Dec 25): VS Spine Capstone — GPU IVF + DiskANN + Hybrid WAND
 
 **Theme**: Close the **4-month vector-search spine**: GPU IVF (Mon–Wed), then **Week 11 DiskANN catch-up (Thu)** and **Week 10 WAND catch-up (Fri)**.
 

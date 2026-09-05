@@ -20,7 +20,14 @@ Weekdays remain **`secan`/CUDA**. DL stays **Saturday afternoon**. Cluster shard
 
 ---
 
-### Week 17 (Dec 22–26): Limit Theorems, LLN, CLT, Inequalities & CAGRA GPU Graphs
+
+### 📚 Master Reference Textbooks (Month 5)
+* **Statistical Inference**: George Casella & Roger L. Berger, *Statistical Inference* (2nd ed, Duxbury 2001) — Ch 6 (Data Reduction / Sufficiency), Ch 7 (Point Estimation, Cramér-Rao Lower Bound), Ch 8 (Hypothesis Testing / Likelihood Ratio Tests), Ch 10 (Asymptotic Evaluations).
+* **GPU Architecture & Programming**: David B. Kirk & Wen-mei W. Hwu, *Programming Massively Parallel Processors* (4th ed) — Ch 5–7 (Memory Coalescing, Bank Conflicts, Warp Divergence, Parallel Reductions).
+
+---
+
+### Week 17 (Sat Dec 26 – Fri Jan 1): Limit Theorems, LLN, CLT, Inequalities & CAGRA GPU Graphs
 
 **Theme**: Laws of Large Numbers, Central Limit Theorem, probability inequalities, and GPU CAGRA graph traversal.
 
@@ -65,7 +72,7 @@ Weekdays remain **`secan`/CUDA**. DL stays **Saturday afternoon**. Cluster shard
 
 ---
 
-### Week 18 (Dec 29 – Jan 2): Markov Chains, Transition Matrices & GPU FastScan
+### Week 18 (Sat Jan 2 – Fri Jan 8): Markov Chains, Transition Matrices & GPU FastScan
 
 **Theme**: Discrete-time Markov chains, stationary distributions, and GPU shared-memory FastScan.
 
@@ -110,7 +117,7 @@ Weekdays remain **`secan`/CUDA**. DL stays **Saturday afternoon**. Cluster shard
 
 ---
 
-### Week 19 (Jan 5–9): Mathematical Statistics, MLE, PagedAttention & KV Compression
+### Week 19 (Sat Jan 9 – Fri Jan 15): Mathematical Statistics, MLE, PagedAttention & KV Compression
 
 **Theme**: Point estimation, MLE, Fisher Information, PagedAttention (vLLM), and **TurboQuant-style KV quantization** (3-bit, training-free).
 
@@ -158,7 +165,7 @@ Weekdays remain **`secan`/CUDA**. DL stays **Saturday afternoon**. Cluster shard
 
 ---
 
-### Week 20 (Jan 12–16): Information Theory, Entropy, KL-Divergence & Multi-GPU NCCL
+### Week 20 (Sat Jan 16 – Fri Jan 22): Information Theory, Entropy, KL-Divergence & Multi-GPU NCCL
 
 **Theme**: Information theory, Shannon entropy, Kullback-Leibler divergence, and multi-GPU distributed search with NCCL.
 
