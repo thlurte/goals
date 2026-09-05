@@ -6,41 +6,62 @@ A comprehensive, milestone-by-milestone technical blueprint for building a high-
 
 ## Architecture Overview
 
-```
-                                  [ PRODUCTION APPLICATION LAYER ]
-                                (Python nanobind / CLI — no REST)
-                                                │
-                 ┌──────────────────────────────┴──────────────────────────────┐
-                 ▼                                                             ▼
-     [ DENSE VECTOR PIPELINE ]                                   [ MULTI-VECTOR / HYBRID ]
-   ┌───────────────────────────┐                               ┌───────────────────────────┐
-   │ • HNSW Graph Traversal    │                               │ • ColBERT MaxSim Kernel   │
-   │ • IVF-PQ / HNSW-SQ compose│                               │ • PLAID Centroid Pruning  │
-   │ • Filtered Search (ACORN) │                               │ • RRF + Block-Max WAND    │
-   │ • DiskANN / Vamana        │                               │ • MUVERA FDE → IP MIPS    │
-   └─────────────┬─────────────┘                               └─────────────┬─────────────┘
-                 │                                                             │
-                 └──────────────────────────────┬──────────────────────────────┘
-                                                ▼
-                                  [ QUANTIZATION & COMPRESSION ]
-                     ┌───────────────────────────────────────────────────────┐
-                     │ • Scalar Quantization (SQ8 / SQ4)                     │
-                     │ • Product Quantization (PQ / FastScan PSHUFB)         │
-                     │ • Binary Quantization (1-bit BQ / RaBitQ)             │
-                     └──────────────────────────┬────────────────────────────┘
-                                                ▼
-                                  [ MEMORY & HARDWARE KERNELS ]
-                     ┌───────────────────────────────────────────────────────┐
-                     │ • Cache-Blocking & Tiled Batch GEMM                   │
-                     │ • Handcrafted SIMD (AVX2, AVX-512, FMA, ARM NEON)     │
-                     │ • 64-byte Cache-Aligned Contiguous Buffers            │
-                     │ • Software Prefetching (_mm_prefetch)                 │
-                     └───────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph AppLayer ["PRODUCTION APPLICATION LAYER"]
+        API["Python nanobind / CLI (Zero REST overhead)"]
+    end
+
+    subgraph RetrievalLayer ["RETRIEVAL & ROUTING PIPELINES"]
+        direction LR
+        subgraph DensePipe ["Dense Vector Pipeline"]
+            HNSW["HNSW Graph Traversal"]
+            IVF["IVF-PQ / HNSW-SQ Composition"]
+            ACORN["Filtered Search (ACORN / Bitmaps)"]
+            DiskANN["DiskANN / Vamana (io_uring SSD)"]
+        end
+
+        subgraph MultiPipe ["Multi-Vector & Hybrid Pipeline"]
+            ColBERT["ColBERT MaxSim In-SRAM Kernel"]
+            PLAID["PLAID Centroid Pruning"]
+            Hybrid["Sparse-Dense (RRF + Block-Max WAND)"]
+            MUVERA["MUVERA (FDE to IP/MIPS)"]
+        end
+    end
+
+    subgraph QuantLayer ["QUANTIZATION & COMPRESSION ENGINE"]
+        SQ["Scalar Quantization (SQ8 / SQ4)"]
+        PQ["Product Quantization (PQ / FastScan PSHUFB)"]
+        BQ["Binary Quantization (1-bit BQ / RaBitQ / GAPQ)"]
+    end
+
+    subgraph HardwareLayer ["HARDWARE KERNELS & MEMORY ARCHITECTURE"]
+        SIMD["Handcrafted SIMD (AVX2, AVX-512, ARM NEON)"]
+        GEMM["Cache-Blocked Tiled Batch GEMM"]
+        CUDA["GPU Tensor Cores (CUTLASS / FlashMaxSim)"]
+        DirectIO["Linux NVMe Asynchronous Direct I/O (io_uring SQPOLL)"]
+    end
+
+    API --> DensePipe
+    API --> MultiPipe
+    DensePipe --> QuantLayer
+    MultiPipe --> QuantLayer
+    QuantLayer --> HardwareLayer
 ```
 
 ---
 
 ## Part 1: The Core 7-Phase Engineering Trajectory
+
+```mermaid
+flowchart LR
+    P1["<b>Phase 1</b><br/>Benchmarking & Profiling<br/><i>perf stat, SIFT1M</i>"] --> P2["<b>Phase 2</b><br/>SIMD Distance Kernels<br/><i>AVX2 / AVX-512 FMA</i>"]
+    P2 --> P3["<b>Phase 3</b><br/>Cache & Batch GEMM<br/><i>L2/L3 Tiling, Prefetch</i>"]
+    P3 --> P4["<b>Phase 4</b><br/>Quantization Engine<br/><i>SQ8, PQ, FastScan, BQ</i>"]
+    P4 --> P5["<b>Phase 5</b><br/>Graph Routing<br/><i>HNSW, DiskANN, io_uring</i>"]
+    P5 --> P6["<b>Phase 6</b><br/>Multi-Vector Late Interaction<br/><i>In-SRAM MaxSim, MUVERA</i>"]
+    P6 --> P7["<b>Phase 7</b><br/>Scale & Production<br/><i>NUMA, Work-Stealing, nanobind</i>"]
+```
 
 ### Phase 1: Scientific Benchmarking, Profiling & Dataset Ingestion
 *Goal: Establish a disciplined, measurement-first foundation where no optimization is guessed.*
@@ -259,6 +280,21 @@ To rival commercial vector database engines (Pinecone, Turbopuffer, Qdrant, Milv
 ## Part 2.5: The Landmark Research Track (Two Tier-1 Conference Submissions)
 
 Instead of fragmenting effort across superficial monthly notes, the curriculum's morning builder research track is focused on **two genuine, top-tier conference-grade research contributions (ICLR / ICML / MLSys)** that establish original state-of-the-art breakthroughs:
+
+```mermaid
+graph TD
+    subgraph Landmark1 ["🏛️ Landmark Paper 1: GAPQ (ICLR/ICML 2027)"]
+        G1["Anisotropic Neural Cones (CLIP / LLaMA)"] --> G2["Ellipsoidal Polar Lattice Coordinate Frame"]
+        G2 --> G3["Unbiased Anisotropic QJL Estimator Proof"]
+        G3 --> G4["Sub-2-Bit AVX-512 Bitwise Kernel (>98.5% Recall@1)"]
+    end
+
+    subgraph Landmark2 ["⚡ Landmark Paper 2: FlashMaxSim (MLSys/ICLR 2027)"]
+        F1["Multimodal Vision Tokens (ColPali / ColQwen)"] --> F2["Online Max Reduction Invariant in SRAM"]
+        F2 --> F3["Zero Intermediate VRAM Score Matrix Materialization"]
+        F3 --> F4["Bare-Metal CUTLASS Kernel (>75% Peak Tensor Core TFLOPS)"]
+    end
+```
 
 ### 🏛️ Landmark Paper 1 (Target: ICLR / ICML 2027 — Representation & Information Theory)
 * **Title**: *Geometry-Aware Anisotropic Polar Quantization (GAPQ): Provably Unbiased MIPS on Severe Embedding Cones at 2 Bits*
