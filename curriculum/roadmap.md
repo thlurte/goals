@@ -284,6 +284,9 @@ Instead of fragmenting effort across superficial monthly notes, the curriculum's
 ---
 
 
+
+* **Research Methodology & Style**: Richard W. Hamming, *The Art of Doing Science and Engineering: Learning to Learn* (Stripe Press 2020) — Read throughout Month 2 (October). Direct foundation for scientific taste, error-correcting codes, and writing Landmark Paper 1.
+
 ## Part 2.6: The Six Authoritative Graduate Reference Textbooks
 
 To guarantee mathematical rigor and microarchitectural precision across both Landmark Papers, the curriculum is anchored in six authoritative graduate-level texts:

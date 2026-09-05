@@ -8,7 +8,7 @@ A disciplined, restorative 28-week reading curriculum designed for the post-work
 
 | Pillar | Focus & Domain | Master Works |
 |:---|:---|:---|
-| **I. Soul, Morality & Craft** | Character-driven literature, craftsmanship, and human nature | *Zen and the Art of Motorcycle Maintenance* (Pirsig)<br>*The Magic Mountain* (*Der Zauberberg*) (Thomas Mann)<br>*The Master and Margarita* (Bulgakov) |
+| **I. Soul, Morality & Craft** | Character-driven literature, craftsmanship, and human nature | *Zen and the Art of Motorcycle Maintenance* (Pirsig)<br>*The Art of Doing Science and Engineering* (Richard W. Hamming)<br>*The Magic Mountain* (*Der Zauberberg*) (Thomas Mann)<br>*The Master and Margarita* (Bulgakov) |
 | **II. Mind, Self-Reference & Cybernetics** | Recursive systems, feedback loops, strange loops, and consciousness | *Gödel, Escher, Bach: An Eternal Golden Braid* (Hofstadter)<br>*Cybernetics* (Wiener)<br>*I Am a Strange Loop* (Hofstadter) |
 | **III. The Physical Cosmos & Geometry** | Visual mathematical physics, geometry, spacetime, and quantum reality | *The Road to Reality: A Complete Guide to the Laws of the Universe* (Sir Roger Penrose) |
 
@@ -80,44 +80,44 @@ A disciplined, restorative 28-week reading curriculum designed for the post-work
 
 
 #### Week 05 (Sat Oct 3 – Fri Oct 9)
-* **Sat Oct 3**: *GEB* — Three-Part Invention (Dialogue) & Ch 1: The MU-puzzle (Formal systems, strings, MIU rules).
+* **Sat Oct 3**: *Hamming Ch 1–2* — Orientation & Foundations of the Digital (Computing).
 * **Sun Oct 4 (Penrose Sunday)**: *The Road to Reality* — **Ch 5: Geometry of Logarithms, Powers, and Roots** (Complex powers, branches, conformal transformations).
-* **Mon Oct 5**: *Zen* — Ch 29 (The collapse of Phaedrus: electroconvulsive therapy).
-* **Tue Oct 6**: *Zen* — Ch 30 (The Pacific Ocean: fog and shoreline).
-* **Wed Oct 7**: *Zen* — Ch 31 (Chris and the mythos: the realization of madness).
-* **Thu Oct 8**: *Zen* — Ch 32 (Conclusion: "It's going to get better now." The motorcycle on the coast road).
-* **Fri Oct 9**: *GEB* — Introduction: A Musico-Logical Offering (Bach, King Frederick, The Musical Offering).
+* **Mon Oct 5**: *Hamming Ch 3* — History of Computers — Hardware & Exponential Scaling.
+* **Tue Oct 6**: *Hamming Ch 4* — History of Software — The Evolution of Abstraction.
+* **Wed Oct 7**: *Hamming Ch 5* — History of Programming Languages.
+* **Thu Oct 8**: *Hamming Ch 6* — Coding Theory — Hamming Codes & Parity Checks.
+* **Fri Oct 9**: *Hamming Ch 7* — Error-Correcting Codes & Information Redundancy.
 #### Week 06 (Sat Oct 10 – Fri Oct 16)
-* **Sat Oct 10**: *GEB* — Ch 5: Recursive Structures and Processes (Fibonacci, trees, nested loops).
+* **Sat Oct 10**: *Hamming Ch 8* — Information Theory — Shannon & Hamming Perspectives.
 * **Sun Oct 11 (Penrose Sunday)**: *The Road to Reality* — **Ch 6: Real-Number Calculus** (Limits, continuity, derivatives, Taylor series).
-* **Mon Oct 12**: *GEB* — Two-Part Invention (Dialogue) & Ch 2: Meaning and Form in Mathematics.
-* **Tue Oct 13**: *GEB* — Sonatina for Achilles and the Tortoise (Dialogue) & Ch 3: Figure and Ground.
-* **Wed Oct 14**: *GEB* — Contracrostipunctus (Dialogue: self-referential record players).
-* **Thu Oct 15**: *GEB* — Ch 4: Consistency, Completeness, and Geometry.
-* **Fri Oct 16**: *GEB* — Little Harmonic Labyrinth (Dialogue: recursive story stacks).
+* **Mon Oct 12**: *Hamming Ch 9* — Digital Filters I — The Concept of Filtering in Space & Time.
+* **Tue Oct 13**: *Hamming Ch 10* — Digital Filters II — Frequency Response & Transfer Functions.
+* **Wed Oct 14**: *Hamming Ch 11* — Digital Filters III — Non-Recursive vs Recursive Filters.
+* **Thu Oct 15**: *Hamming Ch 12* — Digital Filters IV — Filter Design & Microarchitectural Trade-offs.
+* **Fri Oct 16**: *Hamming Ch 13* — Simulation I — The Philosophy and Power of Numerical Simulation.
 #### Week 07 (Sat Oct 17 – Fri Oct 23)
-* **Sat Oct 17**: *GEB* — A Mu Offering (Dialogue) & Ch 9: Mumon and Gödel (Zen koans, undecidability).
+* **Sat Oct 17**: *Hamming Ch 14* — Simulation II — Real-Time Simulators and Numerical Stability.
 * **Sun Oct 18 (Penrose Sunday)**: *The Road to Reality* — **Ch 7: Complex-Number Calculus** (Holomorphic functions, Cauchy-Riemann equations, power series).
-* **Mon Oct 19**: *GEB* — Canon by Augmentation in Stride (Dialogue) & Ch 6: The Location of Meaning.
-* **Tue Oct 20**: *GEB* — Chromatic Fantasy, And Feud (Dialogue: Achilles, Tortoise, and Mr. Crab).
-* **Wed Oct 21**: *GEB* — Ch 7: The Propositional Calculus (Truth tables, deduction rules).
-* **Thu Oct 22**: *GEB* — Crab Canon (Dialogue: reversible crab canon in Bach and DNA).
-* **Fri Oct 23**: *GEB* — Ch 8: Typographical Number Theory (TNT: Peano arithmetic formalized).
+* **Mon Oct 19**: *Hamming Ch 15* — Simulation III — Limitations, Divergence & Numerical Artifacts.
+* **Tue Oct 20**: *Hamming Ch 16* — Fiber Optics & The Telecommunications Revolution.
+* **Wed Oct 21**: *Hamming Ch 17* — Computer Aided Instruction & Learning to Learn.
+* **Thu Oct 22**: *Hamming Ch 18* — Mathematics — The Unreasonable Effectiveness and Pure Reason.
+* **Fri Oct 23**: *Hamming Ch 19* — Quantum Mechanics — Physical Limits of Computation.
 #### Week 08 (Sat Oct 24 – Fri Oct 30)
-* **Sat Oct 24**: *GEB* — Aria with Diverse Variations (Dialogue) & Ch 13: BlooP, FlooP, and GlooP (Computability).
+* **Sat Oct 24**: *Hamming Ch 20–21* — Creativity & Experts — Why Conventional Wisdom is Often Flawed.
 * **Sun Oct 25 (Penrose Sunday)**: *The Road to Reality* — **Ch 8: Riemann Surfaces and Complex Mappings** (Conformal mapping, branch cuts, multi-sheeted surfaces).
-* **Mon Oct 26**: *GEB* — Prelude... Ant Fugue (Dialogue: Aunt Hillary, anthills, emergent mind).
-* **Tue Oct 27**: *GEB* — Ch 10: Levels of Description, and Computer Systems (Bits, symbols, holism).
-* **Wed Oct 28**: *GEB* — Ch 11: Brains and Thoughts (Neurons, representations, active symbols).
-* **Thu Oct 29**: *GEB* — English French German Suite (Dialogue: translation, meaning, style).
-* **Fri Oct 30**: *GEB* — Ch 12: Minds and Thoughts (The church of self-reference).
+* **Mon Oct 26**: *Hamming Ch 22* — Unreliable Data & The Mathematical Detection of Outliers.
+* **Tue Oct 27**: *Hamming Ch 23* — Systems Engineering — Architectural Coherence and Taste.
+* **Wed Oct 28**: *Hamming Ch 24* — You Get What You Measure — The Perils of False Metrics.
+* **Thu Oct 29**: *Hamming Ch 25–26* — How We Think & Style of Thinking.
+* **Fri Oct 30**: *Hamming Ch 30* — 'You and Your Research' — The Grand Masterpiece on First-Class Work.
 ---
 
 ### ❄️ Block II: The Mountain of Time, Gravity & Self-Reference (Nov – Dec 2026)
 *Primary Tracks*: Thomas Mann (*The Magic Mountain* / *Der Zauberberg*) + Penrose (*The Road to Reality* Ch 9–16) + Hofstadter (*GEB* Part 2).
 
 #### Week 09 (Sat Oct 31 – Fri Nov 6)
-* **Sat Oct 31**: *The Magic Mountain* — Ch 3 cont.: Analysis and Irony (Settembrini's philosophy of Enlightenment vs the passive sickness).
+* **Sat Oct 31**: *Hamming Ch 1–2* — Orientation & Foundations of the Digital (Computing).
 * **Sun Nov 1 (Penrose Sunday)**: *The Road to Reality* — **Ch 9: Fourier Decomposition and Hyperfunctions** (Orthogonal sine/cosine bases, delta functions).
 * **Mon Nov 2**: *The Magic Mountain* — Ch 1: Arrival (Davos-Platz, Berghof Sanatorium, Joachim Ziemssen, the chill alpine air).
 * **Tue Nov 3**: *GEB* — Air on G's String (Dialogue: God, Gödel, Escher).
