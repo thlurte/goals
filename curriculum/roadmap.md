@@ -166,9 +166,7 @@ A comprehensive, milestone-by-milestone technical blueprint for building a high-
 
 ## Part 2: The Industrial Frontier Specializations (Top 0.1%)
 
-To rival commercial vector database engines (Pinecone, Turbopuffer, Qdrant, Milvus, Google SCaNN), master these 6 frontier systems.
-
-> **Curriculum schedule**: **Weeks 1–16 = 4-month vector search spine.** IVF-PQ + HNSW-SQ Pareto **Week 12**. **ONNX→ORT dense encode Sat Nov 22**. **MUVERA FDE→MIPS** **Week 10 Mon–Tue**; PLAID 3-stage **Week 10 Wed**. TurboQuant 1@k **Week 10 Fri**. Vamana prune + `io_uring` **Week 16 Thu**. RRF + WAND **Week 16 Fri**. Pre/post/range filters + ACORN **Week 22**. FA-2 **Week 25**. FastScan Week 7. **No REST.** Cluster CPU shard = stretch. Spine tag `v1.2-vs-spine-complete`.
+To rival commercial vector database engines (Pinecone, Turbopuffer, Qdrant, Milvus, Google SCaNN), master these 10 frontier specializations:
 
 ### 1. Filtered Vector Search (ACORN / Roaring Bitmaps)
 * **The Challenge**: Hard metadata filtering (e.g. `price < 100 AND user_id = 5`) disconnects HNSW graph traversals, collapsing recall to near zero.
@@ -283,112 +281,45 @@ Instead of fragmenting effort across superficial monthly notes, the curriculum's
 
 ---
 
+## Part 2.6: Theoretical & Systems Reference Bibliography
 
+The engineering and research trajectory in this blueprint is anchored in authoritative graduate literature across mathematical foundations, systems architecture, information theory, and first-principles method.
 
-* **Research Methodology & Style**: Richard W. Hamming, *The Art of Doing Science and Engineering: Learning to Learn* (Stripe Press 2020) — Read throughout Month 2 (October). Direct foundation for scientific taste, error-correcting codes, and writing Landmark Paper 1.
+*(For detailed weekly reading schedules, daily chapter breakdowns, and operational cadences, see [`evening_reading_plan.md`](evening_reading_plan.md) and [`README.md`](README.md)).*
 
-## Part 2.6: The Six Authoritative Graduate Reference Textbooks
+### 📐 Mathematical & Statistical Foundations
+| Author(s) & Work | Key Focus & Technical Application |
+|:---|:---|
+| **Roman Vershynin**<br>*High-Dimensional Probability* (Cambridge 2018) | Sub-Gaussian vectors, concentration of measure on $\mathcal{S}^{d-1}$ ($\|x\|_2 \approx \sqrt{d} \pm \mathcal{O}(1)$), covering numbers $\mathcal{N}(\mathcal{K}, \|\cdot\|_2, \varepsilon)$, and non-asymptotic random matrix bounds for **Landmark Paper 1 (GAPQ)**. |
+| **Roger Horn & Charles Johnson**<br>*Matrix Analysis* (2nd ed, Cambridge 2012) | Courant-Fischer minimax theorem, Rayleigh quotients for cone principal axes, and Weyl/Hoffman-Wielandt perturbation bounds for MUVERA encodings. |
+| **George Casella & Roger Berger**<br>*Statistical Inference* (2nd ed, Cengage 2001) | Rao-Blackwell sufficiency, Cramér-Rao Lower Bounds (CRLB) $\text{Var}(\hat{\theta}) \ge \frac{1}{I(\theta)}$ for inner-product estimators, and Likelihood Ratio Tests for quantized recall degradation. |
+| **Edwin T. Jaynes**<br>*Probability Theory: The Logic of Science* (Cambridge 2003) | Bayesian inference treated as extended Boolean logic; Maximum Entropy Principle for prior distributions on Riemannian manifolds. |
 
-To guarantee mathematical rigor and microarchitectural precision across both Landmark Papers, the curriculum is anchored in six authoritative graduate-level texts:
+### ⚙️ Systems Architecture & Hardware Kernels
+| Author(s) & Work | Key Focus & Technical Application |
+|:---|:---|
+| **John Hennessy & David Patterson**<br>*Computer Architecture: A Quantitative Approach* (6th ed, 2017) | Amdahl's Law, memory hierarchy latency hiding, Tomasulo ILP, non-blocking caches, and multi-banked memory architectures. |
+| **Brendan Gregg**<br>*Systems Performance* (2nd ed, Addison-Wesley 2020) | USE method, CPU PMU hardware counters, off-CPU profiling, eBPF kernel tracing, and NVMe `io_uring` direct I/O characterization. |
+| **David Kirk, Wen-mei Hwu & Izzat El Hajj**<br>*Programming Massively Parallel Processors* (4th ed, 2022) | Grid-block-thread hierarchies, warp shuffle intrinsics (`__shfl_down_sync`), shared memory bank conflict elimination (32 banks), and fused Tensor Core pipelines for **Landmark Paper 2 (FlashMaxSim)**. |
+| **Butler W. Lampson**<br>*Hints for Computer System Design* (ACM TOCS 1983) | Golden systems doctrines: fast secrets, hints vs truths, end-to-end fallback, and modular interfaces for low-latency retrieval. |
 
-```
-┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                                 THE MATHEMATICAL & SYSTEMS CORE                                        │
-├───────────────────────────────────────────┬────────────────────────────────────────────────────────────┤
-│ 📐 MATHEMATICAL FOUNDATIONS               │ ⚙️ SYSTEMS ARCHITECTURE & PROFILING                        │
-│ • Vershynin: High-Dimensional Probability │ • Hennessy & Patterson: Computer Architecture (6th ed)     │
-│ • Horn & Johnson: Matrix Analysis (2nd ed)│ • Brendan Gregg: Systems Performance (2nd ed)              │
-│ • Casella & Berger: Statistical Inference │ • Kirk & Hwu: Massively Parallel Processors (4th ed)       │
-└───────────────────────────────────────────┴────────────────────────────────────────────────────────────┘
-```
+### 📡 Information Theory & Distributed Retrieval
+| Author(s) & Work | Key Focus & Technical Application |
+|:---|:---|
+| **Thomas M. Cover & Joy A. Thomas**<br>*Elements of Information Theory* (2nd ed, Wiley 2006) | Differential entropy, Asymptotic Equipartition Property (AEP), typical sets, and continuous Rate-Distortion bounds $R(D)$ for vector quantization. |
+| **Claude E. Shannon**<br>*The Mathematical Theory of Communication* (Univ of Illinois 1949) | Discrete noiseless entropy $H = -\sum p_i \log p_i$, channel capacity $C = \max I(X;Y)$, and noisy channel coding theorems. |
+| **Martin Kleppmann**<br>*Designing Data-Intensive Applications* (O'Reilly 2017) | LSM-trees, SSTables, Bloom filters, zero-copy serialization, and multi-node vector shard replication. |
+| **Christopher Manning et al.**<br>*Introduction to Information Retrieval* (Cambridge 2008) | Inverted postings compression ($\gamma$-codes, variable byte), SPIMI index construction, and formal IR evaluation metrics (NDCG@K, MAP, MRR). |
 
-### 1. High-Dimensional Probability: An Introduction with Applications in Data Science
-* **Author**: Roman Vershynin (Cambridge University Press, 2018)
-* **Curriculum Placement**: Months 4–5 (Pure Math Blocks 1 & 2) — after Calculus & Linear Algebra foundations
-* **Direct Application to Landmark Paper 1 (GAPQ)**:
-  * **Sub-Gaussian Random Vectors & Hyperspherical Geometry (Ch 1–3)**: Closed-form concentration of measure on $\mathcal{S}^{d-1}$ ($\|x\|_2 \approx \sqrt{d} \pm \mathcal{O}(1)$), bounding angular dispersion within anisotropic embedding cones.
-  * **Random Matrices & Non-Asymptotic SVD (Ch 4–5)**: Matrix Bernstein inequalities and covariance estimation for anisotropic coordinate frames.
-  * **Metric Entropy & Chaining (Ch 6–8)**: Dudley's inequality and covering numbers $\mathcal{N}(\mathcal{K}, \|\cdot\|_2, \varepsilon)$ establishing theoretical minimum bit-rates for lossless polar quantization.
-
-### 2. Matrix Analysis (2nd Edition)
-* **Authors**: Roger A. Horn & Charles R. Johnson (Cambridge University Press, 2012)
-* **Curriculum Placement**: Months 3–4, 6 (Pure Math Blocks 1 & 2) — aligned with Linear Algebra month
-* **Direct Application to Landmark Papers 1 & 2**:
-  * **Eigenvalues & Minimax Principles (Ch 1–4)**: Courant-Fischer minimax theorem $\lambda_k(A) = \max_{\dim(S)=k} \min_{x \in S, \|x\|=1} x^* A x$ and Rayleigh quotients for finding principal cone axes.
-  * **Matrix Perturbation & Singular Values (Ch 5–7)**: Weyl's monotonicity theorem and Hoffman-Wielandt perturbation bounds $\sum_{i=1}^n |\sigma_i(A) - \sigma_i(B)|^2 \le \|A - B\|_F^2$ for MUVERA fixed-dimensional encodings.
-  * **Perron-Frobenius & Non-Negative Matrices (Ch 8)**: Spectral graph theory, Cheeger's inequality, and conductance bounds for HNSW/ACORN small-world routing.
-
-### 3. Statistical Inference (2nd Edition)
-* **Authors**: George Casella & Roger L. Berger (Duxbury / Cengage, 2001)
-* **Curriculum Placement**: Month 5 (Pure Math Blocks 1 & 2)
-* **Direct Application**:
-  * **Principles of Data Reduction (Ch 6)**: Sufficiency, minimal sufficiency, and the Rao-Blackwell theorem applied to low-bit vector quantization.
-  * **Point Estimation & Asymptotics (Ch 7 & Ch 10)**: Cramér-Rao Lower Bound (CRLB) $\text{Var}(\hat{\theta}) \ge \frac{1}{I(\theta)}$ for inner-product estimators on quantized representations.
-  * **Hypothesis Testing (Ch 8)**: Likelihood Ratio Tests (LRT) and Uniformly Most Powerful (UMP) tests for detecting retrieval recall degradation and KV cache distortion.
-
-### 4. Computer Architecture: A Quantitative Approach (6th Edition)
-* **Authors**: John L. Hennessy & David A. Patterson (Morgan Kaufmann, 2017)
-* **Curriculum Placement**: Months 1–4, 7 (Weekday Mornings 05:30–06:30)
-* **Direct Application**:
-  * **Quantitative Principles of Computer Design (Ch 1)**: Amdahl's Law, CPU clock scaling, energy-performance trade-offs.
-  * **Memory Hierarchy Design (Ch 2 & App B)**: Cache-line miss penalties, non-blocking caches, hardware/software prefetching, and multi-banked memory latency hiding.
-  * **Instruction-Level Parallelism & Dynamic Scheduling (Ch 3)**: Tomasulo's algorithm, reorder buffers (ROB), branch prediction, superscalar port saturation.
-  * **Vector, SIMD & GPU Architectures (Ch 4 & Ch 5)**: Vector lane execution, roofline model, cache coherence, directory-based NUMA protocols.
-
-### 5. Systems Performance: Enterprise and the Cloud (2nd Edition)
-* **Author**: Brendan Gregg (Addison-Wesley, 2020)
-* **Curriculum Placement**: Months 1, 4, 7 (Weekday Mornings 05:30–06:30)
-* **Direct Application**:
-  * **Methodologies & Analysis (Ch 2 & Ch 6)**: Utilization Saturation and Errors (USE) method, instruction-to-cycle ratios (IPC), stall-cycle decomposition via CPU PMUs.
-  * **Memory & Storage Performance (Ch 7 & Ch 9)**: Memory bus saturation, translation lookaside buffer (TLB) misses, huge pages (`madvise`), Linux NVMe Direct I/O (`io_uring`).
-  * **Profiling & Tracing (Ch 12)**: Statistical CPU sampling with `perf record`, off-CPU analysis, eBPF kernel tracing, and SVG flame graph generation.
-
-### 6. Programming Massively Parallel Processors: A Hands-on Approach (4th Edition)
-* **Authors**: David B. Kirk, Wen-mei W. Hwu, Izzat El Hajj (Morgan Kaufmann, 2022)
-* **Curriculum Placement**: Months 4–7 (Weekday Mornings 05:30–06:30)
-* **Direct Application to Landmark Paper 2 (FlashMaxSim)**:
-  * **CUDA Hardware Execution Model (Ch 1–4)**: Grid-block-thread hierarchies, warp schedulers, register pressure, and shared memory circular buffering.
-  * **Performance Considerations (Ch 5–7)**: Memory coalescing rules, shared memory bank conflict elimination (32 banks), warp divergence minimization, and parallel reductions.
-  * **Advanced Primitives & Kernel Fusion (Ch 8–11 & Ch 16–17)**: Warp shuffle intrinsics (`__shfl_down_sync`), Tensor Cores (WMMA / MMA PTX), and custom fused FlashAttention/MaxSim kernel pipelines.
-
-
-
-### 7. Elements of Information Theory (2nd Edition)
-* **Authors**: Thomas M. Cover & Joy A. Thomas (Wiley-Interscience, 2006)
-* **Curriculum Placement**: Months 1–7 (Saturday Evenings 18:00–19:30)
-* **Direct Application to Landmark Paper 1 (GAPQ)**:
-  * **Entropy & Mutual Information (Ch 2 & Ch 8)**: Quantifying information loss in anisotropic high-dimensional projections.
-  * **Asymptotic Equipartition Property (AEP) & Typical Sets (Ch 3)**: Formal proof of hyperspherical typicality in high dimensions.
-  * **Rate-Distortion Theory (Ch 10)**: The continuous rate-distortion function $R(D)$ bounding the minimum bit-rate achievable for a given mean squared error distortion $\mathbb{E}[\|x - \hat{x}\|^2]$ under polar coordinate quantization.
-
-### 8. Designing Data-Intensive Applications
-* **Author**: Martin Kleppmann (O'Reilly Media, 2017)
-* **Curriculum Placement**: Months 1–3 (Sunday Evenings 18:00–19:30)
-* **Direct Application**:
-  * **Storage Engines (Ch 3)**: Log-Structured Merge (LSM) trees, SSTables, Bloom filters, and compaction strategies for `secan` disk indexing.
-  * **Encoding & Evolution (Ch 4)**: Zero-copy binary serialization formats (FlatBuffers) and memory-mapped disk layouts.
-  * **Partitioning & Replication (Ch 5–6)**: Sharding high-dimensional vector datasets across multi-node retrieval clusters.
-
-### 9. Introduction to Information Retrieval
-* **Authors**: Christopher D. Manning, Prabhakar Raghavan, Hinrich Schütze (Cambridge University Press, 2008)
-* **Curriculum Placement**: Months 4–6 (Sunday Evenings 18:00–19:30)
-* **Direct Application**:
-  * **Index Construction & Compression (Ch 4–5)**: Inverted postings compression ($\gamma$-codes, variable byte) and SPIMI algorithms.
-  * **Scoring & Evaluation (Ch 6–8)**: Formal IR evaluation theory (NDCG@K, Mean Average Precision, Mean Reciprocal Rank).
-  * **Matrix Decompositions (Ch 18)**: Latent Semantic Indexing (LSI) and low-rank singular value approximations.
+### 💡 First-Principles Method & Physical Computing
+| Author(s) & Work | Key Focus & Technical Application |
+|:---|:---|
+| **Richard W. Hamming**<br>*The Art of Doing Science and Engineering* (Stripe Press 2020) | Research taste, exponential technological scaling, error-correcting codes, and first-class problem selection ("You and Your Research"). |
+| **George Pólya**<br>*How to Solve It* & *Plausible Reasoning* (Princeton 1945) | Mathematical heuristics, problem deconstruction, finding invariants, and working backwards from desired theorems. |
+| **Richard P. Feynman**<br>*Feynman Lectures on Computation* (Westview 1996) | Landauer's thermodynamic bound ($kT \ln 2$), physical limits of clock speed, reversible computing, and quantum logic gates. |
+| **Sir Roger Penrose**<br>*The Road to Reality* (Vintage 2004) | Visual mathematical physics, Riemann surfaces, fiber bundles, Lagrangians, spin geometry, and cosmological entropy. |
 
 ---
-
-
-### 10. The Thought Leadership & First-Principles Masterclass Library
-* **Focus & Domain**: Scientific taste, mathematical heuristics, physical limits of computing, and probability as logic.
-* **Master Works**:
-  1. **Richard W. Hamming**: *The Art of Doing Science and Engineering: Learning to Learn* (Month 2: Research taste, error-correcting codes, "You and Your Research").
-  2. **Claude E. Shannon**: *The Mathematical Theory of Communication* (Month 3: The founding monograph on entropy and channel capacity).
-  3. **Butler W. Lampson**: *Hints for Computer System Design* (Month 3: The golden architectural doctrine for low-latency systems).
-  4. **George Pólya**: *How to Solve It* & *Mathematics and Plausible Reasoning* (Month 3: Mathematical heuristics, conjectures, and discovery).
-  5. **Richard P. Feynman**: *Feynman Lectures on Computation* (Month 4: Physical limits of clock speed, thermodynamics of information, reversible computing).
-  6. **Edwin T. Jaynes**: *Probability Theory: The Logic of Science* (Month 5: Probability as the unique extension of Boolean logic).
 
 ## Part 3: Verification & Tooling Matrix (The Hardware Profiling Playbook)
 
