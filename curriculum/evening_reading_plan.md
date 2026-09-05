@@ -7,12 +7,13 @@ A disciplined, restorative 28-week reading curriculum designed for the post-work
 ## 🏛️ The Three Reading Pillars
 
 | Pillar | Focus & Domain | Master Works |
-| :--- | :--- | :--- |
-| **I. Craft, Taste & Research Mindset** | Engineering craftsmanship, research style, and architectural taste | *Zen and the Art of Motorcycle Maintenance* (Pirsig)<br>*The Art of Doing Science and Engineering* (Hamming)<br>*Hints for Computer System Design* (Lampson)<br>*The Mathematical Theory of Communication* (Shannon) |
-| **II. Mind, Logic & Computational Limits** | Physics of computing, mathematical heuristics, and Bayesian logic | *Feynman Lectures on Computation* (Feynman)<br>*Mathematics and Plausible Reasoning / How to Solve It* (Pólya)<br>*Probability Theory: The Logic of Science* (E.T. Jaynes)<br>*Gödel, Escher, Bach* (Hofstadter) |
+|:---|:---|:---|
+| **I. Soul, Morality & Craft** | Character-driven literature, craftsmanship, and human nature | *Zen and the Art of Motorcycle Maintenance* (Pirsig)<br>*The Magic Mountain* (*Der Zauberberg*) (Thomas Mann)<br>*The Master and Margarita* (Bulgakov) |
+| **II. Mind, Self-Reference & Cybernetics** | Recursive systems, feedback loops, strange loops, and consciousness | *Gödel, Escher, Bach: An Eternal Golden Braid* (Hofstadter)<br>*Cybernetics* (Wiener)<br>*I Am a Strange Loop* (Hofstadter) |
 | **III. The Physical Cosmos & Geometry** | Visual mathematical physics, geometry, spacetime, and quantum reality | *The Road to Reality: A Complete Guide to the Laws of the Universe* (Sir Roger Penrose) |
 
 ---
+
 ## 📅 Weekly Cadence & Schedule (75–90 min/day)
 
 ```
@@ -79,105 +80,98 @@ A disciplined, restorative 28-week reading curriculum designed for the post-work
 
 
 #### Week 05 (Sat Oct 3 – Fri Oct 9)
-* **Sat Oct 3**: *Hamming Ch 1–2* — Orientation & Foundations of the Digital (Computing).
+* **Sat Oct 3**: *GEB* — Three-Part Invention (Dialogue) & Ch 1: The MU-puzzle (Formal systems, strings, MIU rules).
 * **Sun Oct 4 (Penrose Sunday)**: *The Road to Reality* — **Ch 5: Geometry of Logarithms, Powers, and Roots** (Complex powers, branches, conformal transformations).
-* **Mon Oct 5**: *Hamming Ch 3* — History of Computers — Hardware & Exponential Scaling.
-* **Tue Oct 6**: *Hamming Ch 4* — History of Software — The Evolution of Abstraction.
-* **Wed Oct 7**: *Hamming Ch 5* — History of Programming Languages.
-* **Thu Oct 8**: *Hamming Ch 6* — Coding Theory — Hamming Codes & Parity Checks.
-* **Fri Oct 9**: *Hamming Ch 7* — Error-Correcting Codes & Information Redundancy.
+* **Mon Oct 5**: *Zen* — Ch 29 (The collapse of Phaedrus: electroconvulsive therapy).
+* **Tue Oct 6**: *Zen* — Ch 30 (The Pacific Ocean: fog and shoreline).
+* **Wed Oct 7**: *Zen* — Ch 31 (Chris and the mythos: the realization of madness).
+* **Thu Oct 8**: *Zen* — Ch 32 (Conclusion: "It's going to get better now." The motorcycle on the coast road).
+* **Fri Oct 9**: *GEB* — Introduction: A Musico-Logical Offering (Bach, King Frederick, The Musical Offering).
 #### Week 06 (Sat Oct 10 – Fri Oct 16)
-* **Sat Oct 10**: *Hamming Ch 8* — Information Theory — Shannon & Hamming Perspectives.
+* **Sat Oct 10**: *GEB* — Ch 5: Recursive Structures and Processes (Fibonacci, trees, nested loops).
 * **Sun Oct 11 (Penrose Sunday)**: *The Road to Reality* — **Ch 6: Real-Number Calculus** (Limits, continuity, derivatives, Taylor series).
-* **Mon Oct 12**: *Hamming Ch 9* — Digital Filters I — The Concept of Filtering in Space & Time.
-* **Tue Oct 13**: *Hamming Ch 10* — Digital Filters II — Frequency Response & Transfer Functions.
-* **Wed Oct 14**: *Hamming Ch 11* — Digital Filters III — Non-Recursive vs Recursive Filters.
-* **Thu Oct 15**: *Hamming Ch 12* — Digital Filters IV — Filter Design & Microarchitectural Trade-offs.
-* **Fri Oct 16**: *Hamming Ch 13* — Simulation I — The Philosophy and Power of Numerical Simulation.
+* **Mon Oct 12**: *GEB* — Two-Part Invention (Dialogue) & Ch 2: Meaning and Form in Mathematics.
+* **Tue Oct 13**: *GEB* — Sonatina for Achilles and the Tortoise (Dialogue) & Ch 3: Figure and Ground.
+* **Wed Oct 14**: *GEB* — Contracrostipunctus (Dialogue: self-referential record players).
+* **Thu Oct 15**: *GEB* — Ch 4: Consistency, Completeness, and Geometry.
+* **Fri Oct 16**: *GEB* — Little Harmonic Labyrinth (Dialogue: recursive story stacks).
 #### Week 07 (Sat Oct 17 – Fri Oct 23)
-* **Sat Oct 17**: *Hamming Ch 14* — Simulation II — Real-Time Simulators and Numerical Stability.
+* **Sat Oct 17**: *GEB* — A Mu Offering (Dialogue) & Ch 9: Mumon and Gödel (Zen koans, undecidability).
 * **Sun Oct 18 (Penrose Sunday)**: *The Road to Reality* — **Ch 7: Complex-Number Calculus** (Holomorphic functions, Cauchy-Riemann equations, power series).
-* **Mon Oct 19**: *Hamming Ch 15* — Simulation III — Limitations, Divergence & Numerical Artifacts.
-* **Tue Oct 20**: *Hamming Ch 16* — Fiber Optics & The Telecommunications Revolution.
-* **Wed Oct 21**: *Hamming Ch 17* — Computer Aided Instruction & Learning to Learn.
-* **Thu Oct 22**: *Hamming Ch 18* — Mathematics — The Unreasonable Effectiveness and Pure Reason.
-* **Fri Oct 23**: *Hamming Ch 19* — Quantum Mechanics — Physical Limits of Computation.
+* **Mon Oct 19**: *GEB* — Canon by Augmentation in Stride (Dialogue) & Ch 6: The Location of Meaning.
+* **Tue Oct 20**: *GEB* — Chromatic Fantasy, And Feud (Dialogue: Achilles, Tortoise, and Mr. Crab).
+* **Wed Oct 21**: *GEB* — Ch 7: The Propositional Calculus (Truth tables, deduction rules).
+* **Thu Oct 22**: *GEB* — Crab Canon (Dialogue: reversible crab canon in Bach and DNA).
+* **Fri Oct 23**: *GEB* — Ch 8: Typographical Number Theory (TNT: Peano arithmetic formalized).
 #### Week 08 (Sat Oct 24 – Fri Oct 30)
-* **Sat Oct 24**: *Hamming Ch 20–21* — Creativity & Experts — Why Conventional Wisdom is Often Flawed.
+* **Sat Oct 24**: *GEB* — Aria with Diverse Variations (Dialogue) & Ch 13: BlooP, FlooP, and GlooP (Computability).
 * **Sun Oct 25 (Penrose Sunday)**: *The Road to Reality* — **Ch 8: Riemann Surfaces and Complex Mappings** (Conformal mapping, branch cuts, multi-sheeted surfaces).
-* **Mon Oct 26**: *Hamming Ch 22* — Unreliable Data & The Mathematical Detection of Outliers.
-* **Tue Oct 27**: *Hamming Ch 23* — Systems Engineering — Architectural Coherence and Taste.
-* **Wed Oct 28**: *Hamming Ch 24* — You Get What You Measure — The Perils of False Metrics.
-* **Thu Oct 29**: *Hamming Ch 25–26* — How We Think & Style of Thinking.
-* **Fri Oct 30**: *Hamming Ch 30* — 'You and Your Research' — The Grand Masterpiece on First-Class Work.
+* **Mon Oct 26**: *GEB* — Prelude... Ant Fugue (Dialogue: Aunt Hillary, anthills, emergent mind).
+* **Tue Oct 27**: *GEB* — Ch 10: Levels of Description, and Computer Systems (Bits, symbols, holism).
+* **Wed Oct 28**: *GEB* — Ch 11: Brains and Thoughts (Neurons, representations, active symbols).
+* **Thu Oct 29**: *GEB* — English French German Suite (Dialogue: translation, meaning, style).
+* **Fri Oct 30**: *GEB* — Ch 12: Minds and Thoughts (The church of self-reference).
 ---
 
 ### ❄️ Block II: The Mountain of Time, Gravity & Self-Reference (Nov – Dec 2026)
 *Primary Tracks*: Thomas Mann (*The Magic Mountain* / *Der Zauberberg*) + Penrose (*The Road to Reality* Ch 9–16) + Hofstadter (*GEB* Part 2).
 
 #### Week 09 (Sat Oct 31 – Fri Nov 6)
-* **Sat Oct 31**: *Shannon* — The Mathematical Theory of Communication: Part I (Discrete Noiseless Systems, Entropy).
+* **Sat Oct 31**: *The Magic Mountain* — Ch 3 cont.: Analysis and Irony (Settembrini's philosophy of Enlightenment vs the passive sickness).
 * **Sun Nov 1 (Penrose Sunday)**: *The Road to Reality* — **Ch 9: Fourier Decomposition and Hyperfunctions** (Orthogonal sine/cosine bases, delta functions).
-* **Mon Nov 2**: *Shannon* — Part II (Discrete Channels with Noise, Channel Capacity Theorem).
+* **Mon Nov 2**: *The Magic Mountain* — Ch 1: Arrival (Davos-Platz, Berghof Sanatorium, Joachim Ziemssen, the chill alpine air).
 * **Tue Nov 3**: *GEB* — Air on G's String (Dialogue: God, Gödel, Escher).
-* **Wed Nov 4**: *Shannon* — Part III & IV (Mathematical Proofs of the Fundamental Theorem).
+* **Wed Nov 4**: *The Magic Mountain* — Ch 2: Of the Christening Basin and Grandfather in his True Guise (Hans Castorp's origins).
 * **Thu Nov 5**: *GEB* — Ch 14: On Formally Undecidable Propositions of TNT (Gödel's Incompleteness Theorem).
-* **Fri Nov 6**: *Butler Lampson* — **Hints for Computer System Design** (The classic architectural rules: keep it simple, fast path vs slow path, don't hide power).
-
+* **Fri Nov 6**: *The Magic Mountain* — Ch 3: Settembrini (The Italian humanist introduced; the cure in the deck chair).
 #### Week 10 (Sat Nov 7 – Fri Nov 13)
-* **Sat Nov 7**: *Pólya* — *How to Solve It*: "In the Antechamber of Discovery" (Analogy, auxiliary elements).
+* **Sat Nov 7**: *The Magic Mountain* — Ch 4 cont.: The X-Ray Laboratory (Hans Castorp gazes through his own flesh at his skeleton).
 * **Sun Nov 8 (Penrose Sunday)**: *The Road to Reality* — **Ch 10: Surfaces** (Topology, Euler characteristic $V - E + F = 2$, genus).
-* **Mon Nov 9**: *Pólya* — Understanding the Problem & Decomposing into Simpler Sub-problems.
+* **Mon Nov 9**: *The Magic Mountain* — Ch 4: Retrospect (The breakfast hall, the seven meals, Dr. Krokowski's psychoanalysis).
 * **Tue Nov 10**: *GEB* — Birthday Cantatatata... (Dialogue: self-referential celebrations).
-* **Wed Nov 11**: *Pólya* — Working Backwards from the Goal (Inductive reasoning in mathematics).
+* **Wed Nov 11**: *The Magic Mountain* — Ch 4 cont.: Clavdia Chauchat (The slamming door, the Russian table, the languid grace).
 * **Thu Nov 12**: *GEB* — Ch 15: Jumping out of the System (Meta-languages and Gödelian escape).
-* **Fri Nov 13**: *Pólya* — Generalization and Specialization: Finding the extreme cases.
-
+* **Fri Nov 13**: *The Magic Mountain* — Ch 4 cont.: The Thermometer (Fever, the 37.6°C border between health and sickness).
 #### Week 11 (Sat Nov 14 – Fri Nov 20)
-* **Sat Nov 14**: *Pólya* — *Mathematics and Plausible Reasoning* (Vol 1): Induction and Analogy in Mathematics.
+* **Sat Nov 14**: *The Magic Mountain* — Ch 5 cont.: Walpurgis Night (The Mardi Gras carnival; borrowing the pencil from Clavdia Chauchat).
 * **Sun Nov 15 (Penrose Sunday)**: *The Road to Reality* — **Ch 11: Complex Dimensions** (Riemannian manifolds, coordinate patches, complex manifolds).
-* **Mon Nov 16**: *Pólya* — Generalization, Specialization, and Analogy in Geometry.
+* **Mon Nov 16**: *The Magic Mountain* — Ch 5: Soup-Everlasting & Sudden Enlightenment (Time distortion in the high mountains).
 * **Tue Nov 17**: *GEB* — Edifying Thoughts of a Tobacco Smoker (Dialogue: Bach and meaning).
-* **Wed Nov 18**: *Pólya* — Induction in Solid Geometry (Euler's Polyhedron Formula derived).
+* **Wed Nov 18**: *The Magic Mountain* — Ch 5 cont.: Anatomy of the Living (Hans studies biology, protoplasm, and the mystery of life).
 * **Thu Nov 19**: *GEB* — Ch 16: Self-Ref and Self-Rep (DNA, replication, programs that print themselves).
-* **Fri Nov 20**: *Pólya* — The Role of Guesses and Conjectures in Research.
-
+* **Fri Nov 20**: *The Magic Mountain* — Ch 5 cont.: Freedom and the Spirit (Settembrini vs the seductive surrender of illness).
 #### Week 12 (Sat Nov 21 – Fri Nov 27)
-* **Sat Nov 21**: *Pólya* — *Mathematics and Plausible Reasoning* (Vol 2): Patterns of Plausible Inference.
+* **Sat Nov 21**: *The Magic Mountain* — Ch 6 cont.: The Great Debate (Settembrini's Humanism vs Naphta's revolutionary Nihilism).
 * **Sun Nov 22 (Penrose Sunday)**: *The Road to Reality* — **Ch 12: Manifolds of n Dimensions** (Tangent vectors, differential forms, exterior calculus).
-* **Mon Nov 23**: *Pólya* — Verification of Conjectures and Mathematical Courage.
+* **Mon Nov 23**: *The Magic Mountain* — Ch 5 cont.: The French Confession (Hans Castorp confesses his feverish love to Clavdia).
 * **Tue Nov 24**: *GEB* — The Magnificrab, Indeed (Dialogue: Crab, Tortoise, and Turing).
-* **Wed Nov 25**: *Pólya* — The Logic of Plausible Reasoning vs Formal Deductive Logic.
+* **Wed Nov 25**: *The Magic Mountain* — Ch 6: Changes (Clavdia departs; Joachim's soldierly discipline).
 * **Thu Nov 26**: *GEB* — Ch 17: Church, Turing, Tarski, and Others (Halting problem, undecidability).
-* **Fri Nov 27**: *Pólya & Lampson Synthesis*: Mathematical Conjecturing meets Systems Engineering Taste.
-
+* **Fri Nov 27**: *The Magic Mountain* — Ch 6 cont.: Leo Naphta Appears (The Jesuit radical; intellect as weapon).
 #### Week 13 (Sat Nov 28 – Fri Dec 4)
-* **Sat Nov 28**: *Feynman Lectures on Computation* — **Ch 1: Introduction to Computing** (Logic gates, binary arithmetic, finite state machines).
+* **Sat Nov 28**: *The Magic Mountain* — Ch 6 cont.: **"SNOW" (SCHNEE) — Part 2** (The blizzard, the dream of the golden temple & blood: *"For the sake of goodness and love, man shall let death have no sovereignty over his thoughts"*).
 * **Sun Nov 29 (Penrose Sunday)**: *The Road to Reality* — **Ch 13: Symmetry Groups** (Lie groups, rotations $SO(3)$, unitary groups $SU(2)$).
-* **Mon Nov 30**: *Feynman* — Ch 1 cont.: Universal Turing machines and cellular automata.
+* **Mon Nov 30**: *The Magic Mountain* — Ch 6 cont.: The City of God vs The Terror (Naphta's dark theology of history and suffering).
 * **Tue Dec 1**: *GEB* — SHRDLU, Toy of Man's Designing (Dialogue: natural language understanding).
-* **Wed Dec 2**: *Feynman* — **Ch 2: Computer Construction & Coding** (Instruction sets, memory addressing, ALU pipelines).
+* **Wed Dec 2**: *The Magic Mountain* — Ch 6 cont.: An Attack, and Someone Forgotten (Joachim returns to the flatlands).
 * **Thu Dec 3**: *GEB* — Ch 18: Artificial Intelligence: Retrospects (Heuristic search, chess, representation).
-* **Fri Dec 4**: *Feynman* — Ch 2 cont.: Trade-offs between memory and arithmetic logic.
-
+* **Fri Dec 4**: *The Magic Mountain* — Ch 6 cont.: **"SNOW" (SCHNEE) — Part 1** (Hans Castorp buys skis, climbs into the white glaciers).
 #### Week 14 (Sat Dec 5 – Fri Dec 11)
-* **Sat Dec 5**: *Feynman* — **Ch 3: The Coding Process & Information Theory** (Compression, Shannon entropy from a physicist's lens).
+* **Sat Dec 5**: *The Magic Mountain* — Ch 7 cont.: The Thunderclap (1914 World War I erupts; Hans Castorp runs through Flanders mud singing Schubert).
 * **Sun Dec 6 (Penrose Sunday)**: *The Road to Reality* — **Ch 14: Calculus on Manifolds** (Covariant derivative, connection, parallel transport).
-* **Mon Dec 7**: *Feynman* — Ch 3 cont.: Huffman coding, error-correcting codes, and physical transmission channels.
+* **Mon Dec 7**: *The Magic Mountain* — Ch 6 cont.: A Soldier and a Brave One (Joachim returns to Davos and dies a soldier's death).
 * **Tue Dec 8**: *GEB* — Contrafactus (Dialogue: counterfactual reasoning).
-* **Wed Dec 9**: *Feynman* — **Ch 4: Reversible Computation & Thermodynamics of Computing** (Landauer's Principle: erasing a bit costs $kT \ln 2$).
+* **Wed Dec 9**: *The Magic Mountain* — Ch 7: Mynheer Peeperkorn (The Dionysian force of personality, the waterfall monologue).
 * **Thu Dec 10**: *GEB* — Ch 19: Artificial Intelligence: Prospects (Turing test, self-consciousness).
-* **Fri Dec 11**: *Feynman* — Ch 4 cont.: Billiard-ball computers and dissipationless computation.
-
+* **Fri Dec 11**: *The Magic Mountain* — Ch 7 cont.: The Fatal Duel (Naphta and Settembrini reach ideological madness; the suicide).
 #### Week 15 (Sat Dec 12 – Fri Dec 18)
-* **Sat Dec 12**: *Feynman* — **Ch 5: Parallel Computers & Memory Bandwidth** (Interconnection networks, latency hiding, SIMD).
+* **Sat Dec 12**: Reading Buffer / Key Passages Review.
 * **Sun Dec 13 (Penrose Sunday)**: *The Road to Reality* — **Ch 15: Fibre Bundles and Gauge Connections** (Visualizing bundles: base space, fibers, global twist).
-* **Mon Dec 14**: *Feynman* — **Ch 6: Quantum Mechanical Computers** (Quantum state vectors, unitary operators, spin-1/2 qubits).
+* **Mon Dec 14**: *GEB* — Sloth Canon (Dialogue: time reversals and sluggishness).
 * **Tue Dec 15**: *GEB* — Ch 20: Strange Loops, or Tangled Hierarchies (The core thesis: self-reference makes mind).
-* **Wed Dec 16**: *Feynman* — **Ch 7: Physical Aspects of Information** (Limits of clock speed, heat dissipation, speed of light delays).
+* **Wed Dec 16**: *GEB* — Six-Part Ricercar (Grand Finale Dialogue: Bach, Escher, Gödel united).
 * **Thu Dec 17**: *GEB* — Epilogue & Reflection: The Golden Braid complete.
-* **Fri Dec 18**: Reflection: Feynman's Physical Limits of Computing meets GPU Kernel Architecture.
-
+* **Fri Dec 18**: Reading Buffer / Reflection Journal on Thomas Mann and Hofstadter.
 #### Week 16 (Sat Dec 19 – Fri Dec 25)
 * **Mon Dec 15**: *Cybernetics* (Wiener) — Introduction: The history of feedback, cybernetics, and Babbage.
 * **Tue Dec 16**: *Cybernetics* — Ch 1: Newtonian and Bergsonian Time (Reversibility vs irreversibility).
@@ -190,41 +184,37 @@ A disciplined, restorative 28-week reading curriculum designed for the post-work
 ### 🏔️ Block III: Cybernetics, Consciousness & The Strange Loop (Jan – Feb 2027)
 *Primary Tracks*: Hofstadter (*I Am a Strange Loop*) + Wiener (*Cybernetics* Part 2) + Penrose (*The Road to Reality* Ch 17–24).
 #### Week 17 (Sat Dec 26 – Fri Jan 1)
-* **Sat Dec 26**: *E.T. Jaynes* — **Ch 1: Plausible Reasoning** (Deductive vs plausible reasoning; building a robot that thinks rationally).
+* **Sat Dec 26**: *Cybernetics* — Supplementary Ch 10: Brain Waves and Self-Organizing Systems.
 * **Sun Dec 27 (Penrose Sunday)**: *The Road to Reality* — **Ch 17: Spacetime** (Special relativity, Minkowski 4-vectors, light cones).
-* **Mon Dec 28**: *E.T. Jaynes* — **Ch 2: The Quantitative Rules** (Cox's Theorem: product and sum rules derived uniquely from common sense).
-* **Tue Dec 29**: *E.T. Jaynes* — Ch 2 cont.: Why probability is the unique extension of Boolean logic.
-* **Wed Dec 30**: *E.T. Jaynes* — **Ch 3: Elementary Sampling Theory** (Bernoulli trials, hypergeometric distributions).
+* **Mon Dec 28**: *Cybernetics* — Ch 6: Gestalt and Universals (Pattern recognition in biological vision).
+* **Tue Dec 29**: *Cybernetics* — Ch 7: Cybernetics and Psychopathology (Feedback loops in mental disorders).
+* **Wed Dec 30**: *Cybernetics* — Ch 8: Information, Language, and Society (Communication networks and society).
 * **Thu Dec 31**: Rest / Holiday.
-* **Fri Jan 1**: *E.T. Jaynes* — **Ch 4: Elementary Hypothesis Testing** (Prior information and evidence accumulation).
-
+* **Fri Jan 1**: *Cybernetics* — Supplementary Ch 9: On Learning and Self-Reproducing Machines.
 #### Week 18 (Sat Jan 2 – Fri Jan 8)
-* **Sat Jan 2**: *E.T. Jaynes* — **Ch 5: Queer Uses for Probability Theory** (Extrasensory perception, uninformative priors).
+* **Sat Jan 2**: *I Am a Strange Loop* — Ch 6: Of Dogs and Dominoes.
 * **Sun Jan 3 (Penrose Sunday)**: *The Road to Reality* — **Ch 18: Minkowskian Geometry** (Lorentz boosts, invariants, 4-momentum).
-* **Mon Jan 4**: *E.T. Jaynes* — **Ch 6: Elementary Parameter Estimation** (Inversion of probabilities, likelihood functions).
-* **Tue Jan 5**: *E.T. Jaynes* — **Ch 7: The Central Limit Theorem** (Physical intuition behind why Gaussians appear everywhere).
-* **Wed Jan 6**: *E.T. Jaynes* — **Ch 8: Sufficiency, Ancillarity, and All That** (Direct bridge to Casella & Berger!).
-* **Thu Jan 7**: *E.T. Jaynes* — Ch 8 cont.: Fisher information and parameter estimation accuracy.
-* **Fri Jan 8**: *E.T. Jaynes* — **Ch 9: Repetitive Experiments & Probability** (Why frequencies emerge from exchangeability).
-
+* **Mon Jan 4**: *I Am a Strange Loop* — Preface & Ch 1: On a Pair of Sorts of Stuffy Words.
+* **Tue Jan 5**: *I Am a Strange Loop* — Ch 2: This Little Page.
+* **Wed Jan 6**: *I Am a Strange Loop* — Ch 3: The Video Feedback Loop (The television pointing at its own screen).
+* **Thu Jan 7**: *I Am a Strange Loop* — Ch 4: Locking onto the Loop.
+* **Fri Jan 8**: *I Am a Strange Loop* — Ch 5: I and the Video Screen.
 #### Week 19 (Sat Jan 9 – Fri Jan 15)
-* **Sat Jan 9**: *E.T. Jaynes* — **Ch 11: Discrete Prior Probabilities — The Maximum Entropy Principle** (Shannon entropy as information measure).
-* **Sun Jan 10 (Penrose Sunday)**: *The Road to Reality* — **Ch 19: The Classical Fields of Maxwell and Einstein** (Electromagnetism, Einstein field equations).
-* **Mon Jan 11**: *E.T. Jaynes* — Ch 11 cont.: Deriving Gibbs distributions and statistical mechanics from maximum entropy.
-* **Tue Jan 12**: *E.T. Jaynes* — **Ch 12: Ignorance Priors and Transformation Groups** (Jeffreys prior and scale invariance).
-* **Wed Jan 13**: *E.T. Jaynes* — **Ch 13: Decision Theory — Prior Information** (Loss functions, minimax decisions, Bayesian risk).
-* **Thu Jan 14**: *E.T. Jaynes* — Ch 13 cont.: Optimal decision boundaries under asymmetric loss.
-* **Fri Jan 15**: *E.T. Jaynes* — **Ch 14: Simple Applications of Decision Theory** (Quality control and threshold tuning).
-
+* **Sat Jan 9**: *I Am a Strange Loop* — Ch 12: Brains and Symbols.
+* **Sun Jan 10 (Penrose Sunday)**: *The Road to Reality* — **Ch 19: The Classical Fields of Maxwell and Einstein** (Electromagnetism, Einstein field equations $G_{\mu\nu} = 8\pi T_{\mu\nu}$).
+* **Mon Jan 11**: *I Am a Strange Loop* — Ch 7: The Careenium (The marbles and billiard-ball mind).
+* **Tue Jan 12**: *I Am a Strange Loop* — Ch 8: On Downward Causality (Does the micro cause the macro, or vice-versa?).
+* **Wed Jan 13**: *I Am a Strange Loop* — Ch 9: The Pattern that Connects.
+* **Thu Jan 14**: *I Am a Strange Loop* — Ch 10: The Inescapable Illusion of the "I".
+* **Fri Jan 15**: *I Am a Strange Loop* — Ch 11: How Analogy Makes Meaning.
 #### Week 20 (Sat Jan 16 – Fri Jan 22)
-* **Sat Jan 16**: *E.T. Jaynes* — **Ch 15: Paradoxes of Probability Theory** (Bertrand's paradox resolved by transformation groups).
+* **Sat Jan 16**: *I Am a Strange Loop* — Ch 18: The Blur of Selfhood.
 * **Sun Jan 17 (Penrose Sunday)**: *The Road to Reality* — **Ch 20: Lagrangians and Hamiltonians** (Principle of least action, Euler-Lagrange equations).
-* **Mon Jan 18**: *E.T. Jaynes* — **Ch 16: Orthogonal Expansions & Spectrum Analysis** (Connection to Fourier and signal processing).
-* **Tue Jan 19**: *E.T. Jaynes* — **Ch 17: Principles and Pathology of Model Comparison** (Occam's razor quantified mathematically).
-* **Wed Jan 20**: *E.T. Jaynes* — **Ch 18: The Ap Distribution & Unknown Priors**.
-* **Thu Jan 21**: *E.T. Jaynes* — Reflection on Jaynes' Logic of Science and Casella & Berger Statistical Inference.
-* **Fri Jan 22**: Synthesis: Probability as Logic and Statistical Guarantees for Vector Retrieval.
-
+* **Mon Jan 18**: *I Am a Strange Loop* — Ch 13: The Gödelian Knot (Self-reference in mathematical logic).
+* **Tue Jan 19**: *I Am a Strange Loop* — Ch 14: Strange Loops in Thought.
+* **Wed Jan 20**: *I Am a Strange Loop* — Ch 15: Entangled Subroutines.
+* **Thu Jan 21**: *I Am a Strange Loop* — Ch 16: The Consciousness Continuum (Do mosquitoes have souls?).
+* **Fri Jan 22**: *I Am a Strange Loop* — Ch 17: How Many Souls Are in This Body?
 #### Week 21 (Sat Jan 23 – Fri Jan 29)
 * **Sat Jan 23**: *I Am a Strange Loop* — Ch 24: Epilogue: A Conversation with Achilles.
 * **Sun Jan 24 (Penrose Sunday)**: *The Road to Reality* — **Ch 21: The Quantum Particle** (Wavefunctions $\psi$, Schrödinger equation, de Broglie).
