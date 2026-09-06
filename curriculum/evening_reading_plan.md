@@ -9,7 +9,7 @@ A disciplined, restorative 28-week reading curriculum designed for the post-work
 | Pillar | Focus & Domain | Master Works |
 |:---|:---|:---|
 | **I. Soul, Morality & Craft** | Character-driven literature, craftsmanship, and human nature | *Zen and the Art of Motorcycle Maintenance* (Pirsig)<br>*The Magic Mountain* (*Der Zauberberg*) (Thomas Mann)<br>*The Master and Margarita* (Bulgakov) |
-| **II. Mind, Self-Reference & Cybernetics** | Recursive systems, feedback loops, strange loops, and consciousness | *Gödel, Escher, Bach: An Eternal Golden Braid* (Hofstadter)<br>*Cybernetics* (Wiener)<br>*I Am a Strange Loop* (Hofstadter) |
+| **II. Mind, Self-Reference & Cybernetics** | Recursive systems, feedback loops, strange loops, and consciousness | *Gödel, Escher, Bach: An Eternal Golden Braid* (Hofstadter)<br>*Cybernetics* (Wiener)<br>*I Am a Strange Loop* (Hofstadter)<br>*The Society of Mind* (Marvin Minsky) |
 | **III. The Physical Cosmos & Geometry** | Visual mathematical physics, geometry, spacetime, and quantum reality | *The Road to Reality: A Complete Guide to the Laws of the Universe* (Sir Roger Penrose) |
 
 ---
@@ -184,7 +184,7 @@ A disciplined, restorative 28-week reading curriculum designed for the post-work
 * **Sun Dec 21 (Penrose Sunday)**: *The Road to Reality* — **Ch 16: The Ladder of Infinity** (Cantor's infinities, Gödel, Turing computability).
 
 ### 🏔️ Block III: Cybernetics, Consciousness & The Strange Loop (Jan – Feb 2027)
-*Primary Tracks*: Hofstadter (*I Am a Strange Loop*) + Wiener (*Cybernetics* Part 2) + Penrose (*The Road to Reality* Ch 17–24).
+*Primary Tracks*: Hofstadter (*I Am a Strange Loop*) + Minsky (*The Society of Mind*) + Wiener (*Cybernetics* Part 2) + Penrose (*The Road to Reality* Ch 17–24).
 #### Week 17 (Sat Dec 26 – Fri Jan 1)
 * **Sat Dec 26**: *Cybernetics* — Supplementary Ch 10: Brain Waves and Self-Organizing Systems. · **Thought Leadership (19:30–21:00)**: *Edwin T. Jaynes* — Probability Theory: The Logic of Science: Ch 1–2 (Plausible Reasoning as Extended Logic).
 * **Sun Dec 27 (Penrose Sunday)**: *The Road to Reality* — **Ch 17: Spacetime** (Special relativity, Minkowski 4-vectors, light cones).
@@ -196,35 +196,35 @@ A disciplined, restorative 28-week reading curriculum designed for the post-work
 #### Week 18 (Sat Jan 2 – Fri Jan 8)
 * **Sat Jan 2**: *I Am a Strange Loop* — Ch 6: Of Dogs and Dominoes. · **Thought Leadership (19:30–21:00)**: *Edwin T. Jaynes* — Probability Theory: The Logic of Science: Ch 3–4 (Sampling Theory & Bayesian Hypothesis Testing).
 * **Sun Jan 3 (Penrose Sunday)**: *The Road to Reality* — **Ch 18: Minkowskian Geometry** (Lorentz boosts, invariants, 4-momentum).
-* **Mon Jan 4**: *I Am a Strange Loop* — Preface & Ch 1: On a Pair of Sorts of Stuffy Words.
-* **Tue Jan 5**: *I Am a Strange Loop* — Ch 2: This Little Page.
-* **Wed Jan 6**: *I Am a Strange Loop* — Ch 3: The Video Feedback Loop (The television pointing at its own screen).
-* **Thu Jan 7**: *I Am a Strange Loop* — Ch 4: Locking onto the Loop.
-* **Fri Jan 8**: *I Am a Strange Loop* — Ch 5: I and the Video Screen.
+* **Mon Jan 4**: *I Am a Strange Loop* — Preface & Ch 1: On a Pair of Sorts of Stuffy Words · *The Society of Mind* (Minsky) — Ch 1: Prologue (§1.1–1.4: The Cabinet of Oliver, Agents and Agencies).
+* **Tue Jan 5**: *I Am a Strange Loop* — Ch 2: This Little Page · *The Society of Mind* — Ch 2: Wholes and Parts (§2.1–2.5: Builders, Checkers, and Redundancy).
+* **Wed Jan 6**: *I Am a Strange Loop* — Ch 3: The Video Feedback Loop · *The Society of Mind* — Ch 3: Conflict and Compromise (§3.1–3.4: Cross-Exclusion & Non-Centralized Control).
+* **Thu Jan 7**: *I Am a Strange Loop* — Ch 4: Locking onto the Loop · *The Society of Mind* — Ch 4: The Self (§4.1–4.5: The Illusion of the Homunculus).
+* **Fri Jan 8**: *I Am a Strange Loop* — Ch 5: I and the Video Screen · *The Society of Mind* — Ch 5: Individuality (§5.1–5.4: Circular Causes & Levels of Description).
 #### Week 19 (Sat Jan 9 – Fri Jan 15)
 * **Sat Jan 9**: *I Am a Strange Loop* — Ch 12: Brains and Symbols. · **Thought Leadership (19:30–21:00)**: *Edwin T. Jaynes* — Probability Theory: The Logic of Science: Ch 11 (The Maximum Entropy Principle).
 * **Sun Jan 10 (Penrose Sunday)**: *The Road to Reality* — **Ch 19: The Classical Fields of Maxwell and Einstein** (Electromagnetism, Einstein field equations $G_{\mu\nu} = 8\pi T_{\mu\nu}$).
-* **Mon Jan 11**: *I Am a Strange Loop* — Ch 7: The Careenium (The marbles and billiard-ball mind).
-* **Tue Jan 12**: *I Am a Strange Loop* — Ch 8: On Downward Causality (Does the micro cause the macro, or vice-versa?).
-* **Wed Jan 13**: *I Am a Strange Loop* — Ch 9: The Pattern that Connects.
-* **Thu Jan 14**: *I Am a Strange Loop* — Ch 10: The Inescapable Illusion of the "I".
-* **Fri Jan 15**: *I Am a Strange Loop* — Ch 11: How Analogy Makes Meaning.
+* **Mon Jan 11**: *I Am a Strange Loop* — Ch 7: The Careenium (The marbles and billiard-ball mind) · *The Society of Mind* — Ch 6: Insight and Introspection (§6.1–6.5: Consciousness as Incomplete Self-Model).
+* **Tue Jan 12**: *I Am a Strange Loop* — Ch 8: On Downward Causality · *The Society of Mind* — Ch 7: Problems and Goals (§7.1–7.4: Subgoals, Pruners, and K-Lines).
+* **Wed Jan 13**: *I Am a Strange Loop* — Ch 9: The Pattern that Connects · *The Society of Mind* — Ch 8: Theory of Memory (§8.1–8.5: K-Lines & Nomial Agencies).
+* **Thu Jan 14**: *I Am a Strange Loop* — Ch 10: The Inescapable Illusion of the "I" · *The Society of Mind* — Ch 9: Summaries (§9.1–9.4: Re-presentation & Bundles).
+* **Fri Jan 15**: *I Am a Strange Loop* — Ch 11: How Analogy Makes Meaning · *The Society of Mind* — Ch 10: Papert’s Principle (§10.1–10.4: Mental Growth by Administrative Architecture).
 #### Week 20 (Sat Jan 16 – Fri Jan 22)
 * **Sat Jan 16**: *I Am a Strange Loop* — Ch 18: The Blur of Selfhood. · **Thought Leadership (19:30–21:00)**: *Edwin T. Jaynes* — Probability Theory: The Logic of Science: Ch 12 (Ignorance Priors & Transformation Groups).
 * **Sun Jan 17 (Penrose Sunday)**: *The Road to Reality* — **Ch 20: Lagrangians and Hamiltonians** (Principle of least action, Euler-Lagrange equations).
-* **Mon Jan 18**: *I Am a Strange Loop* — Ch 13: The Gödelian Knot (Self-reference in mathematical logic).
-* **Tue Jan 19**: *I Am a Strange Loop* — Ch 14: Strange Loops in Thought.
-* **Wed Jan 20**: *I Am a Strange Loop* — Ch 15: Entangled Subroutines.
-* **Thu Jan 21**: *I Am a Strange Loop* — Ch 16: The Consciousness Continuum (Do mosquitoes have souls?).
-* **Fri Jan 22**: *I Am a Strange Loop* — Ch 17: How Many Souls Are in This Body?
+* **Mon Jan 18**: *I Am a Strange Loop* — Ch 13: The Gödelian Knot · *The Society of Mind* — Ch 14: Reformulation (§14.1–14.4: Redescription & Semantic Frames).
+* **Tue Jan 19**: *I Am a Strange Loop* — Ch 14: Strange Loops in Thought · *The Society of Mind* — Ch 19: Words and Ideas (§19.1–19.5: Polybrutes and Micronets).
+* **Wed Jan 20**: *I Am a Strange Loop* — Ch 15: Entangled Subroutines · *The Society of Mind* — Ch 20: Context and Ambiguity (§20.1–20.4: Frame Arrays).
+* **Thu Jan 21**: *I Am a Strange Loop* — Ch 16: The Consciousness Continuum · *The Society of Mind* — Ch 25: Frames (§25.1–25.4: Default Assumptions in Representation).
+* **Fri Jan 22**: *I Am a Strange Loop* — Ch 17: How Many Souls Are in This Body? · *The Society of Mind* — Ch 26: Frame-Arrays (§26.1–26.5: Trans-Frames and Mental Space).
 #### Week 21 (Sat Jan 23 – Fri Jan 29)
-* **Sat Jan 23**: *I Am a Strange Loop* — Ch 24: Epilogue: A Conversation with Achilles. · **Thought Leadership (19:30–21:00)**: *John von Neumann* — Probabilistic Logics & Synthesis of Reliable Organisms from Unreliable Components.
+* **Sat Jan 23**: *I Am a Strange Loop* — Ch 24: Epilogue: A Conversation with Achilles. · **Thought Leadership (19:30–21:00)**: *Marvin Minsky & Seymour Papert* — Perceptrons: Introduction to Computational Geometry (Linear Separability, Parity, & Geometric Predicates) & *John von Neumann* — Synthesis of Reliable Organisms from Unreliable Components.
 * **Sun Jan 24 (Penrose Sunday)**: *The Road to Reality* — **Ch 21: The Quantum Particle** (Wavefunctions $\psi$, Schrödinger equation, de Broglie).
-* **Mon Jan 25**: *I Am a Strange Loop* — Ch 19: The Loss of a Soul (Writing about the passing of his wife Carol).
-* **Tue Jan 26**: *I Am a Strange Loop* — Ch 20: Living Inside Others (How loved ones reside in our neural loops).
-* **Wed Jan 27**: *I Am a Strange Loop* — Ch 21: The Distributed Ego.
-* **Thu Jan 28**: *I Am a Strange Loop* — Ch 22: Tangled Hierarchies Revisited.
-* **Fri Jan 29**: *I Am a Strange Loop* — Ch 23: The Cage of Subjectivity.
+* **Mon Jan 25**: *I Am a Strange Loop* — Ch 19: The Loss of a Soul · *The Society of Mind* — Ch 28: The Mind and the World (§28.1–28.4: Reflexive Communication).
+* **Tue Jan 26**: *I Am a Strange Loop* — Ch 20: Living Inside Others · *The Society of Mind* — Ch 29: The Realms of Thought (§29.1–29.5: Multiple Agencies Living in Shared Space).
+* **Wed Jan 27**: *I Am a Strange Loop* — Ch 21: The Distributed Ego · *The Society of Mind* — Ch 30: Grand Synthesis (§30.1–30.6: Meaning, Mind, and Self).
+* **Thu Jan 28**: *I Am a Strange Loop* — Ch 22: Tangled Hierarchies Revisited · *The Society of Mind* — Postscript: The Future of Intelligence.
+* **Fri Jan 29**: *I Am a Strange Loop* — Ch 23: The Cage of Subjectivity · *The Society of Mind* — Retrospective Reflection: Emergence vs Central Strange Loop.
 #### Week 22 (Sat Jan 30 – Fri Feb 5)
 * **Sat Jan 30**: *The Master and Margarita* — Ch 6–7: Schizophrenia; The evil apartment. · **Thought Leadership (19:30–21:00)**: *Alan M. Turing* — Computing Machinery and Intelligence & On Computable Numbers.
 * **Sun Jan 31 (Penrose Sunday)**: *The Road to Reality* — **Ch 22: Quantum Algebra, Geometry, and Spin** (Pauli matrices, Bloch sphere, spin-$1/2$).
