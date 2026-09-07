@@ -38,23 +38,37 @@ ceil 	imes rac{1}{R_{	ext{FMA}}} \quad (R_{	ext{FMA}} = 2	ext{ FMA units/cycle 
 
 | Hardware Platform | Specification |
 |:---|:---|
-| **CPU Server** | Intel Core / Xeon (AVX2, AVX-512, Golden Cove / Zen 4 architecture) |
-| **Edge Hardware** | NVIDIA Jetson Orin AGX (ARM Cortex-A78AE, ARMv8.2-A NEON) |
-| **Compilation Flags** | `clang++ -O3 -march=native -DNDEBUG -ffast-math` |
-| **Measurement Suite** | Google Benchmark v1.9.0 (`DoNotOptimize`, `ClobberMemory`) + Linux `perf stat` |
-| **Monitored Hardware Counters** | `cycles`, `instructions`, `L1-dcache-load-misses`, `exe_activity.exe_bound_0_ports` |
+| **CPU Microarchitecture** | AMD Zen 4 (Hawk Point, 12 Threads @ up to 5.02 GHz) |
+| **Cache Hierarchy** | L1D: 32 KiB (x6), L1I: 32 KiB (x6), L2: 1024 KiB (x6), L3: 16 MiB Unified |
+| **Energy Policy** | `amd-pstate-epp` driver locked to `performance` mode, Core Boost active |
+| **Compilation Flags** | `g++ -O3 -march=native -DNDEBUG` (CMake Release) |
+| **Measurement Suite** | Google Benchmark v1.9.0 (`DoNotOptimize`) + Linux `perf stat` hardware counters |
+| **Monitored PMU Counters** | `cycles`, `instructions`, `L1-dcache-loads`, `L1-dcache-load-misses`, `branch-misses` |
 
 ---
 
 ## 4. Controlled Parameter Sweeps
-* **Experiment 1 (Port Contention & Unrolling)**: Sweep unrolling factor $U \in \{1, 2, 4, 8\}$ across dimensions $D \in \{64, 128, 512, 768, 1536\}$ to verify the exact knee where $IPC$ saturates at $>3.2$.
+* **Experiment 1 (Port Contention & Unrolling)**: Sweep unrolling factor $U \in \{1, 2, 4, 8\}$ across dimensions $D \in \{64, 128, 256, 512, 768, 1024, 1536\}$ to verify the exact knee where $IPC$ saturates at $>3.2$.
 * **Experiment 2 (Dead Code Elimination Trap)**: Quantify the illusion of speed in naive microbenchmarks where the compiler deletes the inner distance loop due to lack of memory clobbering.
-* **Experiment 3 (FTZ/DAZ Mitigation)**: Inject subnormal FP32 inputs and measure the $85	imes$ latency cliff without `_MM_SET_FLUSH_ZERO_MODE(_MM_FLUSH_ZERO_ON)`.
+* **Experiment 3 (FTZ/DAZ Mitigation)**: Inject subnormal FP32 inputs and measure the latency cliff without `_MM_SET_FLUSH_ZERO_MODE(_MM_FLUSH_ZERO_ON)`.
 
 ---
 
 ## 5. Industrial Baseline Comparison
-* **Baseline A**: Naive scalar distance loop (unvectorized).
+
+### 5.1 Calibrated Baseline A: Naive Scalar Loop (Unvectorized)
+*Measured on AMD Zen 4 @ 5.02 GHz max boost (L1D Miss Rate: 0.021%, IPC: 1.719)*:
+
+| Vector Dimension ($D$) | Mean Latency ($ns$) | CPU Time ($ns$) | Iterations | Memory Bandwidth ($\text{GiB/s}$) | Latency / Dim ($ns/D$) |
+|:---|:---:|:---:|:---:|:---:|:---:|
+| **$D = 64$** | **27.0 ns** | 26.9 ns | 24,557,193 | **17.71 GiB/s** | 0.42 ns |
+| **$D = 128$** | **58.6 ns** | 58.4 ns | 12,227,023 | **16.32 GiB/s** | 0.45 ns |
+| **$D = 256$** | **153.0 ns** | 152.0 ns | 4,617,914 | **12.53 GiB/s** | 0.59 ns |
+| **$D = 512$** | **329.0 ns** | 328.0 ns | 2,132,348 | **11.62 GiB/s** | 0.64 ns |
+| **$D = 768$** | **518.0 ns** | 517.0 ns | 1,325,745 | **11.08 GiB/s** | 0.67 ns |
+| **$D = 1024$** | **689.0 ns** | 688.0 ns | 986,451 | **11.09 GiB/s** | 0.67 ns |
+| **$D = 1536$** | **1056.0 ns** | 1054.0 ns | 667,606 | **10.86 GiB/s** | 0.68 ns |
+
 * **Baseline B**: Compiler auto-vectorized loop (`-O3 -march=native`).
 * **Baseline C**: Faiss `fvec_L2sqr` standard release.
 * **This Work**: `secan::simd::l2_squared` (4-way register unrolled with explicit port scheduling).

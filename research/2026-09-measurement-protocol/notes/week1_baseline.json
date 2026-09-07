@@ -1,0 +1,35 @@
+{
+  "timestamp": "2026-09-07T08:11:03+05:30",
+  "hardware": {
+    "platform": "AMD Hawk Point / Zen 4 (12 Cores @ up to 5.02 GHz)",
+    "l1d_cache": "32 KiB (x6)",
+    "l1i_cache": "32 KiB (x6)",
+    "l2_cache": "1024 KiB (x6)",
+    "l3_cache": "16384 KiB (x1)",
+    "driver": "amd-pstate-epp",
+    "epp": "performance"
+  },
+  "compiler": {
+    "build_type": "Release",
+    "flags": "-O3 -march=native -DNDEBUG"
+  },
+  "benchmarks": [
+    {"dim": 64, "time_ns": 27.0, "cpu_ns": 26.9, "iterations": 24557193, "bytes_per_second_gib": 17.7105},
+    {"dim": 128, "time_ns": 58.6, "cpu_ns": 58.4, "iterations": 12227023, "bytes_per_second_gib": 16.3206},
+    {"dim": 256, "time_ns": 153.0, "cpu_ns": 152.0, "iterations": 4617914, "bytes_per_second_gib": 12.5266},
+    {"dim": 512, "time_ns": 329.0, "cpu_ns": 328.0, "iterations": 2132348, "bytes_per_second_gib": 11.6169},
+    {"dim": 768, "time_ns": 518.0, "cpu_ns": 517.0, "iterations": 1325745, "bytes_per_second_gib": 11.0773},
+    {"dim": 1024, "time_ns": 689.0, "cpu_ns": 688.0, "iterations": 986451, "bytes_per_second_gib": 11.0858},
+    {"dim": 1536, "time_ns": 1056.0, "cpu_ns": 1054.0, "iterations": 667606, "bytes_per_second_gib": 10.8613}
+  ],
+  "perf_counters": {
+    "cycles": 25421136364,
+    "instructions": 43704069543,
+    "ipc": 1.719,
+    "l1_dcache_loads": 5462573830,
+    "l1_dcache_load_misses": 1181503,
+    "l1_miss_rate_percent": 0.0216,
+    "branch_misses": 5802227,
+    "elapsed_seconds": 6.034
+  }
+}
