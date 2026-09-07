@@ -13,11 +13,11 @@
 
 1. **05:30–06:30** — **Systems Reading** (Papers, Microarchitecture, Database Internals — calm start, zero math burnout)
 2. **06:30–08:30** — **Morning Builder Track** (Hands-on, Interactive):
-   * **Monday**: Monthly Research Experiment Setup & Planning
-   * **Tuesday**: Deep Learning Track (Implementation Part 1)
-   * **Wednesday**: Deep Learning Track (Implementation Part 2 & Tests)
-   * **Thursday**: Monthly Research Benchmarking & Sweep Analysis
-   * **Friday**: Weekly Technical Essay / Lab-Note Drafting
+   * **Monday**: Hardware Profiling & Benchmark Sweeps (`secan` / hardware counters)
+   * **Tuesday**: Deep Learning Track (Architecture & Tensor Shapes Part 1)
+   * **Wednesday**: Deep Learning Track (Training Loop, Autograd & Tests Part 2)
+   * **Thursday**: High-Performance Benchmarking & Model/Vector Integration
+   * **Friday**: Weekly Technical Lab-Note & Systems Article Drafting (Publishing)
 3. **18:30–20:00** — **Evening Reading Sanctuary** ([Master Reading Plan](evening_reading_plan.md): Pirsig, Hamming, Shannon, Lampson, Pólya, Feynman, Jaynes, GEB, Bulgakov)
 4. **20:30–22:30** — **`secan` / CUDA Core Engine** (Focused C++20 / CUDA night coding)
 
@@ -34,7 +34,7 @@
 9. **Sun 15:00–16:45** — **Penrose Sunday: The Road to Reality** (1 chapter/week, visual geometry focus)
 10. **Sun 18:00–19:30** — **Distributed Systems & IR Track** (*DDIA* — Kleppmann / *IIR* — Manning et al.)
 11. **Sun 19:30–21:00** — **Graduate Systems & GPU Architecture Lab** (*Hennessy & Patterson* / *Kirk & Hwu*)
-12. **Last weekend of month** — Publish monthly research paper
+12. **Friday / Weekend** — Publish weekly technical article & release benchmark updates
 
 ## Map
 
