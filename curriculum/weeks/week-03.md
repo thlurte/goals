@@ -48,7 +48,7 @@
 | **Tuesday** | Tue Sep 22 | [`Day 018`](../days/month-01/day-018-2026-09-22.md) | **CSAPP §6.4–6.5**: Cache line organization, set associativity, conflict misses, cache-friendly coding. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: Implement cache-blocked `linear_scan_tiled`: partition dataset into tiles fitting in L2 cache ($256\text{KB}$). |
 | **Wednesday** | Wed Sep 23 | [`Day 019`](../days/month-01/day-019-2026-09-23.md) | **CSAPP §6.6 & PIKUS Ch 4**: The Memory Mountain, cache hierarchy on real workloads, software prefetching. | **DL Track (Part 2): Training Loop & Verification** | **secan**: Add software prefetching (`_mm_prefetch`, `_MM_HINT_T0`). Tune prefetch distances ($4, 8, 16, 32$ vectors). |
 | **Thursday** | Thu Sep 24 | [`Day 020`](../days/month-01/day-020-2026-09-24.md) | **AGNER Ch 9**: Memory access, non-temporal stores. | **DL / Vector Retrieval Integration & Profiling** | **secan**: Unit-sphere pre-normalization path for cosine/IP. Store optional `norm` column. |
-| **Friday** | Fri Sep 25 | [`Day 021`](../days/month-01/day-021-2026-09-25.md) | **FINSY Ch 6**: `madvise(MADV_HUGEPAGE)`. | **Weekly Technical Article: Drafting & Publishing** | **secan**: Hugepage / `madvise` warmup on dataset mmap. *(DL: Sat Sep 20 Pre-LN encoder.)* |
+| **Friday** | Fri Sep 25 | [`Day 021`](../days/month-01/day-021-2026-09-25.md) | **FINSY Ch 6**: `madvise(MADV_HUGEPAGE)`. | **Weekly Technical Article: Drafting & Publishing** | **secan**: Hugepage / `madvise` warmup on dataset mmap. * |
 
 ---
 

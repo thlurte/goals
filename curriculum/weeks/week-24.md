@@ -48,7 +48,7 @@
 | **Tuesday** | Tue Feb 16 | [`Day 165`](../days/month-06/day-165-2027-02-16.md) | Occupancy calculator / `__launch_bounds__`. | **DL Track (Part 1): Architecture & Tensor Shapes** | **CUDA**: Occupancy tune on IVF + graph kernels. |
 | **Wednesday** | Wed Feb 17 | [`Day 166`](../days/month-06/day-166-2027-02-17.md) | CUB/Thrust fusion notes. | **DL Track (Part 2): Training Loop & Verification** | **CUDA**: Fused distance+topk kernel (was former Week 22 GPU polish). |
 | **Thursday** | Thu Feb 18 | [`Day 167`](../days/month-06/day-167-2027-02-18.md) | `-Wall -Wextra -Wpedantic`. | **DL / Vector Retrieval Integration & Profiling** | **secan**: Warning cleanup; examples/ stubs. |
-| **Friday** | Fri Feb 19 | [`Day 168`](../days/month-06/day-168-2027-02-19.md) | Month 6 paper freeze checklist. | **Weekly Technical Article: Drafting & Publishing** | **secan/CUDA**: Occupancy/`ncu` leftover polish. *(Naive KV re-bench: Saturday DL if needed.)* |
+| **Friday** | Fri Feb 19 | [`Day 168`](../days/month-06/day-168-2027-02-19.md) | Block II GPU Specialization Synthesis & Month 6 Empirical Verification Protocol. | **Weekly Technical Article: Drafting & Publishing** | **secan/CUDA**: Occupancy/`ncu` leftover polish. * |
 
 ---
 
