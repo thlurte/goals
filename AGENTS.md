@@ -57,9 +57,9 @@ Ahmed’s routine is carefully calibrated for deep work, sustainable progress, a
    * High-performance vector search engine written in modern C++20 and CUDA.
    * Architecture: `secan_lib` (core search logic), Google Benchmark suite (`benchmarks/`), Catch2 test suite (`tests/`), and nanobind Python bindings.
    * 10 Planned Index Families: Exact SIMD (AVX2/AVX-512/NEON), IVF-Flat, SQ8/SQ4, PQ-ADC, FastScan, HNSW, ACORN Predicate Graph, GPU IVF, CAGRA Warp Search, and ColPali Multi-Vector MaxSim.
-3. **`dl-track`** (`/home/ahmed/personal/dl-track`):
-   * Deep Learning from first principles (`transformers-pytorch` initialized via `uv`).
-   * Micrograd autograd engine, attention mechanisms (SDPA, GQA, RoPE, SwiGLU), custom optimizers from scratch, and ONNX runtime integration.
+3. **Standalone DL & First-Principles Repositories** (`/home/ahmed/personal/<experiment-repo>`):
+   * Each model or first-principles experiment is maintained as its own clean, independent Git repository directly under `~/personal/` initialized via `uv` (e.g. `transformers-pytorch`, `autograd-scratch`, `colbert-maxsim`), with zero artificial parent umbrella folders.
+   * Scope: Micrograd autograd engine, attention mechanisms (SDPA, GQA, RoPE, SwiGLU), custom optimizers from scratch, and ONNX runtime integration feeding embeddings into `secan`.
 4. **`embed-runtimes`** (`/home/ahmed/personal/projects/embed-runtimes.md`):
    * Embedded vector runtime experiments (`limbed` + `ggmbed`).
 
