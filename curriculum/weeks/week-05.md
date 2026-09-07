@@ -29,7 +29,7 @@
 │ ⚙️ Sunday 19:30 – 21:00      │ [LAB] Graduate Systems & GPU Architecture Lab (H&P / Kirk & Hwu)       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📖 Mon–Fri 05:30 – 06:30     │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
-│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Benchmarking / Technical Articles)        │
 │ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
 │ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
@@ -44,11 +44,11 @@
 |:---|:---|:---|:---|:---|:---|
 | **Saturday** | Sat Oct 3 | [`Day 029`](../days/month-02/day-029-2026-10-03.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30–21:00**: Thought Leadership (Richard W. Hamming) · **21:00+**: Free / Rest|
 | **Sunday** | Sun Oct 4 | [`Day 030`](../days/month-02/day-030-2026-10-04.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (DDIA Ch 4) · **19:30–21:00**: Systems Lab (H&P Ch 3) |
-| **Monday** | Mon Oct 5 | [`Day 031`](../days/month-02/day-031-2026-10-05.md) | **AGNER Ch 7.2 & CSAPP §2.2–2.3**: Integer arithmetic efficiency, two's complement, overflow, bit-width conversion. | **Monthly Research: Planning & Literature Synthesis** | **secan**: Implement `ScalarQuantizer` with **percentile clipping (0.05th/99.95th)** to handle outlier dimensions. Verify dequantization error. |
+| **Monday** | Mon Oct 5 | [`Day 031`](../days/month-02/day-031-2026-10-05.md) | **AGNER Ch 7.2 & CSAPP §2.2–2.3**: Integer arithmetic efficiency, two's complement, overflow, bit-width conversion. | **Hardware Profiling & Benchmark Sweeps** | **secan**: Implement `ScalarQuantizer` with **percentile clipping (0.05th/99.95th)** to handle outlier dimensions. Verify dequantization error. |
 | **Tuesday** | Tue Oct 6 | [`Day 032`](../days/month-02/day-032-2026-10-06.md) | **INTEL Intrinsics Guide**: Study `_mm256_maddubs_epi16`, `_mm256_madd_epi16`, `_mm256_dpbusd_epi32` (VNNI dot product). | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: Implement `l2_squared_sq8()` using AVX2 integer intrinsics. Process 32 dimensions per iteration in a single `__m256i`. |
 | **Wednesday** | Wed Oct 7 | [`Day 033`](../days/month-02/day-033-2026-10-07.md) | **AGNER Ch 12**: Integer SIMD saturation arithmetic, signed vs unsigned byte multiplication, widening instructions. | **DL Track (Part 2): Training Loop & Verification** | **secan**: SQ8 LUT / packed layout polish; SIMD path vs scalar dequant error check. |
-| **Thursday** | Thu Oct 8 | [`Day 034`](../days/month-02/day-034-2026-10-08.md) | **CSAPP §2.4 (deep)**: Floating-point representation, rounding modes (round-to-nearest-even), subnormals, FP16/BF16 range vs precision tradeoffs for quantization kernels. | **Monthly Research: Sweeps & Data Logging** | **secan**: Implement 4-bit scalar quantization (`SQ4`): pack 2 dimensions per byte with nibble masking. Build 2-stage SQ8 $\to$ FP32 re-ranker. |
-| **Friday** | Fri Oct 9 | [`Day 035`](../days/month-02/day-035-2026-10-09.md) | **PIKUS Ch 9**: High-performance C++, move semantics, zero-copy buffer views (`std::span`). | **Technical Essay: Lab-Note Drafting** | **secan**: `std::span` views over quantized buffers; zero-copy encode path. *(DL: Sat Oct 4 ViT.)* |
+| **Thursday** | Thu Oct 8 | [`Day 034`](../days/month-02/day-034-2026-10-08.md) | **CSAPP §2.4 (deep)**: Floating-point representation, rounding modes (round-to-nearest-even), subnormals, FP16/BF16 range vs precision tradeoffs for quantization kernels. | **DL / Vector Retrieval Integration & Profiling** | **secan**: Implement 4-bit scalar quantization (`SQ4`): pack 2 dimensions per byte with nibble masking. Build 2-stage SQ8 $\to$ FP32 re-ranker. |
+| **Friday** | Fri Oct 9 | [`Day 035`](../days/month-02/day-035-2026-10-09.md) | **PIKUS Ch 9**: High-performance C++, move semantics, zero-copy buffer views (`std::span`). | **Weekly Technical Article: Drafting & Publishing** | **secan**: `std::span` views over quantized buffers; zero-copy encode path. *(DL: Sat Oct 4 ViT.)* |
 
 ---
 
@@ -107,7 +107,7 @@
 
 ## 📝 Weekend Deliverables
 
-### ✍️ Technical Essay 05 (Saturday 09:00–13:00)
+### ✍️ Technical Essay 05 (Drafted Friday 06:30–08:30)
 * **Title**: *"Low-Bit Compression Under Outliers: Gradients, Percentile Clipping, and SIMD Integer Saturation"*
 * **Target File**: `~/personal/goals/essays/essay_05.md`
 * **5-Part Structure**:
@@ -120,7 +120,7 @@
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
 * **Task**: **🧠 DL weekend**: ViT patch embed + `[CLS]`.
 
-### 🔬 Monthly Research Milestone (GAPQ Milestone 2 — Mon/Thu 06:30–08:30 Morning Builder)
-* **Paper**: *"Geometry-Aware Anisotropic Polar Quantization: The Adaptive Ellipsoidal Lattice & Unbiased QJL Proof"*
+### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
+* **Focus**: Geometry-Aware Anisotropic Polar Quantization: The Adaptive Ellipsoidal Lattice & Unbiased QJL Proof
 * **Workspace**: `research/2026-10-anisotropic-quantization/`
-* **Publish Deadline**: **Sun Oct 25**
+* **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.

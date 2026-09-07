@@ -14,7 +14,7 @@
 
 # 📅 MONTH 1: Pure Trigonometry, Single-Variable Calculus, SIMD & Transformers (Sep 2026)
 
-> **🔬 Monthly research (GAPQ Milestone 1)**: *Microarchitectural Limits of Distance Kernels & Empirical Embedding Cone Anisotropy* → publish **Sun Sep 27** · folder `research/2026-09-measurement-protocol/`
+> **🔬 Empirical Systems & Benchmarking Focus**: *Microarchitectural Limits of Distance Kernels & Vector Retrieval Profiling* · folder `research/2026-09-measurement-protocol/`
 
 ---
 
@@ -40,11 +40,11 @@
 
 | Day | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|
-| **Mon Sep 1** | **PIKUS Ch 2**: Performance measurements, high-res timers, profiler sampling, micro-benchmark noise floor. | **Monthly Research: Planning & Literature Synthesis** | **secan**: Integrate Google Benchmark via CMake. Add ASan/UBSan build flags. Write first benchmark for `l2_squared` with `DoNotOptimize`. |
-| **Tue Sep 2** | **CSAPP §5.1–5.6**: Compiler limitations, Cycles Per Element (CPE), loop inefficiencies, memory aliasing. | **DL Track (Part 1): Architecture & Forward Pass** | **secan**: Implement binary `.fvecs`, `.bvecs`, and `.ivecs` parsers. Download SIFT1M base + ground-truth; load into `data/sift1m/`. |
-| **Wed Sep 3** | **CSAPP §5.7**: Superscalar architecture, out-of-order execution, execution ports, latency vs throughput. | **DL Track (Part 2): Training, Loss & Verification** | **secan**: Build IR metrics in `tests/test_ir_metrics.cpp` (NDCG@K, MRR, **MAP**). Run exact scan on a **SIFT1M subset** (e.g. 100K base / 1K queries) first; verify Recall@10 = 1.0. Full 1M scan = stretch. |
-| **Thu Sep 4** | **CSAPP §5.11–5.12**: Branch prediction, misprediction penalties, conditional moves (`cmov`). | **Monthly Research: Sweeps & Data Logging** | **secan**: Implement `ip()` (Inner Product / dot product) as a first-class metric in `src/search/distance.cpp`. Test L2 vs IP numerical stability. |
-| **Fri Sep 5** | **CSAPP §5.13** & **AGNER Ch 7**: Memory access overhead, store forwarding, cache hierarchies. | **Technical Essay: Lab-Note Drafting** | **secan**: Run exact scan with scalar `ip()` and `cosine()`. Profile with `perf stat`. Verify zero branch mispredictions in inner loop. |
+| **Mon Sep 1** | **PIKUS Ch 2**: Performance measurements, high-res timers, profiler sampling, micro-benchmark noise floor. | **Hardware Profiling & Benchmark Calibration** | **secan**: Integrate Google Benchmark via CMake. Add ASan/UBSan build flags. Write first benchmark for `l2_squared` with `DoNotOptimize`. |
+| **Tue Sep 2** | **CSAPP §5.1–5.6**: Compiler limitations, Cycles Per Element (CPE), loop inefficiencies, memory aliasing. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: Implement binary `.fvecs`, `.bvecs`, and `.ivecs` parsers. Download SIFT1M base + ground-truth; load into `data/sift1m/`. |
+| **Wed Sep 3** | **CSAPP §5.7**: Superscalar architecture, out-of-order execution, execution ports, latency vs throughput. | **DL Track (Part 2): Training Loop & Verification** | **secan**: Build IR metrics in `tests/test_ir_metrics.cpp` (NDCG@K, MRR, **MAP**). Run exact scan on a **SIFT1M subset** (e.g. 100K base / 1K queries) first; verify Recall@10 = 1.0. Full 1M scan = stretch. |
+| **Thu Sep 4** | **CSAPP §5.11–5.12**: Branch prediction, misprediction penalties, conditional moves (`cmov`). | **DL / Vector Retrieval Integration & Profiling** | **secan**: Implement `ip()` (Inner Product / dot product) as a first-class metric in `src/search/distance.cpp`. Test L2 vs IP numerical stability. |
+| **Fri Sep 5** | **CSAPP §5.13** & **AGNER Ch 7**: Memory access overhead, store forwarding, cache hierarchies. | **Weekly Technical Article: Drafting & Publishing** | **secan**: Run exact scan with scalar `ip()` and `cosine()`. Profile with `perf stat`. Verify zero branch mispredictions in inner loop. |
 
 #### 📋 Daily Action Items & Optional Activities (Week 1)
 * **Mon Sep 1**:
@@ -86,11 +86,11 @@
 
 | Day | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|
-| **Mon Sep 8** | **AGNER Ch 12**: SIMD instructions, 256-bit YMM registers, data types, intrinsics syntax. | **Monthly Research: Planning & Literature Synthesis** | **secan**: Enable FTZ/DAZ flags. Implement `l2_squared_avx2()` in `src/search/distance_avx2.cpp`. Single accumulator baseline. |
-| **Tue Sep 9** | **CSAPP §5.8–5.9**: Loop unrolling, breaking dependency chains with multiple independent accumulator registers. | **DL Track (Part 1): Architecture & Forward Pass** | **secan**: Implement 4-way unrolled `l2_squared_avx2` with 4 parallel `__m256` accumulators. Measure speedup over 1-acc. |
-| **Wed Sep 10** | **AGNER-INST & AGNER Ch 11**: VFMADD latency/throughput port mapping on modern x86 microarchitectures. | **DL Track (Part 2): Training, Loss & Verification** | **secan**: Implement `cosine_distance_avx2()`: compute dot product, norm $A$, and norm $B$ simultaneously in 1 pass. |
-| **Thu Sep 11** | **AGNER Ch 13.1–13.3**: Alignment, cache line splits. | **Monthly Research: Sweeps & Data Logging** | **secan**: `ip_avx2()` + fused cosine (dot + norms). Same unrolling as L2. *(DL: Sat Sep 13 GQA.)* |
-| **Fri Sep 12** | **PIKUS Ch 3**: Instruction-level parallelism, register pressure, compiler vectorization limits. | **Technical Essay: Lab-Note Drafting** | **secan**: Add AVX-512 backend (`_mm512_*`) behind `#ifdef __AVX512F__`. Benchmark scalar vs AVX2 vs AVX-512. |
+| **Mon Sep 8** | **AGNER Ch 12**: SIMD instructions, 256-bit YMM registers, data types, intrinsics syntax. | **Hardware Profiling & Benchmark Sweeps** | **secan**: Enable FTZ/DAZ flags. Implement `l2_squared_avx2()` in `src/search/distance_avx2.cpp`. Single accumulator baseline. |
+| **Tue Sep 9** | **CSAPP §5.8–5.9**: Loop unrolling, breaking dependency chains with multiple independent accumulator registers. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: Implement 4-way unrolled `l2_squared_avx2` with 4 parallel `__m256` accumulators. Measure speedup over 1-acc. |
+| **Wed Sep 10** | **AGNER-INST & AGNER Ch 11**: VFMADD latency/throughput port mapping on modern x86 microarchitectures. | **DL Track (Part 2): Training Loop & Verification** | **secan**: Implement `cosine_distance_avx2()`: compute dot product, norm $A$, and norm $B$ simultaneously in 1 pass. |
+| **Thu Sep 11** | **AGNER Ch 13.1–13.3**: Alignment, cache line splits. | **DL / Vector Retrieval Integration & Profiling** | **secan**: `ip_avx2()` + fused cosine (dot + norms). Same unrolling as L2. *(DL: Sat Sep 13 GQA.)* |
+| **Fri Sep 12** | **PIKUS Ch 3**: Instruction-level parallelism, register pressure, compiler vectorization limits. | **Weekly Technical Article: Drafting & Publishing** | **secan**: Add AVX-512 backend (`_mm512_*`) behind `#ifdef __AVX512F__`. Benchmark scalar vs AVX2 vs AVX-512. |
 
 #### 📋 Daily Action Items & Optional Activities (Week 2)
 * **Mon Sep 8**:
@@ -132,11 +132,11 @@
 
 | Day | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|
-| **Mon Sep 15** | **CSAPP §6.1–6.3**: SRAM vs DRAM, memory latency gap, spatial and temporal locality principles. | **Monthly Research: Planning & Literature Synthesis** | **secan**: Profile SIFT1M cache misses with `perf stat -e L1-dcache-load-misses,LLC-load-misses`. Calculate working set. |
-| **Tue Sep 16** | **CSAPP §6.4–6.5**: Cache line organization, set associativity, conflict misses, cache-friendly coding. | **DL Track (Part 1): Architecture & Forward Pass** | **secan**: Implement cache-blocked `linear_scan_tiled`: partition dataset into tiles fitting in L2 cache ($256\text{KB}$). |
-| **Wed Sep 17** | **CSAPP §6.6 & PIKUS Ch 4**: The Memory Mountain, cache hierarchy on real workloads, software prefetching. | **DL Track (Part 2): Training, Loss & Verification** | **secan**: Add software prefetching (`_mm_prefetch`, `_MM_HINT_T0`). Tune prefetch distances ($4, 8, 16, 32$ vectors). |
-| **Thu Sep 18** | **AGNER Ch 9**: Memory access, non-temporal stores. | **Monthly Research: Sweeps & Data Logging** | **secan**: Unit-sphere pre-normalization path for cosine/IP. Store optional `norm` column. |
-| **Fri Sep 19** | **FINSY Ch 6**: `madvise(MADV_HUGEPAGE)`. | **Technical Essay: Lab-Note Drafting** | **secan**: Hugepage / `madvise` warmup on dataset mmap. *(DL: Sat Sep 20 Pre-LN encoder.)* |
+| **Mon Sep 15** | **CSAPP §6.1–6.3**: SRAM vs DRAM, memory latency gap, spatial and temporal locality principles. | **Hardware Profiling & Benchmark Sweeps** | **secan**: Profile SIFT1M cache misses with `perf stat -e L1-dcache-load-misses,LLC-load-misses`. Calculate working set. |
+| **Tue Sep 16** | **CSAPP §6.4–6.5**: Cache line organization, set associativity, conflict misses, cache-friendly coding. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: Implement cache-blocked `linear_scan_tiled`: partition dataset into tiles fitting in L2 cache ($256\text{KB}$). |
+| **Wed Sep 17** | **CSAPP §6.6 & PIKUS Ch 4**: The Memory Mountain, cache hierarchy on real workloads, software prefetching. | **DL Track (Part 2): Training Loop & Verification** | **secan**: Add software prefetching (`_mm_prefetch`, `_MM_HINT_T0`). Tune prefetch distances ($4, 8, 16, 32$ vectors). |
+| **Thu Sep 18** | **AGNER Ch 9**: Memory access, non-temporal stores. | **DL / Vector Retrieval Integration & Profiling** | **secan**: Unit-sphere pre-normalization path for cosine/IP. Store optional `norm` column. |
+| **Fri Sep 19** | **FINSY Ch 6**: `madvise(MADV_HUGEPAGE)`. | **Weekly Technical Article: Drafting & Publishing** | **secan**: Hugepage / `madvise` warmup on dataset mmap. *(DL: Sat Sep 20 Pre-LN encoder.)* |
 
 #### 📋 Daily Action Items & Optional Activities (Week 3)
 * **Mon Sep 15**:
@@ -175,11 +175,11 @@
 
 | Day | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|
-| **Mon Sep 22** | **PIKUS Ch 5**: Cache coherence, false sharing. | **Monthly Research: Planning & Literature Synthesis** | **secan**: `batch_linear_scan` $B=32/64$ (GEMV $\to$ GEMM). |
-| **Tue Sep 23** | Faiss IVF coarse quantizer; **spherical k-means** for IP/MIPS. | **DL Track (Part 1): Architecture & Forward Pass** | **secan**: `IVFIndex` — L2 k-means + **spherical k-means** for IP. |
-| **Wed Sep 24** | **PIKUS Ch 6**: Thread pools. | **DL Track (Part 2): Training, Loss & Verification** | **secan**: Multi-probe IVF; `nprobe` sweep; pinned `std::jthread`. |
-| **Thu Sep 25** | IVF inverted-list skew (Faiss `make_direct_map` / list size). | **Monthly Research: Sweeps & Data Logging** | **secan (required)**: Histogram of IVF list sizes; **rebalance / split oversized lists**. |
-| **Fri Sep 26** | IP vs L2 recall on same vectors. | **Technical Essay: Lab-Note Drafting** | **secan**: IP/MIPS search path on IVF; compare Recall@10 vs L2. Tag `v0.2-simd-ivf`. |
+| **Mon Sep 22** | **PIKUS Ch 5**: Cache coherence, false sharing. | **Hardware Profiling & Benchmark Sweeps** | **secan**: `batch_linear_scan` $B=32/64$ (GEMV $\to$ GEMM). |
+| **Tue Sep 23** | Faiss IVF coarse quantizer; **spherical k-means** for IP/MIPS. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: `IVFIndex` — L2 k-means + **spherical k-means** for IP. |
+| **Wed Sep 24** | **PIKUS Ch 6**: Thread pools. | **DL Track (Part 2): Training Loop & Verification** | **secan**: Multi-probe IVF; `nprobe` sweep; pinned `std::jthread`. |
+| **Thu Sep 25** | IVF inverted-list skew (Faiss `make_direct_map` / list size). | **DL / Vector Retrieval Integration & Profiling** | **secan (required)**: Histogram of IVF list sizes; **rebalance / split oversized lists**. |
+| **Fri Sep 26** | IP vs L2 recall on same vectors. | **Weekly Technical Article: Drafting & Publishing** | **secan**: IP/MIPS search path on IVF; compare Recall@10 vs L2. Tag `v0.2-simd-ivf`. |
 
 #### 📋 Daily Action Items & Optional Activities (Week 4)
 * **Mon Sep 22**:
@@ -204,6 +204,6 @@
 * ❌ **Do NOT** try to implement GPU kernels this week—GPU is scheduled for Month 4 (Weeks 13–16).
 
 > **📝 Essay 4 (Sat Sep 27)**: *"From Euler's Formula to RoPE and Voronoi Cells"*  
-> **🚀 Month 1 PUBLISH (Sun Sep 27)**. **🧠 DL**: RoPE + SwiGLU + CausalLM + CE + naive KV. **Also**: implement `SGD` optimizer from scratch (momentum $v_t = \beta v_{t-1} + \nabla\mathcal{L}$, $\theta_t = \theta_{t-1} - \alpha v_t$); train CausalLM with your SGD, verify loss matches `torch.optim.SGD`.
+> **🚀 Month 1 Builder Milestone (Sun Sep 27)**: **🧠 DL**: RoPE + SwiGLU + CausalLM + CE + naive KV. **Also**: implement `SGD` optimizer from scratch (momentum $v_t = \beta v_{t-1} + \nabla\mathcal{L}$, $\theta_t = \theta_{t-1} - \alpha v_t$); train CausalLM with your SGD, verify loss matches `torch.optim.SGD`.
 
 ---

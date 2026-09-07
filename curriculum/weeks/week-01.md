@@ -29,7 +29,7 @@
 │ ⚙️ Sunday 19:30 – 21:00      │ [LAB] Graduate Systems & GPU Architecture Lab (H&P / Kirk & Hwu)       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📖 Mon–Fri 05:30 – 06:30     │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
-│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Benchmarking / Technical Articles)        │
 │ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
 │ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
@@ -116,7 +116,7 @@
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
 * **Task**: `uv init transformers-pytorch`; SDPA + causal mask from first principles.
 
-### 🔬 Monthly Research Milestone (GAPQ Milestone 1 — Mon/Thu 06:30–08:30 Morning Builder)
-* **Paper**: *"Microarchitectural Limits of Distance Kernels & Empirical Embedding Cone Anisotropy"*
-* **Workspace**: `research/2026-09-measurement-protocol/`
-* **Publish Deadline**: **Sun Sep 27**
+### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
+* **Focus**: Microarchitectural Limits of Distance Kernels & Hardware Calibration
+* **Workspace**: `research/2026-09-measurement-protocol/` & `secan/benchmarks/`
+* **Artifact Target**: Baseline calibration data (`week1_baseline.json`) feeding directly into Friday's Technical Article 01.

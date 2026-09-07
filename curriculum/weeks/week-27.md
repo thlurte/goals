@@ -29,7 +29,7 @@
 │ ⚙️ Sunday 19:30 – 21:00      │ [LAB] Graduate Systems & GPU Architecture Lab (H&P / Kirk & Hwu)       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📖 Mon–Fri 05:30 – 06:30     │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
-│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Benchmarking / Technical Articles)        │
 │ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
 │ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
@@ -44,11 +44,11 @@
 |:---|:---|:---|:---|:---|:---|
 | **Saturday** | Sat Mar 6 | [`Day 183`](../days/month-07/day-183-2027-03-06.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30–21:00**: Thought Leadership (Intellectual Retrospective) · **21:00+**: Free / Rest|
 | **Sunday** | Sun Mar 7 | [`Day 184`](../days/month-07/day-184-2027-03-07.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (Dist-Vector Ch 3) · **19:30–21:00**: Systems Lab (FlashMaxSim Lab 6) |
-| **Monday** | Mon Mar 8 | [`Day 185`](../days/month-07/day-185-2027-03-08.md) | NCCL ring algorithms. | **Monthly Research: Planning & Literature Synthesis** | **secan**: Multi-GPU IVF load-balance polish (Week 20). |
+| **Monday** | Mon Mar 8 | [`Day 185`](../days/month-07/day-185-2027-03-08.md) | NCCL ring algorithms. | **Hardware Profiling & Benchmark Sweeps** | **secan**: Multi-GPU IVF load-balance polish (Week 20). |
 | **Tuesday** | Tue Mar 9 | [`Day 186`](../days/month-07/day-186-2027-03-09.md) | NVLink vs PCIe. | **DL Track (Part 1): Architecture & Tensor Shapes** | Scaling efficiency 1/2/4 GPU (or 1 GPU simulated shards). |
 | **Wednesday** | Wed Mar 10 | [`Day 187`](../days/month-07/day-187-2027-03-10.md) | ColPali paper. | **DL Track (Part 2): Training Loop & Verification** | Ingest CLIP-projected patches into `MultiVectorIndex`. |
-| **Thursday** | Thu Mar 11 | [`Day 188`](../days/month-07/day-188-2027-03-11.md) | GPU MaxSim CUTLASS. | **Monthly Research: Sweeps & Data Logging** | Text query → visual page search E2E. |
-| **Friday** | Fri Mar 12 | [`Day 189`](../days/month-07/day-189-2027-03-12.md) | — | **Technical Essay: Lab-Note Drafting** | Month 7 paper figures: GPU QPS + ColPali demo. |
+| **Thursday** | Thu Mar 11 | [`Day 188`](../days/month-07/day-188-2027-03-11.md) | GPU MaxSim CUTLASS. | **DL / Vector Retrieval Integration & Profiling** | Text query → visual page search E2E. |
+| **Friday** | Fri Mar 12 | [`Day 189`](../days/month-07/day-189-2027-03-12.md) | — | **Weekly Technical Article: Drafting & Publishing** | Month 7 paper figures: GPU QPS + ColPali demo. |
 
 ---
 
@@ -106,7 +106,7 @@
 
 ## 📝 Weekend Deliverables
 
-### ✍️ Technical Essay 27 (Saturday 09:00–13:00)
+### ✍️ Technical Essay 27 (Drafted Friday 06:30–08:30)
 * **Title**: *"Distributed Multi-GPU Partitioning and Visual Late Interaction: Scaling Document Page Retrieval"*
 * **Target File**: `~/personal/goals/essays/essay_27.md`
 * **5-Part Structure**:
@@ -119,7 +119,7 @@
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
 * **Task**: 
 
-### 🔬 Monthly Research Milestone (FlashMaxSim Milestone 4 (Landmark Paper 2 Freeze) — Mon/Thu 06:30–08:30 Morning Builder)
-* **Paper**: *"Nsight Compute Roofline Validation & Master Conference Submission"*
+### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
+* **Focus**: Nsight Compute Roofline Validation & Master Conference Submission
 * **Workspace**: `research/2027-03-gpu-serving/`
-* **Publish Deadline**: **Fri Mar 12**
+* **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.

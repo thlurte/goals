@@ -10,7 +10,7 @@
 
 # 📅 MONTH 7: GPU Specialization Closeout (Mar 2027)
 
-> **🔬 Monthly research (FlashMaxSim Milestone 4 — Landmark Paper 2 Freeze)**: *Nsight Compute Roofline Validation & Master Conference Submission* → publish **Fri Mar 12** · folder `research/2027-03-gpu-serving/`
+> **🔬 Empirical Systems & Benchmarking Focus**: *Roofline Validation & Master Release Calibration* · folder `research/2027-03-gpu-serving/`
 
 ---
 
@@ -95,7 +95,7 @@
 * ❌ **Do NOT** implement complex prefix caching trees—simple LRU page table eviction covers all requirements.
 
 > **📝 Essay 26 (Sat Feb 28)**: *"Memory Fragmentation Under Autoregressive Generation: A/B Profiling Naive vs Paged KV Caches"*  
-> **🚀 Month 6 PUBLISH (Sun Feb 28)** if not already.
+> **🚀 Month 6 Builder Milestone (Sun Feb 28)** if not already.
 
 ---
 
@@ -146,13 +146,13 @@
 | **Mon Mar 9** | **Canonical Proofs 1 & 2**: JL Lemma & Softmax-CE ([`roadmap.md#part-5`](../roadmap.md#part-5-master-appendix--the-8-canonical-proofs-of-vector-search--ai-systems)). | API & Doxygen architecture pass. | Finish CLI + Doxygen documentation. |
 | **Tue Mar 10** | **Canonical Proofs 3 & 4**: Attention Backprop & FlashAttention Online Softmax ([`roadmap.md#part-5`](../roadmap.md#part-5-master-appendix--the-8-canonical-proofs-of-vector-search--ai-systems)). | `ann-benchmarks` methodology. | Full CPU+GPU benchmark matrix using Profiling Playbook ([`roadmap.md#part-3`](../roadmap.md#part-3-verification--tooling-matrix-the-hardware-profiling-playbook)). |
 | **Wed Mar 11** | **Canonical Proofs 5 & 6**: ScaNN Anisotropic Error & Kleinberg HNSW Routing ([`roadmap.md#part-5`](../roadmap.md#part-5-master-appendix--the-8-canonical-proofs-of-vector-search--ai-systems)). | Production DB architecture pass ([`roadmap.md#7`](../roadmap.md#7-enterprise-production-architecture-wal-crash-recovery--shadow-indexing)). | Five E2E examples including dense InfoNCE search + GPU batch. |
-| **Thu Mar 12** | **Canonical Proofs 7 & 8**: Vamana Spanner Pruning & Griewank Reverse-Mode AD ([`roadmap.md#part-5`](../roadmap.md#part-5-master-appendix--the-8-canonical-proofs-of-vector-search--ai-systems)). | Production release README. | **Publish Month 7 paper.** Tag `v2.0-complete`. |
-| **Fri Mar 13** | **Full 8-Proof Whiteboard Mock Defense**: Complete technical interview simulation. | Portfolio review. | Portfolio: 7 papers, 28 essays, and `secan` Pareto curves. |
+| **Thu Mar 12** | **Canonical Proofs 7 & 8**: Vamana Spanner Pruning & Griewank Reverse-Mode AD ([`roadmap.md#part-5`](../roadmap.md#part-5-master-appendix--the-8-canonical-proofs-of-vector-search--ai-systems)). | Production release README. | **Master Release Verification.** Tag `v2.0-complete`. |
+| **Fri Mar 13** | **Full 8-Proof Whiteboard Mock Defense**: Complete technical interview simulation. | Portfolio review. | Portfolio: 28 technical articles, benchmark suites, and `secan` Pareto curves. |
 
 #### 📋 Daily Action Items & Optional Activities (Week 28)
 * **Mon Mar 9**:
   * `[ ]` **Core**: Derive Canonical Proofs 1 & 2 from cold memory on whiteboard; complete unified CLI interface (`secan`) and generate full Doxygen API docs.
-  * `⭐ Optional / Stretch`: Write a comprehensive architectural design paper summarizing the 7-month engineering journey.
+  * `⭐ Optional / Stretch`: Write a comprehensive architectural design summary of the 7-month engineering journey.
 * **Tue Mar 10**:
   * `[ ]` **Core**: Derive Canonical Proofs 3 & 4 on whiteboard; execute full `ann-benchmarks` protocol across all implemented index types using the Hardware Profiling Playbook (`perf stat`, `nsys`, `ncu`).
   * `⭐ Optional / Stretch`: Plot combined CPU/GPU Pareto frontier curves (Recall@10 vs QPS) comparing `secan` directly against `Faiss` and `hnswlib`.
@@ -160,10 +160,10 @@
   * `[ ]` **Core**: Derive Canonical Proofs 5 & 6 on whiteboard; build 5 standalone C++ and Python example programs showcasing the Enterprise Production DB architecture (WAL, shadow rebuilds, tombstones).
   * `⭐ Optional / Stretch`: Add a zero-dependency quickstart script that clones, builds, downloads SIFT1M, and benchmarks in under 60 seconds.
 * **Thu Mar 12**:
-  * `[ ]` **Core**: Derive Canonical Proofs 7 & 8 on whiteboard; finalize root `README.md` with complete benchmark tables; publish Month 7 research paper; git tag `v2.0-complete`.
+  * `[ ]` **Core**: Derive Canonical Proofs 7 & 8 on whiteboard; finalize root `README.md` with complete benchmark tables; git tag `v2.0-complete`.
   * `⭐ Optional / Stretch`: Prepare public release announcement and publish technical blog posts summarizing key architectural discoveries.
 * **Fri Mar 13**:
-  * `[ ]` **Core**: Complete a simulated 3-hour Technical Whiteboard Defense across all 8 canonical proofs; compile professional engineering portfolio packet (7 research papers, 28 technical essays, and `secan` release).
+  * `[ ]` **Core**: Complete a simulated 3-hour Technical Whiteboard Defense across all 8 canonical proofs; compile professional engineering portfolio packet (28 technical articles, benchmark suites, and `secan` release).
   * `⭐ Optional / Stretch`: Celebrate completing the 28-week vector search engine & AI systems specialization!
 
 #### ⛔ What NOT to Overspend Time On (Time Traps)
@@ -172,6 +172,6 @@
 * ❌ **Do NOT** doubt your progress—you have built a world-class, conference-grade vector search engine and AI systems foundation from first principles.
 
 > **📝 Essay 28 (Sat Mar 14)**: *"Seven Months from First Principles: Vector Spaces, Modern SIMD/GPU Architectures, and the `v2.0` Engine"*  
-> **🚀 Month 7 research PUBLISH (Thu Mar 12)**: `research/2027-03-gpu-serving/paper.md`
+> **🚀 Month 7 Master Release (Thu Mar 12)**: `secan v2.0-complete` release and benchmark verification.
 
 ---

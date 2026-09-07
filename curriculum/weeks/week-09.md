@@ -29,7 +29,7 @@
 │ ⚙️ Sunday 19:30 – 21:00      │ [LAB] Graduate Systems & GPU Architecture Lab (H&P / Kirk & Hwu)       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📖 Mon–Fri 05:30 – 06:30     │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
-│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Benchmarking / Technical Articles)        │
 │ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
 │ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
@@ -44,11 +44,11 @@
 |:---|:---|:---|:---|:---|:---|
 | **Saturday** | Sat Oct 31 | [`Day 057`](../days/month-03/day-057-2026-10-31.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30–21:00**: Thought Leadership (Claude E. Shannon) · **21:00+**: Free / Rest|
 | **Sunday** | Sun Nov 1 | [`Day 058`](../days/month-03/day-058-2026-11-01.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (DDIA Ch 8) · **19:30–21:00**: Systems Lab (H&P Ch 4) |
-| **Monday** | Mon Nov 2 | [`Day 059`](../days/month-03/day-059-2026-11-02.md) | Research paper: *"ColBERT: Efficient and Effective Passage Search via Late Interaction"* (Khattab & Zaharia 2020). | **Monthly Research: Planning & Literature Synthesis** | **secan (required)**: **Batch HNSW build**: insert $N$ in one pass (level assignment + sequential connect). Compare build time vs one-by-one insert. |
+| **Monday** | Mon Nov 2 | [`Day 059`](../days/month-03/day-059-2026-11-02.md) | Research paper: *"ColBERT: Efficient and Effective Passage Search via Late Interaction"* (Khattab & Zaharia 2020). | **Hardware Profiling & Benchmark Sweeps** | **secan (required)**: **Batch HNSW build**: insert $N$ in one pass (level assignment + sequential connect). Compare build time vs one-by-one insert. |
 | **Tuesday** | Tue Nov 3 | [`Day 060`](../days/month-03/day-060-2026-11-03.md) | PLAID paper §1–4; HNSW bulk-construction notes. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: Parallel batch graph construction (shard-then-merge or lock-free insert). Measure Recall@10 vs sequential insert. |
 | **Wednesday** | Wed Nov 4 | [`Day 061`](../days/month-03/day-061-2026-11-04.md) | **INTEL Intrinsics Guide**: Study `_mm256_max_ps`, `_mm256_permute2f128_ps`, cross-lane max reduction. | **DL Track (Part 2): Training Loop & Verification** | **secan**: Implement **SIMD-vectorized MaxSim kernel** in C++: process 8 document tokens in parallel with AVX2 FMA + horizontal max reduction. |
-| **Thursday** | Thu Nov 5 | [`Day 062`](../days/month-03/day-062-2026-11-05.md) | **AGNER Ch 13**: Data parallelism, cache layout for multi-vector matrices. | **Monthly Research: Sweeps & Data Logging** | **secan**: Build **token centroid index**: cluster document tokens into centroids ($C=32\text{K}$). Build inverted lists `centroid_id → (doc_id, token_idx)`. |
-| **Friday** | Fri Nov 6 | [`Day 063`](../days/month-03/day-063-2026-11-06.md) | Re-read PLAID paper §3 "Centroid Interaction" + §4 "Decompression and Scoring". | **Technical Essay: Lab-Note Drafting** | **secan**: Implement centroid candidate pruning: query tokens retrieve candidate documents from centroid inverted lists. Score candidates with MaxSim. |
+| **Thursday** | Thu Nov 5 | [`Day 062`](../days/month-03/day-062-2026-11-05.md) | **AGNER Ch 13**: Data parallelism, cache layout for multi-vector matrices. | **DL / Vector Retrieval Integration & Profiling** | **secan**: Build **token centroid index**: cluster document tokens into centroids ($C=32\text{K}$). Build inverted lists `centroid_id → (doc_id, token_idx)`. |
+| **Friday** | Fri Nov 6 | [`Day 063`](../days/month-03/day-063-2026-11-06.md) | Re-read PLAID paper §3 "Centroid Interaction" + §4 "Decompression and Scoring". | **Weekly Technical Article: Drafting & Publishing** | **secan**: Implement centroid candidate pruning: query tokens retrieve candidate documents from centroid inverted lists. Score candidates with MaxSim. |
 
 ---
 
@@ -107,7 +107,7 @@
 
 ## 📝 Weekend Deliverables
 
-### ✍️ Technical Essay 09 (Saturday 09:00–13:00)
+### ✍️ Technical Essay 09 (Drafted Friday 06:30–08:30)
 * **Title**: *"Beyond Single Vectors: The Linear Algebra, Matrix Decompositions, and SIMD Architecture of ColBERT Late Interaction"*
 * **Target File**: `~/personal/goals/essays/essay_09.md`
 * **5-Part Structure**:
@@ -120,7 +120,7 @@
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
 * **Task**: **🧠 DL weekend**: ColBERT dual encoder + MaxSim + tiny Margin MSE. **Knowledge distillation**: implement cross-encoder reranker score as teacher → distill into bi-encoder student (MSE on logits). Compare embedding quality vs Week 6 InfoNCE-only training.
 
-### 🔬 Monthly Research Milestone (GAPQ Milestone 3 (Landmark Paper 1 Freeze) — Mon/Thu 06:30–08:30 Morning Builder)
-* **Paper**: *"Sub-2-Bit In-Register SIMD Execution & Manuscript Submission Freeze"*
+### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
+* **Focus**: Sub-2-Bit In-Register SIMD Execution & Manuscript Submission Freeze
 * **Workspace**: `research/2026-11-rabitq-lsm/`
-* **Publish Deadline**: **Sun Nov 29**
+* **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.

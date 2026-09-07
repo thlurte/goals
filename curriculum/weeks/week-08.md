@@ -29,7 +29,7 @@
 │ ⚙️ Sunday 19:30 – 21:00      │ [LAB] Graduate Systems & GPU Architecture Lab (H&P / Kirk & Hwu)       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📖 Mon–Fri 05:30 – 06:30     │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
-│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Benchmarking / Technical Articles)        │
 │ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
 │ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
@@ -44,11 +44,11 @@
 |:---|:---|:---|:---|:---|:---|
 | **Saturday** | Sat Oct 24 | [`Day 050`](../days/month-02/day-050-2026-10-24.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30–21:00**: Thought Leadership (Richard W. Hamming) · **21:00+**: Free / Rest|
 | **Sunday** | Sun Oct 25 | [`Day 051`](../days/month-02/day-051-2026-10-25.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (DDIA Ch 7) · **19:30–21:00**: Systems Lab (Pikus Ch 7–9) |
-| **Monday** | Mon Oct 26 | [`Day 052`](../days/month-02/day-052-2026-10-26.md) | Research paper: *"Efficient and Robust ANN Search Using HNSW Graphs"* (Malkov & Yashunin 2020) §1–3. | **Monthly Research: Planning & Literature Synthesis** | **secan**: Implement `HNSWIndex` data structures: flat CSR adjacency (`neighbors[]` + `offsets[]`), node struct, entry point. |
+| **Monday** | Mon Oct 26 | [`Day 052`](../days/month-02/day-052-2026-10-26.md) | Research paper: *"Efficient and Robust ANN Search Using HNSW Graphs"* (Malkov & Yashunin 2020) §1–3. | **Hardware Profiling & Benchmark Sweeps** | **secan**: Implement `HNSWIndex` data structures: flat CSR adjacency (`neighbors[]` + `offsets[]`), node struct, entry point. |
 | **Tuesday** | Tue Oct 27 | [`Day 053`](../days/month-02/day-053-2026-10-27.md) | HNSW paper §4–5: Algorithm 4 (heuristic neighbor selection), level multiplier $m_L$, parameter tuning ($M, ef$). | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: Implement HNSW `insert()`: exponential level assignment, greedy descent, multi-layer neighbor connection. |
 | **Wednesday** | Wed Oct 28 | [`Day 054`](../days/month-02/day-054-2026-10-28.md) | **PIKUS Ch 7**: Concurrent data structures, cache-friendly priority queues, memory allocation in graphs. | **DL Track (Part 2): Training Loop & Verification** | **secan**: Implement HNSW `search()`: beam search with visited-set. Implement Algorithm 4 diverse neighbor selection. |
-| **Thursday** | Thu Oct 29 | [`Day 055`](../days/month-02/day-055-2026-10-29.md) | **AGNER Ch 7.12–7.13 & Ch 7.5**: Branch prediction in graph traversal, branchless heap sift-down (**prep for Week 12 Wed**). | **Monthly Research: Sweeps & Data Logging** | **secan**: Correctness harness: Recall@10 vs exact on SIFT subset. Do **not** optimize heaps yet → Week 12 Wed. |
-| **Friday** | Fri Oct 30 | [`Day 056`](../days/month-02/day-056-2026-10-30.md) | **CSAPP §5.14**: Profiling graph traversal bottlenecks with `perf record`. | **Technical Essay: Lab-Note Drafting** | **secan (required)**: Ingest **768-D text** `.fvecs` into HNSW; plot **Recall@10 vs QPS**. SIFT remains kernel bench; this is the text product bench. Tag `v0.3-hnsw`. |
+| **Thursday** | Thu Oct 29 | [`Day 055`](../days/month-02/day-055-2026-10-29.md) | **AGNER Ch 7.12–7.13 & Ch 7.5**: Branch prediction in graph traversal, branchless heap sift-down (**prep for Week 12 Wed**). | **DL / Vector Retrieval Integration & Profiling** | **secan**: Correctness harness: Recall@10 vs exact on SIFT subset. Do **not** optimize heaps yet → Week 12 Wed. |
+| **Friday** | Fri Oct 30 | [`Day 056`](../days/month-02/day-056-2026-10-30.md) | **CSAPP §5.14**: Profiling graph traversal bottlenecks with `perf record`. | **Weekly Technical Article: Drafting & Publishing** | **secan (required)**: Ingest **768-D text** `.fvecs` into HNSW; plot **Recall@10 vs QPS**. SIFT remains kernel bench; this is the text product bench. Tag `v0.3-hnsw`. |
 
 ---
 
@@ -107,7 +107,7 @@
 
 ## 📝 Weekend Deliverables
 
-### ✍️ Technical Essay 08 (Saturday 09:00–13:00)
+### ✍️ Technical Essay 08 (Drafted Friday 06:30–08:30)
 * **Title**: *"Graph Laplacians, Hubness Skewness, and Navigable Small-World Routing: Building HNSW from Scratch"*
 * **Target File**: `~/personal/goals/essays/essay_08.md`
 * **5-Part Structure**:
@@ -120,7 +120,7 @@
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
 * **Task**: 
 
-### 🔬 Monthly Research Milestone (GAPQ Milestone 2 — Mon/Thu 06:30–08:30 Morning Builder)
-* **Paper**: *"Geometry-Aware Anisotropic Polar Quantization: The Adaptive Ellipsoidal Lattice & Unbiased QJL Proof"*
+### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
+* **Focus**: Geometry-Aware Anisotropic Polar Quantization: The Adaptive Ellipsoidal Lattice & Unbiased QJL Proof
 * **Workspace**: `research/2026-10-anisotropic-quantization/`
-* **Publish Deadline**: **Sun Oct 25**
+* **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.

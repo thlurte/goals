@@ -29,7 +29,7 @@
 │ ⚙️ Sunday 19:30 – 21:00      │ [LAB] Graduate Systems & GPU Architecture Lab (H&P / Kirk & Hwu)       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📖 Mon–Fri 05:30 – 06:30     │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
-│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Benchmarking / Technical Articles)        │
 │ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
 │ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
@@ -44,11 +44,11 @@
 |:---|:---|:---|:---|:---|:---|
 | **Saturday** | Sat Sep 19 | [`Day 015`](../days/month-01/day-015-2026-09-19.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30–21:00**: Thought Leadership (George Pólya) · **21:00+**: Free / Rest|
 | **Sunday** | Sun Sep 20 | [`Day 016`](../days/month-01/day-016-2026-09-20.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (DDIA Ch 3.1) · **19:30–21:00**: Systems Lab (H&P Ch 2) |
-| **Monday** | Mon Sep 21 | [`Day 017`](../days/month-01/day-017-2026-09-21.md) | **CSAPP §6.1–6.3**: SRAM vs DRAM, memory latency gap, spatial and temporal locality principles. | **Monthly Research: Planning & Literature Synthesis** | **secan**: Profile SIFT1M cache misses with `perf stat -e L1-dcache-load-misses,LLC-load-misses`. Calculate working set. |
+| **Monday** | Mon Sep 21 | [`Day 017`](../days/month-01/day-017-2026-09-21.md) | **CSAPP §6.1–6.3**: SRAM vs DRAM, memory latency gap, spatial and temporal locality principles. | **Hardware Profiling & Benchmark Sweeps** | **secan**: Profile SIFT1M cache misses with `perf stat -e L1-dcache-load-misses,LLC-load-misses`. Calculate working set. |
 | **Tuesday** | Tue Sep 22 | [`Day 018`](../days/month-01/day-018-2026-09-22.md) | **CSAPP §6.4–6.5**: Cache line organization, set associativity, conflict misses, cache-friendly coding. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: Implement cache-blocked `linear_scan_tiled`: partition dataset into tiles fitting in L2 cache ($256\text{KB}$). |
 | **Wednesday** | Wed Sep 23 | [`Day 019`](../days/month-01/day-019-2026-09-23.md) | **CSAPP §6.6 & PIKUS Ch 4**: The Memory Mountain, cache hierarchy on real workloads, software prefetching. | **DL Track (Part 2): Training Loop & Verification** | **secan**: Add software prefetching (`_mm_prefetch`, `_MM_HINT_T0`). Tune prefetch distances ($4, 8, 16, 32$ vectors). |
-| **Thursday** | Thu Sep 24 | [`Day 020`](../days/month-01/day-020-2026-09-24.md) | **AGNER Ch 9**: Memory access, non-temporal stores. | **Monthly Research: Sweeps & Data Logging** | **secan**: Unit-sphere pre-normalization path for cosine/IP. Store optional `norm` column. |
-| **Friday** | Fri Sep 25 | [`Day 021`](../days/month-01/day-021-2026-09-25.md) | **FINSY Ch 6**: `madvise(MADV_HUGEPAGE)`. | **Technical Essay: Lab-Note Drafting** | **secan**: Hugepage / `madvise` warmup on dataset mmap. *(DL: Sat Sep 20 Pre-LN encoder.)* |
+| **Thursday** | Thu Sep 24 | [`Day 020`](../days/month-01/day-020-2026-09-24.md) | **AGNER Ch 9**: Memory access, non-temporal stores. | **DL / Vector Retrieval Integration & Profiling** | **secan**: Unit-sphere pre-normalization path for cosine/IP. Store optional `norm` column. |
+| **Friday** | Fri Sep 25 | [`Day 021`](../days/month-01/day-021-2026-09-25.md) | **FINSY Ch 6**: `madvise(MADV_HUGEPAGE)`. | **Weekly Technical Article: Drafting & Publishing** | **secan**: Hugepage / `madvise` warmup on dataset mmap. *(DL: Sat Sep 20 Pre-LN encoder.)* |
 
 ---
 
@@ -107,7 +107,7 @@
 
 ## 📝 Weekend Deliverables
 
-### ✍️ Technical Essay 03 (Saturday 09:00–13:00)
+### ✍️ Technical Essay 03 (Drafted Friday 06:30–08:30)
 * **Title**: *"Integrals, Accumulation, and CPU Cache Hierarchies: Cache Tiling and Autograd from Scratch"*
 * **Target File**: `~/personal/goals/essays/essay_03.md`
 * **5-Part Structure**:
@@ -120,7 +120,7 @@
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
 * **Task**: **🧠 DL weekend**: **Micrograd autograd engine** (~150 lines): `Value` class with `+`, `*`, `tanh`, `exp`, `backward()` using topological sort. Verify gradient of a tiny 2-layer MLP matches PyTorch. **Then** implement Pre-LN encoder + FFN with manual `backward()` for `Linear` layer (compare `dW` vs `param.grad`).
 
-### 🔬 Monthly Research Milestone (GAPQ Milestone 1 — Mon/Thu 06:30–08:30 Morning Builder)
-* **Paper**: *"Microarchitectural Limits of Distance Kernels & Empirical Embedding Cone Anisotropy"*
-* **Workspace**: `research/2026-09-measurement-protocol/`
-* **Publish Deadline**: **Sun Sep 27**
+### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
+* **Focus**: Memory Mountain Sweeps, Cache Tiling & Software Prefetching
+* **Workspace**: `research/2026-09-measurement-protocol/` & `secan/benchmarks/`
+* **Artifact Target**: Cache eviction data (`week3_memory_mountain.json`) feeding into Friday's Technical Article 03.

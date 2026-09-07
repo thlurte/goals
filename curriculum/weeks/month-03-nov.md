@@ -10,7 +10,7 @@
 
 # 📅 MONTH 3: Linear Algebra from First Principles, ColBERT & LSM-Trees (Nov 2026)
 
-> **🔬 Monthly research (GAPQ Milestone 3 — Landmark Paper 1 Freeze)**: *Sub-2-Bit In-Register SIMD Execution & Manuscript Submission Freeze* → publish **Sun Nov 29** · folder `research/2026-11-rabitq-lsm/`
+> **🔬 Empirical Systems & Benchmarking Focus**: *Sub-2-Bit In-Register SIMD Execution & RaBitQ / LSM Integration* · folder `research/2026-11-rabitq-lsm/`
 
 ---
 

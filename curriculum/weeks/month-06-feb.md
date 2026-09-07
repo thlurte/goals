@@ -10,7 +10,7 @@
 
 # 📅 MONTH 6: Optimization, Spectral Graphs, Production Hardening & Master Release (Feb 2027)
 
-> **🔬 Monthly research (FlashMaxSim Milestone 3)**: *Bare-Metal CUTLASS Implementation with Hopper/Blackwell TMA & Warp Specialization* → publish **Sun Feb 28** · folder `research/2027-02-predicate-aware-graphs/`
+> **🔬 Empirical Systems & Benchmarking Focus**: *Bare-Metal CUTLASS & Warp Specialization in Vector Retrieval* · folder `research/2027-02-predicate-aware-graphs/`
 
 ---
 
@@ -103,7 +103,7 @@
 * ❌ **Do NOT** worry if your development machine is single-socket—simulate NUMA policies with `numactl --interleave` or `numactl --cpunodebind`.
 
 > **📝 Essay 22 (Sat Jan 31)**: *"Graph Disconnection and Selectivity Cliffs: ACORN Predicate Subgraphs vs Post-Filtering"*  
-> **🚀 Month 5 research PUBLISH (Sun Jan 31)**: freeze `research/2027-01-cagra-warp-search/paper.md` + public post.
+> **🚀 Month 5 Builder Milestone (Sun Jan 31)**: End-to-end GPU CAGRA warp search benchmark verification.
 
 ---
 
@@ -159,11 +159,11 @@
 
 | Day | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|
-| **Mon Feb 9** | **PIKUS Ch 12** retrospective. | **Monthly Research: Planning & Literature Synthesis** | **secan**: CLI scaffold `secan build/search/bench` (complete Week 28). |
-| **Tue Feb 10** | Occupancy calculator / `__launch_bounds__`. | **DL Track (Part 1): Architecture & Forward Pass** | **CUDA**: Occupancy tune on IVF + graph kernels. |
-| **Wed Feb 11** | CUB/Thrust fusion notes. | **DL Track (Part 2): Training, Loss & Verification** | **CUDA**: Fused distance+topk kernel (was former Week 22 GPU polish). |
-| **Thu Feb 12** | `-Wall -Wextra -Wpedantic`. | **Monthly Research: Sweeps & Data Logging** | **secan**: Warning cleanup; examples/ stubs. |
-| **Fri Feb 13** | Month 6 paper freeze checklist. | **Monthly Research: Planning & Literature Synthesis** | **secan/CUDA**: Occupancy/`ncu` leftover polish. *(Naive KV re-bench: Saturday DL if needed.)* |
+| **Mon Feb 9** | **PIKUS Ch 12** retrospective. | **Hardware Profiling & Benchmark Sweeps** | **secan**: CLI scaffold `secan build/search/bench` (complete Week 28). |
+| **Tue Feb 10** | Occupancy calculator / `__launch_bounds__`. | **DL Track (Part 1): Architecture & Tensor Shapes** | **CUDA**: Occupancy tune on IVF + graph kernels. |
+| **Wed Feb 11** | CUB/Thrust fusion notes. | **DL Track (Part 2): Training Loop & Verification** | **CUDA**: Fused distance+topk kernel (was former Week 22 GPU polish). |
+| **Thu Feb 12** | `-Wall -Wextra -Wpedantic`. | **DL / Vector Retrieval Integration & Profiling** | **secan**: Warning cleanup; examples/ stubs. |
+| **Fri Feb 13** | Systems hardening checklist. | **Weekly Technical Article: Drafting & Publishing** | **secan/CUDA**: Occupancy/`ncu` leftover polish. *(Naive KV re-bench: Saturday DL if needed.)* |
 
 #### 📋 Daily Action Items & Optional Activities (Week 24)
 * **Mon Feb 9**:
@@ -188,6 +188,6 @@
 * ❌ **Do NOT** spend hours eliminating benign 3rd-party library warnings—suppress external warnings with `-isystem`.
 
 > **📝 Essay 24 (Sat Feb 14)**: *"Portable Vector Intrinsics and Production Graph Systems: Closing Block II Systems Hardening"*  
-> **🚀 Month 6 research PUBLISH (Sun Feb 28)**: `research/2027-02-predicate-aware-graphs/paper.md` (use remaining Feb weekends).
+> **🚀 Month 6 Builder Milestone (Sun Feb 28)**: Systems hardening & predicate-aware graph benchmark verification.
 
 ---

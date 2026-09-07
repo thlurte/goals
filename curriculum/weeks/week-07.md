@@ -29,7 +29,7 @@
 │ ⚙️ Sunday 19:30 – 21:00      │ [LAB] Graduate Systems & GPU Architecture Lab (H&P / Kirk & Hwu)       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📖 Mon–Fri 05:30 – 06:30     │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
-│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Benchmarking / Technical Articles)        │
 │ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
 │ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
@@ -44,11 +44,11 @@
 |:---|:---|:---|:---|:---|:---|
 | **Saturday** | Sat Oct 17 | [`Day 043`](../days/month-02/day-043-2026-10-17.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30–21:00**: Thought Leadership (Richard W. Hamming) · **21:00+**: Free / Rest|
 | **Sunday** | Sun Oct 18 | [`Day 044`](../days/month-02/day-044-2026-10-18.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (DDIA Ch 6) · **19:30–21:00**: Systems Lab (Gregg Ch 7) |
-| **Monday** | Mon Oct 19 | [`Day 045`](../days/month-02/day-045-2026-10-19.md) | ScaNN Paper §1–3: MIPS error decomposition: why orthogonal error $e_\perp$ has 0 expectation while parallel error $e_\parallel$ degrades inner products. | **Monthly Research: Planning & Literature Synthesis** | **secan**: Implement **ScaNN Anisotropic Loss** in `ProductQuantizer`: penalize parallel error with weight $h=5.0$. Compare codebooks. |
+| **Monday** | Mon Oct 19 | [`Day 045`](../days/month-02/day-045-2026-10-19.md) | ScaNN Paper §1–3: MIPS error decomposition: why orthogonal error $e_\perp$ has 0 expectation while parallel error $e_\parallel$ degrades inner products. | **Hardware Profiling & Benchmark Sweeps** | **secan**: Implement **ScaNN Anisotropic Loss** in `ProductQuantizer`: penalize parallel error with weight $h=5.0$. Compare codebooks. |
 | **Tuesday** | Tue Oct 20 | [`Day 046`](../days/month-02/day-046-2026-10-20.md) | **INTEL Intrinsics & AGNER-INST**: Deep dive into `_mm256_shuffle_epi8` (PSHUFB) semantics and port mapping. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: Implement **plain BQ** (`bit = val > 0`): Hamming via XOR+POPCNT. **Do not** implement RaBitQ yet (needs QR — Week 10). |
 | **Wednesday** | Wed Oct 21 | [`Day 047`](../days/month-02/day-047-2026-10-21.md) | Faiss FastScan documentation & André et al. (2015) paper §1–3. | **DL Track (Part 2): Training Loop & Verification** | **secan**: Implement 4-bit PQ encoding ($k=16$ centroids per subspace, packing 2 codes per byte). |
-| **Thursday** | Thu Oct 22 | [`Day 048`](../days/month-02/day-048-2026-10-22.md) | AGNER-INST: Study `VPSHUFB`, `VPADDB`, `VPUNPCKLBW` instruction latency and accumulation chains. | **Monthly Research: Sweeps & Data Logging** | **secan**: Implement **FastScan kernel**: load 16 centroid distances into `__m128i` / `__m256i`. Execute table lookups **entirely in-register** via PSHUFB. |
-| **Friday** | Fri Oct 23 | [`Day 049`](../days/month-02/day-049-2026-10-23.md) | **CSAPP §5.10–5.12**: Register spilling, store-load forwarding, pipeline limiting factors. | **Technical Essay: Lab-Note Drafting** | **secan (required)**: **OPQ** (rotate then PQ) *or* **residual PQ**. Compare Recall@10 vs plain PQ on SIFT. Asymmetric ADC remains FP32 query. *(DL: Sat Oct 18 MRL.)* |
+| **Thursday** | Thu Oct 22 | [`Day 048`](../days/month-02/day-048-2026-10-22.md) | AGNER-INST: Study `VPSHUFB`, `VPADDB`, `VPUNPCKLBW` instruction latency and accumulation chains. | **DL / Vector Retrieval Integration & Profiling** | **secan**: Implement **FastScan kernel**: load 16 centroid distances into `__m128i` / `__m256i`. Execute table lookups **entirely in-register** via PSHUFB. |
+| **Friday** | Fri Oct 23 | [`Day 049`](../days/month-02/day-049-2026-10-23.md) | **CSAPP §5.10–5.12**: Register spilling, store-load forwarding, pipeline limiting factors. | **Weekly Technical Article: Drafting & Publishing** | **secan (required)**: **OPQ** (rotate then PQ) *or* **residual PQ**. Compare Recall@10 vs plain PQ on SIFT. Asymmetric ADC remains FP32 query. *(DL: Sat Oct 18 MRL.)* |
 
 ---
 
@@ -109,7 +109,7 @@
 
 ## 📝 Weekend Deliverables
 
-### ✍️ Technical Essay 07 (Saturday 09:00–13:00)
+### ✍️ Technical Essay 07 (Drafted Friday 06:30–08:30)
 * **Title**: *"Anisotropic Loss and In-Register SIMD Lookups: Directional Error Weighting and FastScan PSHUFB"*
 * **Target File**: `~/personal/goals/essays/essay_07.md`
 * **5-Part Structure**:
@@ -122,7 +122,7 @@
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
 * **Task**: **🧠 DL weekend**: MRL nested dims on tiny corpus.
 
-### 🔬 Monthly Research Milestone (GAPQ Milestone 2 — Mon/Thu 06:30–08:30 Morning Builder)
-* **Paper**: *"Geometry-Aware Anisotropic Polar Quantization: The Adaptive Ellipsoidal Lattice & Unbiased QJL Proof"*
+### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
+* **Focus**: Geometry-Aware Anisotropic Polar Quantization: The Adaptive Ellipsoidal Lattice & Unbiased QJL Proof
 * **Workspace**: `research/2026-10-anisotropic-quantization/`
-* **Publish Deadline**: **Sun Oct 25**
+* **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.

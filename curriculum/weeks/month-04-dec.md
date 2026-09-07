@@ -14,7 +14,7 @@
 
 # 📅 MONTH 4: Pure Probability Theory, FlashAttention Kernel & Tensor Cores (Dec 2026)
 
-> **🔬 Monthly research (FlashMaxSim Milestone 1)**: *The Memory Wall in Multimodal Late Interaction: Baseline GPU Kernel Profiling* → publish **Sun Dec 27** · folder `research/2026-12-flashattn-vamana/`
+> **🔬 Empirical Systems & Benchmarking Focus**: *Multimodal Late Interaction & Baseline GPU Kernel Profiling* · folder `research/2026-12-flashattn-vamana/`
 
 ---
 
@@ -68,7 +68,7 @@
 * ❌ **Do NOT** hand-write complex combinatorial counting proofs on paper—master permutations and combinations, then move to probability rules.
 
 > **📝 Essay 13 (Sat Nov 29)**: *"The SIMT Execution Model: Why Naive GPU Distance Kernels Lose to CPU AVX2"*  
-> **🚀 Month 3 research PUBLISH (Sun Nov 29)**: freeze `research/2026-11-rabitq-lsm/paper.md` + public post.
+> **🚀 Month 3 Builder Milestone (Sun Nov 29)**: End-to-end RaBitQ 1-bit/2-bit SIMD execution & LSM-tree benchmark verification.
 
 ---
 

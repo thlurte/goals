@@ -29,7 +29,7 @@
 │ ⚙️ Sunday 19:30 – 21:00      │ [LAB] Graduate Systems & GPU Architecture Lab (H&P / Kirk & Hwu)       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📖 Mon–Fri 05:30 – 06:30     │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
-│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Benchmarking / Technical Articles)        │
 │ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
 │ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
@@ -44,11 +44,11 @@
 |:---|:---|:---|:---|:---|:---|
 | **Saturday** | Sat Jan 23 | [`Day 141`](../days/month-06/day-141-2027-01-23.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30–21:00**: Thought Leadership (John von Neumann) · **21:00+**: Free / Rest|
 | **Sunday** | Sun Jan 24 | [`Day 142`](../days/month-06/day-142-2027-01-24.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (IIR Ch 11) · **19:30–21:00**: Systems Lab (Kirk & Hwu Ch 17) |
-| **Monday** | Mon Jan 25 | [`Day 143`](../days/month-06/day-143-2027-01-25.md) | Re-read ColBERT/PLAID papers with GPU focus: mapping MaxSim to batched GEMM + reductions. | **Monthly Research: Planning & Literature Synthesis** | **secan**: Implement **GPU MaxSim kernel**: CUTLASS GEMM + warp row-max + column-sum. |
+| **Monday** | Mon Jan 25 | [`Day 143`](../days/month-06/day-143-2027-01-25.md) | Re-read ColBERT/PLAID papers with GPU focus: mapping MaxSim to batched GEMM + reductions. | **Hardware Profiling & Benchmark Sweeps** | **secan**: Implement **GPU MaxSim kernel**: CUTLASS GEMM + warp row-max + column-sum. |
 | **Tuesday** | Tue Jan 26 | [`Day 144`](../days/month-06/day-144-2027-01-26.md) | CLIP / SigLIP contrastive alignment (image encoder ↔ text encoder). | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: GPU MaxSim polish / fused pipeline. *(CLIP projector: Sat Jan 24.)* |
 | **Wednesday** | Wed Jan 27 | [`Day 145`](../days/month-06/day-145-2027-01-27.md) | NN-Descent / CAGRA neighbor exchange. | **DL Track (Part 2): Training Loop & Verification** | **secan**: GPU NN-Descent base-layer graph construction. **FA-2 → Week 25.** |
-| **Thursday** | Thu Jan 28 | [`Day 146`](../days/month-06/day-146-2027-01-28.md) | CAGRA / NN-Descent GPU neighbor exchange. | **Monthly Research: Sweeps & Data Logging** | **secan**: GPU NN-Descent base-layer graph construction. |
-| **Friday** | Fri Jan 29 | [`Day 147`](../days/month-06/day-147-2027-01-29.md) | Review GPU ColBERT / ColPali integration. | **Technical Essay: Lab-Note Drafting** | **secan**: Ingest ColPali visual embeddings; text query → visual page search. **Stretch**: same tokens through MUVERA FDE + IP MIPS. |
+| **Thursday** | Thu Jan 28 | [`Day 146`](../days/month-06/day-146-2027-01-28.md) | CAGRA / NN-Descent GPU neighbor exchange. | **DL / Vector Retrieval Integration & Profiling** | **secan**: GPU NN-Descent base-layer graph construction. |
+| **Friday** | Fri Jan 29 | [`Day 147`](../days/month-06/day-147-2027-01-29.md) | Review GPU ColBERT / ColPali integration. | **Weekly Technical Article: Drafting & Publishing** | **secan**: Ingest ColPali visual embeddings; text query → visual page search. **Stretch**: same tokens through MUVERA FDE + IP MIPS. |
 
 ---
 
@@ -106,7 +106,7 @@
 
 ## 📝 Weekend Deliverables
 
-### ✍️ Technical Essay 21 (Saturday 09:00–13:00)
+### ✍️ Technical Essay 21 (Drafted Friday 06:30–08:30)
 * **Title**: *"Duality and Multimodal Retrieval: Karush-Kuhn-Tucker Conditions, CLIP Alignment, and ColPali MaxSim"*
 * **Target File**: `~/personal/goals/essays/essay_21.md`
 * **5-Part Structure**:
@@ -119,7 +119,7 @@
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
 * **Task**: **🧠 DL weekend**: CLIP-style projector + ColPali head.
 
-### 🔬 Monthly Research Milestone (FlashMaxSim Milestone 3 — Mon/Thu 06:30–08:30 Morning Builder)
-* **Paper**: *"Bare-Metal CUTLASS Implementation with Hopper/Blackwell TMA & Warp Specialization"*
+### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
+* **Focus**: Bare-Metal CUTLASS Implementation with Hopper/Blackwell TMA & Warp Specialization
 * **Workspace**: `research/2027-02-predicate-aware-graphs/`
-* **Publish Deadline**: **Sun Feb 28**
+* **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.

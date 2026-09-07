@@ -29,7 +29,7 @@
 │ ⚙️ Sunday 19:30 – 21:00      │ [LAB] Graduate Systems & GPU Architecture Lab (H&P / Kirk & Hwu)       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📖 Mon–Fri 05:30 – 06:30     │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
-│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Benchmarking / Technical Articles)        │
 │ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
 │ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
@@ -44,11 +44,11 @@
 |:---|:---|:---|:---|:---|:---|
 | **Saturday** | Sat Jan 9 | [`Day 127`](../days/month-05/day-127-2027-01-09.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30–21:00**: Thought Leadership (Edwin T. Jaynes) · **21:00+**: Free / Rest|
 | **Sunday** | Sun Jan 10 | [`Day 128`](../days/month-05/day-128-2027-01-10.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (IIR Ch 8) · **19:30–21:00**: Systems Lab (Kirk & Hwu Ch 11) |
-| **Monday** | Mon Jan 11 | [`Day 129`](../days/month-05/day-129-2027-01-11.md) | vLLM Paper §1–3: The KV Cache fragmentation problem in LLMs ($60\%–80\%$ memory wasted on over-allocation). | **Monthly Research: Planning & Literature Synthesis** | **Python/CUDA**: Implement `BlockTable` data structure in PyTorch: maps logical sequence tokens to physical GPU memory blocks (block size 16). |
+| **Monday** | Mon Jan 11 | [`Day 129`](../days/month-05/day-129-2027-01-11.md) | vLLM Paper §1–3: The KV Cache fragmentation problem in LLMs ($60\%–80\%$ memory wasted on over-allocation). | **Hardware Profiling & Benchmark Sweeps** | **Python/CUDA**: Implement `BlockTable` data structure in PyTorch: maps logical sequence tokens to physical GPU memory blocks (block size 16). |
 | **Tuesday** | Tue Jan 12 | [`Day 130`](../days/month-05/day-130-2027-01-12.md) | vLLM Paper §4: PagedAttention kernel design: reading $K, V$ blocks via block lookup table in CUDA. | **DL Track (Part 1): Architecture & Tensor Shapes** | **CUDA**: Implement **PagedAttention CUDA kernel**: during self-attention, resolve physical $K, V$ block pointers on-the-fly via block table. |
 | **Wednesday** | Wed Jan 13 | [`Day 131`](../days/month-05/day-131-2027-01-13.md) | [TurboQuant](https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/): KV experiments (LongBench, RULER, needle-in-haystack); PolarQuant + QJL residual as bias killer for attention scores. | **DL Track (Part 2): Training Loop & Verification** | **secan**: Build unified `GpuIndex` wrapper class: device memory lifecycle, async transfers, kernel launches, RAII cleanup. |
-| **Thursday** | Thu Jan 14 | [`Day 132`](../days/month-05/day-132-2027-01-14.md) | **PMPP Ch 19**: Heterogeneous CPU+GPU workload partitioning. | **Monthly Research: Sweeps & Data Logging** | **secan**: Implement **CPU↔GPU hybrid fallback**: partition oversized dataset into GPU VRAM (fast) and CPU RAM (AVX2). Merge results. |
-| **Friday** | Fri Jan 15 | [`Day 133`](../days/month-05/day-133-2027-01-15.md) | Profile PagedAttention vs standard KV cache memory; contrast with TurboQuant bitwidth story (paging ≠ quantizing). | **Technical Essay: Lab-Note Drafting** | **secan**: Benchmark query batch sizes ($B=1, 10, 100, 1000$). Plot the CPU vs GPU crossover curve. |
+| **Thursday** | Thu Jan 14 | [`Day 132`](../days/month-05/day-132-2027-01-14.md) | **PMPP Ch 19**: Heterogeneous CPU+GPU workload partitioning. | **DL / Vector Retrieval Integration & Profiling** | **secan**: Implement **CPU↔GPU hybrid fallback**: partition oversized dataset into GPU VRAM (fast) and CPU RAM (AVX2). Merge results. |
+| **Friday** | Fri Jan 15 | [`Day 133`](../days/month-05/day-133-2027-01-15.md) | Profile PagedAttention vs standard KV cache memory; contrast with TurboQuant bitwidth story (paging ≠ quantizing). | **Weekly Technical Article: Drafting & Publishing** | **secan**: Benchmark query batch sizes ($B=1, 10, 100, 1000$). Plot the CPU vs GPU crossover curve. |
 
 ---
 
@@ -106,7 +106,7 @@
 
 ## 📝 Weekend Deliverables
 
-### ✍️ Technical Essay 19 (Saturday 09:00–13:00)
+### ✍️ Technical Essay 19 (Drafted Friday 06:30–08:30)
 * **Title**: *"Virtual Memory for Attention: Paged KV Blocks and Extreme PolarQuant 3-Bit Compression"*
 * **Target File**: `~/personal/goals/essays/essay_19.md`
 * **5-Part Structure**:
@@ -119,7 +119,7 @@
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
 * **Task**: 
 
-### 🔬 Monthly Research Milestone (FlashMaxSim Milestone 2 — Mon/Thu 06:30–08:30 Morning Builder)
-* **Paper**: *"The Online Max Reduction Invariant & In-SRAM Accumulation Mechanics"*
+### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
+* **Focus**: The Online Max Reduction Invariant & In-SRAM Accumulation Mechanics
 * **Workspace**: `research/2027-01-cagra-warp-search/`
-* **Publish Deadline**: **Sun Jan 31**
+* **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.

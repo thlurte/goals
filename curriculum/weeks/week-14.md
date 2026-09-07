@@ -29,7 +29,7 @@
 │ ⚙️ Sunday 19:30 – 21:00      │ [LAB] Graduate Systems & GPU Architecture Lab (H&P / Kirk & Hwu)       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📖 Mon–Fri 05:30 – 06:30     │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
-│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Benchmarking / Technical Articles)        │
 │ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
 │ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
@@ -44,11 +44,11 @@
 |:---|:---|:---|:---|:---|:---|
 | **Saturday** | Sat Dec 5 | [`Day 092`](../days/month-04/day-092-2026-12-05.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30–21:00**: Thought Leadership (Richard P. Feynman) · **21:00+**: Free / Rest|
 | **Sunday** | Sun Dec 6 | [`Day 093`](../days/month-04/day-093-2026-12-06.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (IIR Ch 3) · **19:30–21:00**: Systems Lab (Kirk & Hwu Ch 4–5) |
-| **Monday** | Mon Dec 7 | [`Day 094`](../days/month-04/day-094-2026-12-07.md) | **PMPP Ch 6**: Performance considerations: memory coalescing patterns, maximizing global memory bus utilization. | **Monthly Research: Planning & Literature Synthesis** | **secan**: Implement **coalesced GPU distance kernel**: ensure adjacent threads in a warp access consecutive memory addresses. |
+| **Monday** | Mon Dec 7 | [`Day 094`](../days/month-04/day-094-2026-12-07.md) | **PMPP Ch 6**: Performance considerations: memory coalescing patterns, maximizing global memory bus utilization. | **Hardware Profiling & Benchmark Sweeps** | **secan**: Implement **coalesced GPU distance kernel**: ensure adjacent threads in a warp access consecutive memory addresses. |
 | **Tuesday** | Tue Dec 8 | [`Day 095`](../days/month-04/day-095-2026-12-08.md) | **PMPP Ch 10**: Parallel reductions, warp shuffle primitives (`__shfl_down_sync`), eliminating shared memory bank conflicts. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: Implement **warp-level reduction**: use `__shfl_down_sync` to reduce 32 partial sums inside a warp with zero shared memory overhead. |
 | **Wednesday** | Wed Dec 9 | [`Day 096`](../days/month-04/day-096-2026-12-09.md) | **CUDA-GUIDE Warp Primitives**: `__shfl_sync`, `__shfl_xor_sync`, `__ballot_sync`, `__any_sync`, Cooperative Groups. | **DL Track (Part 2): Training Loop & Verification** | **secan**: Implement batched GPU scanner: process $B=256$ queries simultaneously. Each block processes a query; warps scan dataset chunks. |
-| **Thursday** | Thu Dec 10 | [`Day 097`](../days/month-04/day-097-2026-12-10.md) | **PMPP Ch 7**: Tiling patterns, halo cells, constant memory for read-only query parameters. | **Monthly Research: Sweeps & Data Logging** | **secan**: Implement fused Cosine similarity GPU kernel: dot product + norms in a single pass. Add inner-product kernel. |
-| **Friday** | Fri Dec 11 | [`Day 098`](../days/month-04/day-098-2026-12-11.md) | **PMPP Ch 11–12**: Parallel merge and sorting on GPU: partial bitonic sort, warp-cooperative top-$k$ selection. | **Technical Essay: Lab-Note Drafting** | **secan**: Implement **GPU top-k selection**: warp-cooperative partial bitonic sort extracting top-$k$ without sorting all $N$ distances. |
+| **Thursday** | Thu Dec 10 | [`Day 097`](../days/month-04/day-097-2026-12-10.md) | **PMPP Ch 7**: Tiling patterns, halo cells, constant memory for read-only query parameters. | **DL / Vector Retrieval Integration & Profiling** | **secan**: Implement fused Cosine similarity GPU kernel: dot product + norms in a single pass. Add inner-product kernel. |
+| **Friday** | Fri Dec 11 | [`Day 098`](../days/month-04/day-098-2026-12-11.md) | **PMPP Ch 11–12**: Parallel merge and sorting on GPU: partial bitonic sort, warp-cooperative top-$k$ selection. | **Weekly Technical Article: Drafting & Publishing** | **secan**: Implement **GPU top-k selection**: warp-cooperative partial bitonic sort extracting top-$k$ without sorting all $N$ distances. |
 
 ---
 
@@ -106,7 +106,7 @@
 
 ## 📝 Weekend Deliverables
 
-### ✍️ Technical Essay 14 (Saturday 09:00–13:00)
+### ✍️ Technical Essay 14 (Drafted Friday 06:30–08:30)
 * **Title**: *"Warp Shuffles and Parallel Reductions: Saturating GPU Memory Bandwidth in Batch Vector Scanning"*
 * **Target File**: `~/personal/goals/essays/essay_14.md`
 * **5-Part Structure**:
@@ -119,7 +119,7 @@
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
 * **Task**: 
 
-### 🔬 Monthly Research Milestone (FlashMaxSim Milestone 1 — Mon/Thu 06:30–08:30 Morning Builder)
-* **Paper**: *"The Memory Wall in Multimodal Late Interaction: Baseline GPU Kernel Profiling"*
+### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
+* **Focus**: The Memory Wall in Multimodal Late Interaction: Baseline GPU Kernel Profiling
 * **Workspace**: `research/2026-12-flashattn-vamana/`
-* **Publish Deadline**: **Sun Dec 27**
+* **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.

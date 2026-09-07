@@ -29,7 +29,7 @@
 │ ⚙️ Sunday 19:30 – 21:00      │ [LAB] Graduate Systems & GPU Architecture Lab (H&P / Kirk & Hwu)       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📖 Mon–Fri 05:30 – 06:30     │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
-│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Benchmarking / Technical Articles)        │
 │ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
 │ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
@@ -44,11 +44,11 @@
 |:---|:---|:---|:---|:---|:---|
 | **Saturday** | Sat Mar 13 | [`Day 190`](../days/month-07/day-190-2027-03-13.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30–21:00**: Thought Leadership (Master Retrospective) · **21:00+**: Free / Rest|
 | **Sunday** | Sun Mar 14 | [`Day 191`](../days/month-07/day-191-2027-03-14.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (Dist-Vector Ch 4) · **19:30–21:00**: Systems Lab (FlashMaxSim Lab 7) |
-| **Monday** | Mon Mar 15 | [`Day 192`](../days/month-07/day-192-2027-03-15.md) | API & Doxygen architecture pass. | **Monthly Research: Planning & Literature Synthesis** | Finish CLI + Doxygen documentation. |
+| **Monday** | Mon Mar 15 | [`Day 192`](../days/month-07/day-192-2027-03-15.md) | API & Doxygen architecture pass. | **Hardware Profiling & Benchmark Sweeps** | Finish CLI + Doxygen documentation. |
 | **Tuesday** | Tue Mar 16 | [`Day 193`](../days/month-07/day-193-2027-03-16.md) | `ann-benchmarks` methodology. | **DL Track (Part 1): Architecture & Tensor Shapes** | Full CPU+GPU benchmark matrix using Profiling Playbook ([`roadmap.md#part-3`](../roadmap.md#part-3-verification--tooling-matrix-the-hardware-profiling-playbook)). |
 | **Wednesday** | Wed Mar 17 | [`Day 194`](../days/month-07/day-194-2027-03-17.md) | Production DB architecture pass ([`roadmap.md#7`](../roadmap.md#7-enterprise-production-architecture-wal-crash-recovery--shadow-indexing)). | **DL Track (Part 2): Training Loop & Verification** | Five E2E examples including dense InfoNCE search + GPU batch. |
-| **Thursday** | Thu Mar 18 | [`Day 195`](../days/month-07/day-195-2027-03-18.md) | Production release README. | **Monthly Research: Sweeps & Data Logging** | **Publish Month 7 paper.** Tag `v2.0-complete`. |
-| **Friday** | Fri Mar 19 | [`Day 196`](../days/month-07/day-196-2027-03-19.md) | Portfolio review. | **Technical Essay: Lab-Note Drafting** | Portfolio: 7 papers, 28 essays, and `secan` Pareto curves. |
+| **Thursday** | Thu Mar 18 | [`Day 195`](../days/month-07/day-195-2027-03-18.md) | Production release README. | **DL / Vector Retrieval Integration & Profiling** | **Publish Month 7 paper.** Tag `v2.0-complete`. |
+| **Friday** | Fri Mar 19 | [`Day 196`](../days/month-07/day-196-2027-03-19.md) | Portfolio review. | **Weekly Technical Article: Drafting & Publishing** | Portfolio: 7 papers, 28 essays, and `secan` Pareto curves. |
 
 ---
 
@@ -85,12 +85,12 @@
 
 
 ### 🔹 Thursday, Thu Mar 18 ([`Day 195`](../days/month-07/day-195-2027-03-18.md))
-* `[ ]` **Core**: Derive Canonical Proofs 7 & 8 on whiteboard; finalize root `README.md` with complete benchmark tables; publish Month 7 research paper; git tag `v2.0-complete`.
+* `[ ]` **Core**: Derive Canonical Proofs 7 & 8 on whiteboard; finalize root `README.md` with complete benchmark tables; git tag `v2.0-complete`.
 * `⭐ Optional / Stretch`: Prepare public release announcement and publish technical blog posts summarizing key architectural discoveries.
 
 
 ### 🔹 Friday, Fri Mar 19 ([`Day 196`](../days/month-07/day-196-2027-03-19.md))
-* `[ ]` **Core**: Complete a simulated 3-hour Technical Whiteboard Defense across all 8 canonical proofs; compile professional engineering portfolio packet (7 research papers, 28 technical essays, and `secan` release).
+* `[ ]` **Core**: Complete a simulated 3-hour Technical Whiteboard Defense across all 8 canonical proofs; compile professional engineering portfolio packet (28 technical articles, benchmark suites, and `secan` release).
 * `⭐ Optional / Stretch`: Celebrate completing the 28-week vector search engine & AI systems specialization!
 
 
@@ -106,7 +106,7 @@
 
 ## 📝 Weekend Deliverables
 
-### ✍️ Technical Essay 28 (Saturday 09:00–13:00)
+### ✍️ Technical Essay 28 (Drafted Friday 06:30–08:30)
 * **Title**: *"Seven Months from First Principles: Vector Spaces, Modern SIMD/GPU Architectures, and the `v2.0` Engine"*
 * **Target File**: `~/personal/goals/essays/essay_28.md`
 * **5-Part Structure**:
@@ -119,7 +119,7 @@
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
 * **Task**: 
 
-### 🔬 Monthly Research Milestone (FlashMaxSim Milestone 4 (Landmark Paper 2 Freeze) — Mon/Thu 06:30–08:30 Morning Builder)
-* **Paper**: *"Nsight Compute Roofline Validation & Master Conference Submission"*
+### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
+* **Focus**: Nsight Compute Roofline Validation & Master Conference Submission
 * **Workspace**: `research/2027-03-gpu-serving/`
-* **Publish Deadline**: **Fri Mar 12**
+* **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.

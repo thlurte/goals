@@ -29,7 +29,7 @@
 │ ⚙️ Sunday 19:30 – 21:00      │ [LAB] Graduate Systems & GPU Architecture Lab (H&P / Kirk & Hwu)       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📖 Mon–Fri 05:30 – 06:30     │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
-│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Benchmarking / Technical Articles)        │
 │ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
 │ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
@@ -44,11 +44,11 @@
 |:---|:---|:---|:---|:---|:---|
 | **Saturday** | Sat Sep 12 | [`Day 008`](../days/month-01/day-008-2026-09-12.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30–21:00**: Thought Leadership (George Pólya) · **21:00+**: Free / Rest|
 | **Sunday** | Sun Sep 13 | [`Day 009`](../days/month-01/day-009-2026-09-13.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (DDIA Ch 2) · **19:30–21:00**: Systems Lab (H&P Ch 2) |
-| **Monday** | Mon Sep 14 | [`Day 010`](../days/month-01/day-010-2026-09-14.md) | **AGNER Ch 12**: SIMD instructions, 256-bit YMM registers, data types, intrinsics syntax. | **Monthly Research: Planning & Literature Synthesis** | **secan**: Enable FTZ/DAZ flags. Implement `l2_squared_avx2()` in `src/search/distance_avx2.cpp`. Single accumulator baseline. |
+| **Monday** | Mon Sep 14 | [`Day 010`](../days/month-01/day-010-2026-09-14.md) | **AGNER Ch 12**: SIMD instructions, 256-bit YMM registers, data types, intrinsics syntax. | **Hardware Profiling & Benchmark Sweeps** | **secan**: Enable FTZ/DAZ flags. Implement `l2_squared_avx2()` in `src/search/distance_avx2.cpp`. Single accumulator baseline. |
 | **Tuesday** | Tue Sep 15 | [`Day 011`](../days/month-01/day-011-2026-09-15.md) | **CSAPP §5.8–5.9**: Loop unrolling, breaking dependency chains with multiple independent accumulator registers. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: Implement 4-way unrolled `l2_squared_avx2` with 4 parallel `__m256` accumulators. Measure speedup over 1-acc. |
 | **Wednesday** | Wed Sep 16 | [`Day 012`](../days/month-01/day-012-2026-09-16.md) | **AGNER-INST & AGNER Ch 11**: VFMADD latency/throughput port mapping on modern x86 microarchitectures. | **DL Track (Part 2): Training Loop & Verification** | **secan**: Implement `cosine_distance_avx2()`: compute dot product, norm $A$, and norm $B$ simultaneously in 1 pass. |
-| **Thursday** | Thu Sep 17 | [`Day 013`](../days/month-01/day-013-2026-09-17.md) | **AGNER Ch 13.1–13.3**: Alignment, cache line splits. | **Monthly Research: Sweeps & Data Logging** | **secan**: `ip_avx2()` + fused cosine (dot + norms). Same unrolling as L2. *(DL: Sat Sep 13 GQA.)* |
-| **Friday** | Fri Sep 18 | [`Day 014`](../days/month-01/day-014-2026-09-18.md) | **PIKUS Ch 3**: Instruction-level parallelism, register pressure, compiler vectorization limits. | **Technical Essay: Lab-Note Drafting** | **secan**: Add AVX-512 backend (`_mm512_*`) behind `#ifdef __AVX512F__`. Benchmark scalar vs AVX2 vs AVX-512. |
+| **Thursday** | Thu Sep 17 | [`Day 013`](../days/month-01/day-013-2026-09-17.md) | **AGNER Ch 13.1–13.3**: Alignment, cache line splits. | **DL / Vector Retrieval Integration & Profiling** | **secan**: `ip_avx2()` + fused cosine (dot + norms). Same unrolling as L2. *(DL: Sat Sep 13 GQA.)* |
+| **Friday** | Fri Sep 18 | [`Day 014`](../days/month-01/day-014-2026-09-18.md) | **PIKUS Ch 3**: Instruction-level parallelism, register pressure, compiler vectorization limits. | **Weekly Technical Article: Drafting & Publishing** | **secan**: Add AVX-512 backend (`_mm512_*`) behind `#ifdef __AVX512F__`. Benchmark scalar vs AVX2 vs AVX-512. |
 
 ---
 
@@ -107,7 +107,7 @@
 
 ## 📝 Weekend Deliverables
 
-### ✍️ Technical Essay 02 (Saturday 09:00–13:00)
+### ✍️ Technical Essay 02 (Drafted Friday 06:30–08:30)
 * **Title**: *"Breaking Dependency Chains: Multi-Register Accumulator Unrolling and Port Saturation in AVX2/AVX-512"*
 * **Target File**: `~/personal/goals/essays/essay_02.md`
 * **5-Part Structure**:
@@ -120,7 +120,7 @@
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
 * **Task**: **🧠 DL weekend**: MHA + GQA; Pre-LN vs Post-LN.
 
-### 🔬 Monthly Research Milestone (GAPQ Milestone 1 — Mon/Thu 06:30–08:30 Morning Builder)
-* **Paper**: *"Microarchitectural Limits of Distance Kernels & Empirical Embedding Cone Anisotropy"*
-* **Workspace**: `research/2026-09-measurement-protocol/`
-* **Publish Deadline**: **Sun Sep 27**
+### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
+* **Focus**: Multi-Accumulator Unrolling & Execution Port Saturation in AVX2/AVX-512
+* **Workspace**: `research/2026-09-measurement-protocol/` & `secan/benchmarks/`
+* **Artifact Target**: Port saturation data (`week2_accumulators.json`) feeding into Friday's Technical Article 02.

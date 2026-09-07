@@ -29,7 +29,7 @@
 │ ⚙️ Sunday 19:30 – 21:00      │ [LAB] Graduate Systems & GPU Architecture Lab (H&P / Kirk & Hwu)       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📖 Mon–Fri 05:30 – 06:30     │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
-│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Benchmarking / Technical Articles)        │
 │ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
 │ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
@@ -44,11 +44,11 @@
 |:---|:---|:---|:---|:---|:---|
 | **Saturday** | Sat Nov 7 | [`Day 064`](../days/month-03/day-064-2026-11-07.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30–21:00**: Thought Leadership (Claude E. Shannon) · **21:00+**: Free / Rest|
 | **Sunday** | Sun Nov 8 | [`Day 065`](../days/month-03/day-065-2026-11-08.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (DDIA Ch 9) · **19:30–21:00**: Systems Lab (H&P Ch 5) |
-| **Monday** | Mon Nov 9 | [`Day 066`](../days/month-03/day-066-2026-11-09.md) | [MUVERA](https://arxiv.org/abs/2405.19504) §1–3: FDE construction, SimHash buckets, **asymmetric** query vs doc encode. | **Monthly Research: Planning & Literature Synthesis** | **secan (required)**: `fde_encode` — hash tokens into $B$ buckets, per-bucket aggregate, $R$ repetitions. Query FDE $\neq$ doc FDE. |
+| **Monday** | Mon Nov 9 | [`Day 066`](../days/month-03/day-066-2026-11-09.md) | [MUVERA](https://arxiv.org/abs/2405.19504) §1–3: FDE construction, SimHash buckets, **asymmetric** query vs doc encode. | **Hardware Profiling & Benchmark Sweeps** | **secan (required)**: `fde_encode` — hash tokens into $B$ buckets, per-bucket aggregate, $R$ repetitions. Query FDE $\neq$ doc FDE. |
 | **Tuesday** | Tue Nov 10 | [`Day 067`](../days/month-03/day-067-2026-11-10.md) | MUVERA §4–5: FDE MIPS + MaxSim re-rank; candidate count vs heuristics. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan (required)**: Index doc FDEs with **IP** HNSW or IVF (Week 4/8). Retrieve then **MaxSim re-rank**. Plot Recall vs candidates vs Week 9 centroid prune. |
 | **Wednesday** | Wed Nov 11 | [`Day 068`](../days/month-03/day-068-2026-11-11.md) | PLAID §3–5: centroid → quantized MaxSim → FP32. | **DL Track (Part 2): Training Loop & Verification** | **secan (required)**: **PLAID 3-stage** (2/4-bit residual MaxSim). Same slice: PLAID vs MUVERA candidate efficiency. Poisson load gen = stretch. |
-| **Thursday** | Thu Nov 12 | [`Day 069`](../days/month-03/day-069-2026-11-12.md) | RaBitQ: random orthogonal + error correction. **PIKUS Ch 8** concurrency skim. | **Monthly Research: Sweeps & Data Logging** | **secan**: QR rotation helper + **RaBitQ**. Recall vs plain BQ (Week 7). |
-| **Friday** | Fri Nov 13 | [`Day 070`](../days/month-03/day-070-2026-11-13.md) | [TurboQuant](https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/): PolarQuant + QJL; 1@k vs PQ/RaBitQ. | **Technical Essay: Lab-Note Drafting** | **secan (required)**: **TurboQuant/PolarQuant or QJL 1@k** vs RaBitQ vs PQ on **GloVe-200 or 768-D**. Plot Recall@1. |
+| **Thursday** | Thu Nov 12 | [`Day 069`](../days/month-03/day-069-2026-11-12.md) | RaBitQ: random orthogonal + error correction. **PIKUS Ch 8** concurrency skim. | **DL / Vector Retrieval Integration & Profiling** | **secan**: QR rotation helper + **RaBitQ**. Recall vs plain BQ (Week 7). |
+| **Friday** | Fri Nov 13 | [`Day 070`](../days/month-03/day-070-2026-11-13.md) | [TurboQuant](https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/): PolarQuant + QJL; 1@k vs PQ/RaBitQ. | **Weekly Technical Article: Drafting & Publishing** | **secan (required)**: **TurboQuant/PolarQuant or QJL 1@k** vs RaBitQ vs PQ on **GloVe-200 or 768-D**. Plot Recall@1. |
 
 ---
 
@@ -107,7 +107,7 @@
 
 ## 📝 Weekend Deliverables
 
-### ✍️ Technical Essay 10 (Saturday 09:00–13:00)
+### ✍️ Technical Essay 10 (Drafted Friday 06:30–08:30)
 * **Title**: *"Orthogonal Projections and Fixed-Dimensional Encodings: Reducing ColBERT MaxSim to MIPS via MUVERA"*
 * **Target File**: `~/personal/goals/essays/essay_10.md`
 * **5-Part Structure**:
@@ -120,7 +120,7 @@
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
 * **Task**: 
 
-### 🔬 Monthly Research Milestone (GAPQ Milestone 3 (Landmark Paper 1 Freeze) — Mon/Thu 06:30–08:30 Morning Builder)
-* **Paper**: *"Sub-2-Bit In-Register SIMD Execution & Manuscript Submission Freeze"*
+### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
+* **Focus**: Sub-2-Bit In-Register SIMD Execution & Manuscript Submission Freeze
 * **Workspace**: `research/2026-11-rabitq-lsm/`
-* **Publish Deadline**: **Sun Nov 29**
+* **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.

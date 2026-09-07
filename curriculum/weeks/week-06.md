@@ -29,7 +29,7 @@
 │ ⚙️ Sunday 19:30 – 21:00      │ [LAB] Graduate Systems & GPU Architecture Lab (H&P / Kirk & Hwu)       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📖 Mon–Fri 05:30 – 06:30     │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
-│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Benchmarking / Technical Articles)        │
 │ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
 │ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
@@ -44,11 +44,11 @@
 |:---|:---|:---|:---|:---|:---|
 | **Saturday** | Sat Oct 10 | [`Day 036`](../days/month-02/day-036-2026-10-10.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30–21:00**: Thought Leadership (Richard W. Hamming) · **21:00+**: Free / Rest|
 | **Sunday** | Sun Oct 11 | [`Day 037`](../days/month-02/day-037-2026-10-11.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (DDIA Ch 5) · **19:30–21:00**: Systems Lab (H&P Ch 3) |
-| **Monday** | Mon Oct 12 | [`Day 038`](../days/month-02/day-038-2026-10-12.md) | Research paper: *"Product Quantization for Nearest Neighbor Search"* (Jégou et al. 2011) §1–4. | **Monthly Research: Planning & Literature Synthesis** | **secan**: Implement $k$-means clustering in C++ for a subspace: `train_kmeans(data, k=256, dim_sub)` using $k$-means++. |
+| **Monday** | Mon Oct 12 | [`Day 038`](../days/month-02/day-038-2026-10-12.md) | Research paper: *"Product Quantization for Nearest Neighbor Search"* (Jégou et al. 2011) §1–4. | **Hardware Profiling & Benchmark Sweeps** | **secan**: Implement $k$-means clustering in C++ for a subspace: `train_kmeans(data, k=256, dim_sub)` using $k$-means++. |
 | **Tuesday** | Tue Oct 13 | [`Day 039`](../days/month-02/day-039-2026-10-13.md) | Faiss wiki on Product Quantizer: subspace splitting, codebook memory layouts. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: Implement `ProductQuantizer`: split $D$ dimensions into $M$ subspaces. Train $M$ codebooks. Encode vectors as $M$-byte codes. |
 | **Wednesday** | Wed Oct 14 | [`Day 040`](../days/month-02/day-040-2026-10-14.md) | **AGNER Ch 7.10 & Ch 9**: Array structures for cache-friendly table lookups, stride optimization. | **DL Track (Part 2): Training Loop & Verification** | **secan**: Implement Asymmetric Distance Computation (ADC): precompute query-to-centroid table `float LUT[M][256]`. Distance = sum of $M$ lookups. |
-| **Thursday** | Thu Oct 15 | [`Day 041`](../days/month-02/day-041-2026-10-15.md) | **PIKUS Ch 10**: Compiler optimizations, `__restrict__`, loop vectorization, Link-Time Optimization (LTO). | **Monthly Research: Sweeps & Data Logging** | **secan**: **Asymmetric BQ**: FP32 query vs 1-bit db (Hamming / IP estimator). Keep query in FP32. |
-| **Friday** | Fri Oct 16 | [`Day 042`](../days/month-02/day-042-2026-10-16.md) | **PIKUS Ch 11**: Undefined behavior, memory aliasing. | **Technical Essay: Lab-Note Drafting** | **secan (required)**: Wire **IVF + PQ ADC** sketch (`IVFPQIndex` stub): coarse IVF then PQ inside lists. Recall vs IVFFlat on SIFT subset. **Compose, do not stop at PQ-only.** *(DL InfoNCE: Sat Oct 11.)* |
+| **Thursday** | Thu Oct 15 | [`Day 041`](../days/month-02/day-041-2026-10-15.md) | **PIKUS Ch 10**: Compiler optimizations, `__restrict__`, loop vectorization, Link-Time Optimization (LTO). | **DL / Vector Retrieval Integration & Profiling** | **secan**: **Asymmetric BQ**: FP32 query vs 1-bit db (Hamming / IP estimator). Keep query in FP32. |
+| **Friday** | Fri Oct 16 | [`Day 042`](../days/month-02/day-042-2026-10-16.md) | **PIKUS Ch 11**: Undefined behavior, memory aliasing. | **Weekly Technical Article: Drafting & Publishing** | **secan (required)**: Wire **IVF + PQ ADC** sketch (`IVFPQIndex` stub): coarse IVF then PQ inside lists. Recall vs IVFFlat on SIFT subset. **Compose, do not stop at PQ-only.** *(DL InfoNCE: Sat Oct 11.)* |
 
 ---
 
@@ -107,7 +107,7 @@
 
 ## 📝 Weekend Deliverables
 
-### ✍️ Technical Essay 06 (Saturday 09:00–13:00)
+### ✍️ Technical Essay 06 (Drafted Friday 06:30–08:30)
 * **Title**: *"Constrained Optimization and Subspace Codebooks: Lagrange Multipliers in Product Quantization"*
 * **Target File**: `~/personal/goals/essays/essay_06.md`
 * **5-Part Structure**:
@@ -120,7 +120,7 @@
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
 * **Task**: **🧠 DL weekend**: BERT + InfoNCE + **in-batch negatives**; export 768-D `.fvecs`. **Also**: implement `AdamW` optimizer from scratch ($m_t, v_t$ moment estimates, bias correction, **weight decay decoupling** from L2 reg). Train BERT with your AdamW; verify loss curve matches `torch.optim.AdamW`. **Hard negative mining**: retrieve BM25 top-100 per query, sample hard negatives from rank 10–100 for InfoNCE training.
 
-### 🔬 Monthly Research Milestone (GAPQ Milestone 2 — Mon/Thu 06:30–08:30 Morning Builder)
-* **Paper**: *"Geometry-Aware Anisotropic Polar Quantization: The Adaptive Ellipsoidal Lattice & Unbiased QJL Proof"*
+### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
+* **Focus**: Geometry-Aware Anisotropic Polar Quantization: The Adaptive Ellipsoidal Lattice & Unbiased QJL Proof
 * **Workspace**: `research/2026-10-anisotropic-quantization/`
-* **Publish Deadline**: **Sun Oct 25**
+* **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.

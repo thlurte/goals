@@ -29,7 +29,7 @@
 │ ⚙️ Sunday 19:30 – 21:00      │ [LAB] Graduate Systems & GPU Architecture Lab (H&P / Kirk & Hwu)       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📖 Mon–Fri 05:30 – 06:30     │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
-│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Benchmarking / Technical Articles)        │
 │ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
 │ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
@@ -44,11 +44,11 @@
 |:---|:---|:---|:---|:---|:---|
 | **Saturday** | Sat Dec 19 | [`Day 106`](../days/month-04/day-106-2026-12-19.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30–21:00**: Thought Leadership (Richard P. Feynman) · **21:00+**: Free / Rest|
 | **Sunday** | Sun Dec 20 | [`Day 107`](../days/month-04/day-107-2026-12-20.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (IIR Ch 5) · **19:30–21:00**: Systems Lab (Kirk & Hwu Ch 7) |
-| **Monday** | Mon Dec 21 | [`Day 108`](../days/month-04/day-108-2026-12-21.md) | Faiss GPU 2019 §1–3: billion-scale GPU similarity search. | **Monthly Research: Planning & Literature Synthesis** | **secan**: GPU IVF memory layout: coarse centroids; cell vectors + offset table. |
+| **Monday** | Mon Dec 21 | [`Day 108`](../days/month-04/day-108-2026-12-21.md) | Faiss GPU 2019 §1–3: billion-scale GPU similarity search. | **Hardware Profiling & Benchmark Sweeps** | **secan**: GPU IVF memory layout: coarse centroids; cell vectors + offset table. |
 | **Tuesday** | Tue Dec 22 | [`Day 109`](../days/month-04/day-109-2026-12-22.md) | Faiss GPU §4–5: GPU $k$-selection, warp-cooperative list scanning. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: GPU coarse quantizer + top-`nprobe` cell select; warp-cooperative cell scan. |
 | **Wednesday** | Wed Dec 23 | [`Day 110`](../days/month-04/day-110-2026-12-23.md) | **CUDA-GUIDE Streams & Events**. | **DL Track (Part 2): Training Loop & Verification** | **secan**: CUDA stream pipelining for IVF batches; quick SQ8-in-cell stretch if time. Tag `v1.1-gpu-ivf`. |
-| **Thursday** | Thu Dec 24 | [`Day 111`](../days/month-04/day-111-2026-12-24.md) | DiskANN: **Vamana graph construction** (α-prune) + `io_uring` fetch. | **Monthly Research: Sweeps & Data Logging** | **secan (required)**: Implement **Vamana prune** (build graph, not only SSD fetch); compressed vectors in RAM; FP32 via `io_uring`. Recall vs in-RAM. |
-| **Friday** | Fri Dec 25 | [`Day 112`](../days/month-04/day-112-2026-12-25.md) | Ding & Suel WAND; **RRF** (Cormack et al.). | **Technical Essay: Lab-Note Drafting** | **secan (required)**: BM25 + Block-Max WAND; fuse via **RRF** *and* linear $\alpha$. Query-time $\alpha$ / k sweep. SPLADE = stretch. Tag `v1.2-vs-spine-complete`. |
+| **Thursday** | Thu Dec 24 | [`Day 111`](../days/month-04/day-111-2026-12-24.md) | DiskANN: **Vamana graph construction** (α-prune) + `io_uring` fetch. | **DL / Vector Retrieval Integration & Profiling** | **secan (required)**: Implement **Vamana prune** (build graph, not only SSD fetch); compressed vectors in RAM; FP32 via `io_uring`. Recall vs in-RAM. |
+| **Friday** | Fri Dec 25 | [`Day 112`](../days/month-04/day-112-2026-12-25.md) | Ding & Suel WAND; **RRF** (Cormack et al.). | **Weekly Technical Article: Drafting & Publishing** | **secan (required)**: BM25 + Block-Max WAND; fuse via **RRF** *and* linear $\alpha$. Query-time $\alpha$ / k sweep. SPLADE = stretch. Tag `v1.2-vs-spine-complete`. |
 
 ---
 
@@ -106,7 +106,7 @@
 
 ## 📝 Weekend Deliverables
 
-### ✍️ Technical Essay 16 (Saturday 09:00–13:00)
+### ✍️ Technical Essay 16 (Drafted Friday 06:30–08:30)
 * **Title**: *"Closing the Vector Search Spine: GPU IVF Streaming, Vamana Graph Pruning, and Out-of-Core `io_uring`"*
 * **Target File**: `~/personal/goals/essays/essay_16.md`
 * **5-Part Structure**:
@@ -119,7 +119,7 @@
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
 * **Task**: 
 
-### 🔬 Monthly Research Milestone (FlashMaxSim Milestone 1 — Mon/Thu 06:30–08:30 Morning Builder)
-* **Paper**: *"The Memory Wall in Multimodal Late Interaction: Baseline GPU Kernel Profiling"*
+### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
+* **Focus**: The Memory Wall in Multimodal Late Interaction: Baseline GPU Kernel Profiling
 * **Workspace**: `research/2026-12-flashattn-vamana/`
-* **Publish Deadline**: **Sun Dec 27**
+* **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.

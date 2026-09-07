@@ -29,7 +29,7 @@
 │ ⚙️ Sunday 19:30 – 21:00      │ [LAB] Graduate Systems & GPU Architecture Lab (H&P / Kirk & Hwu)       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📖 Mon–Fri 05:30 – 06:30     │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
-│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Benchmarking / Technical Articles)        │
 │ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
 │ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
@@ -44,11 +44,11 @@
 |:---|:---|:---|:---|:---|:---|
 | **Saturday** | Sat Dec 12 | [`Day 099`](../days/month-04/day-099-2026-12-12.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30–21:00**: Thought Leadership (Richard P. Feynman) · **21:00+**: Free / Rest|
 | **Sunday** | Sun Dec 13 | [`Day 100`](../days/month-04/day-100-2026-12-13.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (IIR Ch 4) · **19:30–21:00**: Systems Lab (Kirk & Hwu Ch 6) |
-| **Monday** | Mon Dec 14 | [`Day 101`](../days/month-04/day-101-2026-12-14.md) | FlashAttention paper §1–3: HBM vs SRAM cost model; why materializing $S$ is the bottleneck. | **Monthly Research: Planning & Literature Synthesis** | **CUDA**: FA-1 grid ($B \times H$); shared mem tiles. *(Online softmax Python: Sat Dec 13.)* |
+| **Monday** | Mon Dec 14 | [`Day 101`](../days/month-04/day-101-2026-12-14.md) | FlashAttention paper §1–3: HBM vs SRAM cost model; why materializing $S$ is the bottleneck. | **Hardware Profiling & Benchmark Sweeps** | **CUDA**: FA-1 grid ($B \times H$); shared mem tiles. *(Online softmax Python: Sat Dec 13.)* |
 | **Tuesday** | Tue Dec 15 | [`Day 102`](../days/month-04/day-102-2026-12-15.md) | **PMPP Ch 16 / NVIDIA Docs**: Tensor Core / WMMA overview (context for GEMM tiles). | **DL Track (Part 1): Architecture & Tensor Shapes** | **CUDA**: FlashAttention kernel scaffold: grid ($B \times H$), shared mem for $Q_{block}, K_{block}, V_{block}, O_{block}$. |
 | **Wednesday** | Wed Dec 16 | [`Day 103`](../days/month-04/day-103-2026-12-16.md) | CUDA Shared Memory banking: avoiding bank conflicts when loading $Q, K^T$ tiles. | **DL Track (Part 2): Training Loop & Verification** | **CUDA**: Block GEMM $S_{ij} = Q_i K_j^T / \sqrt{d}$ in shared memory. Check tiles vs PyTorch. |
-| **Thursday** | Thu Dec 17 | [`Day 104`](../days/month-04/day-104-2026-12-17.md) | **CUDA-GUIDE Warp Primitives**: `__shfl_sync` for warp-level row max and row sum. | **Monthly Research: Sweeps & Data Logging** | **CUDA**: Online Softmax update in registers: block max $\tilde{m}$, $m_{new}$, update $\ell$, rescale $O$. |
-| **Friday** | Fri Dec 18 | [`Day 105`](../days/month-04/day-105-2026-12-18.md) | Profile with `ncu` if kernel runs; else debug correctness first. | **Technical Essay: Lab-Note Drafting** | **CUDA**: Expose FA-1 via `torch.utils.cpp_extension`. Bench vs SDPA on small shapes. FA-2 → Week 25. |
+| **Thursday** | Thu Dec 17 | [`Day 104`](../days/month-04/day-104-2026-12-17.md) | **CUDA-GUIDE Warp Primitives**: `__shfl_sync` for warp-level row max and row sum. | **DL / Vector Retrieval Integration & Profiling** | **CUDA**: Online Softmax update in registers: block max $\tilde{m}$, $m_{new}$, update $\ell$, rescale $O$. |
+| **Friday** | Fri Dec 18 | [`Day 105`](../days/month-04/day-105-2026-12-18.md) | Profile with `ncu` if kernel runs; else debug correctness first. | **Weekly Technical Article: Drafting & Publishing** | **CUDA**: Expose FA-1 via `torch.utils.cpp_extension`. Bench vs SDPA on small shapes. FA-2 → Week 25. |
 
 ---
 
@@ -106,7 +106,7 @@
 
 ## 📝 Weekend Deliverables
 
-### ✍️ Technical Essay 15 (Saturday 09:00–13:00)
+### ✍️ Technical Essay 15 (Drafted Friday 06:30–08:30)
 * **Title**: *"IO-Aware Tiling and Online Softmax: Constructing a FlashAttention-1 CUDA Kernel from First Principles"*
 * **Target File**: `~/personal/goals/essays/essay_15.md`
 * **5-Part Structure**:
@@ -119,7 +119,7 @@
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
 * **Task**: **🧠 DL weekend**: Online softmax reference vs `torch.softmax`.
 
-### 🔬 Monthly Research Milestone (FlashMaxSim Milestone 1 — Mon/Thu 06:30–08:30 Morning Builder)
-* **Paper**: *"The Memory Wall in Multimodal Late Interaction: Baseline GPU Kernel Profiling"*
+### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
+* **Focus**: The Memory Wall in Multimodal Late Interaction: Baseline GPU Kernel Profiling
 * **Workspace**: `research/2026-12-flashattn-vamana/`
-* **Publish Deadline**: **Sun Dec 27**
+* **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.

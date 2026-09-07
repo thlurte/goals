@@ -29,7 +29,7 @@
 │ ⚙️ Sunday 19:30 – 21:00      │ [LAB] Graduate Systems & GPU Architecture Lab (H&P / Kirk & Hwu)       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📖 Mon–Fri 05:30 – 06:30     │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
-│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Benchmarking / Technical Articles)        │
 │ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
 │ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
@@ -44,11 +44,11 @@
 |:---|:---|:---|:---|:---|:---|
 | **Saturday** | Sat Nov 28 | [`Day 085`](../days/month-04/day-085-2026-11-28.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30–21:00**: Thought Leadership (Richard P. Feynman) · **21:00+**: Free / Rest|
 | **Sunday** | Sun Nov 29 | [`Day 086`](../days/month-04/day-086-2026-11-29.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (IIR Ch 1–2) · **19:30–21:00**: Systems Lab (Kirk & Hwu Ch 1–3) |
-| **Monday** | Mon Nov 30 | [`Day 087`](../days/month-04/day-087-2026-11-30.md) | **PMPP Ch 1–2**: Heterogeneous computing, SIMT execution model, latency hiding via massive hardware multithreading. | **Monthly Research: Planning & Literature Synthesis** | **secan**: Add CUDA to CMakeLists.txt (`enable_language(CUDA)`). Create `src/gpu/`. Configure `compute-sanitizer` test script. |
+| **Monday** | Mon Nov 30 | [`Day 087`](../days/month-04/day-087-2026-11-30.md) | **PMPP Ch 1–2**: Heterogeneous computing, SIMT execution model, latency hiding via massive hardware multithreading. | **Hardware Profiling & Benchmark Sweeps** | **secan**: Add CUDA to CMakeLists.txt (`enable_language(CUDA)`). Create `src/gpu/`. Configure `compute-sanitizer` test script. |
 | **Tuesday** | Tue Dec 1 | [`Day 088`](../days/month-04/day-088-2026-12-01.md) | **PMPP Ch 3 + 🔗 GPU NUMERIC FORMATS**: Grid/Block/Thread hierarchy. Computing linear indices. **Also**: BFloat16 vs Float16 vs TF32 bit layouts; why BF16 has same exponent range as FP32 but only 7 mantissa bits; mixed-precision training: loss scaling, master weights in FP32; when FP16 gradients underflow to zero. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: Implement RAII `GpuBuffer<T>` class for device memory allocation (`cudaMalloc`, `cudaFree`, `cudaMemcpy`). |
 | **Wednesday** | Wed Dec 2 | [`Day 089`](../days/month-04/day-089-2026-12-02.md) | **PMPP Ch 4**: Compute Architecture: Streaming Multiprocessors (SMs), warps (32 threads), warp divergence, occupancy. | **DL Track (Part 2): Training Loop & Verification** | **secan**: Implement naive GPU L2 distance kernel: 1 thread per vector pair. Benchmark against CPU AVX2 on single query. |
-| **Thursday** | Thu Dec 3 | [`Day 090`](../days/month-04/day-090-2026-12-03.md) | **CUDA-GUIDE Memory Hierarchy**: Global memory (HBM/GDDR), Shared memory (SRAM), Registers, Constant memory. | **Monthly Research: Sweeps & Data Logging** | **secan**: Implement dataset upload: store SIFT1M in GPU global memory. Implement batch brute-force scan kernel (1 block per query). |
-| **Friday** | Fri Dec 4 | [`Day 091`](../days/month-04/day-091-2026-12-04.md) | **PMPP Ch 5**: Memory architecture, shared memory tiling, bank conflicts, memory coalescing principles. | **Technical Essay: Lab-Note Drafting** | **secan**: Implement **shared memory tiled** L2 kernel: load query and dataset tiles into shared memory. Benchmark tiled vs naive. |
+| **Thursday** | Thu Dec 3 | [`Day 090`](../days/month-04/day-090-2026-12-03.md) | **CUDA-GUIDE Memory Hierarchy**: Global memory (HBM/GDDR), Shared memory (SRAM), Registers, Constant memory. | **DL / Vector Retrieval Integration & Profiling** | **secan**: Implement dataset upload: store SIFT1M in GPU global memory. Implement batch brute-force scan kernel (1 block per query). |
+| **Friday** | Fri Dec 4 | [`Day 091`](../days/month-04/day-091-2026-12-04.md) | **PMPP Ch 5**: Memory architecture, shared memory tiling, bank conflicts, memory coalescing principles. | **Weekly Technical Article: Drafting & Publishing** | **secan**: Implement **shared memory tiled** L2 kernel: load query and dataset tiles into shared memory. Benchmark tiled vs naive. |
 
 ---
 
@@ -107,7 +107,7 @@
 
 ## 📝 Weekend Deliverables
 
-### ✍️ Technical Essay 13 (Saturday 09:00–13:00)
+### ✍️ Technical Essay 13 (Drafted Friday 06:30–08:30)
 * **Title**: *"The SIMT Execution Model: Why Naive GPU Distance Kernels Lose to CPU AVX2"*
 * **Target File**: `~/personal/goals/essays/essay_13.md`
 * **5-Part Structure**:
@@ -120,7 +120,7 @@
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
 * **Task**: 
 
-### 🔬 Monthly Research Milestone (FlashMaxSim Milestone 1 — Mon/Thu 06:30–08:30 Morning Builder)
-* **Paper**: *"The Memory Wall in Multimodal Late Interaction: Baseline GPU Kernel Profiling"*
+### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
+* **Focus**: The Memory Wall in Multimodal Late Interaction: Baseline GPU Kernel Profiling
 * **Workspace**: `research/2026-12-flashattn-vamana/`
-* **Publish Deadline**: **Sun Dec 27**
+* **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.

@@ -29,7 +29,7 @@
 │ ⚙️ Sunday 19:30 – 21:00      │ [LAB] Graduate Systems & GPU Architecture Lab (H&P / Kirk & Hwu)       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📖 Mon–Fri 05:30 – 06:30     │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
-│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Benchmarking / Technical Articles)        │
 │ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
 │ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
@@ -44,11 +44,11 @@
 |:---|:---|:---|:---|:---|:---|
 | **Saturday** | Sat Feb 13 | [`Day 162`](../days/month-06/day-162-2027-02-13.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30–21:00**: Thought Leadership (Leslie Lamport) · **21:00+**: Free / Rest|
 | **Sunday** | Sun Feb 14 | [`Day 163`](../days/month-06/day-163-2027-02-14.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (IIR Ch 18) · **19:30–21:00**: Systems Lab (FlashMaxSim Lab 3) |
-| **Monday** | Mon Feb 15 | [`Day 164`](../days/month-06/day-164-2027-02-15.md) | **PIKUS Ch 12** retrospective. | **Monthly Research: Planning & Literature Synthesis** | **secan**: CLI scaffold `secan build/search/bench` (complete Week 28). |
+| **Monday** | Mon Feb 15 | [`Day 164`](../days/month-06/day-164-2027-02-15.md) | **PIKUS Ch 12** retrospective. | **Hardware Profiling & Benchmark Sweeps** | **secan**: CLI scaffold `secan build/search/bench` (complete Week 28). |
 | **Tuesday** | Tue Feb 16 | [`Day 165`](../days/month-06/day-165-2027-02-16.md) | Occupancy calculator / `__launch_bounds__`. | **DL Track (Part 1): Architecture & Tensor Shapes** | **CUDA**: Occupancy tune on IVF + graph kernels. |
 | **Wednesday** | Wed Feb 17 | [`Day 166`](../days/month-06/day-166-2027-02-17.md) | CUB/Thrust fusion notes. | **DL Track (Part 2): Training Loop & Verification** | **CUDA**: Fused distance+topk kernel (was former Week 22 GPU polish). |
-| **Thursday** | Thu Feb 18 | [`Day 167`](../days/month-06/day-167-2027-02-18.md) | `-Wall -Wextra -Wpedantic`. | **Monthly Research: Sweeps & Data Logging** | **secan**: Warning cleanup; examples/ stubs. |
-| **Friday** | Fri Feb 19 | [`Day 168`](../days/month-06/day-168-2027-02-19.md) | Month 6 paper freeze checklist. | **Technical Essay: Lab-Note Drafting** | **secan/CUDA**: Occupancy/`ncu` leftover polish. *(Naive KV re-bench: Saturday DL if needed.)* |
+| **Thursday** | Thu Feb 18 | [`Day 167`](../days/month-06/day-167-2027-02-18.md) | `-Wall -Wextra -Wpedantic`. | **DL / Vector Retrieval Integration & Profiling** | **secan**: Warning cleanup; examples/ stubs. |
+| **Friday** | Fri Feb 19 | [`Day 168`](../days/month-06/day-168-2027-02-19.md) | Month 6 paper freeze checklist. | **Weekly Technical Article: Drafting & Publishing** | **secan/CUDA**: Occupancy/`ncu` leftover polish. *(Naive KV re-bench: Saturday DL if needed.)* |
 
 ---
 
@@ -106,7 +106,7 @@
 
 ## 📝 Weekend Deliverables
 
-### ✍️ Technical Essay 24 (Saturday 09:00–13:00)
+### ✍️ Technical Essay 24 (Drafted Friday 06:30–08:30)
 * **Title**: *"Portable Vector Intrinsics and Production Graph Systems: Closing Block II Systems Hardening"*
 * **Target File**: `~/personal/goals/essays/essay_24.md`
 * **5-Part Structure**:
@@ -119,7 +119,7 @@
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
 * **Task**: 
 
-### 🔬 Monthly Research Milestone (FlashMaxSim Milestone 3 — Mon/Thu 06:30–08:30 Morning Builder)
-* **Paper**: *"Bare-Metal CUTLASS Implementation with Hopper/Blackwell TMA & Warp Specialization"*
+### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
+* **Focus**: Bare-Metal CUTLASS Implementation with Hopper/Blackwell TMA & Warp Specialization
 * **Workspace**: `research/2027-02-predicate-aware-graphs/`
-* **Publish Deadline**: **Sun Feb 28**
+* **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.

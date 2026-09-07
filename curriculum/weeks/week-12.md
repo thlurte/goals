@@ -29,7 +29,7 @@
 │ ⚙️ Sunday 19:30 – 21:00      │ [LAB] Graduate Systems & GPU Architecture Lab (H&P / Kirk & Hwu)       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📖 Mon–Fri 05:30 – 06:30     │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
-│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Benchmarking / Technical Articles)        │
 │ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
 │ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
@@ -44,11 +44,11 @@
 |:---|:---|:---|:---|:---|:---|
 | **Saturday** | Sat Nov 21 | [`Day 078`](../days/month-03/day-078-2026-11-21.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30–21:00**: Thought Leadership (Butler W. Lampson) · **21:00+**: Free / Rest|
 | **Sunday** | Sun Nov 22 | [`Day 079`](../days/month-03/day-079-2026-11-22.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (DDIA Ch 11–12) · **19:30–21:00**: Systems Lab (Pikus Ch 10–12) |
-| **Monday** | Mon Nov 23 | [`Day 080`](../days/month-03/day-080-2026-11-23.md) | Query-side PCA / OPQ literature. | **Monthly Research: Planning & Literature Synthesis** | **secan**: **Whitening + query-side PCA**. Hubness $S_{N_k}$ before/after. |
+| **Monday** | Mon Nov 23 | [`Day 080`](../days/month-03/day-080-2026-11-23.md) | Query-side PCA / OPQ literature. | **Hardware Profiling & Benchmark Sweeps** | **secan**: **Whitening + query-side PCA**. Hubness $S_{N_k}$ before/after. |
 | **Tuesday** | Tue Nov 24 | [`Day 081`](../days/month-03/day-081-2026-11-24.md) | **PIKUS Ch 6**: RW locks. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: `nanobind` + CLI: expose `HNSWIndex`, **`IVFPQIndex`**, **`HNSWSQIndex`**, `LSMIndex`. |
 | **Wednesday** | Wed Nov 25 | [`Day 082`](../days/month-03/day-082-2026-11-25.md) | Branchless heap; bitset visited. | **DL Track (Part 2): Training Loop & Verification** | **secan (required)**: Bounded flat heap + **bitset visited**. Then concurrent HNSW locks. |
-| **Thursday** | Thu Nov 26 | [`Day 083`](../days/month-03/day-083-2026-11-26.md) | `ann-benchmarks` protocol (required, not stretch). | **Monthly Research: Sweeps & Data Logging** | **secan (required)**: Finish **`IVFPQIndex`** (IVF + PQ ADC + optional OPQ). Recall–QPS vs **Faiss IVFPQ** on SIFT. |
-| **Friday** | Fri Nov 27 | [`Day 084`](../days/month-03/day-084-2026-11-27.md) | hnswlib SQ / Faiss HNSW+SQ notes. | **Technical Essay: Lab-Note Drafting** | **secan (required)**: **`HNSWSQIndex`** (HNSW over SQ8/SQ4). Pareto vs **hnswlib/Faiss** on **SIFT + 768-D**. Tag `v1.0-cpu-complete`. |
+| **Thursday** | Thu Nov 26 | [`Day 083`](../days/month-03/day-083-2026-11-26.md) | `ann-benchmarks` protocol (required, not stretch). | **DL / Vector Retrieval Integration & Profiling** | **secan (required)**: Finish **`IVFPQIndex`** (IVF + PQ ADC + optional OPQ). Recall–QPS vs **Faiss IVFPQ** on SIFT. |
+| **Friday** | Fri Nov 27 | [`Day 084`](../days/month-03/day-084-2026-11-27.md) | hnswlib SQ / Faiss HNSW+SQ notes. | **Weekly Technical Article: Drafting & Publishing** | **secan (required)**: **`HNSWSQIndex`** (HNSW over SQ8/SQ4). Pareto vs **hnswlib/Faiss** on **SIFT + 768-D**. Tag `v1.0-cpu-complete`. |
 
 ---
 
@@ -107,7 +107,7 @@
 
 ## 📝 Weekend Deliverables
 
-### ✍️ Technical Essay 12 (Saturday 09:00–13:00)
+### ✍️ Technical Essay 12 (Drafted Friday 06:30–08:30)
 * **Title**: *"Singular Value Decomposition and Composed Vector Indexes: Pareto Evaluation of IVF-PQ and HNSW-SQ vs Faiss"*
 * **Target File**: `~/personal/goals/essays/essay_12.md`
 * **5-Part Structure**:
@@ -120,7 +120,7 @@
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
 * **Task**: **🧠 DL weekend (required)**: Export Week 6 InfoNCE bi-encoder with `torch.onnx.export` (dynamic batch). Run **ONNX Runtime** `InferenceSession`; max abs / cosine error vs PyTorch on a fixed batch. Emit 768-D query/doc `.fvecs` via ORT and re-ingest into `HNSWSQIndex` / `IVFPQIndex` — confirm Recall@10 matches the Week 8 Fri PyTorch path within tolerance. **No** onnxruntime C++ inside `secan` (nanobind + ORT Python is enough). ColBERT ONNX = stretch later.
 
-### 🔬 Monthly Research Milestone (GAPQ Milestone 3 (Landmark Paper 1 Freeze) — Mon/Thu 06:30–08:30 Morning Builder)
-* **Paper**: *"Sub-2-Bit In-Register SIMD Execution & Manuscript Submission Freeze"*
+### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
+* **Focus**: Sub-2-Bit In-Register SIMD Execution & Manuscript Submission Freeze
 * **Workspace**: `research/2026-11-rabitq-lsm/`
-* **Publish Deadline**: **Sun Nov 29**
+* **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.

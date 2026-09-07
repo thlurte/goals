@@ -29,7 +29,7 @@
 │ ⚙️ Sunday 19:30 – 21:00      │ [LAB] Graduate Systems & GPU Architecture Lab (H&P / Kirk & Hwu)       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📖 Mon–Fri 05:30 – 06:30     │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
-│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Benchmarking / Technical Articles)        │
 │ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
 │ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
@@ -44,11 +44,11 @@
 |:---|:---|:---|:---|:---|:---|
 | **Saturday** | Sat Feb 27 | [`Day 176`](../days/month-07/day-176-2027-02-27.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30–21:00**: Thought Leadership (GPU Microarchitecture Synthesis) · **21:00+**: Free / Rest|
 | **Sunday** | Sun Feb 28 | [`Day 177`](../days/month-07/day-177-2027-02-28.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (Dist-Vector Ch 2) · **19:30–21:00**: Systems Lab (FlashMaxSim Lab 5) |
-| **Monday** | Mon Mar 1 | [`Day 178`](../days/month-07/day-178-2027-03-01.md) | vLLM PagedAttention §4. | **Monthly Research: Planning & Literature Synthesis** | **CUDA**: BlockTable + paged K/V vs naive concat (A/B latency + memory). |
+| **Monday** | Mon Mar 1 | [`Day 178`](../days/month-07/day-178-2027-03-01.md) | vLLM PagedAttention §4. | **Hardware Profiling & Benchmark Sweeps** | **CUDA**: BlockTable + paged K/V vs naive concat (A/B latency + memory). |
 | **Tuesday** | Tue Mar 2 | [`Day 179`](../days/month-07/day-179-2027-03-02.md) | TurboQuant KV blog. | **DL Track (Part 1): Architecture & Tensor Shapes** | Design note: paging ≠ quantizing; optional QJL sketch. |
 | **Wednesday** | Wed Mar 3 | [`Day 180`](../days/month-07/day-180-2027-03-03.md) | cuVS / serving APIs. | **DL Track (Part 2): Training Loop & Verification** | Hybrid CPU↔GPU fallback polish. |
-| **Thursday** | Thu Mar 4 | [`Day 181`](../days/month-07/day-181-2027-03-04.md) | Batch size crossover. | **Monthly Research: Sweeps & Data Logging** | Plot $B=1..1000$ with **paged** KV. |
-| **Friday** | Fri Mar 5 | [`Day 182`](../days/month-07/day-182-2027-03-05.md) | — | **Technical Essay: Lab-Note Drafting** | Freeze ACORN/tombstone paper if not done Feb 28. |
+| **Thursday** | Thu Mar 4 | [`Day 181`](../days/month-07/day-181-2027-03-04.md) | Batch size crossover. | **DL / Vector Retrieval Integration & Profiling** | Plot $B=1..1000$ with **paged** KV. |
+| **Friday** | Fri Mar 5 | [`Day 182`](../days/month-07/day-182-2027-03-05.md) | — | **Weekly Technical Article: Drafting & Publishing** | Freeze ACORN/tombstone paper if not done Feb 28. |
 
 ---
 
@@ -106,7 +106,7 @@
 
 ## 📝 Weekend Deliverables
 
-### ✍️ Technical Essay 26 (Saturday 09:00–13:00)
+### ✍️ Technical Essay 26 (Drafted Friday 06:30–08:30)
 * **Title**: *"Memory Fragmentation Under Autoregressive Generation: A/B Profiling Naive vs Paged KV Caches"*
 * **Target File**: `~/personal/goals/essays/essay_26.md`
 * **5-Part Structure**:
@@ -119,7 +119,7 @@
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
 * **Task**: 
 
-### 🔬 Monthly Research Milestone (FlashMaxSim Milestone 4 (Landmark Paper 2 Freeze) — Mon/Thu 06:30–08:30 Morning Builder)
-* **Paper**: *"Nsight Compute Roofline Validation & Master Conference Submission"*
+### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
+* **Focus**: Nsight Compute Roofline Validation & Master Conference Submission
 * **Workspace**: `research/2027-03-gpu-serving/`
-* **Publish Deadline**: **Fri Mar 12**
+* **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.

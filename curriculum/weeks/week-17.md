@@ -29,7 +29,7 @@
 │ ⚙️ Sunday 19:30 – 21:00      │ [LAB] Graduate Systems & GPU Architecture Lab (H&P / Kirk & Hwu)       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📖 Mon–Fri 05:30 – 06:30     │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
-│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Benchmarking / Technical Articles)        │
 │ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
 │ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
@@ -44,11 +44,11 @@
 |:---|:---|:---|:---|:---|:---|
 | **Saturday** | Sat Dec 26 | [`Day 113`](../days/month-05/day-113-2026-12-26.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30–21:00**: Thought Leadership (Edwin T. Jaynes) · **21:00+**: Free / Rest|
 | **Sunday** | Sun Dec 27 | [`Day 114`](../days/month-05/day-114-2026-12-27.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (IIR Ch 6) · **19:30–21:00**: Systems Lab (Kirk & Hwu Ch 8–9) |
-| **Monday** | Mon Dec 28 | [`Day 115`](../days/month-05/day-115-2026-12-28.md) | Research paper: *"CAGRA: Highly Parallel Graph Construction and ANN Search for GPUs"* (NVIDIA 2024) §1–4. | **Monthly Research: Planning & Literature Synthesis** | **secan**: Design GPU graph layout: store HNSW graph adjacency in GPU memory as a fixed-degree CSR array with padding. |
+| **Monday** | Mon Dec 28 | [`Day 115`](../days/month-05/day-115-2026-12-28.md) | Research paper: *"CAGRA: Highly Parallel Graph Construction and ANN Search for GPUs"* (NVIDIA 2024) §1–4. | **Hardware Profiling & Benchmark Sweeps** | **secan**: Design GPU graph layout: store HNSW graph adjacency in GPU memory as a fixed-degree CSR array with padding. |
 | **Tuesday** | Tue Dec 29 | [`Day 116`](../days/month-05/day-116-2026-12-29.md) | CAGRA paper §5–6: Search kernel design, warp-level parallel beam search, avoiding dynamic queues on GPU. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: Implement **GPU graph search kernel**: each warp processes 1 query. 32 threads in warp evaluate 32 candidate neighbors in parallel. |
 | **Wednesday** | Wed Dec 30 | [`Day 117`](../days/month-05/day-117-2026-12-30.md) | **CUDA-GUIDE Warp Primitives**: `__ballot_sync`, `__any_sync`, warp-local bitfield operations. | **DL Track (Part 2): Training Loop & Verification** | **secan**: Implement warp-level visited set using `__ballot_sync` bitfields. Implement warp-level top-$k$ beam with shuffle min-reduction. |
-| **Thursday** | Thu Dec 31 | [`Day 118`](../days/month-05/day-118-2026-12-31.md) | **PMPP Ch 9**: Parallel Prefix Sum (Scan) for compacting candidate neighbor lists on GPU. | **Monthly Research: Sweeps & Data Logging** | **secan**: Implement multi-query parallel graph search: launch grid of warps. Benchmark throughput vs CPU HNSW. |
-| **Friday** | Fri Jan 1 | [`Day 119`](../days/month-05/day-119-2027-01-01.md) | Profile GPU graph search with `ncu`: measure compute-to-memory stall ratio. | **Technical Essay: Lab-Note Drafting** | **secan**: Optimize GPU graph search: add shared memory caching for frequently visited upper-layer hub nodes. |
+| **Thursday** | Thu Dec 31 | [`Day 118`](../days/month-05/day-118-2026-12-31.md) | **PMPP Ch 9**: Parallel Prefix Sum (Scan) for compacting candidate neighbor lists on GPU. | **DL / Vector Retrieval Integration & Profiling** | **secan**: Implement multi-query parallel graph search: launch grid of warps. Benchmark throughput vs CPU HNSW. |
+| **Friday** | Fri Jan 1 | [`Day 119`](../days/month-05/day-119-2027-01-01.md) | Profile GPU graph search with `ncu`: measure compute-to-memory stall ratio. | **Weekly Technical Article: Drafting & Publishing** | **secan**: Optimize GPU graph search: add shared memory caching for frequently visited upper-layer hub nodes. |
 
 ---
 
@@ -106,7 +106,7 @@
 
 ## 📝 Weekend Deliverables
 
-### ✍️ Technical Essay 17 (Saturday 09:00–13:00)
+### ✍️ Technical Essay 17 (Drafted Friday 06:30–08:30)
 * **Title**: *"Warp-Scale Graph Traversal: Overcoming Random Memory Access Bottlenecks in GPU CAGRA"*
 * **Target File**: `~/personal/goals/essays/essay_17.md`
 * **5-Part Structure**:
@@ -119,7 +119,7 @@
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
 * **Task**: 
 
-### 🔬 Monthly Research Milestone (FlashMaxSim Milestone 2 — Mon/Thu 06:30–08:30 Morning Builder)
-* **Paper**: *"The Online Max Reduction Invariant & In-SRAM Accumulation Mechanics"*
+### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
+* **Focus**: The Online Max Reduction Invariant & In-SRAM Accumulation Mechanics
 * **Workspace**: `research/2027-01-cagra-warp-search/`
-* **Publish Deadline**: **Sun Jan 31**
+* **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.

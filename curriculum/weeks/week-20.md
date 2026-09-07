@@ -29,7 +29,7 @@
 │ ⚙️ Sunday 19:30 – 21:00      │ [LAB] Graduate Systems & GPU Architecture Lab (H&P / Kirk & Hwu)       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📖 Mon–Fri 05:30 – 06:30     │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
-│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Benchmarking / Technical Articles)        │
 │ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
 │ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
@@ -44,11 +44,11 @@
 |:---|:---|:---|:---|:---|:---|
 | **Saturday** | Sat Jan 16 | [`Day 134`](../days/month-05/day-134-2027-01-16.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30–21:00**: Thought Leadership (Edwin T. Jaynes) · **21:00+**: Free / Rest|
 | **Sunday** | Sun Jan 17 | [`Day 135`](../days/month-05/day-135-2027-01-17.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (IIR Ch 9) · **19:30–21:00**: Systems Lab (Kirk & Hwu Ch 16) |
-| **Monday** | Mon Jan 18 | [`Day 136`](../days/month-05/day-136-2027-01-18.md) | **CUDA-GUIDE Multi-GPU**: `cudaSetDevice`, peer-to-peer memory access (`cudaDeviceEnablePeerAccess`). | **Monthly Research: Planning & Literature Synthesis** | **secan**: Implement dataset sharding: split $N$ vectors into $G$ shards. Upload shard $i$ to GPU $i$. Build `MultiGpuIndex` class. |
+| **Monday** | Mon Jan 18 | [`Day 136`](../days/month-05/day-136-2027-01-18.md) | **CUDA-GUIDE Multi-GPU**: `cudaSetDevice`, peer-to-peer memory access (`cudaDeviceEnablePeerAccess`). | **Hardware Profiling & Benchmark Sweeps** | **secan**: Implement dataset sharding: split $N$ vectors into $G$ shards. Upload shard $i$ to GPU $i$. Build `MultiGpuIndex` class. |
 | **Tuesday** | Tue Jan 19 | [`Day 137`](../days/month-05/day-137-2027-01-19.md) | X)$, and the Chain Rule for Entropy: $H(X_1, \dots, X_n) = \sum H(X_i | **DL Track (Part 1): Architecture & Tensor Shapes** | X_{i-1}, \dots, X_1)$. |
 | **Wednesday** | Wed Jan 20 | [`Day 138`](../days/month-05/day-138-2027-01-20.md) | Q)$. Rigorous proof that $D_{KL} \geq 0$ via Jensen's Inequality on convex functions. | **DL Track (Part 2): Training Loop & Verification** | Faiss multi-GPU implementation: replicated coarse quantizer with sharded inverted lists. |
-| **Thursday** | Thu Jan 21 | [`Day 139`](../days/month-05/day-139-2027-01-21.md) | NVLink vs PCIe inter-GPU bandwidth analysis. | **Monthly Research: Sweeps & Data Logging** | **secan**: Implement dynamic load balancing: redistribute heavy IVF cells across GPUs to prevent stragglers during multi-probe search. |
-| **Friday** | Fri Jan 22 | [`Day 140`](../days/month-05/day-140-2027-01-22.md) | Measure multi-GPU scaling efficiency across 1, 2, and 4 GPUs on synthetic billion-scale data. | **Technical Essay: Lab-Note Drafting** | **secan**: Benchmark multi-GPU search on SIFT1M and large synthetic datasets. Measure scaling efficiency and communication overhead. |
+| **Thursday** | Thu Jan 21 | [`Day 139`](../days/month-05/day-139-2027-01-21.md) | NVLink vs PCIe inter-GPU bandwidth analysis. | **DL / Vector Retrieval Integration & Profiling** | **secan**: Implement dynamic load balancing: redistribute heavy IVF cells across GPUs to prevent stragglers during multi-probe search. |
+| **Friday** | Fri Jan 22 | [`Day 140`](../days/month-05/day-140-2027-01-22.md) | Measure multi-GPU scaling efficiency across 1, 2, and 4 GPUs on synthetic billion-scale data. | **Weekly Technical Article: Drafting & Publishing** | **secan**: Benchmark multi-GPU search on SIFT1M and large synthetic datasets. Measure scaling efficiency and communication overhead. |
 
 ---
 
@@ -106,7 +106,7 @@
 
 ## 📝 Weekend Deliverables
 
-### ✍️ Technical Essay 20 (Saturday 09:00–13:00)
+### ✍️ Technical Essay 20 (Drafted Friday 06:30–08:30)
 * **Title**: *"Information Theory and Ring Collectives: Shannon Entropy, KL-Divergence, and Multi-GPU NCCL Search"*
 * **Target File**: `~/personal/goals/essays/essay_20.md`
 * **5-Part Structure**:
@@ -119,7 +119,7 @@
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
 * **Task**: 
 
-### 🔬 Monthly Research Milestone (FlashMaxSim Milestone 2 — Mon/Thu 06:30–08:30 Morning Builder)
-* **Paper**: *"The Online Max Reduction Invariant & In-SRAM Accumulation Mechanics"*
+### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
+* **Focus**: The Online Max Reduction Invariant & In-SRAM Accumulation Mechanics
 * **Workspace**: `research/2027-01-cagra-warp-search/`
-* **Publish Deadline**: **Sun Jan 31**
+* **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.

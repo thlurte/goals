@@ -16,7 +16,7 @@ Weekdays remain **`secan`/CUDA**. DL stays **Saturday afternoon**. Cluster shard
 
 # 📅 MONTH 5: Mathematical Statistics, Limit Theorems, GPU Graphs & Multi-GPU (Jan 2027)
 
-> **🔬 Monthly research (FlashMaxSim Milestone 2)**: *The Online Max Reduction Invariant & In-SRAM Accumulation Mechanics* → publish **Sun Jan 31** · folder `research/2027-01-cagra-warp-search/`
+> **🔬 Empirical Systems & Benchmarking Focus**: *The Online Max Reduction Invariant & In-SRAM Accumulation Mechanics* · folder `research/2027-01-cagra-warp-search/`
 
 ---
 
@@ -68,7 +68,7 @@ Weekdays remain **`secan`/CUDA**. DL stays **Saturday afternoon**. Cluster shard
 * ❌ **Do NOT** write measure-theoretic probability proofs for SLLN—grasp the Chebyshev proof for WLLN and move on.
 
 > **📝 Essay 17 (Sat Dec 27)**: *"Warp-Scale Graph Traversal: Overcoming Random Memory Access Bottlenecks in GPU CAGRA"*  
-> **🚀 Month 4 research PUBLISH (Sun Dec 27)**: freeze `research/2026-12-flashattn-vamana/paper.md` + public post.
+> **🚀 Month 4 Builder Milestone (Sun Dec 27)**: End-to-end FlashAttention & Vamana GPU kernel benchmark verification.
 
 ---
 

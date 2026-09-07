@@ -29,7 +29,7 @@
 │ ⚙️ Sunday 19:30 – 21:00      │ [LAB] Graduate Systems & GPU Architecture Lab (H&P / Kirk & Hwu)       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📖 Mon–Fri 05:30 – 06:30     │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
-│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Benchmarking / Technical Articles)        │
 │ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
 │ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
@@ -44,11 +44,11 @@
 |:---|:---|:---|:---|:---|:---|
 | **Saturday** | Sat Nov 14 | [`Day 071`](../days/month-03/day-071-2026-11-14.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30–21:00**: Thought Leadership (Claude E. Shannon) · **21:00+**: Free / Rest|
 | **Sunday** | Sun Nov 15 | [`Day 072`](../days/month-03/day-072-2026-11-15.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (DDIA Ch 10) · **19:30–21:00**: Systems Lab (Gregg Ch 9) |
-| **Monday** | Mon Nov 16 | [`Day 073`](../days/month-03/day-073-2026-11-16.md) | Research paper: *"DiskANN: Fast Accurate Billion-point NN Search on a Single Node"* (Subramanya et al. 2019) — architecture skim (**build Week 16 Thu**). | **Monthly Research: Planning & Literature Synthesis** | **secan**: Implement `WriteAheadLog` (`wal.bin`) and in-memory mutable `MemTable` (dynamic HNSW absorbing live writes). |
+| **Monday** | Mon Nov 16 | [`Day 073`](../days/month-03/day-073-2026-11-16.md) | Research paper: *"DiskANN: Fast Accurate Billion-point NN Search on a Single Node"* (Subramanya et al. 2019) — architecture skim (**build Week 16 Thu**). | **Hardware Profiling & Benchmark Sweeps** | **secan**: Implement `WriteAheadLog` (`wal.bin`) and in-memory mutable `MemTable` (dynamic HNSW absorbing live writes). |
 | **Tuesday** | Tue Nov 17 | [`Day 074`](../days/month-03/day-074-2026-11-17.md) | Apache Arrow / Lance columnar layout notes for segment files. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: Implement Segment Flusher: when MemTable reaches threshold, flush to immutable disk segment (flat Arrow/Lance layout). |
 | **Wednesday** | Wed Nov 18 | [`Day 075`](../days/month-03/day-075-2026-11-18.md) | Linux `io_uring` tutorial: SQ/CQ basics (**implement Week 16 Thu**). | **DL Track (Part 2): Training Loop & Verification** | **secan**: Background compaction: merge **segments and HNSW graphs** (not only LSM files). Rebuild/compact graph edges after merge. |
-| **Thursday** | Thu Nov 19 | [`Day 076`](../days/month-03/day-076-2026-11-19.md) | **ASYNC Ch 6 & Ch 9**: Boost.Asio I/O concepts, profiling asynchronous workflows. | **Monthly Research: Sweeps & Data Logging** | **secan**: Concurrent search-while-ingest smoke test. **Stretch**: Poisson load gen ($p50/p95/p99$) moved from Week 10. Add ThreadSanitizer CI job. |
-| **Friday** | Fri Nov 20 | [`Day 077`](../days/month-03/day-077-2026-11-20.md) | **FINSY Ch 3**: High-performance system measurement, scaling modules, latency distributions. | **Technical Essay: Lab-Note Drafting** | **secan**: Crash-recovery test: kill process mid-write; verify WAL replay restores MemTable. Benchmark inserts/sec under search traffic. |
+| **Thursday** | Thu Nov 19 | [`Day 076`](../days/month-03/day-076-2026-11-19.md) | **ASYNC Ch 6 & Ch 9**: Boost.Asio I/O concepts, profiling asynchronous workflows. | **DL / Vector Retrieval Integration & Profiling** | **secan**: Concurrent search-while-ingest smoke test. **Stretch**: Poisson load gen ($p50/p95/p99$) moved from Week 10. Add ThreadSanitizer CI job. |
+| **Friday** | Fri Nov 20 | [`Day 077`](../days/month-03/day-077-2026-11-20.md) | **FINSY Ch 3**: High-performance system measurement, scaling modules, latency distributions. | **Weekly Technical Article: Drafting & Publishing** | **secan**: Crash-recovery test: kill process mid-write; verify WAL replay restores MemTable. Benchmark inserts/sec under search traffic. |
 
 ---
 
@@ -107,7 +107,7 @@
 
 ## 📝 Weekend Deliverables
 
-### ✍️ Technical Essay 11 (Saturday 09:00–13:00)
+### ✍️ Technical Essay 11 (Drafted Friday 06:30–08:30)
 * **Title**: *"Eigenvalues, Spectral Decompositions, and LSM Storage Engines: Write-Ahead Logs and Vector Compaction"*
 * **Target File**: `~/personal/goals/essays/essay_11.md`
 * **5-Part Structure**:
@@ -120,7 +120,7 @@
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
 * **Task**: 
 
-### 🔬 Monthly Research Milestone (GAPQ Milestone 3 (Landmark Paper 1 Freeze) — Mon/Thu 06:30–08:30 Morning Builder)
-* **Paper**: *"Sub-2-Bit In-Register SIMD Execution & Manuscript Submission Freeze"*
+### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
+* **Focus**: Sub-2-Bit In-Register SIMD Execution & Manuscript Submission Freeze
 * **Workspace**: `research/2026-11-rabitq-lsm/`
-* **Publish Deadline**: **Sun Nov 29**
+* **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.

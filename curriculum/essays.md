@@ -1,6 +1,6 @@
 # Essay / Lab-Note Schedule
 
-Weekly Friday Morning 06:30–08:30 lab-note drafting (with weekend polish as needed). Polish **7 monthlies** in [`../research/`](../research/README.md), not all 28 essays.
+Weekly Friday Morning 06:30–08:30 technical article drafting (with weekend polish as needed), directly grounded in empirical systems, benchmarking, and builder implementations.
 
 | Week | Essay Date | Essay / Lab-Note Title | Systems & Theoretical Focus |
 |:---:|:---|:---|:---|

@@ -29,7 +29,7 @@
 │ ⚙️ Sunday 19:30 – 21:00      │ [LAB] Graduate Systems & GPU Architecture Lab (H&P / Kirk & Hwu)       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📖 Mon–Fri 05:30 – 06:30     │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
-│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Benchmarking / Technical Articles)        │
 │ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
 │ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
@@ -44,11 +44,11 @@
 |:---|:---|:---|:---|:---|:---|
 | **Saturday** | Sat Feb 6 | [`Day 155`](../days/month-06/day-155-2027-02-06.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30–21:00**: Thought Leadership (Andrei N. Kolmogorov) · **21:00+**: Free / Rest|
 | **Sunday** | Sun Feb 7 | [`Day 156`](../days/month-06/day-156-2027-02-07.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (IIR Ch 14) · **19:30–21:00**: Systems Lab (FlashMaxSim Lab 2) |
-| **Monday** | Mon Feb 8 | [`Day 157`](../days/month-06/day-157-2027-02-08.md) | ARM NEON Intrinsics Guide: `vld1q_f32`, `vfmaq_f32`, `vaddvq_f32`, `vmaxvq_f32`. | **Monthly Research: Planning & Literature Synthesis** | **secan**: Design unified SIMD abstraction layer: `namespace simd { float l2_squared(const float*, const float*, int); }` with dispatch. |
+| **Monday** | Mon Feb 8 | [`Day 157`](../days/month-06/day-157-2027-02-08.md) | ARM NEON Intrinsics Guide: `vld1q_f32`, `vfmaq_f32`, `vaddvq_f32`, `vmaxvq_f32`. | **Hardware Profiling & Benchmark Sweeps** | **secan**: Design unified SIMD abstraction layer: `namespace simd { float l2_squared(const float*, const float*, int); }` with dispatch. |
 | **Tuesday** | Tue Feb 9 | [`Day 158`](../days/month-06/day-158-2027-02-09.md) | ARM NEON programming manual: 128-bit vector types (`float32x4_t`, `float16x8_t`), FMA instruction throughput. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: Implement `l2_squared_neon()` and `cosine_distance_neon()` using ARM NEON intrinsics with 4-way accumulator unrolling. |
 | **Wednesday** | Wed Feb 10 | [`Day 159`](../days/month-06/day-159-2027-02-10.md) | \partial S | **DL Track (Part 2): Training Loop & Verification** | }{\min(\text{vol}(S), \text{vol}(S^c))}$. |
-| **Thursday** | Thu Feb 11 | [`Day 160`](../days/month-06/day-160-2027-02-11.md) | Research: runtime CPU dispatch patterns in Faiss and HNSWLib (`platform_macros.h`). | **Monthly Research: Sweeps & Data Logging** | **secan**: Implement runtime CPU feature detection: `cpuid` on x86, `/proc/cpuinfo` / `sysctl` on ARM. Configure dynamic dispatch. |
-| **Friday** | Fri Feb 12 | [`Day 161`](../days/month-06/day-161-2027-02-12.md) | Set up cross-platform CI matrix: Ubuntu x86_64, macOS Apple Silicon (ARM64). | **Technical Essay: Lab-Note Drafting** | **secan**: Verify builds and tests on x86_64 and ARM64. |
+| **Thursday** | Thu Feb 11 | [`Day 160`](../days/month-06/day-160-2027-02-11.md) | Research: runtime CPU dispatch patterns in Faiss and HNSWLib (`platform_macros.h`). | **DL / Vector Retrieval Integration & Profiling** | **secan**: Implement runtime CPU feature detection: `cpuid` on x86, `/proc/cpuinfo` / `sysctl` on ARM. Configure dynamic dispatch. |
+| **Friday** | Fri Feb 12 | [`Day 161`](../days/month-06/day-161-2027-02-12.md) | Set up cross-platform CI matrix: Ubuntu x86_64, macOS Apple Silicon (ARM64). | **Weekly Technical Article: Drafting & Publishing** | **secan**: Verify builds and tests on x86_64 and ARM64. |
 
 ---
 
@@ -106,7 +106,7 @@
 
 ## 📝 Weekend Deliverables
 
-### ✍️ Technical Essay 23 (Saturday 09:00–13:00)
+### ✍️ Technical Essay 23 (Drafted Friday 06:30–08:30)
 * **Title**: *"Spectral Graph Theory and Cross-Platform SIMD: Cheeger's Inequality, Conductance, and ARM NEON"*
 * **Target File**: `~/personal/goals/essays/essay_23.md`
 * **5-Part Structure**:
@@ -119,7 +119,7 @@
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
 * **Task**: 
 
-### 🔬 Monthly Research Milestone (FlashMaxSim Milestone 3 — Mon/Thu 06:30–08:30 Morning Builder)
-* **Paper**: *"Bare-Metal CUTLASS Implementation with Hopper/Blackwell TMA & Warp Specialization"*
+### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
+* **Focus**: Bare-Metal CUTLASS Implementation with Hopper/Blackwell TMA & Warp Specialization
 * **Workspace**: `research/2027-02-predicate-aware-graphs/`
-* **Publish Deadline**: **Sun Feb 28**
+* **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.

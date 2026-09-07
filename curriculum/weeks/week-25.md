@@ -29,7 +29,7 @@
 │ ⚙️ Sunday 19:30 – 21:00      │ [LAB] Graduate Systems & GPU Architecture Lab (H&P / Kirk & Hwu)       │
 ├──────────────────────────────┼────────────────────────────────────────────────────────────────────────┤
 │ 📖 Mon–Fri 05:30 – 06:30     │ Systems & Architecture Deep Reading (Papers & Microarchitecture)       │
-│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Monthly Research / Technical Essays)        │
+│ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Benchmarking / Technical Articles)        │
 │ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
 │ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
@@ -44,11 +44,11 @@
 |:---|:---|:---|:---|:---|:---|
 | **Saturday** | Sat Feb 20 | [`Day 169`](../days/month-07/day-169-2027-02-20.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30–21:00**: Thought Leadership (Systems Architecture Synthesis) · **21:00+**: Free / Rest|
 | **Sunday** | Sun Feb 21 | [`Day 170`](../days/month-07/day-170-2027-02-21.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (Dist-Vector Ch 1) · **19:30–21:00**: Systems Lab (FlashMaxSim Lab 4) |
-| **Monday** | Mon Feb 22 | [`Day 171`](../days/month-07/day-171-2027-02-22.md) | FlashAttention-2 (Dao 2023). | **Monthly Research: Planning & Literature Synthesis** | **CUDA**: FA-2 loop order on Week 15 kernel. |
+| **Monday** | Mon Feb 22 | [`Day 171`](../days/month-07/day-171-2027-02-22.md) | FlashAttention-2 (Dao 2023). | **Hardware Profiling & Benchmark Sweeps** | **CUDA**: FA-2 loop order on Week 15 kernel. |
 | **Tuesday** | Tue Feb 23 | [`Day 172`](../days/month-07/day-172-2027-02-23.md) | Warp partition along sequence. | **DL Track (Part 1): Architecture & Tensor Shapes** | **CUDA**: Reduce inter-warp sync; unit-test vs PyTorch. |
 | **Wednesday** | Wed Feb 24 | [`Day 173`](../days/month-07/day-173-2027-02-24.md) | `ncu` metrics: DRAM, achieved TFLOPS. | **DL Track (Part 2): Training Loop & Verification** | **CUDA (required)**: Nsight FA-1 vs FA-2 vs SDPA. |
-| **Thursday** | Thu Feb 25 | [`Day 174`](../days/month-07/day-174-2027-02-25.md) | Integrate GQA from Week 2/4. | **Monthly Research: Sweeps & Data Logging** | **Python/CUDA**: FA-2 path with `num_kv_heads`. |
-| **Friday** | Fri Feb 26 | [`Day 175`](../days/month-07/day-175-2027-02-26.md) | — | **Technical Essay: Lab-Note Drafting** | Expose FA-2 via `cpp_extension`. Document speedup table for March paper. |
+| **Thursday** | Thu Feb 25 | [`Day 174`](../days/month-07/day-174-2027-02-25.md) | Integrate GQA from Week 2/4. | **DL / Vector Retrieval Integration & Profiling** | **Python/CUDA**: FA-2 path with `num_kv_heads`. |
+| **Friday** | Fri Feb 26 | [`Day 175`](../days/month-07/day-175-2027-02-26.md) | — | **Weekly Technical Article: Drafting & Publishing** | Expose FA-2 via `cpp_extension`. Document speedup table for March paper. |
 
 ---
 
@@ -106,7 +106,7 @@
 
 ## 📝 Weekend Deliverables
 
-### ✍️ Technical Essay 25 (Saturday 09:00–13:00)
+### ✍️ Technical Essay 25 (Drafted Friday 06:30–08:30)
 * **Title**: *"Warp Partitioning and Register Rescaling: Implementing FlashAttention-2 with Grouped-Query Attention"*
 * **Target File**: `~/personal/goals/essays/essay_25.md`
 * **5-Part Structure**:
@@ -119,7 +119,7 @@
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
 * **Task**: 
 
-### 🔬 Monthly Research Milestone (FlashMaxSim Milestone 4 (Landmark Paper 2 Freeze) — Mon/Thu 06:30–08:30 Morning Builder)
-* **Paper**: *"Nsight Compute Roofline Validation & Master Conference Submission"*
+### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
+* **Focus**: Nsight Compute Roofline Validation & Master Conference Submission
 * **Workspace**: `research/2027-03-gpu-serving/`
-* **Publish Deadline**: **Fri Mar 12**
+* **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.
