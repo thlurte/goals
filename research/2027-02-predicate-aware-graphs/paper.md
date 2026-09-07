@@ -3,7 +3,7 @@
 | Metadata | Specification |
 |:---|:---|
 | **Month** | 6 — February 2027 |
-| **Status** | Active Working Manuscript |
+| **Status** | Empirical Benchmark Report |
 | **Domain** | Graph Navigation, Predicate Filtering, Relational-Vector Systems |
 
 ---

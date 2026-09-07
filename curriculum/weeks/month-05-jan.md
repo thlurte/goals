@@ -10,7 +10,7 @@
 
 # BLOCK II: GPU SPECIALIZATION (Weeks 17–28 / Jan–Mar 2027)
 
-Weekdays remain **`secan`/CUDA**. DL stays **Saturday afternoon**. Cluster shard/replica beyond NCCL = stretch. **No REST.**
+Weekdays remain **`secan`/CUDA** and **DL builder tracks (Tue/Wed 06:30–08:30)**. Weekends remain **Pure Math & Reading Sanctuary**. Cluster shard/replica beyond NCCL = stretch. **No REST.**
 
 ---
 

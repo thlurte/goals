@@ -3,7 +3,7 @@
 | Metadata | Specification |
 |:---|:---|
 | **Month** | 1 — September 2026 |
-| **Status** | Active Working Manuscript |
+| **Status** | Empirical Benchmark Report |
 | **Domain** | Low-Level Systems, SIMD Microarchitecture, Sub-Microsecond Signal Processing |
 
 ---

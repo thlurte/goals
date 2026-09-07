@@ -117,7 +117,7 @@
   5. **Key Takeaway**: Architectural rule of thumb for production AI systems.
 
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
-* **Task**: **🧠 DL weekend**: Online softmax reference vs `torch.softmax`.
+* **Task**: **🧠 DL Builder Track (Tue/Wed)**: Online softmax reference vs `torch.softmax`.
 
 ### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
 * **Focus**: The Memory Wall in Multimodal Late Interaction: Baseline GPU Kernel Profiling

@@ -117,7 +117,7 @@
   5. **Key Takeaway**: Architectural rule of thumb for production AI systems.
 
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
-* **Task**: **🧠 DL weekend**: CLIP-style projector + ColPali head.
+* **Task**: **🧠 DL Builder Track (Tue/Wed)**: CLIP-style projector + ColPali head.
 
 ### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
 * **Focus**: Bare-Metal CUTLASS Implementation with Hopper/Blackwell TMA & Warp Specialization

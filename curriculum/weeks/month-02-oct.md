@@ -67,7 +67,7 @@
 * ❌ **Do NOT** try to implement Product Quantization (PQ) yet—PQ starts next week (Week 6).
 
 > **📝 Essay 5 (Sat Oct 4)**: *"Low-Bit Compression Under Outliers: Gradients, Percentile Clipping, and SIMD Integer Saturation"*  
-> **🧠 DL weekend**: ViT patch embed + `[CLS]`.
+> **🧠 DL Builder Track (Tue/Wed)**: ViT patch embed + `[CLS]`.
 
 ---
 
@@ -113,7 +113,7 @@
 * ❌ **Do NOT** build a custom multi-threading pool for PQ encoding—standard `std::jthread` or OpenMP parallel loop is sufficient.
 
 > **📝 Essay 6 (Sat Oct 11)**: *"Constrained Optimization and Subspace Codebooks: Lagrange Multipliers in Product Quantization"*  
-> **🧠 DL weekend**: BERT + InfoNCE + **in-batch negatives**; export 768-D `.fvecs`. **Also**: implement `AdamW` optimizer from scratch ($m_t, v_t$ moment estimates, bias correction, **weight decay decoupling** from L2 reg). Train BERT with your AdamW; verify loss curve matches `torch.optim.AdamW`. **Hard negative mining**: retrieve BM25 top-100 per query, sample hard negatives from rank 10–100 for InfoNCE training.
+> **🧠 DL Builder Track (Tue/Wed)**: BERT + InfoNCE + **in-batch negatives**; export 768-D `.fvecs`. **Also**: implement `AdamW` optimizer from scratch ($m_t, v_t$ moment estimates, bias correction, **weight decay decoupling** from L2 reg). Train BERT with your AdamW; verify loss curve matches `torch.optim.AdamW`. **Hard negative mining**: retrieve BM25 top-100 per query, sample hard negatives from rank 10–100 for InfoNCE training.
 
 ---
 
@@ -163,7 +163,7 @@
 * ❌ **Do NOT** write a custom matrix optimizer for OPQ—a basic alternating least squares (ALS) rotation or residual PQ is 100% fine.
 
 > **📝 Essay 7 (Sat Oct 18)**: *"Anisotropic Loss and In-Register SIMD Lookups: Directional Error Weighting and FastScan PSHUFB"*  
-> **🧠 DL weekend**: MRL nested dims on tiny corpus.
+> **🧠 DL Builder Track (Tue/Wed)**: MRL nested dims on tiny corpus.
 
 ---
 

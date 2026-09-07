@@ -64,14 +64,14 @@
 
 The curriculum anchors all empirical systems and theoretical proofs to 6 authoritative graduate-level texts:
 
-| Domain | Master Text | Authors | Focus in Curriculum & Landmark Papers |
+| Domain | Master Text | Authors | Focus in Curriculum & Flagship Implementations |
 |:---|:---|:---|:---|
-| **High-Dim Probability** | *High-Dimensional Probability: An Introduction with Applications in Data Science* (CUP 2018) | Roman Vershynin | **Months 4–5**: Sub-Gaussian vectors, concentration of measure on $\mathcal{S}^{d-1}$, Johnson-Lindenstrauss lemma, metric entropy, covering numbers. Directly grounds **Landmark Paper 1 (GAPQ)**. |
+| **High-Dim Probability** | *High-Dimensional Probability: An Introduction with Applications in Data Science* (CUP 2018) | Roman Vershynin | **Months 4–5**: Sub-Gaussian vectors, concentration of measure on $\mathcal{S}^{d-1}$, Johnson-Lindenstrauss lemma, metric entropy, covering numbers. Directly grounds **Flagship Implementation 1 (GAPQ in `secan`)**. |
 | **Matrix Analysis** | *Matrix Analysis* (2nd ed, CUP 2012) | Roger A. Horn & Charles R. Johnson | **Months 3–4, 6**: Spectral theorem, Courant-Fischer minimax, singular value decomposition (SVD), Weyl's perturbation bounds, Perron-Frobenius theory for graph Laplacians. |
 | **Statistical Inference** | *Statistical Inference* (2nd ed, Duxbury 2001) | George Casella & Roger L. Berger | **Month 5**: Principles of data reduction, sufficiency, likelihood ratio tests, Cramér-Rao lower bounds for retrieval sensitivity under extreme quantization. |
 | **Computer Architecture** | *Computer Architecture: A Quantitative Approach* (6th ed, Morgan Kaufmann 2017) | John L. Hennessy & David A. Patterson | **Months 1–4, 7**: Memory hierarchy design, instruction-level parallelism, dynamic branch prediction, vector/SIMD/GPU microarchitectures, warehouse-scale computing. |
 | **Systems Performance** | *Systems Performance: Enterprise and the Cloud* (2nd ed, Addison-Wesley 2020) | Brendan Gregg | **Months 1, 4, 7**: CPU PMU hardware counters, instruction cache vs data cache misses, memory bus saturation, Linux disk IO, `perf stat`/`perf record`, and flame graphs. |
-| **GPU Architecture** | *Programming Massively Parallel Processors: A Hands-on Approach* (4th ed, 2022) | David B. Kirk, Wen-mei W. Hwu, Izzat El Hajj | **Months 4–7**: CUDA thread/warp hierarchy, shared memory tiling, bank conflicts, warp divergence, in-register shuffles, and FlashAttention kernel mechanics for **Landmark Paper 2 (FlashMaxSim)**. |
+| **GPU Architecture** | *Programming Massively Parallel Processors: A Hands-on Approach* (4th ed, 2022) | David B. Kirk, Wen-mei W. Hwu, Izzat El Hajj | **Months 4–7**: CUDA thread/warp hierarchy, shared memory tiling, bank conflicts, warp divergence, in-register shuffles, and FlashAttention kernel mechanics for **Flagship Implementation 2 (FlashMaxSim in `secan`)**. |
 
 ## Pillars
 

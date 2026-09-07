@@ -3,7 +3,7 @@
 | Metadata | Specification |
 |:---|:---|
 | **Month** | 2 — October 2026 |
-| **Status** | Active Working Manuscript |
+| **Status** | Empirical Benchmark Report |
 | **Domain** | Information Theory, Quantization Geometry, High-Dimensional Metric Search |
 
 ---

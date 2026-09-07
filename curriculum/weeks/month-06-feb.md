@@ -59,7 +59,7 @@
 * ❌ **Do NOT** spend hours proving convex duality theorems for non-linear constraints—focus on KKT conditions for linear/quadratic programs.
 
 > **📝 Essay 21 (Sat Jan 24)**: *"Duality and Multimodal Retrieval: Karush-Kuhn-Tucker Conditions, CLIP Alignment, and ColPali MaxSim"*  
-> **🧠 DL weekend**: CLIP-style projector + ColPali head.
+> **🧠 DL Builder Track (Tue/Wed)**: CLIP-style projector + ColPali head.
 
 ---
 

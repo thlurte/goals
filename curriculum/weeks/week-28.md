@@ -66,7 +66,7 @@
 * `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
 * `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
 * `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: **Dist-Vector Ch 4** (Capstone Architectural Synthesis: Production Multi-Node FlashMaxSim & GAPQ Cluster).
-* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: Microarchitecture analysis and CUDA exercises in **FlashMaxSim Lab 7** (Landmark Paper 2 Kernel Architecture & Microbenchmark Reproducibility Package).
+* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: Microarchitecture analysis and CUDA exercises in **FlashMaxSim Lab 7** (Flagship Implementation 2 Kernel Architecture & Microbenchmark Reproducibility Package).
 * `⭐ Optional / Stretch`: 21:00 onwards Weekly review & recovery.
 
 ### 🔹 Monday, Mon Mar 15 ([`Day 192`](../days/month-07/day-192-2027-03-15.md))

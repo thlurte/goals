@@ -3,7 +3,7 @@
 | Metadata | Specification |
 |:---|:---|
 | **Month** | 7 — March 2027 |
-| **Status** | Active Working Manuscript |
+| **Status** | Empirical Benchmark Report |
 | **Domain** | GPU Systems Architecture, CUDA Kernel Fusion, Distributed Collectives |
 
 ---

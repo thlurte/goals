@@ -158,7 +158,7 @@
 * ❌ **Do NOT** write inline PTX for Tensor Cores (`mma.sync`)—standard FP32/FP16 shared memory arithmetic is the foundation.
 
 > **📝 Essay 15 (Sat Dec 13)**: *"IO-Aware Tiling and Online Softmax: Constructing a FlashAttention-1 CUDA Kernel from First Principles"*  
-> **🧠 DL weekend**: Online softmax reference vs `torch.softmax`.
+> **🧠 DL Builder Track (Tue/Wed)**: Online softmax reference vs `torch.softmax`.
 
 ---
 

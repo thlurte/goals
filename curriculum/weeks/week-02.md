@@ -118,7 +118,7 @@
   5. **Key Takeaway**: Architectural rule of thumb for production AI systems.
 
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
-* **Task**: **🧠 DL weekend**: MHA + GQA; Pre-LN vs Post-LN.
+* **Task**: **🧠 DL Builder Track (Tue/Wed)**: MHA + GQA; Pre-LN vs Post-LN.
 
 ### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
 * **Focus**: Multi-Accumulator Unrolling & Execution Port Saturation in AVX2/AVX-512

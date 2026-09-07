@@ -3,7 +3,7 @@
 | Metadata | Specification |
 |:---|:---|
 | **Month** | 5 — January 2027 |
-| **Status** | Active Working Manuscript |
+| **Status** | Empirical Benchmark Report |
 | **Domain** | LLM Serving Systems, GPU Memory Management, Extreme Quantization |
 
 ---

@@ -3,7 +3,7 @@
 | Metadata | Specification |
 |:---|:---|
 | **Month** | 4 — December 2026 |
-| **Status** | Active Working Manuscript |
+| **Status** | Empirical Benchmark Report |
 | **Domain** | Out-of-Core Graph Algorithms, Kernel-Bypass Direct I/O, GPU Acceleration |
 
 ---

@@ -277,36 +277,36 @@ To rival commercial vector database engines (Pinecone, Turbopuffer, Qdrant, Milv
 
 ---
 
-## Part 2.5: The Landmark Research Track (Two Tier-1 Conference Submissions)
+## Part 2.5: Flagship Systems Implementations (GAPQ & FlashMaxSim in `secan`)
 
-Instead of fragmenting effort across superficial monthly notes, the curriculum's morning builder research track is focused on **two genuine, top-tier conference-grade research contributions (ICLR / ICML / MLSys)** that establish original state-of-the-art breakthroughs:
+Instead of fragmenting effort across academic paper submissions, the curriculum's morning builder track is focused on **two flagship, high-performance systems implementations in `secan`** that solve real-world microarchitectural and mathematical bottlenecks:
 
 ```mermaid
 graph TD
-    subgraph Landmark1 ["🏛️ Landmark Paper 1: GAPQ (ICLR/ICML 2027)"]
+    subgraph Flagship1 ["🏛️ Flagship Implementation 1: GAPQ (Months 1–3)"]
         G1["Anisotropic Neural Cones (CLIP / LLaMA)"] --> G2["Ellipsoidal Polar Lattice Coordinate Frame"]
         G2 --> G3["Unbiased Anisotropic QJL Estimator Proof"]
         G3 --> G4["Sub-2-Bit AVX-512 Bitwise Kernel (>98.5% Recall@1)"]
     end
 
-    subgraph Landmark2 ["⚡ Landmark Paper 2: FlashMaxSim (MLSys/ICLR 2027)"]
+    subgraph Flagship2 ["⚡ Flagship Implementation 2: FlashMaxSim (Months 4–7)"]
         F1["Multimodal Vision Tokens (ColPali / ColQwen)"] --> F2["Online Max Reduction Invariant in SRAM"]
         F2 --> F3["Zero Intermediate VRAM Score Matrix Materialization"]
         F3 --> F4["Bare-Metal CUTLASS Kernel (>75% Peak Tensor Core TFLOPS)"]
     end
 ```
 
-### 🏛️ Landmark Paper 1 (Target: ICLR / ICML 2027 — Representation & Information Theory)
-* **Title**: *Geometry-Aware Anisotropic Polar Quantization (GAPQ): Provably Unbiased MIPS on Severe Embedding Cones at 2 Bits*
+### 🏛️ Flagship Implementation 1: GAPQ (Representation & Quantization in `secan`)
+* **Focus**: *Geometry-Aware Anisotropic Polar Quantization (GAPQ): Unbiased MIPS on Severe Embedding Cones at 2 Bits*
 * **Core Contribution**:
   * **The Fundamental Open Problem**: Google’s TurboQuant and PolarQuant (2026) are derived assuming isotropic Gaussian vectors on a hypersphere. Real-world neural embeddings (CLIP, LLaMA, OpenAI) are severely anisotropic, clustered inside narrow "embedding cones" (mean cosine $> 0.40$), causing severe quantization collapse and wasted bits on empty angular regions.
-  * **The Mathematical Breakthrough**: Formulate **Anisotropic Polar Quantization (GAPQ)**: align coordinate frames with the empirical Riemannian metric of the embedding cone, mapping vectors into an adaptive-density ellipsoidal polar lattice.
-  * **Closed-Form Proof**: Prove a closed-form, **unbiased anisotropic QJL inner-product estimator** ($\mathbb{E}[\langle q, \tilde{x} \rangle] = \langle q, x \rangle$) with strictly minimal variance under conical distributions.
+  * **The Mathematical Formulation**: Formulate **Anisotropic Polar Quantization (GAPQ)**: align coordinate frames with the empirical Riemannian metric of the embedding cone, mapping vectors into an adaptive-density ellipsoidal polar lattice.
+  * **Closed-Form Estimator**: Implement a closed-form, **unbiased anisotropic QJL inner-product estimator** ($\mathbb{E}[\langle q, \tilde{x} \rangle] = \langle q, x \rangle$) with strictly minimal variance under conical distributions.
   * **Hardware Validation**: C++ AVX-512 / AVX2 bitwise SIMD kernels achieving $>98.5\%$ Top-1 recall at sub-2-bit compression with zero scale-codebook overhead.
 * **Curriculum Construction**: Built progressively across **Months 1–3** during the CPU SIMD, linear algebra (Strang), and quantization blocks.
 
-### ⚡ Landmark Paper 2 (Target: MLSys / ICLR 2027 — Systems & Hardware Co-Design)
-* **Title**: *FlashMaxSim: Hardware-Fused In-SRAM Late Interaction for Multimodal Vision-Language Retrieval*
+### ⚡ Flagship Implementation 2: FlashMaxSim (Hardware-Fused Late Interaction in `secan`)
+* **Focus**: *FlashMaxSim: Hardware-Fused In-SRAM Late Interaction for Multimodal Vision-Language Retrieval*
 * **Core Contribution**:
   * **The Fundamental Open Problem**: Multimodal retrieval (ColPali, ColQwen) produces 1030 vision tokens per page. Computing late-interaction MaxSim currently forces GPUs to materialize a massive $L_q \times L_d$ score matrix in global VRAM, throttling High Bandwidth Memory (HBM) bus saturation.
   * **The Algorithmic Breakthrough**: Derive the **Online Max Reduction Invariant** for multi-vector tokens:
@@ -326,7 +326,7 @@ The engineering and research trajectory in this blueprint is anchored in authori
 ### 📐 Mathematical & Statistical Foundations
 | Author(s) & Work | Key Focus & Technical Application |
 |:---|:---|
-| **Roman Vershynin**<br>*High-Dimensional Probability* (Cambridge 2018) | Sub-Gaussian vectors, concentration of measure on $\mathcal{S}^{d-1}$ ($\|x\|_2 \approx \sqrt{d} \pm \mathcal{O}(1)$), covering numbers $\mathcal{N}(\mathcal{K}, \|\cdot\|_2, \varepsilon)$, and non-asymptotic random matrix bounds for **Landmark Paper 1 (GAPQ)**. |
+| **Roman Vershynin**<br>*High-Dimensional Probability* (Cambridge 2018) | Sub-Gaussian vectors, concentration of measure on $\mathcal{S}^{d-1}$ ($\|x\|_2 \approx \sqrt{d} \pm \mathcal{O}(1)$), covering numbers $\mathcal{N}(\mathcal{K}, \|\cdot\|_2, \varepsilon)$, and non-asymptotic random matrix bounds for **Flagship Implementation 1 (GAPQ)**. |
 | **Roger Horn & Charles Johnson**<br>*Matrix Analysis* (2nd ed, Cambridge 2012) | Courant-Fischer minimax theorem, Rayleigh quotients for cone principal axes, and Weyl/Hoffman-Wielandt perturbation bounds for MUVERA encodings. |
 | **George Casella & Roger Berger**<br>*Statistical Inference* (2nd ed, Cengage 2001) | Rao-Blackwell sufficiency, Cramér-Rao Lower Bounds (CRLB) $\text{Var}(\hat{\theta}) \ge \frac{1}{I(\theta)}$ for inner-product estimators, and Likelihood Ratio Tests for quantized recall degradation. |
 | **Edwin T. Jaynes**<br>*Probability Theory: The Logic of Science* (Cambridge 2003) | Bayesian inference treated as extended Boolean logic; Maximum Entropy Principle for prior distributions on Riemannian manifolds. |
@@ -336,7 +336,7 @@ The engineering and research trajectory in this blueprint is anchored in authori
 |:---|:---|
 | **John Hennessy & David Patterson**<br>*Computer Architecture: A Quantitative Approach* (6th ed, 2017) | Amdahl's Law, memory hierarchy latency hiding, Tomasulo ILP, non-blocking caches, and multi-banked memory architectures. |
 | **Brendan Gregg**<br>*Systems Performance* (2nd ed, Addison-Wesley 2020) | USE method, CPU PMU hardware counters, off-CPU profiling, eBPF kernel tracing, and NVMe `io_uring` direct I/O characterization. |
-| **David Kirk, Wen-mei Hwu & Izzat El Hajj**<br>*Programming Massively Parallel Processors* (4th ed, 2022) | Grid-block-thread hierarchies, warp shuffle intrinsics (`__shfl_down_sync`), shared memory bank conflict elimination (32 banks), and fused Tensor Core pipelines for **Landmark Paper 2 (FlashMaxSim)**. |
+| **David Kirk, Wen-mei Hwu & Izzat El Hajj**<br>*Programming Massively Parallel Processors* (4th ed, 2022) | Grid-block-thread hierarchies, warp shuffle intrinsics (`__shfl_down_sync`), shared memory bank conflict elimination (32 banks), and fused Tensor Core pipelines for **Flagship Implementation 2 (FlashMaxSim)**. |
 | **Butler W. Lampson**<br>*Hints for Computer System Design* (ACM TOCS 1983) | Golden systems doctrines: fast secrets, hints vs truths, end-to-end fallback, and modular interfaces for low-latency retrieval. |
 
 ### 📡 Information Theory & Distributed Retrieval

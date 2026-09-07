@@ -3,7 +3,7 @@
 | Metadata | Specification |
 |:---|:---|
 | **Month** | {N} — {Month YYYY} |
-| **Status** | Working Manuscript |
+| **Status** | Empirical Benchmark Report |
 | **Domain** | {e.g. Microarchitecture, Quantization, Out-of-Core Graph Systems, GPU Attention} |
 | **Primary Benchmark Target** | {Target binary / dataset / hardware suite} |
 

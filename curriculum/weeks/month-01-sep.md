@@ -20,7 +20,7 @@
 
 
 ### 📚 Master Reference Textbooks (Month 1)
-* **High-Dimensional Probability**: Roman Vershynin, *High-Dimensional Probability: An Introduction with Applications in Data Science* (CUP 2018) — Ch 1–3 (Random vectors in $\mathbb{R}^d$, spherical distributions on $\mathcal{S}^{d-1}$, sub-Gaussian variables, concentration of measure). *Foundational for GAPQ Landmark Paper 1.*
+* **High-Dimensional Probability**: Roman Vershynin, *High-Dimensional Probability: An Introduction with Applications in Data Science* (CUP 2018) — Ch 1–3 (Random vectors in $\mathbb{R}^d$, spherical distributions on $\mathcal{S}^{d-1}$, sub-Gaussian variables, concentration of measure). *Foundational for Flagship Implementation 1 (GAPQ in `secan`).*
 * **Computer Architecture**: John L. Hennessy & David A. Patterson, *Computer Architecture: A Quantitative Approach* (6th ed, Morgan Kaufmann 2017) — Ch 1 (Quantitative Principles, Amdahl's Law) & Ch 2 (Memory Hierarchy Design, Cache Optimizations).
 * **Systems Performance**: Brendan Gregg, *Systems Performance: Enterprise and the Cloud* (2nd ed, Addison-Wesley 2020) — Ch 2 (Methodologies) & Ch 6 (CPUs, PMU Hardware Counters, `perf stat` / `perf record`).
 
@@ -36,7 +36,7 @@
 * **IR Analytics**: Mathematical definitions of NDCG@K, DCG formula, Ideal DCG (IDCG), MRR, **MAP** (Mean Average Precision).
 * **C++ Track**:
   * **secan**: Google Benchmark, `.fvecs` loaders, IR metrics (NDCG, MRR, **MAP**), scalar baseline. **IP kernel Thursday.**
-  * **DL**: Sat Sep 6 (not weekday).
+  * **DL**: Tue & Wed mornings (06:30–08:30 builder track).
 
 | Day | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|
@@ -67,10 +67,10 @@
 * ❌ **Do NOT** hand-write custom timing harnesses or CLI parsers—use Google Benchmark.
 * ❌ **Do NOT** start writing AVX2/AVX-512 intrinsics—keep distance kernels in scalar C++ to establish the true unoptimized baseline.
 * ❌ **Do NOT** run exact scans on all 1,000,000 vectors $\times$ 10,000 queries if scalar latency exceeds 60s—use the 100K subset for rapid iteration.
-* ❌ **Do NOT** touch Deep Learning / PyTorch on weekdays—DL is strictly reserved for Saturday afternoon (14:00–18:00).
+* ❌ **Do NOT** let DL spill beyond Tue/Wed 06:30–08:30 mornings—keep weekday evenings dedicated to professional workday and night C++20 implementation.
 
 > **📝 Essay 1 (Sat Sep 6)**: *"The Geometry of High-Dimensional Retrieval: Trigonometric Projections, NDCG Ranking, and Hardware Performance Counters"*  
-> **🧠 DL weekend**: `uv init transformers-pytorch`; SDPA + causal mask.
+> **🧠 DL Builder Track (Tue/Wed)**: `uv init transformers-pytorch`; SDPA + causal mask.
 
 ---
 
@@ -115,7 +115,7 @@
 * ❌ **Do NOT** write a custom memory allocator for vector alignments—`alignas(64)` or `posix_memalign` is sufficient.
 
 > **📝 Essay 2 (Sat Sep 13)**: *"Breaking Dependency Chains: Multi-Register SIMD Kernels"*  
-> **🧠 DL weekend**: MHA + GQA; Pre-LN vs Post-LN.
+> **🧠 DL Builder Track (Tue/Wed)**: MHA + GQA; Pre-LN vs Post-LN.
 
 ---
 
@@ -161,7 +161,7 @@
 * ❌ **Do NOT** solve advanced trigonometric integrals with multiple integration-by-parts iterations on paper—grasp the reduction formula concept and stop.
 
 > **📝 Essay 3 (Sat Sep 20)**: *"Integrals, Accumulation, and the Physics of CPU Caches"*  
-> **🧠 DL weekend**: **Micrograd autograd engine** (~150 lines): `Value` class with `+`, `*`, `tanh`, `exp`, `backward()` using topological sort. Verify gradient of a tiny 2-layer MLP matches PyTorch. **Then** implement Pre-LN encoder + FFN with manual `backward()` for `Linear` layer (compare `dW` vs `param.grad`).
+> **🧠 DL Builder Track (Tue/Wed)**: **Micrograd autograd engine** (~150 lines): `Value` class with `+`, `*`, `tanh`, `exp`, `backward()` using topological sort. Verify gradient of a tiny 2-layer MLP matches PyTorch. **Then** implement Pre-LN encoder + FFN with manual `backward()` for `Linear` layer (compare `dW` vs `param.grad`).
 
 ---
 

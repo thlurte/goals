@@ -3,7 +3,7 @@
 | Metadata | Specification |
 |:---|:---|
 | **Month** | 3 — November 2026 |
-| **Status** | Active Working Manuscript |
+| **Status** | Empirical Benchmark Report |
 | **Domain** | Multi-Vector Retrieval, Storage Engines, Log-Structured Merge Trees, Asynchronous I/O |
 
 ---
