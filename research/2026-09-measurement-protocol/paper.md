@@ -19,18 +19,18 @@
 ## 2. Theoretical Microarchitectural Model
 
 For a vector of dimension $D$ processed with SIMD vector width $V$ ($V=8$ for AVX2 FP32, $V=16$ for AVX-512, $V=4$ for ARM NEON):
+
 1. **FMA Latency Bound (Single Accumulator)**:
-   $$T_{	ext{latency}} = \left\lceil rac{D}{V} 
-ight
-ceil 	imes L_{	ext{FMA}} \quad (L_{	ext{FMA}} = 4	ext{ cycles})$$
-2. **FMA Throughput Bound ($N_{	ext{acc}} \ge L_{	ext{FMA}} 	imes R_{	ext{FMA}}$ Accumulators)**:
-   $$T_{	ext{throughput}} = \left\lceil rac{D}{V} 
-ight
-ceil 	imes rac{1}{R_{	ext{FMA}}} \quad (R_{	ext{FMA}} = 2	ext{ FMA units/cycle on Port 0 & 1})$$
+   $$T_{\text{latency}} = \left\lceil \frac{D}{V} \right\rceil \times L_{\text{FMA}} \quad (L_{\text{FMA}} = 4\text{ cycles})$$
+
+2. **FMA Throughput Bound ($N_{\text{acc}} \ge L_{\text{FMA}} \times R_{\text{FMA}}$ Accumulators)**:
+   $$T_{\text{throughput}} = \left\lceil \frac{D}{V} \right\rceil \times \frac{1}{R_{\text{FMA}}} \quad (R_{\text{FMA}} = 2\text{ FMA units/cycle on Port 0 & 1})$$
+
 3. **Memory Load Port Limit**:
-   $$T_{	ext{memory}} = rac{2 	imes D 	imes 4	ext{ bytes}}{	ext{L1 Cache Load Bandwidth (64 bytes/cycle)}} = rac{D}{8}	ext{ cycles}$$
+   $$T_{\text{memory}} = \frac{2 \times D \times 4\text{ bytes}}{\text{L1 Cache Load Bandwidth (64 bytes/cycle)}} = \frac{D}{8}\text{ cycles}$$
+
 4. **Denormal / Subnormal Floating-Point Exception Trap**:
-   * Any distance accumulation resulting in $0 < |x| < 2^{-126}$ triggers CPU microcode exception assists, degrading execution throughput by up to **$100	imes$** unless hardware FTZ/DAZ (Flush-To-Zero / Denormals-Are-Zero) flags are activated in the MXCSR register.
+   * Any distance accumulation resulting in $0 < |x| < 2^{-126}$ triggers CPU microcode exception assists, degrading execution throughput by up to **$100\times$** unless hardware FTZ/DAZ (Flush-To-Zero / Denormals-Are-Zero) flags are activated in the MXCSR register.
 
 ---
 
