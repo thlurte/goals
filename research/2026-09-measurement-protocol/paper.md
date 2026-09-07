@@ -24,7 +24,7 @@ For a vector of dimension $D$ processed with SIMD vector width $V$ ($V=8$ for AV
    $$T_{\text{latency}} = \left\lceil \frac{D}{V} \right\rceil \times L_{\text{FMA}} \quad (L_{\text{FMA}} = 4\text{ cycles})$$
 
 2. **FMA Throughput Bound ($N_{\text{acc}} \ge L_{\text{FMA}} \times R_{\text{FMA}}$ Accumulators)**:
-   $$T_{\text{throughput}} = \left\lceil \frac{D}{V} \right\rceil \times \frac{1}{R_{\text{FMA}}} \quad (R_{\text{FMA}} = 2\text{ FMA units/cycle on Port 0 & 1})$$
+   $$T_{\text{throughput}} = \left\lceil \frac{D}{V} \right\rceil \times \frac{1}{R_{\text{FMA}}} \quad (R_{\text{FMA}} = 2\text{ FMA units/cycle on Port 0 and Port 1})$$
 
 3. **Memory Load Port Limit**:
    $$T_{\text{memory}} = \frac{2 \times D \times 4\text{ bytes}}{\text{L1 Cache Load Bandwidth (64 bytes/cycle)}} = \frac{D}{8}\text{ cycles}$$
