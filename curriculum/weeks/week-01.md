@@ -76,8 +76,8 @@
 * `⭐ Optional / Stretch`: Add a benchmark measuring the exact nanosecond cost of compiler dead-code elimination (with vs without `DoNotOptimize`).
 
 ### 🔹 Tuesday, Tue Sep 8 ([`Day 004`](../days/month-01/day-004-2026-09-08.md))
-* `[ ]` **Core**: Implement `.fvecs`, `.bvecs`, `.ivecs` binary loaders in `include/secan/utils/io.h` and `src/utils/io.cpp`; verify SIFT1M headers.
-* `⭐ Optional / Stretch`: Implement memory-mapped (`mmap`) zero-copy loader in addition to standard `std::ifstream` and compare load times.
+* `[x]` **Core**: Implement `.fvecs`, `.bvecs`, `.ivecs` binary loaders in `include/secan/utils/io.h` and `src/utils/io.cpp`; verify binary format headers.
+* `[x]` `⭐ Optional / Stretch`: Implement memory-mapped (`mmap`) zero-copy loader in addition to standard `std::ifstream` and compare load times.
 
 ### 🔹 Wednesday, Wed Sep 9 ([`Day 005`](../days/month-01/day-005-2026-09-09.md))
 * `[ ]` **Core**: Implement NDCG@K, MRR, and MAP in `tests/test_ir_metrics.cpp`; run exact scan on 100K SIFT subset.
