@@ -114,7 +114,7 @@ Before the Friday article or release, save the run manifest and raw JSON/CSV, ad
 ## 📝 Weekend & Milestone Deliverables
 
 ### ✍️ Technical Essay 01 (Drafted Friday 06:30–08:30)
-* **Title**: *"The Geometry of High-Dimensional Retrieval: Trigonometric Projections, NDCG Ranking, and Hardware Performance Counters"*
+* `[x]` **Title**: *"The Geometry of High-Dimensional Retrieval: Trigonometric Projections, NDCG Ranking, and Hardware Performance Counters"*
 * **Target File**: `~/personal/goals/essays/essay_01.md`
 * **5-Part Structure**:
   1. **Mathematical Foundation**: Core theorems, derivations, and formal definitions.
