@@ -88,8 +88,8 @@
 * `[x]` `⭐ Optional / Stretch`: Implement a fast reciprocal square root (`1.0f / sqrtf(...)`) approximation for cosine normalizations.
 
 ### 🔹 Friday, Fri Sep 11 ([`Day 007`](../days/month-01/day-007-2026-09-11.md))
-* `[ ]` **Core**: Profile baseline exact scan with `perf stat -e cycles,instructions,branches,branch-misses,L1-dcache-load-misses`; record baseline IPC.
-* `[ ]` **Core**: Publish `week1_baseline.json`/`.csv`, one dimension-versus-latency plot, and one README benchmark row. Record the FP32 exact oracle and state the baseline's limiting resource.
+* `[x]` **Core**: Profile baseline exact scan with `perf stat -e cycles,instructions,branches,branch-misses,L1-dcache-load-misses`; record baseline IPC.
+* `[x]` **Core**: Publish `week1_baseline.json`/`.csv`, one dimension-versus-latency plot, and one README benchmark row. Record the FP32 exact oracle and state the baseline's limiting resource.
 * `⭐ Optional / Stretch`: Capture a flame graph / `perf record` trace of the exact scan loop; identify instruction-cache vs data-cache bottleneck.
 
 ---
