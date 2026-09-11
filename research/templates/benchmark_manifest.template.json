@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "run_id": "YYYY-MM-DD_feature_dataset_variant",
+  "feature": "ivfpq_adc",
+  "git": {
+    "repository": "secan",
+    "commit": "<full commit SHA>",
+    "dirty": false
+  },
+  "machine": {
+    "cpu": "<model>",
+    "cores": 0,
+    "ram_gib": 0,
+    "gpu": null,
+    "os": "<distribution and kernel>",
+    "governor": "performance",
+    "affinity": "<pinned cores or policy>"
+  },
+  "build": {
+    "compiler": "clang++ <version>",
+    "flags": ["-O3", "-march=native", "-DNDEBUG"],
+    "cmake_build_type": "Release"
+  },
+  "dataset": {
+    "name": "SIFT1M",
+    "metric": "l2_squared",
+    "base_count": 1000000,
+    "query_count": 10000,
+    "dimension": 128,
+    "split": "<base/query/ground-truth source>",
+    "checksum": "sha256:<value>"
+  },
+  "protocol": {
+    "seed": 42,
+    "warmup_queries": 1000,
+    "repetitions": 5,
+    "command": "<exact command>",
+    "oracle": "exact_fp32_scan",
+    "tolerance": "exact ranking / abs=... rel=..."
+  }
+}

@@ -39,6 +39,8 @@
 | **Compilation Suite** | `clang++ -O3 -march=native -DNDEBUG -ffast-math` |
 | **Measurement Tools** | Google Benchmark v1.9.0, Linux `perf stat`, `perf c2c`, `nsys`, `ncu` |
 | **Evaluated Datasets** | {e.g. SIFT1M (128-D), Deep10M (96-D), Dense Embeddings (768-D)} |
+| **Run Manifest** | `secan/benchmarks/manifests/{machine}_{dataset}.json` |
+| **Raw Results** | `secan/benchmarks/results/{date}_{feature}_{dataset}.json` and `.csv` |
 
 ### Controlled Execution Protocol
 1. Pin CPU frequencies / disable TurboBoost to ensure $<1\%$ run-to-run IPC variance.
@@ -48,26 +50,28 @@
 ---
 
 ## 4. Controlled Parameter Sweeps & Empirical Results
-*Include at least one structured benchmark table and figure reference.*
+*Include raw result paths, at least one structured table, and one figure. A single cherry-picked configuration is not a result.*
 
 **Figure 1.** `{Caption explaining Pareto curve}` → `figures/pareto_frontier.png`
 
-| Parameter Sweep | Baseline Latency | This Work (secan) | Speedup Factor | Hardware Counter Profile |
+| Parameter Sweep | Recall / NDCG | QPS | p50 / p95 / p99 | Bytes / Vector | Peak RSS | Counter Profile |
 |:---|:---|:---|:---|:---|
-| Sweep 1 | | | | |
-| Sweep 2 | | | | |
-| Sweep 3 | | | | |
+| Sweep 1 | | | | | | |
+| Sweep 2 | | | | | | |
+| Sweep 3 | | | | | | |
+
+**Correctness oracle:** {exact FP32 scan / reference implementation} · **Tolerance:** {value} · **Failures:** {count}
 
 ---
 
 ## 5. Industrial & Academic Baseline Comparison
 *Direct comparison against named, industry-standard systems under identical hardware constraints.*
 
-| Production Engine | Mechanism / Algorithm | Measured QPS | P99 Latency | Recall@10 | Cost / Watt |
+| Production Engine | Mechanism / Algorithm | Target Quality | Measured QPS | P99 Latency | Bytes / Vector | Notes |
 |:---|:---|:---|:---|:---|:---|
-| **Industry Baseline A** | {e.g. Faiss IndexIVFPQ} | | | | |
-| **Industry Baseline B** | {e.g. HNSWLib} | | | | |
-| **This Work (secan)** | {Hardware-optimized kernel} | | | | |
+| **Industry Baseline A** | {e.g. Faiss IndexIVFPQ} | | | | | |
+| **Industry Baseline B** | {e.g. HNSWLib} | | | | | |
+| **This Work (secan)** | {Hardware-optimized kernel} | | | | | |
 
 ---
 

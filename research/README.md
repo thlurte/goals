@@ -4,6 +4,41 @@ Instead of academic paper writing and theoretical manuscript deadlines, the empi
 
 All empirical data collected during the weekday morning builder blocks (**Mondays & Thursdays 06:30–08:30**) directly fuels the **28 Weekly Technical Articles** drafted and published every **Friday morning (06:30–08:30)** (see [`curriculum/essays.md`](../curriculum/essays.md)).
 
+## Benchmark Contract: What Makes Work Showcaseable
+
+A feature is not complete because it compiles or produces a promising one-off number. Every completed kernel, index, or reranker must leave a comparable evidence package in `secan`:
+
+```text
+secan/
+├── benchmarks/
+│   ├── manifests/       # machine + dataset + command inputs
+│   ├── results/         # immutable JSON/CSV outputs, one file per run
+│   └── plots/           # derived Pareto and latency figures
+└── docs/benchmarks/     # short interpretation notes linked from the README
+```
+
+Use [`templates/benchmark_manifest.template.json`](templates/benchmark_manifest.template.json) and [`templates/benchmark_result.template.json`](templates/benchmark_result.template.json) as the stable interchange format. The templates are deliberately owned here in `goals`; the executed data belongs in `secan` beside the executable that produced it.
+
+### Required evidence for each result claim
+
+| Evidence | Requirement |
+|:---|:---|
+| **Correctness** | Differential result against exact FP32 search or another defined oracle; tolerance and failure count recorded. |
+| **Reproducibility** | Dataset split/checksum, machine, compiler/flags, command, seed, thread policy, and clock state recorded. |
+| **Quality** | ANN: Recall@1/10/100. Retrieval: add NDCG@10 and MRR where relevance labels exist. |
+| **Cost** | QPS, p50/p95/p99, index build time, bytes/vector, and peak RSS. |
+| **Hardware explanation** | CPU: IPC and cache/branch/TLB counters where relevant. GPU: kernel time, achieved bandwidth/FLOPS, and relevant Nsight counters. |
+| **Comparison** | Previous `secan` baseline; add Faiss, hnswlib, Qdrant, or cuVS when the algorithm is comparable. Identical dataset, metric, target quality, and hardware are mandatory. |
+| **Interpretation** | One short note: what won or lost, why the evidence supports that conclusion, and the known failure boundary. |
+
+### Weekly close rule
+
+Friday’s article and release update are complete only after the week's raw result JSON/CSV, a plot, and one README row have been added. A result below the measured noise floor is recorded as **inconclusive**, not as a speedup. Sweep at least one meaningful tradeoff parameter—such as `nprobe`, `efSearch`, PQ subspaces/bit-rate, batch size, or rerank depth—rather than publishing one cherry-picked configuration.
+
+### Comparison discipline
+
+External engines are reference implementations, not dependencies of `secan`'s inner loop. The objective is an honest explanation, not an immediate victory. “Same recall, slower due to scalar LUT layout; cache-miss profile identifies the next optimization” is a valuable result.
+
 ---
 
 ## 🏛️ The Two Flagship Systems Implementations

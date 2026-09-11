@@ -48,7 +48,7 @@
 | **Tuesday** | Tue Sep 29 | [`Day 025`](../days/month-01/day-025-2026-09-29.md) | Faiss IVF coarse quantizer; **spherical k-means** for IP/MIPS. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: `IVFIndex` — L2 k-means + **spherical k-means** for IP. |
 | **Wednesday** | Wed Sep 30 | [`Day 026`](../days/month-01/day-026-2026-09-30.md) | **PIKUS Ch 6**: Thread pools. | **DL Track (Part 2): Training Loop & Verification** | **secan**: Multi-probe IVF; `nprobe` sweep; pinned `std::jthread`. |
 | **Thursday** | Thu Oct 1 | [`Day 027`](../days/month-01/day-027-2026-10-01.md) | IVF inverted-list skew (Faiss `make_direct_map` / list size). | **DL / Vector Retrieval Integration & Profiling** | **secan (required)**: Histogram of IVF list sizes; **rebalance / split oversized lists**. |
-| **Friday** | Fri Oct 2 | [`Day 028`](../days/month-02/day-028-2026-10-02.md) | IP vs L2 recall on same vectors. | **Weekly Technical Article: Drafting & Publishing** | **secan**: IP/MIPS search path on IVF; compare Recall@10 vs L2. Tag `v0.2-simd-ivf`. |
+| **Friday** | Fri Oct 2 | [`Day 028`](../days/month-01/day-028-2026-10-02.md) | IP vs L2 recall on same vectors. | **Weekly Technical Article: Drafting & Publishing** | **secan**: IP/MIPS search path on IVF; compare Recall@10 vs L2. Tag `v0.2-simd-ivf`. |
 
 ---
 
@@ -103,7 +103,15 @@
 * ❌ **Do NOT** implement Product Quantization (PQ) inside IVF lists yet—Month 1 is strictly IVFFlat (PQ is built in Month 2).
 * ❌ **Do NOT** try to implement GPU kernels this week—GPU is scheduled for Month 4 (Weeks 13–16).
 
+## IVF: Objective, Geometry & Validation
+
+For the scheduled L2 and spherical k-means implementation, derive the Lloyd objective and the normalized centroid update. Record objective-by-iteration, list-size histogram, Recall@10 versus `nprobe`, and the link between assignment boundaries/list skew and tail latency.
+
 ---
+
+## Benchmark Close
+
+Before the Friday article or release, save the run manifest and raw JSON/CSV, add one meaningful parameter sweep and plot, update the comparable README result row, and state the oracle result plus one evidence-backed conclusion. Record results below the noise floor as inconclusive.
 
 ## 📝 Weekend Deliverables
 

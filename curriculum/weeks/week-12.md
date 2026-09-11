@@ -92,7 +92,7 @@
 
 ### 🔹 Friday, Fri Nov 27 ([`Day 084`](../days/month-03/day-084-2026-11-27.md))
 * `[ ]` **Core**: Implement `HNSWSQIndex` (HNSW graph routing over SQ8/SQ4 quantized vectors); generate Pareto curve vs `hnswlib` on SIFT and 768-D text. Tag `v1.0-cpu-complete`.
-* `⭐ Optional / Stretch`: Compile full Block I benchmark table with memory footprints, indexing times, and QPS at Recall@10 $\ge 0.95$.
+* `[ ]` **Core**: Compile the Block I comparison table: memory footprint, index build time, QPS, p50/p95/p99, and QPS at matched Recall@10 $\ge 0.95$, with raw manifests/results and an honest limitation for every index family.
 
 
 ---
@@ -104,6 +104,10 @@
 * ❌ **Do NOT** attempt full SVD matrix solvers from scratch—use Eigen or NumPy SVD for offline whitening matrices.
 
 ---
+
+## Benchmark Close
+
+Before the Friday article or release, save the run manifest and raw JSON/CSV, add one meaningful parameter sweep and plot, update the comparable README result row, and state the oracle result plus one evidence-backed conclusion. Record results below the noise floor as inconclusive.
 
 ## 📝 Weekend Deliverables
 

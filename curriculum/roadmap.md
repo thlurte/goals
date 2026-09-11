@@ -79,6 +79,10 @@ flowchart LR
   * Measure Latency distributions ($p50, p95, p99$), Throughput ($\text{QPS}$), and Memory Footprint.
 * **Tooling Integration**:
   * Instrument builds with Linux `perf stat` (IPC, cache misses, branch misses) and `pprof` call-graph profiling.
+* **Reproducible Result Contract**:
+  * Save machine/dataset/command manifests and immutable JSON/CSV outputs alongside each benchmark executable.
+  * For each optimization, publish one parameter sweep and its Pareto plot—not a single favorable number.
+  * Require exact FP32 oracle agreement plus a stated tolerance before measuring performance; compare later composed indexes against an equivalent Faiss/hnswlib/cuVS baseline on identical hardware and target quality.
 
 ---
 

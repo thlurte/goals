@@ -105,7 +105,15 @@
 * ❌ **Do NOT** spend time proving classical 3D fluid or physical vector theorems (Stokes/Divergence)—all physics vector calculus has been purged in favor of neural network matrix calculus.
 * ❌ **Do NOT** write a custom matrix optimizer for OPQ—a basic alternating least squares (ALS) rotation or residual PQ is 100% fine.
 
+## OPQ Stability & Benchmark Inference
+
+For OPQ, report $\|R^\top R-I\|$, distortion, and Recall@10 relative to plain PQ. For every comparison, keep repeated-run dispersion, median/p95, clock state, and build configuration; improvements below the noise floor are inconclusive.
+
 ---
+
+## Benchmark Close
+
+Before the Friday article or release, save the run manifest and raw JSON/CSV, add one meaningful parameter sweep and plot, update the comparable README result row, and state the oracle result plus one evidence-backed conclusion. Record results below the noise floor as inconclusive.
 
 ## 📝 Weekend Deliverables
 

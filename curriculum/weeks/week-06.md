@@ -103,7 +103,15 @@
 * ❌ **Do NOT** implement symmetric PQ distance computation (SDC)—asymmetric ADC (FP32 query vs PQ codes) is strictly superior for query accuracy.
 * ❌ **Do NOT** build a custom multi-threading pool for PQ encoding—standard `std::jthread` or OpenMP parallel loop is sufficient.
 
+## PQ Rate–Distortion Evaluation
+
+For the already scheduled $M$ sweep, emit distortion, Recall@10, bytes/vector, and QPS together. Explain the selected configuration as a Pareto choice, and retain the FP32 query / ADC rationale.
+
 ---
+
+## Benchmark Close
+
+Before the Friday article or release, save the run manifest and raw JSON/CSV, add one meaningful parameter sweep and plot, update the comparable README result row, and state the oracle result plus one evidence-backed conclusion. Record results below the noise floor as inconclusive.
 
 ## 📝 Weekend Deliverables
 

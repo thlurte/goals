@@ -1,6 +1,10 @@
 # Month 1 — Sep (Weeks 1–4)
 
+> **Retrieval math integration**: metric geometry and floating-point error are completed in Weeks 1–2; IVF as constrained optimization lands in Week 4. These requirements are embedded in existing weekend and benchmark work, not added hours.
+
 > Part of the [28-week curriculum](../README.md). Research: [`research/`](../../research/README.md).
+
+> **Monthly benchmark outcome**: publish comparable, reproducible evidence for this month’s systems milestone: manifests and raw results, parameter sweeps, Pareto/latency plots, oracle status, and concise conclusions. Preserve all inputs needed to reproduce the result.
 
 | | |
 |:---|:---|

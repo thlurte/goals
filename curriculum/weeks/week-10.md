@@ -103,7 +103,15 @@
 * ❌ **Do NOT** implement full DiskANN or `io_uring` this week—DiskANN is formally built in Week 16.
 * ❌ **Do NOT** write a full Householder reflector library for QR—standard Gram-Schmidt is sufficient for rotation matrix generation.
 
+## Random Rotations & Reduction Error
+
+For RaBitQ/QJL/FWHT, verify norm or sampled-pair error before/after transformation and connect it to recall. Validate SIMD MaxSim against a FP32 scalar oracle with fixed tolerances; report whether a changed reduction topology changes the top-$k$ ranking.
+
 ---
+
+## Benchmark Close
+
+Before the Friday article or release, save the run manifest and raw JSON/CSV, add one meaningful parameter sweep and plot, update the comparable README result row, and state the oracle result plus one evidence-backed conclusion. Record results below the noise floor as inconclusive.
 
 ## 📝 Weekend Deliverables
 

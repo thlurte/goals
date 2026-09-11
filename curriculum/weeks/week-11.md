@@ -55,7 +55,7 @@
 ## 📋 Daily Action Items & Deliverables (Week 11)
 
 ### 🔹 Saturday, Sat Nov 14 ([`Day 071`](../days/month-03/day-071-2026-11-14.md))
-* `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
+* `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (Determinants, Eigenvalues, **Schur Complement Block Inversion**, **Sherman–Morrison–Woodbury Formula**, and **Kronecker Products $\mathbf{A} \otimes \mathbf{B}$**).
 * `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
 * `[ ]` **Core (16:30–18:00)**: **Physical Break & Mental Decompression**: Walk, tea, and recovery.
 * `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* — **Ch 10.1–10.3** (Rate-Distortion Theory: Continuous Distortion Measures & Rate-Distortion Function $R(D)$).
@@ -63,7 +63,7 @@
 * `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Nov 15 ([`Day 072`](../days/month-03/day-072-2026-11-15.md))
-* `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
+* `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense (Spectral Theorem, Positive Definite Matrices, **Cholesky Factorization $\mathbf{A} = \mathbf{L}\mathbf{L}^T$**, **Correlated Gaussian Sampling $\mathbf{x} = \boldsymbol{\mu} + \mathbf{L}\mathbf{z}$**, and **Fast Mahalanobis Distance via Triangular Substitution**).
 * `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
 * `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
 * `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: **DDIA Ch 10** (Batch Processing: MapReduce, Distributed Dataflow Engines & Graph Processing).
@@ -104,6 +104,10 @@
 * ❌ **Do NOT** over-engineer background compaction heuristics—a simple merge of 2 oldest segments into 1 is sufficient.
 
 ---
+
+## Benchmark Close
+
+Before the Friday article or release, save the run manifest and raw JSON/CSV, add one meaningful parameter sweep and plot, update the comparable README result row, and state the oracle result plus one evidence-backed conclusion. Record results below the noise floor as inconclusive.
 
 ## 📝 Weekend Deliverables
 

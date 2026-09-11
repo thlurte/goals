@@ -104,6 +104,10 @@
 
 ---
 
+## Benchmark Close
+
+Before the Friday article or release, save the run manifest and raw JSON/CSV, add one meaningful parameter sweep and plot, update the comparable README result row, and state the oracle result plus one evidence-backed conclusion. Record results below the noise floor as inconclusive.
+
 ## 📝 Weekend Deliverables
 
 ### ✍️ Technical Essay 28 (Drafted Friday 06:30–08:30)

@@ -1,6 +1,10 @@
 # Month 2 — Oct (Weeks 5–8)
 
+> **Retrieval math integration**: rate–distortion for SQ/PQ, randomized geometry, OPQ numerical linear algebra, and benchmark inference land in the existing Weeks 5–7 work. No time block changes.
+
 > Part of the [28-week curriculum](../README.md). Research: [`research/`](../../research/README.md).
+
+> **Monthly benchmark outcome**: publish comparable, reproducible evidence for this month’s systems milestone: manifests and raw results, parameter sweeps, Pareto/latency plots, oracle status, and concise conclusions. Preserve all inputs needed to reproduce the result.
 
 | | |
 |:---|:---|

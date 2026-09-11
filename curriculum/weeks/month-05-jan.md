@@ -2,6 +2,8 @@
 
 > Part of the [28-week curriculum](../README.md). Research: [`research/`](../../research/README.md).
 
+> **Monthly benchmark outcome**: publish comparable, reproducible evidence for this month’s systems milestone: manifests and raw results, parameter sweeps, Pareto/latency plots, oracle status, and concise conclusions. Preserve all inputs needed to reproduce the result.
+
 | | |
 |:---|:---|
 | [← Month 4 — Dec](month-04-dec.md) | [Month 6 — Feb →](month-06-feb.md) |

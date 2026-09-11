@@ -2,6 +2,10 @@
 
 > Required VS / DL / deferred landings. Week tables: [`weeks/`](weeks/). Curriculum index: [`README.md`](README.md).
 
+## Evidence required at every systems landing
+
+A landing is complete only when its implementation has an oracle check, run manifest, raw JSON/CSV, parameter sweep with a Pareto/latency plot, and a short evidence-backed interpretation. Comparable algorithms must also have a matched-quality external baseline by Week 12. The shared result format and weekly close rule live in the [empirical benchmarking track](../research/README.md#benchmark-contract-what-makes-work-showcaseable).
+
 ## Deferred-work ledger (slimmed → hard landing)
 
 Nothing slimmed is optional. Every row is **required** on the landing week.

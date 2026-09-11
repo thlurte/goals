@@ -36,6 +36,8 @@
 11. **Sun 19:30–21:00** — **Graduate Systems & GPU Architecture Lab** (*Hennessy & Patterson* / *Kirk & Hwu*)
 12. **Friday / Weekend** — Publish weekly technical article & release benchmark updates
 
+> **Benchmark completion rule**: A systems feature closes only with an oracle check, a reproducible result manifest, raw JSON/CSV, one tradeoff plot, and a short interpretation. The [empirical track](../research/README.md#benchmark-contract-what-makes-work-showcaseable) defines the common format.
+
 ## Map
 
 | Doc | What |

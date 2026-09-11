@@ -103,7 +103,15 @@
 * ❌ **Do NOT** spend time writing 2-bit or 3-bit scalar quantizers—focus strictly on SQ8 (1 byte) and SQ4 (1 nibble).
 * ❌ **Do NOT** try to implement Product Quantization (PQ) yet—PQ starts next week (Week 6).
 
+## Quantization & Randomized Geometry
+
+Treat the SQ sweep as the first rate–distortion curve: record bits/vector, MSE, Recall@10, and QPS. For the existing JL stretch, measure sampled pairwise-distance error after projection and relate it to retrieval error; do not present the lemma as a detached proof.
+
 ---
+
+## Benchmark Close
+
+Before the Friday article or release, save the run manifest and raw JSON/CSV, add one meaningful parameter sweep and plot, update the comparable README result row, and state the oracle result plus one evidence-backed conclusion. Record results below the noise floor as inconclusive.
 
 ## 📝 Weekend Deliverables
 
