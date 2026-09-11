@@ -127,6 +127,6 @@ Before the Friday article or release, save the run manifest and raw JSON/CSV, ad
 * `[x]` **Task**: `uv init transformers-pytorch`; SDPA + causal mask from first principles.
 
 ### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
-* **Focus**: Microarchitectural Limits of Distance Kernels & Hardware Calibration
+* `[x]` **Focus**: Microarchitectural Limits of Distance Kernels & Hardware Calibration
 * **Workspace**: `research/2026-09-measurement-protocol/` & `secan/benchmarks/`
 * **Artifact Target**: Baseline calibration data (`week1_baseline.json`) feeding directly into Friday's Technical Article 01.
