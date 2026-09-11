@@ -124,7 +124,7 @@ Before the Friday article or release, save the run manifest and raw JSON/CSV, ad
   5. **Key Takeaway**: Architectural rule of thumb for production AI systems.
 
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
-* **Task**: `uv init transformers-pytorch`; SDPA + causal mask from first principles.
+* `[x]` **Task**: `uv init transformers-pytorch`; SDPA + causal mask from first principles.
 
 ### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
 * **Focus**: Microarchitectural Limits of Distance Kernels & Hardware Calibration
