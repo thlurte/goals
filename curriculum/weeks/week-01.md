@@ -71,7 +71,8 @@
 * `⭐ Optional / Stretch`: 21:00 onwards Weekly review & recovery.
 
 ### 🔹 Monday, Mon Sep 7 ([`Day 003`](../days/month-01/day-003-2026-09-07.md))
-* `[ ]` **Core**: CMake setup for Google Benchmark via `FetchContent`; implement `benchmarks/bench_distance.cpp` with `benchmark::DoNotOptimize`.
+* `[x]` **Core**: CMake setup for Google Benchmark via `FetchContent`; implement `benchmarks/bench_distance.cpp` with `benchmark::DoNotOptimize`.
+* `[x]` **Core**: Establish the result contract in `secan`: create a machine manifest, SIFT subset manifest, and JSON benchmark output path. Save compiler flags, CPU governor/affinity, command, seed, and dataset checksum with the baseline.
 * `⭐ Optional / Stretch`: Add a benchmark measuring the exact nanosecond cost of compiler dead-code elimination (with vs without `DoNotOptimize`).
 
 ### 🔹 Tuesday, Tue Sep 8 ([`Day 004`](../days/month-01/day-004-2026-09-08.md))
@@ -88,6 +89,7 @@
 
 ### 🔹 Friday, Fri Sep 11 ([`Day 007`](../days/month-01/day-007-2026-09-11.md))
 * `[ ]` **Core**: Profile baseline exact scan with `perf stat -e cycles,instructions,branches,branch-misses,L1-dcache-load-misses`; record baseline IPC.
+* `[ ]` **Core**: Publish `week1_baseline.json`/`.csv`, one dimension-versus-latency plot, and one README benchmark row. Record the FP32 exact oracle and state the baseline's limiting resource.
 * `⭐ Optional / Stretch`: Capture a flame graph / `perf record` trace of the exact scan loop; identify instruction-cache vs data-cache bottleneck.
 
 ---
@@ -99,7 +101,15 @@
 * ❌ **Do NOT** run exact scans on all 1,000,000 vectors $\times$ 10,000 queries if scalar latency exceeds 60s—use the 100K subset for rapid iteration.
 * ❌ **Do NOT** do Pure Mathematics on weekday mornings—math is strictly reserved for Saturday and Sunday morning deep-work blocks (09:00–13:00). Keep weekday mornings focused on Systems Reading and Builder Track.
 
+## Metric Geometry & Floating-Point Validation
+
+Within the existing metric implementation and Week 2 numerical-parity stretch, retain the unit-vector identity $\|u-v\|_2^2=2-2\langle u,v\rangle$. Compare fused one-pass cosine against a two-pass reference on high-dynamic-range inputs, recording max/mean relative error and the accumulation order.
+
 ---
+
+## Benchmark Close
+
+Before the Friday article or release, save the run manifest and raw JSON/CSV, add one meaningful parameter sweep and plot, update the comparable README result row, and state the oracle result plus one evidence-backed conclusion. Record results below the noise floor as inconclusive.
 
 ## 📝 Weekend & Milestone Deliverables
 
