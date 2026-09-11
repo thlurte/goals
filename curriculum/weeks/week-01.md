@@ -80,7 +80,7 @@
 * `[x]` `⭐ Optional / Stretch`: Implement memory-mapped (`mmap`) zero-copy loader in addition to standard `std::ifstream` and compare load times.
 
 ### 🔹 Wednesday, Wed Sep 9 ([`Day 005`](../days/month-01/day-005-2026-09-09.md))
-* `[ ]` **Core**: Implement NDCG@K, MRR, and MAP in `tests/test_ir_metrics.cpp`; run exact scan on 100K SIFT subset.
+* `[x]` **Core**: Implement NDCG@K, MRR, and MAP in `tests/test_ir_metrics.cpp`; run exact scan on 100K SIFT subset.
 * `⭐ Optional / Stretch`: Complete exact scan over the full 1M SIFT1M dataset; verify Recall@10 = 1.000 on all 10,000 queries.
 
 ### 🔹 Thursday, Thu Sep 10 ([`Day 006`](../days/month-01/day-006-2026-09-10.md))
