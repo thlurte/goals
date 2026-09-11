@@ -84,8 +84,8 @@
 * `⭐ Optional / Stretch`: Complete exact scan over the full 1M SIFT1M dataset; verify Recall@10 = 1.000 on all 10,000 queries.
 
 ### 🔹 Thursday, Thu Sep 10 ([`Day 006`](../days/month-01/day-006-2026-09-10.md))
-* `[ ]` **Core**: Implement first-class `ip()` inner product kernel in `distance.cpp`; define `enum class MetricType { L2, IP, Cosine }`.
-* `⭐ Optional / Stretch`: Implement a fast reciprocal square root (`1.0f / sqrtf(...)`) approximation for cosine normalizations.
+* `[x]` **Core**: Implement first-class `ip()` inner product kernel in `distance.cpp`; define `enum class MetricType { L2, IP, Cosine }`.
+* `[x]` `⭐ Optional / Stretch`: Implement a fast reciprocal square root (`1.0f / sqrtf(...)`) approximation for cosine normalizations.
 
 ### 🔹 Friday, Fri Sep 11 ([`Day 007`](../days/month-01/day-007-2026-09-11.md))
 * `[ ]` **Core**: Profile baseline exact scan with `perf stat -e cycles,instructions,branches,branch-misses,L1-dcache-load-misses`; record baseline IPC.
