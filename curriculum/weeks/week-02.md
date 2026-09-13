@@ -63,7 +63,7 @@
 * `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Sep 13 ([`Day 009`](../days/month-01/day-009-2026-09-13.md))
-* `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
+* `[x]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
 * `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
 * `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
 * `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: **DDIA Ch 2** (Data Models and Query Languages: Relational vs Document vs Graph & Vector Layouts).
