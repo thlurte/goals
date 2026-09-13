@@ -66,7 +66,7 @@
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense (Strang Calculus §2.1–2.5: derivatives from first principles, linearity, power rule proof, product and quotient rules, algebraic derivatives).
 * `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
 * `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* — **Ch 1: The Roots of Science** (The Three Worlds: Platonic mathematical, physical, mental).
-* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: **DDIA Ch 1** (Reliable, Scalable, and Maintainable Applications: Faults, Load & $p99$ Latency).
+* `[x]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: **DDIA Ch 1** (Reliable, Scalable, and Maintainable Applications: Faults, Load & $p99$ Latency).
 * `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: Microarchitecture analysis and CUDA exercises in **H&P Ch 1** (Amdahl's law derivations, energy-delay products, CPI/IPC bottleneck calculations).
 * `⭐ Optional / Stretch`: 21:00 onwards Weekly review & recovery.
 
