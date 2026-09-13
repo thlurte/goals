@@ -55,7 +55,7 @@
 ## 📋 Daily Action Items & Deliverables (Week 02)
 
 ### 🔹 Saturday, Sat Sep 12 ([`Day 008`](../days/month-01/day-008-2026-09-12.md))
-* `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
+* `[x]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
 * `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
 * `[ ]` **Core (16:30–18:00)**: **Physical Break & Mental Decompression**: Walk, tea, and recovery.
 * `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* — **Ch 2.4–2.9** (Relative Entropy, Mutual Information, Chain Rules & Fano's Inequality).
