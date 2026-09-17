@@ -77,8 +77,10 @@ flowchart LR
   * Compute exact ground-truth nearest neighbors via exact scan.
   * Measure Recall@$k$ ($\frac{|\text{Retrieved} \cap \text{GroundTruth}|}{k}$).
   * Measure Latency distributions ($p50, p95, p99$), Throughput ($\text{QPS}$), and Memory Footprint.
-* **Tooling Integration**:
-  * Instrument builds with Linux `perf stat` (IPC, cache misses, branch misses) and `pprof` call-graph profiling.
+* **End-to-End Vector Formation & Ingestion Bridge (`transformers-pytorch` → `secan`)**:
+  * **Text Ingestion**: Raw tokens $\to$ Transformer Backbone (Pre-LN / GQA) $\to$ Attention-Masked Mean Pooling $\to$ Unit $L_2$ Normalization ($\hat{\mathbf{e}} = \mathbf{e} / \|\mathbf{e}\|_2$).
+  * **Multimodal / Vision Ingestion**: Raw page pixels $[B, C, H, W] \to$ 2D Convolutional Patch Projection $\to$ Sequence of Patch Embeddings $[B, N, d_{\text{model}}] \to$ Transformer Backbone $\to$ ViT / ColPali visual embeddings.
+  * **Zero-Copy Ingestion & Binary Export**: Stream PyTorch embedding batches directly into binary `.fvecs` / `.bvecs` disk layout or expose zero-copy memory pointers directly into `secan` C++ engine without serialization overhead.
 * **Reproducible Result Contract**:
   * Save machine/dataset/command manifests and immutable JSON/CSV outputs alongside each benchmark executable.
   * For each optimization, publish one parameter sweep and its Pareto plot—not a single favorable number.
@@ -168,6 +170,13 @@ flowchart LR
   * Asymmetric **Fixed Dimensional Encodings**: $\langle \mathrm{FDE}(Q), \mathrm{FDE}(P) \rangle$ approximates Chamfer/MaxSim.
   * Retrieve with off-the-shelf **IP/MIPS** (IVF or HNSW from Weeks 4/8); **one** exact MaxSim re-rank.
   * Measure candidates-to-recall vs PLAID on the same slice (BEIR/MS MARCO in Month 3).
+* **ColPali (Multimodal Late Interaction without OCR)**:
+  * Ingest visual page embeddings directly from Vision Transformers (ViT).
+  * Text query tokens $Q \in \mathbb{R}^{L_q \times D}$ match against 2D visual document patch tokens $D \in \mathbb{R}^{L_{\text{patches}} \times D}$ via fused In-SRAM MaxSim kernels, enabling native retrieval of diagrams, charts, tables, and typography without fragile OCR extractors.
+* **Sparse Lexical Inverted Index (TF-IDF / BM25) & Reciprocal Rank Fusion (RRF)**:
+  * Inverted index with posting lists; term saturation ($k_1$) and document length penalization ($b$) via Okapi BM25.
+  * Accelerated via Block-Max WAND (Weak AND) early termination.
+  * Fuses sparse lexical BM25 candidate ranks with dense ANN HNSW candidates using Reciprocal Rank Fusion ($\text{RRF}(d) = \sum \frac{1}{k_0 + r_m(d)}$) to solve the out-of-vocabulary / exact keyword failure mode of pure dense embeddings.
 
 ---
 

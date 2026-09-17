@@ -87,6 +87,7 @@
 
 ### 🔹 Thursday, Thu Sep 17 ([`Day 013`](../days/month-01/day-013-2026-09-17.md))
 * `[ ]` **Core**: Implement `ip_avx2()` with 4-way unrolling; ensure 64-byte vector alignment (`alignas(64)`).
+* `[ ]` **Core (DL Builder Track)**: Implement Mask-Aware Mean Pooling, Unit $L_2$ Normalization, and direct binary `.fvecs` exporter in `transformers-pytorch` to close the model inference-to-index ingestion bridge.
 * `⭐ Optional / Stretch`: Benchmark unaligned load (`_mm256_loadu_ps`) vs aligned load (`_mm256_load_ps`) across cache line boundaries.
 
 
