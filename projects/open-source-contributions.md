@@ -10,6 +10,7 @@
 | Date | Repo | PR / Issue | Title | Status | Impact |
 |:---|:---|:---|:---|:---|:---|
 | **2026-09-18** | `facebookresearch/faiss` | [PR #5654](https://github.com/facebookresearch/faiss/pull/5654) (Fixes [#5576](https://github.com/facebookresearch/faiss/issues/5576)) | `fix(IndexFlat1D): keep sorted permutation valid across remove_ids and merge_from` | **CLA Signed / In Review** ✅ | Prevents crash in `IndexFlat1D.search()` after deletions/merges; added C++ GTests + Python tests. |
+| **2026-09-18** | `ashvardanian/NumKong` | [PR #385](https://github.com/ashvardanian/NumKong/pull/385) (Fixes [#384](https://github.com/ashvardanian/NumKong/issues/384)) | `fix(scalar): propagate NaN on Euclidean overflow instead of zero` | **In Review** 🚀 | Fixes Euclidean distance returning 0.0 on overflow across f64/bf16; aligns serial fallback with hardware SIMD. |
 
 ---
 
