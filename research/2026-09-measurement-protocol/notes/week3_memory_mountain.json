@@ -1,0 +1,769 @@
+{
+  "timestamp": "2026-09-21T22:30:21.031470",
+  "hardware": {
+    "platform": "Linux 7.2.5-1-cachyos (x86_64)",
+    "processor": "AMD Zen 4 (Hawk Point)",
+    "l1d_cache": "32 KiB (x6)",
+    "l1i_cache": "32 KiB (x6)",
+    "l2_cache": "1024 KiB (x6)",
+    "l3_cache": "16384 KiB (x1)"
+  },
+  "benchmarks": [
+    {
+      "name": "BM_MemoryMountain/4/1",
+      "size_kb": 4,
+      "stride": 1,
+      "time_ns": 568.97,
+      "cpu_ns": 561.86,
+      "iterations": 1244231,
+      "bytes_per_second_gib": 6.7894
+    },
+    {
+      "name": "BM_MemoryMountain/4/2",
+      "size_kb": 4,
+      "stride": 2,
+      "time_ns": 263.01,
+      "cpu_ns": 261.03,
+      "iterations": 2557594,
+      "bytes_per_second_gib": 7.3071
+    },
+    {
+      "name": "BM_MemoryMountain/4/4",
+      "size_kb": 4,
+      "stride": 4,
+      "time_ns": 125.9,
+      "cpu_ns": 124.83,
+      "iterations": 5444004,
+      "bytes_per_second_gib": 7.6399
+    },
+    {
+      "name": "BM_MemoryMountain/4/8",
+      "size_kb": 4,
+      "stride": 8,
+      "time_ns": 57.74,
+      "cpu_ns": 57.35,
+      "iterations": 12163002,
+      "bytes_per_second_gib": 8.3147
+    },
+    {
+      "name": "BM_MemoryMountain/4/16",
+      "size_kb": 4,
+      "stride": 16,
+      "time_ns": 25.29,
+      "cpu_ns": 25.13,
+      "iterations": 27230550,
+      "bytes_per_second_gib": 9.4856
+    },
+    {
+      "name": "BM_MemoryMountain/4/32",
+      "size_kb": 4,
+      "stride": 32,
+      "time_ns": 13.22,
+      "cpu_ns": 13.13,
+      "iterations": 52774767,
+      "bytes_per_second_gib": 9.0823
+    },
+    {
+      "name": "BM_MemoryMountain/4/64",
+      "size_kb": 4,
+      "stride": 64,
+      "time_ns": 7.21,
+      "cpu_ns": 7.17,
+      "iterations": 95941775,
+      "bytes_per_second_gib": 8.3184
+    },
+    {
+      "name": "BM_MemoryMountain/8/1",
+      "size_kb": 8,
+      "stride": 1,
+      "time_ns": 987.33,
+      "cpu_ns": 981.92,
+      "iterations": 614714,
+      "bytes_per_second_gib": 7.7699
+    },
+    {
+      "name": "BM_MemoryMountain/8/2",
+      "size_kb": 8,
+      "stride": 2,
+      "time_ns": 334.74,
+      "cpu_ns": 332.85,
+      "iterations": 1638656,
+      "bytes_per_second_gib": 11.4606
+    },
+    {
+      "name": "BM_MemoryMountain/8/4",
+      "size_kb": 8,
+      "stride": 4,
+      "time_ns": 110.41,
+      "cpu_ns": 109.3,
+      "iterations": 5400347,
+      "bytes_per_second_gib": 17.4511
+    },
+    {
+      "name": "BM_MemoryMountain/8/8",
+      "size_kb": 8,
+      "stride": 8,
+      "time_ns": 41.23,
+      "cpu_ns": 41.09,
+      "iterations": 16789440,
+      "bytes_per_second_gib": 23.2086
+    },
+    {
+      "name": "BM_MemoryMountain/8/16",
+      "size_kb": 8,
+      "stride": 16,
+      "time_ns": 18.22,
+      "cpu_ns": 18.0,
+      "iterations": 38947016,
+      "bytes_per_second_gib": 26.4896
+    },
+    {
+      "name": "BM_MemoryMountain/8/32",
+      "size_kb": 8,
+      "stride": 32,
+      "time_ns": 8.12,
+      "cpu_ns": 8.06,
+      "iterations": 86857396,
+      "bytes_per_second_gib": 29.5646
+    },
+    {
+      "name": "BM_MemoryMountain/8/64",
+      "size_kb": 8,
+      "stride": 64,
+      "time_ns": 4.12,
+      "cpu_ns": 4.11,
+      "iterations": 170319999,
+      "bytes_per_second_gib": 28.9992
+    },
+    {
+      "name": "BM_MemoryMountain/16/1",
+      "size_kb": 16,
+      "stride": 1,
+      "time_ns": 720.11,
+      "cpu_ns": 717.71,
+      "iterations": 975747,
+      "bytes_per_second_gib": 21.2605
+    },
+    {
+      "name": "BM_MemoryMountain/16/2",
+      "size_kb": 16,
+      "stride": 2,
+      "time_ns": 358.57,
+      "cpu_ns": 357.38,
+      "iterations": 1959360,
+      "bytes_per_second_gib": 21.3479
+    },
+    {
+      "name": "BM_MemoryMountain/16/4",
+      "size_kb": 16,
+      "stride": 4,
+      "time_ns": 177.01,
+      "cpu_ns": 176.5,
+      "iterations": 3935894,
+      "bytes_per_second_gib": 21.6136
+    },
+    {
+      "name": "BM_MemoryMountain/16/8",
+      "size_kb": 16,
+      "stride": 8,
+      "time_ns": 87.35,
+      "cpu_ns": 86.77,
+      "iterations": 8105244,
+      "bytes_per_second_gib": 21.982
+    },
+    {
+      "name": "BM_MemoryMountain/16/16",
+      "size_kb": 16,
+      "stride": 16,
+      "time_ns": 41.19,
+      "cpu_ns": 41.09,
+      "iterations": 16919252,
+      "bytes_per_second_gib": 23.2116
+    },
+    {
+      "name": "BM_MemoryMountain/16/32",
+      "size_kb": 16,
+      "stride": 32,
+      "time_ns": 18.11,
+      "cpu_ns": 18.05,
+      "iterations": 38327004,
+      "bytes_per_second_gib": 26.4196
+    },
+    {
+      "name": "BM_MemoryMountain/16/64",
+      "size_kb": 16,
+      "stride": 64,
+      "time_ns": 8.09,
+      "cpu_ns": 8.06,
+      "iterations": 86520348,
+      "bytes_per_second_gib": 29.5689
+    },
+    {
+      "name": "BM_MemoryMountain/32/1",
+      "size_kb": 32,
+      "stride": 1,
+      "time_ns": 1447.8,
+      "cpu_ns": 1443.24,
+      "iterations": 484373,
+      "bytes_per_second_gib": 21.1451
+    },
+    {
+      "name": "BM_MemoryMountain/32/2",
+      "size_kb": 32,
+      "stride": 2,
+      "time_ns": 723.16,
+      "cpu_ns": 719.69,
+      "iterations": 971215,
+      "bytes_per_second_gib": 21.2019
+    },
+    {
+      "name": "BM_MemoryMountain/32/4",
+      "size_kb": 32,
+      "stride": 4,
+      "time_ns": 358.43,
+      "cpu_ns": 357.37,
+      "iterations": 1947719,
+      "bytes_per_second_gib": 21.3487
+    },
+    {
+      "name": "BM_MemoryMountain/32/8",
+      "size_kb": 32,
+      "stride": 8,
+      "time_ns": 176.73,
+      "cpu_ns": 176.32,
+      "iterations": 3919446,
+      "bytes_per_second_gib": 21.6356
+    },
+    {
+      "name": "BM_MemoryMountain/32/16",
+      "size_kb": 32,
+      "stride": 16,
+      "time_ns": 86.45,
+      "cpu_ns": 86.23,
+      "iterations": 7781878,
+      "bytes_per_second_gib": 22.12
+    },
+    {
+      "name": "BM_MemoryMountain/32/32",
+      "size_kb": 32,
+      "stride": 32,
+      "time_ns": 41.34,
+      "cpu_ns": 41.13,
+      "iterations": 16909614,
+      "bytes_per_second_gib": 23.1874
+    },
+    {
+      "name": "BM_MemoryMountain/32/64",
+      "size_kb": 32,
+      "stride": 64,
+      "time_ns": 18.02,
+      "cpu_ns": 17.98,
+      "iterations": 38604547,
+      "bytes_per_second_gib": 26.5245
+    },
+    {
+      "name": "BM_MemoryMountain/64/1",
+      "size_kb": 64,
+      "stride": 1,
+      "time_ns": 2905.8,
+      "cpu_ns": 2890.99,
+      "iterations": 240612,
+      "bytes_per_second_gib": 21.1122
+    },
+    {
+      "name": "BM_MemoryMountain/64/2",
+      "size_kb": 64,
+      "stride": 2,
+      "time_ns": 1442.92,
+      "cpu_ns": 1439.57,
+      "iterations": 484297,
+      "bytes_per_second_gib": 21.1991
+    },
+    {
+      "name": "BM_MemoryMountain/64/4",
+      "size_kb": 64,
+      "stride": 4,
+      "time_ns": 722.92,
+      "cpu_ns": 718.21,
+      "iterations": 971593,
+      "bytes_per_second_gib": 21.2457
+    },
+    {
+      "name": "BM_MemoryMountain/64/8",
+      "size_kb": 64,
+      "stride": 8,
+      "time_ns": 483.03,
+      "cpu_ns": 481.81,
+      "iterations": 1445547,
+      "bytes_per_second_gib": 15.8349
+    },
+    {
+      "name": "BM_MemoryMountain/64/16",
+      "size_kb": 64,
+      "stride": 16,
+      "time_ns": 495.88,
+      "cpu_ns": 492.95,
+      "iterations": 1450516,
+      "bytes_per_second_gib": 7.7385
+    },
+    {
+      "name": "BM_MemoryMountain/64/32",
+      "size_kb": 64,
+      "stride": 32,
+      "time_ns": 244.58,
+      "cpu_ns": 242.66,
+      "iterations": 2911494,
+      "bytes_per_second_gib": 7.86
+    },
+    {
+      "name": "BM_MemoryMountain/64/64",
+      "size_kb": 64,
+      "stride": 64,
+      "time_ns": 121.64,
+      "cpu_ns": 120.66,
+      "iterations": 5823745,
+      "bytes_per_second_gib": 7.9038
+    },
+    {
+      "name": "BM_MemoryMountain/128/1",
+      "size_kb": 128,
+      "stride": 1,
+      "time_ns": 5865.57,
+      "cpu_ns": 5841.91,
+      "iterations": 121021,
+      "bytes_per_second_gib": 20.8956
+    },
+    {
+      "name": "BM_MemoryMountain/128/2",
+      "size_kb": 128,
+      "stride": 2,
+      "time_ns": 2931.6,
+      "cpu_ns": 2912.06,
+      "iterations": 240939,
+      "bytes_per_second_gib": 20.9594
+    },
+    {
+      "name": "BM_MemoryMountain/128/4",
+      "size_kb": 128,
+      "stride": 4,
+      "time_ns": 1553.73,
+      "cpu_ns": 1533.83,
+      "iterations": 475835,
+      "bytes_per_second_gib": 19.8963
+    },
+    {
+      "name": "BM_MemoryMountain/128/8",
+      "size_kb": 128,
+      "stride": 8,
+      "time_ns": 1027.13,
+      "cpu_ns": 1003.03,
+      "iterations": 653835,
+      "bytes_per_second_gib": 15.2127
+    },
+    {
+      "name": "BM_MemoryMountain/128/16",
+      "size_kb": 128,
+      "stride": 16,
+      "time_ns": 990.29,
+      "cpu_ns": 980.8,
+      "iterations": 693925,
+      "bytes_per_second_gib": 7.7787
+    },
+    {
+      "name": "BM_MemoryMountain/128/32",
+      "size_kb": 128,
+      "stride": 32,
+      "time_ns": 491.94,
+      "cpu_ns": 482.08,
+      "iterations": 1454928,
+      "bytes_per_second_gib": 7.913
+    },
+    {
+      "name": "BM_MemoryMountain/128/64",
+      "size_kb": 128,
+      "stride": 64,
+      "time_ns": 248.61,
+      "cpu_ns": 244.02,
+      "iterations": 2909066,
+      "bytes_per_second_gib": 7.8164
+    },
+    {
+      "name": "BM_MemoryMountain/256/1",
+      "size_kb": 256,
+      "stride": 1,
+      "time_ns": 11629.86,
+      "cpu_ns": 11600.82,
+      "iterations": 58846,
+      "bytes_per_second_gib": 21.0451
+    },
+    {
+      "name": "BM_MemoryMountain/256/2",
+      "size_kb": 256,
+      "stride": 2,
+      "time_ns": 6016.16,
+      "cpu_ns": 5959.18,
+      "iterations": 119212,
+      "bytes_per_second_gib": 20.4844
+    },
+    {
+      "name": "BM_MemoryMountain/256/4",
+      "size_kb": 256,
+      "stride": 4,
+      "time_ns": 3038.04,
+      "cpu_ns": 3030.36,
+      "iterations": 232449,
+      "bytes_per_second_gib": 20.1412
+    },
+    {
+      "name": "BM_MemoryMountain/256/8",
+      "size_kb": 256,
+      "stride": 8,
+      "time_ns": 1935.83,
+      "cpu_ns": 1931.23,
+      "iterations": 355850,
+      "bytes_per_second_gib": 15.8022
+    },
+    {
+      "name": "BM_MemoryMountain/256/16",
+      "size_kb": 256,
+      "stride": 16,
+      "time_ns": 1998.87,
+      "cpu_ns": 1991.1,
+      "iterations": 361984,
+      "bytes_per_second_gib": 7.6635
+    },
+    {
+      "name": "BM_MemoryMountain/256/32",
+      "size_kb": 256,
+      "stride": 32,
+      "time_ns": 985.33,
+      "cpu_ns": 978.53,
+      "iterations": 686974,
+      "bytes_per_second_gib": 7.7968
+    },
+    {
+      "name": "BM_MemoryMountain/256/64",
+      "size_kb": 256,
+      "stride": 64,
+      "time_ns": 485.56,
+      "cpu_ns": 483.85,
+      "iterations": 1400645,
+      "bytes_per_second_gib": 7.8841
+    },
+    {
+      "name": "BM_MemoryMountain/512/1",
+      "size_kb": 512,
+      "stride": 1,
+      "time_ns": 23926.17,
+      "cpu_ns": 23859.22,
+      "iterations": 29533,
+      "bytes_per_second_gib": 20.4651
+    },
+    {
+      "name": "BM_MemoryMountain/512/2",
+      "size_kb": 512,
+      "stride": 2,
+      "time_ns": 11990.4,
+      "cpu_ns": 11954.05,
+      "iterations": 57939,
+      "bytes_per_second_gib": 20.4232
+    },
+    {
+      "name": "BM_MemoryMountain/512/4",
+      "size_kb": 512,
+      "stride": 4,
+      "time_ns": 6170.19,
+      "cpu_ns": 6149.23,
+      "iterations": 108383,
+      "bytes_per_second_gib": 19.8513
+    },
+    {
+      "name": "BM_MemoryMountain/512/8",
+      "size_kb": 512,
+      "stride": 8,
+      "time_ns": 4182.19,
+      "cpu_ns": 4165.63,
+      "iterations": 176764,
+      "bytes_per_second_gib": 14.6521
+    },
+    {
+      "name": "BM_MemoryMountain/512/16",
+      "size_kb": 512,
+      "stride": 16,
+      "time_ns": 4051.02,
+      "cpu_ns": 4040.87,
+      "iterations": 171273,
+      "bytes_per_second_gib": 7.5522
+    },
+    {
+      "name": "BM_MemoryMountain/512/32",
+      "size_kb": 512,
+      "stride": 32,
+      "time_ns": 1966.45,
+      "cpu_ns": 1960.5,
+      "iterations": 357443,
+      "bytes_per_second_gib": 7.7831
+    },
+    {
+      "name": "BM_MemoryMountain/512/64",
+      "size_kb": 512,
+      "stride": 64,
+      "time_ns": 1024.65,
+      "cpu_ns": 1017.3,
+      "iterations": 683329,
+      "bytes_per_second_gib": 7.4997
+    },
+    {
+      "name": "BM_MemoryMountain/1024/1",
+      "size_kb": 1024,
+      "stride": 1,
+      "time_ns": 52269.19,
+      "cpu_ns": 51982.39,
+      "iterations": 12939,
+      "bytes_per_second_gib": 18.7864
+    },
+    {
+      "name": "BM_MemoryMountain/1024/2",
+      "size_kb": 1024,
+      "stride": 2,
+      "time_ns": 24614.26,
+      "cpu_ns": 24497.55,
+      "iterations": 28301,
+      "bytes_per_second_gib": 19.9318
+    },
+    {
+      "name": "BM_MemoryMountain/1024/4",
+      "size_kb": 1024,
+      "stride": 4,
+      "time_ns": 16434.34,
+      "cpu_ns": 16307.28,
+      "iterations": 56371,
+      "bytes_per_second_gib": 14.9713
+    },
+    {
+      "name": "BM_MemoryMountain/1024/8",
+      "size_kb": 1024,
+      "stride": 8,
+      "time_ns": 10255.62,
+      "cpu_ns": 10169.3,
+      "iterations": 59073,
+      "bytes_per_second_gib": 12.0038
+    },
+    {
+      "name": "BM_MemoryMountain/1024/16",
+      "size_kb": 1024,
+      "stride": 16,
+      "time_ns": 9687.19,
+      "cpu_ns": 9653.06,
+      "iterations": 71133,
+      "bytes_per_second_gib": 6.3229
+    },
+    {
+      "name": "BM_MemoryMountain/1024/32",
+      "size_kb": 1024,
+      "stride": 32,
+      "time_ns": 5099.12,
+      "cpu_ns": 5062.0,
+      "iterations": 147721,
+      "bytes_per_second_gib": 6.0288
+    },
+    {
+      "name": "BM_MemoryMountain/1024/64",
+      "size_kb": 1024,
+      "stride": 64,
+      "time_ns": 2696.91,
+      "cpu_ns": 2680.15,
+      "iterations": 279374,
+      "bytes_per_second_gib": 5.6933
+    },
+    {
+      "name": "BM_MemoryMountain/4096/1",
+      "size_kb": 4096,
+      "stride": 1,
+      "time_ns": 195843.8,
+      "cpu_ns": 194749.89,
+      "iterations": 3609,
+      "bytes_per_second_gib": 20.0578
+    },
+    {
+      "name": "BM_MemoryMountain/4096/2",
+      "size_kb": 4096,
+      "stride": 2,
+      "time_ns": 103962.33,
+      "cpu_ns": 103528.43,
+      "iterations": 6831,
+      "bytes_per_second_gib": 18.8656
+    },
+    {
+      "name": "BM_MemoryMountain/4096/4",
+      "size_kb": 4096,
+      "stride": 4,
+      "time_ns": 54998.37,
+      "cpu_ns": 54789.0,
+      "iterations": 12575,
+      "bytes_per_second_gib": 17.8241
+    },
+    {
+      "name": "BM_MemoryMountain/4096/8",
+      "size_kb": 4096,
+      "stride": 8,
+      "time_ns": 43899.85,
+      "cpu_ns": 43743.11,
+      "iterations": 12328,
+      "bytes_per_second_gib": 11.1625
+    },
+    {
+      "name": "BM_MemoryMountain/4096/16",
+      "size_kb": 4096,
+      "stride": 16,
+      "time_ns": 45555.45,
+      "cpu_ns": 45397.81,
+      "iterations": 17016,
+      "bytes_per_second_gib": 5.3778
+    },
+    {
+      "name": "BM_MemoryMountain/4096/32",
+      "size_kb": 4096,
+      "stride": 32,
+      "time_ns": 28201.28,
+      "cpu_ns": 28086.28,
+      "iterations": 26423,
+      "bytes_per_second_gib": 4.3463
+    },
+    {
+      "name": "BM_MemoryMountain/4096/64",
+      "size_kb": 4096,
+      "stride": 64,
+      "time_ns": 13966.92,
+      "cpu_ns": 13923.43,
+      "iterations": 52401,
+      "bytes_per_second_gib": 4.3836
+    },
+    {
+      "name": "BM_MemoryMountain/16384/1",
+      "size_kb": 16384,
+      "stride": 1,
+      "time_ns": 896420.59,
+      "cpu_ns": 890177.63,
+      "iterations": 613,
+      "bytes_per_second_gib": 17.5527
+    },
+    {
+      "name": "BM_MemoryMountain/16384/2",
+      "size_kb": 16384,
+      "stride": 2,
+      "time_ns": 465161.05,
+      "cpu_ns": 462159.83,
+      "iterations": 1581,
+      "bytes_per_second_gib": 16.9043
+    },
+    {
+      "name": "BM_MemoryMountain/16384/4",
+      "size_kb": 16384,
+      "stride": 4,
+      "time_ns": 268614.56,
+      "cpu_ns": 266088.48,
+      "iterations": 2540,
+      "bytes_per_second_gib": 14.6803
+    },
+    {
+      "name": "BM_MemoryMountain/16384/8",
+      "size_kb": 16384,
+      "stride": 8,
+      "time_ns": 305201.12,
+      "cpu_ns": 297158.75,
+      "iterations": 2537,
+      "bytes_per_second_gib": 6.5727
+    },
+    {
+      "name": "BM_MemoryMountain/16384/16",
+      "size_kb": 16384,
+      "stride": 16,
+      "time_ns": 209067.78,
+      "cpu_ns": 207589.09,
+      "iterations": 3384,
+      "bytes_per_second_gib": 4.7043
+    },
+    {
+      "name": "BM_MemoryMountain/16384/32",
+      "size_kb": 16384,
+      "stride": 32,
+      "time_ns": 217175.82,
+      "cpu_ns": 215876.82,
+      "iterations": 3147,
+      "bytes_per_second_gib": 2.2619
+    },
+    {
+      "name": "BM_MemoryMountain/16384/64",
+      "size_kb": 16384,
+      "stride": 64,
+      "time_ns": 110329.2,
+      "cpu_ns": 109531.71,
+      "iterations": 6654,
+      "bytes_per_second_gib": 2.2289
+    },
+    {
+      "name": "BM_MemoryMountain/65536/1",
+      "size_kb": 65536,
+      "stride": 1,
+      "time_ns": 4388696.6,
+      "cpu_ns": 4321230.77,
+      "iterations": 170,
+      "bytes_per_second_gib": 14.4635
+    },
+    {
+      "name": "BM_MemoryMountain/65536/2",
+      "size_kb": 65536,
+      "stride": 2,
+      "time_ns": 5208199.26,
+      "cpu_ns": 4977034.98,
+      "iterations": 125,
+      "bytes_per_second_gib": 6.2788
+    },
+    {
+      "name": "BM_MemoryMountain/65536/4",
+      "size_kb": 65536,
+      "stride": 4,
+      "time_ns": 4492038.06,
+      "cpu_ns": 4460513.13,
+      "iterations": 154,
+      "bytes_per_second_gib": 3.503
+    },
+    {
+      "name": "BM_MemoryMountain/65536/8",
+      "size_kb": 65536,
+      "stride": 8,
+      "time_ns": 4114754.55,
+      "cpu_ns": 4080953.01,
+      "iterations": 174,
+      "bytes_per_second_gib": 1.9144
+    },
+    {
+      "name": "BM_MemoryMountain/65536/16",
+      "size_kb": 65536,
+      "stride": 16,
+      "time_ns": 4085417.12,
+      "cpu_ns": 4052561.17,
+      "iterations": 175,
+      "bytes_per_second_gib": 0.9639
+    },
+    {
+      "name": "BM_MemoryMountain/65536/32",
+      "size_kb": 65536,
+      "stride": 32,
+      "time_ns": 2824352.35,
+      "cpu_ns": 2780567.68,
+      "iterations": 235,
+      "bytes_per_second_gib": 0.7024
+    },
+    {
+      "name": "BM_MemoryMountain/65536/64",
+      "size_kb": 65536,
+      "stride": 64,
+      "time_ns": 1469197.8,
+      "cpu_ns": 1459498.52,
+      "iterations": 472,
+      "bytes_per_second_gib": 0.6691
+    }
+  ]
+}
