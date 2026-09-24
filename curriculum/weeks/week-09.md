@@ -45,7 +45,7 @@
 | **Saturday** | Sat Oct 31 | [`Day 057`](../days/month-03/day-057-2026-10-31.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30–21:00**: Thought Leadership (Claude E. Shannon) · **21:00+**: Free / Rest|
 | **Sunday** | Sun Nov 1 | [`Day 058`](../days/month-03/day-058-2026-11-01.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (DDIA Ch 8) · **19:30–21:00**: Systems Lab (H&P Ch 4) |
 | **Monday** | Mon Nov 2 | [`Day 059`](../days/month-03/day-059-2026-11-02.md) | Research paper: *"ColBERT: Efficient and Effective Passage Search via Late Interaction"* (Khattab & Zaharia 2020). | **Hardware Profiling & Benchmark Sweeps** | **secan (required)**: **Batch HNSW build**: insert $N$ in one pass (level assignment + sequential connect). Compare build time vs one-by-one insert. |
-| **Tuesday** | Tue Nov 3 | [`Day 060`](../days/month-03/day-060-2026-11-03.md) | PLAID paper §1–4; HNSW bulk-construction notes. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: Parallel batch graph construction (shard-then-merge or lock-free insert). Measure Recall@10 vs sequential insert. |
+| **Tuesday** | Tue Nov 3 | [`Day 060`](../days/month-03/day-060-2026-11-03.md) | **PiPNN paper** (Rubel et al. 2024/2025): Partition-local dense GEMM & **HashPrune**. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: Implement **PiPNN / HashPrune** batch graph builder (partition-local dense GEMM + HashPrune edge pruning). Measure build speedup ($10\times$) & Recall vs sequential insert. |
 | **Wednesday** | Wed Nov 4 | [`Day 061`](../days/month-03/day-061-2026-11-04.md) | **INTEL Intrinsics Guide**: Study `_mm256_max_ps`, `_mm256_permute2f128_ps`, cross-lane max reduction. | **DL Track (Part 2): Training Loop & Verification** | **secan**: Implement **SIMD-vectorized MaxSim kernel** in C++: process 8 document tokens in parallel with AVX2 FMA + horizontal max reduction. |
 | **Thursday** | Thu Nov 5 | [`Day 062`](../days/month-03/day-062-2026-11-05.md) | **AGNER Ch 13**: Data parallelism, cache layout for multi-vector matrices. | **DL / Vector Retrieval Integration & Profiling** | **secan**: Build **token centroid index**: cluster document tokens into centroids ($C=32\text{K}$). Build inverted lists `centroid_id → (doc_id, token_idx)`. |
 | **Friday** | Fri Nov 6 | [`Day 063`](../days/month-03/day-063-2026-11-06.md) | Re-read PLAID paper §3 "Centroid Interaction" + §4 "Decompression and Scoring". | **Weekly Technical Article: Drafting & Publishing** | **secan**: Implement centroid candidate pruning: query tokens retrieve candidate documents from centroid inverted lists. Score candidates with MaxSim. |
@@ -76,8 +76,8 @@
 
 
 ### 🔹 Tuesday, Tue Nov 3 ([`Day 060`](../days/month-03/day-060-2026-11-03.md))
-* `[ ]` **Core**: Implement parallel batch graph builder (shard dataset into $K$ partitions, build parallel subgraphs, merge boundary edges).
-* `⭐ Optional / Stretch`: Measure Recall@10 of shard-merged graph vs monolithic sequential graph on 100K SIFT vectors.
+* `[ ]` **Core**: Implement **PiPNN / HashPrune** parallel batch graph builder (partition dataset into overlapping clusters, compute intra-partition candidate edges with dense GEMM, prune edges with HashPrune).
+* `⭐ Optional / Stretch`: Benchmark PiPNN construction speedup ($10\times$) and Recall@10 against standard sequential beam-search insertion on SIFT1M.
 
 
 ### 🔹 Wednesday, Wed Nov 4 ([`Day 061`](../days/month-03/day-061-2026-11-04.md))
