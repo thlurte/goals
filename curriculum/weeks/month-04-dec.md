@@ -195,11 +195,11 @@
   * `[ ]` **Core**: Implement Vamana graph construction ($\alpha$-pruning heuristic); implement asynchronous out-of-core SSD vector fetch via Linux `io_uring` with `O_DIRECT`.
   * `⭐ Optional / Stretch`: Benchmark random NVMe read IOPS and latency under varying `io_uring` queue depths ($QD \in [1, 128]$).
 * **Fri Dec 25**:
-  * `[ ]` **Core**: Implement BM25 inverted index + Block-Max WAND early termination; fuse dense ANN candidates with sparse BM25 scores via Reciprocal Rank Fusion (RRF). Tag `v1.2-vs-spine-complete`.
-  * `⭐ Optional / Stretch`: Compare retrieval quality (NDCG@10) of RRF rank fusion vs linear weighted score interpolation ($\alpha \cdot S_{\text{dense}} + (1-\alpha) \cdot S_{\text{sparse}}$).
+  * `[ ]` **Core**: Implement **SINDI (Sparse Inverted Index for Learned Sparse Vectors / SPLADE / BGE-M3)** with SIMD dot-product accumulation + BM25 inverted index with Block-Max WAND early termination; fuse dense ANN candidates with sparse scores via Reciprocal Rank Fusion (RRF). Tag `v1.2-vs-spine-complete`.
+  * `⭐ Optional / Stretch`: Compare retrieval quality (NDCG@10) of RRF rank fusion vs linear weighted score interpolation ($\alpha \cdot S_{\text{dense}} + (1-\alpha) \cdot S_{\text{sparse}}$) on BEIR.
 
 #### ⛔ What NOT to Overspend Time On (Time Traps)
-* ❌ **Do NOT** implement SPLADE sparse neural models—BM25 + Block-Max WAND is the required sparse baseline.
+* ❌ **Do NOT** spend time fine-tuning large sparse encoders during systems blocks—use pre-computed SPLADE / BGE-M3 sparse vectors to benchmark SINDI and BM25 directly.
 * ❌ **Do NOT** run multi-billion scale benchmarks—DiskANN on a 1M to 10M vector subset proves out-of-core `io_uring` execution.
 * ❌ **Do NOT** build complex C++ REST server wrappers—keep `secan` exposed via `nanobind` and CLI.
 

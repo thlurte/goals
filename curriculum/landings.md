@@ -13,7 +13,7 @@ Nothing slimmed is optional. Every row is **required** on the landing week.
 | Slimmed from | What was cut | **Hard landing (required)** | Why there |
 |:---|:---|:---|:---|
 | **Week 8** | HNSW bounded flat heap + bitset visited | **Week 12 Wed** | Before composed-index Pareto |
-| **Week 10** | BM25 + Block-Max WAND + **RRF** | **Week 16 Fri** | Hybrid IR; not only linear $\alpha$ |
+| **Week 10** | **SINDI** + BM25 + Block-Max WAND + **RRF** | **Week 16 Fri** | Hybrid IR (Learned Sparse & Lexical) |
 | **Week 11** | DiskANN `io_uring` + **Vamana prune** | **Week 16 Thu** | Graph construction, not only SSD fetch |
 | **Week 15** | FlashAttention-2 | **Week 25** | GPU block |
 | **Week 7→10** | RaBitQ (after QR) | **Week 10 Thu** | Already required |
@@ -26,16 +26,17 @@ REST out of scope. Cluster shard/replica = stretch only.
 
 | Need | Lands (required) |
 |:---|:---|
+| **Randomized KD-Trees (FLANN baseline)** + Best-Bin-First vs Brute Force | **Week 3 Fri** |
 | **IP/MIPS + spherical k-means IVF** + list-size histogram / rebalance | **Week 4 Thu–Fri** |
 | **Asymmetric PQ/BQ** (FP32 query vs quantized db) + **OPQ / residual PQ** | **Week 6 Fri + Week 7 Fri** |
 | **768-D text Recall@10 vs QPS** (golden pre-staged `.fvecs` + DL model parity) | **Week 8 Fri** |
-| **Batch HNSW / graph build** | **Week 9 Mon–Tue** |
+| **Batch HNSW / graph build** + **PiPNN HashPrune** (Fast GEMM Graph Build) | **Week 9 Mon–Tue** |
 | **MUVERA FDE** (asymmetric) → IP MIPS → MaxSim re-rank vs PLAID | **Week 10 Mon–Wed** |
 | **TurboQuant 1@k** vs RaBitQ/PQ (GloVe or 768-D) | **Week 10 Fri** |
 | **`IVFPQIndex` + `HNSWSQIndex`**; Pareto vs Faiss/hnswlib on **SIFT + 768-D** | **Week 12 Thu–Fri** |
 | **ONNX → ORT** dense bi-encoder → `.fvecs` → `secan` (PyTorch parity) | **Week 12 Thu (Builder Integration)** |
 | **Vamana prune** + compressed RAM + `io_uring` raw (**Deep10M** core; Deep1B NVMe tier) | **Week 16 Thu** |
-| **RRF** + linear $\alpha$ (SPLADE stretch) | **Week 16 Fri** |
+| **SINDI** (Learned Sparse) + **BM25** + **RRF** + linear $\alpha$ | **Week 16 Fri** |
 | **Pre- vs post-filter vs ACORN**; **range**; selectivity vs recall | **Week 22 Mon + Fri** |
 | BEIR / MS MARCO **slice** (dense + ColBERT + **MUVERA**) | **Week 10 Thu (Builder Integration)** |
 | REST API | **Skip** |

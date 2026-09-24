@@ -90,15 +90,15 @@
 
 
 ### 🔹 Friday, Fri Dec 25 ([`Day 112`](../days/month-04/day-112-2026-12-25.md))
-* `[ ]` **Core**: Implement BM25 inverted index + Block-Max WAND early termination; fuse dense ANN candidates with sparse BM25 scores via Reciprocal Rank Fusion (RRF). Tag `v1.2-vs-spine-complete`.
-* `⭐ Optional / Stretch`: Compare retrieval quality (NDCG@10) of RRF rank fusion vs linear weighted score interpolation ($\alpha \cdot S_{\text{dense}} + (1-\alpha) \cdot S_{\text{sparse}}$).
+* `[ ]` **Core**: Implement **SINDI (Sparse Inverted Index for Learned Sparse Vectors / SPLADE / BGE-M3)** with SIMD dot-product accumulation + BM25 inverted index with Block-Max WAND early termination; fuse dense ANN candidates with sparse scores via Reciprocal Rank Fusion (RRF). Tag `v1.2-vs-spine-complete`.
+* `⭐ Optional / Stretch`: Compare retrieval quality (NDCG@10) of RRF rank fusion vs linear weighted score interpolation ($\alpha \cdot S_{\text{dense}} + (1-\alpha) \cdot S_{\text{sparse}}$) on BEIR.
 
 
 ---
 
 ## ⛔ What NOT to Overspend Time On (Week 16 Time Traps)
 
-* ❌ **Do NOT** implement SPLADE sparse neural models—BM25 + Block-Max WAND is the required sparse baseline.
+* ❌ **Do NOT** spend time fine-tuning large sparse encoders during systems blocks—use pre-computed SPLADE / BGE-M3 sparse vectors to benchmark SINDI and BM25 directly.
 * ❌ **Do NOT** download and run full 400 GB Deep1B during weekday coding blocks—**Deep10M (~4 GB)** is the core proof of out-of-core `io_uring` execution; full Deep1B is strictly for high-capacity NVMe overnight runs.
 * ❌ **Do NOT** build complex C++ REST server wrappers—keep `secan` exposed via `nanobind` and CLI.
 

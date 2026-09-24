@@ -102,6 +102,10 @@ flowchart LR
   * Enforce `alignas(64)` memory alignment and aligned allocation (`std::aligned_alloc` / `_mm_malloc`) so vectors never split across CPU cache lines.
 * **Hardware Robustness**:
   * Configure CPU subnormal floating-point handling (`_MM_SET_FLUSH_ZERO_MODE(_MM_FLUSH_ZERO_ON)`).
+* **Classical Tree-Based Baselines (FLANN / Randomized KD-Trees & Hierarchical $k$-Means)**:
+  * **Randomized KD-Trees (`secan::RandomizedKdTree`)**: Construct an ensemble of randomized KD-trees with split dimensions chosen from top variance coordinates; implement **Best-Bin-First (BBF)** priority-queue traversal.
+  * **Hierarchical $k$-Means Tree**: Recursive spatial clustering tree for hierarchical partition routing.
+  * **The High-Dimensional Phase Transition**: Benchmark empirical speedup vs brute-force across $D \in \{2, 8, 16, 64, 128, 768\}$, demonstrating mathematically and experimentally why tree-based partitioning excels in low dimensions ($D \le 16$) but degenerates to $O(N)$ linear scans in high dimensions ($D \ge 128$), proving the structural necessity of Voronoi IVF and Small-World Graphs (HNSW).
 
 ---
 
@@ -151,6 +155,10 @@ flowchart LR
   * Single-layer Vamana graph with long-range edges.
   * Store compressed vectors and graph in RAM; stream raw full-precision vectors from NVMe SSD via asynchronous **`io_uring`** direct I/O (`O_DIRECT`), bypassing OS page cache overhead.
   * **Zero-Syscall Kernel Polling (`IORING_SETUP_SQPOLL`)**: Dedicated kernel submission thread + pre-registered memory buffers (`IORING_REGISTER_BUFFERS`), dropping NVMe random read latency to the physical hardware floor ($8\text{–}12\text{ }\mu\text{s}$) with 0 syscall context switches.
+* **PiPNN & HashPrune (Ultra-Fast Batch GEMM Graph Construction)**:
+  * **The Build Bottleneck**: Traditional HNSW and Vamana builds are bottlenecked by sequential, pointer-chasing beam searches ($O(N \log N)$ cache misses).
+  * **Partition-Local Dense GEMM**: PiPNN partitions datasets into overlapping clusters and evaluates intra-partition candidate edges via high-throughput dense matrix multiplication (AVX-512 / BLAS / Tensor Cores).
+  * **HashPrune**: Online bounded-memory pruning algorithm that merges partition-local candidates into a globally connected, high-quality proximity graph, accelerating graph index construction by **$10\times\text{–}13\times$** compared to HNSW/Vamana builds.
 
 ---
 
@@ -173,10 +181,11 @@ flowchart LR
 * **ColPali (Multimodal Late Interaction without OCR)**:
   * Ingest visual page embeddings directly from Vision Transformers (ViT).
   * Text query tokens $Q \in \mathbb{R}^{L_q \times D}$ match against 2D visual document patch tokens $D \in \mathbb{R}^{L_{\text{patches}} \times D}$ via fused In-SRAM MaxSim kernels, enabling native retrieval of diagrams, charts, tables, and typography without fragile OCR extractors.
-* **Sparse Lexical Inverted Index (TF-IDF / BM25) & Reciprocal Rank Fusion (RRF)**:
-  * Inverted index with posting lists; term saturation ($k_1$) and document length penalization ($b$) via Okapi BM25.
-  * Accelerated via Block-Max WAND (Weak AND) early termination.
-  * Fuses sparse lexical BM25 candidate ranks with dense ANN HNSW candidates using Reciprocal Rank Fusion ($\text{RRF}(d) = \sum \frac{1}{k_0 + r_m(d)}$) to solve the out-of-vocabulary / exact keyword failure mode of pure dense embeddings.
+* **Sparse Inverted Index (SINDI) & Lexical BM25 with Reciprocal Rank Fusion (RRF)**:
+  * **SINDI (Sparse Inverted Index)**: Native support for learned sparse neural representations (SPLADE, BGE-M3, LexMAE) storing `(dimension_id, float32_weight)` posting pairs in compressed blocks with SIMD dot-product accumulation.
+  * **Lexical Inverted Index (TF-IDF / BM25)**: Posting lists with term saturation ($k_1$) and document length normalization ($b$) via Okapi BM25.
+  * **Block-Max WAND (Weak AND)**: Dynamic pruning that tracks upper-bound posting scores per block, skipping non-competitive document evaluations.
+  * **Hybrid Rank Fusion**: Fuses sparse neural (SINDI) and lexical (BM25) candidates with dense ANN (HNSW/Vamana) candidates using Reciprocal Rank Fusion ($\text{RRF}(d) = \sum \frac{1}{k_0 + r_m(d)}$) and linear score interpolation ($\alpha \cdot S_{\text{dense}} + (1-\alpha) \cdot S_{\text{sparse}}$) to combine exact term matching, lexical semantics, and dense conceptual embeddings.
 
 ---
 
@@ -231,9 +240,12 @@ To rival commercial vector database engines (Pinecone, Turbopuffer, Qdrant, Milv
   * **TurboQuant**: PolarQuant (bulk bits) + QJL residual (~1 bit) for bias-free scores — dual target: **vector search MIPS** and **LLM KV-cache** (~3-bit, training-free in reported results).
   * Curriculum: **1@k curve required Week 10 Fri** (GloVe or 768-D vs RaBitQ/PQ). KV application **Week 19**.
 
-### 4. Sparse-Dense Hybrid Search, Block-Max WAND & Diverse Retrieval (MMR)
-* **Dense + Sparse Fusion**: Linear $\alpha$ **and RRF (Reciprocal Rank Fusion)**. SPLADE = stretch.
+### 4. Sparse-Dense Hybrid Search, SINDI & Block-Max WAND
+* **Dense + Sparse Fusion**: Linear $\alpha$ **and RRF (Reciprocal Rank Fusion)** across Dense (HNSW/Vamana), Lexical (BM25), and Learned Sparse (SINDI / SPLADE / BGE-M3):
   $$\text{Score} = \alpha \cdot \text{DenseScore} + (1 - \alpha) \cdot \text{SparseScore}$$
+* **SINDI (Sparse Inverted Index for Learned Sparse Vectors)**:
+  * Inverted index with posting arrays storing `(dim_id, weight)` tuples.
+  * Fast SIMD inner product accumulation across sparse posting matches without decompressing full dense vectors.
 * **Block-Max WAND (Weak AND)**:
   * Store inverted posting lists in compressed blocks (SIMD-BP128 / PForDelta).
   * Track maximum upper-bound score per block, skipping up to $95\%$ of document postings that cannot beat the current top-$K$ heap threshold.
