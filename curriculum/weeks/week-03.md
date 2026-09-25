@@ -1,6 +1,6 @@
 # 🚀 Week 03 Execution Playbook
 
-> **Theme**: Integration, Fundamental Theorem, Cache Hierarchy & Transformer Encoder  
+> **Theme**: Integration, Fundamental Theorem, Cache Hierarchy & Scalar Autograd Engine  
 > **Calendar Dates**: Sat Sep 19 – Fri Sep 25 (2026-09-19 to 2026-09-25)
 > **Parent Month Dashboard**: [Month 1 (Sep 2026)](month-01-sep.md) · **Block**: I — Vector Search Engine
 

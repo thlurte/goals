@@ -44,11 +44,11 @@
 
 | Day | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
 |:---|:---|:---|:---|
-| **Mon Sep 7** | **PIKUS Ch 2**: Performance measurements, high-res timers, profiler sampling, micro-benchmark noise floor. | **Hardware Profiling & Benchmark Calibration** | **secan**: Integrate Google Benchmark via CMake. Add ASan/UBSan build flags. Write first benchmark for `l2_squared` with `DoNotOptimize`. |
+| **Mon Sep 7** | **PIKUS Ch 1 & Ch 2**: Introduction to performance, performance measurements, high-res timers, profiler sampling, micro-benchmark noise floor. | **Hardware Profiling & Benchmark Calibration** | **secan**: Integrate Google Benchmark via CMake. Add ASan/UBSan build flags. Write first benchmark for `l2_squared` with `DoNotOptimize`. |
 | **Tue Sep 8** | **CSAPP §5.1–5.6**: Compiler limitations, Cycles Per Element (CPE), loop inefficiencies, memory aliasing. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: Implement binary `.fvecs`, `.bvecs`, and `.ivecs` parsers. Download SIFT1M base + ground-truth; load into `data/sift1m/`. |
 | **Wed Sep 9** | **CSAPP §5.7**: Superscalar architecture, out-of-order execution, execution ports, latency vs throughput. | **DL Track (Part 2): Training Loop & Verification** | **secan**: Build IR metrics in `tests/test_ir_metrics.cpp` (NDCG@K, MRR, **MAP**). Run exact scan on a **SIFT1M subset** (e.g. 100K base / 1K queries) first; verify Recall@10 = 1.0. Full 1M scan = stretch. |
-| **Thu Sep 10** | **CSAPP §5.11–5.12**: Branch prediction, misprediction penalties, conditional moves (`cmov`). | **DL / Vector Retrieval Integration & Profiling** | **secan**: Implement `ip()` (Inner Product / dot product) as a first-class metric in `src/search/distance.cpp`. Test L2 vs IP numerical stability. |
-| **Fri Sep 11** | **CSAPP §5.13** & **AGNER Ch 7**: Memory access overhead, store forwarding, cache hierarchies. | **Weekly Technical Article: Drafting & Publishing** | **secan**: Run exact scan with scalar `ip()` and `cosine()`. Profile with `perf stat`. Verify zero branch mispredictions in inner loop. |
+| **Thu Sep 10** | **AGNER Ch 3 & Ch 7.1–7.3**: Bottlenecks, FP efficiency, denormal hazards, fast reciprocal approximations. | **DL / Vector Retrieval Integration & Profiling** | **secan**: Implement `ip()` (Inner Product / dot product) as a first-class metric in `src/search/distance.cpp`. Test L2 vs IP numerical stability. |
+| **Fri Sep 11** | **CSAPP §5.10–5.14** & **GREGG Ch 6**: Register spilling, branch prediction, conditional moves, store forwarding, memory aliasing, PMU hardware counters with `perf stat`. | **Weekly Technical Article: Drafting & Publishing** | **secan**: Run exact scan with scalar `ip()` and `cosine()`. Profile with `perf stat`. Verify zero branch mispredictions in inner loop. |
 
 #### 📋 Daily Action Items & Optional Activities (Week 1)
 * **Mon Sep 7**:
@@ -123,7 +123,7 @@
 
 ---
 
-### Week 3 (Sat Sep 19 – Fri Sep 25): Integration, Fundamental Theorem, Cache Hierarchy & Transformer Encoder
+### Week 3 (Sat Sep 19 – Fri Sep 25): Integration, Fundamental Theorem, Cache Hierarchy & Scalar Autograd Engine
 
 **Theme**: Definite integrals, accumulation, Fundamental Theorem of Calculus, and CPU cache hierarchy.
 
@@ -140,7 +140,7 @@
 | **Tue Sep 22** | **CSAPP §6.4–6.5**: Cache line organization, set associativity, conflict misses, cache-friendly coding. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: Implement cache-blocked `linear_scan_tiled`: partition dataset into tiles fitting in L2 cache ($256\text{KB}$). |
 | **Wed Sep 23** | **CSAPP §6.6 & PIKUS Ch 4**: The Memory Mountain, cache hierarchy on real workloads, software prefetching. | **DL Track (Part 2): Training Loop & Verification** | **secan**: Add software prefetching (`_mm_prefetch`, `_MM_HINT_T0`). Tune prefetch distances ($4, 8, 16, 32$ vectors). |
 | **Thu Sep 24** | **AGNER Ch 9**: Memory access, non-temporal stores. | **DL / Vector Retrieval Integration & Profiling** | **secan**: Unit-sphere pre-normalization path for cosine/IP. Store optional `norm` column. |
-| **Fri Sep 25** | **FINSY Ch 6**: `madvise(MADV_HUGEPAGE)`. | **Weekly Technical Article: Drafting & Publishing** | **secan**: Hugepage / `madvise` warmup on dataset mmap. |
+| **Fri Sep 25** | **Silahian Ch 6** (*C++ High Performance for Financial Systems*): `madvise(MADV_HUGEPAGE)`. | **Weekly Technical Article: Drafting & Publishing** | **secan**: Hugepage / `madvise` warmup on dataset mmap. |
 
 #### 📋 Daily Action Items & Optional Activities (Week 3)
 * **Mon Sep 21**:
