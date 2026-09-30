@@ -32,7 +32,8 @@
 │ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Benchmarking / Technical Articles)        │
 │ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
-│ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
+│ 💻 Mon–Fri 20:30 – 23:00     │ Night Block 1:  (Vector Search Engine in C++20 / SIMD / GPU)    │
+│ ⚡ Mon–Fri 23:00 – 00:00     │ Night Block 2:  (C++ Multi-Modal High-D Embedding Runtime)     │
 └──────────────────────────────┴────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -132,3 +133,17 @@ Before the Friday article or release, save the run manifest and raw JSON/CSV, ad
 * **Focus**: Geometry-Aware Anisotropic Polar Quantization: The Adaptive Ellipsoidal Lattice & Unbiased QJL Proof
 * **Workspace**: `research/2026-10-anisotropic-quantization/`
 * **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.
+
+
+---
+
+## ⚡  Embedding Engine Track (Week 05)
+> **Weekly Focus**: *Dense SIMD GEMM, Activations & Linear Layers*
+
+| Day | 23:00 – 00:00 Implementation Task |
+|:---|:---|
+| **Mon** | Implement vectorized AVX2+FMA Matrix-Vector Multiplication (GEMV) micro-kernel in include/cennan/core/gemm.h. |
+| **Tue** | Implement 2D register-blocked Matrix-Matrix Multiplication (GEMM) with 4x16 unrolling for batch token projections. |
+| **Wed** | Implement fast in-place activations: SwiGLU, GELU, and SiLU in include/cennan/core/activations.h. |
+| **Thu** | Implement Embedding Lookup Layer with zero-copy table indexing in include/cennan/models/embedding.h. |
+| **Fri** | Assemble Linear projection + LayerNorm + Activation fused micro-block; verify parity tests in tests/test_gemm.cpp. |

@@ -214,3 +214,10 @@ Weekdays remain **`secan`/CUDA** and **DL builder tracks (Tue/Wed 06:30–08:30)
 ---
 
 ---
+
+
+---
+
+## ⚡  High-Dimensional Embedding Engine (Month 05 Focus)
+> **Theme**: *Vision Transformers (ViT/SigLIP) & ColPali Multimodal Page Encoding*
+* In tandem with  vector search at 20:30–23:00, the 23:00–00:00 night block develops the standalone C++ multimodal embedding runtime , providing zero-copy feature ingestion directly into .

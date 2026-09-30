@@ -32,7 +32,8 @@
 │ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Benchmarking / Technical Articles)        │
 │ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
-│ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
+│ 💻 Mon–Fri 20:30 – 23:00     │ Night Block 1:  (Vector Search Engine in C++20 / SIMD / GPU)    │
+│ ⚡ Mon–Fri 23:00 – 00:00     │ Night Block 2:  (C++ Multi-Modal High-D Embedding Runtime)     │
 └──────────────────────────────┴────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -132,3 +133,17 @@ Before the Friday article or release, save the run manifest and raw JSON/CSV, ad
 * **Focus**: Sub-2-Bit In-Register SIMD Execution & Manuscript Submission Freeze
 * **Workspace**: `research/2026-11-rabitq-lsm/`
 * **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.
+
+
+---
+
+## ⚡  Embedding Engine Track (Week 10)
+> **Weekly Focus**: *Token Centroid Quantization & Index Export*
+
+| Day | 23:00 – 00:00 Implementation Task |
+|:---|:---|
+| **Mon** | Implement token centroid quantizer mapping [L, 128] token vectors to 1-byte centroid IDs. |
+| **Tue** | Implement residual vector encoding for ColBERT v2 compressed token representations. |
+| **Wed** | Implement binary fvecs / bvecs multi-vector exporter for secan batch ingestion. |
+| **Thu** | Benchmark multi-vector extraction throughput (tokens/second) across CPU cores. |
+| **Fri** | Zero-copy handoff: stream cennan multi-vectors directly into secan MaxSim test harness. |

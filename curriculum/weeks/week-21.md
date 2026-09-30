@@ -32,7 +32,8 @@
 │ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Benchmarking / Technical Articles)        │
 │ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
-│ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
+│ 💻 Mon–Fri 20:30 – 23:00     │ Night Block 1:  (Vector Search Engine in C++20 / SIMD / GPU)    │
+│ ⚡ Mon–Fri 23:00 – 00:00     │ Night Block 2:  (C++ Multi-Modal High-D Embedding Runtime)     │
 └──────────────────────────────┴────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -127,3 +128,17 @@ Before the Friday article or release, save the run manifest and raw JSON/CSV, ad
 * **Focus**: Bare-Metal CUTLASS Implementation with Hopper/Blackwell TMA & Warp Specialization
 * **Workspace**: `research/2027-02-predicate-aware-graphs/`
 * **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.
+
+
+---
+
+## ⚡  Embedding Engine Track (Week 21)
+> **Weekly Focus**: *Standalone Zero-Dependency C++ CLI (<10MB)*
+
+| Day | 23:00 – 00:00 Implementation Task |
+|:---|:---|
+| **Mon** | Bundle cennan into a single standalone static binary with zero dynamic library dependencies. |
+| **Tue** | Implement model weight bundling and embedded vocabulary tables in binary format. |
+| **Wed** | Add high-performance batch embedding CLI with multithreaded file streaming. |
+| **Thu** | Profile memory footprint: verify RSS memory overhead < 15MB above model weight size. |
+| **Fri** | Automate cross-platform builds (Linux x86_64, ARM64 / Apple Silicon). |

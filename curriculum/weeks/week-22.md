@@ -32,7 +32,8 @@
 │ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Benchmarking / Technical Articles)        │
 │ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
-│ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
+│ 💻 Mon–Fri 20:30 – 23:00     │ Night Block 1:  (Vector Search Engine in C++20 / SIMD / GPU)    │
+│ ⚡ Mon–Fri 23:00 – 00:00     │ Night Block 2:  (C++ Multi-Modal High-D Embedding Runtime)     │
 └──────────────────────────────┴────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -127,3 +128,17 @@ Before the Friday article or release, save the run manifest and raw JSON/CSV, ad
 * **Focus**: Bare-Metal CUTLASS Implementation with Hopper/Blackwell TMA & Warp Specialization
 * **Workspace**: `research/2027-02-predicate-aware-graphs/`
 * **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.
+
+
+---
+
+## ⚡  Embedding Engine Track (Week 22)
+> **Weekly Focus**: *Python nanobind Zero-Copy Bindings*
+
+| Day | 23:00 – 00:00 Implementation Task |
+|:---|:---|
+| **Mon** | Initialize nanobind C++ extension module in python/cennan_py.cpp. |
+| **Tue** | Expose zero-copy NumPy / PyTorch tensor wrappers for cennan::Tensor. |
+| **Wed** | Implement Python async batch embedding API with GIL release during C++ inference. |
+| **Thu** | Unit tests: verify Python API against native C++ outputs and PyTorch tensors. |
+| **Fri** | Benchmark Python API overhead: verify < 2 microseconds dispatch overhead per call. |

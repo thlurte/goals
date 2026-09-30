@@ -32,7 +32,8 @@
 │ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Benchmarking / Technical Articles)        │
 │ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
-│ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
+│ 💻 Mon–Fri 20:30 – 23:00     │ Night Block 1:  (Vector Search Engine in C++20 / SIMD / GPU)    │
+│ ⚡ Mon–Fri 23:00 – 00:00     │ Night Block 2:  (C++ Multi-Modal High-D Embedding Runtime)     │
 └──────────────────────────────┴────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -127,3 +128,17 @@ Before the Friday article or release, save the run manifest and raw JSON/CSV, ad
 * **Focus**: The Online Max Reduction Invariant & In-SRAM Accumulation Mechanics
 * **Workspace**: `research/2027-01-cagra-warp-search/`
 * **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.
+
+
+---
+
+## ⚡  Embedding Engine Track (Week 18)
+> **Weekly Focus**: *Vision Transformer (ViT / SigLIP) Backbone*
+
+| Day | 23:00 – 00:00 Implementation Task |
+|:---|:---|
+| **Mon** | Implement ViT Encoder Block with Pre-LayerNorm and GELU activations in C++. |
+| **Tue** | Implement Class Token ([CLS]) and Global Attention Pooling for single-vector visual representations. |
+| **Wed** | Load pretrained SigLIP / CLIP vision weights via zero-copy mmap parser. |
+| **Thu** | Benchmark vision forward pass latency across image resolutions (224x224, 384x384). |
+| **Fri** | Validate visual embedding cosine similarity parity against HuggingFace transformers. |

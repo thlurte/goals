@@ -32,7 +32,8 @@
 │ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Benchmarking / Technical Articles)        │
 │ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
-│ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
+│ 💻 Mon–Fri 20:30 – 23:00     │ Night Block 1:  (Vector Search Engine in C++20 / SIMD / GPU)    │
+│ ⚡ Mon–Fri 23:00 – 00:00     │ Night Block 2:  (C++ Multi-Modal High-D Embedding Runtime)     │
 └──────────────────────────────┴────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -127,3 +128,17 @@ Before the Friday article or release, save the run manifest and raw JSON/CSV, ad
 * **Focus**: The Memory Wall in Multimodal Late Interaction: Baseline GPU Kernel Profiling
 * **Workspace**: `research/2026-12-flashattn-vamana/`
 * **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.
+
+
+---
+
+## ⚡  Embedding Engine Track (Week 14)
+> **Weekly Focus**: *FlashAttention & In-SRAM Attention Kernels*
+
+| Day | 23:00 – 00:00 Implementation Task |
+|:---|:---|
+| **Mon** | Implement tiled online softmax attention in CUDA to avoid writing [B, H, L, L] attention matrix to VRAM. |
+| **Tue** | Implement FlashAttention forward pass in shared memory with causal masking. |
+| **Wed** | Fuse RoPE complex rotation directly into QK dot product kernel in CUDA shared memory. |
+| **Thu** | Benchmark FlashAttention VRAM reduction and latency scaling across sequence lengths up to 8192. |
+| **Fri** | Verify exact mathematical parity of CUDA FlashAttention output against PyTorch SDPA. |

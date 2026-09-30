@@ -32,7 +32,8 @@
 │ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Benchmarking / Technical Articles)        │
 │ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
-│ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
+│ 💻 Mon–Fri 20:30 – 23:00     │ Night Block 1:  (Vector Search Engine in C++20 / SIMD / GPU)    │
+│ ⚡ Mon–Fri 23:00 – 00:00     │ Night Block 2:  (C++ Multi-Modal High-D Embedding Runtime)     │
 └──────────────────────────────┴────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -132,3 +133,17 @@ Before the Friday article or release, save the run manifest and raw JSON/CSV, ad
 * **Focus**: Geometry-Aware Anisotropic Polar Quantization: The Adaptive Ellipsoidal Lattice & Unbiased QJL Proof
 * **Workspace**: `research/2026-10-anisotropic-quantization/`
 * **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.
+
+
+---
+
+## ⚡  Embedding Engine Track (Week 06)
+> **Weekly Focus**: *Standalone C++ Tokenizer (WordPiece & BPE)*
+
+| Day | 23:00 – 00:00 Implementation Task |
+|:---|:---|
+| **Mon** | Implement Vocabulary & Trie Data Structure in include/cennan/tokenizer/trie.h for fast prefix matching. |
+| **Tue** | Implement standalone C++ WordPiece Tokenizer in include/cennan/tokenizer/wordpiece.h & src/tokenizer/wordpiece.cpp. |
+| **Wed** | Implement Byte-Pair Encoding (BPE) Tokenizer in include/cennan/tokenizer/bpe.h & src/tokenizer/bpe.cpp. |
+| **Thu** | Add Special Token handling ([CLS], [SEP], [PAD], [UNK], <s>, </s>) and attention mask generation. |
+| **Fri** | Benchmark C++ Tokenizer throughput vs Python HuggingFace Tokenizers; verify exact token parity in tests/test_tokenizer.cpp. |

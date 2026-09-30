@@ -32,7 +32,8 @@
 │ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Benchmarking / Technical Articles)        │
 │ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
-│ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
+│ 💻 Mon–Fri 20:30 – 23:00     │ Night Block 1:  (Vector Search Engine in C++20 / SIMD / GPU)    │
+│ ⚡ Mon–Fri 23:00 – 00:00     │ Night Block 2:  (C++ Multi-Modal High-D Embedding Runtime)     │
 └──────────────────────────────┴────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -127,3 +128,17 @@ Before the Friday article or release, save the run manifest and raw JSON/CSV, ad
 * **Focus**: The Online Max Reduction Invariant & In-SRAM Accumulation Mechanics
 * **Workspace**: `research/2027-01-cagra-warp-search/`
 * **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.
+
+
+---
+
+## ⚡  Embedding Engine Track (Week 19)
+> **Weekly Focus**: *ColPali Multimodal Page Encoder (Visual Document Retrieval)*
+
+| Day | 23:00 – 00:00 Implementation Task |
+|:---|:---|
+| **Mon** | Implement ColPali visual patch token adapter: map visual tokens into retrieval latent space. |
+| **Tue** | Implement image resolution downsampling and spatial token pruning for high-res PDF pages. |
+| **Wed** | Assemble full ColPali pipeline: PDF Page Image -> Visual Token Matrix [N_patches, 128]. |
+| **Thu** | Benchmark ColPali image embedding throughput (pages/second) on CPU and GPU. |
+| **Fri** | Verify visual token retrieval accuracy on document layout and chart queries. |

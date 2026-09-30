@@ -32,7 +32,8 @@
 │ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Benchmarking / Technical Articles)        │
 │ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
-│ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
+│ 💻 Mon–Fri 20:30 – 23:00     │ Night Block 1:  (Vector Search Engine in C++20 / SIMD / GPU)    │
+│ ⚡ Mon–Fri 23:00 – 00:00     │ Night Block 2:  (C++ Multi-Modal High-D Embedding Runtime)     │
 └──────────────────────────────┴────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -134,3 +135,17 @@ Before the Friday article or release, save the run manifest and raw JSON/CSV, ad
 * **Focus**: Geometry-Aware Anisotropic Polar Quantization: The Adaptive Ellipsoidal Lattice & Unbiased QJL Proof
 * **Workspace**: `research/2026-10-anisotropic-quantization/`
 * **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.
+
+
+---
+
+## ⚡  Embedding Engine Track (Week 07)
+> **Weekly Focus**: *Dense Transformer Encoder Backbone*
+
+| Day | 23:00 – 00:00 Implementation Task |
+|:---|:---|
+| **Mon** | Implement Multi-Head Attention forward pass with RoPE and Bidirectional masking in include/cennan/models/attention.h. |
+| **Tue** | Implement Transformer Encoder Block in include/cennan/models/encoder_block.h (Pre-LN & Post-LN). |
+| **Wed** | Implement BERT / MiniLM / BGE Backbone architecture stacking N encoder blocks in include/cennan/models/bert.h. |
+| **Thu** | Implement Attention-Masked Mean Pooling and In-Place L2 Normalization layers. |
+| **Fri** | Full forward pass verification: generate 384D/768D embeddings from raw text strings in C++ with 0 Python dependencies. |

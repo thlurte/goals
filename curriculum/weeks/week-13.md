@@ -32,7 +32,8 @@
 │ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Benchmarking / Technical Articles)        │
 │ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
-│ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
+│ 💻 Mon–Fri 20:30 – 23:00     │ Night Block 1:  (Vector Search Engine in C++20 / SIMD / GPU)    │
+│ ⚡ Mon–Fri 23:00 – 00:00     │ Night Block 2:  (C++ Multi-Modal High-D Embedding Runtime)     │
 └──────────────────────────────┴────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -128,3 +129,17 @@ Before the Friday article or release, save the run manifest and raw JSON/CSV, ad
 * **Focus**: The Memory Wall in Multimodal Late Interaction: Baseline GPU Kernel Profiling
 * **Workspace**: `research/2026-12-flashattn-vamana/`
 * **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.
+
+
+---
+
+## ⚡  Embedding Engine Track (Week 13)
+> **Weekly Focus**: *CUDA Tensor Core GEMM & Memory Hierarchy*
+
+| Day | 23:00 – 00:00 Implementation Task |
+|:---|:---|
+| **Mon** | Initialize cennan CUDA build hierarchy with CMake and compile first custom CUDA kernel. |
+| **Tue** | Implement FP16 / BF16 Matrix Multiplication using WMMA / Tensor Core intrinsics. |
+| **Wed** | Implement shared memory tiled GEMM with warp-level cooperative reductions. |
+| **Thu** | Implement CUDA LayerNorm and RMSNorm kernels with warp shuffle instructions (__shfl_down_sync). |
+| **Fri** | Benchmark cennan CUDA GEMM vs cuBLAS across batch sizes [1, 8, 32, 64]. |

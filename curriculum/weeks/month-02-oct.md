@@ -217,3 +217,10 @@
 > **🚀 Month 2 Builder Milestone (Fri Oct 30)**: End-to-end HNSW + FastScan SQ8/PQ benchmark verification across SIFT1M and 768-D text embeddings.
 
 ---
+
+
+---
+
+## ⚡  High-Dimensional Embedding Engine (Month 02 Focus)
+> **Theme**: *Dense C++ Embedding Engine, SIMD GEMM, Activations & Tokenizer*
+* In tandem with  vector search at 20:30–23:00, the 23:00–00:00 night block develops the standalone C++ multimodal embedding runtime , providing zero-copy feature ingestion directly into .

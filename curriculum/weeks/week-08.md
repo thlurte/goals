@@ -32,7 +32,8 @@
 │ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Benchmarking / Technical Articles)        │
 │ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
-│ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
+│ 💻 Mon–Fri 20:30 – 23:00     │ Night Block 1:  (Vector Search Engine in C++20 / SIMD / GPU)    │
+│ ⚡ Mon–Fri 23:00 – 00:00     │ Night Block 2:  (C++ Multi-Modal High-D Embedding Runtime)     │
 └──────────────────────────────┴────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -128,3 +129,17 @@ Before the Friday article or release, save the run manifest and raw JSON/CSV, ad
 * **Focus**: Geometry-Aware Anisotropic Polar Quantization: The Adaptive Ellipsoidal Lattice & Unbiased QJL Proof
 * **Workspace**: `research/2026-10-anisotropic-quantization/`
 * **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.
+
+
+---
+
+## ⚡  Embedding Engine Track (Week 08)
+> **Weekly Focus**: *End-to-End Pipeline & secan Zero-Copy Bridge*
+
+| Day | 23:00 – 00:00 Implementation Task |
+|:---|:---|
+| **Mon** | Implement zero-copy memory bridge exporting cennan::Tensor vectors directly into secan::FloatDataset. |
+| **Tue** | Build end-to-end Text Search CLI pipeline: raw queries -> cennan embedding -> secan IVF-Flat / SQ8 index search. |
+| **Wed** | Measure latency breakdown: Tokenization (us) + Forward Pass (ms) + secan Search (us). |
+| **Thu** | Optimize memory allocation: enforce zero dynamic heap allocations during steady-state inference loop. |
+| **Fri** | Milestone Release: Tag cennan v0.1-dense-embed and document end-to-end retrieval benchmarks. |

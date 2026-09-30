@@ -208,3 +208,10 @@
 > **🧠 DL Builder Track (Tue/Wed, required)**: Export Week 6 InfoNCE bi-encoder with `torch.onnx.export` (dynamic batch). Run **ONNX Runtime** `InferenceSession`; max abs / cosine error vs PyTorch on a fixed batch. Emit 768-D query/doc `.fvecs` via ORT and re-ingest into `HNSWSQIndex` / `IVFPQIndex` — confirm Recall@10 matches the Week 8 Fri PyTorch path within tolerance. **No** onnxruntime C++ inside `secan` (nanobind + ORT Python is enough). ColBERT ONNX = stretch later.
 
 ---
+
+
+---
+
+## ⚡  High-Dimensional Embedding Engine (Month 03 Focus)
+> **Theme**: *ColBERT Multi-Vector Late-Interaction Engine & Token Quantization*
+* In tandem with  vector search at 20:30–23:00, the 23:00–00:00 night block develops the standalone C++ multimodal embedding runtime , providing zero-copy feature ingestion directly into .
