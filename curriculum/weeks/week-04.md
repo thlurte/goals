@@ -32,7 +32,8 @@
 │ 🛠️ Mon–Fri 06:30 – 08:30     │ Morning Builder Track (DL / Benchmarking / Technical Articles)        │
 │ ☀️ Mon–Fri Daytime           │ Professional Workday (Full focus, zero math fatigue)                   │
 │ 📚 Mon–Fri 18:30 – 20:00     │ Evening Reading Sanctuary (Pirsig / GEB / Dostoevsky / Wiener)         │
-│ 💻 Mon–Fri 20:30 – 22:30     │ Night Hands-On Implementation (secan C++20 / CUDA flow state)          │
+│ 💻 Mon–Fri 20:30 – 23:00     │ Night Block 1: `secan` (Vector Search Engine in C++20 / SIMD / GPU)    │
+│ ⚡ Mon–Fri 23:00 – 00:00     │ Night Block 2: `cennan` (C++ Multi-Modal High-D Embedding Runtime)     │
 └──────────────────────────────┴────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -40,15 +41,15 @@
 
 ## 📅 Day-by-Day Master Timetable
 
-| Day | Date | Daily Runbook | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Hands-On C++/CUDA (20:30–23:00) |
-|:---|:---|:---|:---|:---|:---|
-| **Saturday** | Sat Sep 26 | [`Day 022`](../days/month-01/day-022-2026-09-26.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Information Theory (Cover & Thomas) · **19:30–21:00**: Thought Leadership (George Pólya) · **21:00+**: Free / Rest|
-| **Sunday** | Sun Sep 27 | [`Day 023`](../days/month-01/day-023-2026-09-27.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems (DDIA Ch 3.2) · **19:30–21:00**: Systems Lab (Gregg Ch 6) |
-| **Monday** | Mon Sep 28 | [`Day 024`](../days/month-01/day-024-2026-09-28.md) | **PIKUS Ch 5**: Cache coherence, false sharing. | **Hardware Profiling & Benchmark Sweeps** | **secan**: `batch_linear_scan` $B=32/64$ (GEMV $\to$ GEMM). |
-| **Tuesday** | Tue Sep 29 | [`Day 025`](../days/month-01/day-025-2026-09-29.md) | Faiss IVF coarse quantizer; **spherical k-means** for IP/MIPS. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: `IVFIndex` — L2 k-means + **spherical k-means** for IP. |
-| **Wednesday** | Wed Sep 30 | [`Day 026`](../days/month-01/day-026-2026-09-30.md) | **PIKUS Ch 6**: Thread pools. | **DL Track (Part 2): Training Loop & Verification** | **secan**: Multi-probe IVF; `nprobe` sweep; pinned `std::jthread`. |
-| **Thursday** | Thu Oct 1 | [`Day 027`](../days/month-01/day-027-2026-10-01.md) | IVF inverted-list skew (Faiss `make_direct_map` / list size). | **DL / Vector Retrieval Integration & Profiling** | **secan (required)**: Histogram of IVF list sizes; **rebalance / split oversized lists**. |
-| **Friday** | Fri Oct 2 | [`Day 028`](../days/month-01/day-028-2026-10-02.md) | IP vs L2 recall on same vectors. | **Weekly Technical Article: Drafting & Publishing** | **secan**: IP/MIPS search path on IVF; compare Recall@10 vs L2. Tag `v0.2-simd-ivf`. |
+| Day | Date | Daily Runbook | Systems Reading (05:30–06:30) | Morning Builder Track (06:30–08:30) | Night Block 1: `secan` (20:30–23:00) | Night Block 2: `cennan` (23:00–00:00) |
+|:---|:---|:---|:---|:---|:---|:---|
+| **Saturday** | Sat Sep 26 | [`Day 022`](../days/month-01/day-022-2026-09-26.md) | **09:00–13:00**: Pure Math Block 1 (Theory & Derivations) | **15:00–16:30**: Literature Sanctuary | **18:00–19:30**: Info Theory · **19:30–21:00**: Pólya | Free / Rest |
+| **Sunday** | Sun Sep 27 | [`Day 023`](../days/month-01/day-023-2026-09-27.md) | **09:00–13:00**: Pure Math Block 2 (Problem Sets & Proofs) | **13:00**: Maint · **15:00**: Penrose | **18:00–19:30**: Dist Systems · **19:30–21:00**: Systems Lab | Free / Rest |
+| **Monday** | Mon Sep 28 | [`Day 024`](../days/month-01/day-024-2026-09-28.md) | **PIKUS Ch 5**: Cache coherence, false sharing. | **Hardware Profiling & Benchmark Sweeps** | **secan**: `batch_linear_scan` $B=32/64$ (GEMV $\to$ GEMM). | Foundation / Setup |
+| **Tuesday** | Tue Sep 29 | [`Day 025`](../days/month-01/day-025-2026-09-29.md) | Faiss IVF coarse quantizer; **spherical k-means** for IP/MIPS. | **DL Track (Part 1): Architecture & Tensor Shapes** | **secan**: `IVFIndex` — L2 k-means + **spherical k-means** for IP. | Foundation / Setup |
+| **Wednesday** | Wed Sep 30 | [`Day 026`](../days/month-01/day-026-2026-09-30.md) | **PIKUS Ch 6**: Thread pools. | **DL Track (Part 2): Training Loop & Verification** | **secan**: Multi-probe IVF; `nprobe` sweep; pinned `std::jthread`. | **cennan**: Repo initialization & `cennan::Tensor` |
+| **Thursday** | Thu Oct 1 | [`Day 027`](../days/month-01/day-027-2026-10-01.md) | IVF inverted-list skew (Faiss `make_direct_map` / list size). | **DL / Vector Retrieval Integration & Profiling** | **secan (required)**: Histogram of IVF list sizes; **rebalance / split oversized lists**. | **cennan**: Zero-copy `mmap` tensor loader |
+| **Friday** | Fri Oct 2 | [`Day 028`](../days/month-01/day-028-2026-10-02.md) | IP vs L2 recall on same vectors. | **Weekly Technical Article: Drafting & Publishing** | **secan**: IP/MIPS search path on IVF; compare Recall@10 vs L2. Tag `v0.2-simd-ivf`. | **cennan**: AVX2 `LayerNorm` / `RMSNorm` |
 
 ---
 

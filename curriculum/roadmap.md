@@ -12,7 +12,15 @@ graph TD
         API["Python nanobind / CLI (Zero REST overhead)"]
     end
 
-    subgraph RetrievalLayer ["RETRIEVAL & ROUTING PIPELINES"]
+    subgraph EmbeddingLayer ["cennan MULTIMODAL HIGH-DIMENSIONAL EMBEDDING ENGINE"]
+        direction LR
+        DenseModel["Dense Text Embedder<br/>(BGE / MiniLM / ModernBERT)"]
+        LateModel["Late-Interaction Multi-Vector<br/>(ColBERT v2 [B, L, D])"]
+        VisionModel["Vision-Language Patches<br/>(ColPali / SigLIP / ViT)"]
+        Tokenizer["C++ Standalone WordPiece / BPE"]
+    end
+
+    subgraph RetrievalLayer ["secan RETRIEVAL & ROUTING PIPELINES"]
         direction LR
         subgraph DensePipe ["Dense Vector Pipeline"]
             HNSW["HNSW Graph Traversal"]
@@ -42,8 +50,9 @@ graph TD
         DirectIO["Linux NVMe Asynchronous Direct I/O (io_uring SQPOLL)"]
     end
 
-    API --> DensePipe
-    API --> MultiPipe
+    API --> EmbeddingLayer
+    EmbeddingLayer -->|Zero-Copy Memory Pointers| RetrievalLayer
+    API --> RetrievalLayer
     DensePipe --> QuantLayer
     MultiPipe --> QuantLayer
     QuantLayer --> HardwareLayer
