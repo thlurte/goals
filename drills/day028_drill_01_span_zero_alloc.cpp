@@ -1,11 +1,8 @@
-#include <iostream>
-#include <vector>
-#include <span>
-#include <numeric>
-#include <cassert>
-
 // ==============================================================================
 // 🥋 Drill 28.1: Modern C++20 std::span & Zero-Allocation View Semantics
+//
+// 🚀 RUN COMMAND:
+// g++ -O3 -march=native -std=c++20 day028_drill_01_span_zero_alloc.cpp -o drill28_1 && ./drill28_1
 //
 // CONTEXT:
 // Vector search engines process millions of queries per second. Passing vectors
@@ -17,13 +14,20 @@
 // - Compiles directly to pointer arithmetic in assembly.
 // ==============================================================================
 
+#include <iostream>
+#include <vector>
+#include <span>
+#include <numeric>
+#include <cassert>
+
+// TODO 1: Implement dot product accepting non-owning std::span views
+// Function: dot_product_span(std::span<const float> a, std::span<const float> b)
 inline float dot_product_span(std::span<const float> a, std::span<const float> b) {
-    assert(a.size() == b.size());
-    float sum = 0.0f;
-    for (size_t i = 0; i < a.size(); ++i) {
-        sum += a[i] * b[i];
-    }
-    return sum;
+    // 1. Assert that a.size() == b.size()
+    // 2. Compute sum of a[i] * b[i]
+    // 3. Return the float sum
+    // [YOUR CODE HERE]
+    return 0.0f;
 }
 
 int main() {
@@ -33,16 +37,23 @@ int main() {
     std::vector<float> vec_a = {1.0f, 2.0f, 3.0f, 4.0f};
     std::vector<float> vec_b = {0.5f, 1.0f, 1.5f, 2.0f};
 
-    float dot1 = dot_product_span(vec_a, vec_b);
+    // TODO 2: Call dot_product_span passing vec_a and vec_b (implicit conversion to span)
+    float dot1 = 0.0f;
+    // [YOUR CODE HERE]
     std::cout << "1. Span over std::vector dot product: " << dot1 << "\n";
 
-    // 2. View over raw stack C-array (Zero allocations)
+    // 2. View over raw stack C-array (Zero allocations!)
     const float raw_a[4] = {2.0f, 2.0f, 2.0f, 2.0f};
     const float raw_b[4] = {3.0f, 3.0f, 3.0f, 3.0f};
 
-    float dot2 = dot_product_span(std::span{raw_a}, std::span{raw_b});
+    // TODO 3: Call dot_product_span with std::span wrapping the raw arrays
+    float dot2 = 0.0f;
+    // [YOUR CODE HERE]
     std::cout << "2. Span over raw C-array dot product: " << dot2 << "\n\n";
 
+    // -------------------------------------------------------------------------
+    // Verification (Do not modify)
+    // -------------------------------------------------------------------------
     assert(dot1 == 15.0f);
     assert(dot2 == 24.0f);
     std::cout << "✓ Drill Passed: std::span demonstrated seamless zero-copy views.\n";
