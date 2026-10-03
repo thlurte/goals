@@ -22,24 +22,27 @@
 #include <immintrin.h>
 #include <cassert>
 
-// TODO 1: Implement SIMD dot product with software prefetching
-// Function: compute_dot_simd_prefetch(a, b, dim, next_b)
 inline float compute_dot_simd_prefetch(const float* a, const float* b, size_t dim, const float* next_b) {
-    // 1. If next_b != nullptr, prefetch its cache lines into L1 cache:
-    //    Iterate through `offset` from 0 to `dim * sizeof(float)` with step 64:
-    //    _mm_prefetch(reinterpret_cast<const char*>(next_b) + offset, _MM_HINT_T0);
-    //
-    // 2. Perform AVX2 FMA dot product of `a` and `b` (dim is multiple of 8):
-    //    __m256 sum = _mm256_setzero_ps();
-    //    for (size_t i = 0; i < dim; i += 8) {
-    //        __m256 va = _mm256_loadu_ps(a + i);
-    //        __m256 vb = _mm256_loadu_ps(b + i);
-    //        sum = _mm256_fmadd_ps(va, vb, sum);
-    //    }
-    //
-    // 3. Horizontally reduce `sum` and return float result.
-    // [YOUR CODE HERE]
-    return 0.0f;
+    if (next_b != nullptr) {
+        const char* p = reinterpret_cast<const char*>(next_b);
+        for (size_t offset = 0; offset < dim * sizeof(float); offset += 64) {
+            _mm_prefetch(p + offset, _MM_HINT_T0);
+        }
+    }
+
+    __m256 sum = _mm256_setzero_ps();
+    for (size_t i = 0; i < dim; i += 8) {
+        __m256 va = _mm256_loadu_ps(a + i);
+        __m256 vb = _mm256_loadu_ps(b + i);
+        sum = _mm256_fmadd_ps(va, vb, sum);
+    }
+
+    __m128 lo = _mm256_castps256_ps128(sum);
+    __m128 hi = _mm256_extractf128_ps(sum, 1);
+    __m128 s = _mm_add_ps(lo, hi);
+    s = _mm_hadd_ps(s, s);
+    s = _mm_hadd_ps(s, s);
+    return _mm_cvtss_f32(s);
 }
 
 int main() {
