@@ -13,7 +13,7 @@
 | [**Hard landings**](curriculum/landings.md) | What must ship which week |
 | [**This month’s weeks**](curriculum/weeks/month-01-sep.md) | Day-by-day tables, actions, stretch & time traps |
 | [**Architecture roadmap**](curriculum/roadmap.md) | Macro `secan` blueprint |
-| [**Systems & CPU Performance Resources**](resources/cpu-performance-engineering.md) | Primary sources, microarchitecture papers, cache models & benchmarks |
+| [**Systems Canon & Bibliography**](resources/systems_canon.md) | Primary sources, microarchitecture manuals, textbooks & seminal papers |
 | [**limbed + ggmbed**](projects/embed-runtimes.md) | Inspection holes + 6-month fix timeline (30–60 min/wk) |
 
 ## Entry prerequisites (before Sep 1)
@@ -52,11 +52,10 @@ goals/
 │   │   └── week-01.md ...    ← 28 weekly execution playbooks
 │   └── days/
 │       └── month-0N/day-*.md ← 196 individual daily runbooks
-├── projects/
-│   └── embed-runtimes.md     ← limbed + ggmbed (not secan)
-├── resources/
-│   └── cpu-performance-engineering.md ← primary sources, architecture papers & benchmarks
-└── research/
-    ├── README.md             ← empirical benchmark protocol & data guidelines
-    └── YYYY-MM-<slug>/       ← empirical benchmark logs & sweeps
+├── drills/
+│   ├── README.md             ← systems & DL hands-on micro-drills
+│   ├── day*.cpp / day*.py    ← interactive exercises
+│   └── solutions/            ← reference implementations
+└── resources/
+    └── systems_canon.md      ← primary sources, vendor manuals & canonical textbooks
 ```

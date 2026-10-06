@@ -60,8 +60,7 @@ Ahmed’s routine is carefully calibrated for deep work, sustainable progress, a
 3. **Standalone DL & First-Principles Repositories** (`/home/ahmed/personal/<experiment-repo>`):
    * Each model or first-principles experiment is maintained as its own clean, independent Git repository directly under `~/personal/` initialized via `uv` (e.g. `transformers-pytorch`, `autograd-scratch`, `colbert-maxsim`), with zero artificial parent umbrella folders.
    * Scope: Micrograd autograd engine, attention mechanisms (SDPA, GQA, RoPE, SwiGLU), custom optimizers from scratch, and ONNX runtime integration feeding embeddings into `secan`.
-4. **`embed-runtimes`** (`/home/ahmed/personal/projects/embed-runtimes.md`):
-   * Embedded vector runtime experiments (`limbed` + `ggmbed`).
+
 
 ---
 

@@ -36,7 +36,6 @@
 11. **Sun 19:30–21:00** — **Graduate Systems & GPU Architecture Lab** (*Hennessy & Patterson* / *Kirk & Hwu*)
 12. **Friday / Weekend** — Publish weekly technical article & release benchmark updates
 
-> **Benchmark completion rule**: A systems feature closes only with an oracle check, a reproducible result manifest, raw JSON/CSV, one tradeoff plot, and a short interpretation. The [empirical track](../research/README.md#benchmark-contract-what-makes-work-showcaseable) defines the common format.
 
 ## Map
 
@@ -44,7 +43,7 @@
 |:---|:---|
 | [Hard landings](landings.md) | Deferred ledger, VS composition, DL landings |
 | [Architecture roadmap](roadmap.md) | Master blueprint: systems architecture, profiling playbook & canonical proofs |
-| [Systems Resources](../resources/cpu-performance-engineering.md) | Primary sources catalog, microarchitecture manuals & 14 C benchmarks |
+| [Systems Canon & Bibliography](../resources/systems_canon.md) | Primary sources, microarchitecture manuals, textbooks & seminal papers |
 | [Weeks & Daily Actions](weeks/month-01-sep.md) | Day-by-day tables, actions, stretch & time traps |
 | [Prerequisites](../README.md#entry-prerequisites-before-sep-1) | Hardware / datasets / tooling |
 
