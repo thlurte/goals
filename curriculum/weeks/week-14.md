@@ -53,6 +53,8 @@
 
 ---
 
+> **📚 Advanced Research Reference (Week 14)**: * [Alex Petrov, *Database Internals*](https://www.databass.dev/) — **Ch 7 (§7.1–7.4)** (*Log-Structured Merge-Trees (LSM-Trees): MemTables, SSTables & Bloom Filter Sizing for Vector Postings*) · * [Paul E. McKenney, *Is Parallel Programming Hard ("The Perfbook")*](https://mirrors.edge.kernel.org/pub/linux/kernel/people/paulmck/perfbook/perfbook.html) — **Ch 5 (§5.1–5.4)** (*Non-Blocking Statistical Counters & Scalable Reference Counting*)
+
 ## 📋 Daily Action Items & Deliverables (Week 14)
 
 ### 🔹 Saturday, Sat Dec 5 ([`Day 092`](../days/month-04/day-092-2026-12-05.md))

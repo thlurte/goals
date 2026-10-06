@@ -53,6 +53,8 @@
 
 ---
 
+> **📚 Advanced Research Reference (Week 18)**: * [Paul E. McKenney, *Is Parallel Programming Hard ("The Perfbook")*](https://mirrors.edge.kernel.org/pub/linux/kernel/people/paulmck/perfbook/perfbook.html) — **Ch 15 (§15.1–15.5)** (*Total Store Order (TSO) vs Weak Memory Models & Acquire-Release Semantics on Device Boundaries*) · * [Christopher D. Manning et al., *Introduction to Information Retrieval*](https://nlp.stanford.edu/IR-book/) — **Ch 1 & Ch 2** (*Boolean Retrieval & Inverted Index Postings List Compression*)
+
 ## 📋 Daily Action Items & Deliverables (Week 18)
 
 ### 🔹 Saturday, Sat Jan 2 ([`Day 120`](../days/month-05/day-120-2027-01-02.md))

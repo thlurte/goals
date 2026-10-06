@@ -53,6 +53,8 @@
 
 ---
 
+> **📚 Advanced Research Reference (Week 20)**: * [David B. Kirk & Wen-mei W. Hwu, *Programming Massively Parallel Processors (4th ed)*](https://www.elsevier.com/books/programming-massively-parallel-processors/kirk/978-0-323-91231-0) — **Ch 19 (§19.1–19.4)** (*Hopper/Blackwell Tensor Memory Accelerator (TMA) & Asynchronous Barriers*) · * [Christopher D. Manning et al., *Introduction to Information Retrieval*](https://nlp.stanford.edu/IR-book/) — **Ch 6 & Ch 7** (*Vector Space Model, WAND Algorithm & Block-Max WAND Pruning*)
+
 ## 📋 Daily Action Items & Deliverables (Week 20)
 
 ### 🔹 Saturday, Sat Jan 16 ([`Day 134`](../days/month-05/day-134-2027-01-16.md))

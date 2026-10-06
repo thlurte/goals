@@ -53,6 +53,8 @@
 
 ---
 
+> **📚 Advanced Research Reference (Week 22)**: * [Henry S. Warren Jr., *Hacker's Delight (2nd ed)*](https://www.oreilly.com/library/view/hackers-delight-second/9780133084993/) — **Ch 9 (§9.1–9.4)** (*Exact Integer Division via Invariant Multipliers for Vector Dimension Stride Calculations*) · * [Christopher D. Manning et al., *Introduction to Information Retrieval*](https://nlp.stanford.edu/IR-book/) — **Ch 8 & Ch 18** (*Evaluation Metrics in IR (NDCG@k, MAP, MRR) & Latent Semantic Indexing*)
+
 ## 📋 Daily Action Items & Deliverables (Week 22)
 
 ### 🔹 Saturday, Sat Jan 30 ([`Day 148`](../days/month-06/day-148-2027-01-30.md))

@@ -53,6 +53,8 @@
 
 ---
 
+> **📚 Advanced Research Reference (Week 07)**: * [Denis Bakhvalov, *Performance Analysis and Tuning on Modern CPUs (2nd ed, 2024)*](https://book.easyperf.net/) — **Ch 3 (§3.1–3.4)** (*CPU Pipeline Ports & Port 5 Shuffle Bottlenecks during FastScan `_mm256_shuffle_epi8`*) · * [Pavel Zezula et al., *Similarity Search: The Metric Space Approach*](https://link.springer.com/book/10.1007/0-387-29151-2) — **Ch 1 & Ch 2 (§2.1–2.5)** (*Metric Space Axioms & Intrinsic Dimensionality Decay*)
+
 ## 📋 Daily Action Items & Deliverables (Week 07)
 
 ### 🔹 Saturday, Sat Oct 17 ([`Day 043`](../days/month-02/day-043-2026-10-17.md))

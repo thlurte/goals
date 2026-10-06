@@ -53,6 +53,8 @@
 
 ---
 
+> **📚 Advanced Research Reference (Week 19)**: * [Denis Bakhvalov, *Performance Analysis and Tuning on Modern CPUs*](https://book.easyperf.net/) — **Ch 10 (§10.1–10.4)** (*Microbenchmarking Pitfalls: Compiler Dead-Code Elimination & Warmup Disciplines*) · * [Christopher D. Manning et al., *Introduction to Information Retrieval*](https://nlp.stanford.edu/IR-book/) — **Ch 4 & Ch 5** (*Blocked Sort-Based Indexing (BSBI), SPIMI & Elias Code Compression*)
+
 ## 📋 Daily Action Items & Deliverables (Week 19)
 
 ### 🔹 Saturday, Sat Jan 9 ([`Day 127`](../days/month-05/day-127-2027-01-09.md))

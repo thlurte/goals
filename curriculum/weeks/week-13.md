@@ -53,6 +53,8 @@
 
 ---
 
+> **📚 Advanced Research Reference (Week 13)**: * [Gene H. Golub & Charles F. Van Loan, *Matrix Computations (4th ed)*](https://jhupbooks.press.jhu.edu/title/matrix-computations) — **Ch 8 (§8.1–8.4) & Ch 10 (§10.1–10.3)** (*Truncated SVD & Low-Rank Approximations for Multi-Vector Residuals*) · * [Pavel Zezula et al., *Similarity Search: The Metric Space Approach*](https://link.springer.com/book/10.1007/0-387-29151-2) — **Ch 7 (§7.1–7.4)** (*Approximate Similarity Pruning Bounds & Triangle Inequality Bounds*)
+
 ## 📋 Daily Action Items & Deliverables (Week 13)
 
 ### 🔹 Saturday, Sat Nov 28 ([`Day 085`](../days/month-04/day-085-2026-11-28.md))

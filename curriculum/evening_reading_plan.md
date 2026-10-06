@@ -9,7 +9,7 @@ A disciplined, restorative 28-week reading curriculum designed for the post-work
 | Pillar | Focus & Domain | Master Works |
 |:---|:---|:---|
 | **I. Soul, Morality & Craft** | Character-driven literature, craftsmanship, and human nature | *Zen and the Art of Motorcycle Maintenance* (Pirsig)<br>*The Magic Mountain* (*Der Zauberberg*) (Thomas Mann)<br>*The Master and Margarita* (Bulgakov) |
-| **II. Mind, Self-Reference & Cybernetics** | Recursive systems, feedback loops, strange loops, and consciousness | *Gödel, Escher, Bach: An Eternal Golden Braid* (Hofstadter)<br>*Cybernetics* (Wiener)<br>*I Am a Strange Loop* (Hofstadter)<br>*The Society of Mind* (Marvin Minsky) |
+| **II. Mind, Self-Reference & Cybernetics** | Recursive systems, feedback loops, strange loops, and consciousness | *Gödel, Escher, Bach: An Eternal Golden Braid* (Hofstadter)<br>*Cybernetics* (Wiener)<br>*I Am a Strange Loop* (Hofstadter)<br>*The Society of Mind* (Marvin Minsky)<br>*Summa Technologiae* (Stanisław Lem)<br>*The Sciences of the Artificial* (Herbert A. Simon) |
 | **III. The Physical Cosmos & Geometry** | Visual mathematical physics, geometry, spacetime, and quantum reality | *The Road to Reality: A Complete Guide to the Laws of the Universe* (Sir Roger Penrose) |
 
 ---

@@ -53,6 +53,8 @@
 
 ---
 
+> **📚 Advanced Research Reference (Week 21)**: * [Jorge Nocedal & Stephen J. Wright, *Numerical Optimization (2nd ed)*](https://link.springer.com/book/10.1007/978-0-387-40065-5) — **Ch 12 & Ch 16** (*Karush-Kuhn-Tucker (KKT) Optimality Conditions & Quadratic Programming for Binary Quantization*) · * [Roman Vershynin, *High-Dimensional Probability*](https://www.cambridge.org/core/books/highdimensional-probability/839C9B47EA0A4F6B9B34A9995E05CE96) — **Ch 5 & Ch 6** (*Random Matrices, Non-Asymptotic Singular Values & Johnson-Lindenstrauss Bounds*)
+
 ## 📋 Daily Action Items & Deliverables (Week 21)
 
 ### 🔹 Saturday, Sat Jan 23 ([`Day 141`](../days/month-06/day-141-2027-01-23.md))

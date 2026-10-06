@@ -52,6 +52,8 @@
 
 ---
 
+> **📚 Advanced Research Reference (Week 27)**: * [Denis Bakhvalov, *Performance Analysis and Tuning on Modern CPUs*](https://book.easyperf.net/) — **Ch 11 & Ch 12** (*Compiler Vectorization Reports, Link-Time Optimization (LTO) & Profile-Guided Optimization (PGO)*) · * [Edwin T. Jaynes, *Probability Theory: The Logic of Science*](https://www.cambridge.org/core/books/probability-theory/9780521770347) — **Ch 1, 2 & 11** (*Plausible Reasoning as Extended Logic & The Maximum Entropy Principle*)
+
 ## 📋 Daily Action Items & Deliverables (Week 27)
 
 ### 🔹 Saturday, Sat Mar 6 ([`Day 183`](../days/month-07/day-183-2027-03-06.md))

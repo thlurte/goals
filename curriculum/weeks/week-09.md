@@ -53,6 +53,8 @@
 
 ---
 
+> **📚 Advanced Research Reference (Week 09)**: * [Paul E. McKenney, *Is Parallel Programming Hard ("The Perfbook")*](https://mirrors.edge.kernel.org/pub/linux/kernel/people/paulmck/perfbook/perfbook.html) — **Ch 3 (§3.1–3.4) & Ch 9 (§9.1–9.3)** (*MESI Cache Invalidation & Epoch-Based Reclamation for Concurrent HNSW*) · * [Pavel Zezula et al., *Similarity Search: The Metric Space Approach*](https://link.springer.com/book/10.1007/0-387-29151-2) — **Ch 4 (§4.1–4.4) & Ch 5 (§5.1–5.3)** (*Ball Partitioning VP-Trees vs Small-World Graph Routing*)
+
 ## 📋 Daily Action Items & Deliverables (Week 09)
 
 ### 🔹 Saturday, Sat Oct 31 ([`Day 057`](../days/month-03/day-057-2026-10-31.md))

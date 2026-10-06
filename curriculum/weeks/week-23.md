@@ -53,6 +53,8 @@
 
 ---
 
+> **📚 Advanced Research Reference (Week 23)**: * [Alex Petrov, *Database Internals*](https://www.databass.dev/) — **Ch 13 (§13.1–13.5)** (*Multi-Paxos, Raft Leader Election, Commit Log Matching & Snapshotting*) · * [Jorge Nocedal & Stephen J. Wright, *Numerical Optimization (2nd ed)*](https://link.springer.com/book/10.1007/978-0-387-40065-5) — **Ch 17 & Ch 18** (*Nonlinear Constrained Optimization & Augmented Lagrangian Methods*)
+
 ## 📋 Daily Action Items & Deliverables (Week 23)
 
 ### 🔹 Saturday, Sat Feb 6 ([`Day 155`](../days/month-06/day-155-2027-02-06.md))

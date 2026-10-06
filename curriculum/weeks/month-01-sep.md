@@ -24,6 +24,14 @@
 
 
 ### 📚 Master Reference Textbooks (Month 1)
+* **Microarchitectural Performance**: Denis Bakhvalov, *Performance Analysis and Tuning on Modern CPUs (2nd ed, 2024)* — Top-Down Microarchitecture Analysis (TMAM), PMU hardware counters, and port contention profiling.
+* **Bitwise Systems Engineering**: Henry S. Warren Jr., *Hacker's Delight (2nd ed)* — Popcount trees, bit-matrix permutations, and branch-free SIMD index arithmetic.
+* **Concurrent & Lock-Free Systems**: Paul E. McKenney, *Is Parallel Programming Hard ("The Perfbook")* — Cache coherence invalidations, RCU, Hazard Pointers, and Memory Models.
+* **Memory Hierarchy Architecture**: Ulrich Drepper, *What Every Programmer Should Know About Memory* — Cache associativity, Structure-of-Arrays (SoA), and NUMA topology.
+* **Metric Space Similarity Search**: Pavel Zezula et al., *Similarity Search: The Metric Space Approach* — Intrinsic dimensionality, VP-trees, and metric pruning bounds.
+* **Numerical Linear Algebra & Optimization**: Gene H. Golub & Charles F. Van Loan, *Matrix Computations (4th ed)* & Jorge Nocedal & Stephen J. Wright, *Numerical Optimization (2nd ed)* — Block GEMM, Householder QR, L-BFGS, and KKT conditions.
+* **Storage Engine Internals**: Alex Petrov, *Database Internals* — Disk-backed slotted pages, NVMe 4KB sector alignment, LSM-trees, and Raft consensus.
+* **Cybernetics & Complex Systems**: Herbert A. Simon, *The Sciences of the Artificial* & Stanisław Lem, *Summa Technologiae* — Hierarchical complexity, bounded rationality, and intellectronics.
 * **High-Dimensional Probability**: Roman Vershynin, *High-Dimensional Probability: An Introduction with Applications in Data Science* (CUP 2018) — Ch 1–3 (Random vectors in $\mathbb{R}^d$, spherical distributions on $\mathcal{S}^{d-1}$, sub-Gaussian variables, concentration of measure). *Foundational for Flagship Implementation 1 (GAPQ in `secan`).*
 * **Computer Architecture**: John L. Hennessy & David A. Patterson, *Computer Architecture: A Quantitative Approach* (6th ed, Morgan Kaufmann 2017) — Ch 1 (Quantitative Principles, Amdahl's Law) & Ch 2 (Memory Hierarchy Design, Cache Optimizations).
 * **Systems Performance**: Brendan Gregg, *Systems Performance: Enterprise and the Cloud* (2nd ed, Addison-Wesley 2020) — Ch 2 (Methodologies) & Ch 6 (CPUs, PMU Hardware Counters, `perf stat` / `perf record`).

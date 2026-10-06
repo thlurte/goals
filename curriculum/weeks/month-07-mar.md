@@ -18,6 +18,14 @@
 
 
 ### 📚 Master Reference Textbooks (Month 7)
+* **Microarchitectural Performance**: Denis Bakhvalov, *Performance Analysis and Tuning on Modern CPUs (2nd ed, 2024)* — Top-Down Microarchitecture Analysis (TMAM), PMU hardware counters, and port contention profiling.
+* **Bitwise Systems Engineering**: Henry S. Warren Jr., *Hacker's Delight (2nd ed)* — Popcount trees, bit-matrix permutations, and branch-free SIMD index arithmetic.
+* **Concurrent & Lock-Free Systems**: Paul E. McKenney, *Is Parallel Programming Hard ("The Perfbook")* — Cache coherence invalidations, RCU, Hazard Pointers, and Memory Models.
+* **Memory Hierarchy Architecture**: Ulrich Drepper, *What Every Programmer Should Know About Memory* — Cache associativity, Structure-of-Arrays (SoA), and NUMA topology.
+* **Metric Space Similarity Search**: Pavel Zezula et al., *Similarity Search: The Metric Space Approach* — Intrinsic dimensionality, VP-trees, and metric pruning bounds.
+* **Numerical Linear Algebra & Optimization**: Gene H. Golub & Charles F. Van Loan, *Matrix Computations (4th ed)* & Jorge Nocedal & Stephen J. Wright, *Numerical Optimization (2nd ed)* — Block GEMM, Householder QR, L-BFGS, and KKT conditions.
+* **Storage Engine Internals**: Alex Petrov, *Database Internals* — Disk-backed slotted pages, NVMe 4KB sector alignment, LSM-trees, and Raft consensus.
+* **Cybernetics & Complex Systems**: Herbert A. Simon, *The Sciences of the Artificial* & Stanisław Lem, *Summa Technologiae* — Hierarchical complexity, bounded rationality, and intellectronics.
 * **GPU Kernel Fusion & Deep Learning**: David B. Kirk & Wen-mei W. Hwu, *Programming Massively Parallel Processors* (4th ed) — Ch 16–17 (Deep Learning Operators, Matrix Multiplication Kernels, Tensor Cores, FlashAttention Kernel Mechanics).
 * **Computer Architecture**: John L. Hennessy & David A. Patterson, *Computer Architecture: A Quantitative Approach* (6th ed) — Ch 6 (Warehouse-Scale Computing) & Appendix B (Memory Hierarchy Review).
 * **Systems Profiling**: Brendan Gregg, *Systems Performance* (2nd ed) — Ch 12 (Benchmarking & Profiling Strategy, Flame Graphs, eBPF).

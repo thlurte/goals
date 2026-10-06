@@ -53,6 +53,8 @@
 
 ---
 
+> **📚 Advanced Research Reference (Week 17)**: * [David B. Kirk & Wen-mei W. Hwu, *Programming Massively Parallel Processors (4th ed)*](https://www.elsevier.com/books/programming-massively-parallel-processors/kirk/978-0-323-91231-0) — **Ch 14 (§14.1–14.4)** (*CUDA Tensor Core WMMA GEMM Programming & PTX Assembly Fragment Layouts*) · * [Jorge Nocedal & Stephen J. Wright, *Numerical Optimization (2nd ed)*](https://link.springer.com/book/10.1007/978-0-387-40065-5) — **Ch 6 (§6.1–6.3)** (*Quasi-Newton Methods & Memory-Efficient L-BFGS Updates*)
+
 ## 📋 Daily Action Items & Deliverables (Week 17)
 
 ### 🔹 Saturday, Sat Dec 26 ([`Day 113`](../days/month-05/day-113-2026-12-26.md))

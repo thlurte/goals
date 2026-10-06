@@ -53,6 +53,8 @@
 
 ---
 
+> **📚 Advanced Research Reference (Week 10)**: * [Donald E. Knuth, *The Art of Computer Programming, Vol 3: Sorting and Searching*](https://www-cs-faculty.stanford.edu/~knuth/taocp.html) — **§6.4 & §6.5** (*Cache-Conscious Robin Hood Hashing & Multi-Dimensional Inverted Files*) · * [Ulrich Drepper, *What Every Programmer Should Know About Memory*](https://people.freebsd.org/~lstewart/articles/cpumemory.pdf) — **§3 (§3.1–3.4) & §6 (§6.1–6.3)** (*Structure of Arrays (SoA) Layout for Graph Adjacency Lists*)
+
 ## 📋 Daily Action Items & Deliverables (Week 10)
 
 ### 🔹 Saturday, Sat Nov 7 ([`Day 064`](../days/month-03/day-064-2026-11-07.md))

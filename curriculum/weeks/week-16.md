@@ -53,6 +53,8 @@
 
 ---
 
+> **📚 Advanced Research Reference (Week 16)**: * [Ulrich Drepper, *What Every Programmer Should Know About Memory*](https://people.freebsd.org/~lstewart/articles/cpumemory.pdf) — **§4 & §5** (*NUMA Interleaving, HugePages Allocation & Cache Line Contention in Multi-Socket Servers*) · * [Roman Vershynin, *High-Dimensional Probability*](https://www.cambridge.org/core/books/highdimensional-probability/839C9B47EA0A4F6B9B34A9995E05CE96) — **Ch 3 (§3.1–3.4)** (*High-Dimensional Euclidean Spheres & Thin Shell Concentration*)
+
 ## 📋 Daily Action Items & Deliverables (Week 16)
 
 ### 🔹 Saturday, Sat Dec 19 ([`Day 106`](../days/month-04/day-106-2026-12-19.md))

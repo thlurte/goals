@@ -53,6 +53,8 @@
 
 ---
 
+> **📚 Advanced Research Reference (Week 24)**: * [Paul E. McKenney, *Is Parallel Programming Hard ("The Perfbook")*](https://mirrors.edge.kernel.org/pub/linux/kernel/people/paulmck/perfbook/perfbook.html) — **Ch 9 (§9.4–9.6)** (*Hazard Pointers, Lock-Free Queues & Concurrent Dynamic Memory Recycling*) · * [Roman Vershynin, *High-Dimensional Probability*](https://www.cambridge.org/core/books/highdimensional-probability/839C9B47EA0A4F6B9B34A9995E05CE96) — **Ch 7 & Ch 8** (*Chaining, Metric Entropy & Dudley's Integral for High-Dimensional Retrieval Bounds*)
+
 ## 📋 Daily Action Items & Deliverables (Week 24)
 
 ### 🔹 Saturday, Sat Feb 13 ([`Day 162`](../days/month-06/day-162-2027-02-13.md))

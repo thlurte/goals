@@ -53,6 +53,8 @@
 
 ---
 
+> **📚 Advanced Research Reference (Week 12)**: * [Alex Petrov, *Database Internals: A Deep Dive into Distributed Systems*](https://www.databass.dev/) — **Ch 2 (§2.1–2.4) & Ch 3 (§3.1–3.3)** (*Slotted Page Layout & 4KB Sector-Aligned Asynchronous NVMe IO*) · * [Denis Bakhvalov, *Performance Analysis and Tuning on Modern CPUs*](https://book.easyperf.net/) — **Ch 8 (§8.1–8.4)** (*Hardware Performance Counter Profiling with Linux `perf` during `io_uring` Storage Scans*)
+
 ## 📋 Daily Action Items & Deliverables (Week 12)
 
 ### 🔹 Saturday, Sat Nov 21 ([`Day 078`](../days/month-03/day-078-2026-11-21.md))

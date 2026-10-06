@@ -52,6 +52,8 @@
 
 ---
 
+> **📚 Advanced Research Reference (Week 26)**: * [Herbert A. Simon, *The Sciences of the Artificial (3rd ed)*](https://mitpress.mit.edu/9780262691918/the-sciences-of-the-artificial/) — **Ch 8** (*The Architecture of Complexity: Hierarchic Systems & Near-Decomposability in Software Architecture*) · * [Stanisław Lem, *Summa Technologiae*](https://www.upress.umn.edu/book-division/books/summa-technologiae) — **Ch 6** (*Phantomology: The Cybernetic Ontology of Simulated Realities & Feedback Control*)
+
 ## 📋 Daily Action Items & Deliverables (Week 26)
 
 ### 🔹 Saturday, Sat Feb 27 ([`Day 176`](../days/month-07/day-176-2027-02-27.md))

@@ -53,6 +53,8 @@
 
 ---
 
+> **📚 Advanced Research Reference (Week 11)**: * [Henry S. Warren Jr., *Hacker's Delight (2nd ed)*](https://www.oreilly.com/library/view/hackers-delight-second/9780133084993/) — **Ch 5 (§5.1–5.4)** (*Parallel Bitset Intersection & Branch-Free Popcount for Filtered ACORN Search*) · * [Jorge Nocedal & Stephen J. Wright, *Numerical Optimization (2nd ed)*](https://link.springer.com/book/10.1007/978-0-387-40065-5) — **Ch 2 & Ch 3 (§3.1–3.3)** (*Line Search, Wolfe Conditions & Constrained Projections*)
+
 ## 📋 Daily Action Items & Deliverables (Week 11)
 
 ### 🔹 Saturday, Sat Nov 14 ([`Day 071`](../days/month-03/day-071-2026-11-14.md))

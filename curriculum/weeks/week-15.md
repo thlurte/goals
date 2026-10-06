@@ -53,6 +53,8 @@
 
 ---
 
+> **📚 Advanced Research Reference (Week 15)**: * [David B. Kirk & Wen-mei W. Hwu, *Programming Massively Parallel Processors (4th ed)*](https://www.elsevier.com/books/programming-massively-parallel-processors/kirk/978-0-323-91231-0) — **Ch 8 & Ch 9** (*Work-Efficient Parallel Scan & Warp-Shuffle Reduction for In-SRAM MaxSim*) · * [Gene H. Golub & Charles F. Van Loan, *Matrix Computations (4th ed)*](https://jhupbooks.press.jhu.edu/title/matrix-computations) — **Ch 1 (§1.1–1.3)** (*Cache-Blocked Block GEMM Kernel Derivations*)
+
 ## 📋 Daily Action Items & Deliverables (Week 15)
 
 ### 🔹 Saturday, Sat Dec 12 ([`Day 099`](../days/month-04/day-099-2026-12-12.md))

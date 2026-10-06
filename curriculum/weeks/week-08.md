@@ -53,6 +53,8 @@
 
 ---
 
+> **📚 Advanced Research Reference (Week 08)**: * [Denis Bakhvalov, *Performance Analysis and Tuning on Modern CPUs*](https://book.easyperf.net/) — **Ch 5 (§5.1–5.4)** (*Top-Down Microarchitecture Analysis (TMAM) for Vector Scan Stalls*) · * [Gene H. Golub & Charles F. Van Loan, *Matrix Computations (4th ed)*](https://jhupbooks.press.jhu.edu/title/matrix-computations) — **Ch 5 (§5.1–5.3)** (*Orthogonal Procrustes & Householder QR for OPQ Rotation Estimation*)
+
 ## 📋 Daily Action Items & Deliverables (Week 08)
 
 ### 🔹 Saturday, Sat Oct 24 ([`Day 050`](../days/month-02/day-050-2026-10-24.md))

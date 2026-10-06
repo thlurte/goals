@@ -53,6 +53,8 @@
 
 ---
 
+> **📚 Advanced Research Reference (Week 06)**: * [Henry S. Warren Jr., *Hacker's Delight (2nd ed)*](https://www.oreilly.com/library/view/hackers-delight-second/9780133084993/) — **Ch 2 (§2.1–2.8) & Ch 7 (§7.1–7.4)** (*Bit Permutations & Fast In-Register Subspace Packing*) · * [Roman Vershynin, *High-Dimensional Probability*](https://www.cambridge.org/core/books/highdimensional-probability/839C9B47EA0A4F6B9B34A9995E05CE96) — **Ch 2 (§2.1–2.6)** (*Sub-Gaussian Random Variables & Concentration of Quantization Residuals*)
+
 ## 📋 Daily Action Items & Deliverables (Week 06)
 
 ### 🔹 Saturday, Sat Oct 10 ([`Day 036`](../days/month-02/day-036-2026-10-10.md))

@@ -52,6 +52,8 @@
 
 ---
 
+> **📚 Advanced Research Reference (Week 25)**: * [Herbert A. Simon, *The Sciences of the Artificial (3rd ed)*](https://mitpress.mit.edu/9780262691918/the-sciences-of-the-artificial/) — **Ch 1 & Ch 2** (*Understanding Natural and Artificial Systems: Bounded Rationality & Heuristic Search*) · * [Stanisław Lem, *Summa Technologiae*](https://www.upress.umn.edu/book-division/books/summa-technologiae) — **Ch 2 & Ch 4** (*Two Evolutions & Intellectronics: Amplification of Intelligence & Cybernetic Homeostasis*)
+
 ## 📋 Daily Action Items & Deliverables (Week 25)
 
 ### 🔹 Saturday, Sat Feb 20 ([`Day 169`](../days/month-07/day-169-2027-02-20.md))
