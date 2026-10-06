@@ -56,43 +56,43 @@
 
 ### 🔹 Saturday, Sat Sep 12 ([`Day 008`](../days/month-01/day-008-2026-09-12.md))
 * `[x]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
-* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
-* `[ ]` **Core (16:30–18:00)**: **Physical Break & Mental Decompression**: Walk, tea, and recovery.
-* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* — **Ch 2.4–2.9** (Relative Entropy, Mutual Information, Chain Rules & Fano's Inequality).
-* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: George Pólya, *How to Solve It* — **Part II: How to Solve It: A Dialogue & Part III (A–D)** (Heuristics: Analogy, Auxiliary Elements, Decomposing and Recombining, Definition Examination).
+* `[x]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
+* `[x]` **Core (16:30–18:00)**: **Physical Break & Mental Decompression**: Walk, tea, and recovery.
+* `[x]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* — **Ch 2.4–2.9** (Relative Entropy, Mutual Information, Chain Rules & Fano's Inequality).
+* `[x]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: George Pólya, *How to Solve It* — **Part II: How to Solve It: A Dialogue & Part III (A–D)** (Heuristics: Analogy, Auxiliary Elements, Decomposing and Recombining, Definition Examination).
 * `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Sep 13 ([`Day 009`](../days/month-01/day-009-2026-09-13.md))
 * `[x]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
-* `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
-* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
-* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: **DDIA Ch 2** (Data Models and Query Languages: Relational vs Document vs Graph & Vector Layouts).
-* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: Microarchitecture analysis and CUDA exercises in **H&P Ch 2** (Cache miss penalty modeling, non-blocking caches, hardware/software prefetching latency hiding).
+* `[x]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
+* `[x]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
+* `[x]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: **DDIA Ch 2** (Data Models and Query Languages: Relational vs Document vs Graph & Vector Layouts).
+* `[x]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: Microarchitecture analysis and CUDA exercises in **H&P Ch 2** (Cache miss penalty modeling, non-blocking caches, hardware/software prefetching latency hiding).
 * `⭐ Optional / Stretch`: 21:00 onwards Weekly review & recovery.
 
 ### 🔹 Monday, Mon Sep 14 ([`Day 010`](../days/month-01/day-010-2026-09-14.md))
-* `[ ]` **Core**: Enable FTZ/DAZ (`_MM_SET_FLUSH_ZERO_MODE`); implement `l2_squared_avx2()` baseline (1 `__m256` accumulator).
+* `[x]` **Core**: Enable FTZ/DAZ (`_MM_SET_FLUSH_ZERO_MODE`); implement `l2_squared_avx2()` baseline (1 `__m256` accumulator).
 * `⭐ Optional / Stretch`: Write a microbenchmark testing floating-point denormal performance penalties with FTZ disabled vs enabled.
 
 
 ### 🔹 Tuesday, Tue Sep 15 ([`Day 011`](../days/month-01/day-011-2026-09-15.md))
-* `[ ]` **Core**: Implement 4-way unrolled `l2_squared_avx2()` (4 parallel accumulators); measure IPC improvement on Google Benchmark.
+* `[x]` **Core**: Implement 4-way unrolled `l2_squared_avx2()` (4 parallel accumulators); measure IPC improvement on Google Benchmark.
 * `⭐ Optional / Stretch`: Benchmark 2-way vs 4-way vs 8-way unrolling to determine register pressure limits on your specific CPU microarchitecture.
 
 
 ### 🔹 Wednesday, Wed Sep 16 ([`Day 012`](../days/month-01/day-012-2026-09-16.md))
-* `[ ]` **Core**: Implement fused `cosine_distance_avx2()` computing dot product and norms concurrently in a single pass.
+* `[x]` **Core**: Implement fused `cosine_distance_avx2()` computing dot product and norms concurrently in a single pass.
 * `⭐ Optional / Stretch`: Verify numerical precision parity between 1-pass fused cosine vs 2-pass separate norm computation on float vectors with large magnitude variance.
 
 
 ### 🔹 Thursday, Thu Sep 17 ([`Day 013`](../days/month-01/day-013-2026-09-17.md))
-* `[ ]` **Core**: Implement `ip_avx2()` with 4-way unrolling; ensure 64-byte vector alignment (`alignas(64)`).
-* `[ ]` **Core (DL Builder Track)**: Implement Mask-Aware Mean Pooling, Unit $L_2$ Normalization, and direct binary `.fvecs` exporter in `transformers-pytorch` to close the model inference-to-index ingestion bridge.
+* `[x]` **Core**: Implement `ip_avx2()` with 4-way unrolling; ensure 64-byte vector alignment (`alignas(64)`).
+* `[x]` **Core (DL Builder Track)**: Implement Mask-Aware Mean Pooling, Unit $L_2$ Normalization, and direct binary `.fvecs` exporter in `transformers-pytorch` to close the model inference-to-index ingestion bridge.
 * `⭐ Optional / Stretch`: Benchmark unaligned load (`_mm256_loadu_ps`) vs aligned load (`_mm256_load_ps`) across cache line boundaries.
 
 
 ### 🔹 Friday, Fri Sep 18 ([`Day 014`](../days/month-01/day-014-2026-09-18.md))
-* `[ ]` **Core**: Implement `#ifdef __AVX512F__` backend for 512-bit ZMM registers (`_mm512_sub_ps`, `_mm512_fmadd_ps`).
+* `[x]` **Core**: Implement `#ifdef __AVX512F__` backend for 512-bit ZMM registers (`_mm512_sub_ps`, `_mm512_fmadd_ps`).
 * `⭐ Optional / Stretch`: Profile AVX-512 frequency downclocking behavior (if CPU throttles clock speed under 512-bit vector load).
 
 

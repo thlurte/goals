@@ -55,43 +55,43 @@
 ## 📋 Daily Action Items & Deliverables (Week 03)
 
 ### 🔹 Saturday, Sat Sep 19 ([`Day 015`](../days/month-01/day-015-2026-09-19.md))
-* `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
-* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
-* `[ ]` **Core (16:30–18:00)**: **Physical Break & Mental Decompression**: Walk, tea, and recovery.
-* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* — **Ch 3.1–3.3** (Asymptotic Equipartition Property (AEP) & Typical Sets).
-* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: George Pólya, *How to Solve It* — **Part III (E–P): Dictionary of Heuristic** (Induction, Mathematical Invariants, Indirect Proof (Reductio ad Absurdum), Notation & Figures).
+* `[x]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
+* `[x]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
+* `[x]` **Core (16:30–18:00)**: **Physical Break & Mental Decompression**: Walk, tea, and recovery.
+* `[x]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* — **Ch 3.1–3.3** (Asymptotic Equipartition Property (AEP) & Typical Sets).
+* `[x]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: George Pólya, *How to Solve It* — **Part III (E–P): Dictionary of Heuristic** (Induction, Mathematical Invariants, Indirect Proof (Reductio ad Absurdum), Notation & Figures).
 * `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Sep 20 ([`Day 016`](../days/month-01/day-016-2026-09-20.md))
-* `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
-* `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
-* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
-* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: **DDIA Ch 3.1** (Storage and Retrieval: Log-Structured Storage, SSTables, LSM-Trees, Memtables & Compaction).
-* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: Microarchitecture analysis and CUDA exercises in **H&P Ch 2** (Multi-banked memory architectures, cache line conflict analysis & stride optimization).
+* `[x]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
+* `[x]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
+* `[x]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
+* `[x]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: **DDIA Ch 3.1** (Storage and Retrieval: Log-Structured Storage, SSTables, LSM-Trees, Memtables & Compaction).
+* `[x]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: Microarchitecture analysis and CUDA exercises in **H&P Ch 2** (Multi-banked memory architectures, cache line conflict analysis & stride optimization).
 * `⭐ Optional / Stretch`: 21:00 onwards Weekly review & recovery.
 
 ### 🔹 Monday, Mon Sep 21 ([`Day 017`](../days/month-01/day-017-2026-09-21.md))
-* `[ ]` **Core**: Profile SIFT1M cache miss rates with `perf stat`; compute working set size for $10^5$ and $10^6$ vectors.
+* `[x]` **Core**: Profile SIFT1M cache miss rates with `perf stat`; compute working set size for $10^5$ and $10^6$ vectors.
 * `⭐ Optional / Stretch`: Write a tiny benchmark that measures the cache memory mountain (bandwidth vs stride size from 4KB to 64MB).
 
 
 ### 🔹 Tuesday, Tue Sep 22 ([`Day 018`](../days/month-01/day-018-2026-09-22.md))
-* `[ ]` **Core**: Implement `linear_scan_tiled()` partitioning vector database into L2-cache tiles ($256\text{KB}$).
+* `[x]` **Core**: Implement `linear_scan_tiled()` partitioning vector database into L2-cache tiles ($256\text{KB}$).
 * `⭐ Optional / Stretch`: Experiment with multi-level cache tiling (L1 tile inside L2 tile) for multi-query batches.
 
 
 ### 🔹 Wednesday, Wed Sep 23 ([`Day 019`](../days/month-01/day-019-2026-09-23.md))
-* `[ ]` **Core**: Insert `_mm_prefetch` instructions in linear scan loop; benchmark prefetch lookahead distance $K \in \{4, 8, 16, 32\}$.
+* `[x]` **Core**: Insert `_mm_prefetch` instructions in linear scan loop; benchmark prefetch lookahead distance $K \in \{4, 8, 16, 32\}$.
 * `⭐ Optional / Stretch`: Test non-temporal prefetch hints (`_MM_HINT_NTA`) vs temporal (`_MM_HINT_T0`) on datasets that exceed L3 cache.
 
 
 ### 🔹 Thursday, Thu Sep 24 ([`Day 020`](../days/month-01/day-020-2026-09-24.md))
-* `[ ]` **Core**: Implement offline unit-sphere pre-normalization for cosine distance so queries reduce to pure inner product `ip()`.
+* `[x]` **Core**: Implement offline unit-sphere pre-normalization for cosine distance so queries reduce to pure inner product `ip()`.
 * `⭐ Optional / Stretch`: Implement in-place SIMD normalization kernel using `_mm256_div_ps` and compare throughput.
 
 
 ### 🔹 Friday, Fri Sep 25 ([`Day 021`](../days/month-01/day-021-2026-09-25.md))
-* `[ ]` **Core**: Add `madvise(MADV_HUGEPAGE)` transparent hugepage allocation on dataset mmap buffer + implement **FLANN `RandomizedKdTree` baseline** with Best-Bin-First search.
+* `[x]` **Core**: Add `madvise(MADV_HUGEPAGE)` transparent hugepage allocation on dataset mmap buffer + implement **FLANN `RandomizedKdTree` baseline** with Best-Bin-First search.
 * `⭐ Optional / Stretch`: Benchmark KD-Tree speedup vs brute-force across $D \in \{2, 8, 16, 64, 128\}$ to demonstrate the high-D curse of dimensionality phase transition.
 
 

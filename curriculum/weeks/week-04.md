@@ -56,43 +56,43 @@
 ## 📋 Daily Action Items & Deliverables (Week 04)
 
 ### 🔹 Saturday, Sat Sep 26 ([`Day 022`](../days/month-01/day-022-2026-09-26.md))
-* `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
-* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
-* `[ ]` **Core (16:30–18:00)**: **Physical Break & Mental Decompression**: Walk, tea, and recovery.
-* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* — **Ch 4.1–4.4** (Entropy Rates & Markov Chains).
-* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: George Pólya, *How to Solve It* — **Part III (R–Z) & Part IV: Problems** (Working Backwards, Specialization vs Generalization, Routine Problems vs Real Discovery).
+* `[x]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
+* `[x]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
+* `[x]` **Core (16:30–18:00)**: **Physical Break & Mental Decompression**: Walk, tea, and recovery.
+* `[x]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* — **Ch 4.1–4.4** (Entropy Rates & Markov Chains).
+* `[x]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: George Pólya, *How to Solve It* — **Part III (R–Z) & Part IV: Problems** (Working Backwards, Specialization vs Generalization, Routine Problems vs Real Discovery).
 * `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Sep 27 ([`Day 023`](../days/month-01/day-023-2026-09-27.md))
-* `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
-* `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
-* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
-* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: **DDIA Ch 3.2** (Storage and Retrieval: B-Trees, OLAP vs OLTP, Column-Oriented Storage & Vector Blocks).
-* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: Microarchitecture analysis and CUDA exercises in **Gregg Ch 6** (CPU PMU performance counters, instruction-to-cycle (IPC) decomposition & stall profiling).
+* `[x]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
+* `[x]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
+* `[x]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
+* `[x]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: **DDIA Ch 3.2** (Storage and Retrieval: B-Trees, OLAP vs OLTP, Column-Oriented Storage & Vector Blocks).
+* `[x]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: Microarchitecture analysis and CUDA exercises in **Gregg Ch 6** (CPU PMU performance counters, instruction-to-cycle (IPC) decomposition & stall profiling).
 * `⭐ Optional / Stretch`: 21:00 onwards Weekly review & recovery.
 
 ### 🔹 Monday, Mon Sep 28 ([`Day 024`](../days/month-01/day-024-2026-09-28.md))
-* `[ ]` **Core**: Implement `batch_linear_scan()` for $B=32/64$ queries, transforming single-query GEMV into cached batch GEMM.
+* `[x]` **Core**: Implement `batch_linear_scan()` for $B=32/64$ queries, transforming single-query GEMV into cached batch GEMM.
 * `⭐ Optional / Stretch`: Implement cache-blocked matrix transpose to evaluate column-major vs row-major dataset layouts for batch scans.
 
 
 ### 🔹 Tuesday, Tue Sep 29 ([`Day 025`](../days/month-01/day-025-2026-09-29.md))
-* `[ ]` **Core**: Implement `IVFIndex` class with coarse centroids trained via $k$-means; add spherical $k$-means for Inner Product (IP).
+* `[x]` **Core**: Implement `IVFIndex` class with coarse centroids trained via $k$-means; add spherical $k$-means for Inner Product (IP).
 * `⭐ Optional / Stretch`: Implement $k$-means++ centroid initialization heuristic to speed up coarse quantizer convergence.
 
 
 ### 🔹 Wednesday, Wed Sep 30 ([`Day 026`](../days/month-01/day-026-2026-09-30.md))
-* `[ ]` **Core**: Implement multi-probe IVF query scanner with `nprobe` parameter sweep; parallelize across queries with `std::jthread`.
+* `[x]` **Core**: Implement multi-probe IVF query scanner with `nprobe` parameter sweep; parallelize across queries with `std::jthread`.
 * `⭐ Optional / Stretch`: Pin worker threads to physical CPU cores with `pthread_setaffinity_np` and measure latency jitter reduction.
 
 
 ### 🔹 Thursday, Thu Oct 1 ([`Day 027`](../days/month-01/day-027-2026-10-01.md))
-* `[ ]` **Core**: Build histogram of inverted-list sizes; implement list rebalancing (splitting clusters larger than $2\times$ median size).
+* `[x]` **Core**: Build histogram of inverted-list sizes; implement list rebalancing (splitting clusters larger than $2\times$ median size).
 * `⭐ Optional / Stretch`: Analyze the relationship between cluster size variance and tail query latency ($p99$).
 
 
 ### 🔹 Friday, Fri Oct 2 ([`Day 028`](../days/month-01/day-028-2026-10-02.md))
-* `[ ]` **Core**: Validate Inner Product (IP) search path on IVF index; plot Recall@10 vs `nprobe` for L2 and IP on SIFT1M. Tag `v0.2-simd-ivf`.
+* `[x]` **Core**: Validate Inner Product (IP) search path on IVF index; plot Recall@10 vs `nprobe` for L2 and IP on SIFT1M. Tag `v0.2-simd-ivf`.
 * `⭐ Optional / Stretch`: Compute exact Voronoi cell boundary distances to identify boundary query misclassification rates.
 
 

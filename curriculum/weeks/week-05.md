@@ -56,30 +56,30 @@
 ## 📋 Daily Action Items & Deliverables (Week 05)
 
 ### 🔹 Saturday, Sat Oct 3 ([`Day 029`](../days/month-02/day-029-2026-10-03.md))
-* `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
-* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Richard W. Hamming — **Ch 1–2** (§1.1–1.3: *Orientation*; §2.1–2.4: *Digital Foundations & 10x Scaling*).
-* `[ ]` **Core (16:30–18:00)**: **Physical Break & Mental Decompression**: Walk, tea, and recovery.
-* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas — **Ch 5.1–5.4** (Kraft Inequality, Tree Codes & Optimal Codeword Bounds).
-* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: Richard W. Hamming — **Ch 3–4** (History of Hardware Architecture & Software Systems Discipline).
+* `[x]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
+* `[x]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Richard W. Hamming — **Ch 1–2** (§1.1–1.3: *Orientation*; §2.1–2.4: *Digital Foundations & 10x Scaling*).
+* `[x]` **Core (16:30–18:00)**: **Physical Break & Mental Decompression**: Walk, tea, and recovery.
+* `[x]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas — **Ch 5.1–5.4** (Kraft Inequality, Tree Codes & Optimal Codeword Bounds).
+* `[x]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: Richard W. Hamming — **Ch 3–4** (History of Hardware Architecture & Software Systems Discipline).
 * `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Oct 4 ([`Day 030`](../days/month-02/day-030-2026-10-04.md))
-* `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
-* `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
-* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* — **Ch 6 (§6.1–6.5)** (Real-Number Magic, Dedekind cuts, Cauchy sequences, geometric continuums).
-* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: **DDIA Ch 4 (§4.1–4.4)** (Encoding & Evolution: Protocol Buffers, Thrift, Avro, and zero-copy FlatBuffers).
-* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: **H&P Ch 3 (§3.1–3.6)** (Tomasulo algorithm, Reservation Stations, CDB broadcasting, Reorder Buffer commit queues).
+* `[x]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
+* `[x]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
+* `[x]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* — **Ch 6 (§6.1–6.5)** (Real-Number Magic, Dedekind cuts, Cauchy sequences, geometric continuums).
+* `[x]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: **DDIA Ch 4 (§4.1–4.4)** (Encoding & Evolution: Protocol Buffers, Thrift, Avro, and zero-copy FlatBuffers).
+* `[x]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: **H&P Ch 3 (§3.1–3.6)** (Tomasulo algorithm, Reservation Stations, CDB broadcasting, Reorder Buffer commit queues).
 * `⭐ Optional / Stretch`: 21:00 onwards Weekly review & recovery.
 
 ### 🔹 Monday, Mon Oct 5 ([`Day 031`](../days/month-02/day-031-2026-10-05.md))
-* `[ ]` **Core Systems Reading**: **Agner Fog Ch 7.2**, **CS:APP §2.2–2.3**, and **H&P §2.1–2.2** (Integer conversions, two's complement, AMAT formula).
-* `[ ]` **Core**: Implement `ScalarQuantizer` with percentile clipping (0.05th/99.95th); measure dequantization MSE on SIFT1M.
+* `[x]` **Core Systems Reading**: **Agner Fog Ch 7.2**, **CS:APP §2.2–2.3**, and **H&P §2.1–2.2** (Integer conversions, two's complement, AMAT formula).
+* `[x]` **Core**: Implement `ScalarQuantizer` with percentile clipping (0.05th/99.95th); measure dequantization MSE on SIFT1M.
 * `⭐ Optional / Stretch`: Derive and plot the Johnson-Lindenstrauss projection dimension curve $d(\epsilon, n)$ for $\epsilon \in [0.1, 0.5]$ and $n=10^6$.
 
 
 ### 🔹 Tuesday, Tue Oct 6 ([`Day 032`](../days/month-02/day-032-2026-10-06.md))
-* `[ ]` **Core Systems Reading**: **Intel Optimization Manual §5.3 & §14.4** (Port 0/1/5 execution pipelines, `_mm256_madd_epi16`, VNNI) & **Dosovitskiy et al. (ViT) §3.1–3.3**.
-* `[ ]` **Core**: Implement `l2_squared_sq8()` using AVX2 `_mm256_maddubs_epi16` and `_mm256_madd_epi16` (32 dims per iteration).
+* `[x]` **Core Systems Reading**: **Intel Optimization Manual §5.3 & §14.4** (Port 0/1/5 execution pipelines, `_mm256_madd_epi16`, VNNI) & **Dosovitskiy et al. (ViT) §3.1–3.3**.
+* `[x]` **Core**: Implement `l2_squared_sq8()` using AVX2 `_mm256_maddubs_epi16` and `_mm256_madd_epi16` (32 dims per iteration).
 * `⭐ Optional / Stretch`: Benchmark VNNI integer dot product (`_mm256_dpbusd_epi32`) if your CPU supports AVX-VNNI.
 
 
