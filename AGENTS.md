@@ -38,7 +38,7 @@ Ahmed’s routine is carefully calibrated for deep work, sustainable progress, a
   * **Tuesday**: Deep Learning Track — Part 1: Architecture & Tensor Shapes from scratch in Python/PyTorch.
   * **Wednesday**: Deep Learning Track — Part 2: Autograd, manual `backward()`, custom optimizers (`SGD`/`AdamW`), training loops, and ONNX parity exports.
   * **Thursday**: Systems Integration & Model Sweeps (`secan` + DL embeddings, Pareto curves Recall@10 vs QPS).
-  * **Friday**: **Weekly Technical Systems Article (Drafting & Publishing)**: 28 long-form technical lab-notes (see [`curriculum/essays.md`](curriculum/essays.md)).
+  * **Friday**: **Weekly Technical Systems Article (Drafting & Publishing)**: 28 long-form technical lab-notes (scheduled in weekly playbooks).
 * **Daytime (09:00 – 18:00)**: Professional Workday (protected focus on day job; zero math/systems burnout).
 * **18:00 – 19:30 | Reading Sanctuary**: Physical book reading for mental clarity, architectural taste, and philosophy (*Zen and the Art of Motorcycle Maintenance*, Penrose *The Road to Reality*, Bulgakov, Minsky).
 * **20:30 – 23:00 | Night Hands-On Implementation**: C++20 / CUDA coding in [`secan`](file:///home/ahmed/personal/secan).
@@ -52,7 +52,7 @@ Ahmed’s routine is carefully calibrated for deep work, sustainable progress, a
 ## 📂 4. Active Codebases & Repositories
 
 1. **`goals`** (`/home/ahmed/personal/goals`):
-   * Master curriculum, 196 daily runbooks (`curriculum/days/month-0N/`), 28 weekly playbooks (`curriculum/weeks/`), monthly dashboards, and the 28 weekly essays portfolio (`curriculum/essays.md`).
+   * Master curriculum, 196 daily runbooks (`curriculum/days/month-0N/`), 28 weekly playbooks (`curriculum/weeks/`), monthly dashboards.
 2. **`secan`** (`/home/ahmed/personal/secan`):
    * High-performance vector search engine written in modern C++20 and CUDA.
    * Architecture: `secan_lib` (core search logic), Google Benchmark suite (`benchmarks/`), Catch2 test suite (`tests/`), and nanobind Python bindings.

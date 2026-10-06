@@ -358,7 +358,7 @@ graph TD
 
 The engineering and research trajectory in this blueprint is anchored in authoritative graduate literature across mathematical foundations, systems architecture, information theory, and first-principles method.
 
-*(For detailed weekly reading schedules, daily chapter breakdowns, and operational cadences, see [`evening_reading_plan.md`](evening_reading_plan.md) and [`README.md`](README.md)).*
+*(For detailed weekly reading schedules, daily chapter breakdowns, and operational cadences, see the weekly playbooks and daily runbooks).*
 
 ### 📐 Mathematical & Statistical Foundations
 | Author(s) & Work | Key Focus & Technical Application |

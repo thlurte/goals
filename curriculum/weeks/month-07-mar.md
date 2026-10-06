@@ -6,7 +6,7 @@
 
 | | |
 |:---|:---|
-| [← Month 6 — Feb](month-06-feb.md) | [Essays →](../essays.md) |
+| [← Month 6 — Feb](month-06-feb.md) | [Curriculum Index →](../README.md) |
 
 ---
 

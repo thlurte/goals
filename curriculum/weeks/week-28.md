@@ -6,7 +6,7 @@
 
 | | | |
 |:---|:---|:---|
-| [← Week 27](week-27.md) | [Month 7 (Mar 2027) Dashboard](month-07-mar.md) | [Essays →](../essays.md) |
+| [← Week 27](week-27.md) | [Month 7 (Mar 2027) Dashboard](month-07-mar.md) | [Curriculum Index →](../README.md) |
 
 ---
 

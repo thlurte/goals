@@ -14,7 +14,6 @@
 | [**This month’s weeks**](curriculum/weeks/month-01-sep.md) | Day-by-day tables, actions, stretch & time traps |
 | [**Architecture roadmap**](curriculum/roadmap.md) | Macro `secan` blueprint |
 | [**Systems & CPU Performance Resources**](resources/cpu-performance-engineering.md) | Primary sources, microarchitecture papers, cache models & benchmarks |
-| [**Weekly technical articles**](curriculum/essays.md) | 28 technical lab-notes & systems articles (drafted Friday mornings) |
 | [**limbed + ggmbed**](projects/embed-runtimes.md) | Inspection holes + 6-month fix timeline (30–60 min/wk) |
 
 ## Entry prerequisites (before Sep 1)
@@ -32,7 +31,6 @@
 
 Rather than superficial academic paper publishing deadlines, real-world systems engineering is demonstrated through **28 weekly, publication-grade technical lab-notes and systems articles** drafted every Friday morning (06:30–08:30) and grounded directly in empirical benchmark sweeps, cache profiling, and implementation insights.
 
-* Complete Article Portfolio & Schedule: [`curriculum/essays.md`](curriculum/essays.md)
 * Weekday Morning Builder Rhythm:
   * **Monday (06:30–08:30)**: Hardware Profiling & Benchmark Sweeps (`secan` / microarchitecture).
   * **Tuesday (06:30–08:30)**: Deep Learning Track (Architecture & Tensor Shapes Part 1).
@@ -49,7 +47,6 @@ goals/
 │   ├── README.md             ← cadence + master index
 │   ├── landings.md           ← VS / DL / deferred ledgers
 │   ├── roadmap.md            ← architecture blueprint
-│   ├── essays.md             ← 28 weekly technical articles
 │   ├── weeks/
 │   │   ├── month-0N-*.md     ← day tables & actions by month
 │   │   └── week-01.md ...    ← 28 weekly execution playbooks

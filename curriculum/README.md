@@ -18,7 +18,7 @@
    * **Wednesday**: Deep Learning Track (Training Loop, Autograd & Tests Part 2)
    * **Thursday**: High-Performance Benchmarking & Model/Vector Integration
    * **Friday**: Weekly Technical Lab-Note & Systems Article Drafting (Publishing)
-3. **18:30–20:00** — **Evening Reading Sanctuary** ([Master Reading Plan](evening_reading_plan.md): Pirsig, Hamming, Shannon, Lampson, Pólya, Feynman, Jaynes, GEB, Bulgakov)
+3. **18:30–20:00** — **Evening Reading Sanctuary** (Evening Reading: Pirsig, Hamming, Shannon, Lampson, Pólya, Feynman, Jaynes, GEB, Bulgakov)
 4. **20:30–22:30** — **`secan` / CUDA Core Engine** (Focused C++20 / CUDA night coding)
 
 ## Weekend Rhythm (Sat & Sun)
@@ -45,9 +45,7 @@
 | [Hard landings](landings.md) | Deferred ledger, VS composition, DL landings |
 | [Architecture roadmap](roadmap.md) | Master blueprint: systems architecture, profiling playbook & canonical proofs |
 | [Systems Resources](../resources/cpu-performance-engineering.md) | Primary sources catalog, microarchitecture manuals & 14 C benchmarks |
-| [Essay schedule](essays.md) | 28 lab-note titles & schedule |
 | [Weeks & Daily Actions](weeks/month-01-sep.md) | Day-by-day tables, actions, stretch & time traps |
-| [Evening & Weekend Reading](evening_reading_plan.md) | Literature, Hofstadter, Cybernetics & Penrose master schedule |
 | [Prerequisites](../README.md#entry-prerequisites-before-sep-1) | Hardware / datasets / tooling |
 
 ## Weeks & Playbooks by Month

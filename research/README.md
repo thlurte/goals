@@ -2,7 +2,7 @@
 
 Instead of academic paper writing and theoretical manuscript deadlines, the empirical systems track is engineered around **rigorous, reproducible hardware benchmarking in `secan` and GPU kernels**.
 
-All empirical data collected during the weekday morning builder blocks (**Mondays & Thursdays 06:30–08:30**) directly fuels the **28 Weekly Technical Articles** drafted and published every **Friday morning (06:30–08:30)** (see [`curriculum/essays.md`](../curriculum/essays.md)).
+All empirical data collected during the weekday morning builder blocks (**Mondays & Thursdays 06:30–08:30**) directly fuels the **28 Weekly Technical Articles** drafted and published every **Friday morning (06:30–08:30)** (documented in weekly playbooks).
 
 ## Benchmark Contract: What Makes Work Showcaseable
 
@@ -81,4 +81,4 @@ To produce publication-grade systems engineering without academic burnout:
 1. **Monday Morning Builder (06:30–08:30)**: Hardware profiling, `perf stat` cache miss sweeps, and microarchitectural benchmark runs in `secan`.
 2. **Tuesday & Wednesday Morning Builder (06:30–08:30)**: Deep Learning track implementation (from scratch autograd, transformer architectures, tokenization).
 3. **Thursday Morning Builder (06:30–08:30)**: DL model / vector retrieval integration, end-to-end Pareto frontier sweeps (Recall vs QPS, tail latencies).
-4. **Friday Morning Systems Article (06:30–08:30)**: Draft and publish the weekly technical article (from [`curriculum/essays.md`](../curriculum/essays.md)) synthesized directly from the week's benchmark data.
+4. **Friday Morning Systems Article (06:30–08:30)**: Draft and publish the weekly technical article (assigned in weekly playbooks) synthesized directly from the week's benchmark data.
