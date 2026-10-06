@@ -2,7 +2,7 @@
 // 🥋 Drill 25.1: Unit-Hypersphere Projection for Spherical k-Means (MIPS)
 //
 // 🚀 RUN COMMAND:
-// g++ -O3 -march=native -std=c++20 day025_drill_01_spherical_projection.cpp -o drill25_1 && ./drill25_1
+// g++ -O3 -march=native -std=c++20 -Wall -Wextra day025_drill_01_spherical_projection.cpp -o drill25_1 && ./drill25_1
 //
 // CONTEXT:
 // In Maximum Inner Product Search (MIPS) and Cosine Similarity, centroids
@@ -20,13 +20,17 @@
 #include <cmath>
 #include <cassert>
 
-// TODO 1: Implement in-place projection onto the unit sphere S^(D-1)
-// Function: project_to_unitsphere(float* vec, size_t dim)
 inline void project_to_unitsphere(float* vec, size_t dim) {
-    // 1. Calculate norm_sq (sum of vec[i] * vec[i])
-    // 2. If norm_sq > 1e-12f, compute inv_norm = 1.0f / std::sqrt(norm_sq)
-    // 3. Multiply every vec[i] *= inv_norm
-    // [YOUR CODE HERE]
+    float norm_sq = 0.0f;
+    for (size_t i = 0; i < dim; ++i) {
+        norm_sq += vec[i] * vec[i];
+    }
+    if (norm_sq > 1e-12f) {
+        float inv_norm = 1.0f / std::sqrt(norm_sq);
+        for (size_t i = 0; i < dim; ++i) {
+            vec[i] *= inv_norm;
+        }
+    }
 }
 
 int main() {

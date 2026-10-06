@@ -6,6 +6,8 @@ Targeted, hands-on micro-drills designed to build instinctual C++ systems reflex
 - Zero-copy non-owning memory views (`std::span`)
 - Bounded-heap priority queues & sorting complexity (`std::partial_sort`)
 - Software prefetching & memory bandwidth optimization (`_mm_prefetch`)
+- Integer quantization (SQ8/SQ4, AVX2 `_mm256_madd_epi16`, bit packing)
+- Product Quantization (Subspace k-means, ADC LUT, POPCNT Hamming distance)
 
 ---
 
@@ -27,21 +29,43 @@ Targeted, hands-on micro-drills designed to build instinctual C++ systems reflex
 
 ## Week 04 (Sep 28 – Oct 02) — IVF, Multi-Probe & Cache Architecture
 
-| Drill | Title | Key C++ Systems Concepts | File |
-|:---:|:---|:---|:---|
-| **24.1** | Cache Isolation (`alignas(64)`) | Preventing MESI false sharing in concurrent lists | [`day024_drill_01_cache_alignment.cpp`](day024_drill_01_cache_alignment.cpp) |
-| **25.1** | Spherical $k$-Means Projection | Unit hypersphere projection for Cosine/MIPS | [`day025_drill_01_spherical_projection.cpp`](day025_drill_01_spherical_projection.cpp) |
-| **26.1** | `std::partial_sort` Routing | $O(K \log P)$ centroid selection vs $O(K \log K)$ waste | [`day026_drill_01_partial_sort_routing.cpp`](day026_drill_01_partial_sort_routing.cpp) |
-| **26.2** | Bounded Max-Heap Top-K | Zero-allocation streaming $O(N \log K)$ neighbor heap | [`day026_drill_02_bounded_heap.cpp`](day026_drill_02_bounded_heap.cpp) |
-| **27.1** | Software Prefetching (`_mm_prefetch`) | L1/L2 cache preloading across 64-byte strides | [`day027_drill_01_cache_stride_prefetch.cpp`](day027_drill_01_cache_stride_prefetch.cpp) |
-| **28.1** | C++20 `std::span` Zero-Alloc Views | Non-owning pointer+size views over arbitrary buffers | [`day028_drill_01_span_zero_alloc.cpp`](day028_drill_01_span_zero_alloc.cpp) |
+| Drill | Title | Key C++ Systems Concepts | Status | File |
+|:---:|:---|:---|:---:|:---|
+| **24.1** | Cache Isolation (`alignas(64)`) | Preventing MESI false sharing in concurrent lists | ✅ | [`day024_drill_01_cache_alignment.cpp`](day024_drill_01_cache_alignment.cpp) |
+| **25.1** | Spherical $k$-Means Projection | Unit hypersphere projection for Cosine/MIPS | ✅ | [`day025_drill_01_spherical_projection.cpp`](day025_drill_01_spherical_projection.cpp) |
+| **26.1** | `std::partial_sort` Routing | $O(K \log P)$ centroid selection vs $O(K \log K)$ waste | ✅ | [`day026_drill_01_partial_sort_routing.cpp`](day026_drill_01_partial_sort_routing.cpp) |
+| **26.2** | Bounded Max-Heap Top-K | Zero-allocation streaming $O(N \log K)$ neighbor heap | ✅ | [`day026_drill_02_bounded_heap.cpp`](day026_drill_02_bounded_heap.cpp) |
+| **27.1** | Software Prefetching (`_mm_prefetch`) | L1/L2 cache preloading across 64-byte strides | ✅ | [`day027_drill_01_cache_stride_prefetch.cpp`](day027_drill_01_cache_stride_prefetch.cpp) |
+| **28.1** | C++20 `std::span` Zero-Alloc Views | Non-owning pointer+size views over arbitrary buffers | ✅ | [`day028_drill_01_span_zero_alloc.cpp`](day028_drill_01_span_zero_alloc.cpp) |
+
+---
+
+## Week 05 (Oct 03 – Oct 09) — Scalar Quantization & Integer SIMD
+
+| Drill | Title | Key C++ Systems Concepts | Status | File |
+|:---:|:---|:---|:---:|:---|
+| **31.1** | SQ8 Percentile Clipping | `std::span`, `const` correctness, `std::clamp`, outlier rejection | ✅ | [`day031_drill_01_sq8_clipping.cpp`](day031_drill_01_sq8_clipping.cpp) |
+| **32.1** | AVX2 SQ8 Dot Product | `_mm256_cvtepu8_epi16`, `_mm256_madd_epi16`, width casting | ✅ | [`day032_drill_01_sq8_avx2_dot.cpp`](day032_drill_01_sq8_avx2_dot.cpp) |
+| **34.1** | SQ4 Nibble Bit-Packing | Bitwise `&`, `|`, shifts (`<<`, `>>`), 64B cache line fitting | ✅ | [`day034_drill_01_sq4_packing.cpp`](day034_drill_01_sq4_packing.cpp) |
+| **35.1** | Two-Stage Re-ranking | Struct `operator<`, `std::partial_sort`, coarse SQ8 -> fine FP32 | ✅ | [`day035_drill_01_twostage_filter.cpp`](day035_drill_01_twostage_filter.cpp) |
+
+---
+
+## Week 06 (Oct 10 – Oct 16) — Product Quantization & Asymmetric Distance
+
+| Drill | Title | Key C++ Systems Concepts | Status | File |
+|:---:|:---|:---|:---:|:---|
+| **38.1** | Subspace $k$-Means Clustering | Multi-dim flattening, `std::fill`, inverse division, L1D locality | ✅ | [`day038_drill_01_subspace_kmeans.cpp`](day038_drill_01_subspace_kmeans.cpp) |
+| **40.1** | Asymmetric Distance (ADC) | Precomputed 2D LUT, 4-way loop unrolling, IPC saturation | ✅ | [`day040_drill_01_adc_unroll.cpp`](day040_drill_01_adc_unroll.cpp) |
+| **41.1** | 1-Bit Binary Quantization (BQ) | `__builtin_popcountll`, 64-bit integer bitmasks, POPCNT | ✅ | [`day041_drill_01_bq_popcount.cpp`](day041_drill_01_bq_popcount.cpp) |
+| **42.1** | Composed IVF-PQ Scan | Inverted list structs, two-level routing, query ADC scanning | ✅ | [`day042_drill_01_composed_ivfpq.cpp`](day042_drill_01_composed_ivfpq.cpp) |
 
 ---
 
 ## How to Compile & Run Any Drill
 
 ```bash
-g++ -O3 -march=native -mavx2 -mfma -std=c++20 day026_drill_01_partial_sort_routing.cpp -o drill && ./drill
+g++ -O3 -march=native -mavx2 -mfma -std=c++20 -Wall -Wextra day031_drill_01_sq8_clipping.cpp -o drill && ./drill
 ```
 
 ---
@@ -62,4 +86,3 @@ For standalone, reproducible C benchmarks with committed raw hardware numbers an
 | **Memory Allocation & Placement** | [`10-first-touch`](file:///home/ahmed/personal/cpu-performance-engineering/misc/benchmarks/10-first-touch) | NUMA memory allocation policies under Linux. |
 | **Dense GEMM & BLAS** | [`13-sgemm-naive-vs-blas`](file:///home/ahmed/personal/cpu-performance-engineering/misc/benchmarks/13-sgemm-naive-vs-blas) | Naive triple loops vs register-blocked and tiled BLAS kernels. |
 | **Memory Bus Saturation** | [`15-stream-bandwidth`](file:///home/ahmed/personal/cpu-performance-engineering/misc/benchmarks/15-stream-bandwidth) | Sustained memory bandwidth under STREAM Triad and Scale kernels. |
-
