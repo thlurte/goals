@@ -52,14 +52,24 @@ Ahmed’s routine is carefully calibrated for deep work, sustainable progress, a
 ## 📂 4. Active Codebases & Repositories
 
 1. **`goals`** (`/home/ahmed/personal/goals`):
-   * Master curriculum, 196 daily runbooks (`curriculum/days/month-0N/`), 28 weekly playbooks (`curriculum/weeks/`), monthly dashboards.
+   * Master curriculum, 196 daily runbooks (`curriculum/days/month-0N/`), 28 weekly playbooks (`curriculum/weeks/`), and monthly dashboards.
+   * Hands-on C++ and Python practice drills with test harnesses and solutions (`drills/` + `drills/solutions/`).
+   * Primary Sources & Systems Canon (`resources/systems_canon.md`).
 2. **`secan`** (`/home/ahmed/personal/secan`):
    * High-performance vector search engine written in modern C++20 and CUDA.
-   * Architecture: `secan_lib` (core search logic), Google Benchmark suite (`benchmarks/`), Catch2 test suite (`tests/`), and nanobind Python bindings.
+   * Architecture: `secan_lib` (core search logic, SIMD distance kernels, SQ8/SQ4/PQ/BQ quantization, graph search HNSW, IVF partitioning, DiskANN / `io_uring`), Google Benchmark suite (`benchmarks/`), Catch2 test suite (`tests/`), and nanobind Python bindings.
    * 10 Planned Index Families: Exact SIMD (AVX2/AVX-512/NEON), IVF-Flat, SQ8/SQ4, PQ-ADC, FastScan, HNSW, ACORN Predicate Graph, GPU IVF, CAGRA Warp Search, and ColPali Multi-Vector MaxSim.
-3. **Standalone DL & First-Principles Repositories** (`/home/ahmed/personal/<experiment-repo>`):
-   * Each model or first-principles experiment is maintained as its own clean, independent Git repository directly under `~/personal/` initialized via `uv` (e.g. `transformers-pytorch`, `autograd-scratch`, `colbert-maxsim`), with zero artificial parent umbrella folders.
-   * Scope: Micrograd autograd engine, attention mechanisms (SDPA, GQA, RoPE, SwiGLU), custom optimizers from scratch, and ONNX runtime integration feeding embeddings into `secan`.
+3. **`cennan`** (`/home/ahmed/personal/cennan`):
+   * Neural network & autodiff engine built from first principles in modern C++20.
+   * Architecture: N-D contiguous/strided tensor abstractions, dynamic computational graph DAG (`Node`), analytical backpropagation passes (Linear/ReLU/Loss), and GEMM execution.
+4. **Standalone DL Builder Repositories** (`/home/ahmed/personal/<experiment-repo>`):
+   * Clean, independent Git repositories directly under `~/personal/` initialized via `uv`:
+     * `transformers-pytorch`: Attention architectures (SDPA, MHA, GQA, RoPE, SwiGLU, KV cache).
+     * `autograd-scratch`: Reverse-mode scalar & tensor autograd engine from first principles.
+     * `vision-transformer`: ViT patch embedding, CLS token concatenation, and self-attention vision pipelines.
+5. **Audited Upstream Reference Repositories** (`/home/ahmed/personal/<repo>`):
+   * Real-world vector search engines referenced for comparative benchmarking, SIMD kernel patterns, and architectural auditing:
+     * `faiss`, `usearch`, `hnswlib`, `vsag`, `zvec`, `duckdb-vss`.
 
 
 ---
