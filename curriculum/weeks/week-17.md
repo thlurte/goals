@@ -57,17 +57,18 @@
 
 ### 🔹 Saturday, Sat Dec 26 ([`Day 113`](../days/month-05/day-113-2026-12-26.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
-* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
-* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* (Reading & Notes).
-* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: Edwin T. Jaynes, *Probability Theory: The Logic of Science (Cambridge Univ Press)* — **Ch 1–2: Plausible Reasoning & Quantitative Rules** (Deductive vs Plausible Inference, Cox's Consistency Theorems, Probability as Extended Boolean Logic).
+* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: [Douglas Hofstadter, *Gödel, Escher, Bach: An Eternal Golden Braid*](https://www.basicbooks.com/titles/douglas-r-hofstadter/godel-escher-bach/9780465026562/) — **Ch 13: BlooP, FlooP, and GlooP**.
+* `[ ]` **Core (16:30–18:00)**: **Physical Break & Mental Decompression**: Walk, tea, and recovery.
+* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: [Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory (2nd ed)*](https://www.wiley.com/en-us/Elements+of+Information+Theory%2C+2nd+Edition-p-9780471241959) — **Ch 11 (§11.1–11.4)** (Information Theory and Statistics, Method of Types, Sanov's Theorem & Hypothesis Testing).
+* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: [Edwin T. Jaynes, *Probability Theory: The Logic of Science*](https://www.cambridge.org/core/books/probability-theory/9780521770347) — **Ch 1–2: Plausible Reasoning as Extended Logic** (Cox's Axioms, Deductive vs Inductive Logic, and Probability as Extended Aristotelian Logic).
 * `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Dec 27 ([`Day 114`](../days/month-05/day-114-2026-12-27.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
 * `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
-* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
-* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: **IIR Ch 6** (Scoring & Vector Space Model: TF-IDF, Cosine Similarity & Pivoted Document Normalization).
-* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: Microarchitecture analysis and CUDA exercises in **Kirk & Hwu Ch 8–9** (Warp shuffle intrinsics (`__shfl_down_sync`), register-level communication & voting).
+* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: [Sir Roger Penrose, *The Road to Reality*](https://www.vintagebooks.com) — **Ch 12: Manifolds of n Dimensions** (Differential manifolds, tangent vectors, cotangent vectors, differential forms, exterior derivative.).
+* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: [Martin Kleppmann, *Designing Data-Intensive Applications*](https://dataintensive.net/) — **DDIA Ch 12** (The Future of Data Systems: Data integration, unbundling databases, stream/state duality & correctness).
+* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: [David B. Kirk & Wen-mei W. Hwu, *Programming Massively Parallel Processors (4th ed)*](https://www.elsevier.com/books/programming-massively-parallel-processors/kirk/978-0-323-91231-0) — **Kirk & Hwu Ch 4–5** (GPU Memory and Data Locality: Shared memory tiling, barrier synchronization & bank conflicts).
 * `⭐ Optional / Stretch`: 21:00 onwards Weekly review & recovery.
 
 ### 🔹 Monday, Mon Dec 28 ([`Day 115`](../days/month-05/day-115-2026-12-28.md))

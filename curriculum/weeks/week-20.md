@@ -57,17 +57,18 @@
 
 ### 🔹 Saturday, Sat Jan 16 ([`Day 134`](../days/month-05/day-134-2027-01-16.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
-* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
-* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* (Reading & Notes).
-* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: Edwin T. Jaynes, *Probability Theory: The Logic of Science* — **Ch 12: Ignorance Priors and Transformation Groups** (Continuous Invariance Groups, Jeffreys Priors, Location-Scale Parameters & Manifold Geometry).
+* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: [Douglas Hofstadter, *Gödel, Escher, Bach: An Eternal Golden Braid*](https://www.basicbooks.com/titles/douglas-r-hofstadter/godel-escher-bach/9780465026562/) — **Ch 16: Self-Ref and Self-Rep**.
+* `[ ]` **Core (16:30–18:00)**: **Physical Break & Mental Decompression**: Walk, tea, and recovery.
+* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: [Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory (2nd ed)*](https://www.wiley.com/en-us/Elements+of+Information+Theory%2C+2nd+Edition-p-9780471241959) — **Ch 14 (§14.1–14.4)** (Kolmogorov Complexity, Invariance Theorem, Minimum Description Length (MDL)).
+* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: [Edwin T. Jaynes, *Probability Theory: The Logic of Science*](https://www.cambridge.org/core/books/probability-theory/9780521770347) — **Ch 12: Ignorance Priors & Transformation Groups** (Invariant Priors, Haar Measures, and Prior Construction via Symmetry Arguments).
 * `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Jan 17 ([`Day 135`](../days/month-05/day-135-2027-01-17.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
 * `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
-* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
-* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: **IIR Ch 9** (Relevance Feedback & Query Expansion: Rocchio Algorithm & Pseudo-Relevance Feedback).
-* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: Microarchitecture analysis and CUDA exercises in **Kirk & Hwu Ch 16** (Matrix multiplication optimization: Tiled GEMM & shared memory reuse factor derivations).
+* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: [Sir Roger Penrose, *The Road to Reality*](https://www.vintagebooks.com) — **Ch 20: Lagrangians and Hamiltonians** (Principle of least action, Euler-Lagrange equations, phase space, Poisson brackets.).
+* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: [Christopher D. Manning, Prabhakar Raghavan & Hinrich Schütze, *Introduction to Information Retrieval*](https://nlp.stanford.edu/IR-book/) — **IIR Ch 5** (Index Compression: Variable byte encoding, Elias $\gamma$/$\delta$ codes, SIMD-BP128 / FastPFor).
+* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: [David B. Kirk & Wen-mei W. Hwu, *Programming Massively Parallel Processors (4th ed)*](https://www.elsevier.com/books/programming-massively-parallel-processors/kirk/978-0-323-91231-0) — **Kirk & Hwu Ch 10–11** (Parallel Patterns: Parallel Histogram & Sparse Matrix Operations (SpMV / CSR / ELLPACK)).
 * `⭐ Optional / Stretch`: 21:00 onwards Weekly review & recovery.
 
 ### 🔹 Monday, Mon Jan 18 ([`Day 136`](../days/month-05/day-136-2027-01-18.md))

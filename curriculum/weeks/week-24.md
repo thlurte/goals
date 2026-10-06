@@ -57,17 +57,18 @@
 
 ### 🔹 Saturday, Sat Feb 13 ([`Day 162`](../days/month-06/day-162-2027-02-13.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
-* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
-* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* (Reading & Notes).
-* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: Leslie Lamport, *Time, Clocks, and the Ordering of Events in a Distributed System (1978)* — **Landmark Paper** (Logical Clocks, Partial Orders, Total Ordering, Distributed State Machines & Causality).
+* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: [Douglas Hofstadter, *Gödel, Escher, Bach: An Eternal Golden Braid*](https://www.basicbooks.com/titles/douglas-r-hofstadter/godel-escher-bach/9780465026562/) — **Ch 20: Strange Loops, or Tangled Hierarchies & Six-Part Ricercar**.
+* `[ ]` **Core (16:30–18:00)**: **Physical Break & Mental Decompression**: Walk, tea, and recovery.
+* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: [Shun-ichi Amari: Information Geometry and Its Applications](https://link.springer.com/book/10.1007/978-4-431-55978-8) — **Information Geometric Foundations of Machine Learning** (Fisher Information Metric, Riemannian Manifolds of Probability Distributions & Natural Gradient Descent).
+* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: [Leslie Lamport, *Time, Clocks, and the Ordering of Events (1978)*](https://lamport.azurewebsites.net/pubs/time-clocks.pdf) — **Time, Clocks, and the Ordering of Events in a Distributed System (CACM Landmark)** (Logical Clocks, Partial Ordering, State Machine Replication, and Invariant Reasoning).
 * `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Feb 14 ([`Day 163`](../days/month-06/day-163-2027-02-14.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
 * `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
-* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
-* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: **IIR Ch 18** (Matrix Decompositions & Latent Semantic Indexing (LSI): SVD & Low-Rank Projections).
-* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: Microarchitecture analysis and CUDA exercises in **FlashMaxSim Lab 3** (Shared memory layout for $Q \times D$ token score matrices with zero bank conflicts).
+* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: [Sir Roger Penrose, *The Road to Reality*](https://www.vintagebooks.com) — **Ch 24: Dirac's Electron and Antiparticles** (Dirac equation, Clifford algebra $\gamma^\mu$, negative energy states, positron prediction.).
+* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: [Christopher D. Manning, Prabhakar Raghavan & Hinrich Schütze, *Introduction to Information Retrieval*](https://nlp.stanford.edu/IR-book/) — **IIR Ch 18** (Matrix Decompositions and LSI: SVD, low-rank approximation, latent semantic indexing).
+* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: [Low-Latency Systems Architecture Lab](https://www.brendangregg.com/systems-performance-2nd-edition-book.html) — **Low-Latency Systems Lab** (Lock-Free Inverted Index Traversal & Memory-Mapped IO Architecture).
 * `⭐ Optional / Stretch`: 21:00 onwards Weekly review & recovery.
 
 ### 🔹 Monday, Mon Feb 15 ([`Day 164`](../days/month-06/day-164-2027-02-15.md))

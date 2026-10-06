@@ -57,17 +57,18 @@
 
 ### 🔹 Saturday, Sat Feb 6 ([`Day 155`](../days/month-06/day-155-2027-02-06.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
-* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
-* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* (Reading & Notes).
-* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: Andrei N. Kolmogorov, *Three Approaches to the Quantitative Definition of Information (1965)* — **Seminal Paper** (Combinatorial, Probabilistic, and Algorithmic (Program-Length) Information Formulations).
+* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: [Douglas Hofstadter, *Gödel, Escher, Bach: An Eternal Golden Braid*](https://www.basicbooks.com/titles/douglas-r-hofstadter/godel-escher-bach/9780465026562/) — **Ch 19: Artificial Intelligence: Prospects**.
+* `[ ]` **Core (16:30–18:00)**: **Physical Break & Mental Decompression**: Walk, tea, and recovery.
+* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: [Gersho & Gray: Vector Quantization and Signal Compression](https://ieeexplore.ieee.org/document/1055788) — **Asymptotic Distortion Approximations (Gersho's Conjecture)** (Voronoi Cell Geometry, High-Rate Vector Quantization & Optimal Point Lattices ($E_8$, Leech)).
+* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: [Andrei N. Kolmogorov, *Quantitative Definition of Information (1965)*](https://doi.org/10.1080/00325439.1965.11586561) — **Three Approaches to the Quantitative Definition of Information** (Combinatorial, Probabilistic, and Algorithmic Information Foundations).
 * `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Feb 7 ([`Day 156`](../days/month-06/day-156-2027-02-07.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
 * `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
-* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
-* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: **IIR Ch 14** (Vector Space Classification: Rocchio Classification & $k$-Nearest Neighbor (kNN)).
-* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: Microarchitecture analysis and CUDA exercises in **FlashMaxSim Lab 2** (Multi-vector late-interaction MaxSim kernel fusion: eliminating HBM traffic).
+* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: [Sir Roger Penrose, *The Road to Reality*](https://www.vintagebooks.com) — **Ch 23: The Entangled Quantum World** (EPR paradox, Bell's theorem, quantum entanglement, density matrices.).
+* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: [Christopher D. Manning, Prabhakar Raghavan & Hinrich Schütze, *Introduction to Information Retrieval*](https://nlp.stanford.edu/IR-book/) — **IIR Ch 8** (Evaluation in Information Retrieval: Precision, Recall, MAP, NDCG@k, MRR & benchmark suites).
+* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: [High-Performance SIMD Distance Kernels Lab](https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html) — **SIMD / CUDA Kernel Lab** (Writing Custom SIMD/AVX-512 & CUDA Distance Computation Kernels from Scratch).
 * `⭐ Optional / Stretch`: 21:00 onwards Weekly review & recovery.
 
 ### 🔹 Monday, Mon Feb 8 ([`Day 157`](../days/month-06/day-157-2027-02-08.md))

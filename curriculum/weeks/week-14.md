@@ -57,17 +57,18 @@
 
 ### 🔹 Saturday, Sat Dec 5 ([`Day 092`](../days/month-04/day-092-2026-12-05.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
-* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
-* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* — **Ch 10.1–10.3** (Rate-Distortion Theory: Continuous Distortion Measures $d(x,\hat{x})$ & Rate-Distortion Function $R(D)$).
-* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: Richard P. Feynman, *Feynman Lectures on Computation* — **Ch 3: Coding and Information Theory** (Information Bounds, Shannon Entropy from Physical Principles, Data Compression & Error Detection).
+* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: [Douglas Hofstadter, *Gödel, Escher, Bach: An Eternal Golden Braid*](https://www.basicbooks.com/titles/douglas-r-hofstadter/godel-escher-bach/9780465026562/) — **Ch 1: The MU-puzzle & Three-Part Invention**.
+* `[ ]` **Core (16:30–18:00)**: **Physical Break & Mental Decompression**: Walk, tea, and recovery.
+* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: [Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory (2nd ed)*](https://www.wiley.com/en-us/Elements+of+Information+Theory%2C+2nd+Edition-p-9780471241959) — **Ch 9 (§9.1–9.4)** (Gaussian Channel, Bandlimited Channels, Water-Filling Theorem & Parallel Gaussian Channels).
+* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: [Richard P. Feynman, *Feynman Lectures on Computation*](https://www.taylorfrancis.com/books/mono/10.1201/9780429500442/feynman-lectures-computation-richard-feynman) — **Ch 3: Coding and Information Theory** (Entropy, Error-Correction, and the Physics of Information).
 * `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Dec 6 ([`Day 093`](../days/month-04/day-093-2026-12-06.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
 * `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
-* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
-* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: **IIR Ch 3** (Dictionaries and Tolerant Retrieval: Wildcards, Edit Distance & k-Gram Indexes).
-* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: Microarchitecture analysis and CUDA exercises in **Kirk & Hwu Ch 4–5** (Warp scheduling, register pressure vs occupancy trade-offs & global memory coalescing).
+* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: [Sir Roger Penrose, *The Road to Reality*](https://www.vintagebooks.com) — **Ch 9: Fourier Decomposition and Hyperfunctions** (Fourier series/integrals, orthogonal sine/cosine bases, Dirac delta functions, hyperfunctions.).
+* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: [Martin Kleppmann, *Designing Data-Intensive Applications*](https://dataintensive.net/) — **DDIA Ch 9** (Consistency and Consensus: Linearizability, Total Order Broadcast, 2PC, Paxos & Raft consensus).
+* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: [John L. Hennessy & David A. Patterson, *Computer Architecture: A Quantitative Approach (6th ed)*](https://shop.elsevier.com/books/computer-architecture/hennessy/978-0-443-15406-5) — **H&P Ch 5 (§5.5–5.8)** (Memory Consistency Models & Synchronization: Sequential consistency, TSO, acquire-release & CAS).
 * `⭐ Optional / Stretch`: 21:00 onwards Weekly review & recovery.
 
 ### 🔹 Monday, Mon Dec 7 ([`Day 094`](../days/month-04/day-094-2026-12-07.md))

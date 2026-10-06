@@ -57,17 +57,18 @@
 
 ### 🔹 Saturday, Sat Jan 2 ([`Day 120`](../days/month-05/day-120-2027-01-02.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
-* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
-* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* (Reading & Notes).
-* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: Edwin T. Jaynes, *Probability Theory: The Logic of Science* — **Ch 3–4: Sampling Theory & Hypothesis Testing** (Bayesian Likelihood Functions, Prior Odds, Weight of Evidence & Posterior Probability Verification).
+* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: [Douglas Hofstadter, *Gödel, Escher, Bach: An Eternal Golden Braid*](https://www.basicbooks.com/titles/douglas-r-hofstadter/godel-escher-bach/9780465026562/) — **Ch 14: On Formally Undecidable Propositions of TNT**.
+* `[ ]` **Core (16:30–18:00)**: **Physical Break & Mental Decompression**: Walk, tea, and recovery.
+* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: [Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory (2nd ed)*](https://www.wiley.com/en-us/Elements+of+Information+Theory%2C+2nd+Edition-p-9780471241959) — **Ch 12 (§12.1–12.5)** (Maximum Entropy, Max-Entropy Distributions, Spectrum Estimation & Burg's Theorem).
+* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: [Edwin T. Jaynes, *Probability Theory: The Logic of Science*](https://www.cambridge.org/core/books/probability-theory/9780521770347) — **Ch 3–4: Sampling Theory & Bayesian Hypothesis Testing** (Bayesian Evidence, Likelihood Ratios, and Multi-Hypothesis Discriminations).
 * `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Jan 3 ([`Day 121`](../days/month-05/day-121-2027-01-03.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
 * `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
-* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
-* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: **IIR Ch 7** (Computing Scores in a Complete Search System: Champion Lists & Impact-Ordered Postings).
-* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: Microarchitecture analysis and CUDA exercises in **Kirk & Hwu Ch 10** (Dynamic circular buffering in SRAM & double-buffering global-to-shared memory loads).
+* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: [Sir Roger Penrose, *The Road to Reality*](https://www.vintagebooks.com) — **Ch 13: Symmetry Groups** (Lie groups, Lie algebras, rotation group $SO(3)$, unitary group $SU(2)$, Lorentz group $SO(1,3)$.).
+* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: [Christopher D. Manning, Prabhakar Raghavan & Hinrich Schütze, *Introduction to Information Retrieval*](https://nlp.stanford.edu/IR-book/) — **IIR Ch 1–2** (Boolean Retrieval, Inverted Index Construction, Tokenization & Postings Lists).
+* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: [David B. Kirk & Wen-mei W. Hwu, *Programming Massively Parallel Processors (4th ed)*](https://www.elsevier.com/books/programming-massively-parallel-processors/kirk/978-0-323-91231-0) — **Kirk & Hwu Ch 6–7** (Performance Considerations & Parallel Patterns: Convolution & Constant Memory Caching).
 * `⭐ Optional / Stretch`: 21:00 onwards Weekly review & recovery.
 
 ### 🔹 Monday, Mon Jan 4 ([`Day 122`](../days/month-05/day-122-2027-01-04.md))

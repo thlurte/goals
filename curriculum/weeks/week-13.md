@@ -57,18 +57,18 @@
 
 ### 🔹 Saturday, Sat Nov 28 ([`Day 085`](../days/month-04/day-085-2026-11-28.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
-* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
+* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: [Richard W. Hamming, *The Art of Doing Science and Engineering: Learning to Learn*](https://press.stripe.com/the-art-of-doing-science-and-engineering) — **Ch 31–32 (*You and Your Research & The Grand Finale*)**.
 * `[ ]` **Core (16:30–18:00)**: **Physical Break & Mental Decompression**: Walk, tea, and recovery.
-* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* — **Ch 11.1–11.4** (Method of Types & Sanov's Large Deviations Theorem).
-* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: Richard P. Feynman, *Feynman Lectures on Computation (Westview Press)* — **Ch 1–2: Introduction & Operations on Information** (Universal Gates, Logic Circuits, State Machines, Reversible Logic & Turing Computability).
+* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: [Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory (2nd ed)*](https://www.wiley.com/en-us/Elements+of+Information+Theory%2C+2nd+Edition-p-9780471241959) — **Ch 8 (§8.1–8.6)** (Differential Entropy, AEP for Continuous Random Variables, Joint/Relative Entropy & Hadamard's Inequality).
+* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: [Richard P. Feynman, *Feynman Lectures on Computation*](https://www.taylorfrancis.com/books/mono/10.1201/9780429500442/feynman-lectures-computation-richard-feynman) — **Ch 1–2: Logic Gates & Turing Machines** (Universal Computation, Finite State Machines, and Physical Limits of Switching).
 * `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Nov 29 ([`Day 086`](../days/month-04/day-086-2026-11-29.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
 * `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
-* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
-* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: **IIR Ch 1–2** (Boolean Retrieval, Inverted Index Construction, Tokenization & Postings Lists).
-* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: Microarchitecture analysis and CUDA exercises in **Kirk & Hwu Ch 1–3** (CUDA execution model: Grid, Block, Thread mapping & SM resource partitioning).
+* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: [Sir Roger Penrose, *The Road to Reality*](https://www.vintagebooks.com) — **Ch 8: Riemann Surfaces and Complex Mappings** (Multi-sheeted surfaces, branch points, conformal mapping, stereographic projection.).
+* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: [Martin Kleppmann, *Designing Data-Intensive Applications*](https://dataintensive.net/) — **DDIA Ch 8** (The Trouble with Distributed Systems: Faults, partial failures, unreliable networks & clock skew).
+* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: [John L. Hennessy & David A. Patterson, *Computer Architecture: A Quantitative Approach (6th ed)*](https://shop.elsevier.com/books/computer-architecture/hennessy/978-0-443-15406-5) — **H&P Ch 5 (§5.1–5.4)** (Thread-Level Parallelism: Shared-memory multiprocessing, cache coherence (MSI, MESI, MOESI)).
 * `⭐ Optional / Stretch`: 21:00 onwards Weekly review & recovery.
 
 ### 🔹 Monday, Mon Nov 30 ([`Day 087`](../days/month-04/day-087-2026-11-30.md))

@@ -56,17 +56,18 @@
 
 ### 🔹 Saturday, Sat Mar 13 ([`Day 190`](../days/month-07/day-190-2027-03-13.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
-* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
-* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* (Reading & Notes).
-* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: Master Retrospective, *The Grand Unity of Mathematics, Systems & Craft* — **Capstone Graduation Reflection** (The Synthesis of Pure Math Rigor, Systems Mechanical Sympathy, and Enduring Human Quality).
+* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: [Master Retrospective & Synthesis](https://press.stripe.com/the-art-of-doing-science-and-engineering) — **The Grand Unity of Mathematics, Systems & Craft**.
+* `[ ]` **Core (16:30–18:00)**: **Physical Break & Mental Decompression**: Walk, tea, and recovery.
+* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: [Information Theory Mastery Capstone](https://www.wiley.com/en-us/Elements+of+Information+Theory%2C+2nd+Edition-p-9780471241959) — **Mastery Review: Rate-Distortion, Channel Coding & Vector Compression** (Comprehensive Verification of Theoretical Information Bounds Across All Flagship Implementations).
+* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: [Master Retrospective](https://press.stripe.com/the-art-of-doing-science-and-engineering) — **The Grand Unity of Mathematics, Systems & Craft** (Final 28-Week Capstone Reflection on Scientific Discipline, Systems Engineering & Research Leadership).
 * `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Mar 14 ([`Day 191`](../days/month-07/day-191-2027-03-14.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
 * `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
-* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
-* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: **Dist-Vector Ch 4** (Capstone Architectural Synthesis: Production Multi-Node FlashMaxSim & GAPQ Cluster).
-* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: Microarchitecture analysis and CUDA exercises in **FlashMaxSim Lab 7** (Flagship Implementation 2 Kernel Architecture & Microbenchmark Reproducibility Package).
+* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: [Sir Roger Penrose, *The Road to Reality*](https://www.vintagebooks.com) — **Ch 34: Where Lies the Road to Reality?** (Grand synthesis: twistor theory, quantum gravity, and the deep unity of physics and mathematics.).
+* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: [Master Systems Review](https://dataintensive.net/) — **Master Systems Review** (Designing Resilient Distributed Search & Storage Engines: Architectural Blueprint Synthesis).
+* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: [Master Architecture Lab](https://shop.elsevier.com/books/computer-architecture/hennessy/978-0-443-15406-5) — **Master Architecture Lab** (Final Hardware-Software Co-Design Synthesis & Production Benchmarking).
 * `⭐ Optional / Stretch`: 21:00 onwards Weekly review & recovery.
 
 ### 🔹 Monday, Mon Mar 15 ([`Day 192`](../days/month-07/day-192-2027-03-15.md))

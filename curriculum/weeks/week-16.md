@@ -56,18 +56,19 @@
 ## 📋 Daily Action Items & Deliverables (Week 16)
 
 ### 🔹 Saturday, Sat Dec 19 ([`Day 106`](../days/month-04/day-106-2026-12-19.md))
-* `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (Markov/Chebyshev/Cantelli, WLLN, CLT, **Gaussian Comparison Inequalities: Slepian's Lemma, Sudakov–Fernique**, and **Gordon's Escape Through a Mesh**).
-* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
-* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* (Reading & Notes).
-* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: Richard P. Feynman, *Feynman Lectures on Computation* — **Ch 5: Quantum Mechanical Computers** (Quantum Superposition Amplitudes, Unitary Operators, Quantum Logic Gates, Spin Measurement Systems).
+* `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
+* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: [Douglas Hofstadter, *Gödel, Escher, Bach: An Eternal Golden Braid*](https://www.basicbooks.com/titles/douglas-r-hofstadter/godel-escher-bach/9780465026562/) — **Ch 9: Mumon and Gödel & A Mu Offering**.
+* `[ ]` **Core (16:30–18:00)**: **Physical Break & Mental Decompression**: Walk, tea, and recovery.
+* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: [Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory (2nd ed)*](https://www.wiley.com/en-us/Elements+of+Information+Theory%2C+2nd+Edition-p-9780471241959) — **Ch 10 (§10.5–10.7)** (Rate-Distortion Theorem & Converse, Systems Impact on Vector Quantization).
+* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: [Richard P. Feynman, *Feynman Lectures on Computation*](https://www.taylorfrancis.com/books/mono/10.1201/9780429500442/feynman-lectures-computation-richard-feynman) — **Ch 5: Quantum Mechanical Computers** (Qubits, Superposition, Unitary Operators & Quantum Parallelism).
 * `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Dec 20 ([`Day 107`](../days/month-04/day-107-2026-12-20.md))
-* `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense (Multivariate Gaussians, Sample Covariance, **Wigner Semicircle Law**, **Marchenko–Pastur Law for $\mathbf{S} = \frac{1}{N}\mathbf{X}^T\mathbf{X}$**, and **Regularized Covariance Whitening**).
+* `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
 * `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
-* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
-* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: **IIR Ch 5** (Index Compression: Heaps' Law, Zipf's Law, Variable Byte & $\gamma$-Encoding).
-* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: Microarchitecture analysis and CUDA exercises in **Kirk & Hwu Ch 7** (Parallel reduction algorithms: tree reduction vs warp shuffle divergence minimization).
+* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: [Sir Roger Penrose, *The Road to Reality*](https://www.vintagebooks.com) — **Ch 11: Complex Dimensions** (Complex manifolds, Riemann surfaces as 1D complex curves, coordinate patches.).
+* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: [Martin Kleppmann, *Designing Data-Intensive Applications*](https://dataintensive.net/) — **DDIA Ch 11** (Stream Processing: Event streams, messaging systems (Kafka), partitioned logs & stream joins).
+* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: [David B. Kirk & Wen-mei W. Hwu, *Programming Massively Parallel Processors (4th ed)*](https://www.elsevier.com/books/programming-massively-parallel-processors/kirk/978-0-323-91231-0) — **Kirk & Hwu Ch 1–3** (Heterogeneous Parallel Computing: CUDA host-device memory transfers & grid-block-thread hierarchies).
 * `⭐ Optional / Stretch`: 21:00 onwards Weekly review & recovery.
 
 ### 🔹 Monday, Mon Dec 21 ([`Day 108`](../days/month-04/day-108-2026-12-21.md))

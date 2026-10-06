@@ -57,18 +57,18 @@
 
 ### 🔹 Saturday, Sat Oct 24 ([`Day 050`](../days/month-02/day-050-2026-10-24.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
-* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
+* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: [Richard W. Hamming, *The Art of Doing Science and Engineering: Learning to Learn*](https://press.stripe.com/the-art-of-doing-science-and-engineering) — **Ch 8–9 (*Information Theory & Shannon's Perspective*)**.
 * `[ ]` **Core (16:30–18:00)**: **Physical Break & Mental Decompression**: Walk, tea, and recovery.
-* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* — **Ch 7.7–7.13** (Jointly Typical Sequences & Shannon's Channel Coding Theorem).
-* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: Richard W. Hamming, *The Art of Doing Science and Engineering* — **Ch 20–21, 27–32: Taste & You and Your Research** (Creativity, Experts, Systems Engineering, 'You Get What You Measure', and 'You and Your Research').
+* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: [Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory (2nd ed)*](https://www.wiley.com/en-us/Elements+of+Information+Theory%2C+2nd+Edition-p-9780471241959) — **Ch 4 (§4.1–4.5)** (Entropy Rates of Stochastic Processes, Markov Chains & Hidden Markov Models).
+* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: [Richard W. Hamming, *The Art of Doing Science and Engineering*](https://press.stripe.com/the-art-of-doing-science-and-engineering) — **Ch 10–11: Error-Correcting Codes** (Hamming Distance, Sphere Packing, and Parity Matrices).
 * `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Oct 25 ([`Day 051`](../days/month-02/day-051-2026-10-25.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
 * `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
-* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
-* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: **DDIA Ch 7** (Transactions: ACID, Isolation Levels, Snapshot Isolation, 2PL & Serializability).
-* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: Microarchitecture analysis and CUDA exercises in **Pikus Ch 7–9** (Lock-free ring buffers, cache-line false sharing elimination & memory fences).
+* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: [Sir Roger Penrose, *The Road to Reality*](https://www.vintagebooks.com) — **Ch 3: Kinds of Number in the Physical World** (Integers, rationals, reals, complex numbers, cardinality $\aleph_0$ vs $\mathfrak{c}$.).
+* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: [Martin Kleppmann, *Designing Data-Intensive Applications*](https://dataintensive.net/) — **DDIA Ch 3** (Storage and Retrieval: Log-Structured Storage, SSTables, LSM-trees, B-Trees & OLTP vs OLAP).
+* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: [John L. Hennessy & David A. Patterson, *Computer Architecture: A Quantitative Approach (6th ed)*](https://shop.elsevier.com/books/computer-architecture/hennessy/978-0-443-15406-5) — **H&P Ch 2 (§2.3–2.4)** (Advanced Optimizations of Cache Performance: Non-blocking caches, hardware prefetch, compiler optimizations).
 * `⭐ Optional / Stretch`: 21:00 onwards Weekly review & recovery.
 
 ### 🔹 Monday, Mon Oct 26 ([`Day 052`](../days/month-02/day-052-2026-10-26.md))

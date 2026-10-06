@@ -57,18 +57,18 @@
 
 ### 🔹 Saturday, Sat Nov 21 ([`Day 078`](../days/month-03/day-078-2026-11-21.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
-* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
+* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: [Richard W. Hamming, *The Art of Doing Science and Engineering: Learning to Learn*](https://press.stripe.com/the-art-of-doing-science-and-engineering) — **Ch 27–28 (*Creativity & Style / Research Taste*)**.
 * `[ ]` **Core (16:30–18:00)**: **Physical Break & Mental Decompression**: Walk, tea, and recovery.
-* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* — **Ch 10.4–10.6** (Rate-Distortion for Gaussian Sources & Polar Quantization Bounds).
-* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: Butler W. Lampson, *Hints for Computer System Design (ACM TOCS 1983)* — **Full Landmark Monograph** (Interface Principles, Keep Secrets Fast, Use Hints Not Truths, End-to-End Fallback, Fast-Path Tuning).
+* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: [Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory (2nd ed)*](https://www.wiley.com/en-us/Elements+of+Information+Theory%2C+2nd+Edition-p-9780471241959) — **Ch 7 (§7.5–7.9)** (Zero-Error Capacity, Joint AEP & Channel Coding Converse).
+* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: [Butler W. Lampson, *Hints for Computer System Design (1983)*](https://www.cs.cmu.edu/~dga/papers/hints-tocs.pdf) — **Complete Landmark Monograph (Xerox PARC / ACM TOCS)** (Functionality, Speed, Fault Tolerance, Interfaces, Indirection & End-to-End Principles).
 * `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Nov 22 ([`Day 079`](../days/month-03/day-079-2026-11-22.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
 * `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
-* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
-* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: **DDIA Ch 11–12** (Stream Processing, Event Sourcing, Lambda/Kappa & The Future of Data Systems).
-* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: Microarchitecture analysis and CUDA exercises in **Pikus Ch 10–12** (C++20 coroutines, custom allocators & alignment constraints for SIMD engines).
+* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: [Sir Roger Penrose, *The Road to Reality*](https://www.vintagebooks.com) — **Ch 7: Complex-Number Calculus** (Holomorphic functions, Cauchy-Riemann equations, Cauchy integral formula, Laurent series.).
+* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: [Martin Kleppmann, *Designing Data-Intensive Applications*](https://dataintensive.net/) — **DDIA Ch 7** (Transactions: ACID properties, Isolation levels (Read Committed, Snapshot Isolation / MVCC, SSI)).
+* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: [John L. Hennessy & David A. Patterson, *Computer Architecture: A Quantitative Approach (6th ed)*](https://shop.elsevier.com/books/computer-architecture/hennessy/978-0-443-15406-5) — **H&P Ch 4 (§4.5–4.8)** (GPU Memory Systems & Microarchitecture: Coalescing, Shared Memory Bank Conflicts & Tensor Cores).
 * `⭐ Optional / Stretch`: 21:00 onwards Weekly review & recovery.
 
 ### 🔹 Monday, Mon Nov 23 ([`Day 080`](../days/month-03/day-080-2026-11-23.md))

@@ -57,18 +57,18 @@
 
 ### 🔹 Saturday, Sat Nov 7 ([`Day 064`](../days/month-03/day-064-2026-11-07.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
-* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
+* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: [Richard W. Hamming, *The Art of Doing Science and Engineering: Learning to Learn*](https://press.stripe.com/the-art-of-doing-science-and-engineering) — **Ch 15–16 (*Digital Filters & Non-Linear Filters*)**.
 * `[ ]` **Core (16:30–18:00)**: **Physical Break & Mental Decompression**: Walk, tea, and recovery.
-* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* — **Ch 9.1–9.4** (Gaussian Channel & Water-Filling Power Allocation).
-* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: Claude E. Shannon, *The Mathematical Theory of Communication* — **Part II & III: Discrete Channels with Noise** (Channel Capacity C = max I(X;Y), Channel Coding Theorem, Equivocation, Error Correction Limits).
+* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: [Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory (2nd ed)*](https://www.wiley.com/en-us/Elements+of+Information+Theory%2C+2nd+Edition-p-9780471241959) — **Ch 5 (§5.5–5.8)** (Huffman Codes, Optimality Proof & Shannon-Fano-Elias Coding).
+* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: [Claude E. Shannon, *The Mathematical Theory of Communication (1948)*](https://archive.org/details/bstj27-4-623) — **Part II & III: Channel Capacity & Noisy Coding Theorem** (Transmission of Information over Noisy Channels and Channel Capacity $C = \max I(X;Y)$).
 * `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Nov 8 ([`Day 065`](../days/month-03/day-065-2026-11-08.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
 * `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
-* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
-* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: **DDIA Ch 9** (Consistency and Consensus: Linearizability, Total Order Broadcast, Raft & Paxos).
-* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: Microarchitecture analysis and CUDA exercises in **H&P Ch 5** (Multiprocessor cache coherence protocols (MESI/MOESI) & directory-based NUMA scaling).
+* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: [Sir Roger Penrose, *The Road to Reality*](https://www.vintagebooks.com) — **Ch 5: Geometry of Logarithms, Powers, and Roots** (Complex powers, branch cuts, Riemann sphere, conformal transformations.).
+* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: [Martin Kleppmann, *Designing Data-Intensive Applications*](https://dataintensive.net/) — **DDIA Ch 5** (Replication: Single-Leader, Multi-Leader, Leaderless replication, replication lag, read-after-write consistency).
+* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: [John L. Hennessy & David A. Patterson, *Computer Architecture: A Quantitative Approach (6th ed)*](https://shop.elsevier.com/books/computer-architecture/hennessy/978-0-443-15406-5) — **H&P Appendix B** (Vector Processors: Vector architecture, vector length/stride registers, gather-scatter & chaining).
 * `⭐ Optional / Stretch`: 21:00 onwards Weekly review & recovery.
 
 ### 🔹 Monday, Mon Nov 9 ([`Day 066`](../days/month-03/day-066-2026-11-09.md))

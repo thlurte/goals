@@ -56,17 +56,18 @@
 
 ### 🔹 Saturday, Sat Feb 20 ([`Day 169`](../days/month-07/day-169-2027-02-20.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
-* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
-* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* (Reading & Notes).
-* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: Systems Architecture Synthesis, *Vector Retrieval Milestones: FAISS, DiskANN & ScaNN* — **Core Systems Monograph Review** (Comparative Architecture: Inverted File Quantization, Compressed Graph Proximity & Anisotropic Loss).
+* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: [Norbert Wiener, *Cybernetics: Or Control and Communication in the Animal and the Machine (2nd ed)*](https://mitpress.mit.edu/9780262730099/cybernetics-or-control-and-communication-in-the-animal-and-the-machine/) — **Ch 1–2: Newtonian/Bergsonian Time & Statistical Mechanics**.
+* `[ ]` **Core (16:30–18:00)**: **Physical Break & Mental Decompression**: Walk, tea, and recovery.
+* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: [Modern Vector Search & Quantization Limits](https://arxiv.org/abs/2105.09613) — **Lossy Compression Bounds for Nearest Neighbor Search** (Johnson-Lindenstrauss Dimensionality Reduction, Rate-Constrained Quantization Bounds & Subspace Distortion Limits).
+* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: [Systems Architecture Synthesis](https://github.com/facebookresearch/faiss) — **Vector Retrieval Milestones: FAISS, DiskANN & ScaNN** (Evolution of Billion-Scale Vector Search: Inverted Files, Graph Indices, and Anisotropic Quantization).
 * `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Feb 21 ([`Day 170`](../days/month-07/day-170-2027-02-21.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
 * `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
-* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
-* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: **Dist-Vector Ch 1** (Distributed Multi-Vector Indexing: ColBERT/ColPali Sharding & Two-Tier Routing).
-* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: Microarchitecture analysis and CUDA exercises in **FlashMaxSim Lab 4** (Nsight Compute (NCU) profiling: warp execution efficiency & memory roofline saturation).
+* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: [Sir Roger Penrose, *The Road to Reality*](https://www.vintagebooks.com) — **Ch 25: The Standard Model of Particle Physics** (Gauge theories, $U(1) \times SU(2) \times SU(3)$, electroweak unification, quarks & leptons.).
+* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: [Distributed Vector Database Systems](https://milvus.io/docs) — **Dist-Vector Ch 1** (Milvus & Qdrant Distributed Architecture: Sharding, segment management, dynamic indexing & raft WAL).
+* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: [FlashAttention & GPU Hardware-Aware Algorithms](https://arxiv.org/abs/2307.08691) — **FlashAttention Kernel Lab** (FlashAttention-2 Kernel Deconstruction: Online Softmax, Shared Memory Tiling & IO-Complexity).
 * `⭐ Optional / Stretch`: 21:00 onwards Weekly review & recovery.
 
 ### 🔹 Monday, Mon Feb 22 ([`Day 171`](../days/month-07/day-171-2027-02-22.md))

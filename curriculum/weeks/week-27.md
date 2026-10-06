@@ -56,17 +56,18 @@
 
 ### 🔹 Saturday, Sat Mar 6 ([`Day 183`](../days/month-07/day-183-2027-03-06.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
-* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
-* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* (Reading & Notes).
-* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: Intellectual Retrospective, *First-Principles Masterclass: Marginalia & Insights Review* — **Complete Synthesis: Pólya, Hamming, Shannon, Feynman, Jaynes** (Unifying Heuristics, Information Bounds, Reversible Physics, and Probability Logic for Thesis Defense).
+* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: [Douglas Hofstadter, *I Am a Strange Loop*](https://www.basicbooks.com/titles/douglas-r-hofstadter/i-am-a-strange-loop/9780465030798/) — **Ch 1–4: Feedback Loops, Locking onto the Loop & The Self**.
+* `[ ]` **Core (16:30–18:00)**: **Physical Break & Mental Decompression**: Walk, tea, and recovery.
+* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: [Information Theory Synthesis for Vector Search](https://www.wiley.com/en-us/Elements+of+Information+Theory%2C+2nd+Edition-p-9780471241959) — **The Unified Map: From Shannon Entropy to Vector Retrieval** (Synthesis of Rate-Distortion, Product Quantization, Inverted Index Compression & Search Latency Bounds).
+* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: [Intellectual Retrospective](https://press.stripe.com/the-art-of-doing-science-and-engineering) — **First-Principles Masterclass: Marginalia & Insights Review** (Synthesis of Mental Models from Hamming, Shannon, Lampson, Feynman, Jaynes, von Neumann, Turing & Lamport).
 * `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Mar 7 ([`Day 184`](../days/month-07/day-184-2027-03-07.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
 * `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
-* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
-* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: **Dist-Vector Ch 3** (NVMe-Direct & GPU-Direct Storage Pipelines: `io_uring`, `cuFile` & GPUDirect Storage).
-* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: Microarchitecture analysis and CUDA exercises in **FlashMaxSim Lab 6** (Async kernel execution with CUDA streams & host-device pipelining).
+* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: [Sir Roger Penrose, *The Road to Reality*](https://www.vintagebooks.com) — **Ch 27: The Big Bang and Its Thermodynamic Nature** (Cosmology, Weyl curvature hypothesis, low-entropy initial state.).
+* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: [Distributed Vector Database Systems](https://github.com/milvus-io/milvus) — **Dist-Vector Ch 3** (Cross-Partition Top-$k$ Aggregation, Query Coordination & Tail-Latency Optimization).
+* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: [Graduate Systems Architecture Capstone](https://shop.elsevier.com/books/computer-architecture/hennessy/978-0-443-15406-5) — **Systems Architecture Capstone** (Co-design of In-Memory Indexing, SIMD Kernels, and High-Throughput Batching).
 * `⭐ Optional / Stretch`: 21:00 onwards Weekly review & recovery.
 
 ### 🔹 Monday, Mon Mar 8 ([`Day 185`](../days/month-07/day-185-2027-03-08.md))

@@ -57,17 +57,18 @@
 
 ### 🔹 Saturday, Sat Jan 23 ([`Day 141`](../days/month-06/day-141-2027-01-23.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
-* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
-* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* (Reading & Notes).
-* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: John von Neumann, *Probabilistic Logics & Synthesis of Reliable Organisms (1956)* — **Full Landmark Paper** (Multiplexing, Error Masking, Majority Gates, Organismic Reliability from Flawed Physical Devices).
+* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: [Douglas Hofstadter, *Gödel, Escher, Bach: An Eternal Golden Braid*](https://www.basicbooks.com/titles/douglas-r-hofstadter/godel-escher-bach/9780465026562/) — **Ch 17: Church, Turing, Tarski, and Others**.
+* `[ ]` **Core (16:30–18:00)**: **Physical Break & Mental Decompression**: Walk, tea, and recovery.
+* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: [Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory (2nd ed)*](https://www.wiley.com/en-us/Elements+of+Information+Theory%2C+2nd+Edition-p-9780471241959) — **Ch 15 (§15.1–15.4)** (Network Information Theory, Multiple-Access Channels & Broadcast Channels).
+* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: [Marvin Minsky & Seymour Papert, *Perceptrons*](https://mitpress.mit.edu/9780262631111/perceptrons/) & [John von Neumann, *Synthesis of Reliable Organisms*](https://archive.org/details/automata-studies-von-neumann) — **Computational Geometry & Synthesis of Reliable Organisms** (Linear Separability, Parity Predicates, and von Neumann Redundancy for Error-Prone Components).
 * `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Jan 24 ([`Day 142`](../days/month-06/day-142-2027-01-24.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
 * `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
-* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
-* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: **IIR Ch 11** (Probabilistic Information Retrieval: Binary Independence Model & BM25 / Okapi Scoring).
-* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: Microarchitecture analysis and CUDA exercises in **Kirk & Hwu Ch 17** (Tensor Core programming: WMMA / MMA PTX assembly layouts and fragment loading).
+* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: [Sir Roger Penrose, *The Road to Reality*](https://www.vintagebooks.com) — **Ch 21: The Quantum Particle** (Wavefunctions $\psi$, Schrödinger equation, de Broglie relation, operators on Hilbert space.).
+* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: [Christopher D. Manning, Prabhakar Raghavan & Hinrich Schütze, *Introduction to Information Retrieval*](https://nlp.stanford.edu/IR-book/) — **IIR Ch 6** (Scoring, Term Weighting & The Vector Space Model: TF-IDF, cosine scoring, inverted index dot products).
+* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: [David B. Kirk & Wen-mei W. Hwu, *Programming Massively Parallel Processors (4th ed)*](https://www.elsevier.com/books/programming-massively-parallel-processors/kirk/978-0-323-91231-0) — **Kirk & Hwu Ch 14–15** (Deep Learning Matrix Operations & Tensor Core Programming: WMMA / MMA PTX Instructions).
 * `⭐ Optional / Stretch`: 21:00 onwards Weekly review & recovery.
 
 ### 🔹 Monday, Mon Jan 25 ([`Day 143`](../days/month-06/day-143-2027-01-25.md))

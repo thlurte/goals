@@ -56,19 +56,19 @@
 ## 📋 Daily Action Items & Deliverables (Week 11)
 
 ### 🔹 Saturday, Sat Nov 14 ([`Day 071`](../days/month-03/day-071-2026-11-14.md))
-* `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (Determinants, Eigenvalues, **Schur Complement Block Inversion**, **Sherman–Morrison–Woodbury Formula**, and **Kronecker Products $\mathbf{A} \otimes \mathbf{B}$**).
-* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
+* `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
+* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: [Richard W. Hamming, *The Art of Doing Science and Engineering: Learning to Learn*](https://press.stripe.com/the-art-of-doing-science-and-engineering) — **Ch 20–21 (*Simulation & Fiber Optics / Technological Revolutions*)**.
 * `[ ]` **Core (16:30–18:00)**: **Physical Break & Mental Decompression**: Walk, tea, and recovery.
-* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* — **Ch 10.1–10.3** (Rate-Distortion Theory: Continuous Distortion Measures & Rate-Distortion Function $R(D)$).
-* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: Claude E. Shannon, *The Mathematical Theory of Communication* — **Part IV & V: Continuous Information & Rate Distortion** (Continuous Entropy, Gaussian Maximization, Capacity of Bandlimited Gaussian Channel W log(1 + P/N)).
+* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: [Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory (2nd ed)*](https://www.wiley.com/en-us/Elements+of+Information+Theory%2C+2nd+Edition-p-9780471241959) — **Ch 7 (§7.1–7.4)** (Channel Capacity, Symmetric Channels, Binary Symmetric Channels & Channel Coding Theorem).
+* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: [Claude E. Shannon, *The Mathematical Theory of Communication (1948)*](https://archive.org/details/bstj27-4-623) — **Part IV & V: Continuous Channels & Rate Distortion** (Gaussian Channel Capacity $C = W \log(1 + P/N)$ & Rate Distortion Bounds).
 * `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Nov 15 ([`Day 072`](../days/month-03/day-072-2026-11-15.md))
-* `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense (Spectral Theorem, Positive Definite Matrices, **Cholesky Factorization $\mathbf{A} = \mathbf{L}\mathbf{L}^T$**, **Correlated Gaussian Sampling $\mathbf{x} = \boldsymbol{\mu} + \mathbf{L}\mathbf{z}$**, and **Fast Mahalanobis Distance via Triangular Substitution**).
+* `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
 * `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
-* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
-* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: **DDIA Ch 10** (Batch Processing: MapReduce, Distributed Dataflow Engines & Graph Processing).
-* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: Microarchitecture analysis and CUDA exercises in **Gregg Ch 9** (Linux NVMe storage stack, page cache writeback & asynchronous `io_uring` direct I/O).
+* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: [Sir Roger Penrose, *The Road to Reality*](https://www.vintagebooks.com) — **Ch 6: Real-Number Calculus** (Limits, continuity, Leibniz/Newton derivatives, Taylor series, path integrals.).
+* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: [Martin Kleppmann, *Designing Data-Intensive Applications*](https://dataintensive.net/) — **DDIA Ch 6** (Partitioning: Key Range Partitioning, Hash Partitioning, Consistent Hashing & Request Routing).
+* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: [John L. Hennessy & David A. Patterson, *Computer Architecture: A Quantitative Approach (6th ed)*](https://shop.elsevier.com/books/computer-architecture/hennessy/978-0-443-15406-5) — **H&P Ch 4 (§4.1–4.4)** (Data-Level Parallelism: SIMD Extensions, GPU Architecture, CUDA Execution Model & Warp Scheduling).
 * `⭐ Optional / Stretch`: 21:00 onwards Weekly review & recovery.
 
 ### 🔹 Monday, Mon Nov 16 ([`Day 073`](../days/month-03/day-073-2026-11-16.md))

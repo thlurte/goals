@@ -57,17 +57,18 @@
 
 ### 🔹 Saturday, Sat Jan 30 ([`Day 148`](../days/month-06/day-148-2027-01-30.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
-* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
-* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* (Reading & Notes).
-* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: Alan M. Turing, *Computing Machinery and Intelligence (1950) & On Computable Numbers (1936)* — **Classic Monograph Pair** (The Imitation Game, Machine Learning Precedents, Decision Problem & Universal Machines).
+* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: [Douglas Hofstadter, *Gödel, Escher, Bach: An Eternal Golden Braid*](https://www.basicbooks.com/titles/douglas-r-hofstadter/godel-escher-bach/9780465026562/) — **Ch 18: Artificial Intelligence: Retrospects**.
+* `[ ]` **Core (16:30–18:00)**: **Physical Break & Mental Decompression**: Walk, tea, and recovery.
+* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: [Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory (2nd ed)*](https://www.wiley.com/en-us/Elements+of+Information+Theory%2C+2nd+Edition-p-9780471241959) — **Ch 16 (§16.1–16.3)** (Information Theory and Portfolio Theory, Kelly Criterion & Log-Optimal Portfolios).
+* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: [Alan M. Turing, *Computing Machinery and Intelligence (1950)*](https://academic.oup.com/mind/article/LIX/236/433/986238) — **Computing Machinery and Intelligence & On Computable Numbers (1936)** (The Imitation Game, Digital Computers as Universal Machines, and the Halting Problem Foundation).
 * `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Jan 31 ([`Day 149`](../days/month-06/day-149-2027-01-31.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
 * `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
-* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
-* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: **IIR Ch 12** (Language Models for IR: Query Likelihood Model, Jelinek-Mercer & Dirichlet Smoothing).
-* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: Microarchitecture analysis and CUDA exercises in **FlashMaxSim Lab 1** (Online Softmax derivation: numerical stability & single-pass running statistics).
+* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: [Sir Roger Penrose, *The Road to Reality*](https://www.vintagebooks.com) — **Ch 22: Quantum Algebra, Geometry, and Spin** (Pauli spin matrices, Bloch sphere, spin-$1/2$ state space, spinor geometry.).
+* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: [Christopher D. Manning, Prabhakar Raghavan & Hinrich Schütze, *Introduction to Information Retrieval*](https://nlp.stanford.edu/IR-book/) — **IIR Ch 7** (Computing Scores in a Search Engine: WAND algorithm, Block-Max WAND, tiering & query pruning).
+* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: [High-Performance GPU Microarchitecture Synthesis](https://docs.nvidia.com/cuda/) — **GPU Microarchitecture Lab** (NVIDIA Hopper / Blackwell Architecture: Tensor Memory Accelerator (TMA) & Asynchronous Barriers).
 * `⭐ Optional / Stretch`: 21:00 onwards Weekly review & recovery.
 
 ### 🔹 Monday, Mon Feb 1 ([`Day 150`](../days/month-06/day-150-2027-02-01.md))

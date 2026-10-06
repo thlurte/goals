@@ -56,17 +56,18 @@
 
 ### 🔹 Saturday, Sat Feb 27 ([`Day 176`](../days/month-07/day-176-2027-02-27.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
-* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
-* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* (Reading & Notes).
-* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: GPU Microarchitecture Synthesis, *FlashAttention 1/2/3 & Hardware-Aware Algorithms* — **Tri Dao et al. Landmark Series** (IO-Aware Tiling, Online Softmax, Warp-Specialized MMA Pipelines & Memory Hierarchy Limits).
+* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: [Norbert Wiener, *Cybernetics: Or Control and Communication in the Animal and the Machine (2nd ed)*](https://mitpress.mit.edu/9780262730099/cybernetics-or-control-and-communication-in-the-animal-and-the-machine/) — **Ch 3–4: Time Series, Information & Feedback/Oscillation**.
+* `[ ]` **Core (16:30–18:00)**: **Physical Break & Mental Decompression**: Walk, tea, and recovery.
+* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: [Roman Vershynin: High-Dimensional Probability](https://www.cambridge.org/core/books/highdimensional-probability/839C9B47EA0A4F6B9B34A9995E05CE96) — **High-Dimensional Information Theory & Geometry** (Concentration of Measure, Sub-Gaussian Random Vectors, Sphere Packing & Nearest Neighbor Distances).
+* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: [GPU Microarchitecture Synthesis](https://triton-lang.org/) — **FlashAttention 1/2/3 & Hardware-Aware Algorithms** (Co-design of Memory Hierarchies, Tensor Cores, and Asynchronous Warp-Specialized Tiling).
 * `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Feb 28 ([`Day 177`](../days/month-07/day-177-2027-02-28.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
 * `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
-* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
-* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: **Dist-Vector Ch 2** (Hybrid Retrieval Architecture: Dense HNSW + Sparse BM25 Reciprocal Rank Fusion (RRF)).
-* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: Microarchitecture analysis and CUDA exercises in **FlashMaxSim Lab 5** (Multi-GPU late-interaction sharding & NVLink peer-to-peer memory copy benchmarks).
+* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: [Sir Roger Penrose, *The Road to Reality*](https://www.vintagebooks.com) — **Ch 26: Quantum Field Theory** (Creation/annihilation operators, Fock space, Feynman diagrams, renormalization.).
+* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: [Distributed Vector Database Systems](https://vespa.ai/documentation/) — **Dist-Vector Ch 2** (Vespa & Multi-Raft Architecture: Inverted Indexing, Storage Engine Co-design & Tiered Storage).
+* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: [Linux Systems Performance & Profiling Lab](https://www.brendangregg.com/perf.html) — **Hardware Profiling Lab** (Linux `perf`, Hardware Performance Counters, Cache Misses & Top-Down Analysis (TMAM)).
 * `⭐ Optional / Stretch`: 21:00 onwards Weekly review & recovery.
 
 ### 🔹 Monday, Mon Mar 1 ([`Day 178`](../days/month-07/day-178-2027-03-01.md))

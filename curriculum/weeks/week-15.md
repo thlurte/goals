@@ -57,17 +57,18 @@
 
 ### 🔹 Saturday, Sat Dec 12 ([`Day 099`](../days/month-04/day-099-2026-12-12.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
-* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
-* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* (Reading & Notes).
-* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: Richard P. Feynman, *Feynman Lectures on Computation* — **Ch 4: Reversible Computation & Thermodynamics** (Landauer's Principle, Thermodynamic Cost of Bit Erasure (kT ln 2), Maxwell's Demon, Ballistic Gates).
+* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: [Douglas Hofstadter, *Gödel, Escher, Bach: An Eternal Golden Braid*](https://www.basicbooks.com/titles/douglas-r-hofstadter/godel-escher-bach/9780465026562/) — **Ch 5: Recursive Structures and Processes**.
+* `[ ]` **Core (16:30–18:00)**: **Physical Break & Mental Decompression**: Walk, tea, and recovery.
+* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: [Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory (2nd ed)*](https://www.wiley.com/en-us/Elements+of+Information+Theory%2C+2nd+Edition-p-9780471241959) — **Ch 10 (§10.1–10.4)** (Rate-Distortion Theory, Rate-Distortion Function, Calculation for Binary Source & Gaussian Source).
+* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: [Richard P. Feynman, *Feynman Lectures on Computation*](https://www.taylorfrancis.com/books/mono/10.1201/9780429500442/feynman-lectures-computation-richard-feynman) — **Ch 4: Reversible Computation & Thermodynamics** (Landauer's Principle ($k_B T \ln 2$), Billiard-Ball Computing, and Zero-Dissipation Reversible Gates).
 * `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Dec 13 ([`Day 100`](../days/month-04/day-100-2026-12-13.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
 * `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
-* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
-* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: **IIR Ch 4** (Index Construction: BSBI, SPIMI, Dynamic Indexing & Distributed Index Construction).
-* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: Microarchitecture analysis and CUDA exercises in **Kirk & Hwu Ch 6** (Shared memory architecture: 32-bank conflict analysis & padding strategies).
+* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: [Sir Roger Penrose, *The Road to Reality*](https://www.vintagebooks.com) — **Ch 10: Surfaces** (2-Manifolds, topology, Euler characteristic $V - E + F = 2 - 2g$, genus, Gauss-Bonnet theorem.).
+* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: [Martin Kleppmann, *Designing Data-Intensive Applications*](https://dataintensive.net/) — **DDIA Ch 10** (Batch Processing: MapReduce, Unix pipes, Join algorithms, Dataflow engines (Spark & Flink)).
+* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: [John L. Hennessy & David A. Patterson, *Computer Architecture: A Quantitative Approach (6th ed)*](https://shop.elsevier.com/books/computer-architecture/hennessy/978-0-443-15406-5) — **H&P Ch 6 (§6.1–6.4)** (Warehouse-Scale Computers: Datacenter architecture, cost models, PUE & workload scaling).
 * `⭐ Optional / Stretch`: 21:00 onwards Weekly review & recovery.
 
 ### 🔹 Monday, Mon Dec 14 ([`Day 101`](../days/month-04/day-101-2026-12-14.md))

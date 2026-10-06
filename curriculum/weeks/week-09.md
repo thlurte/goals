@@ -57,18 +57,18 @@
 
 ### 🔹 Saturday, Sat Oct 31 ([`Day 057`](../days/month-03/day-057-2026-10-31.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
-* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
+* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: [Richard W. Hamming, *The Art of Doing Science and Engineering: Learning to Learn*](https://press.stripe.com/the-art-of-doing-science-and-engineering) — **Ch 12–13 (*Error-Correcting Codes & Redundancy*)**.
 * `[ ]` **Core (16:30–18:00)**: **Physical Break & Mental Decompression**: Walk, tea, and recovery.
-* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* — **Ch 8.1–8.6** (Differential Entropy & Gaussian Distributions).
-* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: Claude E. Shannon, *The Mathematical Theory of Communication (Univ. of Illinois Press 1949)* — **Part I: Discrete Noiseless Systems** (Foundational Entropy H = -sum p_i log p_i, Markov Information Sources, Kraft Inequality & Redundancy).
+* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: [Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory (2nd ed)*](https://www.wiley.com/en-us/Elements+of+Information+Theory%2C+2nd+Edition-p-9780471241959) — **Ch 5 (§5.1–5.4)** (Data Compression, Kraft Inequality, Optimal Codes & Bounds on Optimal Code Length).
+* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: [Claude E. Shannon, *The Mathematical Theory of Communication (1948)*](https://archive.org/details/bstj27-3-379) — **Part I: Discrete Noiseless Systems & Entropy** (Fundamental Limits of Compression and Source Coding).
 * `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Nov 1 ([`Day 058`](../days/month-03/day-058-2026-11-01.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
 * `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
-* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
-* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: **DDIA Ch 8** (The Trouble with Distributed Systems: Faults, Network Partitions & Clock Skew).
-* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: Microarchitecture analysis and CUDA exercises in **H&P Ch 4** (SIMD vector register lanes, gather/scatter latency & roofline model computations).
+* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: [Sir Roger Penrose, *The Road to Reality*](https://www.vintagebooks.com) — **Ch 4: Magical Complex Numbers** ($i = \sqrt{-1}$, Argand plane, geometry of complex addition/multiplication, Euler's formula $e^{i\pi} + 1 = 0$.).
+* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: [Martin Kleppmann, *Designing Data-Intensive Applications*](https://dataintensive.net/) — **DDIA Ch 4** (Encoding and Evolution: Protobuf, Apache Thrift, Avro, Schema evolution & binary formats).
+* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: [John L. Hennessy & David A. Patterson, *Computer Architecture: A Quantitative Approach (6th ed)*](https://shop.elsevier.com/books/computer-architecture/hennessy/978-0-443-15406-5) — **H&P Ch 3 (§3.1–3.6)** (Instruction-Level Parallelism: Dynamic scheduling, Tomasulo's algorithm, CDB & ROB Commit).
 * `⭐ Optional / Stretch`: 21:00 onwards Weekly review & recovery.
 
 ### 🔹 Monday, Mon Nov 2 ([`Day 059`](../days/month-03/day-059-2026-11-02.md))

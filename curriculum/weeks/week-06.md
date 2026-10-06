@@ -57,18 +57,18 @@
 
 ### 🔹 Saturday, Sat Oct 10 ([`Day 036`](../days/month-02/day-036-2026-10-10.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 1**: Theory, concepts, and analytical derivations (textbook chapters & core proofs).
-* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: Literature / Philosophy deep reading.
+* `[ ]` **Core (15:00–16:30)**: **Weekend Reading Sanctuary**: [Richard W. Hamming, *The Art of Doing Science and Engineering: Learning to Learn*](https://press.stripe.com/the-art-of-doing-science-and-engineering) — **Ch 1–2 (*Orientation & Digital Revolution*)**.
 * `[ ]` **Core (16:30–18:00)**: **Physical Break & Mental Decompression**: Walk, tea, and recovery.
-* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory* — **Ch 5.5–5.8** (Huffman Codes & Optimality Proofs).
-* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: Richard W. Hamming, *The Art of Doing Science and Engineering* — **Ch 8–12: Information & Coding** (Interlude, Shannon Information, Coding Theory, Error-Correcting Codes, Redundancy).
+* `[ ]` **Core (18:00–19:30)**: **Information Theory Track**: [Thomas M. Cover & Joy A. Thomas, *Elements of Information Theory (2nd ed)*](https://www.wiley.com/en-us/Elements+of+Information+Theory%2C+2nd+Edition-p-9780471241959) — **Ch 1 & Ch 2 (§2.1–2.8)** (Entropy, Relative Entropy & Mutual Information, Chain Rules, Jensen's Inequality & Fano's Inequality).
+* `[ ]` **Core (19:30–21:00)**: **Thought Leadership Masterclass**: [Richard W. Hamming, *The Art of Doing Science and Engineering*](https://press.stripe.com/the-art-of-doing-science-and-engineering) — **Ch 3–4: Evolution of Hardware & Software** (Stored Programs, Compilers, and the Exponential Arc of Computing).
 * `⭐ Optional / Stretch`: 21:00 onwards 100% Free / Rest.
 
 ### 🔹 Sunday, Sun Oct 11 ([`Day 037`](../days/month-02/day-037-2026-10-11.md))
 * `[ ]` **Core (09:00–13:00)**: **Pure Math Block 2**: Advanced theorems, problem sets, and chalkboard proof defense.
 * `[ ]` **Core (13:00–14:00)**: **Runtime Maintenance**: Quick 30–60 min check for `limbed` / `ggmbed` (`embed-runtimes`).
-* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: *The Road to Reality* (1 chapter/week, visual geometry focus).
-* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: **DDIA Ch 5** (Replication: Leaders and Followers, Synchronous vs Asynchronous & Replication Lag).
-* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: Microarchitecture analysis and CUDA exercises in **H&P Ch 3** (Branch predictor state machines (2-bit, gshare, TAGE) & misprediction penalty modeling).
+* `[ ]` **Core (15:00–16:45)**: **Penrose Sunday**: [Sir Roger Penrose, *The Road to Reality*](https://www.vintagebooks.com) — **Ch 1: The Roots of Science** (The Three Worlds: Platonic mathematical, physical, mental & the mystery of math in physics.).
+* `[ ]` **Core (18:00–19:30)**: **Distributed Systems & IR Track**: [Martin Kleppmann, *Designing Data-Intensive Applications*](https://dataintensive.net/) — **DDIA Ch 1** (Reliability, Scalability (Latency percentiles p99/p999), and Maintainability).
+* `[ ]` **Core (19:30–21:00)**: **Graduate Systems & GPU Architecture Lab**: [John L. Hennessy & David A. Patterson, *Computer Architecture: A Quantitative Approach (6th ed)*](https://shop.elsevier.com/books/computer-architecture/hennessy/978-0-443-15406-5) — **H&P Ch 1** (Quantitative Principles of Computer Design, Amdahl's Law & CPI Calculations).
 * `⭐ Optional / Stretch`: 21:00 onwards Weekly review & recovery.
 
 ### 🔹 Monday, Mon Oct 12 ([`Day 038`](../days/month-02/day-038-2026-10-12.md))
