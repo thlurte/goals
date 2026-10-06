@@ -79,6 +79,9 @@ flowchart LR
   * Integrate Google Benchmark in `benchmarks/`.
   * Parameterize distance micro-benchmarks by embedding dimension: $D \in \{64, 128, 256, 768, 1536\}$.
   * Prevent compiler dead-code elimination using `benchmark::DoNotOptimize` and separate compilation units.
+  * Ground measurements in primary systems literature ([`cpu-performance-engineering`](../resources/cpu-performance-engineering.md)):
+    * **Top-Down Microarchitecture Analysis (TMA)**: Ahmad Yasin (ISPASS 2014) — classifying pipeline slots into Front-End Bound, Bad Speculation, Back-End Core/Memory Bound, and Retiring.
+    * **Roofline Performance Model**: Samuel Williams et al. (CACM 2009) — plotting empirical operational intensity ($\text{FLOPs/Byte}$) against DRAM/L3 cache bandwidth roofs.
 * **Standard Dataset Ingestion**:
   * Implement binary parsers for `.fvecs`, `.bvecs`, `.ivecs`, and `.npy` formats.
   * Ingest standard benchmarks: SIFT1M ($128\text{D}$), GIST1M ($960\text{D}$), Cohere-1M ($768\text{D}$).
@@ -103,12 +106,12 @@ flowchart LR
 * **AVX2 + FMA Distance Kernels**:
   * Implement vectorized Squared L2 distance using `_mm256_sub_ps`, `_mm256_fmadd_ps`.
   * Implement Cosine distance computing dot product, norm $A$, and norm $B$ simultaneously in one loop.
-* **Multi-Register Accumulation Unrolling**:
-  * Use 4 to 8 parallel `__m256` accumulator registers per loop iteration to saturate execution ports and hide floating-point addition latency.
+* **Multi-Register Accumulation Unrolling (Agner Fog & CS:APP §5.1–5.12)**:
+  * Use 4 to 8 parallel `__m256` accumulator registers per loop iteration to saturate execution ports (Ports 0/1 FMA) and hide floating-point addition latency (4–5 cycles).
 * **Horizontal Reduction Optimization**:
   * Perform fast in-register horizontal sums using shuffle/permute instructions (`_mm256_extractf128_ps`, `_mm_hadd_ps`) without scalar fallback loops.
-* **Memory Alignment**:
-  * Enforce `alignas(64)` memory alignment and aligned allocation (`std::aligned_alloc` / `_mm_malloc`) so vectors never split across CPU cache lines.
+* **Memory Alignment & Cache Isolation (Drepper & McKenney)**:
+  * Enforce `alignas(64)` memory alignment and aligned allocation (`std::aligned_alloc` / `_mm_malloc`) so vectors never split across CPU cache lines, eliminating MESI/MOESI false sharing across worker threads.
 * **Hardware Robustness**:
   * Configure CPU subnormal floating-point handling (`_MM_SET_FLUSH_ZERO_MODE(_MM_FLUSH_ZERO_ON)`).
 * **Classical Tree-Based Baselines (FLANN / Randomized KD-Trees & Hierarchical $k$-Means)**:

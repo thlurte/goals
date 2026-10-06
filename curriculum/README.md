@@ -44,6 +44,7 @@
 |:---|:---|
 | [Hard landings](landings.md) | Deferred ledger, VS composition, DL landings |
 | [Architecture roadmap](roadmap.md) | Master blueprint: systems architecture, profiling playbook & canonical proofs |
+| [Systems Resources](../resources/cpu-performance-engineering.md) | Primary sources catalog, microarchitecture manuals & 14 C benchmarks |
 | [Essay schedule](essays.md) | 28 lab-note titles & schedule |
 | [Weeks & Daily Actions](weeks/month-01-sep.md) | Day-by-day tables, actions, stretch & time traps |
 | [Evening & Weekend Reading](evening_reading_plan.md) | Literature, Hofstadter, Cybernetics & Penrose master schedule |

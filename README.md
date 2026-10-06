@@ -13,6 +13,7 @@
 | [**Hard landings**](curriculum/landings.md) | What must ship which week |
 | [**This month’s weeks**](curriculum/weeks/month-01-sep.md) | Day-by-day tables, actions, stretch & time traps |
 | [**Architecture roadmap**](curriculum/roadmap.md) | Macro `secan` blueprint |
+| [**Systems & CPU Performance Resources**](resources/cpu-performance-engineering.md) | Primary sources, microarchitecture papers, cache models & benchmarks |
 | [**Weekly technical articles**](curriculum/essays.md) | 28 technical lab-notes & systems articles (drafted Friday mornings) |
 | [**limbed + ggmbed**](projects/embed-runtimes.md) | Inspection holes + 6-month fix timeline (30–60 min/wk) |
 
@@ -56,6 +57,8 @@ goals/
 │       └── month-0N/day-*.md ← 196 individual daily runbooks
 ├── projects/
 │   └── embed-runtimes.md     ← limbed + ggmbed (not secan)
+├── resources/
+│   └── cpu-performance-engineering.md ← primary sources, architecture papers & benchmarks
 └── research/
     ├── README.md             ← empirical benchmark protocol & data guidelines
     └── YYYY-MM-<slug>/       ← empirical benchmark logs & sweeps

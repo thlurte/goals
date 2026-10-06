@@ -43,3 +43,23 @@ Targeted, hands-on micro-drills designed to build instinctual C++ systems reflex
 ```bash
 g++ -O3 -march=native -mavx2 -mfma -std=c++20 day026_drill_01_partial_sort_routing.cpp -o drill && ./drill
 ```
+
+---
+
+## 🔬 Benchmark Cross-Reference ([`cpu-performance-engineering`](file:///home/ahmed/personal/cpu-performance-engineering/misc/benchmarks))
+
+For standalone, reproducible C benchmarks with committed raw hardware numbers and assembly listings:
+
+| Drill Focus Area | Reference Benchmark | Systems Phenomenon |
+| :--- | :--- | :--- |
+| **Branchless Select & Routing** | [`02-branch-misprediction`](file:///home/ahmed/personal/cpu-performance-engineering/misc/benchmarks/02-branch-misprediction) | Branch misprediction penalty: sorted vs unsorted vs branchless paths. |
+| **FMA Saturation & Throughput** | [`03-latency-vs-throughput`](file:///home/ahmed/personal/cpu-performance-engineering/misc/benchmarks/03-latency-vs-throughput) | Instruction latency vs reciprocal throughput on execution ports. |
+| **Cache-Line Strides & Prefetch** | [`04-cache-latency`](file:///home/ahmed/personal/cpu-performance-engineering/misc/benchmarks/04-cache-latency) | Step changes in dependent load latencies across L1D, L2, L3, and DRAM. |
+| **Arithmetic Intensity & Roofline**| [`06-roofline`](file:///home/ahmed/personal/cpu-performance-engineering/misc/benchmarks/06-roofline) | Empirical FLOPs/byte vs DRAM and cache bandwidth ceilings. |
+| **SIMD Layouts (SoA vs AoS)** | [`07-aos-vs-soa-simd`](file:///home/ahmed/personal/cpu-performance-engineering/misc/benchmarks/07-aos-vs-soa-simd) | Contiguous SIMD loads vs strided gather overhead. |
+| **Pointer Aliasing & Vectors** | [`08-autovectorization-aliasing`](file:///home/ahmed/personal/cpu-performance-engineering/misc/benchmarks/08-autovectorization-aliasing) | Compiler vectorization inhibitors and `__restrict__` semantics. |
+| **Cache Isolation (`alignas(64)`)** | [`09-false-sharing`](file:///home/ahmed/personal/cpu-performance-engineering/misc/benchmarks/09-false-sharing) | Multithreaded throughput collapse from shared cache line invalidations. |
+| **Memory Allocation & Placement** | [`10-first-touch`](file:///home/ahmed/personal/cpu-performance-engineering/misc/benchmarks/10-first-touch) | NUMA memory allocation policies under Linux. |
+| **Dense GEMM & BLAS** | [`13-sgemm-naive-vs-blas`](file:///home/ahmed/personal/cpu-performance-engineering/misc/benchmarks/13-sgemm-naive-vs-blas) | Naive triple loops vs register-blocked and tiled BLAS kernels. |
+| **Memory Bus Saturation** | [`15-stream-bandwidth`](file:///home/ahmed/personal/cpu-performance-engineering/misc/benchmarks/15-stream-bandwidth) | Sustained memory bandwidth under STREAM Triad and Scale kernels. |
+
