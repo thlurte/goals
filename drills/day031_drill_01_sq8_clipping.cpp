@@ -1,15 +1,18 @@
-/**
- * @file day031_drill_01_sq8_clipping.cpp
- * @brief Drill 31.1: Outlier-Robust Scalar Quantization (SQ8) & C++ Memory Views (std::span)
- *
- * 🎓 C++ CONCEPTS TAUGHT IN THIS DRILL:
- * 1. `std::span<const float>`: Non-owning view of contiguous memory (eliminates expensive std::vector copies).
- * 2. `const` correctness: Distinguishing between `const float*` (data is read-only) and `float* const` (pointer is fixed).
- * 3. `std::clamp(val, min, max)`: Modern C++17 branchless-friendly bounding utility.
- * 4. Inlier vs Outlier Quantization Error: Why clipping yields higher precision (narrower bin width) for 99.9% of data.
- *
- * Compile: g++ -O3 -std=c++20 -Wall -Wextra day031_drill_01_sq8_clipping.cpp -o drill31 && ./drill31
- */
+// ==============================================================================
+// 🥋 Drill 31.1: Outlier-Robust Scalar Quantization (SQ8) & C++ Memory Views
+//
+// 🚀 RUN COMMAND:
+// g++ -O3 -std=c++20 -Wall -Wextra day031_drill_01_sq8_clipping.cpp -o drill31 && ./drill31
+//
+// CONTEXT:
+// In vector embeddings, extreme outliers ruin naive min/max quantization.
+// In this drill, you will implement an outlier-clipped 8-bit scalar quantizer.
+//
+// C++ CONCEPTS TO PRACTICE:
+// 1. `std::span<const float>`: Zero-copy non-owning view of a continuous buffer.
+// 2. `std::clamp(val, min_val, max_val)`: Constraining values to a bounding box.
+// 3. `std::round`: Converting floating-point scaled values to nearest integer.
+// ==============================================================================
 
 #include <iostream>
 #include <vector>
@@ -26,40 +29,36 @@ struct SQ8Quantizer {
     float scale{1.0f};
     float inv_scale{1.0f};
 
+    // TODO 1: Train quantizer bounds on sample data using percentile clipping
+    // Steps:
+    // 1. Copy `samples` into a local std::vector<float> and sort it using std::sort.
+    // 2. Set min_val = sorted_vals[lower_pct * n] and max_val = sorted_vals[upper_pct * n].
+    // 3. Compute scale = 255.0f / (max_val - min_val) and inv_scale = (max_val - min_val) / 255.0f.
     void train(std::span<const float> samples, float lower_pct = 0.0005f, float upper_pct = 0.9995f) {
-        std::vector<float> sorted_vals(samples.begin(), samples.end());
-        std::sort(sorted_vals.begin(), sorted_vals.end());
-
-        size_t n = sorted_vals.size();
-        size_t lower_idx = static_cast<size_t>(lower_pct * n);
-        size_t upper_idx = static_cast<size_t>(upper_pct * n);
-        upper_idx = std::min(upper_idx, n - 1);
-
-        min_val = sorted_vals[lower_idx];
-        max_val = sorted_vals[upper_idx];
-
-        if (max_val <= min_val) {
-            max_val = min_val + 1e-5f;
-        }
-
-        scale = 255.0f / (max_val - min_val);
-        inv_scale = (max_val - min_val) / 255.0f;
+        // [YOUR CODE HERE]
     }
 
+    // TODO 2: Quantize a single float into an 8-bit unsigned integer (uint8_t)
+    // Steps:
+    // 1. Clamp `val` between min_val and max_val using std::clamp.
+    // 2. Scale: (clamped - min_val) * scale.
+    // 3. Round to nearest integer using std::round and cast to uint8_t.
     inline uint8_t quantize_scalar(float val) const noexcept {
-        float clamped = std::clamp(val, min_val, max_val);
-        return static_cast<uint8_t>(std::round((clamped - min_val) * scale));
+        // [YOUR CODE HERE]
+        return 0; // Replace with your implementation
     }
 
+    // TODO 3: Dequantize an 8-bit code back to an approximate FP32 float
+    // Steps:
+    // 1. Compute min_val + static_cast<float>(code) * inv_scale.
     inline float dequantize_scalar(uint8_t code) const noexcept {
-        return min_val + static_cast<float>(code) * inv_scale;
+        // [YOUR CODE HERE]
+        return 0.0f; // Replace with your implementation
     }
 };
 
 int main() {
-    std::cout << "===================================================================\n";
-    std::cout << "🥋 Drill 31.1: SQ8 Percentile Clipping & Inlier Resolution Test\n";
-    std::cout << "===================================================================\n";
+    std::cout << "--- Drill 31.1: SQ8 Percentile Clipping & C++ Span Views ---\n\n";
 
     constexpr size_t N_SAMPLES = 5000;
     constexpr size_t D = 128;
@@ -69,52 +68,27 @@ int main() {
     std::normal_distribution<float> dist(0.0f, 1.0f);
     for (float& x : dataset) x = dist(rng);
 
-    // Inject outliers in 0.1% of coordinates (e.g. ±25.0)
+    // Inject outliers (±25.0) simulating LLM embedding anomalies
     std::uniform_int_distribution<size_t> idx_dist(0, dataset.size() - 1);
     for (size_t i = 0; i < 50; ++i) {
         dataset[idx_dist(rng)] = (i % 2 == 0) ? 25.0f : -25.0f;
     }
 
-    // 1. Train Robust Clipped Quantizer
     SQ8Quantizer robust_sq8;
     robust_sq8.train(dataset, 0.0005f, 0.9995f);
 
-    // 2. Train Naive Min-Max Quantizer
-    SQ8Quantizer naive_sq8;
-    naive_sq8.train(dataset, 0.0f, 1.0f);
+    std::cout << "[Trained Bounds] Min: " << robust_sq8.min_val << " | Max: " << robust_sq8.max_val << "\n";
 
-    float robust_bin_width = (robust_sq8.max_val - robust_sq8.min_val) / 255.0f;
-    float naive_bin_width  = (naive_sq8.max_val - naive_sq8.min_val) / 255.0f;
+    // Verification
+    assert(robust_sq8.min_val < -2.0f && robust_sq8.min_val > -5.0f && "min_val should exclude -25.0 outlier!");
+    assert(robust_sq8.max_val > 2.0f && robust_sq8.max_val < 5.0f && "max_val should exclude +25.0 outlier!");
 
-    std::cout << "[C++ Quantizer State]\n";
-    std::cout << "  - Robust Bounds:    [" << robust_sq8.min_val << ", " << robust_sq8.max_val << "] (Bin Width: " << robust_bin_width << ")\n";
-    std::cout << "  - Naive Bounds:     [" << naive_sq8.min_val << ", " << naive_sq8.max_val << "] (Bin Width: " << naive_bin_width << ")\n";
-    std::cout << "  - Precision Gain:   " << (naive_bin_width / robust_bin_width) << "x finer bin resolution on normal data!\n";
+    float test_val = 1.25f;
+    uint8_t code = robust_sq8.quantize_scalar(test_val);
+    float rec = robust_sq8.dequantize_scalar(code);
+    std::cout << "Original: " << test_val << " -> Code: " << static_cast<int>(code) << " -> Reconstructed: " << rec << "\n";
+    assert(std::abs(test_val - rec) < 0.05f);
 
-    // 3. Measure Inlier Reconstruction Error (the 99.9% of actual embedding signal)
-    double inlier_robust_mse = 0.0;
-    double inlier_naive_mse  = 0.0;
-    size_t inlier_count = 0;
-
-    for (float x : dataset) {
-        if (x >= robust_sq8.min_val && x <= robust_sq8.max_val) {
-            float rec_robust = robust_sq8.dequantize_scalar(robust_sq8.quantize_scalar(x));
-            float rec_naive  = naive_sq8.dequantize_scalar(naive_sq8.quantize_scalar(x));
-
-            inlier_robust_mse += (x - rec_robust) * (x - rec_robust);
-            inlier_naive_mse  += (x - rec_naive) * (x - rec_naive);
-            inlier_count++;
-        }
-    }
-    inlier_robust_mse /= inlier_count;
-    inlier_naive_mse  /= inlier_count;
-
-    std::cout << "\n📊 Inlier Signal Reconstruction MSE (" << inlier_count << " / " << dataset.size() << " samples):\n";
-    std::cout << "  - Naive Min/Max MSE: " << std::fixed << std::setprecision(6) << inlier_naive_mse << "\n";
-    std::cout << "  - Robust SQ8 MSE:    " << inlier_robust_mse << "\n";
-    std::cout << "  - Accuracy Boost:    " << (inlier_naive_mse / inlier_robust_mse) << "x higher accuracy for inliers!\n";
-
-    assert(inlier_robust_mse < inlier_naive_mse);
-    std::cout << "\n✅ DRILL 31.1 PASSED: Robust quantization & C++20 span views verified.\n";
+    std::cout << "\n✓ Drill Passed: Robust SQ8 quantizer with outlier clipping verified!\n";
     return 0;
 }

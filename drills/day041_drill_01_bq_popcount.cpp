@@ -1,15 +1,18 @@
-/**
- * @file day041_drill_01_bq_popcount.cpp
- * @brief Drill 41.1: 1-Bit Binary Quantization (BQ) & Hardware Popcount Intrinsics
- *
- * 🎓 C++ CONCEPTS TAUGHT IN THIS DRILL:
- * 1. 64-bit integer literals: `1ULL << i` (Unsigned Long Long avoids 32-bit shift overflow).
- * 2. `__builtin_popcountll`: GCC/Clang intrinsic mapping to the hardware x86-64 `POPCNT` instruction.
- * 3. Struct packing: Encapsulating 128 bits into `uint64_t words[2]`.
- * 4. Extreme memory compression: Storing a 128-D vector in 16 bytes (32x compression vs FP32).
- *
- * Compile: g++ -O3 -march=native -std=c++20 -Wall -Wextra day041_drill_01_bq_popcount.cpp -o drill41 && ./drill41
- */
+// ==============================================================================
+// 🥋 Drill 41.1: 1-Bit Binary Quantization (BQ) & Hardware Popcount
+//
+// 🚀 RUN COMMAND:
+// g++ -O3 -march=native -std=c++20 -Wall -Wextra day041_drill_01_bq_popcount.cpp -o drill41 && ./drill41
+//
+// CONTEXT:
+// 1-Bit Binary Quantization stores each coordinate as a single bit (1 if >= 0 else 0).
+// A 128-D vector fits in two 64-bit unsigned integers (`uint64_t words[2]`).
+// Hamming distance is computed via XOR (`^`) and hardware `__builtin_popcountll`.
+//
+// C++ CONCEPTS TO PRACTICE:
+// 1. Bit shifts with 64-bit literals: `1ULL << i`.
+// 2. Hardware intrinsic `__builtin_popcountll(uint64_t)` (maps directly to POPCNT instruction).
+// ==============================================================================
 
 #include <iostream>
 #include <vector>
@@ -19,30 +22,31 @@
 #include <cassert>
 
 struct BQVector128 {
-    uint64_t words[2]{0, 0}; // 128 bits = 2x 64-bit words (16 bytes total)
+    uint64_t words[2]{0, 0}; // 128 bits = 16 bytes total
 
+    // TODO 1: Pack 128 FP32 floats into 128 binary bits based on sign (>= 0.0f -> 1, else 0)
     static BQVector128 from_fp32(const float* vec) {
         BQVector128 bq;
+        // First 64 dimensions in words[0]
         for (size_t i = 0; i < 64; ++i) {
-            if (vec[i] >= 0.0f) bq.words[0] |= (1ULL << i);
+            // [YOUR CODE HERE: if vec[i] >= 0.0f, set bit i: bq.words[0] |= (1ULL << i)]
         }
+        // Next 64 dimensions in words[1]
         for (size_t i = 64; i < 128; ++i) {
-            if (vec[i] >= 0.0f) bq.words[1] |= (1ULL << (i - 64));
+            // [YOUR CODE HERE: if vec[i] >= 0.0f, set bit (i - 64): bq.words[1] |= (1ULL << (i - 64))]
         }
         return bq;
     }
 
+    // TODO 2: Compute Hamming distance between this vector and other using XOR and __builtin_popcountll
     inline uint32_t hamming_distance(const BQVector128& other) const noexcept {
-        uint64_t xor0 = words[0] ^ other.words[0];
-        uint64_t xor1 = words[1] ^ other.words[1];
-        return static_cast<uint32_t>(__builtin_popcountll(xor0) + __builtin_popcountll(xor1));
+        // [YOUR CODE HERE: XOR words[0] with other.words[0] and words[1] with other.words[1], sum popcounts]
+        return 0;
     }
 };
 
 int main() {
-    std::cout << "===================================================================\n";
-    std::cout << "🥋 Drill 41.1: 1-Bit Binary Quantization (BQ) & Hardware POPCNT\n";
-    std::cout << "===================================================================\n";
+    std::cout << "--- Drill 41.1: 1-Bit Binary Quantization & POPCNT ---\n\n";
 
     constexpr size_t N_VECTORS = 1000000;
     std::vector<BQVector128> dataset(N_VECTORS);
@@ -65,8 +69,9 @@ int main() {
     double ms = std::chrono::duration<double, std::milli>(t1 - t0).count();
     double qps = (static_cast<double>(N_VECTORS) / (ms / 1000.0));
 
-    std::cout << "🚀 1-Bit BQ Hardware POPCNT Throughput: " << (qps / 1e6) << " Million Vectors/sec (Checksum: " << total_hamming << ")\n";
-    std::cout << "  - Memory Footprint for 1M 128-D Vectors: 16 MB (vs 512 MB in raw FP32)!\n";
-    std::cout << "\n✅ DRILL 41.1 PASSED: 1-bit popcount distance kernel verified.\n";
+    std::cout << "🚀 1-Bit BQ Hardware POPCNT Throughput: " << (qps / 1e6) << " Million Vectors/sec\n";
+    std::cout << "   Checksum: " << total_hamming << "\n";
+
+    std::cout << "\n✓ Drill Passed: 1-bit popcount distance kernel verified!\n";
     return 0;
 }

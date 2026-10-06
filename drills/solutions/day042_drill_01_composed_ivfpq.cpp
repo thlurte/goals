@@ -1,19 +1,14 @@
-// ==============================================================================
-// 🥋 Drill 42.1: Composed IVF-PQ Inverted List Routing & Scanning
-//
-// 🚀 RUN COMMAND:
-// g++ -O3 -std=c++20 -Wall -Wextra day042_drill_01_composed_ivfpq.cpp -o drill42 && ./drill42
-//
-// CONTEXT:
-// In IVF-PQ, coarse centroids partition the dataset into inverted lists.
-// At query time:
-// 1. Coarse stage: Pick top N_PROBE closest centroid lists.
-// 2. Fine stage: Scan only the PQ codes inside those lists using ADC LUT.
-//
-// C++ CONCEPTS TO PRACTICE:
-// 1. Struct composition: `struct InvertedList` containing codes and document IDs.
-// 2. Multi-probe routing with `std::partial_sort`.
-// ==============================================================================
+/**
+ * @file day042_drill_01_composed_ivfpq.cpp
+ * @brief Drill 42.1: Composed IVF-PQ Inverted List Routing & C++ Vector of Structs
+ *
+ * 🎓 C++ CONCEPTS TAUGHT IN THIS DRILL:
+ * 1. Nested structs: Structs containing `std::vector` to represent dynamic postings lists.
+ * 2. Two-level indexing: Coarse centroid routing followed by fine-grained PQ list scanning.
+ * 3. Range-based for loops vs index loops.
+ *
+ * Compile: g++ -O3 -std=c++20 -Wall -Wextra day042_drill_01_composed_ivfpq.cpp -o drill42 && ./drill42
+ */
 
 #include <iostream>
 #include <vector>
@@ -33,7 +28,9 @@ struct InvertedList {
 };
 
 int main() {
-    std::cout << "--- Drill 42.1: Composed IVF-PQ Inverted List Routing ---\n\n";
+    std::cout << "===================================================================\n";
+    std::cout << "🥋 Drill 42.1: Composed IVF-PQ Inverted List Routing & ADC Scan\n";
+    std::cout << "===================================================================\n";
 
     std::mt19937 rng(42);
 
@@ -52,8 +49,7 @@ int main() {
         centroid_dists[k] = { dist_gen(rng), k };
     }
 
-    // TODO 1: Sort centroid_dists so top N_PROBE closest centroids are at the beginning
-    // [YOUR CODE HERE: Use std::partial_sort]
+    std::partial_sort(centroid_dists.begin(), centroid_dists.begin() + N_PROBE, centroid_dists.end());
 
     float lut[M_SUB][K_CENT];
     for (size_t m = 0; m < M_SUB; ++m) {
@@ -62,7 +58,6 @@ int main() {
         }
     }
 
-    // TODO 2: Loop over the top N_PROBE lists, compute ADC distance for each vector, and push to candidates
     std::vector<std::pair<float, uint32_t>> candidates;
     for (size_t p = 0; p < N_PROBE; ++p) {
         size_t list_idx = centroid_dists[p].second;
@@ -71,14 +66,17 @@ int main() {
         for (size_t v = 0; v < VECS_PER_LIST; ++v) {
             const uint8_t* code = &list.pq_codes[v * M_SUB];
             float d = 0.0f;
-            // [YOUR CODE HERE: Sum lut[m][code[m]] for m in [0, M_SUB)]
+            for (size_t m = 0; m < M_SUB; ++m) {
+                d += lut[m][code[m]];
+            }
             candidates.push_back({ d, list.doc_ids[v] });
         }
     }
 
-    std::cout << "Scanned " << candidates.size() << " / " << N_LISTS * VECS_PER_LIST << " vectors across " << N_PROBE << " probed lists.\n";
+    std::cout << "[Info] Total Corpus Size: " << N_LISTS * VECS_PER_LIST << " vectors.\n";
+    std::cout << "[Info] Probed " << N_PROBE << " / " << N_LISTS << " lists (" << candidates.size() << " vectors scanned).\n";
     assert(candidates.size() == N_PROBE * VECS_PER_LIST);
 
-    std::cout << "\n✓ Drill Passed: Composed IVF-PQ routing and scan verified!\n";
+    std::cout << "\n✅ DRILL 42.1 PASSED: Composed IVF-PQ two-level routing and ADC scan verified.\n";
     return 0;
 }

@@ -1,15 +1,19 @@
-/**
- * @file day035_drill_01_twostage_filter.cpp
- * @brief Drill 35.1: Two-Stage Re-ranking Architecture & std::partial_sort in Modern C++
- *
- * 🎓 C++ CONCEPTS TAUGHT IN THIS DRILL:
- * 1. Structs with custom `operator<`: Enabling sorting without writing cumbersome custom comparators.
- * 2. `std::partial_sort`: Why sorting only Top-K elements is O(N log K) instead of O(N log N) std::sort.
- * 3. Cache-friendly contiguous vectors: Storing structures by value vs allocating node pointers.
- * 4. Two-stage candidate filtering: Coarse fast filter (SQ8) -> Exact fine score (FP32).
- *
- * Compile: g++ -O3 -std=c++20 -Wall -Wextra day035_drill_01_twostage_filter.cpp -o drill35 && ./drill35
- */
+// ==============================================================================
+// 🥋 Drill 35.1: Two-Stage Re-ranking & std::partial_sort in C++
+//
+// 🚀 RUN COMMAND:
+// g++ -O3 -std=c++20 -Wall -Wextra day035_drill_01_twostage_filter.cpp -o drill35 && ./drill35
+//
+// CONTEXT:
+// Scanning raw FP32 vectors takes high memory bandwidth.
+// Two-stage retrieval:
+// 1. Filter: Rapidly scan low-bit quantized DB (SQ8) to get Top K_COARSE candidates.
+// 2. Re-rank: Re-compute exact FP32 distance ONLY for those candidates.
+//
+// C++ CONCEPTS TO PRACTICE:
+// 1. Struct `operator<` overloading for sorting.
+// 2. `std::partial_sort(begin, middle, end)`: Sorts only the first N elements in-place.
+// ==============================================================================
 
 #include <iostream>
 #include <vector>
@@ -22,17 +26,17 @@ struct Candidate {
     uint32_t doc_id{0};
     float score{0.0f};
 
+    // TODO 1: Overload operator< to sort candidates by score in ascending order (smallest first)
     bool operator<(const Candidate& other) const noexcept {
-        return score < other.score;
+        // [YOUR CODE HERE]
+        return false;
     }
 };
 
 int main() {
-    std::cout << "===================================================================\n";
-    std::cout << "🥋 Drill 35.1: Two-Stage Filter & Re-rank with std::partial_sort\n";
-    std::cout << "===================================================================\n";
+    std::cout << "--- Drill 35.1: Two-Stage Re-ranking with std::partial_sort ---\n\n";
 
-    constexpr size_t N_VECTORS = 100000;
+    constexpr size_t N_VECTORS = 10000;
     constexpr size_t D = 128;
     constexpr size_t K_COARSE = 100;
     constexpr size_t K_FINAL = 10;
@@ -44,20 +48,12 @@ int main() {
 
     std::mt19937 rng(42);
     std::uniform_real_distribution<float> dist(0.0f, 1.0f);
-
     for (float& x : fp32_database) x = dist(rng);
     for (float& x : query_fp32) x = dist(rng);
+    for (size_t i = 0; i < N_VECTORS * D; ++i) sq8_database[i] = static_cast<uint8_t>(fp32_database[i] * 255.0f);
+    for (size_t i = 0; i < D; ++i) query_sq8[i] = static_cast<uint8_t>(query_fp32[i] * 255.0f);
 
-    for (size_t i = 0; i < N_VECTORS * D; ++i) {
-        sq8_database[i] = static_cast<uint8_t>(fp32_database[i] * 255.0f);
-    }
-    for (size_t i = 0; i < D; ++i) {
-        query_sq8[i] = static_cast<uint8_t>(query_fp32[i] * 255.0f);
-    }
-
-    auto t0 = std::chrono::high_resolution_clock::now();
-
-    // Stage 1: Fast Coarse Scan over SQ8 database
+    // Stage 1: Coarse SQ8 Scan
     std::vector<Candidate> coarse_candidates(N_VECTORS);
     for (size_t i = 0; i < N_VECTORS; ++i) {
         const uint8_t* vec = &sq8_database[i * D];
@@ -69,9 +65,8 @@ int main() {
         coarse_candidates[i] = { static_cast<uint32_t>(i), static_cast<float>(int_l2) };
     }
 
-    std::partial_sort(coarse_candidates.begin(),
-                      coarse_candidates.begin() + K_COARSE,
-                      coarse_candidates.end());
+    // TODO 2: Use std::partial_sort to sort ONLY the top K_COARSE candidates in coarse_candidates
+    // [YOUR CODE HERE]
 
     // Stage 2: Exact FP32 Re-rank on top K_COARSE candidates
     std::vector<Candidate> final_candidates(K_COARSE);
@@ -86,19 +81,16 @@ int main() {
         final_candidates[i] = { id, fp32_l2 };
     }
 
-    std::partial_sort(final_candidates.begin(),
-                      final_candidates.begin() + K_FINAL,
-                      final_candidates.end());
+    // TODO 3: Use std::partial_sort to sort ONLY the top K_FINAL candidates in final_candidates
+    // [YOUR CODE HERE]
 
-    auto t1 = std::chrono::high_resolution_clock::now();
-    double elapsed_ms = std::chrono::duration<double, std::milli>(t1 - t0).count();
-
-    std::cout << "🏆 Top-" << K_FINAL << " Final Results (Elapsed: " << elapsed_ms << " ms):\n";
+    std::cout << "Top " << K_FINAL << " Final Results:\n";
     for (size_t i = 0; i < K_FINAL; ++i) {
-        std::cout << "  [" << i + 1 << "] DocID: " << final_candidates[i].doc_id
-                  << " (FP32 Dist: " << final_candidates[i].score << ")\n";
+        std::cout << "  Rank [" << i + 1 << "] DocID: " << final_candidates[i].doc_id
+                  << " | Distance: " << final_candidates[i].score << "\n";
     }
 
-    std::cout << "\n✅ DRILL 35.1 PASSED: 2-stage re-ranking with std::partial_sort verified.\n";
+    assert(final_candidates[0].score <= final_candidates[1].score);
+    std::cout << "\n✓ Drill Passed: Two-stage re-ranking verified!\n";
     return 0;
 }
