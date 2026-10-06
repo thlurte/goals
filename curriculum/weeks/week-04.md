@@ -1,6 +1,6 @@
 # 🚀 Week 04 Execution Playbook
 
-> **Theme**: Euler's Formula, IVF, MIPS & List Rebalance  
+> **Theme**: Euler's Formula, IVF, MIPS & List Rebalance
 > **Calendar Dates**: Sat Sep 26 – Fri Oct 2 (2026-09-26 to 2026-10-02)
 > **Parent Month Dashboard**: [Month 1 (Sep 2026)](month-01-sep.md) · **Block**: I — Vector Search Engine
 
@@ -75,26 +75,21 @@
 * `[x]` **Core**: Implement `batch_linear_scan()` for $B=32/64$ queries, transforming single-query GEMV into cached batch GEMM.
 * `⭐ Optional / Stretch`: Implement cache-blocked matrix transpose to evaluate column-major vs row-major dataset layouts for batch scans.
 
-
 ### 🔹 Tuesday, Tue Sep 29 ([`Day 025`](../days/month-01/day-025-2026-09-29.md))
 * `[x]` **Core**: Implement `IVFIndex` class with coarse centroids trained via $k$-means; add spherical $k$-means for Inner Product (IP).
 * `⭐ Optional / Stretch`: Implement $k$-means++ centroid initialization heuristic to speed up coarse quantizer convergence.
-
 
 ### 🔹 Wednesday, Wed Sep 30 ([`Day 026`](../days/month-01/day-026-2026-09-30.md))
 * `[x]` **Core**: Implement multi-probe IVF query scanner with `nprobe` parameter sweep; parallelize across queries with `std::jthread`.
 * `⭐ Optional / Stretch`: Pin worker threads to physical CPU cores with `pthread_setaffinity_np` and measure latency jitter reduction.
 
-
 ### 🔹 Thursday, Thu Oct 1 ([`Day 027`](../days/month-01/day-027-2026-10-01.md))
 * `[x]` **Core**: Build histogram of inverted-list sizes; implement list rebalancing (splitting clusters larger than $2\times$ median size).
 * `⭐ Optional / Stretch`: Analyze the relationship between cluster size variance and tail query latency ($p99$).
 
-
 ### 🔹 Friday, Fri Oct 2 ([`Day 028`](../days/month-01/day-028-2026-10-02.md))
 * `[x]` **Core**: Validate Inner Product (IP) search path on IVF index; plot Recall@10 vs `nprobe` for L2 and IP on SIFT1M. Tag `v0.2-simd-ivf`.
 * `⭐ Optional / Stretch`: Compute exact Voronoi cell boundary distances to identify boundary query misclassification rates.
-
 
 ---
 

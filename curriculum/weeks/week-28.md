@@ -1,6 +1,6 @@
 # 🚀 Week 28 Execution Playbook
 
-> **Theme**: 7-Month Release  
+> **Theme**: 7-Month Release
 > **Calendar Dates**: Sat Mar 13 – Fri Mar 19 (2027-03-13 to 2027-03-19)
 > **Parent Month Dashboard**: [Month 7 (Mar 2027)](month-07-mar.md) · **Block**: II — GPU Specialization
 
@@ -76,26 +76,21 @@
 * `[ ]` **Core**: Derive Canonical Proofs 1 & 2 from cold memory on whiteboard; complete unified CLI interface (`secan`) and generate full Doxygen API docs.
 * `⭐ Optional / Stretch`: Write a comprehensive architectural design paper summarizing the 7-month engineering journey.
 
-
 ### 🔹 Tuesday, Tue Mar 16 ([`Day 193`](../days/month-07/day-193-2027-03-16.md))
 * `[ ]` **Core**: Derive Canonical Proofs 3 & 4 on whiteboard; execute full `ann-benchmarks` protocol across all implemented index types using the Hardware Profiling Playbook (`perf stat`, `nsys`, `ncu`).
 * `⭐ Optional / Stretch`: Plot combined CPU/GPU Pareto frontier curves (Recall@10 vs QPS) comparing `secan` directly against `Faiss` and `hnswlib`.
-
 
 ### 🔹 Wednesday, Wed Mar 17 ([`Day 194`](../days/month-07/day-194-2027-03-17.md))
 * `[ ]` **Core**: Derive Canonical Proofs 5 & 6 on whiteboard; build 5 standalone C++ and Python example programs showcasing the Enterprise Production DB architecture (WAL, shadow rebuilds, tombstones).
 * `⭐ Optional / Stretch`: Add a zero-dependency quickstart script that clones, builds, downloads SIFT1M, and benchmarks in under 60 seconds.
 
-
 ### 🔹 Thursday, Thu Mar 18 ([`Day 195`](../days/month-07/day-195-2027-03-18.md))
 * `[ ]` **Core**: Derive Canonical Proofs 7 & 8 on whiteboard; finalize root `README.md` with complete benchmark tables; git tag `v2.0-complete`.
 * `⭐ Optional / Stretch`: Prepare public release announcement and publish technical blog posts summarizing key architectural discoveries.
 
-
 ### 🔹 Friday, Fri Mar 19 ([`Day 196`](../days/month-07/day-196-2027-03-19.md))
 * `[ ]` **Core**: Complete a simulated 3-hour Technical Whiteboard Defense across all 8 canonical proofs; compile professional engineering portfolio packet (28 technical articles, benchmark suites, and `secan` release).
 * `⭐ Optional / Stretch`: Celebrate completing the 28-week vector search engine & AI systems specialization!
-
 
 ---
 
@@ -124,7 +119,7 @@ Before the Friday article or release, save the run manifest and raw JSON/CSV, ad
   5. **Key Takeaway**: Architectural rule of thumb for production AI systems.
 
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
-* **Task**: 
+* **Task**:
 
 ### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
 * **Focus**: Nsight Compute Roofline Validation & Production Engine Release

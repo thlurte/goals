@@ -1,6 +1,6 @@
 # 🚀 Week 12 Execution Playbook
 
-> **Theme**: SVD, Whitening, Composed Indexes & Pareto vs Faiss  
+> **Theme**: SVD, Whitening, Composed Indexes & Pareto vs Faiss
 > **Calendar Dates**: Sat Nov 21 – Fri Nov 27 (2026-11-21 to 2026-11-27)
 > **Parent Month Dashboard**: [Month 3 (Nov 2026)](month-03-nov.md) · **Block**: I — Vector Search Engine
 
@@ -77,26 +77,21 @@
 * `[ ]` **Core**: Implement SVD-based vector whitening transform $x_{\text{white}} = \Lambda^{-1/2} Q^T (x - \mu)$; compute hubness skewness $S_{N_k}$ before/after.
 * `⭐ Optional / Stretch`: Test dimension reduction via truncated SVD ($768\text{D} \to 256\text{D}$) and measure recall retention.
 
-
 ### 🔹 Tuesday, Tue Nov 24 ([`Day 081`](../days/month-03/day-081-2026-11-24.md))
 * `[ ]` **Core**: Build `nanobind` Python bindings exposing `HNSWIndex`, `IVFPQIndex`, `HNSWSQIndex`, and `LSMIndex` directly to Python without REST overhead.
 * `⭐ Optional / Stretch`: Implement zero-copy NumPy buffer protocol in `nanobind` avoiding vector copies across the Python/C++ boundary.
-
 
 ### 🔹 Wednesday, Wed Nov 25 ([`Day 082`](../days/month-03/day-082-2026-11-25.md))
 * `[ ]` **Core**: Optimize HNSW graph traversal using bounded flat heap and 64-bit word-aligned bitset visited table.
 * `⭐ Optional / Stretch`: Benchmark branchless heap sift-down vs `std::priority_queue` in HNSW beam search.
 
-
 ### 🔹 Thursday, Thu Nov 26 ([`Day 083`](../days/month-03/day-083-2026-11-26.md))
 * `[ ]` **Core**: Finalize `IVFPQIndex` with asymmetric ADC lookups; generate Pareto Recall@10 vs QPS curve against `faiss.IndexIVFPQ` on SIFT1M.
 * `⭐ Optional / Stretch`: Measure index memory footprint comparison (secan IVFPQ vs Faiss IVFPQ).
 
-
 ### 🔹 Friday, Fri Nov 27 ([`Day 084`](../days/month-03/day-084-2026-11-27.md))
 * `[ ]` **Core**: Implement `HNSWSQIndex` (HNSW graph routing over SQ8/SQ4 quantized vectors); generate Pareto curve vs `hnswlib` on SIFT and 768-D text. Tag `v1.0-cpu-complete`.
 * `[ ]` **Core**: Compile the Block I comparison table: memory footprint, index build time, QPS, p50/p95/p99, and QPS at matched Recall@10 $\ge 0.95$, with raw manifests/results and an honest limitation for every index family.
-
 
 ---
 
@@ -131,7 +126,6 @@ Before the Friday article or release, save the run manifest and raw JSON/CSV, ad
 * **Focus**: Sub-2-Bit In-Register SIMD Execution & Manuscript Submission Freeze
 * **Workspace**: `research/2026-11-rabitq-lsm/`
 * **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.
-
 
 ---
 

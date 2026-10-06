@@ -1,6 +1,6 @@
 # 🚀 Week 13 Execution Playbook
 
-> **Theme**: Axiomatic Probability, Combinatorics, CUDA Model & Naive Kernels  
+> **Theme**: Axiomatic Probability, Combinatorics, CUDA Model & Naive Kernels
 > **Calendar Dates**: Sat Nov 28 – Fri Dec 4 (2026-11-28 to 2026-12-04)
 > **Parent Month Dashboard**: [Month 4 (Dec 2026)](month-04-dec.md) · **Block**: I — Vector Search Engine
 
@@ -77,26 +77,21 @@
 * `[ ]` **Core**: Configure CMake for CUDA (`enable_language(CUDA)`); set up `compute-sanitizer` automated memory checker in CI.
 * `⭐ Optional / Stretch`: Write a CMake check that validates GPU compute capability (e.g. `sm_80`, `sm_89`, `sm_90`) and enables target-specific PTX generation.
 
-
 ### 🔹 Tuesday, Tue Dec 1 ([`Day 088`](../days/month-04/day-088-2026-12-01.md))
 * `[ ]` **Core**: Implement RAII `GpuBuffer<T>` wrapper managing device memory (`cudaMalloc`, `cudaFree`, `cudaMemcpyAsync`).
 * `⭐ Optional / Stretch`: Implement CUDA pinned host memory allocator (`cudaHostAlloc`) and compare host-to-device transfer bandwidth.
-
 
 ### 🔹 Wednesday, Wed Dec 2 ([`Day 089`](../days/month-04/day-089-2026-12-02.md))
 * `[ ]` **Core**: Implement naive GPU L2 distance kernel (1 thread per vector pair); benchmark latency against single-threaded CPU AVX2.
 * `⭐ Optional / Stretch`: Profile kernel with Nsight Compute (`ncu`) to observe warp execution stalls due to memory latency.
 
-
 ### 🔹 Thursday, Thu Dec 3 ([`Day 090`](../days/month-04/day-090-2026-12-03.md))
 * `[ ]` **Core**: Upload full SIFT1M dataset to GPU VRAM; implement batch scan kernel assigning 1 thread block per query vector.
 * `⭐ Optional / Stretch`: Measure PCIe bus upload bandwidth as a function of batch buffer size ($1\text{MB}$ to $1\text{GB}$).
 
-
 ### 🔹 Friday, Fri Dec 4 ([`Day 091`](../days/month-04/day-091-2026-12-04.md))
 * `[ ]` **Core**: Implement shared memory tiled L2 distance kernel loading query and dataset chunks into SRAM; measure speedup over naive kernel.
 * `⭐ Optional / Stretch`: Benchmark shared memory bank conflicts with varying tile dimension padding strategies.
-
 
 ---
 
@@ -125,13 +120,12 @@ Before the Friday article or release, save the run manifest and raw JSON/CSV, ad
   5. **Key Takeaway**: Architectural rule of thumb for production AI systems.
 
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
-* **Task**: 
+* **Task**:
 
 ### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
 * **Focus**: The Memory Wall in Multimodal Late Interaction: Baseline GPU Kernel Profiling
 * **Workspace**: `research/2026-12-flashattn-vamana/`
 * **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.
-
 
 ---
 

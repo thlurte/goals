@@ -1,8 +1,8 @@
 # 📐 Day 002 Math Lab: Proof Defense & Complete Live Q&A Session
 
-**Date**: Sunday, September 6, 2026  
-**Curriculum Module**: Block I (Vector Search Engine) · Week 01  
-**Textbook Reference**: *Calculus* — Gilbert Strang (§2.1–§2.5)  
+**Date**: Sunday, September 6, 2026
+**Curriculum Module**: Block I (Vector Search Engine) · Week 01
+**Textbook Reference**: *Calculus* — Gilbert Strang (§2.1–§2.5)
 **Parent Daily Schedule**: [[day-002-2026-09-06|Day 002 Schedule]]
 
 ---
@@ -158,7 +158,7 @@ $$\lim_{x \to 3} (x + 3) = 3 + 3 = 6$$
   > *"for the second i know the answer is 6x-4 but i dont how to get to it becahse i just simplified the question and got -8x+h over h"*
 * **Error Diagnosis & Derivation**:
   * Expand: $f(x+h) = 3(x+h)^2 - 4(x+h) = 3x^2 + 6xh + 3h^2 - 4x - 4h$
-  * Subtract $f(x)$: $(3x^2 + 6xh + 3h^2 - 4x - 4h) - (3x^2 - 4x) = 6xh + 3h^2 - 4h$  
+  * Subtract $f(x)$: $(3x^2 + 6xh + 3h^2 - 4x - 4h) - (3x^2 - 4x) = 6xh + 3h^2 - 4h$
     *(Sign note: $-4(x+h) - (-4x) = -4h$, eliminating the $-8x$ sign conflict).*
   * Divide by $h$ and take limit:
 

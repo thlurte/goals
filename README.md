@@ -1,8 +1,8 @@
 # Vector Search Engine & AI Systems Specialization
 
-> **28 weeks / 7 months** (Sep 2026 – Mar 2027).  
-> **Months 1–4 = Vector Search Engine (`secan`).** **Months 5–7 = GPU Specialization (CUDA/CUTLASS).**  
-> **Deep Learning Track**: Tuesday & Wednesday mornings (06:30–08:30 builder track).  
+> **28 weeks / 7 months** (Sep 2026 – Mar 2027).
+> **Months 1–4 = Vector Search Engine (`secan`).** **Months 5–7 = GPU Specialization (CUDA/CUTLASS).**
+> **Deep Learning Track**: Tuesday & Wednesday mornings (06:30–08:30 builder track).
 > **No REST API** in `secan` (nanobind + CLI). Distributed CPU cluster = stretch.
 
 ## Start here

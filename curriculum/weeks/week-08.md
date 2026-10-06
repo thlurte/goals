@@ -1,6 +1,6 @@
 # 🚀 Week 08 Execution Playbook
 
-> **Theme**: Graph Theory, The Hubness Phenomenon & HNSW Core  
+> **Theme**: Graph Theory, The Hubness Phenomenon & HNSW Core
 > **Calendar Dates**: Sat Oct 24 – Fri Oct 30 (2026-10-24 to 2026-10-30)
 > **Parent Month Dashboard**: [Month 2 (Oct 2026)](month-02-oct.md) · **Block**: I — Vector Search Engine
 
@@ -77,26 +77,21 @@
 * `[ ]` **Core**: Implement `HNSWIndex` core memory layout with flat CSR adjacency array (`neighbors[]` and `offsets[]`).
 * `⭐ Optional / Stretch`: Profile memory fragmentation of dynamic node vectors `std::vector<std::vector<uint32_t>>` vs flat contiguous CSR buffer.
 
-
 ### 🔹 Tuesday, Tue Oct 27 ([`Day 053`](../days/month-02/day-053-2026-10-27.md))
 * `[ ]` **Core**: Implement HNSW `insert()` with exponential random level generator and greedy multi-layer descent.
 * `⭐ Optional / Stretch`: Compute degree distribution histogram across all nodes to verify graph connectivity properties.
-
 
 ### 🔹 Wednesday, Wed Oct 28 ([`Day 054`](../days/month-02/day-054-2026-10-28.md))
 * `[ ]` **Core**: Implement HNSW `search()` (greedy descent on upper layers, $efSearch$ beam search on layer 0); implement Algorithm 4 diverse neighbor heuristic.
 * `⭐ Optional / Stretch`: Measure the impact of Algorithm 4 neighbor diversity heuristic on Recall@10 vs simple nearest-neighbor graph edges.
 
-
 ### 🔹 Thursday, Thu Oct 29 ([`Day 055`](../days/month-02/day-055-2026-10-29.md))
 * `[ ]` **Core**: Construct correctness test harness validating Recall@10 on 10,000 queries on SIFT subset.
 * `⭐ Optional / Stretch`: Measure the correlation between graph hop count and Euclidean distance to ground-truth neighbor.
 
-
 ### 🔹 Friday, Fri Oct 30 ([`Day 056`](../days/month-02/day-056-2026-10-30.md))
 * `[ ]` **Core**: Ingest golden 768-D text embeddings (`.fvecs` pre-staged in `data/text768/`) into HNSW; plot Recall@10 vs QPS curve across $efSearch \in [10, 200]$. (Evaluate custom Week 6 DL export as a secondary comparative dataset). Tag `v0.3-hnsw`.
 * `⭐ Optional / Stretch`: Calculate empirical hubness skewness $S_{N_k}$ on the 768-D text dataset and identify top-10 hub nodes.
-
 
 ---
 
@@ -125,13 +120,12 @@ Before the Friday article or release, save the run manifest and raw JSON/CSV, ad
   5. **Key Takeaway**: Architectural rule of thumb for production AI systems.
 
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
-* **Task**: 
+* **Task**:
 
 ### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
 * **Focus**: Geometry-Aware Anisotropic Polar Quantization: The Adaptive Ellipsoidal Lattice & Unbiased QJL Proof
 * **Workspace**: `research/2026-10-anisotropic-quantization/`
 * **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.
-
 
 ---
 

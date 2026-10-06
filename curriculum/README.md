@@ -1,7 +1,7 @@
 # 28-Week Curriculum (Sep 2026 – Mar 2027)
 
-**Specialty**: High-performance vector retrieval & ANN systems (`secan`), not REST APIs and not agent frameworks.  
-**Weekdays**: 05:30–06:30 Systems Reading · 06:30–08:30 Builder Track (DL / Research / Essay) · 20:30–23:00 `secan` / CUDA.  
+**Specialty**: High-performance vector retrieval & ANN systems (`secan`), not REST APIs and not agent frameworks.
+**Weekdays**: 05:30–06:30 Systems Reading · 06:30–08:30 Builder Track (DL / Research / Essay) · 20:30–23:00 `secan` / CUDA.
 **Weekends**: Sat & Sun 09:00–13:00 Pure Mathematics (8.0 hrs total) · Afternoons 100% Free / Rest.
 
 | Block | Weeks | Calendar | Deliverable |
@@ -61,7 +61,6 @@
 | **Jan 2027** (Month 5: Dec 26 – Jan 22) | [month-05-jan.md](weeks/month-05-jan.md) | [Week 17](weeks/week-17.md) · [Week 18](weeks/week-18.md) · [Week 19](weeks/week-19.md) · [Week 20](weeks/week-20.md) | [Days 113–140](days/month-05/) |
 | **Feb 2027** (Month 6: Jan 23 – Feb 19) | [month-06-feb.md](weeks/month-06-feb.md) | [Week 21](weeks/week-21.md) · [Week 22](weeks/week-22.md) · [Week 23](weeks/week-23.md) · [Week 24](weeks/week-24.md) | [Days 141–168](days/month-06/) |
 | **Mar 2027** (Month 7: Feb 20 – Mar 19) | [month-07-mar.md](weeks/month-07-mar.md) | [Week 25](weeks/week-25.md) · [Week 26](weeks/week-26.md) · [Week 27](weeks/week-27.md) · [Week 28](weeks/week-28.md) | [Days 169–196](days/month-07/) |
-
 
 ## 📚 Authoritative Graduate Reference Textbooks
 

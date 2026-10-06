@@ -10,7 +10,6 @@
 
 ## 1. Executive Abstract & Falsifiable Question
 
-
 **Core Falsifiable Question**:
 > *How does the write-amplification and query-latency Pareto frontier of centroid-pruned inverted lists (PLAID) compare against Fixed-Dimensional Projections (MUVERA FDE) inside a dynamic Log-Structured Merge (LSM) vector store under continuous $10{,}000	ext{ writes/second}$ streaming ingestion?*
 

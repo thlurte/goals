@@ -1,6 +1,6 @@
 # 🚀 Week 10 Execution Playbook
 
-> **Theme**: Orthogonality, MUVERA FDEs, PLAID, RaBitQ & TurboQuant  
+> **Theme**: Orthogonality, MUVERA FDEs, PLAID, RaBitQ & TurboQuant
 > **Calendar Dates**: Sat Nov 7 – Fri Nov 13 (2026-11-07 to 2026-11-13)
 > **Parent Month Dashboard**: [Month 3 (Nov 2026)](month-03-nov.md) · **Block**: I — Vector Search Engine
 
@@ -77,26 +77,21 @@
 * `[ ]` **Core**: Implement MUVERA `fde_encode` hashing token sets into $B$ SimHash buckets with $R$ random repetitions.
 * `⭐ Optional / Stretch`: Derive the theoretical upper bound on Chamfer distance error as a function of repetition count $R$.
 
-
 ### 🔹 Tuesday, Tue Nov 10 ([`Day 067`](../days/month-03/day-067-2026-11-10.md))
 * `[ ]` **Core**: Index document FDEs in IP HNSW index; execute MIPS query retrieval followed by exact MaxSim re-ranking.
 * `⭐ Optional / Stretch`: Compare candidate set size needed for 95% Recall@10: MUVERA FDE vs PLAID centroid candidate lists.
-
 
 ### 🔹 Wednesday, Wed Nov 11 ([`Day 068`](../days/month-03/day-068-2026-11-11.md))
 * `[ ]` **Core**: Implement PLAID 3-stage pipeline (centroid score $\to$ 2/4-bit quantized MaxSim filter $\to$ FP32 MaxSim re-rank).
 * `⭐ Optional / Stretch`: Profile memory footprint of PLAID quantized token storage vs MUVERA single-vector FDE storage.
 
-
 ### 🔹 Thursday, Thu Nov 12 ([`Day 069`](../days/month-03/day-069-2026-11-12.md))
 * `[ ]` **Core**: Implement Gram-Schmidt QR rotation helper in C++; implement RaBitQ 1-bit quantization with error correction.
 * `⭐ Optional / Stretch`: Benchmark RaBitQ distance calculation throughput using AVX2 integer instructions vs plain Hamming distance.
 
-
 ### 🔹 Friday, Fri Nov 13 ([`Day 070`](../days/month-03/day-070-2026-11-13.md))
 * `[ ]` **Core**: Implement TurboQuant / PolarQuant 3-bit polar coordinate transform + 1-bit QJL error correction; plot Recall@1 vs bitwidth.
 * `⭐ Optional / Stretch`: Implement SIMD Fast Walsh-Hadamard Transform (FWHT) butterfly kernel (`_mm256_add_ps` / `_mm256_sub_ps`) for $O(D \log D)$ zero-storage randomized incoherence rotation before 1-bit RaBitQ / 3-bit PolarQuant.
-
 
 ---
 
@@ -129,13 +124,12 @@ Before the Friday article or release, save the run manifest and raw JSON/CSV, ad
   5. **Key Takeaway**: Architectural rule of thumb for production AI systems.
 
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
-* **Task**: 
+* **Task**:
 
 ### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
 * **Focus**: Sub-2-Bit In-Register SIMD Execution & Manuscript Submission Freeze
 * **Workspace**: `research/2026-11-rabitq-lsm/`
 * **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.
-
 
 ---
 

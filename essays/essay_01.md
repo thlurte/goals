@@ -132,7 +132,7 @@ float fast_rsqrt(float x) noexcept {
 
 ### 3.2 Linux PMU Hardware Counters (`perf stat`)
 
-To isolate hardware performance, benchmarks were executed on an AMD Zen 4 Hawk Point silicon node locked to `performance` Energy Performance Preference (EPP) using the `amd-pstate-epp` driver. 
+To isolate hardware performance, benchmarks were executed on an AMD Zen 4 Hawk Point silicon node locked to `performance` Energy Performance Preference (EPP) using the `amd-pstate-epp` driver.
 
 Sampling 10M+ iterations across $D = 128$ dimensions yielded the following hardware counters:
 

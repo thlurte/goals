@@ -10,7 +10,6 @@
 
 ## 1. Executive Abstract & Falsifiable Question
 
-
 **Core Falsifiable Question**:
 > *At what vector dimensionality ($D \in [64, 1536]$) does distance calculation transition from execution-port latency bound (FMA dependency chains on Intel Port 0/1 and ARM NEON pipes) to memory-bus saturation (L1/L2 cache load port and cache-line split limits), and does a noise-free, dead-code-safe microbenchmark protocol eliminate measurement variance within a strict 5% IPC bound?*
 

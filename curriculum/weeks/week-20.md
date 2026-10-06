@@ -1,6 +1,6 @@
 # 🚀 Week 20 Execution Playbook
 
-> **Theme**: Information Theory, Entropy, KL-Divergence & Multi-GPU NCCL  
+> **Theme**: Information Theory, Entropy, KL-Divergence & Multi-GPU NCCL
 > **Calendar Dates**: Sat Jan 16 – Fri Jan 22 (2027-01-16 to 2027-01-22)
 > **Parent Month Dashboard**: [Month 5 (Jan 2027)](month-05-jan.md) · **Block**: II — GPU Specialization
 
@@ -77,26 +77,21 @@
 * `[ ]` **Core**: Implement dataset sharding across $G$ GPUs; build `MultiGpuIndex` managing per-device buffers with peer-to-peer access enabled.
 * `⭐ Optional / Stretch`: Derive the maximum Shannon entropy of quantized embedding codes under uniform vs Gaussian coordinate distributions.
 
-
 ### 🔹 Tuesday, Tue Jan 19 ([`Day 137`](../days/month-05/day-137-2027-01-19.md))
 * `[ ]` **Core**: Implement multi-GPU parallel scan merging per-GPU top-$k$ candidate heaps using `ncclAllGather`.
 * `⭐ Optional / Stretch`: Benchmark NCCL ring-based collective transfer latency over NVLink vs PCIe bus.
-
 
 ### 🔹 Wednesday, Wed Jan 20 ([`Day 138`](../days/month-05/day-138-2027-01-20.md))
 * `[ ]` **Core**: Implement multi-GPU IVF: replicate coarse centroids across all devices; distribute inverted lists across GPUs.
 * `⭐ Optional / Stretch`: Measure multi-GPU speedup over single GPU on a 10M vector synthetic dataset.
 
-
 ### 🔹 Thursday, Thu Jan 21 ([`Day 139`](../days/month-05/day-139-2027-01-21.md))
 * `[ ]` **Core**: Implement dynamic cell redistribution to eliminate GPU load imbalance under skewed query workloads.
 * `⭐ Optional / Stretch`: Profile GPU execution timeline in Nsight Systems (`nsys`) to identify inter-GPU communication bubbles.
 
-
 ### 🔹 Friday, Fri Jan 22 ([`Day 140`](../days/month-05/day-140-2027-01-22.md))
 * `[ ]` **Core**: Run multi-GPU scalability benchmark suite on multi-GPU hardware (local multi-GPU or RunPod 2–4× GPU instance); compute parallel scaling efficiency percentage across GPUs.
 * `⭐ Optional / Stretch`: Test multi-GPU fault tolerance by simulating device dropout and dynamic shard re-routing.
-
 
 ---
 
@@ -125,13 +120,12 @@ Before the Friday article or release, save the run manifest and raw JSON/CSV, ad
   5. **Key Takeaway**: Architectural rule of thumb for production AI systems.
 
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
-* **Task**: 
+* **Task**:
 
 ### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
 * **Focus**: The Online Max Reduction Invariant & In-SRAM Accumulation Mechanics
 * **Workspace**: `research/2027-01-cagra-warp-search/`
 * **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.
-
 
 ---
 

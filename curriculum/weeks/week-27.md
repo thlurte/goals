@@ -1,6 +1,6 @@
 # 🚀 Week 27 Execution Playbook
 
-> **Theme**: Multi-GPU + ColPali ingest  
+> **Theme**: Multi-GPU + ColPali ingest
 > **Calendar Dates**: Sat Mar 6 – Fri Mar 12 (2027-03-06 to 2027-03-12)
 > **Parent Month Dashboard**: [Month 7 (Mar 2027)](month-07-mar.md) · **Block**: II — GPU Specialization
 
@@ -76,26 +76,21 @@
 * `[ ]` **Core**: Polish multi-GPU IVF load balancing: implement dynamic work-stealing for query batches across GPU streams.
 * `⭐ Optional / Stretch`: Derive theoretical communication lower bounds for AllGather vs ReduceScatter in top-$k$ merging.
 
-
 ### 🔹 Tuesday, Tue Mar 9 ([`Day 186`](../days/month-07/day-186-2027-03-09.md))
 * `[ ]` **Core**: Measure scaling efficiency curve across 1, 2, and 4 GPU configurations (or multi-stream partition simulation).
 * `⭐ Optional / Stretch`: Profile GPU-to-GPU peer memory copy bandwidth vs host-mediated staging.
-
 
 ### 🔹 Wednesday, Wed Mar 10 ([`Day 187`](../days/month-07/day-187-2027-03-10.md))
 * `[ ]` **Core**: Ingest CLIP/SigLIP visual patch embeddings into `MultiVectorIndex`; structure multi-vector storage with token centroid routing.
 * `⭐ Optional / Stretch`: Measure token compression ratio using visual patch pooling (e.g. 1024 patches $\to$ 256 tokens).
 
-
 ### 🔹 Thursday, Thu Mar 11 ([`Day 188`](../days/month-07/day-188-2027-03-11.md))
 * `[ ]` **Core**: Run end-to-end multimodal search: natural language query $\to$ GPU CUTLASS MaxSim $\to$ retrieved PDF document pages.
 * `⭐ Optional / Stretch`: Build an interactive terminal visualizer rendering ASCII bounding boxes or page previews for top-5 results.
 
-
 ### 🔹 Friday, Fri Mar 12 ([`Day 189`](../days/month-07/day-189-2027-03-12.md))
 * `[ ]` **Core**: Generate Month 7 paper benchmark plots: Multi-GPU scaling curves, FlashAttention-2 speedups, and ColPali visual retrieval metrics.
 * `⭐ Optional / Stretch`: Package reproducible Python demonstration notebook for the ColPali + `secan` engine.
-
 
 ---
 
@@ -124,7 +119,7 @@ Before the Friday article or release, save the run manifest and raw JSON/CSV, ad
   5. **Key Takeaway**: Architectural rule of thumb for production AI systems.
 
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
-* **Task**: 
+* **Task**:
 
 ### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
 * **Focus**: Nsight Compute Roofline Validation & Production Engine Release

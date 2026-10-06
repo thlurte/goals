@@ -1,2 +1,10 @@
 # Obsidian vault metadata (local UI state, not curriculum)
 .obsidian/
+
+# Build and test artifacts
+Testing/
+build/
+*.o
+*.out
+drills/day*_drill_*
+!drills/*.cpp

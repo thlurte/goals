@@ -10,7 +10,6 @@
 
 ## 1. Executive Abstract & Falsifiable Question
 
-
 **Core Falsifiable Question**:
 > *At what dataset scale ($10	ext{M} 	o 100	ext{M}$ vectors) does out-of-core NVMe DiskANN using asynchronous Linux `io_uring` kernel-bypass direct I/O surpass in-VRAM GPU IVF on a Cost-per-QPS and Watt-per-Query basis while sustaining $>95\%$ Recall@10 under concurrent multi-client query pressure?*
 
@@ -20,13 +19,16 @@
 
 1. **Vamana Graph Geometric Spanner Property**:
    * Candidate neighbor $c$ is kept if and only if:
-     $$lpha \cdot d(r, c) > d(p, c) \quad orall r \in N(p)$$
+     $$lpha \cdot d(r, c) > d(p, c) \quad
+orall r \in N(p)$$
    * Guarantees an $lpha$-spanner network with diameter $\mathcal{O}(\log N)$, preventing local search traps during disk beam traversal.
 2. **NVMe Direct I/O via `io_uring`**:
    * Uses `IORING_SETUP_SQPOLL` to execute kernel-bypass asynchronous 4KB block reads directly from solid-state NVMe drives.
    * Eliminates Linux page cache overhead, memory double-buffering, and context-switch stalls ($T_{	ext{read}} pprox 8	ext{–}15\ \mu	ext{s}$).
 3. **Cost-Latency-Energy Frontier**:
-   $$	ext{Efficiency} = rac{	ext{QPS}}{	ext{Hardware Cost (\$)}} \quad 	ext{and} \quad 	ext{Energy} = rac{	ext{Joules}}{	ext{Query}}$$
+   $$	ext{Efficiency} =
+rac{	ext{QPS}}{	ext{Hardware Cost (\$)}} \quad 	ext{and} \quad 	ext{Energy} =
+rac{	ext{Joules}}{	ext{Query}}$$
 
 ---
 

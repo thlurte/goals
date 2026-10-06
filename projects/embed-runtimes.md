@@ -105,19 +105,19 @@ Don’t put HNSW in either package. Do return **lengths** (or ragged lists) so M
 
 **Must-fix / must-consider**
 
-1. `limbed`: MaxSim **mask PAD/MASK** (or return `seq_lens` and slice). Until then, scores are not ColBERT.  
-2. `ggmbed`: **`GGML_NATIVE OFF` for wheels**; native only for source `CMAKE_ARGS`.  
-3. `ggmbed`: **true multi-seq `llama_batch`** (the actual perf hole).  
-4. `limbed`: **GIL release around `session_->Run`**.  
-5. Rotate HF token; pin `tokenizers-cpp` to a **commit**, not `main`.  
-6. Fix or delete `evaluate_accuracy.py` imports.  
+1. `limbed`: MaxSim **mask PAD/MASK** (or return `seq_lens` and slice). Until then, scores are not ColBERT.
+2. `ggmbed`: **`GGML_NATIVE OFF` for wheels**; native only for source `CMAKE_ARGS`.
+3. `ggmbed`: **true multi-seq `llama_batch`** (the actual perf hole).
+4. `limbed`: **GIL release around `session_->Run`**.
+5. Rotate HF token; pin `tokenizers-cpp` to a **commit**, not `main`.
+6. Fix or delete `evaluate_accuracy.py` imports.
 7. External ONNX: copy `model.onnx.data` **next to** the loaded `model.onnx`.
 
 **Strong product adds (after the above)**
 
-8. `limbed`: batched MaxSim `(nq, nd)` + SIMD/GEMM.  
-9. `limbed`: `encode_tokens` + lengths.  
-10. `ggmbed`: `encode_queries` / `encode_documents` + prefix table; last-token pooling.  
+8. `limbed`: batched MaxSim `(nq, nd)` + SIMD/GEMM.
+9. `limbed`: `encode_tokens` + lengths.
+10. `ggmbed`: `encode_queries` / `encode_documents` + prefix table; last-token pooling.
 11. Golden tests: ST cosine (`ggmbed`) and pylate MaxSim (`limbed`) on 8 texts in CI.
 
 **Leave to `secan` / later**

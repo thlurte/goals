@@ -1,6 +1,6 @@
 # 🚀 Week 23 Execution Playbook
 
-> **Theme**: Spectral Graph Theory, Cheeger's Inequality & ARM NEON  
+> **Theme**: Spectral Graph Theory, Cheeger's Inequality & ARM NEON
 > **Calendar Dates**: Sat Feb 6 – Fri Feb 12 (2027-02-06 to 2027-02-12)
 > **Parent Month Dashboard**: [Month 6 (Feb 2027)](month-06-feb.md) · **Block**: II — GPU Specialization
 
@@ -77,26 +77,21 @@
 * `[ ]` **Core**: Design unified SIMD abstraction namespace with compile-time and runtime dispatch architecture.
 * `⭐ Optional / Stretch`: Compute the spectrum (all eigenvalues) of the normalized Laplacian on an HNSW graph component.
 
-
 ### 🔹 Tuesday, Tue Feb 9 ([`Day 158`](../days/month-06/day-158-2027-02-09.md))
 * `[ ]` **Core**: Implement ARM NEON FP32 distance kernels (`l2_squared_neon`, `cosine_distance_neon`) with 4-way unrolling.
 * `⭐ Optional / Stretch`: Implement native ARMv8.2-A FP16 distance kernel `l2_squared_fp16_neon` using `float16x8_t` and `vfmaq_f16`; benchmark on Apple Silicon / Jetson Orin.
-
 
 ### 🔹 Wednesday, Wed Feb 10 ([`Day 159`](../days/month-06/day-159-2027-02-10.md))
 * `[ ]` **Core**: Implement ARM NEON integer quantized kernels (`l2_squared_sq8_neon`, `cosine_distance_sq8_neon`) using `vdotq_u32` (dot product instructions).
 * `⭐ Optional / Stretch`: Implement ARM NEON FastScan 4-bit LUT kernel using `vqtbl1q_u8` and NEON 1-bit Hamming popcount using `vcntq_u8`.
 
-
 ### 🔹 Thursday, Thu Feb 11 ([`Day 160`](../days/month-06/day-160-2027-02-11.md))
 * `[ ]` **Core**: Implement runtime CPU capability probe (`cpuid` on x86, `getauxval` on Linux ARM, `sysctlbyname` on macOS); configure automatic dynamic function pointers.
 * `⭐ Optional / Stretch`: Write a microbenchmark measuring dispatch function pointer overhead vs direct inlined function call.
 
-
 ### 🔹 Friday, Fri Feb 12 ([`Day 161`](../days/month-06/day-161-2027-02-12.md))
 * `[ ]` **Core**: Configure GitHub Actions / local cross-platform CI matrix building and running test suite on x86_64 and ARM64.
 * `⭐ Optional / Stretch`: Validate bitwise floating-point score equivalence across x86 AVX2 and ARM NEON kernels.
-
 
 ---
 
@@ -125,13 +120,12 @@ Before the Friday article or release, save the run manifest and raw JSON/CSV, ad
   5. **Key Takeaway**: Architectural rule of thumb for production AI systems.
 
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
-* **Task**: 
+* **Task**:
 
 ### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
 * **Focus**: Bare-Metal CUTLASS Implementation with Hopper/Blackwell TMA & Warp Specialization
 * **Workspace**: `research/2027-02-predicate-aware-graphs/`
 * **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.
-
 
 ---
 

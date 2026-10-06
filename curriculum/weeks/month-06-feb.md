@@ -16,7 +16,6 @@
 
 ---
 
-
 ### 📚 Master Reference Textbooks (Month 6)
 * **Microarchitectural Performance**: Denis Bakhvalov, *Performance Analysis and Tuning on Modern CPUs (2nd ed, 2024)* — Top-Down Microarchitecture Analysis (TMAM), PMU hardware counters, and port contention profiling.
 * **Bitwise Systems Engineering**: Henry S. Warren Jr., *Hacker's Delight (2nd ed)* — Popcount trees, bit-matrix permutations, and branch-free SIMD index arithmetic.
@@ -68,7 +67,7 @@
 * ❌ **Do NOT** optimize GPU NN-Descent beyond 10-15 iterations—NN-Descent achieves $>98\%$ $k$-NN graph quality quickly.
 * ❌ **Do NOT** spend hours proving convex duality theorems for non-linear constraints—focus on KKT conditions for linear/quadratic programs.
 
-> **📝 Essay 21 (Fri Jan 29)**: *"Duality and Multimodal Retrieval: Karush-Kuhn-Tucker Conditions, CLIP Alignment, and ColPali MaxSim"*  
+> **📝 Essay 21 (Fri Jan 29)**: *"Duality and Multimodal Retrieval: Karush-Kuhn-Tucker Conditions, CLIP Alignment, and ColPali MaxSim"*
 > **🧠 DL Builder Track (Tue/Wed)**: CLIP-style projector + ColPali head.
 
 ---
@@ -112,7 +111,7 @@
 * ❌ **Do NOT** rebuild the entire HNSW graph on every deletion—use atomic bitset tombstones and periodic asynchronous vacuuming.
 * ❌ **Do NOT** worry if your development machine is single-socket—simulate NUMA policies with `numactl --interleave` or `numactl --cpunodebind`.
 
-> **📝 Essay 22 (Fri Feb 5)**: *"Graph Disconnection and Selectivity Cliffs: ACORN Predicate Subgraphs vs Post-Filtering"*  
+> **📝 Essay 22 (Fri Feb 5)**: *"Graph Disconnection and Selectivity Cliffs: ACORN Predicate Subgraphs vs Post-Filtering"*
 
 ---
 
@@ -196,14 +195,10 @@
 * ❌ **Do NOT** over-tune CLI flags or build fancy terminal TUI animations—a clean POSIX CLI (`getopt` or `CLI11`) is sufficient.
 * ❌ **Do NOT** spend hours eliminating benign 3rd-party library warnings—suppress external warnings with `-isystem`.
 
-> **📝 Essay 24 (Fri Feb 19)**: *"Portable Vector Intrinsics and Production Graph Systems: Closing Block II Systems Hardening"*  
+> **📝 Essay 24 (Fri Feb 19)**: *"Portable Vector Intrinsics and Production Graph Systems: Closing Block II Systems Hardening"*
 > **🚀 Month 6 Builder Milestone (Fri Feb 19)**: Systems hardening & predicate-aware graph benchmark verification.
 
 ---
-
-
----
-
 ## ⚡  High-Dimensional Embedding Engine (Month 06 Focus)
 > **Theme**: *Production Packaging, Python nanobind Zero-Copy Bindings & Final Release*
 * In tandem with  vector search at 20:30–23:00, the 23:00–00:00 night block develops the standalone C++ multimodal embedding runtime , providing zero-copy feature ingestion directly into .

@@ -61,7 +61,4 @@ REST out of scope. Cluster shard/replica = stretch only.
 | **Remaining Weeks** | Continuous transformer scaling, multi-modal tokenization, and GPU inference pipelines |
 
 ---
-
----
-
 ---

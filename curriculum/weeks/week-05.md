@@ -1,6 +1,6 @@
 # 🚀 Week 05 Execution Playbook
 
-> **Theme**: Partial Derivatives, Gradients, Hessians, **Probability Primer** & Vision Transformer (ViT)  
+> **Theme**: Partial Derivatives, Gradients, Hessians, **Probability Primer** & Vision Transformer (ViT)
 > **Calendar Dates**: Sat Oct 3 – Fri Oct 9 (2026-10-03 to 2026-10-09)
 > **Parent Month Dashboard**: [Month 2 (Oct 2026)](month-02-oct.md) · **Block**: I — Vector Search Engine
 
@@ -76,30 +76,25 @@
 * `[x]` **Core**: Implement `ScalarQuantizer` with percentile clipping (0.05th/99.95th); measure dequantization MSE on SIFT1M.
 * `⭐ Optional / Stretch`: Derive and plot the Johnson-Lindenstrauss projection dimension curve $d(\epsilon, n)$ for $\epsilon \in [0.1, 0.5]$ and $n=10^6$.
 
-
 ### 🔹 Tuesday, Tue Oct 6 ([`Day 032`](../days/month-02/day-032-2026-10-06.md))
 * `[x]` **Core Systems Reading**: **Intel Optimization Manual §5.3 & §14.4** (Port 0/1/5 execution pipelines, `_mm256_madd_epi16`, VNNI) & **Dosovitskiy et al. (ViT) §3.1–3.3**.
 * `[x]` **Core**: Implement `l2_squared_sq8()` using AVX2 `_mm256_maddubs_epi16` and `_mm256_madd_epi16` (32 dims per iteration).
 * `⭐ Optional / Stretch`: Benchmark VNNI integer dot product (`_mm256_dpbusd_epi32`) if your CPU supports AVX-VNNI.
-
 
 ### 🔹 Wednesday, Wed Oct 7 ([`Day 033`](../days/month-02/day-033-2026-10-07.md))
 * `[ ]` **Core Systems Reading**: **Agner Fog Ch 12**, **CS:APP §5.1–5.12** (Vector unpacking, $K$-way unrolling), and **Jégou et al. (PQ) §3.1–3.3** (ADC vs SDC error bounds).
 * `[ ]` **Core**: Polish SQ8 LUT table layout; benchmark scalar dequantization + L2 vs direct integer SIMD distance.
 * `⭐ Optional / Stretch`: Profile memory bandwidth saturation during full dataset SQ8 scan vs FP32 scan.
 
-
 ### 🔹 Thursday, Thu Oct 8 ([`Day 034`](../days/month-02/day-034-2026-10-08.md))
 * `[ ]` **Core Systems Reading**: **CS:APP §2.4** (IEEE 754 float internals, rounding modes) and **H&P Appendix B.1–B.3** (Unit stride 64B L1 vector loads).
 * `[ ]` **Core**: Implement 4-bit scalar quantization (`SQ4`) with nibble packing; construct 2-stage `SQ8 -> FP32` candidate re-ranker.
 * `⭐ Optional / Stretch`: Implement a random hyperplane LSH bitset filter as a pre-stage candidate pruner.
 
-
 ### 🔹 Friday, Fri Oct 9 ([`Day 035`](../days/month-02/day-035-2026-10-09.md))
 * `[ ]` **Core Systems Reading**: **Pikus Ch 9 (§9.1–9.4)** (Zero-copy `std::span` register ABI) and **Gregg Ch 6 (§6.1–6.6)** (PMU event profiling, IPC, stall cycles).
 * `[ ]` **Core**: Refactor buffer management to zero-copy `std::span<const uint8_t>`; verify zero dynamic allocations during query execution.
 * `⭐ Optional / Stretch`: Implement Kahan compensated summation in FP32 distance accumulator and compare error accumulation on 1536-D vectors.
-
 
 ---
 
@@ -138,7 +133,6 @@ Before the Friday article or release, save the run manifest and raw JSON/CSV, ad
 * **Focus**: Geometry-Aware Anisotropic Polar Quantization: The Adaptive Ellipsoidal Lattice & Unbiased QJL Proof
 * **Workspace**: `research/2026-10-anisotropic-quantization/`
 * **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.
-
 
 ---
 

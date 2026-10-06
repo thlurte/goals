@@ -1,6 +1,6 @@
 # 🚀 Week 11 Execution Playbook
 
-> **Theme**: Determinants, Eigenvalues, Spectral Theorem & LSM-Tree Engine  
+> **Theme**: Determinants, Eigenvalues, Spectral Theorem & LSM-Tree Engine
 > **Calendar Dates**: Sat Nov 14 – Fri Nov 20 (2026-11-14 to 2026-11-20)
 > **Parent Month Dashboard**: [Month 3 (Nov 2026)](month-03-nov.md) · **Block**: I — Vector Search Engine
 
@@ -77,26 +77,21 @@
 * `[ ]` **Core**: Implement binary append-only `WriteAheadLog` with CRC32 checksums; wire into mutable in-memory `MemTable`.
 * `⭐ Optional / Stretch`: Implement zero-allocation ring-buffer WAL flusher using synchronous `fdatasync` vs asynchronous batching.
 
-
 ### 🔹 Tuesday, Tue Nov 17 ([`Day 074`](../days/month-03/day-074-2026-11-17.md))
 * `[ ]` **Core**: Implement immutable segment flusher writing compacted vector data and HNSW graph topology to flat binary files.
 * `⭐ Optional / Stretch`: Structure segment files using columnar Apache Arrow layout with dictionary-encoded vector metadata.
-
 
 ### 🔹 Wednesday, Wed Nov 18 ([`Day 075`](../days/month-03/day-075-2026-11-18.md))
 * `[ ]` **Core**: Implement background compaction thread merging 2 immutable disk segments into 1 and rebuilding neighbor graph edges.
 * `⭐ Optional / Stretch`: Add a tiered compaction strategy (similar to RocksDB Levelled Compaction) for multi-gigabyte vector indexes.
 
-
 ### 🔹 Thursday, Thu Nov 19 ([`Day 076`](../days/month-03/day-076-2026-11-19.md))
 * `[ ]` **Core**: Implement reader-writer locking on `LSMVectorEngine`; verify search-while-ingest under ThreadSanitizer (`-fsanitize=thread`).
 * `⭐ Optional / Stretch`: Implement Poisson distributed query load generator measuring $p50, p95, p99$ latency spikes during active segment flushing.
 
-
 ### 🔹 Friday, Fri Nov 20 ([`Day 077`](../days/month-03/day-077-2026-11-20.md))
 * `[ ]` **Core**: Implement crash-recovery test suite: kill process during active write stream; verify WAL replay restores exact vector count and recall.
 * `⭐ Optional / Stretch`: Benchmark sustained write throughput (vectors/sec) under simultaneous 100 QPS query load.
-
 
 ---
 
@@ -125,13 +120,12 @@ Before the Friday article or release, save the run manifest and raw JSON/CSV, ad
   5. **Key Takeaway**: Architectural rule of thumb for production AI systems.
 
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
-* **Task**: 
+* **Task**:
 
 ### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
 * **Focus**: Sub-2-Bit In-Register SIMD Execution & Manuscript Submission Freeze
 * **Workspace**: `research/2026-11-rabitq-lsm/`
 * **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.
-
 
 ---
 

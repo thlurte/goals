@@ -1,6 +1,6 @@
 # 🚀 Week 18 Execution Playbook
 
-> **Theme**: Markov Chains, Transition Matrices & GPU FastScan  
+> **Theme**: Markov Chains, Transition Matrices & GPU FastScan
 > **Calendar Dates**: Sat Jan 2 – Fri Jan 8 (2027-01-02 to 2027-01-08)
 > **Parent Month Dashboard**: [Month 5 (Jan 2027)](month-05-jan.md) · **Block**: II — GPU Specialization
 
@@ -77,26 +77,21 @@
 * `[ ]` **Core**: Implement GPU PQ ADC kernel staging query centroid lookup tables ($M \times 256$ floats) in shared memory.
 * `⭐ Optional / Stretch`: Derive the exact transition probability matrix of random walk beam search on a small $k$-regular graph.
 
-
 ### 🔹 Tuesday, Tue Jan 5 ([`Day 123`](../days/month-05/day-123-2027-01-05.md))
 * `[ ]` **Core**: Optimize shared-memory LUT layout with stride padding; verify 0 shared-memory bank conflicts in `ncu`.
 * `⭐ Optional / Stretch`: Benchmark shared memory broadcast efficiency when all 32 warp threads access the identical centroid entry.
-
 
 ### 🔹 Wednesday, Wed Jan 6 ([`Day 124`](../days/month-05/day-124-2027-01-06.md))
 * `[ ]` **Core**: Implement GPU 4-bit FastScan storing 16 centroid distances across 16 warp registers; execute table lookups via `__shfl_sync(mask, dist, code)`.
 * `⭐ Optional / Stretch`: Measure register pressure and warp occupancy trade-offs in GPU FastScan kernel.
 
-
 ### 🔹 Thursday, Thu Jan 7 ([`Day 125`](../days/month-05/day-125-2027-01-07.md))
 * `[ ]` **Core**: Compose GPU IVF-PQ index (GPU coarse quantizer + GPU FastScan kernel inside selected cells).
 * `⭐ Optional / Stretch`: Implement asynchronous batch cell scanning using multiple CUDA streams.
 
-
 ### 🔹 Friday, Fri Jan 8 ([`Day 126`](../days/month-05/day-126-2027-01-08.md))
 * `[ ]` **Core**: Benchmark full suite: GPU-FP32 vs GPU-FP16 vs GPU-SQ8 vs GPU-IVF-PQ vs GPU-FastScan; produce comprehensive performance matrix.
 * `⭐ Optional / Stretch`: Compute total memory bandwidth efficiency percentage against theoretical GPU VRAM bandwidth limit.
-
 
 ---
 
@@ -125,13 +120,12 @@ Before the Friday article or release, save the run manifest and raw JSON/CSV, ad
   5. **Key Takeaway**: Architectural rule of thumb for production AI systems.
 
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
-* **Task**: 
+* **Task**:
 
 ### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
 * **Focus**: The Online Max Reduction Invariant & In-SRAM Accumulation Mechanics
 * **Workspace**: `research/2027-01-cagra-warp-search/`
 * **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.
-
 
 ---
 

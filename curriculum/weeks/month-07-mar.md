@@ -16,7 +16,6 @@
 
 ---
 
-
 ### 📚 Master Reference Textbooks (Month 7)
 * **Microarchitectural Performance**: Denis Bakhvalov, *Performance Analysis and Tuning on Modern CPUs (2nd ed, 2024)* — Top-Down Microarchitecture Analysis (TMAM), PMU hardware counters, and port contention profiling.
 * **Bitwise Systems Engineering**: Henry S. Warren Jr., *Hacker's Delight (2nd ed)* — Popcount trees, bit-matrix permutations, and branch-free SIMD index arithmetic.
@@ -104,7 +103,7 @@
 * ❌ **Do NOT** spend time writing complex web UI dashboards for LLM serving—CLI output with tokens/sec is optimal.
 * ❌ **Do NOT** implement complex prefix caching trees—simple LRU page table eviction covers all requirements.
 
-> **📝 Essay 26 (Fri Mar 5)**: *"Memory Fragmentation Under Autoregressive Generation: A/B Profiling Naive vs Paged KV Caches"*  
+> **📝 Essay 26 (Fri Mar 5)**: *"Memory Fragmentation Under Autoregressive Generation: A/B Profiling Naive vs Paged KV Caches"*
 
 ---
 
@@ -180,7 +179,7 @@
 * ❌ **Do NOT** over-complicate documentation styling—clean Markdown and standard Doxygen HTML are standard.
 * ❌ **Do NOT** doubt your progress—you have built a world-class, conference-grade vector search engine and AI systems foundation from first principles.
 
-> **📝 Essay 28 (Fri Mar 19)**: *"Seven Months from First Principles: Vector Spaces, Modern SIMD/GPU Architectures, and the `v2.0` Engine"*  
+> **📝 Essay 28 (Fri Mar 19)**: *"Seven Months from First Principles: Vector Spaces, Modern SIMD/GPU Architectures, and the `v2.0` Engine"*
 > **🚀 Month 7 Master Release (Fri Mar 19)**: `secan v2.0-complete` release and benchmark verification.
 
 ---

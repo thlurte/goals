@@ -1,6 +1,6 @@
 # 🚀 Week 02 Execution Playbook
 
-> **Theme**: Trigonometric Identities, Chain Rule, SIMD AVX2 & Multi-Head Attention  
+> **Theme**: Trigonometric Identities, Chain Rule, SIMD AVX2 & Multi-Head Attention
 > **Calendar Dates**: Sat Sep 12 – Fri Sep 18 (2026-09-12 to 2026-09-18)
 > **Parent Month Dashboard**: [Month 1 (Sep 2026)](month-01-sep.md) · **Block**: I — Vector Search Engine
 
@@ -74,27 +74,22 @@
 * `[x]` **Core**: Enable FTZ/DAZ (`_MM_SET_FLUSH_ZERO_MODE`); implement `l2_squared_avx2()` baseline (1 `__m256` accumulator).
 * `⭐ Optional / Stretch`: Write a microbenchmark testing floating-point denormal performance penalties with FTZ disabled vs enabled.
 
-
 ### 🔹 Tuesday, Tue Sep 15 ([`Day 011`](../days/month-01/day-011-2026-09-15.md))
 * `[x]` **Core**: Implement 4-way unrolled `l2_squared_avx2()` (4 parallel accumulators); measure IPC improvement on Google Benchmark.
 * `⭐ Optional / Stretch`: Benchmark 2-way vs 4-way vs 8-way unrolling to determine register pressure limits on your specific CPU microarchitecture.
 
-
 ### 🔹 Wednesday, Wed Sep 16 ([`Day 012`](../days/month-01/day-012-2026-09-16.md))
 * `[x]` **Core**: Implement fused `cosine_distance_avx2()` computing dot product and norms concurrently in a single pass.
 * `⭐ Optional / Stretch`: Verify numerical precision parity between 1-pass fused cosine vs 2-pass separate norm computation on float vectors with large magnitude variance.
-
 
 ### 🔹 Thursday, Thu Sep 17 ([`Day 013`](../days/month-01/day-013-2026-09-17.md))
 * `[x]` **Core**: Implement `ip_avx2()` with 4-way unrolling; ensure 64-byte vector alignment (`alignas(64)`).
 * `[x]` **Core (DL Builder Track)**: Implement Mask-Aware Mean Pooling, Unit $L_2$ Normalization, and direct binary `.fvecs` exporter in `transformers-pytorch` to close the model inference-to-index ingestion bridge.
 * `⭐ Optional / Stretch`: Benchmark unaligned load (`_mm256_loadu_ps`) vs aligned load (`_mm256_load_ps`) across cache line boundaries.
 
-
 ### 🔹 Friday, Fri Sep 18 ([`Day 014`](../days/month-01/day-014-2026-09-18.md))
 * `[x]` **Core**: Implement `#ifdef __AVX512F__` backend for 512-bit ZMM registers (`_mm512_sub_ps`, `_mm512_fmadd_ps`).
 * `⭐ Optional / Stretch`: Profile AVX-512 frequency downclocking behavior (if CPU throttles clock speed under 512-bit vector load).
-
 
 ---
 

@@ -10,7 +10,6 @@
 
 ## 1. Executive Abstract & Falsifiable Question
 
-
 **Core Falsifiable Question**:
 > *Can a unified, IO-aware GPU memory architecture executing in-SRAM CAGRA graph search and FlashAttention-2 online softmax within the same VRAM pool eliminate PCIe transfer bubbles, sustaining $>70\%$ Tensor Core duty cycle and $>94\%$ multi-GPU strong scaling efficiency under 100,000 QPS load?*
 
@@ -20,12 +19,15 @@
 
 1. **Arithmetic Intensity & Ridge Point**:
    * FlashAttention-2 Arithmetic Intensity:
-     $$	ext{Intensity} = rac{4 N^2 d}{8 N d} = rac{N}{2} 	ext{ FLOPs/byte}$$
+     $$	ext{Intensity} =
+rac{4 N^2 d}{8 N d} =
+rac{N}{2} 	ext{ FLOPs/byte}$$
    * For sequence length $N = 4096$, Intensity $= 2{,}048	ext{ FLOPs/byte}$, far exceeding the GPU memory ridge point ($pprox 150	ext{ FLOPs/byte}$) to achieve pure compute-bound Tensor Core execution.
 2. **Online Softmax Numerical Invariant**:
    * Re-scales unnormalized accumulator vectors $U^{(j)}$ in shared memory registers without writing the $N 	imes N$ attention matrix to high-bandwidth global DRAM (HBM), achieving $\mathcal{O}(N)$ memory complexity.
 3. **Multi-GPU Distributed Strong Scaling**:
-   $$E(G) = rac{	ext{Throughput}(G)}{G \cdot 	ext{Throughput}(1)} \ge 0.94 \quad 	ext{across } G \in \{1, 2, 4\} 	ext{ GPUs via NCCL}$$
+   $$E(G) =
+rac{	ext{Throughput}(G)}{G \cdot 	ext{Throughput}(1)} \ge 0.94 \quad 	ext{across } G \in \{1, 2, 4\} 	ext{ GPUs via NCCL}$$
 
 ---
 

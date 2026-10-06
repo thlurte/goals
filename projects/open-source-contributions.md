@@ -1,6 +1,6 @@
 # 🛠️ Open-Source Systems Contribution Pipeline
 
-> **Rule**: Resolve & submit **1 open-source issue per day** alongside core curriculum work.  
+> **Rule**: Resolve & submit **1 open-source issue per day** alongside core curriculum work.
 > **Target Domains**: Vector Search Engines, Low-Level SIMD Kernels, Numerical Precision, Memory Alignment, and Quantization.
 
 ---

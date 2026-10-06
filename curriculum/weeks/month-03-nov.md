@@ -18,7 +18,6 @@
 
 ---
 
-
 ### 📚 Master Reference Textbooks (Month 3)
 * **Microarchitectural Performance**: Denis Bakhvalov, *Performance Analysis and Tuning on Modern CPUs (2nd ed, 2024)* — Top-Down Microarchitecture Analysis (TMAM), PMU hardware counters, and port contention profiling.
 * **Bitwise Systems Engineering**: Henry S. Warren Jr., *Hacker's Delight (2nd ed)* — Popcount trees, bit-matrix permutations, and branch-free SIMD index arithmetic.
@@ -73,8 +72,8 @@
 * ❌ **Do NOT** compute full exact $N \times M$ all-pairs MaxSim for the entire corpus—always prune candidates using centroid lists or MUVERA.
 * ❌ **Do NOT** get lost in infinite Gaussian elimination matrix algebra by hand—understand $A = LU$ and 4 fundamental subspaces conceptually.
 
-> **📝 Essay 9 (Fri Nov 6)**: *"Beyond Single Vectors: The Linear Algebra, Matrix Decompositions, and SIMD Architecture of ColBERT Late Interaction"*  
-> **🧠 DL Builder Track (Tue/Wed)**: ColBERT dual encoder + MaxSim + tiny Margin MSE. **Knowledge distillation**: implement cross-encoder reranker score as teacher → distill into bi-encoder student (MSE on logits). Compare embedding quality vs Week 6 InfoNCE-only training.  
+> **📝 Essay 9 (Fri Nov 6)**: *"Beyond Single Vectors: The Linear Algebra, Matrix Decompositions, and SIMD Architecture of ColBERT Late Interaction"*
+> **🧠 DL Builder Track (Tue/Wed)**: ColBERT dual encoder + MaxSim + tiny Margin MSE. **Knowledge distillation**: implement cross-encoder reranker score as teacher → distill into bi-encoder student (MSE on logits). Compare embedding quality vs Week 6 InfoNCE-only training.
 > **🔬 Month 3 Sundays**: BEIR or MS MARCO **slice** (dense + ColBERT MaxSim + **MUVERA** FDE candidates).
 
 ---
@@ -212,14 +211,10 @@
 * ❌ **Do NOT** attempt full SVD matrix solvers from scratch—use Eigen or NumPy SVD for offline whitening matrices.
 
 > **📝 Essay 12 (Fri Nov 27)**: *"Singular Value Decomposition and Composed Vector Indexes: Pareto Evaluation of IVF-PQ and HNSW-SQ vs Faiss"*
-> **🚀 Month 3 Builder Milestone (Fri Nov 27)**: End-to-end RaBitQ 1-bit/2-bit SIMD execution & LSM-tree benchmark verification.  
+> **🚀 Month 3 Builder Milestone (Fri Nov 27)**: End-to-end RaBitQ 1-bit/2-bit SIMD execution & LSM-tree benchmark verification.
 > **🧠 DL Builder Track (Tue/Wed, required)**: Export Week 6 InfoNCE bi-encoder with `torch.onnx.export` (dynamic batch). Run **ONNX Runtime** `InferenceSession`; max abs / cosine error vs PyTorch on a fixed batch. Emit 768-D query/doc `.fvecs` via ORT and re-ingest into `HNSWSQIndex` / `IVFPQIndex` — confirm Recall@10 matches the Week 8 Fri PyTorch path within tolerance. **No** onnxruntime C++ inside `secan` (nanobind + ORT Python is enough). ColBERT ONNX = stretch later.
 
 ---
-
-
----
-
 ## ⚡  High-Dimensional Embedding Engine (Month 03 Focus)
 > **Theme**: *ColBERT Multi-Vector Late-Interaction Engine & Token Quantization*
 * In tandem with  vector search at 20:30–23:00, the 23:00–00:00 night block develops the standalone C++ multimodal embedding runtime , providing zero-copy feature ingestion directly into .

@@ -22,7 +22,6 @@ Weekdays remain **`secan`/CUDA** and **DL builder tracks (Tue/Wed 06:30–08:30)
 
 ---
 
-
 ### 📚 Master Reference Textbooks (Month 5)
 * **Microarchitectural Performance**: Denis Bakhvalov, *Performance Analysis and Tuning on Modern CPUs (2nd ed, 2024)* — Top-Down Microarchitecture Analysis (TMAM), PMU hardware counters, and port contention profiling.
 * **Bitwise Systems Engineering**: Henry S. Warren Jr., *Hacker's Delight (2nd ed)* — Popcount trees, bit-matrix permutations, and branch-free SIMD index arithmetic.
@@ -77,7 +76,7 @@ Weekdays remain **`secan`/CUDA** and **DL builder tracks (Tue/Wed 06:30–08:30)
 * ❌ **Do NOT** maintain per-thread dynamic candidate queues in global memory—warp-cooperative bitfield visited masks eliminate queue allocation.
 * ❌ **Do NOT** write measure-theoretic probability proofs for SLLN—grasp the Chebyshev proof for WLLN and move on.
 
-> **📝 Essay 17 (Fri Jan 1)**: *"Warp-Scale Graph Traversal: Overcoming Random Memory Access Bottlenecks in GPU CAGRA"*  
+> **📝 Essay 17 (Fri Jan 1)**: *"Warp-Scale Graph Traversal: Overcoming Random Memory Access Bottlenecks in GPU CAGRA"*
 
 ---
 
@@ -220,10 +219,6 @@ Weekdays remain **`secan`/CUDA** and **DL builder tracks (Tue/Wed 06:30–08:30)
 > **🚀 Month 5 Builder Milestone (Fri Jan 22)**: End-to-end GPU CAGRA warp search benchmark verification.
 
 ---
-
----
-
-
 ---
 
 ## ⚡  High-Dimensional Embedding Engine (Month 05 Focus)

@@ -1,6 +1,6 @@
 # 🚀 Week 06 Execution Playbook
 
-> **Theme**: Lagrange Multipliers, Multiple Integrals, Jacobians & BERT from Scratch  
+> **Theme**: Lagrange Multipliers, Multiple Integrals, Jacobians & BERT from Scratch
 > **Calendar Dates**: Sat Oct 10 – Fri Oct 16 (2026-10-10 to 2026-10-16)
 > **Parent Month Dashboard**: [Month 2 (Oct 2026)](month-02-oct.md) · **Block**: I — Vector Search Engine
 
@@ -77,26 +77,21 @@
 * `[ ]` **Core**: Implement $k$-means clustering in C++ with $k$-means++ centroid seeding for a single subspace.
 * `⭐ Optional / Stretch`: Implement multi-threaded parallel $k$-means Lloyd iteration across CPU cores.
 
-
 ### 🔹 Tuesday, Tue Oct 13 ([`Day 039`](../days/month-02/day-039-2026-10-13.md))
 * `[ ]` **Core**: Implement `ProductQuantizer` ($D \to M$ subspaces, $M \times 256$ codebooks); encode $N$ vectors into $N \times M$ bytes.
 * `⭐ Optional / Stretch`: Measure quantization distortion $\|x - \tilde{x}\|^2$ as a function of subspace count $M \in \{8, 16, 32, 64\}$.
-
 
 ### 🔹 Wednesday, Wed Oct 14 ([`Day 040`](../days/month-02/day-040-2026-10-14.md))
 * `[ ]` **Core**: Implement Asymmetric Distance Computation (`float LUT[M][256]`); compute query distances via $M$ byte lookups.
 * `⭐ Optional / Stretch`: Implement 4-way unrolled ADC distance loop accumulating 4 database vectors simultaneously into registers.
 
-
 ### 🔹 Thursday, Thu Oct 15 ([`Day 041`](../days/month-02/day-041-2026-10-15.md))
 * `[ ]` **Core**: Implement asymmetric 1-bit Binary Quantization (FP32 query dot product with 1-bit binary codes).
 * `⭐ Optional / Stretch`: Derive the exact expectation of inner-product error under 1-bit quantization for isotropic Gaussian vectors.
 
-
 ### 🔹 Friday, Fri Oct 16 ([`Day 042`](../days/month-02/day-042-2026-10-16.md))
 * `[ ]` **Core**: Wire `IVFPQIndex` composed index (coarse IVF centroids + PQ ADC inside inverted lists); benchmark Recall@10 on SIFT subset.
 * `⭐ Optional / Stretch`: Compare memory footprint and search latency of IVFFlat vs IVFPQ (e.g. 128 bytes/vector vs 16 bytes/vector).
-
 
 ---
 
@@ -135,7 +130,6 @@ Before the Friday article or release, save the run manifest and raw JSON/CSV, ad
 * **Focus**: Geometry-Aware Anisotropic Polar Quantization: The Adaptive Ellipsoidal Lattice & Unbiased QJL Proof
 * **Workspace**: `research/2026-10-anisotropic-quantization/`
 * **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.
-
 
 ---
 

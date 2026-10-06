@@ -1,6 +1,6 @@
 # 🚀 Week 07 Execution Playbook
 
-> **Theme**: Matrix Calculus, Backpropagation Foundations, ScaNN Anisotropic Loss & FastScan  
+> **Theme**: Matrix Calculus, Backpropagation Foundations, ScaNN Anisotropic Loss & FastScan
 > **Calendar Dates**: Sat Oct 17 – Fri Oct 23 (2026-10-17 to 2026-10-23)
 > **Parent Month Dashboard**: [Month 2 (Oct 2026)](month-02-oct.md) · **Block**: I — Vector Search Engine
 
@@ -77,26 +77,21 @@
 * `[ ]` **Core**: Implement ScaNN anisotropic loss in `ProductQuantizer` with parallel penalty weight $h=5.0$.
 * `⭐ Optional / Stretch`: Sweep $h \in [1.0, 10.0]$ on 768-D text embeddings to find optimal MIPS Recall@10 vs $h$.
 
-
 ### 🔹 Tuesday, Tue Oct 20 ([`Day 046`](../days/month-02/day-046-2026-10-20.md))
 * `[ ]` **Core**: Implement plain Binary Quantization (`_mm256_movemask_ps`) with Hamming distance via `_mm_popcnt_u64`.
 * `⭐ Optional / Stretch`: Benchmark SIMD popcount (`_mm512_popcnt_epi64` / AVX-512 VPOPCNTDQ) vs hardware instruction `popcnt`.
-
 
 ### 🔹 Wednesday, Wed Oct 21 ([`Day 047`](../days/month-02/day-047-2026-10-21.md))
 * `[ ]` **Core**: Implement 4-bit PQ codebook generator ($k=16$ centroids per subspace, packing 2 codes per byte).
 * `⭐ Optional / Stretch`: Analyze code distribution uniformity across the 16 centroid buckets to detect subspace collapse.
 
-
 ### 🔹 Thursday, Thu Oct 22 ([`Day 048`](../days/month-02/day-048-2026-10-22.md))
 * `[ ]` **Core**: Implement AVX2 FastScan kernel executing 16-centroid distance lookups **entirely in-register** via `_mm256_shuffle_epi8` (PSHUFB).
 * `⭐ Optional / Stretch`: Measure L1 cache read bandwidth during FastScan to prove table lookups do not hit cache memory.
 
-
 ### 🔹 Friday, Fri Oct 23 ([`Day 049`](../days/month-02/day-049-2026-10-23.md))
 * `[ ]` **Core**: Implement Optimized Product Quantization (OPQ) orthogonal rotation matrix $R$ before PQ (compute $R$ via numerical Orthogonal Procrustes / SVD rotation matrix in offline codebook training); benchmark Recall@10 vs plain PQ on SIFT.
 * `⭐ Optional / Stretch`: Implement residual PQ (2-stage PQ where stage 2 quantizes stage 1 residual error vector).
-
 
 ---
 
@@ -137,7 +132,6 @@ Before the Friday article or release, save the run manifest and raw JSON/CSV, ad
 * **Focus**: Geometry-Aware Anisotropic Polar Quantization: The Adaptive Ellipsoidal Lattice & Unbiased QJL Proof
 * **Workspace**: `research/2026-10-anisotropic-quantization/`
 * **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.
-
 
 ---
 

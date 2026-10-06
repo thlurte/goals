@@ -1,6 +1,6 @@
 # 🚀 Week 16 Execution Playbook
 
-> **Theme**: VS Spine Capstone — GPU IVF + DiskANN + Hybrid WAND  
+> **Theme**: VS Spine Capstone — GPU IVF + DiskANN + Hybrid WAND
 > **Calendar Dates**: Sat Dec 19 – Fri Dec 25 (2026-12-19 to 2026-12-25)
 > **Parent Month Dashboard**: [Month 4 (Dec 2026)](month-04-dec.md) · **Block**: I — Vector Search Engine
 
@@ -77,26 +77,21 @@
 * `[ ]` **Core**: Implement GPU IVF memory layout: store coarse centroids and jagged inverted list arrays with prefix sum offset table in device memory.
 * `⭐ Optional / Stretch`: Implement zero-copy unified memory (`cudaMallocManaged`) coarse centroid lookup.
 
-
 ### 🔹 Tuesday, Tue Dec 22 ([`Day 109`](../days/month-04/day-109-2026-12-22.md))
 * `[ ]` **Core**: Implement GPU coarse cell routing kernel finding top-`nprobe` nearest centroids followed by warp-cooperative inverted list scanning.
 * `⭐ Optional / Stretch`: Profile warp divergence when inverted lists have non-uniform lengths; implement dynamic warp-balancing scheduler.
-
 
 ### 🔹 Wednesday, Wed Dec 23 ([`Day 110`](../days/month-04/day-110-2026-12-23.md))
 * `[ ]` **Core**: Implement CUDA stream pipelining overlapping query upload, cell scan, and top-$k$ download. Tag `v1.1-gpu-ivf`.
 * `⭐ Optional / Stretch`: Implement SQ8 integer quantization inside GPU IVF lists to double effective VRAM vector capacity.
 
-
 ### 🔹 Thursday, Thu Dec 24 ([`Day 111`](../days/month-04/day-111-2026-12-24.md))
 * `[ ]` **Core**: Implement Vamana graph construction ($\alpha$-pruning heuristic); implement asynchronous out-of-core SSD vector fetch via Linux `io_uring` with `O_DIRECT` on **Deep10M** (~4 GB core verification dataset; full Deep1B staged for dedicated NVMe).
 * `⭐ Optional / Stretch`: Benchmark `IORING_SETUP_SQPOLL` zero-syscall kernel polling + `IORING_REGISTER_BUFFERS` vs standard `io_uring_enter()` syscall submissions on NVMe random reads.
 
-
 ### 🔹 Friday, Fri Dec 25 ([`Day 112`](../days/month-04/day-112-2026-12-25.md))
 * `[ ]` **Core**: Implement **SINDI (Sparse Inverted Index for Learned Sparse Vectors / SPLADE / BGE-M3)** with SIMD dot-product accumulation + BM25 inverted index with Block-Max WAND early termination; fuse dense ANN candidates with sparse scores via Reciprocal Rank Fusion (RRF). Tag `v1.2-vs-spine-complete`.
 * `⭐ Optional / Stretch`: Compare retrieval quality (NDCG@10) of RRF rank fusion vs linear weighted score interpolation ($\alpha \cdot S_{\text{dense}} + (1-\alpha) \cdot S_{\text{sparse}}$) on BEIR.
-
 
 ---
 
@@ -125,13 +120,12 @@ Before the Friday article or release, save the run manifest and raw JSON/CSV, ad
   5. **Key Takeaway**: Architectural rule of thumb for production AI systems.
 
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
-* **Task**: 
+* **Task**:
 
 ### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
 * **Focus**: The Memory Wall in Multimodal Late Interaction: Baseline GPU Kernel Profiling
 * **Workspace**: `research/2026-12-flashattn-vamana/`
 * **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.
-
 
 ---
 

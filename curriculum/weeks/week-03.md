@@ -1,6 +1,6 @@
 # 🚀 Week 03 Execution Playbook
 
-> **Theme**: Integration, Fundamental Theorem, Cache Hierarchy & Scalar Autograd Engine  
+> **Theme**: Integration, Fundamental Theorem, Cache Hierarchy & Scalar Autograd Engine
 > **Calendar Dates**: Sat Sep 19 – Fri Sep 25 (2026-09-19 to 2026-09-25)
 > **Parent Month Dashboard**: [Month 1 (Sep 2026)](month-01-sep.md) · **Block**: I — Vector Search Engine
 
@@ -74,26 +74,21 @@
 * `[x]` **Core**: Profile SIFT1M cache miss rates with `perf stat`; compute working set size for $10^5$ and $10^6$ vectors.
 * `⭐ Optional / Stretch`: Write a tiny benchmark that measures the cache memory mountain (bandwidth vs stride size from 4KB to 64MB).
 
-
 ### 🔹 Tuesday, Tue Sep 22 ([`Day 018`](../days/month-01/day-018-2026-09-22.md))
 * `[x]` **Core**: Implement `linear_scan_tiled()` partitioning vector database into L2-cache tiles ($256\text{KB}$).
 * `⭐ Optional / Stretch`: Experiment with multi-level cache tiling (L1 tile inside L2 tile) for multi-query batches.
-
 
 ### 🔹 Wednesday, Wed Sep 23 ([`Day 019`](../days/month-01/day-019-2026-09-23.md))
 * `[x]` **Core**: Insert `_mm_prefetch` instructions in linear scan loop; benchmark prefetch lookahead distance $K \in \{4, 8, 16, 32\}$.
 * `⭐ Optional / Stretch`: Test non-temporal prefetch hints (`_MM_HINT_NTA`) vs temporal (`_MM_HINT_T0`) on datasets that exceed L3 cache.
 
-
 ### 🔹 Thursday, Thu Sep 24 ([`Day 020`](../days/month-01/day-020-2026-09-24.md))
 * `[x]` **Core**: Implement offline unit-sphere pre-normalization for cosine distance so queries reduce to pure inner product `ip()`.
 * `⭐ Optional / Stretch`: Implement in-place SIMD normalization kernel using `_mm256_div_ps` and compare throughput.
 
-
 ### 🔹 Friday, Fri Sep 25 ([`Day 021`](../days/month-01/day-021-2026-09-25.md))
 * `[x]` **Core**: Add `madvise(MADV_HUGEPAGE)` transparent hugepage allocation on dataset mmap buffer + implement **FLANN `RandomizedKdTree` baseline** with Best-Bin-First search.
 * `⭐ Optional / Stretch`: Benchmark KD-Tree speedup vs brute-force across $D \in \{2, 8, 16, 64, 128\}$ to demonstrate the high-D curse of dimensionality phase transition.
-
 
 ---
 

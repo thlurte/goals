@@ -1,6 +1,6 @@
 # 🤖 AGENTS.md — Mission, Operating Model & Engineering Context
 
-> **To Any AI Agent / Pair Programmer Working with Ahmed**:  
+> **To Any AI Agent / Pair Programmer Working with Ahmed**:
 > Read this document first. It establishes who the user is, the strict philosophical principles governing this repository, what has been built so far, and the exact roadmap for future execution. Do not deviate from these operating standards.
 
 ---

@@ -18,7 +18,6 @@
 
 ---
 
-
 ### 📚 Master Reference Textbooks (Month 2)
 * **Microarchitectural Performance**: Denis Bakhvalov, *Performance Analysis and Tuning on Modern CPUs (2nd ed, 2024)* — Top-Down Microarchitecture Analysis (TMAM), PMU hardware counters, and port contention profiling.
 * **Bitwise Systems Engineering**: Henry S. Warren Jr., *Hacker's Delight (2nd ed)* — Popcount trees, bit-matrix permutations, and branch-free SIMD index arithmetic.
@@ -78,7 +77,7 @@
 * ❌ **Do NOT** spend time writing 2-bit or 3-bit scalar quantizers—focus strictly on SQ8 (1 byte) and SQ4 (1 nibble).
 * ❌ **Do NOT** try to implement Product Quantization (PQ) yet—PQ starts next week (Week 6).
 
-> **📝 Essay 5 (Fri Oct 9)**: *"Low-Bit Compression Under Outliers: Gradients, Percentile Clipping, and SIMD Integer Saturation"*  
+> **📝 Essay 5 (Fri Oct 9)**: *"Low-Bit Compression Under Outliers: Gradients, Percentile Clipping, and SIMD Integer Saturation"*
 > **🧠 DL Builder Track (Tue/Wed)**: ViT patch embed + `[CLS]`.
 
 ---
@@ -124,7 +123,7 @@
 * ❌ **Do NOT** implement symmetric PQ distance computation (SDC)—asymmetric ADC (FP32 query vs PQ codes) is strictly superior for query accuracy.
 * ❌ **Do NOT** build a custom multi-threading pool for PQ encoding—standard `std::jthread` or OpenMP parallel loop is sufficient.
 
-> **📝 Essay 6 (Fri Oct 16)**: *"Constrained Optimization and Subspace Codebooks: Lagrange Multipliers in Product Quantization"*  
+> **📝 Essay 6 (Fri Oct 16)**: *"Constrained Optimization and Subspace Codebooks: Lagrange Multipliers in Product Quantization"*
 > **🧠 DL Builder Track (Tue/Wed)**: BERT + InfoNCE + **in-batch negatives**; export 768-D `.fvecs`. **Also**: implement `AdamW` optimizer from scratch ($m_t, v_t$ moment estimates, bias correction, **weight decay decoupling** from L2 reg). Train BERT with your AdamW; verify loss curve matches `torch.optim.AdamW`. **Hard negative mining**: retrieve BM25 top-100 per query, sample hard negatives from rank 10–100 for InfoNCE training.
 
 ---
@@ -175,7 +174,7 @@
 * ❌ **Do NOT** spend time proving classical 3D fluid or physical vector theorems (Stokes/Divergence)—all physics vector calculus has been purged in favor of neural network matrix calculus.
 * ❌ **Do NOT** write a custom matrix optimizer for OPQ—a basic alternating least squares (ALS) rotation or residual PQ is 100% fine.
 
-> **📝 Essay 7 (Fri Oct 23)**: *"Anisotropic Loss and In-Register SIMD Lookups: Directional Error Weighting and FastScan PSHUFB"*  
+> **📝 Essay 7 (Fri Oct 23)**: *"Anisotropic Loss and In-Register SIMD Lookups: Directional Error Weighting and FastScan PSHUFB"*
 > **🧠 DL Builder Track (Tue/Wed)**: MRL nested dims on tiny corpus.
 
 ---
@@ -221,14 +220,10 @@
 * ❌ **Do NOT** premature optimize the priority queues—standard `std::priority_queue` is fine (bounded flat heaps are added in Week 12).
 * ❌ **Do NOT** implement SVD whitening transforms this week—whitening requires full Linear Algebra SVD (Week 12).
 
-> **📝 Essay 8 (Fri Oct 30)**: *"Graph Laplacians, Hubness Skewness, and Navigable Small-World Routing: Building HNSW from Scratch"*  
+> **📝 Essay 8 (Fri Oct 30)**: *"Graph Laplacians, Hubness Skewness, and Navigable Small-World Routing: Building HNSW from Scratch"*
 > **🚀 Month 2 Builder Milestone (Fri Oct 30)**: End-to-end HNSW + FastScan SQ8/PQ benchmark verification across SIFT1M and 768-D text embeddings.
 
 ---
-
-
----
-
 ## ⚡  High-Dimensional Embedding Engine (Month 02 Focus)
 > **Theme**: *Dense C++ Embedding Engine, SIMD GEMM, Activations & Tokenizer*
 * In tandem with  vector search at 20:30–23:00, the 23:00–00:00 night block develops the standalone C++ multimodal embedding runtime , providing zero-copy feature ingestion directly into .

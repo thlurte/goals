@@ -20,7 +20,6 @@
 
 ---
 
-
 ### 📚 Master Reference Textbooks (Month 4)
 * **Microarchitectural Performance**: Denis Bakhvalov, *Performance Analysis and Tuning on Modern CPUs (2nd ed, 2024)* — Top-Down Microarchitecture Analysis (TMAM), PMU hardware counters, and port contention profiling.
 * **Bitwise Systems Engineering**: Henry S. Warren Jr., *Hacker's Delight (2nd ed)* — Popcount trees, bit-matrix permutations, and branch-free SIMD index arithmetic.
@@ -77,7 +76,7 @@
 * ❌ **Do NOT** use CUDA dynamic parallelism (launching kernels from inside kernels)—keep control flow on host CPU.
 * ❌ **Do NOT** hand-write complex combinatorial counting proofs on paper—master permutations and combinations, then move to probability rules.
 
-> **📝 Essay 13 (Fri Dec 4)**: *"The SIMT Execution Model: Why Naive GPU Distance Kernels Lose to CPU AVX2"*  
+> **📝 Essay 13 (Fri Dec 4)**: *"The SIMT Execution Model: Why Naive GPU Distance Kernels Lose to CPU AVX2"*
 
 ---
 
@@ -166,7 +165,7 @@
 * ❌ **Do NOT** attempt FlashAttention-2 loop inversion this week—FA-2 is specifically scheduled for Month 7 (Week 25).
 * ❌ **Do NOT** write inline PTX for Tensor Cores (`mma.sync`)—standard FP32/FP16 shared memory arithmetic is the foundation.
 
-> **📝 Essay 15 (Fri Dec 18)**: *"IO-Aware Tiling and Online Softmax: Constructing a FlashAttention-1 CUDA Kernel from First Principles"*  
+> **📝 Essay 15 (Fri Dec 18)**: *"IO-Aware Tiling and Online Softmax: Constructing a FlashAttention-1 CUDA Kernel from First Principles"*
 > **🧠 DL Builder Track (Tue/Wed)**: Online softmax reference vs `torch.softmax`.
 
 ---
@@ -215,10 +214,6 @@
 > **🚀 Month 4 Builder Milestone (Fri Dec 25)**: End-to-end FlashAttention & Vamana GPU kernel benchmark verification.
 
 ---
-
----
-
-
 ---
 
 ## ⚡  High-Dimensional Embedding Engine (Month 04 Focus)

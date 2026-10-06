@@ -1,6 +1,6 @@
 # 🚀 Week 17 Execution Playbook
 
-> **Theme**: Limit Theorems, LLN, CLT, Inequalities & CAGRA GPU Graphs  
+> **Theme**: Limit Theorems, LLN, CLT, Inequalities & CAGRA GPU Graphs
 > **Calendar Dates**: Sat Dec 26 – Fri Jan 1 (2026-12-26 to 2027-01-01)
 > **Parent Month Dashboard**: [Month 5 (Jan 2027)](month-05-jan.md) · **Block**: II — GPU Specialization
 
@@ -77,26 +77,21 @@
 * `[ ]` **Core**: Design GPU graph layout: store HNSW graph adjacency in GPU memory as a fixed-degree CSR array with padding.
 * `⭐ Optional / Stretch`: Derive Chernoff bounds on the probability of graph search getting trapped in local minima.
 
-
 ### 🔹 Tuesday, Tue Dec 29 ([`Day 116`](../days/month-05/day-116-2026-12-29.md))
 * `[ ]` **Core**: Implement GPU graph search kernel: 1 warp per query; 32 threads evaluate 32 candidate neighbors in parallel.
 * `⭐ Optional / Stretch`: Profile warp divergence during neighbor list filtering with Nsight Compute (`ncu`).
-
 
 ### 🔹 Wednesday, Wed Dec 30 ([`Day 117`](../days/month-05/day-117-2026-12-30.md))
 * `[ ]` **Core**: Implement warp-level visited set using `__ballot_sync` bitfields; implement warp-level top-$k$ beam with shuffle min-reduction.
 * `⭐ Optional / Stretch`: Implement hash-based visited table in shared memory for graphs with degree $M > 64$.
 
-
 ### 🔹 Thursday, Thu Dec 31 ([`Day 118`](../days/month-05/day-118-2026-12-31.md))
 * `[ ]` **Core**: Launch multi-query parallel graph search grid; benchmark QPS vs CPU HNSW implementation.
 * `⭐ Optional / Stretch`: Measure the impact of thread block occupancy on memory latency hiding during random graph pointer chasing.
 
-
 ### 🔹 Friday, Fri Jan 1 ([`Day 119`](../days/month-05/day-119-2027-01-01.md))
 * `[ ]` **Core**: Add shared memory caching for frequently visited upper-layer hub nodes to eliminate global memory roundtrips.
 * `⭐ Optional / Stretch`: Compute graph degree centrality to identify top-64 hub nodes for permanent SRAM staging.
-
 
 ---
 
@@ -125,13 +120,12 @@ Before the Friday article or release, save the run manifest and raw JSON/CSV, ad
   5. **Key Takeaway**: Architectural rule of thumb for production AI systems.
 
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
-* **Task**: 
+* **Task**:
 
 ### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
 * **Focus**: The Online Max Reduction Invariant & In-SRAM Accumulation Mechanics
 * **Workspace**: `research/2027-01-cagra-warp-search/`
 * **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.
-
 
 ---
 

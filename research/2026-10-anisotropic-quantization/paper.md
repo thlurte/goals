@@ -10,7 +10,6 @@
 
 ## 1. Executive Abstract & Falsifiable Question
 
-
 **Core Falsifiable Question**:
 > *Does decomposing quantization error into parallel component $\mathbf{e}_\parallel$ and orthogonal component $\mathbf{e}_\perp$ with an anisotropic penalty weight $h \ge 5.0$ preserve $>95\%$ Top-1 Maximum Inner Product Search (MIPS) recall on anisotropic $768\text{-D}$ dense embeddings while compressing vectors by $32\times$ (down to 16–32 bytes/target)?*
 

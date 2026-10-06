@@ -1,6 +1,6 @@
 # 🚀 Week 09 Execution Playbook
 
-> **Theme**: Vector Spaces, Four Fundamental Subspaces, ColBERT & SIMD MaxSim  
+> **Theme**: Vector Spaces, Four Fundamental Subspaces, ColBERT & SIMD MaxSim
 > **Calendar Dates**: Sat Oct 31 – Fri Nov 6 (2026-10-31 to 2026-11-06)
 > **Parent Month Dashboard**: [Month 3 (Nov 2026)](month-03-nov.md) · **Block**: I — Vector Search Engine
 
@@ -77,26 +77,21 @@
 * `[ ]` **Core**: Implement batch HNSW construction inserting $N$ vectors in a single pass; measure build throughput improvement over sequential inserts.
 * `⭐ Optional / Stretch`: Implement thread-local entry point queues to avoid global lock contention during bulk insertion.
 
-
 ### 🔹 Tuesday, Tue Nov 3 ([`Day 060`](../days/month-03/day-060-2026-11-03.md))
 * `[ ]` **Core**: Implement **PiPNN / HashPrune** parallel batch graph builder (partition dataset into overlapping clusters, compute intra-partition candidate edges with dense GEMM, prune edges with HashPrune).
 * `⭐ Optional / Stretch`: Benchmark PiPNN construction speedup ($10\times$) and Recall@10 against standard sequential beam-search insertion on SIFT1M.
-
 
 ### 🔹 Wednesday, Wed Nov 4 ([`Day 061`](../days/month-03/day-061-2026-11-04.md))
 * `[ ]` **Core**: Implement SIMD AVX2 MaxSim kernel computing inner product of 8 document tokens in parallel with horizontal max reduction.
 * `⭐ Optional / Stretch`: Implement 2D register tiling computing MaxSim between 4 query tokens and 8 document tokens simultaneously.
 
-
 ### 🔹 Thursday, Thu Nov 5 ([`Day 062`](../days/month-03/day-062-2026-11-05.md))
 * `[ ]` **Core**: Build token centroid inverted index clustering document token embeddings into $C=32\text{K}$ centroids.
 * `⭐ Optional / Stretch`: Analyze inverted list length distribution and prune stop-word token centroids (e.g. centroids containing > 5% of all tokens).
 
-
 ### 🔹 Friday, Fri Nov 6 ([`Day 063`](../days/month-03/day-063-2026-11-06.md))
 * `[ ]` **Core**: Implement centroid candidate pruning: query tokens retrieve candidate documents from centroid lists; score candidates with MaxSim.
 * `⭐ Optional / Stretch`: Profile candidate reduction ratio (e.g. evaluating top-1000 candidates vs full corpus MaxSim scan).
-
 
 ---
 
@@ -131,7 +126,6 @@ Before the Friday article or release, save the run manifest and raw JSON/CSV, ad
 * **Focus**: Sub-2-Bit In-Register SIMD Execution & Manuscript Submission Freeze
 * **Workspace**: `research/2026-11-rabitq-lsm/`
 * **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.
-
 
 ---
 

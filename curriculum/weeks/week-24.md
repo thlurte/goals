@@ -1,6 +1,6 @@
 # 🚀 Week 24 Execution Playbook
 
-> **Theme**: Spectral Synthesis, CLI Scaffold & GPU Occupancy  
+> **Theme**: Spectral Synthesis, CLI Scaffold & GPU Occupancy
 > **Calendar Dates**: Sat Feb 13 – Fri Feb 19 (2027-02-13 to 2027-02-19)
 > **Parent Month Dashboard**: [Month 6 (Feb 2027)](month-06-feb.md) · **Block**: II — GPU Specialization
 
@@ -77,26 +77,21 @@
 * `[ ]` **Core**: Build unified CLI framework (`secan build`, `secan search`, `secan bench`) with argument parsing.
 * `⭐ Optional / Stretch`: Implement JSON-formatted stdout output mode for easy benchmarking script integration.
 
-
 ### 🔹 Tuesday, Tue Feb 16 ([`Day 165`](../days/month-06/day-165-2027-02-16.md))
 * `[ ]` **Core**: Tune GPU thread block occupancy using `__launch_bounds__` directives across all IVF and graph search kernels.
 * `⭐ Optional / Stretch`: Analyze register spilling to local memory in Nsight Compute and tune max registers per thread (`-maxrregcount`).
-
 
 ### 🔹 Wednesday, Wed Feb 17 ([`Day 166`](../days/month-06/day-166-2027-02-17.md))
 * `[ ]` **Core**: Implement fused GPU distance calculation + top-$k$ warp selection kernel eliminating intermediate global memory roundtrip.
 * `⭐ Optional / Stretch`: Compare fused kernel throughput against separated distance + CUB DeviceRadixSort.
 
-
 ### 🔹 Thursday, Thu Feb 18 ([`Day 167`](../days/month-06/day-167-2027-02-18.md))
 * `[ ]` **Core**: Enable `-Wall -Wextra -Wpedantic -Werror`; resolve all compiler warnings across CPU and GPU codebases.
 * `⭐ Optional / Stretch`: Run `clang-tidy` static analyzer across all header and source files in `secan`.
 
-
 ### 🔹 Friday, Fri Feb 19 ([`Day 168`](../days/month-06/day-168-2027-02-19.md))
 * `[ ]` **Core**: Finalize Month 6 experimental benchmarks; verify all automated test suites pass with 0 errors.
 * `⭐ Optional / Stretch`: Profile end-to-end P99 latency jitter under variable query concurrency ($QPS \in [100, 10000]$).
-
 
 ---
 
@@ -125,13 +120,12 @@ Before the Friday article or release, save the run manifest and raw JSON/CSV, ad
   5. **Key Takeaway**: Architectural rule of thumb for production AI systems.
 
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
-* **Task**: 
+* **Task**:
 
 ### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
 * **Focus**: Bare-Metal CUTLASS Implementation with Hopper/Blackwell TMA & Warp Specialization
 * **Workspace**: `research/2027-02-predicate-aware-graphs/`
 * **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.
-
 
 ---
 

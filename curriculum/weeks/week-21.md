@@ -1,6 +1,6 @@
 # 🚀 Week 21 Execution Playbook
 
-> **Theme**: Convex Optimization, KKT, ColPali GPU Path  
+> **Theme**: Convex Optimization, KKT, ColPali GPU Path
 > **Calendar Dates**: Sat Jan 23 – Fri Jan 29 (2027-01-23 to 2027-01-29)
 > **Parent Month Dashboard**: [Month 6 (Feb 2027)](month-06-feb.md) · **Block**: II — GPU Specialization
 
@@ -77,26 +77,21 @@
 * `[ ]` **Core**: Implement GPU MaxSim kernel in CUTLASS computing batched GEMM followed by warp row-max and column-sum reduction.
 * `⭐ Optional / Stretch`: Derive the dual formulation of token alignment under convex regularized transportation costs.
 
-
 ### 🔹 Tuesday, Tue Jan 26 ([`Day 144`](../days/month-06/day-144-2027-01-26.md))
 * `[ ]` **Core**: Fuse GPU MaxSim query scoring and candidate document filtering into a single CUDA pipeline.
 * `⭐ Optional / Stretch`: Implement fused In-SRAM MaxSim kernel accumulating row-max scores directly in GPU shared memory without materializing the intermediate $L_q \times L_d$ matrix in global VRAM (benchmark vs naive GEMM on 1030 ColPali tokens/page).
-
 
 ### 🔹 Wednesday, Wed Jan 27 ([`Day 145`](../days/month-06/day-145-2027-01-27.md))
 * `[ ]` **Core**: Implement GPU NN-Descent base-layer $k$-NN graph construction algorithm exchanging neighbor candidates across thread blocks.
 * `⭐ Optional / Stretch`: Measure convergence speed (graph recall vs iteration count) on 100K embedding vectors.
 
-
 ### 🔹 Thursday, Thu Jan 28 ([`Day 146`](../days/month-06/day-146-2027-01-28.md))
 * `[ ]` **Core**: Implement 2-opt edge pruning heuristic in GPU NN-Descent graph construction.
 * `⭐ Optional / Stretch`: Verify Slater's condition for constrained graph sparsification optimization problems.
 
-
 ### 🔹 Friday, Fri Jan 29 ([`Day 147`](../days/month-06/day-147-2027-01-29.md))
 * `[ ]` **Core**: Ingest ColPali multimodal embeddings (text query $\to$ multi-vector document pages); evaluate visual search Recall@10.
 * `⭐ Optional / Stretch`: Route ColPali visual multi-vectors through MUVERA FDEs for instant 1-stage MIPS candidate retrieval.
-
 
 ---
 
@@ -131,7 +126,6 @@ Before the Friday article or release, save the run manifest and raw JSON/CSV, ad
 * **Focus**: Bare-Metal CUTLASS Implementation with Hopper/Blackwell TMA & Warp Specialization
 * **Workspace**: `research/2027-02-predicate-aware-graphs/`
 * **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.
-
 
 ---
 

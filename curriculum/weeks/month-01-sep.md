@@ -22,7 +22,6 @@
 
 ---
 
-
 ### 📚 Master Reference Textbooks (Month 1)
 * **Microarchitectural Performance**: Denis Bakhvalov, *Performance Analysis and Tuning on Modern CPUs (2nd ed, 2024)* — Top-Down Microarchitecture Analysis (TMAM), PMU hardware counters, and port contention profiling.
 * **Bitwise Systems Engineering**: Henry S. Warren Jr., *Hacker's Delight (2nd ed)* — Popcount trees, bit-matrix permutations, and branch-free SIMD index arithmetic.
@@ -81,7 +80,7 @@
 * ❌ **Do NOT** run exact scans on all 1,000,000 vectors $\times$ 10,000 queries if scalar latency exceeds 60s—use the 100K subset for rapid iteration.
 * ❌ **Do NOT** let DL spill beyond Tue/Wed 06:30–08:30 mornings—keep weekday evenings dedicated to professional workday and night C++20 implementation.
 
-> **📝 Essay 1 (Fri Sep 11)**: *"The Geometry of High-Dimensional Retrieval: Trigonometric Projections, NDCG Ranking, and Hardware Performance Counters"*  
+> **📝 Essay 1 (Fri Sep 11)**: *"The Geometry of High-Dimensional Retrieval: Trigonometric Projections, NDCG Ranking, and Hardware Performance Counters"*
 > **🧠 DL Builder Track (Tue/Wed)**: `uv init transformers-pytorch`; SDPA + causal mask.
 
 ---
@@ -126,7 +125,7 @@
 * ❌ **Do NOT** worry if AVX-512 is unsupported on your CPU—the `#ifdef __AVX512F__` macro ensures portable fallback to AVX2.
 * ❌ **Do NOT** write a custom memory allocator for vector alignments—`alignas(64)` or `posix_memalign` is sufficient.
 
-> **📝 Essay 2 (Fri Sep 18)**: *"Breaking Dependency Chains: Multi-Register SIMD Kernels"*  
+> **📝 Essay 2 (Fri Sep 18)**: *"Breaking Dependency Chains: Multi-Register SIMD Kernels"*
 > **🧠 DL Builder Track (Tue/Wed)**: MHA + GQA; Pre-LN vs Post-LN.
 
 ---
@@ -172,7 +171,7 @@
 * ❌ **Do NOT** implement complex custom thread pools for tiled scans yet—single-threaded cache tiling establishes the baseline.
 * ❌ **Do NOT** solve advanced trigonometric integrals with multiple integration-by-parts iterations on paper—grasp the reduction formula concept and stop.
 
-> **📝 Essay 3 (Fri Sep 25)**: *"Integrals, Accumulation, and the Physics of CPU Caches"*  
+> **📝 Essay 3 (Fri Sep 25)**: *"Integrals, Accumulation, and the Physics of CPU Caches"*
 > **🧠 DL Builder Track (Tue/Wed)**: **Micrograd autograd engine** (~150 lines): `Value` class with `+`, `*`, `tanh`, `exp`, `backward()` using topological sort. Verify gradient of a tiny 2-layer MLP matches PyTorch. **Then** implement Pre-LN encoder + FFN with manual `backward()` for `Linear` layer (compare `dW` vs `param.grad`).
 
 ---
@@ -215,7 +214,7 @@
 * ❌ **Do NOT** implement Product Quantization (PQ) inside IVF lists yet—Month 1 is strictly IVFFlat (PQ is built in Month 2).
 * ❌ **Do NOT** try to implement GPU kernels this week—GPU is scheduled for Month 4 (Weeks 13–16).
 
-> **📝 Essay 4 (Fri Oct 2)**: *"From Euler's Formula to RoPE and Voronoi Cells"*  
+> **📝 Essay 4 (Fri Oct 2)**: *"From Euler's Formula to RoPE and Voronoi Cells"*
 > **🚀 Month 1 Builder Milestone (Fri Oct 2)**: **🧠 DL**: RoPE + SwiGLU + CausalLM + CE + naive KV. **Also**: implement `SGD` optimizer from scratch (momentum $v_t = \beta v_{t-1} + \nabla\mathcal{L}$, $\theta_t = \theta_{t-1} - \alpha v_t$); train CausalLM with your SGD, verify loss matches `torch.optim.SGD`.
 
 ---

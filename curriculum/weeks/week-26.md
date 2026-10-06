@@ -1,6 +1,6 @@
 # 🚀 Week 26 Execution Playbook
 
-> **Theme**: PagedAttention polish on naive KV  
+> **Theme**: PagedAttention polish on naive KV
 > **Calendar Dates**: Sat Feb 27 – Fri Mar 5 (2027-02-27 to 2027-03-05)
 > **Parent Month Dashboard**: [Month 7 (Mar 2027)](month-07-mar.md) · **Block**: II — GPU Specialization
 
@@ -76,26 +76,21 @@
 * `[ ]` **Core**: Benchmark Paged KV cache vs naive contiguous KV buffer under continuous autoregressive token generation; measure physical VRAM savings.
 * `⭐ Optional / Stretch`: Implement copy-on-write page table semantics for parallel beam search decoding.
 
-
 ### 🔹 Tuesday, Tue Mar 2 ([`Day 179`](../days/month-07/day-179-2027-03-02.md))
 * `[ ]` **Core**: Document technical architecture trade-off: memory paging (vLLM) vs extreme coordinate quantization (TurboQuant).
 * `⭐ Optional / Stretch`: Implement 3-bit PolarQuant dequantization on-the-fly in PagedAttention SRAM staging.
-
 
 ### 🔹 Wednesday, Wed Mar 3 ([`Day 180`](../days/month-07/day-180-2027-03-03.md))
 * `[ ]` **Core**: Polish heterogeneous CPU↔GPU memory fallback: dynamically migrate cold KV pages to host RAM over PCIe.
 * `⭐ Optional / Stretch`: Measure page eviction latency and throughput over PCIe 4.0/5.0 bus.
 
-
 ### 🔹 Thursday, Thu Mar 4 ([`Day 181`](../days/month-07/day-181-2027-03-04.md))
 * `[ ]` **Core**: Benchmark serving throughput across concurrency levels $B \in [1, 1000]$; plot tokens/second vs concurrent sequence count.
 * `⭐ Optional / Stretch`: Profile memory manager overhead (block allocation and free list synchronization) under high request churn.
 
-
 ### 🔹 Friday, Fri Mar 5 ([`Day 182`](../days/month-07/day-182-2027-03-05.md))
 * `[ ]` **Core**: Finalize Month 6 paper figures and experimental artifacts; freeze publication document.
 * `⭐ Optional / Stretch`: Prepare automated benchmark reproduction scripts with Docker / shell runner.
-
 
 ---
 
@@ -124,7 +119,7 @@ Before the Friday article or release, save the run manifest and raw JSON/CSV, ad
   5. **Key Takeaway**: Architectural rule of thumb for production AI systems.
 
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
-* **Task**: 
+* **Task**:
 
 ### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
 * **Focus**: Nsight Compute Roofline Validation & Production Engine Release

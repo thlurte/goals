@@ -1,7 +1,7 @@
 # 🚀 Week 01 Execution Playbook
 
-> **Theme**: Pure Trigonometry, Limits, Derivatives & Measurement  
-> **Calendar Dates**: Sat Sep 5 – Fri Sep 11 (2026-09-05 to 2026-09-11)  
+> **Theme**: Pure Trigonometry, Limits, Derivatives & Measurement
+> **Calendar Dates**: Sat Sep 5 – Fri Sep 11 (2026-09-05 to 2026-09-11)
 > **Parent Month Dashboard**: [Month 1 (Sep 2026)](month-01-sep.md) · **Block**: I — Vector Search Engine
 
 | | | |

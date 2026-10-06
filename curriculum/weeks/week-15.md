@@ -1,6 +1,6 @@
 # 🚀 Week 15 Execution Playbook
 
-> **Theme**: Continuous Distributions, PDF, Gaussians & FlashAttention Scaffold  
+> **Theme**: Continuous Distributions, PDF, Gaussians & FlashAttention Scaffold
 > **Calendar Dates**: Sat Dec 12 – Fri Dec 18 (2026-12-12 to 2026-12-18)
 > **Parent Month Dashboard**: [Month 4 (Dec 2026)](month-04-dec.md) · **Block**: I — Vector Search Engine
 
@@ -77,26 +77,21 @@
 * `[ ]` **Core**: Implement CUDA thread grid configuration for FlashAttention ($B \times H$ blocks); allocate shared memory tiles for $Q, K, V$.
 * `⭐ Optional / Stretch`: Derive the exact IO complexity reduction of FlashAttention ($O(N^2 d^2 / M)$ HBM accesses vs standard attention $O(N d + N^2)$).
 
-
 ### 🔹 Tuesday, Tue Dec 15 ([`Day 102`](../days/month-04/day-102-2026-12-15.md))
 * `[ ]` **Core**: Scaffold shared memory layout for $Q_{block}, K_{block}, V_{block}, O_{block}$; implement coalesced global-to-shared memory staging loop.
 * `⭐ Optional / Stretch`: Implement double-buffered shared memory loading (`cuda::memcpy_async` in CUDA 11+) to overlap GMEM loads with computation.
-
 
 ### 🔹 Wednesday, Wed Dec 16 ([`Day 103`](../days/month-04/day-103-2026-12-16.md))
 * `[ ]` **Core**: Implement block GEMM tile multiplication $S_{ij} = Q_i K_j^T / \sqrt{d}$ in shared memory; verify numerical parity against `torch.matmul`.
 * `⭐ Optional / Stretch`: Apply shared memory swizzling (XOR indexing) to eliminate bank conflicts during matrix transpose $K^T$ lookups.
 
-
 ### 🔹 Thursday, Thu Dec 17 ([`Day 104`](../days/month-04/day-104-2026-12-17.md))
 * `[ ]` **Core**: Implement register online softmax algorithm: track running row max $\tilde{m}$, running normalizer $\ell$, and dynamically rescale accumulator $O$.
 * `⭐ Optional / Stretch`: Verify numerical overflow protection of online softmax on inputs containing extreme logits ($> 10^4$).
 
-
 ### 🔹 Friday, Fri Dec 18 ([`Day 105`](../days/month-04/day-105-2026-12-18.md))
 * `[ ]` **Core**: Package FlashAttention-1 kernel via `torch.utils.cpp_extension`; benchmark forward latency against `torch.nn.functional.scaled_dot_product_attention`.
 * `⭐ Optional / Stretch`: Profile kernel memory throughput in Nsight Compute (`ncu --metrics dram__bytes_read.sum,dram__bytes_write.sum`).
-
 
 ---
 
@@ -131,7 +126,6 @@ Before the Friday article or release, save the run manifest and raw JSON/CSV, ad
 * **Focus**: The Memory Wall in Multimodal Late Interaction: Baseline GPU Kernel Profiling
 * **Workspace**: `research/2026-12-flashattn-vamana/`
 * **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.
-
 
 ---
 

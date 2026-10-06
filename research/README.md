@@ -1,6 +1,6 @@
 # Empirical Systems Benchmarking: Profiling, Microarchitecture & Systems Retrieval
 
-Instead of academic paper writing and theoretical manuscript deadlines, the empirical systems track is engineered around **rigorous, reproducible hardware benchmarking in `secan` and GPU kernels**. 
+Instead of academic paper writing and theoretical manuscript deadlines, the empirical systems track is engineered around **rigorous, reproducible hardware benchmarking in `secan` and GPU kernels**.
 
 All empirical data collected during the weekday morning builder blocks (**Mondays & Thursdays 06:30–08:30**) directly fuels the **28 Weekly Technical Articles** drafted and published every **Friday morning (06:30–08:30)** (see [`curriculum/essays.md`](../curriculum/essays.md)).
 

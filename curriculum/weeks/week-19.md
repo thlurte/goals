@@ -1,6 +1,6 @@
 # 🚀 Week 19 Execution Playbook
 
-> **Theme**: Mathematical Statistics, MLE, PagedAttention & KV Compression  
+> **Theme**: Mathematical Statistics, MLE, PagedAttention & KV Compression
 > **Calendar Dates**: Sat Jan 9 – Fri Jan 15 (2027-01-09 to 2027-01-15)
 > **Parent Month Dashboard**: [Month 5 (Jan 2027)](month-05-jan.md) · **Block**: II — GPU Specialization
 
@@ -77,26 +77,21 @@
 * `[ ]` **Core**: Implement PyTorch `BlockTable` data structure mapping logical sequence tokens to physical GPU memory pages (block size 16).
 * `⭐ Optional / Stretch`: Simulate KV cache memory fragmentation under random sequence length arrivals (verify $>60\%$ memory savings).
 
-
 ### 🔹 Tuesday, Tue Jan 12 ([`Day 130`](../days/month-05/day-130-2027-01-12.md))
 * `[ ]` **Core**: Implement PagedAttention CUDA kernel resolving physical $K, V$ block pointers on-the-fly via block table during attention decoding.
 * `⭐ Optional / Stretch`: Add support for variable sequence lengths in a single batched kernel launch.
-
 
 ### 🔹 Wednesday, Wed Jan 13 ([`Day 131`](../days/month-05/day-131-2027-01-13.md))
 * `[ ]` **Core**: Build unified `GpuIndex` wrapper managing device memory lifecycle, async streams, and RAII cleanup.
 * `⭐ Optional / Stretch`: Design a PolarQuant 3-bit KV compression sketch storing quantized $K$ cache blocks inside the PagedAttention block table.
 
-
 ### 🔹 Thursday, Thu Jan 14 ([`Day 132`](../days/month-05/day-132-2027-01-14.md))
 * `[ ]` **Core**: Implement heterogeneous CPU+GPU fallback pipeline: retain hot dataset in GPU VRAM and overflow in host RAM; merge top-$k$ results.
 * `⭐ Optional / Stretch`: Measure end-to-end query latency as a function of GPU VRAM partition fraction (0% to 100%).
 
-
 ### 🔹 Friday, Fri Jan 15 ([`Day 133`](../days/month-05/day-133-2027-01-15.md))
 * `[ ]` **Core**: Benchmark query batch sizes $B \in [1, 1000]$; plot CPU AVX2 vs GPU latency crossover curve.
 * `⭐ Optional / Stretch`: Compute the exact QPS break-even point where GPU throughput justifies PCIe transfer latency overhead.
-
 
 ---
 
@@ -125,13 +120,12 @@ Before the Friday article or release, save the run manifest and raw JSON/CSV, ad
   5. **Key Takeaway**: Architectural rule of thumb for production AI systems.
 
 ### 🧠 Deep Learning Track (Tue/Wed 06:30–08:30 Morning Builder)
-* **Task**: 
+* **Task**:
 
 ### 🔬 Empirical Systems & Benchmarking Focus (Mon/Thu 06:30–08:30 Morning Builder)
 * **Focus**: The Online Max Reduction Invariant & In-SRAM Accumulation Mechanics
 * **Workspace**: `research/2027-01-cagra-warp-search/`
 * **Artifact Target**: Empirical benchmark and profiling data feeding into Friday's technical articles.
-
 
 ---
 
