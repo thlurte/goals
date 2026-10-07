@@ -56,26 +56,14 @@ public:
         return *this;
     }
 
-    // Allocate aligned chunk from arena
+    // TODO 1: Implement template-based in-place bump allocation
+    // 1. Calculate alignment padding: padding = (alignof(T) - (current_addr % alignof(T))) % alignof(T)
+    // 2. Check if offset_ + padding + sizeof(T) > capacity_ (throw std::bad_alloc if exceeded)
+    // 3. Update offset_ and construct object in-place using placement-new: new (target_ptr) T(args...)
     template <typename T, typename... Args>
     T* allocate(Args&&... args) {
-        size_t alignment = alignof(T);
-        size_t size = sizeof(T);
-
-        // Align current offset
-        size_t current_addr = reinterpret_cast<size_t>(buffer_ + offset_);
-        size_t padding = (alignment - (current_addr % alignment)) % alignment;
-
-        if (offset_ + padding + size > capacity_) {
-            throw std::bad_alloc(); // Arena out of memory!
-        }
-
-        offset_ += padding;
-        uint8_t* target_ptr = buffer_ + offset_;
-        offset_ += size;
-
-        // Construct in-place
-        return new (target_ptr) T(std::forward<Args>(args)...);
+        // [YOUR CODE HERE]
+        return nullptr;
     }
 
     // O(1) bulk reset of entire arena

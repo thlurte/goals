@@ -41,34 +41,24 @@ public:
     SpscRingBuffer(const SpscRingBuffer&) = delete;
     SpscRingBuffer& operator=(const SpscRingBuffer&) = delete;
 
-    // Push element into ring buffer (Producer thread only)
+    // TODO 1: Implement lock-free push (Producer thread)
+    // 1. Load head with relaxed memory order; load tail with acquire memory order
+    // 2. Check if full: (head - tail) == Capacity (return false if full)
+    // 3. Write item to buffer_[head & (Capacity - 1)]
+    // 4. Store head + 1 with release memory order and return true
     bool push(const T& item) noexcept {
-        const size_t head = head_.load(std::memory_order_relaxed);
-        const size_t tail = tail_.load(std::memory_order_acquire);
-
-        // Check if full
-        if ((head - tail) == Capacity) {
-            return false; // Buffer full
-        }
-
-        buffer_[head & (Capacity - 1)] = item;
-        head_.store(head + 1, std::memory_order_release);
-        return true;
+        // [YOUR CODE HERE]
+        return false;
     }
 
-    // Pop element from ring buffer (Consumer thread only)
+    // TODO 2: Implement lock-free pop (Consumer thread)
+    // 1. Load tail with relaxed memory order; load head with acquire memory order
+    // 2. Check if empty: head == tail (return false if empty)
+    // 3. Read item from buffer_[tail & (Capacity - 1)]
+    // 4. Store tail + 1 with release memory order and return true
     bool pop(T& item) noexcept {
-        const size_t tail = tail_.load(std::memory_order_relaxed);
-        const size_t head = head_.load(std::memory_order_acquire);
-
-        // Check if empty
-        if (head == tail) {
-            return false; // Buffer empty
-        }
-
-        item = buffer_[tail & (Capacity - 1)];
-        tail_.store(tail + 1, std::memory_order_release);
-        return true;
+        // [YOUR CODE HERE]
+        return false;
     }
 
     [[nodiscard]] size_t size() const noexcept {

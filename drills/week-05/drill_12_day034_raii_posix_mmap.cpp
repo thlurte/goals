@@ -45,19 +45,18 @@ public:
     MMapFile& operator=(const MMapFile&) = delete;
 
     // TODO 1: Implement Move Constructor
-    MMapFile(MMapFile&& other) noexcept
-        : addr_(std::exchange(other.addr_, nullptr)),
-          length_(std::exchange(other.length_, 0)),
-          fd_(std::exchange(other.fd_, -1)) {}
+    // - Steal addr_, length_, and fd_ from other using std::exchange
+    // - Leave other in a valid empty state (addr_ = nullptr, length_ = 0, fd_ = -1)
+    MMapFile(MMapFile&& other) noexcept 
+        // [YOUR CODE HERE]
+        : addr_(nullptr), length_(0), fd_(-1) {}
 
     // TODO 2: Implement Move Assignment Operator
+    // - Check for self-assignment (this != &other)
+    // - Unmap and close existing resources (unmap_and_close())
+    // - Steal resources from other using std::exchange
     MMapFile& operator=(MMapFile&& other) noexcept {
-        if (this != &other) {
-            unmap_and_close();
-            addr_ = std::exchange(other.addr_, nullptr);
-            length_ = std::exchange(other.length_, 0);
-            fd_ = std::exchange(other.fd_, -1);
-        }
+        // [YOUR CODE HERE]
         return *this;
     }
 

@@ -65,35 +65,21 @@ public:
         }
     }
 
+    // TODO 1: Implement capacity reservation (spill from inline storage to heap)
+    // 1. Allocate new heap memory: malloc(new_cap * sizeof(T))
+    // 2. Move existing elements from old storage (inline or heap) into new heap buffer
+    // 3. Destroy old elements and free old heap storage if is_heap_ was true
+    // 4. Update heap_ptr_, capacity_, and set is_heap_ = true
     void reserve(size_t new_cap) {
-        if (new_cap <= capacity_) return;
-
-        T* new_buf = static_cast<T*>(std::malloc(new_cap * sizeof(T)));
-        if (!new_buf) throw std::bad_alloc();
-
-        // Move existing elements to new heap buffer
-        T* src = is_heap_ ? heap_ptr_ : inline_storage_;
-        for (size_t i = 0; i < size_; ++i) {
-            new (&new_buf[i]) T(std::move(src[i]));
-            src[i].~T();
-        }
-
-        if (is_heap_) {
-            std::free(heap_ptr_);
-        }
-
-        heap_ptr_ = new_buf;
-        capacity_ = new_cap;
-        is_heap_ = true;
+        // [YOUR CODE HERE]
     }
 
+    // TODO 2: Implement push_back with automatic SSO-to-heap growth
+    // 1. If size_ == capacity_, double capacity via reserve(capacity_ * 2)
+    // 2. Construct element in-place at index size_ using placement-new
+    // 3. Increment size_
     void push_back(const T& val) {
-        if (size_ == capacity_) {
-            reserve(capacity_ * 2);
-        }
-        T* dst = is_heap_ ? heap_ptr_ : inline_storage_;
-        new (&dst[size_]) T(val);
-        ++size_;
+        // [YOUR CODE HERE]
     }
 
     void clear() noexcept {
