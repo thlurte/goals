@@ -8,3 +8,10 @@ build/
 *.out
 drills/day*_drill_*
 !drills/*.cpp
+
+# Compiled drill binaries
+drills/**/drill[0-9]*
+*.o
+*.a
+*.so
+
