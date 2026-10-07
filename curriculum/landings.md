@@ -20,36 +20,59 @@ Nothing slimmed is optional. Every row is **required** on the landing week.
 | **Week 8→12** | Whitening / query-side PCA | **Week 12 Mon** | After SVD |
 | *(frontier)* | ACORN + tombstones + NUMA + **pre/post/range** | **Week 22** | On-call filters |
 
-## VS composition landings (the specialty)
+## Core C++ Engine Hard Landings: `secan` & `cennan`
 
-REST out of scope. Cluster shard/replica = stretch only.
+The dual-engine C++ architecture consists of [`secan`](https://github.com/thlurte/secan) (Vector Search & Indexing Engine) and [`cennan`](https://github.com/thlurte/cennan) (Embedding & Latent Representation Engine).
 
-| Need | Lands (required) |
-|:---|:---|
-| **Randomized KD-Trees (FLANN baseline)** + Best-Bin-First vs Brute Force | **Week 3 Fri** |
-| **IP/MIPS + spherical k-means IVF** + list-size histogram / rebalance | **Week 4 Thu–Fri** |
-| **Asymmetric PQ/BQ** (FP32 query vs quantized db) + **OPQ / residual PQ** | **Week 6 Fri + Week 7 Fri** |
-| **768-D text Recall@10 vs QPS** (golden pre-staged `.fvecs` + DL model parity) | **Week 8 Fri** |
-| **Batch HNSW / graph build** + **PiPNN HashPrune** (Fast GEMM Graph Build) | **Week 9 Mon–Tue** |
-| **MUVERA FDE** (asymmetric) → IP MIPS → MaxSim re-rank vs PLAID | **Week 10 Mon–Wed** |
-| **TurboQuant 1@k** vs RaBitQ/PQ (GloVe or 768-D) | **Week 10 Fri** |
-| **`IVFPQIndex` + `HNSWSQIndex`**; Pareto vs Faiss/hnswlib on **SIFT + 768-D** | **Week 12 Thu–Fri** |
-| **ONNX → ORT** dense bi-encoder → `.fvecs` → `secan` (PyTorch parity) | **Week 12 Thu (Builder Integration)** |
-| **Vamana prune** + compressed RAM + `io_uring` raw (**Deep10M** core; Deep1B NVMe tier) | **Week 16 Thu** |
-| **SINDI** (Learned Sparse) + **BM25** + **RRF** + linear $\alpha$ | **Week 16 Fri** |
-| **Pre- vs post-filter vs ACORN**; **range**; selectivity vs recall | **Week 22 Mon + Fri** |
-| BEIR / MS MARCO **slice** (dense + ColBERT + **MUVERA**) | **Week 10 Thu (Builder Integration)** |
-| REST API | **Skip** |
+### 1. `secan` Retrieval & Indexing Engine Landings
+*REST out of scope. Multi-threaded C++20 / SIMD / GPU.*
 
-## Deep Learning Landings (Tue & Wed Mornings 06:30–08:30)
+| Milestone / Capability | Target Landing | Microarchitectural Mechanism / Evidence |
+|:---|:---|:---|
+| **Randomized KD-Trees (FLANN baseline)** | **Week 3 Fri** | Best-Bin-First vs Brute Force baseline ($D=128$) |
+| **Spherical $k$-Means & IVF-Flat Index** | **Week 4 Thu–Fri** | Multi-probe Voronoi routing + `alignas(64)` inverted lists |
+| **Scalar Quantization (SQ8) & ADC** | **Week 5 Wed** | $4\times$ memory shrink + AVX2 asymmetric distance kernel |
+| **AVX-512 VNNI INT8 & Hamming Kernels** | **Week 5 Thu** | `_mm512_dpbusd_epi32` (4x throughput) & `_mm512_popcnt_epi64` |
+| **4-Bit Scalar Quantization (SQ4)** | **Week 5 Thu** | Nibble packing + 2-stage SQ8 $\to$ FP32 candidate re-ranker |
+| **Asymmetric PQ / FastScan PSHUFB** | **Week 6 Fri** | 4-bit LUT shuffle distance in single clock cycle |
+| **Optimized PQ (OPQ) & Residual PQ** | **Week 7 Fri** | Covariance alignment rotation to minimize quantization MSE |
+| **768-D Text Recall@10 vs QPS Sweep** | **Week 8 Fri** | Golden pre-staged `.fvecs` + DL model parity |
+| **Batch HNSW Graph Construction** | **Week 9 Mon–Tue** | PiPNN HashPrune + Fast GEMM Graph Construction |
+| **MUVERA FDE & MaxSim Re-ranker** | **Week 10 Mon–Wed** | Fixed-Dimensional Encoding $\to$ IP MIPS $\to$ MaxSim vs PLAID |
+| **TurboQuant 1@k vs RaBitQ/PQ** | **Week 10 Fri** | 1-bit polar quantization comparison on GloVe / 768-D |
+| **Composed `IVFPQIndex` + `HNSWSQIndex`** | **Week 12 Thu–Fri** | Pareto frontier vs Faiss/hnswlib on SIFT1M & 768-D |
+| **DiskANN / Vamana Graph + `io_uring`** | **Week 16 Thu** | $\alpha$-pruning + compressed RAM tier + NVMe asynchronous I/O |
+| **Hybrid IR (SINDI + BM25 + RRF)** | **Week 16 Fri** | Block-Max WAND + Reciprocal Rank Fusion ($\alpha$-tuned) |
+| **ACORN Filtered Graph Search** | **Week 22 Mon + Fri** | Multi-label predicate filtering + range queries |
+
+---
+
+### 2. `cennan` C++ Embedding & Inference Engine Landings
+*Pure C++20 forward inference runtime feeding embeddings with zero copy into `secan`.*
+
+| Milestone / Capability | Target Landing | Implementation / Verification Deliverable |
+|:---|:---|:---|
+| **Zero-Copy POSIX `MMapLoader`** | **Week 4 Mon** | `madvise` page hints (`MADV_SEQUENTIAL`) + slice views |
+| **Vectorized Normalizations (`norm.h`)** | **Week 4 Wed** | AVX2+FMA `RMSNorm` (LLaMA) & `LayerNorm` (BERT/ViT) |
+| **Vectorized In-Place Activations (`activations.h`)** | **Week 5 Wed** | `gelu_inplace` (tanh approx) + `swiglu_forward` + `silu` |
+| **Register-Blocked GEMM (`gemm.h`)** | **Week 5 Fri** | 2D register-blocked $4 \times 16$ unrolled AVX2+FMA GEMM |
+| **Safetensors 8-Byte JSON Header Parser** | **Week 6 Tue** | Zero-copy weight tensor ingestion from `.safetensors` |
+| **Standalone C++ Tokenizer (`tokenizer/`)** | **Week 7 Tue** | Standalone C++ WordPiece & BPE tokenizer |
+| **C++ Dense Bi-Encoder (MiniLM / BGE)** | **Week 8 Wed** | End-to-end text token $\to$ 768-D embedding pipeline |
+| **In-SRAM Multi-Vector MaxSim Kernel** | **Week 9 Wed** | ColBERT v2 $[B, L, D]$ late interaction in L1/L2 cache |
+| **Vision Transformer Patch Embedder** | **Week 11 Wed** | C++ patch extraction & projection for ViT/ColPali |
+
+---
+
+## Deep Learning Track Landings (Tue & Wed Mornings 06:30–08:30)
 
 | Week | DL Architecture & Implementation (Tue & Wed Mornings 06:30–08:30) |
 |:---|:---|
 | **W1 (Tue Sep 8 / Wed Sep 9)** | SDPA + causal mask (`uv init transformers-pytorch`) & unit tests |
 | **W2 (Tue Sep 15 / Wed Sep 16)** | MHA + **GQA**; Pre-LN vs Post-LN |
-| **W3 (Tue Sep 22 / Wed Sep 23)** | **🔗 Micrograd autograd engine** (~150 lines) + Pre-LN encoder + FFN + manual `backward()` for `Linear` |
+| **W3 (Tue Sep 22 / Wed Sep 23)** | **Micrograd autograd engine** (~150 lines) + Pre-LN encoder + FFN + manual `backward()` for `Linear` |
 | **W4 (Tue Sep 29 / Wed Sep 30)** | **RoPE + SwiGLU + CausalLM + CE + naive KV** + **SGD from scratch** (momentum, verify vs `torch.optim.SGD`) |
-| **W5 (Tue Oct 6 / Wed Oct 7)** | ViT patch embed + `[CLS]` |
+| **W5 (Tue Oct 6 / Wed Oct 7)** | **Vision Transformer (ViT)** patch embed + `[CLS]` + Pre-LN block |
 | **W6 (Tue Oct 13 / Wed Oct 14)** | BERT + **InfoNCE** + **in-batch negatives** + **hard negative mining** (BM25 top-100); **AdamW from scratch**; export 768-D `.fvecs` for Week 8 Fri |
 | **W7 (Tue Oct 20 / Wed Oct 21)** | Matryoshka Representation Learning (MRL) loss & dynamic dimension slicing |
 | **W8 (Tue Oct 27 / Wed Oct 28)** | MRL / Anisotropic Projection Evaluation & Embedding Geometry Diagnostics |
@@ -59,6 +82,7 @@ REST out of scope. Cluster shard/replica = stretch only.
 | **W21 (Tue Jan 26 / Wed Jan 27)** | CLIP projector + ColPali head |
 | **W23 (Tue Feb 9 / Wed Feb 10)** | Stretch: re-run same ORT graph on ARM host (with NEON week) |
 | **Remaining Weeks** | Continuous transformer scaling, multi-modal tokenization, and GPU inference pipelines |
+
 
 ---
 ---

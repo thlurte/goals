@@ -1,20 +1,20 @@
 # Vector Search Engine & AI Systems Specialization
-
 > **28 weeks / 7 months** (Sep 2026 – Mar 2027).
-> **Months 1–4 = Vector Search Engine (`secan`).** **Months 5–7 = GPU Specialization (CUDA/CUTLASS).**
+> **Dual Engine Architecture**:
+> - **[`secan`](https://github.com/thlurte/secan)**: Vector Search, Indexing, Quantization & Retrieval Engine in C++20 / SIMD / GPU.
+> - **[`cennan`](https://github.com/thlurte/cennan)**: C++ Embedding, Multimodal Latent Representation & Inference Runtime.
 > **Deep Learning Track**: Tuesday & Wednesday mornings (06:30–08:30 builder track).
-> **No REST API** in `secan` (nanobind + CLI). Distributed CPU cluster = stretch.
+> **Zero-Noise Doctrine**: No web/REST boilerplate (nanobind + CLI). Pure microarchitectural focus.
 
 ## Start here
 
 | Doc | Use when |
 |:---|:---|
-| [**Curriculum index**](curriculum/README.md) | Cadence, pillars, month map |
-| [**Hard landings**](curriculum/landings.md) | What must ship which week |
-| [**This month’s weeks**](curriculum/weeks/month-01-sep.md) | Day-by-day tables, actions, stretch & time traps |
-| [**Architecture roadmap**](curriculum/roadmap.md) | Macro `secan` blueprint |
+| [**Hard landings**](curriculum/landings.md) | What must ship which week across `secan`, `cennan`, and DL track |
+| [**Architecture roadmap**](curriculum/roadmap.md) | Macro systems blueprint & dual-engine architecture |
+| [**Weekly execution playbooks**](curriculum/weeks/week-05.md) | Week-by-week daily runbooks, actions, and deliverables |
+| [**Drills & Practice Suites**](drills/README.md) | 62+ standalone C++20 and Python microarchitectural drills |
 | [**Systems Canon & Bibliography**](resources/systems_canon.md) | Primary sources, microarchitecture manuals, textbooks & seminal papers |
-| [**limbed + ggmbed**](projects/embed-runtimes.md) | Inspection holes + 6-month fix timeline (30–60 min/wk) |
 
 ## Entry prerequisites (before Sep 1)
 
