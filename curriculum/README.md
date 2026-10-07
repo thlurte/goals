@@ -59,36 +59,4 @@
 | **Feb 2027** (Month 6: Jan 23 – Feb 19) | [month-06-feb.md](weeks/month-06-feb.md) | [Week 21](weeks/week-21.md) · [Week 22](weeks/week-22.md) · [Week 23](weeks/week-23.md) · [Week 24](weeks/week-24.md) | [Days 141–168](days/month-06/) |
 | **Mar 2027** (Month 7: Feb 20 – Mar 19) | [month-07-mar.md](weeks/month-07-mar.md) | [Week 25](weeks/week-25.md) · [Week 26](weeks/week-26.md) · [Week 27](weeks/week-27.md) · [Week 28](weeks/week-28.md) | [Days 169–196](days/month-07/) |
 
-## 📚 Authoritative Graduate Reference Textbooks
-
-The curriculum anchors all empirical systems and theoretical proofs to 6 authoritative graduate-level texts:
-
-| Domain | Master Text | Authors | Focus in Curriculum & Flagship Implementations |
-|:---|:---|:---|:---|
-| **High-Dim Probability** | *High-Dimensional Probability: An Introduction with Applications in Data Science* (CUP 2018) | Roman Vershynin | **Months 4–5**: Sub-Gaussian vectors, concentration of measure on $\mathcal{S}^{d-1}$, Johnson-Lindenstrauss lemma, metric entropy, covering numbers. Directly grounds **Flagship Implementation 1 (GAPQ in `secan`)**. |
-| **Matrix Analysis** | *Matrix Analysis* (2nd ed, CUP 2012) | Roger A. Horn & Charles R. Johnson | **Months 3–4, 6**: Spectral theorem, Courant-Fischer minimax, singular value decomposition (SVD), Weyl's perturbation bounds, Perron-Frobenius theory for graph Laplacians. |
-| **Statistical Inference** | *Statistical Inference* (2nd ed, Duxbury 2001) | George Casella & Roger L. Berger | **Month 5**: Principles of data reduction, sufficiency, likelihood ratio tests, Cramér-Rao lower bounds for retrieval sensitivity under extreme quantization. |
-| **Computer Architecture** | *Computer Architecture: A Quantitative Approach* (6th ed, Morgan Kaufmann 2017) | John L. Hennessy & David A. Patterson | **Months 1–4, 7**: Memory hierarchy design, instruction-level parallelism, dynamic branch prediction, vector/SIMD/GPU microarchitectures, warehouse-scale computing. |
-| **Systems Performance** | *Systems Performance: Enterprise and the Cloud* (2nd ed, Addison-Wesley 2020) | Brendan Gregg | **Months 1, 4, 7**: CPU PMU hardware counters, instruction cache vs data cache misses, memory bus saturation, Linux disk IO, `perf stat`/`perf record`, and flame graphs. |
-| **GPU Architecture** | *Programming Massively Parallel Processors: A Hands-on Approach* (4th ed, 2022) | David B. Kirk, Wen-mei W. Hwu, Izzat El Hajj | **Months 4–7**: CUDA thread/warp hierarchy, shared memory tiling, bank conflicts, warp divergence, in-register shuffles, and FlashAttention kernel mechanics for **Flagship Implementation 2 (FlashMaxSim in `secan`)**. |
-
-## Pillars
-
-```
- ┌──────────────────────────────────────────────────────────────────────────────────────────────────┐
- │                          PILLAR 1: PURE MATHEMATICS (8.0 HRS/WEEKEND — SAT & SUN)                │
- │ • Sat & Sun 09:00–13:00: Deep theory, derivations, problem sets, and whiteboard proofs           │
- │ • Sep: Trig + Calc · Oct: Multivariable · Nov: Linear Algebra · Dec: Probability + Concentration │
- │ • Jan: Limit theorems / stats · Feb: Convex + spectral · Mar: GPU synthesis                      │
- └────────────────────────┬─────────────────────────────────────────┬───────────────────────────────┘
-                          │                                         │
-                          ▼                                         ▼
- ┌────────────────────────────────────────┐     ┌───────────────────────────────────────────────────┐
- │   PILLAR 2: BUILDER TRACK (Mornings)   │     │  PILLAR 3: secan CORE (Mon–Fri Nights 20:30–23:00)│
- │ • 05:30–06:30: Daily systems reading   │────►│ • SIMD, quant, HNSW, IVF, DiskANN, LSM, WAND      │
- │ • 06:30–08:30: DL / Research / Essay   │     │ • ColBERT / PLAID / MUVERA FDE→MIPS               │
- │ • Tue & Wed: DL from scratch           │     │ • IVF-PQ / HNSW-SQ · FA / PagedAttention          │
- └────────────────────────────────────────┘     └───────────────────────────────────────────────────┘
-```
-
 Root index: [`../README.md`](../README.md).
