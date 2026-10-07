@@ -27,17 +27,6 @@
 | **VRAM** | BERT/ColBERT/ViT expect a GPU; CPU-only = tiny synthetic runs. |
 | **Tooling** | CMake 3.20+, C++20, `perf`, `uv`, Python 3.11+, Git. |
 
-## 28 Weekly Technical Articles & Systems Publishing
-
-Rather than superficial academic paper publishing deadlines, real-world systems engineering is demonstrated through **28 weekly, publication-grade technical lab-notes and systems articles** drafted every Friday morning (06:30–08:30) and grounded directly in empirical benchmark sweeps, cache profiling, and implementation insights.
-
-* Weekday Morning Builder Rhythm:
-  * **Monday (06:30–08:30)**: Hardware Profiling & Benchmark Sweeps (`secan` / microarchitecture).
-  * **Tuesday (06:30–08:30)**: Deep Learning Track (Architecture & Tensor Shapes Part 1).
-  * **Wednesday (06:30–08:30)**: Deep Learning Track (Autograd, Training Loops & Tests Part 2).
-  * **Thursday (06:30–08:30)**: DL / Vector Retrieval Integration & Profiling (`secan` + DL).
-  * **Friday (06:30–08:30)**: Weekly Technical Article: Drafting & Publishing.
-
 ## Layout
 
 ```
@@ -54,7 +43,7 @@ goals/
 │       └── month-0N/day-*.md ← 196 individual daily runbooks
 ├── drills/
 │   ├── README.md             ← systems & DL hands-on micro-drills
-│   ├── day*.cpp / day*.py    ← interactive exercises
+│   ├── week-01/ ... week-06/ ← organized weekly C++ & Python drill suites
 │   └── solutions/            ← reference implementations
 └── resources/
     └── systems_canon.md      ← primary sources, vendor manuals & canonical textbooks
