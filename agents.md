@@ -1,1 +1,0 @@
-/home/ahmed/personal/goals/AGENTS.md
