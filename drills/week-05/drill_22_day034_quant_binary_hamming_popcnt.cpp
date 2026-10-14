@@ -37,7 +37,7 @@ void binarize_vector(const float *src, uint64_t *dst_bits, size_t dim) {
     dst_bits[w] = 0;
   }
 
-  for (size_t i = 0; 0 < dim; ++i) {
+  for (size_t i = 0; i < dim; ++i) {
     if (src[i] >= 0.0f) {
       size_t word_idx = i / 64;
       size_t bit_idx = i % 64;
@@ -60,47 +60,49 @@ uint32_t hamming_distance_64bit(const uint64_t *a_bits, const uint64_t *b_bits,
 
     // total_dist += static_cast<uint32_t>(__builtin_popcountll(diff)); or
     for (size_t j = 0; j < 64; ++j) {
-      if ((diff >> j) & 1)
+      if ((diff >> j) & 1) {
         total_dist++;
+      }
     }
-  }
-  return total_dist;
-}
-
-int main() {
-  std::cout
-      << "--- Drill 22: 1-Bit Binary Quantization & Hardware POPCNT ---\n\n";
-
-  constexpr size_t D = 256; // 256 dimensions = 4 x uint64_t words
-  std::vector<float> vec_a(D), vec_b(D);
-
-  // Populate vectors
-  for (size_t i = 0; i < D; ++i) {
-    vec_a[i] = (i % 2 == 0) ? 1.5f : -1.5f; // Alternating signs: 101010...
-    vec_b[i] = (i % 4 == 0) ? 1.5f : -1.5f; // Sign pattern: 10001000...
+    return total_dist;
   }
 
-  std::vector<uint64_t> bits_a(D / 64, 0);
-  std::vector<uint64_t> bits_b(D / 64, 0);
+  int main() {
+    std::cout
+        << "--- Drill 22: 1-Bit Binary Quantization & Hardware POPCNT ---\n\n";
 
-  binarize_vector(vec_a.data(), bits_a.data(), D);
-  binarize_vector(vec_b.data(), bits_b.data(), D);
+    constexpr size_t D = 256; // 256 dimensions = 4 x uint64_t words
+    std::vector<float> vec_a(D), vec_b(D);
 
-  uint32_t dist = hamming_distance_64bit(bits_a.data(), bits_b.data(), D / 64);
-  std::cout << "Computed Hamming Distance (256-D): " << dist << "\n";
+    // Populate vectors
+    for (size_t i = 0; i < D; ++i) {
+      vec_a[i] = (i % 2 == 0) ? 1.5f : -1.5f; // Alternating signs: 101010...
+      vec_b[i] = (i % 4 == 0) ? 1.5f : -1.5f; // Sign pattern: 10001000...
+    }
 
-  // Count scalar ground truth
-  uint32_t expected_dist = 0;
-  for (size_t i = 0; i < D; ++i) {
-    bool bit_a = (vec_a[i] >= 0.0f);
-    bool bit_b = (vec_b[i] >= 0.0f);
-    if (bit_a != bit_b)
-      expected_dist++;
+    std::vector<uint64_t> bits_a(D / 64, 0);
+    std::vector<uint64_t> bits_b(D / 64, 0);
+
+    binarize_vector(vec_a.data(), bits_a.data(), D);
+    binarize_vector(vec_b.data(), bits_b.data(), D);
+
+    uint32_t dist =
+        hamming_distance_64bit(bits_a.data(), bits_b.data(), D / 64);
+    std::cout << "Computed Hamming Distance (256-D): " << dist << "\n";
+
+    // Count scalar ground truth
+    uint32_t expected_dist = 0;
+    for (size_t i = 0; i < D; ++i) {
+      bool bit_a = (vec_a[i] >= 0.0f);
+      bool bit_b = (vec_b[i] >= 0.0f);
+      if (bit_a != bit_b)
+        expected_dist++;
+    }
+
+    std::cout << "Expected Hamming Distance:         " << expected_dist << "\n";
+    assert(dist == expected_dist && "Hamming distance mismatch!");
+
+    std::cout
+        << "\n✓ Drill 22 Passed: 1-bit BQ and hardware POPCNT verified!\n";
+    return 0;
   }
-
-  std::cout << "Expected Hamming Distance:         " << expected_dist << "\n";
-  assert(dist == expected_dist && "Hamming distance mismatch!");
-
-  std::cout << "\n✓ Drill 22 Passed: 1-bit BQ and hardware POPCNT verified!\n";
-  return 0;
-}
