@@ -1,6 +1,6 @@
-# Week 5: Graph Search Algorithms & Cache-Friendly Layouts (HNSW)
+# Week 5: HNSW Filtered Search, Selectivity Bypass & Cache-Friendly Graph
 > **Dates**: November 16 – November 22, 2026  
-> **Core Focus**: Navigable Small World (NSW) graphs, greedy routing, multi-layer hierarchical navigation, heuristic neighbor selection, and contiguous flattened graph storage.
+> **Core Focus**: HNSW graph traversal, `ConcurrentBitset` integration, **Single-Stage Filtered Search**, and **<2% Low-Selectivity SIMD Flat Bypass**.
 
 ---
 
@@ -26,23 +26,29 @@
 
 ---
 
-### Day 31 (Wed, Nov 18): Hierarchical Multi-Layer Entry Point Navigation
-- 📖 **Reading**: **[Malkov & Yashunin (2018)]** — Algorithm 2 & 3 (Level assignment $l = \lfloor -\ln(\text{uniform}(0,1)) \cdot m_L \rfloor$).
+### Day 31 (Wed, Nov 18): Single-Stage Filtered Search with `ConcurrentBitset`
+- 📖 **Reading**: **Filtered Vector Search Architecture** (Single-stage vs post-filtering; why post-filtering fails when selectivity is low).
 - 💻 **Drills (`day_31_drills.md`)**:
-  1. `drill_31a_random_level_generator.cpp`: Implement geometric random level generator with parameter $m_L = 1 / \ln(M)$. Verify distribution matches expected exponential decay.
-  2. `drill_31b_hierarchical_traversal.cpp`: Implement top-down entry-point navigation: from layer $L_{max}$ down to layer 1, perform greedy routing with $ef=1$ to find entry point for layer 0.
-  3. `drill_31c_hnsw_multi_layer_struct.cpp`: Multi-layer node storage: `Node { std::vector<std::vector<uint32_t>> layer_neighbors; }`.
-- 🛠️ **`secan`**: Implement multi-layer navigation in `secan`.
+  1. `drill_31a_filter_bitset_integration.cpp`: Integrate `ConcurrentBitset` into HNSW `SEARCH-LAYER`:
+     - When exploring neighbor $v$, check `filter_bitset.test(v)`.
+     - If it passes the filter, add it to `results` (top-$k$ candidate heap).
+     - **Crucial Systems Detail**: Even if $v$ fails the filter, it MUST still be added to the `candidates` exploration heap to maintain graph navigation through invalid nodes!
+  2. `drill_31b_filtered_recall_bench.cpp`: Measure recall of single-stage graph filtering across selectivities ($50\%, 20\%, 5\%, 1\%$).
+  3. `drill_31c_graph_disconnection_trap.cpp`: Demonstrate the classic graph disconnection phenomenon: when filter selectivity drops below $2\%$, graph paths become dead ends and recall plummets.
+- 🛠️ **`secan`**: Add `FilteredSearch` API to `secan::index::HnswIndex`.
 
 ---
 
-### Day 32 (Thu, Nov 19): Heuristic Neighbor Selection (Diversity Pruning)
-- 📖 **Reading**: **[Malkov & Yashunin (2018)]** — **Section 3.4** (Algorithm 4: `SELECT-NEIGHBORS-HEURISTIC`).
+### Day 32 (Thu, Nov 19): The <2% Low-Selectivity SIMD Flat Bypass
+- 📖 **Reading**: **Adaptive Filtered Search Strategy** (The industry standard technique used in Milvus / Qdrant to defend against low-selectivity filter collapse).
 - 💻 **Drills (`day_32_drills.md`)**:
-  1. `drill_32a_simple_neighbors_selection.cpp`: Naive top-$M$ closest neighbors selection.
-  2. `drill_32b_heuristic_neighbor_pruning.cpp`: Heuristic neighbor selection: keep neighbor $e$ only if distance from candidate to $e$ is strictly less than distance between $e$ and any previously selected neighbor (triangle inequality diversity pruning).
-  3. `drill_32c_clustering_effect_bench.cpp`: Compare graph navigation efficiency using simple vs heuristic neighbor selection. Show how heuristic eliminates clustering traps.
-- 🛠️ **`secan`**: Implement neighbor pruning heuristic in `secan`.
+  1. `drill_32a_selectivity_estimator.cpp`: Compute filter selectivity: $\text{selectivity} = \text{popcount}(\text{filter\_bitset}) / N$.
+  2. `drill_32b_simd_flat_bypass.cpp`: When $\text{selectivity} < 0.02$ ($< 2\%$):
+     - **Bypass HNSW graph traversal entirely!**
+     - Iterate through surviving bitset indices using `_tzcnt_u64` (trailing zero count bit-hopping).
+     - Score surviving candidates directly with unrolled AVX2 distance kernel.
+  3. `drill_32c_adaptive_switch_benchmark.cpp`: Benchmark adaptive search: show that for $0.5\%$ selectivity, the SIMD Flat Bypass achieves **100% recall and 10x higher QPS** than struggling through the disconnected HNSW graph!
+- 🛠️ **`secan`**: Implement adaptive low-selectivity bypass in `secan/src/search/filtered_search.cpp`.
 
 ---
 
@@ -56,14 +62,14 @@
 
 ---
 
-### Day 34 (Sat, Nov 21): End-to-End HNSW Index Build & Query
+### Day 34 (Sat, Nov 21): Hierarchical Entry Point Navigation & Diversity Heuristic
 - 💻 **Drills (`day_34_drills.md`)**:
-  1. `drill_34a_end_to_end_hnsw.cpp`: Full single-threaded HNSW index build and search on 10,000 vectors ($D=128$).
-  2. `drill_34b_recall_qps_curve.cpp`: Measure Recall@10 vs QPS across $efSearch \in \{16, 32, 64, 128, 256\}$.
-  3. `drill_34c_parallel_hnsw_build.cpp`: Multi-threaded index insertion using fine-grained locks or your `ThreadPool`.
-- 🛠️ **`secan`**: Benchmark `secan` HNSW on SIFT1M subset. Verify Recall@10 $> 0.95$.
+  1. `drill_34a_random_level_generator.cpp`: Geometric random level assignment $l = \lfloor -\ln(\text{uniform}(0,1)) \cdot m_L \rfloor$.
+  2. `drill_34b_heuristic_neighbor_pruning.cpp`: Heuristic neighbor selection (triangle inequality diversity pruning).
+  3. `drill_34c_end_to_end_hnsw_bench.cpp`: Full multi-layer HNSW build and search on 50,000 vectors ($D=128$).
+- 🛠️ **`secan`**: End-to-end HNSW verification with filtered search in `secan`.
 
 ---
 
-### Day 35 (Sun, Nov 22): Timed Graph Search Exam (No Notes)
-- ⏱️ **45-minute timed coding exam**: Write `greedy_search` and `SEARCH-LAYER` with two priority queues from a blank file with zero compiler warnings.
+### Day 35 (Sun, Nov 22): Timed Filtered HNSW Exam (No Notes)
+- ⏱️ **45-minute timed coding exam**: Write `SEARCH-LAYER` with `ConcurrentBitset` attribute filtering AND the $<2\%$ selectivity SIMD flat bypass from a blank file with zero compiler warnings.

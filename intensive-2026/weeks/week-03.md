@@ -1,11 +1,11 @@
-# Week 3: SIMD Intrinsics, Instruction-Level Parallelism & Vectorization
+# Week 3: SIMD Intrinsics, Instruction-Level Parallelism & FastScan
 > **Dates**: November 2 – November 8, 2026  
-> **Core Focus**: AVX2 & AVX-512 register sets, instruction latencies & throughputs, ILP accumulator unrolling, shuffle reductions, masked loads, and branchless popcount.
+> **Core Focus**: AVX2 / AVX-512 FMA unrolling, shuffle reductions, masked tails, and **In-Register LUT Distance (FastScan via `vpshufb`)**.
 
 ---
 
 ### Day 15 (Mon, Nov 2): AVX2 Foundations & FMA Dot Product
-- 📖 **Reading**: **[AgnerFog]** (`goals/agner_cpp.pdf`) — **§12 & §13** (pp. 95–130). Vector programming, SIMD instruction sets, alignments, and loop-carried dependencies.
+- 📖 **Reading**: **[AgnerFog]** (`goals/agner_cpp.pdf`) — **§12 & §13** (pp. 95–130). Vector programming, SIMD alignment, and port saturation.
 - 💻 **Drills (`day_15_drills.md`)**:
   1. `drill_15a_avx2_load_store.cpp`: Aligned vs unaligned loads (`_mm256_load_ps` vs `_mm256_loadu_ps`).
   2. `drill_15b_avx2_dot_product_basic.cpp`: AVX2 float dot product with single `__m256` accumulator.
@@ -45,24 +45,25 @@
 
 ---
 
-### Day 19 (Fri, Nov 6): Binary Vector Distance & Vectorized Popcount
-- 📖 **Reading**: **[Hacker's Delight]** (Henry S. Warren) — **Chapter 5** (Counting Bits, pp. 81–110).
+### Day 19 (Fri, Nov 6): AVX2 `vpshufb` In-Register LUT (FastScan Core)
+- 📖 **Reading**: **FastScan Architecture** (FAISS FastScan & Muła/Lemire SIMD lookup tables).
 - 💻 **Drills (`day_19_drills.md`)**:
-  1. `drill_19a_hamming_builtin.cpp`: Hamming distance using `__builtin_popcountll` on 64-bit unsigned integers.
-  2. `drill_19b_avx2_hamming_popcnt.cpp`: AVX2 Hamming distance using `_mm256_xor_si256` and vectorized popcount.
-  3. `drill_19c_jaccard_distance.cpp`: Vectorized Jaccard similarity / distance ($1.0 - \frac{|A \cap B|}{|A \cup B|}$) on binary vectors.
-- 🛠️ **`secan`**: Implement binary quantization distance metric in `secan`.
+  1. `drill_19a_pshufb_lut_lookup.cpp`: Use `_mm256_shuffle_epi8` (`vpshufb`) as a parallel 16-entry byte lookup table. Feed a 16-byte table in YMM register and look up 32 4-bit indices simultaneously in a single CPU cycle.
+  2. `drill_19b_nibble_extraction.cpp`: Given a 32-byte block of 4-bit packed codes, unpack low and high nibbles using `_mm256_and_si256` and `_mm256_srli_epi16`.
+  3. `drill_19c_pshufb_lut_distance.cpp`: Implement a miniature FastScan kernel: 16 centroids preloaded in `__m256i`, lookup 32 distances simultaneously, accumulate in 16-bit integers with `_mm256_maddubs_epi16`.
+- 🛠️ **`secan`**: Scaffold `secan/include/secan/simd/fastscan.hpp`.
 
 ---
 
-### Day 20 (Sat, Nov 7): One-to-Many Batch Distance Kernels
+### Day 20 (Sat, Nov 7): Binary Vector Distance & Vectorized Popcount
+- 📖 **Reading**: **[Hacker's Delight]** (Henry S. Warren) — **Chapter 5** (Counting Bits, pp. 81–110).
 - 💻 **Drills (`day_20_drills.md`)**:
-  1. `drill_20a_one_to_many_batch.cpp`: Implement 1-to-4 batch kernel: query vector is loaded once into registers and scored simultaneously against 4 target candidate vectors.
-  2. `drill_20b_software_prefetching.cpp`: Experiment with `_mm_prefetch((const char*)(ptr), _MM_HINT_T0)` on future memory addresses. Measure L1 cache hit rate impact.
-  3. `drill_20c_batch_speedup_bench.cpp`: Compare 1-by-1 distance loops vs 1-to-4 batched distance loops across 100,000 vectors.
-- 🛠️ **`secan`**: Add 1-to-N batch distance routines for top-$k$ candidate scoring.
+  1. `drill_20a_hamming_builtin.cpp`: Hamming distance using `__builtin_popcountll` on 64-bit unsigned integers.
+  2. `drill_20b_avx2_hamming_popcnt.cpp`: AVX2 Hamming distance using `_mm256_xor_si256` and Harley-Seal vector popcount algorithm.
+  3. `drill_20c_one_to_many_batch.cpp`: Implement 1-to-4 batch kernel: query vector loaded once and scored against 4 target candidate vectors.
+- 🛠️ **`secan`**: Add binary quantization & 1-to-N batch distance routines.
 
 ---
 
 ### Day 21 (Sun, Nov 8): Timed SIMD Exam (No Notes)
-- ⏱️ **45-minute timed coding exam**: Write an AVX2 L2 distance kernel with 4 accumulators and fast shuffle reduction from a blank file with zero compiler warnings.
+- ⏱️ **45-minute timed coding exam**: Write an AVX2 L2 distance kernel with 4 accumulators AND a `vpshufb` 4-bit LUT lookup from scratch with zero compiler warnings.
