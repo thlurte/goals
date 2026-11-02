@@ -9,6 +9,7 @@ This repository tracks systems research, curricula, and deliberate practice for 
 * [**`2-Month Systems Mastery Plan`**](curriculum/2-month-systems-plan.md) — The daily systems curriculum covering:
   * **Month 1 (November)**: Core C++ specialization (Memory, Lifecycle, SIMD, Concurrency) + PyTorch Transformer Internals + Weekend Matrix Calculus & High-Dim Geometry.
   * **Month 2 (December)**: Vector Search Algorithms (IVF-PQ, FastScan, HNSW) + ModernBERT Inference + Weekend Metric Space Theory & Random Projections.
+* [**`Founder Reading Curriculum: Hardware-Software Co-Design`**](readings/README.md) — The daily syllabus for computer architecture, metric space search, and silicon ALU design.
 
 ---
 
